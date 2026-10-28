@@ -1,0 +1,204 @@
+Static source evidence. Parsed as text/AST only; specimen was not imported or executed.
+Offsets identify UTF-16 positions in extension_decoded.js.
+
+
+===== r9r =====
+
+// decoded source offsets 24551887..24552744 (UTF-16)
+function r9r(_0x3a405b) {
+  _0x3a405b['subscriptions']["push"](g0["commands"]["registerCommand"]('alpme.checkForUpdates', async () => {
+    (await _0x3a405b["globalState"]['update'](mst, void 0x0), await fst(_0x3a405b, {
+      'force': !0x0
+    }));
+  }));
+  let _0xa8ac3a = setTimeout(() => void fst(_0x3a405b), OJi), _0x69cb7b = setInterval(() => void fst(_0x3a405b, {
+    'quiet': !0x0
+  }), WJi);
+  (_0x3a405b["subscriptions"]["push"]({
+    'dispose': () => clearTimeout(_0xa8ac3a)
+  }), _0x3a405b["subscriptions"]["push"]({
+    'dispose': () => clearInterval(_0x69cb7b)
+  }));
+}
+
+===== fst =====
+
+// decoded source offsets 24549816..24550990 (UTF-16)
+async function fst(_0x291bb2, {force: _0x2de8b6 = !0x1, quiet: _0x3bcad6 = !0x1} = {}) {
+  let _0x3e36d0 = String(_0x291bb2["extension"]?.["packageJSON"]?.["version"] || "0.0.0");
+  if (!_0x2de8b6 && !_0x3bcad6) {
+    let _0x20844a = _0x291bb2['globalState']['get'](zDr) || 0x0;
+    if (Date['now']() - _0x20844a < YJi) return;
+  }
+  _0x3bcad6 || await _0x291bb2['globalState']["update"](zDr, Date['now']());
+  let _0x4b2c0d = await $Dr();
+  if (!_0x4b2c0d) {
+    _0x2de8b6 && g0["window"]['showWarningMessage'](nt("platform:update.unreachable"));
+    return;
+  }
+  if ((await _0x291bb2["globalState"]['update'](gst, _0x4b2c0d["version"]), !jDr(_0x4b2c0d["version"], _0x3e36d0))) {
+    _0x2de8b6 && g0['window']["showInformationMessage"](nt("platform:update.latest", {
+      'current': _0x3e36d0
+    }));
+    return;
+  }
+  _0x3bcad6 || !_0x2de8b6 && _0x291bb2["globalState"]["get"](mst) === _0x4b2c0d['version'] || await QJi(_0x291bb2, _0x4b2c0d, _0x3e36d0);
+}
+
+===== _Dr =====
+
+// decoded source offsets 24547982..24548687 (UTF-16)
+async function $Dr() {
+  let _0x234256 = new AbortController(), _0x19f1e5 = setTimeout(() => _0x234256["abort"](), ZJi);
+  try {
+    let _0x1b839b = await fetch(mq() + '/api/vscode/version', {
+      'signal': _0x234256["signal"],
+      'headers': {
+        'accept': "application/json",
+        'x-alpme-client': "vscode"
+      }
+    });
+    if (!_0x1b839b['ok']) return null;
+    let _0x376c4d = await _0x1b839b["json"]();
+    return _0x376c4d && typeof _0x376c4d['version'] == "string" ? _0x376c4d : null;
+  } catch {
+    return null;
+  } finally {
+    clearTimeout(_0x19f1e5);
+  }
+}
+
+===== QJi =====
+
+// decoded source offsets 24548814..24549816 (UTF-16)
+async function QJi(_0x1e614c, _0x571c92, _0x3bbc43) {
+  let _0x4495bc = mq()['replace'](/^https?:\/\//, ''), _0x29b4ee = nt("platform:update.copyCommand"), _0x4ac3bc = nt('platform:update.openPage'), _0x29d95b = nt("platform:update.skip"), _0x3b8697 = await g0["window"]["showInformationMessage"](nt("platform:update.available", {
+    'latest': _0x571c92["version"],
+    'current': _0x3bbc43
+  }), _0x29b4ee, _0x4ac3bc, _0x29d95b);
+  _0x3b8697 === _0x29b4ee ? (await g0['env']["clipboard"]["writeText"](e9r(_0x4495bc)), g0["window"]["showInformationMessage"](nt('platform:update.copied'))) : _0x3b8697 === _0x4ac3bc ? await g0["env"]['openExternal'](g0["Uri"]['parse'](mq() + '/dashboard/editor')) : _0x3b8697 === _0x29d95b && await _0x1e614c["globalState"]["update"](mst, _0x571c92['version']);
+}
+
+===== Lun =====
+
+// decoded source offsets 32063498..32065493 (UTF-16)
+async function Lun(_0x551953, {providerSettingsManager: _0x2bf5b8, contextProxy: _0x267a2a, customModesManager: _0x4049d9}) {
+  try {
+    let _0x5144eb = Tj["workspace"]['getConfiguration'](mr['name'])["get"]("autoImportSettingsPath");
+    if (!_0x5144eb || _0x5144eb["trim"]() === '') {
+      _0x551953["appendLine"]('[AutoImport]\x20No\x20auto-import\x20settings\x20path\x20specified,\x20skipping\x20auto-import');
+      return;
+    }
+    let _0x4e8266 = gEa(_0x5144eb['trim']());
+    if ((_0x551953["appendLine"]("[AutoImport] Checking for settings file at: " + _0x4e8266), !await _r(_0x4e8266))) {
+      _0x551953['appendLine']("[AutoImport] Settings file not found at " + _0x4e8266 + ", skipping auto-import");
+      return;
+    }
+    let _0xcb9133 = await Qxe(_0x4e8266, {
+      'providerSettingsManager': _0x2bf5b8,
+      'contextProxy': _0x267a2a,
+      'customModesManager': _0x4049d9
+    });
+    _0xcb9133["success"] ? (_0x551953["appendLine"]("[AutoImport] Successfully imported settings from " + _0x4e8266), Tj["window"]["showInformationMessage"](nt("common:info.auto_import_success", {
+      'filename': x3["basename"](_0x4e8266)
+    }))) : (_0x551953["appendLine"]("[AutoImport] Failed to import settings: " + _0xcb9133['error']), Tj["window"]['showWarningMessage'](nt("common:warnings.auto_import_failed", {
+      'error': _0xcb9133['error']
+    })));
+  } catch (_0x3b85ea) {
+    let _0x1f51ce = _0x3b85ea instanceof Error ? _0x3b85ea["message"] : String(_0x3b85ea);
+    (_0x551953["appendLine"]("[AutoImport] Unexpected error during auto-import: " + _0x1f51ce), console["warn"]("Auto-import settings error:", _0x3b85ea));
+  }
+}
+
+===== gEa =====
+
+// decoded source offsets 32065493..32065853 (UTF-16)
+function gEa(_0x3f3253) {
+  return _0x3f3253["startsWith"]('~/') ? x3["join"](Zgt["homedir"](), _0x3f3253["slice"](0x2)) : x3["isAbsolute"](_0x3f3253) ? _0x3f3253 : x3["join"](Zgt["homedir"](), _0x3f3253);
+}
+
+===== Qxe =====
+
+// decoded source offsets 30845984..30849607 (UTF-16)
+async function Qxe(_0xc0f56, {providerSettingsManager: _0x1e1743, contextProxy: _0x3ba364, customModesManager: _0x1616d6}) {
+  let _0xe376e7 = Oxe['extend']({
+    'apiConfigs': z['record'](z["string"](), z["any"]())
+  }), _0xe8579d = z["object"]({
+    'providerProfiles': _0xe376e7,
+    'globalSettings': eE["optional"]()
+  });
+  try {
+    let _0x5c328c = await _0x1e1743["export"](), _0x2baf3d = JSON['parse'](await aD["default"]["readFile"](_0xc0f56, "utf-8")), {providerProfiles: _0x582325, globalSettings: _0x216869 = {}} = _0xe8579d["parse"](_0x2baf3d), _0x5cb902 = [], _0x3065f5 = {};
+    for (let [_0xcb9606, _0x5a336d] of Object["entries"](_0x582325["apiConfigs"])) {
+      let {config: _0x5e1f29, warning: _0x7e195} = Lma(_0xcb9606, _0x5a336d);
+      _0x7e195 && _0x5cb902["push"](_0x7e195);
+      let _0x287865 = jN["safeParse"](_0x5e1f29);
+      if (_0x287865["success"]) _0x3065f5[_0xcb9606] = _0x287865["data"]; else {
+        let _0x1c7df6 = _0x287865["error"]["issues"]["map"](_0x2d6bb9 => _0x2d6bb9["path"]['join']('.') + ':\x20' + _0x2d6bb9["message"])['join'](',\x20');
+        _0x5cb902['push']("Profile \"" + _0xcb9606 + "\" was skipped: " + _0x1c7df6);
+      }
+    }
+    if (Object['keys'](_0x3065f5)["length"] === 0x0 && _0x5cb902["length"] > 0x0) return {
+      'success': !0x1,
+      'error': "No valid profiles could be imported:\n" + _0x5cb902["join"]('\x0a')
+    };
+    let _0x26969a = _0x582325["currentApiConfigName"], _0x3c9891 = Object["keys"](_0x3065f5);
+    _0x3065f5[_0x26969a] || (_0x3c9891["length"] > 0x0 ? (_0x26969a = _0x3c9891[0x0], _0x5cb902["push"]('Profile\x20\x22' + _0x582325["currentApiConfigName"] + "\" was not available; defaulting to \"" + _0x26969a + '\x22.')) : _0x26969a = _0x5c328c["currentApiConfigName"]);
+    let _0x346923 = {
+      'currentApiConfigName': _0x26969a,
+      'apiConfigs': {
+        ..._0x5c328c["apiConfigs"],
+        ..._0x3065f5
+      },
+      'modeApiConfigs': {
+        ..._0x5c328c["modeApiConfigs"],
+        ..._0x582325["modeApiConfigs"]
+      }
+    };
+    (await Promise["all"]((_0x216869["customModes"] ?? [])["map"](_0x4d4184 => _0x1616d6["updateCustomMode"](_0x4d4184["slug"], _0x4d4184))), await _0x1e1743["import"](_0x346923), await _0x3ba364["setValues"](_0x216869));
+    let _0x5f461e = _0x346923["currentApiConfigName"], _0x652bd4 = _0x346923["apiConfigs"][_0x5f461e];
+    return (_0x3ba364["setValue"]("currentApiConfigName", _0x5f461e), _0x652bd4 && _0x3ba364["setProviderSettings"](_0x652bd4), _0x3ba364["setValue"]('listApiConfigMeta', await _0x1e1743["listConfig"]()), {
+      'providerProfiles': _0x346923,
+      'globalSettings': _0x216869,
+      'success': !0x0,
+      'warnings': _0x5cb902['length'] > 0x0 ? _0x5cb902 : void 0x0
+    });
+  } catch (_0x56b65e) {
+    let _0x258fb = "Unknown error";
+    return (_0x56b65e instanceof Fu ? _0x258fb = _0x56b65e["issues"]["map"](_0x356172 => '[' + _0x356172["path"]["join"]('.') + "]: " + _0x356172["message"])["join"]('\x0a') : _0x56b65e instanceof Error && (_0x258fb = _0x56b65e["message"]), {
+      'success': !0x1,
+      'error': _0x258fb
+    });
+  }
+}
+
+===== sjr =====
+
+// decoded source offsets 30850510..30851633 (UTF-16)
+async ({providerSettingsManager: _0x158cda, contextProxy: _0x56f7c1}) => {
+  let _0x29bb16 = await wA(_0x56f7c1, "lastSettingsExportPath", 'alpme-settings.json', {
+    'useWorkspace': !0x1,
+    'fallbackDir': iz["join"](pht['default']['homedir'](), 'Downloads')
+  }), _0x1ea29b = await sD["window"]['showSaveDialog']({
+    'filters': {
+      'JSON': ["json"]
+    },
+    'defaultUri': _0x29bb16
+  });
+  if (_0x1ea29b) {
+    await x5(_0x56f7c1, "lastSettingsExportPath", _0x1ea29b);
+    try {
+      let _0x47bd74 = await _0x158cda["export"](), _0x580aa7 = await _0x56f7c1["export"]();
+      if (typeof _0x47bd74 > 'u') return;
+      let _0x41abde = iz["dirname"](_0x1ea29b["fsPath"]);
+      (await aD["default"]["mkdir"](_0x41abde, {
+        'recursive': !0x0
+      }), await Es(_0x1ea29b["fsPath"], {
+        'providerProfiles': _0x47bd74,
+        'globalSettings': _0x580aa7
+      }));
+    } catch (_0x463d0e) {
+      console["error"]("Failed to export settings:", _0x463d0e);
+    }
+  }
+}

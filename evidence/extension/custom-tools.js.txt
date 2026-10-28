@@ -1,0 +1,209 @@
+Static source evidence. Parsed as text/AST only; specimen was not imported or executed.
+Offsets identify UTF-16 positions in extension_decoded.js.
+
+
+===== eWe =====
+
+// decoded source offsets 1911162..1920262 (UTF-16)
+class {
+  ["tools"] = new Map();
+  ["tsCache"] = new Map();
+  ["cacheDir"];
+  ["nodePaths"];
+  ["extensionPath"];
+  ["lastLoaded"] = new Map();
+  constructor(_0x200586) {
+    (this['cacheDir'] = _0x200586?.['cacheDir'] ?? Z0["default"]['join'](VLt['default']["tmpdir"](), "dynamic-tools-cache"), this["nodePaths"] = _0x200586?.["nodePaths"] ?? [Z0['default']['join'](process['cwd'](), "node_modules")], this["extensionPath"] = _0x200586?.['extensionPath']);
+  }
+  async ["loadFromDirectory"](_0x5ae848) {
+    let _0x3ec174 = {
+      'loaded': [],
+      'failed': []
+    };
+    try {
+      if (!Wu["default"]["existsSync"](_0x5ae848)) return _0x3ec174;
+      let _0x10f99c = Wu["default"]["readdirSync"](_0x5ae848)["filter"](_0x526e4d => _0x526e4d["endsWith"]('.ts') || _0x526e4d["endsWith"](".js"));
+      for (let _0x1256b3 of _0x10f99c) {
+        let _0x13c9b1 = Z0["default"]["join"](_0x5ae848, _0x1256b3);
+        try {
+          console['log']('[CustomToolRegistry]\x20importing\x20tool\x20from\x20' + _0x13c9b1);
+          let _0x52f497 = await this['import'](_0x13c9b1);
+          for (let [_0x132973, _0x39da4c] of Object['entries'](_0x52f497)) {
+            let _0x487244 = this['validate'](_0x132973, _0x39da4c);
+            _0x487244 && (this["tools"]["set"](_0x487244["name"], {
+              ..._0x487244,
+              'source': _0x13c9b1
+            }), console["log"]('[CustomToolRegistry]\x20loaded\x20tool\x20' + _0x487244['name'] + '\x20from\x20' + _0x13c9b1), _0x3ec174['loaded']["push"](_0x487244["name"]));
+          }
+        } catch (_0x3ae671) {
+          let _0x52663b = _0x3ae671 instanceof Error ? _0x3ae671["message"] : String(_0x3ae671);
+          (console["error"]('[CustomToolRegistry]\x20import(' + _0x13c9b1 + ')\x20failed:\x20' + _0x52663b), _0x3ec174["failed"]["push"]({
+            'file': _0x1256b3,
+            'error': _0x52663b
+          }));
+        }
+      }
+    } catch (_0x2e1c41) {
+      let _0x5823cd = _0x2e1c41 instanceof Error ? _0x2e1c41["message"] : String(_0x2e1c41);
+      console["error"]("[CustomToolRegistry] loadFromDirectory(" + _0x5ae848 + ") failed: " + _0x5823cd);
+    }
+    return _0x3ec174;
+  }
+  async ["loadFromDirectoryIfStale"](_0x58818d) {
+    if (!Wu["default"]["existsSync"](_0x58818d)) return {
+      'loaded': [],
+      'failed': []
+    };
+    let _0x3485e8 = this["lastLoaded"]['get'](_0x58818d), _0x4659b8 = Wu["default"]["statSync"](_0x58818d);
+    return (_0x3485e8 ? _0x4659b8["mtimeMs"] > _0x3485e8 : !0x0) ? (this["lastLoaded"]['set'](_0x58818d, _0x4659b8['mtimeMs']), this['loadFromDirectory'](_0x58818d)) : {
+      'loaded': this["list"](),
+      'failed': []
+    };
+  }
+  async ["loadFromDirectories"](_0x5827ec) {
+    let _0x34649d = {
+      'loaded': [],
+      'failed': []
+    };
+    for (let _0x157b65 of _0x5827ec) {
+      let _0x4acdcf = await this["loadFromDirectory"](_0x157b65);
+      (_0x34649d['loaded']["push"](..._0x4acdcf["loaded"]), _0x34649d["failed"]["push"](..._0x4acdcf["failed"]));
+    }
+    return _0x34649d;
+  }
+  async ["loadFromDirectoriesIfStale"](_0x5223ef) {
+    let _0x45e7ff = {
+      'loaded': [],
+      'failed': []
+    };
+    for (let _0x3f3752 of _0x5223ef) {
+      let _0xd2af47 = await this["loadFromDirectoryIfStale"](_0x3f3752);
+      (_0x45e7ff["loaded"]["push"](..._0xd2af47["loaded"]), _0x45e7ff["failed"]["push"](..._0xd2af47['failed']));
+    }
+    return _0x45e7ff;
+  }
+  ["register"](_0x147231, _0x5bbf87) {
+    let {name: _0x156751} = _0x147231, _0x280599 = this['validate'](_0x156751, _0x147231);
+    if (!_0x280599) throw new Error("Invalid tool definition for '" + _0x156751 + '\x27');
+    let _0x16359e = _0x5bbf87 ? {
+      ..._0x280599,
+      'source': _0x5bbf87
+    } : _0x280599;
+    this['tools']["set"](_0x156751, _0x16359e);
+  }
+  ["unregister"](_0x50a8df) {
+    return this["tools"]["delete"](_0x50a8df);
+  }
+  ['get'](_0x48211b) {
+    return this['tools']['get'](_0x48211b);
+  }
+  ["has"](_0x34615b) {
+    return this["tools"]['has'](_0x34615b);
+  }
+  ["list"]() {
+    return Array['from'](this["tools"]["keys"]());
+  }
+  ["getAll"]() {
+    return Array["from"](this["tools"]["values"]());
+  }
+  ["getAllSerialized"]() {
+    return this['getAll']()['map'](XNt);
+  }
+  get ["size"]() {
+    return this['tools']["size"];
+  }
+  ['clear']() {
+    this['tools']["clear"]();
+  }
+  ["setExtensionPath"](_0x41fa4e) {
+    this["extensionPath"] = _0x41fa4e;
+  }
+  ["getExtensionPath"]() {
+    return this["extensionPath"];
+  }
+  ["clearCache"]() {
+    if ((this['tsCache']["clear"](), Wu["default"]["existsSync"](this["cacheDir"]))) try {
+      let _0x3aae37 = Wu["default"]["readdirSync"](this["cacheDir"], {
+        'withFileTypes': !0x0
+      });
+      for (let _0x413f57 of _0x3aae37) {
+        let _0x3f1114 = Z0["default"]["join"](this["cacheDir"], _0x413f57["name"]);
+        _0x413f57["isDirectory"]() ? Wu['default']["rmSync"](_0x3f1114, {
+          'recursive': !0x0,
+          'force': !0x0
+        }) : _0x413f57["name"]["endsWith"](".mjs") && Wu["default"]["unlinkSync"](_0x3f1114);
+      }
+    } catch (_0x394eae) {
+      console["error"]("[CustomToolRegistry] clearCache failed to clean disk cache: " + (_0x394eae instanceof Error ? _0x394eae["message"] : String(_0x394eae)));
+    }
+  }
+  async ["import"](_0x1533b2) {
+    let _0x1e001d = Z0['default']["resolve"](_0x1533b2), _0x1b89ec = Z0["default"]["extname"](_0x1e001d);
+    if (_0x1b89ec === ".js" || _0x1b89ec === ".mjs") return import('file://' + _0x1e001d);
+    let _0x139883 = Wu["default"]['statSync'](_0x1e001d), _0x28037b = _0x1e001d + ':' + _0x139883["mtimeMs"];
+    if (this["tsCache"]["has"](_0x28037b)) return import("file://" + this["tsCache"]['get'](_0x28037b));
+    let _0x18ae87 = (0x0, TLt["createHash"])("sha256")["update"](_0x28037b)["digest"]("hex")["slice"](0x0, 0x10), _0x2d074a = Z0["default"]['join'](this["cacheDir"], _0x18ae87);
+    Wu["default"]['mkdirSync'](_0x2d074a, {
+      'recursive': !0x0
+    });
+    let _0x350e18 = Z0["default"]["join"](_0x2d074a, 'bundle.mjs');
+    if (Wu["default"]["existsSync"](_0x350e18)) return (this['tsCache']["set"](_0x28037b, _0x350e18), import("file://" + _0x350e18));
+    let _0xe9f3b5 = Z0['default']["dirname"](_0x1e001d), _0x41fce6 = Z0["default"]["join"](_0xe9f3b5, "node_modules"), _0x350998 = Wu["default"]['existsSync'](_0x41fce6) ? [_0x41fce6, ...this["nodePaths"]] : this['nodePaths'];
+    return (await _Lt({
+      'entryPoint': _0x1e001d,
+      'outfile': _0x350e18,
+      'format': "esm",
+      'platform': "node",
+      'target': 'node18',
+      'bundle': !0x0,
+      'sourcemap': "inline",
+      'packages': "bundle",
+      'nodePaths': _0x350998,
+      'external': ZLt,
+      'banner': QLt
+    }, this["extensionPath"]), this["copyEnvFiles"](_0xe9f3b5, _0x2d074a), this['tsCache']["set"](_0x28037b, _0x350e18), import("file://" + _0x350e18));
+  }
+  ['copyEnvFiles'](_0x556f2f, _0x57d932) {
+    try {
+      let _0x20cf25 = Wu["default"]['readdirSync'](_0x556f2f)["filter"](_0x40aa2b => _0x40aa2b === ".env" || _0x40aa2b["startsWith"](".env."));
+      for (let _0x3624d0 of _0x20cf25) {
+        let _0x455387 = Z0["default"]['join'](_0x556f2f, _0x3624d0), _0x29482f = Z0["default"]["join"](_0x57d932, _0x3624d0);
+        Wu['default']["statSync"](_0x455387)['isFile']() && (Wu['default']['copyFileSync'](_0x455387, _0x29482f), console["log"]('[CustomToolRegistry]\x20copied\x20' + _0x3624d0 + " to tool cache directory"));
+      }
+    } catch (_0x54f1f9) {
+      console["warn"]('[CustomToolRegistry]\x20failed\x20to\x20copy\x20.env\x20files:\x20' + (_0x54f1f9 instanceof Error ? _0x54f1f9["message"] : String(_0x54f1f9)));
+    }
+  }
+  ["isParametersSchema"](_0x50c89d) {
+    return _0x50c89d !== null && typeof _0x50c89d == 'object' && ("_def" in _0x50c89d) && typeof _0x50c89d["_def"] == "object";
+  }
+  ["validate"](_0x1a1665, _0x150b88) {
+    if (!_0x150b88 || typeof _0x150b88 != "object" || !(('execute' in _0x150b88)) || typeof _0x150b88["execute"] != "function") return null;
+    let _0xe91ebd = _0x150b88, _0x78765e = [];
+    if ((typeof _0xe91ebd["name"] != "string" ? _0x78765e['push']("name: Expected string") : _0xe91ebd['name']["length"] === 0x0 && _0x78765e["push"]("name: Tool must have a non-empty name"), typeof _0xe91ebd["description"] != 'string' ? _0x78765e["push"]("description: Expected string") : _0xe91ebd['description']["length"] === 0x0 && _0x78765e["push"]("description: Tool must have a non-empty description"), _0xe91ebd["parameters"] !== void 0x0 && !this["isParametersSchema"](_0xe91ebd["parameters"]) && _0x78765e["push"]("parameters: parameters must be a Zod schema"), _0x78765e["length"] > 0x0)) throw new Error("Invalid tool definition for '" + _0x1a1665 + "': " + _0x78765e['join'](',\x20'));
+    return _0x150b88;
+  }
+}
+
+===== JE =====
+
+// decoded source offsets 3243847..3244156 (UTF-16)
+function JE(_0x3f3063) {
+  let _0x103ee0 = [];
+  return (_0x103ee0["push"](Yh()), _0x103ee0["push"](HB(_0x3f3063)), _0x103ee0);
+}
+
+===== Yh =====
+
+// decoded source offsets 3241245..3241458 (UTF-16)
+function Yh() {
+  let _0x326cf5 = xQe["homedir"]();
+  return IC["join"](_0x326cf5, '.alpme');
+}
+
+===== HB =====
+
+// decoded source offsets 3241900..3242095 (UTF-16)
+function HB(_0x5c8a75) {
+  return IC["join"](_0x5c8a75, '.alpme');
+}

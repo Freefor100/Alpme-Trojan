@@ -1,0 +1,98 @@
+[
+  {
+    "url": "https://raw.githubusercontent.com/chromium/chromium/156.0.8078.48/components/os_crypt/async/common/encryptor.h",
+    "source_relative_path": "components/os_crypt/async/common/encryptor.h",
+    "saved_as": "components__os_crypt__async__common__encryptor.h.txt",
+    "bytes": 8568,
+    "sha256": "737da70e05ad14b30aedabc7a59375815360413817f8dba90f8667cffdab6a77",
+    "status": "saved_public_text"
+  },
+  {
+    "url": "https://raw.githubusercontent.com/chromium/chromium/156.0.8078.48/components/os_crypt/async/common/encryptor.cc",
+    "source_relative_path": "components/os_crypt/async/common/encryptor.cc",
+    "saved_as": "components__os_crypt__async__common__encryptor.cc.txt",
+    "bytes": 9962,
+    "sha256": "3d58a27499e97d059e57ffdbd127e865282986d8e6197b39725b75e99d6ef3d0",
+    "status": "saved_public_text"
+  },
+  {
+    "url": "https://raw.githubusercontent.com/chromium/chromium/156.0.8078.48/components/os_crypt/async/common/encryptor_mojom_traits.cc",
+    "source_relative_path": "components/os_crypt/async/common/encryptor_mojom_traits.cc",
+    "saved_as": "components__os_crypt__async__common__encryptor_mojom_traits.cc.txt",
+    "bytes": 4384,
+    "sha256": "831c3ba969f0d026cd65fd01acf666a7672f1ea5c8185968e36e5fe6ffbdd760",
+    "status": "saved_public_text"
+  },
+  {
+    "url": "https://raw.githubusercontent.com/chromium/chromium/156.0.8078.48/chrome/browser/os_crypt/app_bound_encryption_provider_win.h",
+    "source_relative_path": "chrome/browser/os_crypt/app_bound_encryption_provider_win.h",
+    "saved_as": "chrome__browser__os_crypt__app_bound_encryption_provider_win.h.txt",
+    "bytes": 4632,
+    "sha256": "338fcc9571f9ae75b9dca78308651050c0d3a36b916ef7712631defad929f23a",
+    "status": "saved_public_text"
+  },
+  {
+    "url": "https://raw.githubusercontent.com/chromium/chromium/156.0.8078.48/chrome/browser/os_crypt/app_bound_encryption_provider_win.cc",
+    "source_relative_path": "chrome/browser/os_crypt/app_bound_encryption_provider_win.cc",
+    "saved_as": "chrome__browser__os_crypt__app_bound_encryption_provider_win.cc.txt",
+    "bytes": 14091,
+    "sha256": "cecb69b3d74dc5e20326ede164d1608573318744a5ff81b90c28e2df8836f0f7",
+    "status": "saved_public_text"
+  },
+  {
+    "url": "https://raw.githubusercontent.com/chromium/chromium/156.0.8078.48/chrome/browser/os_crypt/app_bound_encryption_win.cc",
+    "source_relative_path": "chrome/browser/os_crypt/app_bound_encryption_win.cc",
+    "saved_as": "chrome__browser__os_crypt__app_bound_encryption_win.cc.txt",
+    "bytes": 10241,
+    "sha256": "c42e6401af21979308a8cbb022f011d6301fc323f5d3c3cad8ca41c801a01c98",
+    "status": "saved_public_text"
+  },
+  {
+    "url": "https://raw.githubusercontent.com/chromium/chromium/156.0.8078.48/components/password_manager/core/browser/password_store/login_database.cc",
+    "source_relative_path": "components/password_manager/core/browser/password_store/login_database.cc",
+    "saved_as": "components__password_manager__core__browser__password_store__login_database.cc.txt",
+    "bytes": 93240,
+    "sha256": "3f5ec601991ffa0d01fea4903df34d8a667337fae44a4f5f9df4961365136b30",
+    "status": "saved_public_text"
+  },
+  {
+    "url": "https://raw.githubusercontent.com/chromium/chromium/156.0.8078.48/net/extras/sqlite/sqlite_persistent_cookie_store.cc",
+    "source_relative_path": "net/extras/sqlite/sqlite_persistent_cookie_store.cc",
+    "saved_as": "net__extras__sqlite__sqlite_persistent_cookie_store.cc.txt",
+    "bytes": 64289,
+    "sha256": "cebb7f21100ed85ec40d53386e27c33e409fcff95d197d26da89c23805d8aaa9",
+    "status": "saved_public_text"
+  },
+  {
+    "url": "https://raw.githubusercontent.com/chromium/chromium/156.0.8078.48/components/autofill/core/browser/webdata/payments/payments_autofill_table.cc",
+    "source_relative_path": "components/autofill/core/browser/webdata/payments/payments_autofill_table.cc",
+    "saved_as": "components__autofill__core__browser__webdata__payments__payments_autofill_table.cc.txt",
+    "bytes": 99650,
+    "sha256": "f211dc386b353b9c62224957fcaac6b4a4325a19ef08fe35b7db512f5449952f",
+    "status": "saved_public_text"
+  },
+  {
+    "url": "https://raw.githubusercontent.com/chromium/chromium/156.0.8078.48/chrome/elevation_service/caller_validation.cc",
+    "source_relative_path": "chrome/elevation_service/caller_validation.cc",
+    "saved_as": "chrome__elevation_service__caller_validation.cc.txt",
+    "bytes": 10093,
+    "sha256": "96694ddb7fc58da21e4f2997f305e093e3a8cc854dc3c8edd0fc4536b3173246",
+    "status": "saved_public_text"
+  },
+  {
+    "url": "https://raw.githubusercontent.com/chromium/chromium/156.0.8078.48/chrome/elevation_service/elevator.cc",
+    "source_relative_path": "chrome/elevation_service/elevator.cc",
+    "saved_as": "chrome__elevation_service__elevator.cc.txt",
+    "bytes": 17947,
+    "sha256": "1c62c207e123b8a8d490dbeeb77d231a38d244244af7011165c8b6d7605b7435",
+    "status": "saved_public_text"
+  },
+  {
+    "url": "https://raw.githubusercontent.com/chromium/chromium/156.0.8078.48/chrome/installer/util/isolation_support.cc",
+    "source_relative_path": "chrome/installer/util/isolation_support.cc",
+    "saved_as": "chrome__installer__util__isolation_support.cc.txt",
+    "bytes": 1359,
+    "sha256": "5d1a212ab067ce8615d77d0063a61cde9d7fae129f7be84969d3b0853fe03ba2",
+    "status": "saved_public_text"
+  }
+]

@@ -1,0 +1,15 @@
+类型,标识,对应对象,解释
+network,hebaoshi[.]co:443,17/19,内层HTTPS POST /控制与结果端
+extension-service,alpme[.]com,Alpme1.0.25,扩展服务与ZIP投递接口
+user-agent,foumootts,17,WinHTTP User-Agent
+user-agent,swoellsiaps,19,WinHTTP User-Agent
+desktop,ueskuotts,17,已知隐藏桌面名
+desktop,yuirdsuiast,19,已知隐藏桌面名
+mutex,bootycacophonous,sample evidence,已知互斥体名；结合样本身份判断
+fixed-write,C:\ProgramData\WD\eodsogeings.dat,17si.exe,固定程序常量写入尝试；不是文件已落地的断言
+fixed-write,C:\ProgramData\welltried\ueskeoty.txt,17si.exe,固定程序常量写入尝试；不是文件已落地的断言
+fixed-write,C:\Program Files (x86)\scoop\pfuelteauct.pdf,17si.exe,固定程序常量写入尝试；不是文件已落地的断言
+fixed-write,C:\ProgramData\LGHUB\ussuirty,17si.exe,固定程序常量写入尝试；不是文件已落地的断言
+fixed-write,C:\ProgramData\derogation\uctiaoct,19si.exe,固定程序常量写入尝试；不是文件已落地的断言
+fixed-write,C:\ProgramData\allocating\jauegyeauty.txt,19si.exe,固定程序常量写入尝试；不是文件已落地的断言
+fixed-write,C:\ProgramData\ShareX\swaontzuiests.cfg,19si.exe,固定程序常量写入尝试；不是文件已落地的断言

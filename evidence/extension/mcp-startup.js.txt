@@ -1,0 +1,887 @@
+Static source evidence. Parsed as text/AST only; specimen was not imported or executed.
+Offsets identify UTF-16 positions in extension_decoded.js.
+
+
+===== Kb =====
+
+// decoded source offsets 24339444..24341936 (UTF-16)
+class {
+  static ["instance"] = null;
+  static ["GLOBAL_STATE_KEY"] = "mcpHubInstanceId";
+  static ['providers'] = new Set();
+  static ["initializationPromise"] = null;
+  static async ['getInstance'](_0x4a86d8, _0x28e737) {
+    return (this['providers']["add"](_0x28e737), this["instance"] ? this['instance'] : this['initializationPromise'] ? this["initializationPromise"] : (this["initializationPromise"] = (async () => {
+      try {
+        if (!this["instance"]) {
+          let _0x2c244c = new efe(_0x28e737);
+          (await _0x2c244c["waitUntilReady"](), this["instance"] = _0x2c244c, await _0x4a86d8["globalState"]["update"](this["GLOBAL_STATE_KEY"], Date["now"]()["toString"]()));
+        }
+        return this["instance"];
+      } finally {
+        this["initializationPromise"] = null;
+      }
+    })(), this["initializationPromise"]));
+  }
+  static ["unregisterProvider"](_0x5c9de7) {
+    this["providers"]["delete"](_0x5c9de7);
+  }
+  static ["notifyProviders"](_0x83d812) {
+    this["providers"]['forEach'](_0xccbd72 => {
+      _0xccbd72["postMessageToWebview"](_0x83d812)['catch'](_0xdd6b93 => {
+        console["error"]('Failed\x20to\x20notify\x20provider:', _0xdd6b93);
+      });
+    });
+  }
+  static async ['cleanup'](_0x581cf2) {
+    (this["instance"] && (await this['instance']["dispose"](), this['instance'] = null, await _0x581cf2["globalState"]["update"](this["GLOBAL_STATE_KEY"], void 0x0)), this["providers"]['clear']());
+  }
+}
+
+===== efe =====
+
+// decoded source offsets 24279377..24339440 (UTF-16)
+class {
+  ["providerRef"];
+  ["disposables"] = [];
+  ["settingsWatcher"];
+  ["fileWatchers"] = new Map();
+  ["projectMcpWatcher"];
+  ["isDisposed"] = !0x1;
+  ["connections"] = [];
+  ["isConnecting"] = !0x1;
+  ["refCount"] = 0x0;
+  ["configChangeDebounceTimers"] = new Map();
+  ["isProgrammaticUpdate"] = !0x1;
+  ["flagResetTimer"];
+  ["sanitizedNameRegistry"] = new Map();
+  ["initializationPromise"];
+  constructor(_0x5c99d4) {
+    (this["providerRef"] = new WeakRef(_0x5c99d4), this["watchMcpSettingsFile"](), this['watchProjectMcpFile']()['catch'](console["error"]), this["setupWorkspaceFoldersWatcher"](), this["initializationPromise"] = Promise["all"]([this['initializeGlobalMcpServers'](), this['initializeProjectMcpServers']()])['then'](() => {}));
+  }
+  async ['waitUntilReady']() {
+    await this["initializationPromise"];
+  }
+  ['registerClient']() {
+    this["refCount"]++;
+  }
+  async ['unregisterClient']() {
+    (this["refCount"]--, this["refCount"] <= 0x0 && (console["log"]('McpHub:\x20Last\x20client\x20unregistered.\x20Disposing\x20hub.'), await this["dispose"]()));
+  }
+  ["validateServerConfig"](_0x1d0a4c, _0x840a99) {
+    let _0x216ff1 = _0x1d0a4c['command'] !== void 0x0, _0x419bcf = _0x1d0a4c["url"] !== void 0x0;
+    if (_0x216ff1 && _0x419bcf) throw new Error(YNi);
+    if ((!_0x1d0a4c["type"] && _0x216ff1 && (_0x1d0a4c['type'] = 'stdio'), _0x419bcf && !_0x1d0a4c['type'])) throw new Error('Configuration\x20with\x20\x27url\x27\x20must\x20explicitly\x20specify\x20\x27type\x27\x20as\x20\x27sse\x27\x20or\x20\x27streamable-http\x27.');
+    if (_0x1d0a4c["type"] && !['stdio', "sse", "streamable-http"]["includes"](_0x1d0a4c["type"])) throw new Error($pe);
+    if (_0x1d0a4c['type'] === 'stdio' && !_0x216ff1) throw new Error(LNi);
+    if (_0x1d0a4c["type"] === "sse" && !_0x419bcf) throw new Error(SNi);
+    if (_0x1d0a4c['type'] === "streamable-http" && !_0x419bcf) throw new Error(WNi);
+    if (!_0x216ff1 && !_0x419bcf) throw new Error(ONi);
+    try {
+      return uKe["parse"](_0x1d0a4c);
+    } catch (_0x4d967d) {
+      if (_0x4d967d instanceof z["ZodError"]) {
+        let _0x2597e1 = _0x4d967d["errors"]["map"](_0x20c801 => _0x20c801["path"]["join"]('.') + ':\x20' + _0x20c801["message"])["join"](';\x20');
+        throw new Error(_0x840a99 ? "Invalid configuration for server \"" + _0x840a99 + '\x22:\x20' + _0x2597e1 : "Invalid server configuration: " + _0x2597e1);
+      }
+      throw _0x4d967d;
+    }
+  }
+  ['showErrorMessage'](_0x58888d, _0x114a70) {
+    console["error"](_0x58888d + ':', _0x114a70);
+  }
+  ["setupWorkspaceFoldersWatcher"]() {
+    process.env.NODE_ENV !== "test" && this["disposables"]["push"](Ri["workspace"]["onDidChangeWorkspaceFolders"](async () => {
+      (await this['updateProjectMcpServers'](), await this["watchProjectMcpFile"]());
+    }));
+  }
+  ['debounceConfigChange'](_0x4840c6, _0x7b4842) {
+    if (this["isProgrammaticUpdate"]) return;
+    let _0x132b11 = _0x7b4842 + '-' + _0x4840c6, _0x2ba4ce = this['configChangeDebounceTimers']['get'](_0x132b11);
+    _0x2ba4ce && clearTimeout(_0x2ba4ce);
+    let _0xdaba4a = setTimeout(async () => {
+      (this["configChangeDebounceTimers"]["delete"](_0x132b11), await this["handleConfigFileChange"](_0x4840c6, _0x7b4842));
+    }, 0x1f4);
+    this['configChangeDebounceTimers']["set"](_0x132b11, _0xdaba4a);
+  }
+  async ["handleConfigFileChange"](_0x4da7c7, _0x124e8d) {
+    try {
+      let _0x17b573 = await tl["readFile"](_0x4da7c7, "utf-8"), _0x49cc9;
+      try {
+        _0x49cc9 = JSON["parse"](_0x17b573);
+      } catch (_0x12a56c) {
+        let _0x384d95 = nt("mcp:errors.invalid_settings_syntax");
+        (console["error"](_0x384d95, _0x12a56c), Ri["window"]["showErrorMessage"](_0x384d95));
+        return;
+      }
+      let _0x5994bf = cKe["safeParse"](_0x49cc9);
+      if (!_0x5994bf['success']) {
+        let _0x28de3b = _0x5994bf["error"]['errors']["map"](_0x4e1fa4 => _0x4e1fa4["path"]["join"]('.') + ':\x20' + _0x4e1fa4["message"])["join"]('\x0a');
+        Ri['window']["showErrorMessage"](nt("mcp:errors.invalid_settings_validation", {
+          'errorMessages': _0x28de3b
+        }));
+        return;
+      }
+      await this["updateServerConnections"](_0x5994bf['data']['mcpServers'] || ({}), _0x124e8d);
+    } catch (_0x1103eb) {
+      _0x1103eb["code"] === "ENOENT" && _0x124e8d === "project" ? (await this['cleanupProjectMcpServers'](), await this['notifyWebviewOfServerChanges'](), Ri["window"]["showInformationMessage"](nt("mcp:info.project_config_deleted"))) : this["showErrorMessage"](nt("mcp:errors.failed_update_project"), _0x1103eb);
+    }
+  }
+  async ["watchProjectMcpFile"]() {
+    if (process.env.NODE_ENV === "test" || !Ri["workspace"]["createFileSystemWatcher"] || (this['projectMcpWatcher'] && (this["projectMcpWatcher"]["dispose"](), this["projectMcpWatcher"] = void 0x0), !Ri["workspace"]['workspaceFolders']?.["length"])) return;
+    let _0x5aeb2b = this["providerRef"]["deref"]()?.["cwd"] ?? Mi(), _0x3d465a = new Ri["RelativePattern"](_0x5aeb2b, '.alpme/mcp.json');
+    this['projectMcpWatcher'] = Ri['workspace']['createFileSystemWatcher'](_0x3d465a);
+    let _0x5996fe = this["projectMcpWatcher"]["onDidChange"](_0x1e9970 => {
+      this["debounceConfigChange"](_0x1e9970["fsPath"], 'project');
+    }), _0x3c3914 = this["projectMcpWatcher"]['onDidCreate'](_0x9990d5 => {
+      this['debounceConfigChange'](_0x9990d5["fsPath"], 'project');
+    }), _0x5b4763 = this["projectMcpWatcher"]["onDidDelete"](async () => {
+      (await this["cleanupProjectMcpServers"](), await this['notifyWebviewOfServerChanges'](), Ri['window']["showInformationMessage"](nt("mcp:info.project_config_deleted")));
+    });
+    this['disposables']["push"](Ri["Disposable"]["from"](_0x5996fe, _0x3c3914, _0x5b4763, this["projectMcpWatcher"]));
+  }
+  async ["updateProjectMcpServers"]() {
+    try {
+      let _0x1d44dd = await this["getProjectMcpPath"]();
+      if (!_0x1d44dd) return;
+      let _0x1da236 = await tl["readFile"](_0x1d44dd, 'utf-8'), _0x5d0a5f;
+      try {
+        _0x5d0a5f = JSON["parse"](_0x1da236);
+      } catch (_0x434361) {
+        let _0x46c4e5 = nt("mcp:errors.invalid_settings_syntax");
+        (console['error'](_0x46c4e5, _0x434361), Ri["window"]["showErrorMessage"](_0x46c4e5));
+        return;
+      }
+      let _0x2d56bf = cKe["safeParse"](_0x5d0a5f);
+      if (_0x2d56bf["success"]) await this["updateServerConnections"](_0x2d56bf["data"]["mcpServers"] || ({}), "project"); else {
+        let _0x160646 = _0x2d56bf["error"]['errors']["map"](_0x563c40 => _0x563c40["path"]['join']('.') + ':\x20' + _0x563c40['message'])["join"]('\x0a');
+        (console["error"]("Invalid project MCP settings format:", _0x160646), Ri["window"]['showErrorMessage'](nt('mcp:errors.invalid_settings_validation', {
+          'errorMessages': _0x160646
+        })));
+      }
+    } catch (_0x4c3479) {
+      this["showErrorMessage"](nt("mcp:errors.failed_update_project"), _0x4c3479);
+    }
+  }
+  async ["cleanupProjectMcpServers"]() {
+    let _0x53e787 = this["connections"]["filter"](_0x32fa33 => _0x32fa33["server"]["source"] === "project");
+    for (let _0x20b4e7 of _0x53e787) await this["deleteConnection"](_0x20b4e7['server']['name'], 'project');
+    await this["updateServerConnections"]({}, 'project', !0x1);
+  }
+  ["getServers"]() {
+    let _0x4f5d2f = this["connections"]['filter'](_0x22194d => !_0x22194d["server"]["disabled"]), _0x1187ff = new Map();
+    for (let _0x635585 of _0x4f5d2f) {
+      let _0x4a3135 = _0x1187ff["get"](_0x635585['server']["name"]);
+      _0x4a3135 ? _0x635585['server']["source"] === "project" && _0x4a3135["source"] !== "project" && _0x1187ff["set"](_0x635585["server"]["name"], _0x635585["server"]) : _0x1187ff["set"](_0x635585["server"]["name"], _0x635585["server"]);
+    }
+    return Array["from"](_0x1187ff["values"]());
+  }
+  ["getAllServers"]() {
+    return this["connections"]["map"](_0x3814b3 => _0x3814b3["server"]);
+  }
+  async ["getMcpServersPath"]() {
+    let _0x59afbb = this["providerRef"]["deref"]();
+    if (!_0x59afbb) throw new Error('Provider\x20not\x20available');
+    return await _0x59afbb["ensureMcpServersDirectoryExists"]();
+  }
+  async ["getMcpSettingsFilePath"]() {
+    let _0x2b5a4a = this["providerRef"]["deref"]();
+    if (!_0x2b5a4a) throw new Error("Provider not available");
+    let _0x2eda17 = YA["join"](await _0x2b5a4a["ensureSettingsDirectoryExists"](), io["mcpSettings"]);
+    return (await _r(_0x2eda17) || await tl["writeFile"](_0x2eda17, "{\n  \"mcpServers\": {\n\n  }\n}"), _0x2eda17);
+  }
+  async ['watchMcpSettingsFile']() {
+    if (process.env.NODE_ENV === 'test' || !Ri['workspace']["createFileSystemWatcher"]) return;
+    this['settingsWatcher'] && (this["settingsWatcher"]["dispose"](), this["settingsWatcher"] = void 0x0);
+    let _0x4b27cc = await this["getMcpSettingsFilePath"](), _0x3f1a82 = Ri["Uri"]["file"](_0x4b27cc), _0x236a87 = new Ri["RelativePattern"](YA["dirname"](_0x4b27cc), YA["basename"](_0x4b27cc));
+    this["settingsWatcher"] = Ri['workspace']["createFileSystemWatcher"](_0x236a87);
+    let _0x2d0a9c = this['settingsWatcher']['onDidChange'](_0x2f7ecc => {
+      Ys(_0x2f7ecc["fsPath"], _0x4b27cc) && this["debounceConfigChange"](_0x4b27cc, 'global');
+    }), _0x44d2fd = this["settingsWatcher"]["onDidCreate"](_0x3de15c => {
+      Ys(_0x3de15c['fsPath'], _0x4b27cc) && this['debounceConfigChange'](_0x4b27cc, "global");
+    });
+    this["disposables"]['push'](Ri['Disposable']["from"](_0x2d0a9c, _0x44d2fd, this['settingsWatcher']));
+  }
+  async ["initializeMcpServers"](_0x1f46b5) {
+    try {
+      let _0x9aae15 = _0x1f46b5 === 'global' ? await this["getMcpSettingsFilePath"]() : await this["getProjectMcpPath"]();
+      if (!_0x9aae15) return;
+      let _0x577ea2 = await tl["readFile"](_0x9aae15, "utf-8"), _0x1b721a = JSON["parse"](_0x577ea2), _0x1ac85b = cKe["safeParse"](_0x1b721a);
+      if (_0x1ac85b["success"]) await this['updateServerConnections'](_0x1ac85b["data"]["mcpServers"] || ({}), _0x1f46b5, !0x1); else {
+        let _0x37d2a4 = _0x1ac85b["error"]["errors"]['map'](_0x46fe19 => _0x46fe19['path']["join"]('.') + ':\x20' + _0x46fe19["message"])["join"]('\x0a');
+        if ((console["error"]("Invalid " + _0x1f46b5 + " MCP settings format:", _0x37d2a4), Ri['window']["showErrorMessage"](nt("mcp:errors.invalid_settings_validation", {
+          'errorMessages': _0x37d2a4
+        })), _0x1f46b5 === "global")) try {
+          await this['updateServerConnections'](_0x1b721a['mcpServers'] || ({}), _0x1f46b5, !0x1);
+        } catch (_0x1db784) {
+          this["showErrorMessage"]("Failed to initialize " + _0x1f46b5 + " MCP servers with raw config", _0x1db784);
+        }
+      }
+    } catch (_0x178109) {
+      if (_0x178109 instanceof SyntaxError) {
+        let _0x2e7b5b = nt("mcp:errors.invalid_settings_syntax");
+        (console["error"](_0x2e7b5b, _0x178109), Ri["window"]['showErrorMessage'](_0x2e7b5b));
+      } else this["showErrorMessage"]("Failed to initialize " + _0x1f46b5 + " MCP servers", _0x178109);
+    }
+  }
+  async ['initializeGlobalMcpServers']() {
+    await this["initializeMcpServers"]("global");
+  }
+  async ['getProjectMcpPath']() {
+    let _0x4d4ee9 = this["providerRef"]['deref']()?.["cwd"] ?? Mi(), _0x55b47c = YA["join"](_0x4d4ee9, '.alpme'), _0x4825c8 = YA["join"](_0x55b47c, "mcp.json");
+    try {
+      return (await tl["access"](_0x4825c8), _0x4825c8);
+    } catch {
+      return null;
+    }
+  }
+  async ["initializeProjectMcpServers"]() {
+    await this['initializeMcpServers']("project");
+  }
+  ["createPlaceholderConnection"](_0x3313fa, _0x2db910, _0x15c1c1, _0x1738b8) {
+    return {
+      'type': "disconnected",
+      'server': {
+        'name': _0x3313fa,
+        'config': JSON["stringify"](_0x2db910),
+        'status': "disconnected",
+        'disabled': _0x1738b8 === "serverDisabled" ? !0x0 : _0x2db910['disabled'],
+        'source': _0x15c1c1,
+        'projectPath': _0x15c1c1 === "project" ? Ri["workspace"]["workspaceFolders"]?.[0x0]?.["uri"]['fsPath'] : void 0x0,
+        'errorHistory': []
+      },
+      'client': null,
+      'transport': null
+    };
+  }
+  async ['isMcpEnabled']() {
+    let _0x2960e6 = this["providerRef"]["deref"]();
+    return _0x2960e6 ? (await _0x2960e6["getState"]())["mcpEnabled"] ?? !0x0 : !0x0;
+  }
+  async ['connectToServer'](_0x4afe6e, _0x57d3a6, _0x4b9140 = "global") {
+    await this["deleteConnection"](_0x4afe6e, _0x4b9140);
+    let _0xd5d480 = m7(_0x4afe6e);
+    if ((this["sanitizedNameRegistry"]["set"](_0xd5d480, _0x4afe6e), !await this['isMcpEnabled']())) {
+      let _0x293feb = this['createPlaceholderConnection'](_0x4afe6e, _0x57d3a6, _0x4b9140, "mcpDisabled");
+      this["connections"]["push"](_0x293feb);
+      return;
+    }
+    if (_0x57d3a6["disabled"]) {
+      let _0x3a151a = this["createPlaceholderConnection"](_0x4afe6e, _0x57d3a6, _0x4b9140, "serverDisabled");
+      this["connections"]["push"](_0x3a151a);
+      return;
+    }
+    this["setupFileWatcher"](_0x4afe6e, _0x57d3a6, _0x4b9140);
+    try {
+      let _0x34dac3 = new Ape({
+        'name': 'Alpme',
+        'version': this["providerRef"]['deref']()?.["context"]["extension"]?.['packageJSON']?.["version"] ?? '1.0.0'
+      }, {
+        'capabilities': {}
+      }), _0x43651f, _0x5dd2be = await R1r(_0x57d3a6, {
+        'env': process.env,
+        'workspaceFolder': Ri["workspace"]["workspaceFolders"]?.[0x0]?.["uri"]["fsPath"] ?? ''
+      });
+      if (_0x5dd2be['type'] === 'stdio') {
+        let _0x1eb987 = process["platform"] === "win32", _0x490ff2 = _0x5dd2be["command"]["toLowerCase"]() === "cmd.exe" || _0x5dd2be['command']['toLowerCase']() === 'cmd', _0x464690 = _0x1eb987 && !_0x490ff2 ? "cmd.exe" : _0x5dd2be['command'], _0x5135e5 = _0x1eb987 && !_0x490ff2 ? ['/c', _0x5dd2be["command"], ..._0x5dd2be["args"] || []] : _0x5dd2be["args"];
+        (_0x43651f = new Npe({
+          'command': _0x464690,
+          'args': _0x5135e5,
+          'cwd': _0x5dd2be["cwd"],
+          'env': {
+            ...AJe(),
+            ..._0x5dd2be["env"] || ({})
+          },
+          'stderr': 'pipe'
+        }), _0x43651f['onerror'] = async _0x3919f0 => {
+          console["error"]("Transport error for \"" + _0x4afe6e + '\x22:', _0x3919f0);
+          let _0x2c97e0 = this['findConnection'](_0x4afe6e, _0x4b9140);
+          (_0x2c97e0 && (_0x2c97e0["server"]["status"] = "disconnected", this["appendErrorMessage"](_0x2c97e0, _0x3919f0 instanceof Error ? _0x3919f0["message"] : '' + _0x3919f0)), await this["notifyWebviewOfServerChanges"]());
+        }, _0x43651f["onclose"] = async () => {
+          let _0x26be4e = this["findConnection"](_0x4afe6e, _0x4b9140);
+          (_0x26be4e && (_0x26be4e["server"]['status'] = 'disconnected'), await this["notifyWebviewOfServerChanges"]());
+        }, await _0x43651f["start"]());
+        let _0x3feee6 = _0x43651f['stderr'];
+        _0x3feee6 ? _0x3feee6['on']('data', async _0x4d91b1 => {
+          let _0x3e252b = _0x4d91b1["toString"]();
+          if ((/INFO/i)["test"](_0x3e252b)) console["log"]("Server \"" + _0x4afe6e + '\x22\x20info:', _0x3e252b); else {
+            console['error']("Server \"" + _0x4afe6e + "\" stderr:", _0x3e252b);
+            let _0x572e42 = this['findConnection'](_0x4afe6e, _0x4b9140);
+            _0x572e42 && (this["appendErrorMessage"](_0x572e42, _0x3e252b), _0x572e42['server']["status"] === 'disconnected' && await this["notifyWebviewOfServerChanges"]());
+          }
+        }) : console['error']("No stderr stream for " + _0x4afe6e);
+      } else {
+        if (_0x5dd2be["type"] === "streamable-http") (_0x43651f = new Spe(new URL(_0x5dd2be["url"]), {
+          'requestInit': {
+            'headers': _0x5dd2be['headers']
+          }
+        }), _0x43651f["onerror"] = async _0x52b3fb => {
+          console["error"]("Transport error for \"" + _0x4afe6e + "\" (streamable-http):", _0x52b3fb);
+          let _0x48173c = this["findConnection"](_0x4afe6e, _0x4b9140);
+          (_0x48173c && (_0x48173c["server"]["status"] = 'disconnected', this["appendErrorMessage"](_0x48173c, _0x52b3fb instanceof Error ? _0x52b3fb['message'] : '' + _0x52b3fb)), await this['notifyWebviewOfServerChanges']());
+        }, _0x43651f["onclose"] = async () => {
+          let _0x42a9ae = this["findConnection"](_0x4afe6e, _0x4b9140);
+          (_0x42a9ae && (_0x42a9ae["server"]["status"] = 'disconnected'), await this["notifyWebviewOfServerChanges"]());
+        }); else {
+          if (_0x5dd2be["type"] === 'sse') {
+            let _0x58de3a = {
+              'requestInit': {
+                'headers': _0x5dd2be["headers"]
+              }
+            }, _0x1a210e = {
+              'max_retry_time': 0x1388,
+              'withCredentials': !!_0x5dd2be["headers"]?.['Authorization'],
+              'fetch': (_0xe4edc8, _0x3e9104) => {
+                let _0x420f4d = new Headers({
+                  ..._0x3e9104?.['headers'] || ({}),
+                  ..._0x5dd2be['headers'] || ({})
+                });
+                return fetch(_0xe4edc8, {
+                  ..._0x3e9104,
+                  'headers': _0x420f4d
+                });
+              }
+            };
+            (global["EventSource"] = s1r, _0x43651f = new Lpe(new URL(_0x5dd2be["url"]), {
+              ..._0x58de3a,
+              'eventSourceInit': _0x1a210e
+            }), _0x43651f["onerror"] = async _0xc2d27c => {
+              console["error"]("Transport error for \"" + _0x4afe6e + '\x22:', _0xc2d27c);
+              let _0x30f08f = this["findConnection"](_0x4afe6e, _0x4b9140);
+              (_0x30f08f && (_0x30f08f['server']["status"] = "disconnected", this['appendErrorMessage'](_0x30f08f, _0xc2d27c instanceof Error ? _0xc2d27c["message"] : '' + _0xc2d27c)), await this["notifyWebviewOfServerChanges"]());
+            }, _0x43651f["onclose"] = async () => {
+              let _0x250f14 = this['findConnection'](_0x4afe6e, _0x4b9140);
+              (_0x250f14 && (_0x250f14["server"]["status"] = 'disconnected'), await this["notifyWebviewOfServerChanges"]());
+            });
+          } else throw new Error('Unsupported\x20MCP\x20server\x20type:\x20' + _0x5dd2be["type"]);
+        }
+      }
+      _0x5dd2be["type"] === 'stdio' && (_0x43651f['start'] = async () => {});
+      let _0x1a33fd = {
+        'type': "connected",
+        'server': {
+          'name': _0x4afe6e,
+          'config': JSON["stringify"](_0x5dd2be),
+          'status': "connecting",
+          'disabled': _0x5dd2be["disabled"],
+          'source': _0x4b9140,
+          'projectPath': _0x4b9140 === "project" ? Ri["workspace"]['workspaceFolders']?.[0x0]?.['uri']["fsPath"] : void 0x0,
+          'errorHistory': []
+        },
+        'client': _0x34dac3,
+        'transport': _0x43651f
+      };
+      (this["connections"]["push"](_0x1a33fd), await _0x34dac3["connect"](_0x43651f), _0x1a33fd["server"]["status"] = 'connected', _0x1a33fd["server"]['error'] = '', _0x1a33fd["server"]["instructions"] = _0x34dac3['getInstructions'](), _0x1a33fd["server"]["tools"] = await this["fetchToolsList"](_0x4afe6e, _0x4b9140), _0x1a33fd["server"]["resources"] = await this['fetchResourcesList'](_0x4afe6e, _0x4b9140), _0x1a33fd["server"]["resourceTemplates"] = await this["fetchResourceTemplatesList"](_0x4afe6e, _0x4b9140));
+    } catch (_0x486351) {
+      let _0xa7721f = this["findConnection"](_0x4afe6e, _0x4b9140);
+      throw (_0xa7721f && (_0xa7721f['server']["status"] = "disconnected", this["appendErrorMessage"](_0xa7721f, _0x486351 instanceof Error ? _0x486351["message"] : '' + _0x486351)), _0x486351);
+    }
+  }
+  ["appendErrorMessage"](_0x9d7777, _0x4b370e, _0x356601 = "error") {
+    let _0x1fa727 = _0x4b370e["length"] > 0x3e8 ? _0x4b370e["substring"](0x0, 0x3e8) + "...(error message truncated)" : _0x4b370e;
+    (_0x9d7777["server"]["errorHistory"] || (_0x9d7777['server']["errorHistory"] = []), _0x9d7777["server"]['errorHistory']["push"]({
+      'message': _0x1fa727,
+      'timestamp': Date["now"](),
+      'level': _0x356601
+    }), _0x9d7777["server"]['errorHistory']["length"] > 0x64 && (_0x9d7777["server"]["errorHistory"] = _0x9d7777["server"]['errorHistory']["slice"](-0x64)), _0x9d7777["server"]["error"] = _0x1fa727);
+  }
+  ["findConnection"](_0x45ac47, _0x3d7612) {
+    if (_0x3d7612 !== void 0x0) return this['connections']["find"](_0xa30569 => _0xa30569["server"]["name"] === _0x45ac47 && _0xa30569["server"]["source"] === _0x3d7612);
+    let _0xeeb3a9 = this["connections"]["find"](_0x1f7ba8 => _0x1f7ba8["server"]["name"] === _0x45ac47 && _0x1f7ba8["server"]['source'] === 'project');
+    return _0xeeb3a9 || this["connections"]["find"](_0x3d96f0 => _0x3d96f0["server"]["name"] === _0x45ac47 && (_0x3d96f0["server"]["source"] === 'global' || !_0x3d96f0['server']["source"]));
+  }
+  ["findServerNameBySanitizedName"](_0x4b0946) {
+    let _0x29b6ad = this["connections"]["find"](_0x420480 => _0x420480['server']["name"] === _0x4b0946);
+    if (_0x29b6ad) return _0x29b6ad['server']["name"];
+    let _0x874a19 = this["sanitizedNameRegistry"]["get"](_0x4b0946);
+    if (_0x874a19) return _0x874a19;
+    let _0x140729 = this["connections"]["find"](_0x47f206 => jpe(_0x47f206["server"]["name"], _0x4b0946));
+    return _0x140729 ? _0x140729["server"]["name"] : null;
+  }
+  async ["fetchToolsList"](_0x308b2d, _0x102489) {
+    try {
+      let _0x36cfde = this["findConnection"](_0x308b2d, _0x102489);
+      if (!_0x36cfde || _0x36cfde["type"] !== "connected") return [];
+      let _0x3d2b93 = await _0x36cfde["client"]["request"]({
+        'method': "tools/list"
+      }, r7), _0x5525f2 = _0x36cfde["server"]['source'] || "global", _0x484f27, _0x5b97f3 = [], _0x46600a = [];
+      try {
+        let _0x30e289 = {};
+        if (_0x5525f2 === "project") {
+          let _0x1e1a2d = await this["getProjectMcpPath"]();
+          if (_0x1e1a2d) {
+            _0x484f27 = _0x1e1a2d;
+            let _0x323883 = await tl["readFile"](_0x484f27, 'utf-8');
+            _0x30e289 = JSON["parse"](_0x323883);
+          }
+        } else {
+          _0x484f27 = await this["getMcpSettingsFilePath"]();
+          let _0x5c8c7b = await tl["readFile"](_0x484f27, "utf-8");
+          _0x30e289 = JSON["parse"](_0x5c8c7b);
+        }
+        _0x30e289 && (_0x5b97f3 = _0x30e289["mcpServers"]?.[_0x308b2d]?.["alwaysAllow"] || [], _0x46600a = _0x30e289["mcpServers"]?.[_0x308b2d]?.["disabledTools"] || []);
+      } catch (_0xd33778) {
+        console["error"]('Failed\x20to\x20read\x20tool\x20configuration\x20for\x20' + _0x308b2d + ':', _0xd33778);
+      }
+      let _0x3a1308 = _0x5b97f3["includes"]('*');
+      return (_0x3d2b93?.['tools'] || [])["map"](_0xaa85a2 => ({
+        ..._0xaa85a2,
+        'alwaysAllow': _0x3a1308 || _0x5b97f3["includes"](_0xaa85a2["name"]),
+        'enabledForPrompt': !_0x46600a["includes"](_0xaa85a2["name"])
+      }));
+    } catch (_0x541b24) {
+      return (console['error']('Failed\x20to\x20fetch\x20tools\x20for\x20' + _0x308b2d + ':', _0x541b24), []);
+    }
+  }
+  async ["fetchResourcesList"](_0x1c2bd4, _0x2afc5f) {
+    try {
+      let _0xe87b6a = this["findConnection"](_0x1c2bd4, _0x2afc5f);
+      return !_0xe87b6a || _0xe87b6a["type"] !== "connected" ? [] : (await _0xe87b6a['client']["request"]({
+        'method': "resources/list"
+      }, $P))?.["resources"] || [];
+    } catch {
+      return [];
+    }
+  }
+  async ["fetchResourceTemplatesList"](_0x386ffa, _0x46ebf7) {
+    try {
+      let _0x3f9fe5 = this["findConnection"](_0x386ffa, _0x46ebf7);
+      return !_0x3f9fe5 || _0x3f9fe5["type"] !== 'connected' ? [] : (await _0x3f9fe5["client"]['request']({
+        'method': "resources/templates/list"
+      }, e7))?.["resourceTemplates"] || [];
+    } catch {
+      return [];
+    }
+  }
+  async ["deleteConnection"](_0xbad785, _0x178a9d) {
+    this["removeFileWatchersForServer"](_0xbad785);
+    let _0x9db977 = _0x178a9d ? this["connections"]["filter"](_0x5750f3 => _0x5750f3["server"]['name'] === _0xbad785 && _0x5750f3["server"]["source"] === _0x178a9d) : this['connections']["filter"](_0x15fd63 => _0x15fd63['server']['name'] === _0xbad785);
+    for (let _0x74cf0e of _0x9db977) try {
+      _0x74cf0e["type"] === "connected" && (await _0x74cf0e['transport']['close'](), await _0x74cf0e['client']["close"]());
+    } catch (_0x5a3074) {
+      console["error"]('Failed\x20to\x20close\x20transport\x20for\x20' + _0xbad785 + ':', _0x5a3074);
+    }
+    if ((this["connections"] = this["connections"]['filter'](_0x13ab63 => !!(_0x13ab63["server"]["name"] !== _0xbad785 || _0x178a9d && _0x13ab63["server"]["source"] !== _0x178a9d)), this["connections"]["filter"](_0xe4de2 => _0xe4de2['server']["name"] === _0xbad785)["length"] === 0x0)) {
+      let _0x224dc0 = m7(_0xbad785);
+      this["sanitizedNameRegistry"]['delete'](_0x224dc0);
+    }
+  }
+  async ["updateServerConnections"](_0x5d637d, _0x7a62a7 = "global", _0x28e3d5 = !0x0) {
+    (_0x28e3d5 && (this["isConnecting"] = !0x0), this["removeAllFileWatchers"]());
+    let _0x11acf7 = this["connections"]['filter'](_0x287e9d => _0x287e9d["server"]["source"] === _0x7a62a7 || !_0x287e9d['server']["source"] && _0x7a62a7 === 'global'), _0x3c3cbd = new Set(_0x11acf7["map"](_0x27ee94 => _0x27ee94["server"]['name'])), _0x1cbc37 = new Set(Object["keys"](_0x5d637d));
+    for (let _0x3eaa20 of _0x3c3cbd) _0x1cbc37['has'](_0x3eaa20) || await this['deleteConnection'](_0x3eaa20, _0x7a62a7);
+    for (let [_0x20ba13, _0x3d4bc8] of Object['entries'](_0x5d637d)) {
+      let _0x274b29 = this["findConnection"](_0x20ba13, _0x7a62a7), _0x269435;
+      try {
+        _0x269435 = this["validateServerConfig"](_0x3d4bc8, _0x20ba13);
+      } catch (_0x4e8954) {
+        this['showErrorMessage']("Invalid configuration for MCP server \"" + _0x20ba13 + '\x22', _0x4e8954);
+        continue;
+      }
+      if (_0x274b29) {
+        if (!(0x0, aCr["default"])(JSON['parse'](_0x274b29["server"]["config"]), _0x3d4bc8)) try {
+          (_0x269435["disabled"] || this['setupFileWatcher'](_0x20ba13, _0x269435, _0x7a62a7), await this["deleteConnection"](_0x20ba13, _0x7a62a7), await this["connectToServer"](_0x20ba13, _0x269435, _0x7a62a7));
+        } catch (_0x4077c4) {
+          this["showErrorMessage"]("Failed to reconnect MCP server " + _0x20ba13, _0x4077c4);
+        }
+      } else try {
+        (_0x269435["disabled"] || this['setupFileWatcher'](_0x20ba13, _0x269435, _0x7a62a7), await this['connectToServer'](_0x20ba13, _0x269435, _0x7a62a7));
+      } catch (_0x5aadcb) {
+        this["showErrorMessage"]("Failed to connect to new MCP server " + _0x20ba13, _0x5aadcb);
+      }
+    }
+    (await this["notifyWebviewOfServerChanges"](), _0x28e3d5 && (this["isConnecting"] = !0x1));
+  }
+  ["setupFileWatcher"](_0x3745e5, _0x267de5, _0x21b62e = "global") {
+    this['fileWatchers']["has"](_0x3745e5) || this['fileWatchers']["set"](_0x3745e5, []);
+    let _0x25813b = this["fileWatchers"]["get"](_0x3745e5) || [];
+    if (_0x267de5["type"] === "stdio") {
+      if (_0x267de5["watchPaths"] && _0x267de5["watchPaths"]['length'] > 0x0) {
+        let _0x27c9ec = qJe["watch"](_0x267de5['watchPaths'], {});
+        (_0x27c9ec['on']('change', async _0x52d1 => {
+          try {
+            await this["restartConnection"](_0x3745e5, _0x21b62e);
+          } catch (_0x23eb85) {
+            console['error']("Failed to restart server " + _0x3745e5 + '\x20after\x20change\x20in\x20' + _0x52d1 + ':', _0x23eb85);
+          }
+        }), _0x25813b['push'](_0x27c9ec));
+      }
+      let _0x201941 = _0x267de5["args"]?.["find"](_0x400835 => _0x400835["includes"]("build/index.js"));
+      if (_0x201941) {
+        let _0x1b81d5 = qJe["watch"](_0x201941, {});
+        (_0x1b81d5['on']('change', async () => {
+          try {
+            await this["restartConnection"](_0x3745e5, _0x21b62e);
+          } catch (_0x23ec2d) {
+            console["error"]("Failed to restart server " + _0x3745e5 + '\x20after\x20change\x20in\x20' + _0x201941 + ':', _0x23ec2d);
+          }
+        }), _0x25813b['push'](_0x1b81d5));
+      }
+      _0x25813b['length'] > 0x0 && this["fileWatchers"]["set"](_0x3745e5, _0x25813b);
+    }
+  }
+  ["removeAllFileWatchers"]() {
+    (this["fileWatchers"]["forEach"](_0x61091b => _0x61091b["forEach"](_0x150d18 => _0x150d18['close']())), this["fileWatchers"]['clear']());
+  }
+  ["removeFileWatchersForServer"](_0x2ea8f6) {
+    let _0x56d985 = this["fileWatchers"]["get"](_0x2ea8f6);
+    _0x56d985 && (_0x56d985["forEach"](_0x171efd => _0x171efd["close"]()), this["fileWatchers"]["delete"](_0x2ea8f6));
+  }
+  async ["restartConnection"](_0x136ebc, _0xfcb690) {
+    if ((this["isConnecting"] = !0x0, !await this['isMcpEnabled']())) {
+      this["isConnecting"] = !0x1;
+      return;
+    }
+    let _0xd570f9 = this['findConnection'](_0x136ebc, _0xfcb690), _0xbdd564 = _0xd570f9?.["server"]["config"];
+    if (_0xbdd564) {
+      (Ri["window"]["showInformationMessage"](nt('mcp:info.server_restarting', {
+        'serverName': _0x136ebc
+      })), _0xd570f9["server"]["status"] = "connecting", _0xd570f9['server']["error"] = '', await this["notifyWebviewOfServerChanges"](), await zo(0x1f4));
+      try {
+        await this['deleteConnection'](_0x136ebc, _0xd570f9["server"]['source']);
+        let _0x109334 = JSON["parse"](_0xbdd564);
+        try {
+          let _0x52f79a = this["validateServerConfig"](_0x109334, _0x136ebc);
+          (await this["connectToServer"](_0x136ebc, _0x52f79a, _0xd570f9['server']["source"] || 'global'), Ri['window']["showInformationMessage"](nt("mcp:info.server_connected", {
+            'serverName': _0x136ebc
+          })));
+        } catch (_0x1f5b59) {
+          this["showErrorMessage"]("Invalid configuration for MCP server \"" + _0x136ebc + '\x22', _0x1f5b59);
+        }
+      } catch (_0x5858b2) {
+        this['showErrorMessage']("Failed to restart " + _0x136ebc + " MCP server connection", _0x5858b2);
+      }
+    }
+    (await this["notifyWebviewOfServerChanges"](), this["isConnecting"] = !0x1);
+  }
+  async ['refreshAllConnections']() {
+    if (this['isConnecting']) return;
+    if (!await this["isMcpEnabled"]()) {
+      let _0x156bb5 = [...this["connections"]];
+      for (let _0xd6558 of _0x156bb5) await this["deleteConnection"](_0xd6558['server']["name"], _0xd6558["server"]["source"]);
+      (await this['initializeMcpServers']("global"), await this["initializeMcpServers"]("project"), await this["notifyWebviewOfServerChanges"]());
+      return;
+    }
+    this['isConnecting'] = !0x0;
+    try {
+      let _0x3f5a40 = await this["getMcpSettingsFilePath"](), _0xac7dc2 = {};
+      try {
+        let _0x4ba1f1 = await tl["readFile"](_0x3f5a40, "utf-8");
+        _0xac7dc2 = JSON["parse"](_0x4ba1f1)["mcpServers"] || ({});
+        let _0x16e457 = Object["keys"](_0xac7dc2);
+      } catch (_0x26a2c4) {
+        console['log']('Error\x20reading\x20global\x20MCP\x20config:', _0x26a2c4);
+      }
+      let _0x23eb43 = await this["getProjectMcpPath"](), _0x1d4586 = {};
+      if (_0x23eb43) try {
+        let _0x59c7f0 = await tl["readFile"](_0x23eb43, 'utf-8');
+        _0x1d4586 = JSON['parse'](_0x59c7f0)["mcpServers"] || ({});
+        let _0x2d0788 = Object['keys'](_0x1d4586);
+      } catch (_0xd7b07e) {
+        console["log"]("Error reading project MCP config:", _0xd7b07e);
+      }
+      let _0x2cb14f = [...this["connections"]];
+      for (let _0x16655f of _0x2cb14f) await this["deleteConnection"](_0x16655f['server']['name'], _0x16655f["server"]["source"]);
+      (await this['initializeMcpServers']('global'), await this['initializeMcpServers']('project'), await zo(0x64), await this['notifyWebviewOfServerChanges']());
+    } catch (_0x492581) {
+      this["showErrorMessage"]("Failed to refresh MCP servers", _0x492581);
+    } finally {
+      this["isConnecting"] = !0x1;
+    }
+  }
+  async ['notifyWebviewOfServerChanges']() {
+    let _0x3bd767 = await this['getMcpSettingsFilePath'](), _0x2f2000 = await tl["readFile"](_0x3bd767, "utf-8"), _0xc3907 = JSON["parse"](_0x2f2000), _0x5ee783 = Object["keys"](_0xc3907["mcpServers"] || ({})), _0x5e66e5 = await this['getProjectMcpPath'](), _0x31444b = [];
+    if (_0x5e66e5) try {
+      let _0x1055af = await tl['readFile'](_0x5e66e5, "utf-8"), _0xf7c1d1 = JSON['parse'](_0x1055af);
+      _0x31444b = Object['keys'](_0xf7c1d1['mcpServers'] || ({}));
+    } catch {}
+    let _0x1184ef = [...this['connections']]["sort"]((_0x42464c, _0x2fb922) => {
+      let _0x4f3025 = _0x42464c["server"]["source"] === 'global' || !_0x42464c["server"]["source"], _0x50a2ee = _0x2fb922["server"]['source'] === "global" || !_0x2fb922["server"]["source"];
+      if (_0x4f3025 && _0x50a2ee) {
+        let _0x24763f = _0x5ee783['indexOf'](_0x42464c["server"]["name"]), _0x175537 = _0x5ee783['indexOf'](_0x2fb922["server"]["name"]);
+        return _0x24763f - _0x175537;
+      } else {
+        if (!_0x4f3025 && !_0x50a2ee) {
+          let _0x5227d5 = _0x31444b["indexOf"](_0x42464c["server"]['name']), _0x260f7c = _0x31444b["indexOf"](_0x2fb922["server"]['name']);
+          return _0x5227d5 - _0x260f7c;
+        }
+      }
+      return _0x4f3025 ? 0x1 : -0x1;
+    }), _0x96133f = this["providerRef"]["deref"]();
+    if (_0x96133f) {
+      let _0x210d63 = {
+        'type': 'mcpServers',
+        'mcpServers': _0x1184ef["map"](_0x520fa8 => _0x520fa8["server"])
+      };
+      try {
+        await _0x96133f['postMessageToWebview'](_0x210d63);
+      } catch (_0x4df3f2) {
+        console["error"]("[McpHub] Error calling targetProvider.postMessageToWebview:", _0x4df3f2);
+      }
+    } else console['error']("[McpHub] No target provider available (neither from getInstance nor providerRef) - cannot send mcpServers message to webview");
+  }
+  async ["toggleServerDisabled"](_0x54eb1e, _0x29175f, _0x3182dc) {
+    try {
+      let _0x56e8a2 = this["findConnection"](_0x54eb1e, _0x3182dc);
+      if (!_0x56e8a2) throw new Error("Server " + _0x54eb1e + (_0x3182dc ? '\x20with\x20source\x20' + _0x3182dc : '') + '\x20not\x20found');
+      let _0x3fd97d = _0x56e8a2["server"]["source"] || 'global';
+      if ((await this["updateServerConfig"](_0x54eb1e, {
+        'disabled': _0x29175f
+      }, _0x3fd97d), _0x56e8a2)) try {
+        if ((_0x56e8a2["server"]["disabled"] = _0x29175f, _0x29175f && _0x56e8a2['server']["status"] === "connected")) {
+          (this["removeFileWatchersForServer"](_0x54eb1e), await this['deleteConnection'](_0x54eb1e, _0x3fd97d));
+          let _0x5407f1 = await this["readServerConfigFromFile"](_0x54eb1e, _0x3fd97d);
+          await this['connectToServer'](_0x54eb1e, _0x5407f1, _0x3fd97d);
+        } else {
+          if (!_0x29175f && _0x56e8a2["server"]["status"] === "disconnected") {
+            let _0x845e2a = await this["readServerConfigFromFile"](_0x54eb1e, _0x3fd97d);
+            (await this["deleteConnection"](_0x54eb1e, _0x3fd97d), await this["connectToServer"](_0x54eb1e, _0x845e2a, _0x3fd97d));
+          } else _0x56e8a2["server"]["status"] === "connected" && (_0x56e8a2["server"]['tools'] = await this['fetchToolsList'](_0x54eb1e, _0x3fd97d), _0x56e8a2["server"]["resources"] = await this["fetchResourcesList"](_0x54eb1e, _0x3fd97d), _0x56e8a2["server"]['resourceTemplates'] = await this["fetchResourceTemplatesList"](_0x54eb1e, _0x3fd97d));
+        }
+      } catch (_0x3b75e0) {
+        console["error"]('Failed\x20to\x20refresh\x20capabilities\x20for\x20' + _0x54eb1e + ':', _0x3b75e0);
+      }
+      await this["notifyWebviewOfServerChanges"]();
+    } catch (_0x3124ca) {
+      throw (this["showErrorMessage"]("Failed to update server " + _0x54eb1e + " state", _0x3124ca), _0x3124ca);
+    }
+  }
+  async ["readServerConfigFromFile"](_0x290e5d, _0xefa3f3 = "global") {
+    let _0x44cc1b;
+    if (_0xefa3f3 === 'project') {
+      let _0x3e4043 = await this["getProjectMcpPath"]();
+      if (!_0x3e4043) throw new Error('Project\x20MCP\x20configuration\x20file\x20not\x20found');
+      _0x44cc1b = _0x3e4043;
+    } else _0x44cc1b = await this["getMcpSettingsFilePath"]();
+    try {
+      await tl["access"](_0x44cc1b);
+    } catch (_0x48f69e) {
+      throw (console["error"]("Settings file not accessible:", _0x48f69e), new Error('Settings\x20file\x20not\x20accessible'));
+    }
+    let _0x5ab6fe = await tl["readFile"](_0x44cc1b, "utf-8"), _0x5206d0 = JSON['parse'](_0x5ab6fe);
+    if (!_0x5206d0 || typeof _0x5206d0 != "object") throw new Error("Invalid config structure");
+    if (!_0x5206d0["mcpServers"] || typeof _0x5206d0["mcpServers"] != "object") throw new Error("No mcpServers section in config");
+    if (!_0x5206d0['mcpServers'][_0x290e5d]) throw new Error("Server " + _0x290e5d + '\x20not\x20found\x20in\x20config');
+    return this["validateServerConfig"](_0x5206d0["mcpServers"][_0x290e5d], _0x290e5d);
+  }
+  async ["updateServerConfig"](_0x4f5246, _0x18cc7c, _0x1970fa = "global") {
+    let _0x1e8501;
+    if (_0x1970fa === "project") {
+      let _0x19175f = await this['getProjectMcpPath']();
+      if (!_0x19175f) throw new Error("Project MCP configuration file not found");
+      _0x1e8501 = _0x19175f;
+    } else _0x1e8501 = await this['getMcpSettingsFilePath']();
+    try {
+      await tl["access"](_0x1e8501);
+    } catch (_0x5bf8b7) {
+      throw (console["error"]("Settings file not accessible:", _0x5bf8b7), new Error("Settings file not accessible"));
+    }
+    let _0x561863 = await tl["readFile"](_0x1e8501, 'utf-8'), _0x44bac9 = JSON["parse"](_0x561863);
+    if (!_0x44bac9 || typeof _0x44bac9 != "object") throw new Error("Invalid config structure");
+    ((!_0x44bac9["mcpServers"] || typeof _0x44bac9['mcpServers'] != "object") && (_0x44bac9["mcpServers"] = {}), _0x44bac9["mcpServers"][_0x4f5246] || (_0x44bac9['mcpServers'][_0x4f5246] = {}));
+    let _0x3f139e = {
+      ..._0x44bac9["mcpServers"][_0x4f5246],
+      ..._0x18cc7c
+    };
+    (_0x3f139e["alwaysAllow"] || (_0x3f139e['alwaysAllow'] = []), _0x44bac9['mcpServers'][_0x4f5246] = _0x3f139e);
+    let _0x89698f = {
+      'mcpServers': _0x44bac9["mcpServers"]
+    };
+    (this["flagResetTimer"] && clearTimeout(this["flagResetTimer"]), this["isProgrammaticUpdate"] = !0x0);
+    try {
+      await Es(_0x1e8501, _0x89698f, {
+        'prettyPrint': !0x0
+      });
+    } finally {
+      this['flagResetTimer'] = setTimeout(() => {
+        (this['isProgrammaticUpdate'] = !0x1, this["flagResetTimer"] = void 0x0);
+      }, 0x258);
+    }
+  }
+  async ["updateServerTimeout"](_0x235f08, _0x4a2dc3, _0x1d64df) {
+    try {
+      let _0x157ca8 = this["findConnection"](_0x235f08, _0x1d64df);
+      if (!_0x157ca8) throw new Error("Server " + _0x235f08 + (_0x1d64df ? " with source " + _0x1d64df : '') + '\x20not\x20found');
+      (await this["updateServerConfig"](_0x235f08, {
+        'timeout': _0x4a2dc3
+      }, _0x157ca8["server"]["source"] || "global"), await this["notifyWebviewOfServerChanges"]());
+    } catch (_0x28ef61) {
+      throw (this["showErrorMessage"]('Failed\x20to\x20update\x20server\x20' + _0x235f08 + " timeout settings", _0x28ef61), _0x28ef61);
+    }
+  }
+  async ['deleteServer'](_0x32a3fd, _0x1fdbe3) {
+    try {
+      let _0x271f60 = this["findConnection"](_0x32a3fd, _0x1fdbe3);
+      if (!_0x271f60) throw new Error("Server " + _0x32a3fd + (_0x1fdbe3 ? '\x20with\x20source\x20' + _0x1fdbe3 : '') + " not found");
+      let _0x21f0bb = _0x271f60["server"]['source'] || "global", _0xd7e45d = _0x21f0bb === 'project', _0x2aeb71;
+      if (_0xd7e45d) {
+        let _0xd67a3b = await this["getProjectMcpPath"]();
+        if (!_0xd67a3b) throw new Error('Project\x20MCP\x20configuration\x20file\x20not\x20found');
+        _0x2aeb71 = _0xd67a3b;
+      } else _0x2aeb71 = await this["getMcpSettingsFilePath"]();
+      try {
+        await tl["access"](_0x2aeb71);
+      } catch {
+        throw new Error("Settings file not accessible");
+      }
+      let _0x20f1fc = await tl['readFile'](_0x2aeb71, "utf-8"), _0x5b71a1 = JSON["parse"](_0x20f1fc);
+      if (!_0x5b71a1 || typeof _0x5b71a1 != "object") throw new Error("Invalid config structure");
+      if (((!_0x5b71a1['mcpServers'] || typeof _0x5b71a1["mcpServers"] != "object") && (_0x5b71a1["mcpServers"] = {}), _0x5b71a1["mcpServers"][_0x32a3fd])) {
+        delete _0x5b71a1["mcpServers"][_0x32a3fd];
+        let _0x901775 = {
+          'mcpServers': _0x5b71a1["mcpServers"]
+        };
+        (await Es(_0x2aeb71, _0x901775, {
+          'prettyPrint': !0x0
+        }), await this['updateServerConnections'](_0x5b71a1["mcpServers"], _0x21f0bb), Ri['window']["showInformationMessage"](nt('mcp:info.server_deleted', {
+          'serverName': _0x32a3fd
+        })));
+      } else Ri["window"]["showWarningMessage"](nt("mcp:info.server_not_found", {
+        'serverName': _0x32a3fd
+      }));
+    } catch (_0x51612f) {
+      throw (this["showErrorMessage"]("Failed to delete MCP server " + _0x32a3fd, _0x51612f), _0x51612f);
+    }
+  }
+  async ['readResource'](_0x10ad6d, _0x567a3f, _0x340831) {
+    let _0x419d31 = this["findConnection"](_0x10ad6d, _0x340831);
+    if (!_0x419d31 || _0x419d31["type"] !== "connected") throw new Error("No connection found for server: " + _0x10ad6d + (_0x340831 ? " with source " + _0x340831 : ''));
+    if (_0x419d31["server"]["disabled"]) throw new Error('Server\x20\x22' + _0x10ad6d + "\" is disabled");
+    return await _0x419d31["client"]['request']({
+      'method': "resources/read",
+      'params': {
+        'uri': _0x567a3f
+      }
+    }, t7);
+  }
+  async ["callTool"](_0x5b0951, _0x49ad9a, _0x1841fc, _0x38be27) {
+    let _0x340c2d = this["findConnection"](_0x5b0951, _0x38be27);
+    if (!_0x340c2d || _0x340c2d["type"] !== "connected") throw new Error("No connection found for server: " + _0x5b0951 + (_0x38be27 ? " with source " + _0x38be27 : '') + ". Please make sure to use MCP servers available under 'Connected MCP Servers'.");
+    if (_0x340c2d["server"]["disabled"]) throw new Error("Server \"" + _0x5b0951 + "\" is disabled and cannot be used");
+    let _0xcdc58c;
+    try {
+      _0xcdc58c = (uKe["parse"](JSON["parse"](_0x340c2d["server"]["config"]))['timeout'] ?? 0x3c) * 0x3e8;
+    } catch (_0x3b1515) {
+      (console["error"]("Failed to parse server config for timeout:", _0x3b1515), _0xcdc58c = 0x3c * 0x3e8);
+    }
+    return await _0x340c2d["client"]["request"]({
+      'method': 'tools/call',
+      'params': {
+        'name': _0x49ad9a,
+        'arguments': _0x1841fc
+      }
+    }, pO, {
+      'timeout': _0xcdc58c
+    });
+  }
+  async ['updateServerToolList'](_0x1d355e, _0x2aa4c7, _0x322051, _0x5e718b, _0x38000e) {
+    let _0x17ffbb = this['findConnection'](_0x1d355e, _0x2aa4c7);
+    if (!_0x17ffbb) throw new Error("Server " + _0x1d355e + " with source " + _0x2aa4c7 + '\x20not\x20found');
+    let _0x4e8da8;
+    if (_0x2aa4c7 === "project") {
+      let _0x3545c4 = await this['getProjectMcpPath']();
+      if (!_0x3545c4) throw new Error("Project MCP configuration file not found");
+      _0x4e8da8 = _0x3545c4;
+    } else _0x4e8da8 = await this["getMcpSettingsFilePath"]();
+    let _0x215038 = process["platform"] === 'win32' ? _0x4e8da8["replace"](/\\/g, '/') : _0x4e8da8, _0x527ec7 = await tl["readFile"](_0x215038, "utf-8"), _0x56aca2 = JSON["parse"](_0x527ec7);
+    (_0x56aca2["mcpServers"] || (_0x56aca2["mcpServers"] = {}), _0x56aca2['mcpServers'][_0x1d355e] || (_0x56aca2["mcpServers"][_0x1d355e] = {
+      'type': "stdio",
+      'command': "node",
+      'args': []
+    }), _0x56aca2["mcpServers"][_0x1d355e][_0x5e718b] || (_0x56aca2['mcpServers'][_0x1d355e][_0x5e718b] = []));
+    let _0x32559b = _0x56aca2['mcpServers'][_0x1d355e][_0x5e718b], _0x32b873 = _0x32559b["indexOf"](_0x322051);
+    (_0x38000e && _0x32b873 === -0x1 ? _0x32559b["push"](_0x322051) : !_0x38000e && _0x32b873 !== -0x1 && _0x32559b['splice'](_0x32b873, 0x1), this["flagResetTimer"] && clearTimeout(this["flagResetTimer"]), this["isProgrammaticUpdate"] = !0x0);
+    try {
+      await Es(_0x215038, _0x56aca2, {
+        'prettyPrint': !0x0
+      });
+    } finally {
+      this["flagResetTimer"] = setTimeout(() => {
+        (this["isProgrammaticUpdate"] = !0x1, this["flagResetTimer"] = void 0x0);
+      }, 0x258);
+    }
+    _0x17ffbb && (_0x17ffbb["server"]["tools"] = await this["fetchToolsList"](_0x1d355e, _0x2aa4c7), await this["notifyWebviewOfServerChanges"]());
+  }
+  async ['toggleToolAlwaysAllow'](_0x5cac41, _0x1ef3be, _0x160a1f, _0x194643) {
+    try {
+      await this["updateServerToolList"](_0x5cac41, _0x1ef3be, _0x160a1f, "alwaysAllow", _0x194643);
+    } catch (_0x523aab) {
+      throw (this["showErrorMessage"]("Failed to toggle always allow for tool \"" + _0x160a1f + "\" on server \"" + _0x5cac41 + "\" with source \"" + _0x1ef3be + '\x22', _0x523aab), _0x523aab);
+    }
+  }
+  async ["toggleToolEnabledForPrompt"](_0x561567, _0x5afaea, _0x1ed106, _0x34e607) {
+    try {
+      let _0x5166d7 = !_0x34e607;
+      await this["updateServerToolList"](_0x561567, _0x5afaea, _0x1ed106, "disabledTools", _0x5166d7);
+    } catch (_0x38a132) {
+      throw (this["showErrorMessage"]("Failed to update settings for tool " + _0x1ed106, _0x38a132), _0x38a132);
+    }
+  }
+  async ["handleMcpEnabledChange"](_0x4eedf7) {
+    if (_0x4eedf7) try {
+      await this["refreshAllConnections"]();
+    } catch (_0x17baa4) {
+      (console["error"]("Failed to refresh MCP connections after enabling: " + _0x17baa4), Ri["window"]["showErrorMessage"](nt("mcp:errors.refresh_after_enable")));
+    } else {
+      let _0x5b1daa = [...this["connections"]], _0x50b0a4 = [];
+      for (let _0x8a0bf0 of _0x5b1daa) try {
+        await this["deleteConnection"](_0x8a0bf0["server"]['name'], _0x8a0bf0["server"]['source']);
+      } catch (_0x139088) {
+        let _0x38a0db = _0x139088 instanceof Error ? _0x139088["message"] : String(_0x139088);
+        (_0x50b0a4['push']({
+          'serverName': _0x8a0bf0["server"]["name"],
+          'error': _0x38a0db
+        }), console["error"]('Failed\x20to\x20disconnect\x20MCP\x20server\x20' + _0x8a0bf0["server"]['name'] + ':\x20' + _0x38a0db));
+      }
+      if (_0x50b0a4["length"] > 0x0) {
+        let _0x4c433a = _0x50b0a4["map"](_0x2c20d1 => _0x2c20d1["serverName"] + ':\x20' + _0x2c20d1["error"])['join']('\x0a');
+        Ri["window"]["showWarningMessage"](nt('mcp:errors.disconnect_servers_partial', {
+          'count': _0x50b0a4["length"],
+          'errors': _0x4c433a
+        }));
+      }
+      try {
+        await this["refreshAllConnections"]();
+      } catch (_0x38829e) {
+        (console["error"]("Failed to refresh MCP connections after disabling: " + _0x38829e), Ri["window"]['showErrorMessage'](nt("mcp:errors.refresh_after_disable")));
+      }
+    }
+  }
+  async ["dispose"]() {
+    if (!this["isDisposed"]) {
+      this['isDisposed'] = !0x0;
+      for (let _0x444a08 of this["configChangeDebounceTimers"]["values"]()) clearTimeout(_0x444a08);
+      (this["configChangeDebounceTimers"]["clear"](), this["flagResetTimer"] && (clearTimeout(this["flagResetTimer"]), this['flagResetTimer'] = void 0x0), this["isProgrammaticUpdate"] = !0x1, this['removeAllFileWatchers']());
+      for (let _0x178a26 of this["connections"]) try {
+        await this["deleteConnection"](_0x178a26['server']["name"], _0x178a26["server"]["source"]);
+      } catch (_0xc72522) {
+        console["error"]("Failed to close connection for " + _0x178a26['server']["name"] + ':', _0xc72522);
+      }
+      (this["connections"] = [], this["settingsWatcher"] && (this["settingsWatcher"]['dispose'](), this["settingsWatcher"] = void 0x0), this["projectMcpWatcher"] && (this["projectMcpWatcher"]["dispose"](), this["projectMcpWatcher"] = void 0x0), this["disposables"]["forEach"](_0x4a3932 => _0x4a3932['dispose']()));
+    }
+  }
+}
+
+===== R1r =====
+
+// decoded source offsets 24275475..24276635 (UTF-16)
+async function R1r(_0x593110, _0x2a8b6a, _0x23ef73) {
+  let _0x2d888d = typeof _0x593110 == "object", _0x123e4c = _0x2d888d ? JSON['stringify'](_0x593110) : _0x593110;
+  for (let [_0x1720f5, _0x531aec] of Object["entries"](_0x2a8b6a)) _0x531aec != null && (typeof _0x531aec == "string" ? _0x123e4c = _0x123e4c["replace"](new RegExp('\x5c$\x5c{' + _0x1720f5 + '\x5c}', 'g'), _0x531aec['toPosix']()) : _0x123e4c = _0x123e4c["replace"](new RegExp('\x5c$\x5c{' + _0x1720f5 + ":([\\w]+)\\}", 'g'), (_0x84902e, _0x3a6dd6) => {
+    let _0x1d5416 = _0x531aec[_0x3a6dd6];
+    return _0x1d5416 == null ? (console["warn"]('[injectVariables]\x20variable\x20\x22' + _0x3a6dd6 + "\" referenced but not found in \"" + _0x1720f5 + '\x22'), _0x23ef73 ?? _0x84902e) : typeof _0x1d5416 == "string" ? _0x1d5416["toPosix"]() : _0x1d5416;
+  }));
+  return _0x2d888d ? JSON['parse'](_0x123e4c) : _0x123e4c;
+}
+
+===== AJe =====
+
+// decoded source offsets 24151100..24151427 (UTF-16)
+function AJe() {
+  let _0x304d37 = {};
+  for (let _0x35eb2b of l4i) {
+    let _0x1cfbe4 = i7['default']["env"][_0x35eb2b];
+    _0x1cfbe4 !== void 0x0 && (_0x1cfbe4['startsWith']('()') || (_0x304d37[_0x35eb2b] = _0x1cfbe4));
+  }
+  return _0x304d37;
+}

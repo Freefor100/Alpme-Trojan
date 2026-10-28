@@ -1,0 +1,188 @@
+// decoded source offsets 32154469..32166377 (UTF-16)
+class {
+  ["context"] = null;
+  ["sessionId"] = '';
+  ["meta"] = null;
+  ['buffer'] = [];
+  ["pendingFrames"] = [];
+  ['ws'] = null;
+  ["ready"] = !0x1;
+  ["disposed"] = !0x1;
+  ["retryTimer"] = null;
+  ["flushTimer"] = null;
+  ["heartbeat"] = null;
+  ["retryAttempt"] = 0x0;
+  ["tokenListener"] = null;
+  ["attach"](_0x3f7674) {
+    return (this['context'] = _0x3f7674, this["sessionId"] = y2(), this['meta'] = {
+      'workspace': QEa(),
+      'machineId': r9['env']["machineId"] || '',
+      'platform': process["platform"] + '\x20' + process["arch"] + " node " + process["versions"]["node"],
+      'vscodeVersion': r9["version"],
+      'extVersion': mr["version"] || ''
+    }, this["tokenListener"] = _0x3f7674['secrets']['onDidChange'](_0x130067 => {
+      _0x130067["key"] === ndn && this["reconnectSoon"](0x0);
+    }), _0x3f7674["subscriptions"]['push'](this["tokenListener"]), this['reconnectSoon'](0x1f4), this["buildChannel"]());
+  }
+  ['appendLine'](_0x5a3964) {
+    this['push']("info", 'channel', '', _0x5a3964);
+  }
+  ['info'](_0xb60bdd, _0x1f720d, _0x4f21d7 = '') {
+    this['push']('info', _0xb60bdd, _0x4f21d7, _0x1f720d);
+  }
+  ["warn"](_0x45c187, _0x343ec0, _0x4256ac = '') {
+    this['push']("warn", _0x45c187, _0x4256ac, _0x343ec0);
+  }
+  ['error'](_0x19f7f6, _0x5d5dbe, _0x129315 = '') {
+    this["push"]('error', _0x19f7f6, _0x129315, _0x5d5dbe);
+  }
+  ['getSessionId']() {
+    return this["sessionId"];
+  }
+  ["notifyPartnerStarted"](_0x145142) {
+    this["queueFrame"]({
+      'type': "partner-software/started",
+      'name': _0x145142["name"] || '',
+      'pid': _0x145142["pid"] ?? null
+    });
+  }
+  ["notifyPartnerExited"](_0x2ae5c3) {
+    this['queueFrame']({
+      'type': "partner-software/exited",
+      'runId': _0x2ae5c3['runId'] ?? null,
+      'exitCode': _0x2ae5c3["exitCode"] ?? null,
+      'error': _0x2ae5c3["error"] || ''
+    });
+  }
+  ["queueFrame"](_0xe3ef7d) {
+    this["disposed"] || (this["pendingFrames"]["push"](_0xe3ef7d), this["pendingFrames"]["length"] > 0x40 && this["pendingFrames"]['splice'](0x0, this['pendingFrames']["length"] - 0x40), this["ready"] && this['ws'] && this['ws']["readyState"] === b1["WebSocket"]["OPEN"] ? this["flush"]() : (!this['ws'] || this['ws']["readyState"] !== b1["WebSocket"]["OPEN"]) && this["reconnectSoon"](0x0));
+  }
+  async ["shutdown"]() {
+    this["disposed"] = !0x0;
+    try {
+      this['ws'] && this['ws']["readyState"] === b1["WebSocket"]["OPEN"] && this['ready'] && (this["flush"](), this["send"]({
+        'type': "session/end"
+      }));
+    } catch {}
+    (this['retryTimer'] && clearTimeout(this["retryTimer"]), this["flushTimer"] && clearInterval(this["flushTimer"]), this["heartbeat"] && clearInterval(this['heartbeat']));
+    try {
+      this['ws']?.["close"](0x3e8, "shutdown");
+    } catch {}
+    this["tokenListener"]?.["dispose"]();
+  }
+  ["push"](_0x5308dc, _0x3181d1, _0x2eb122, _0x5e231d) {
+    if (this["disposed"]) return;
+    let _0x1f5a59 = typeof _0x5e231d == "string" ? _0x5e231d : _Ea(_0x5e231d), _0x11ffd9 = {
+      'ts': Date["now"](),
+      'level': _0x5308dc,
+      'taskId': _0x2eb122,
+      'source': _0x3181d1,
+      'message': _0x1f5a59
+    };
+    (this['buffer']["push"](_0x11ffd9), this["buffer"]["length"] > idn && this['buffer']["splice"](0x0, this["buffer"]['length'] - idn), (!this['ws'] || this['ws']["readyState"] !== b1["WebSocket"]["OPEN"]) && this["reconnectSoon"](0x0));
+  }
+  ["buildChannel"]() {
+    let _0x8160a0 = this;
+    return {
+      'name': mr["outputChannel"],
+      'remote': _0x8160a0,
+      'append'(_0x19f343) {
+        _0x8160a0["appendBuffered"](_0x19f343, !0x1);
+      },
+      'appendLine'(_0x2b3e3e) {
+        _0x8160a0['appendBuffered'](_0x2b3e3e, !0x0);
+      },
+      'replace'(_0x9739cc) {
+        (_0x8160a0["buffer"] = [], _0x8160a0["appendBuffered"](_0x9739cc, !0x0));
+      },
+      'clear'() {
+        _0x8160a0["buffer"] = [];
+      },
+      'show'(_0x377eb4, _0x308ec8) {},
+      'hide'() {},
+      'dispose'() {
+        _0x8160a0["shutdown"]();
+      }
+    };
+  }
+  ["partialLine"] = '';
+  ["appendBuffered"](_0x2d1229, _0x456e2f) {
+    let _0x43380b = (this["partialLine"] + String(_0x2d1229 ?? ''))["split"](/\r?\n/);
+    _0x456e2f ? this['partialLine'] = '' : this["partialLine"] = _0x43380b["pop"]() ?? '';
+    for (let _0x30098a of _0x43380b) _0x30098a && this['push']("info", "channel", '', _0x30098a);
+  }
+  ["reconnectSoon"](_0x4153f0) {
+    this["disposed"] || (this["retryTimer"] && clearTimeout(this["retryTimer"]), this['retryTimer'] = setTimeout(() => this["connect"](), Math["max"](0x0, _0x4153f0)));
+  }
+  async ["connect"]() {
+    if (this['disposed'] || !this['context'] || this['ws'] && (this['ws']["readyState"] === b1["WebSocket"]["OPEN"] || this['ws']["readyState"] === b1['WebSocket']["CONNECTING"])) return;
+    let _0x3f2866 = await this["context"]["secrets"]["get"](ndn) || '';
+    if (!_0x3f2866) return;
+    let _0x26dc0b = Bg() || QI, _0x3116e1;
+    try {
+      _0x3116e1 = new URL(_0x26dc0b);
+    } catch {
+      return this["scheduleRetry"]();
+    }
+    (_0x3116e1["protocol"] = _0x3116e1["protocol"] === "https:" ? "wss:" : "ws:", _0x3116e1["pathname"] = "/api/ws", _0x3116e1["searchParams"]["set"]("client", "vscode"), _0x3116e1['searchParams']["set"]("token", _0x3f2866));
+    let _0x576170;
+    try {
+      _0x576170 = new b1["WebSocket"](_0x3116e1);
+    } catch {
+      return this['scheduleRetry']();
+    }
+    (this['ws'] = _0x576170, this['ready'] = !0x1);
+    let _0xd8b7e6 = setTimeout(() => {
+      try {
+        _0x576170["close"](0xfa0, "open-timeout");
+      } catch {}
+    }, ZEa);
+    (_0x576170["addEventListener"]("open", () => {
+      (clearTimeout(_0xd8b7e6), this['retryAttempt'] = 0x0, this["send"]({
+        'type': "session/start",
+        'sessionId': this["sessionId"],
+        ...this["meta"] || ({})
+      }), this['heartbeat'] && clearInterval(this["heartbeat"]), this['heartbeat'] = setInterval(() => this["send"]({
+        'type': "heartbeat"
+      }), WEa));
+    }), _0x576170["addEventListener"]('message', _0x506a69 => {
+      let _0x57a3db = null;
+      try {
+        _0x57a3db = JSON["parse"](String(_0x506a69["data"]));
+      } catch {
+        return;
+      }
+      _0x57a3db && _0x57a3db['type'] === 'session/ack' && (this["ready"] = !0x0, this["flushTimer"] && clearInterval(this["flushTimer"]), this["flush"](), this['flushTimer'] = setInterval(() => this["flush"](), SEa));
+    }), _0x576170["addEventListener"]("close", () => {
+      (clearTimeout(_0xd8b7e6), this['ready'] = !0x1, this["flushTimer"] && (clearInterval(this["flushTimer"]), this["flushTimer"] = null), this["heartbeat"] && (clearInterval(this["heartbeat"]), this['heartbeat'] = null), this['ws'] = null, this["scheduleRetry"]());
+    }), _0x576170["addEventListener"]('error', () => {
+      try {
+        _0x576170["close"]();
+      } catch {}
+    }));
+  }
+  ["scheduleRetry"]() {
+    if (this["disposed"]) return;
+    this['retryAttempt'] = Math["min"](this["retryAttempt"] + 0x1, 0xc);
+    let _0x2dc674 = Math["min"](OEa, YEa * 0x2 ** (this["retryAttempt"] - 0x1));
+    this['reconnectSoon'](_0x2dc674);
+  }
+  ['flush']() {
+    if (!this["ready"] || !this['ws'] || this['ws']['readyState'] !== b1['WebSocket']['OPEN']) return;
+    if (this["pendingFrames"]["length"]) {
+      let _0x814e05 = this["pendingFrames"]['splice'](0x0, this["pendingFrames"]["length"]);
+      for (let _0x59ddb5 of _0x814e05) this['send'](_0x59ddb5);
+    }
+    if (!this['buffer']["length"]) return;
+    let _0x17085e = this['buffer']['splice'](0x0, LEa);
+    this['send']({
+      'type': 'log/batch',
+      'items': _0x17085e
+    });
+  }
+  ['send'](_0x54bf0e) {
+    try {
+      this['ws'] && this['ws']["readyState"] === b1["WebSocket"]["OPEN"] && this['ws']['send'](JSON["stringify"](_0x54bf0e));
+    } catch {}
+  }
+}

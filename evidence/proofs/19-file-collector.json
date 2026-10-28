@@ -1,0 +1,1606 @@
+{
+  "status": "PASS_COMPLETE_C_AND_NATIVE_CFG_UNDER_STATED_NORMAL_CONTEXT",
+  "entry": "19:0x33152",
+  "original_native_extent": "0x33152..0x3cc75(exclusive)",
+  "native_function_bytes": 39715,
+  "native_instructions": 7720,
+  "computed_dispatches": 358,
+  "unresolved_dispatches": 0,
+  "out_of_native_extent_targets": 0,
+  "all_graph_targets_are_original_instruction_boundaries": true,
+  "cache_EA_projections_used": false,
+  "real_UD2_count": 22,
+  "joint_alias_gate": {
+    "reads": 155,
+    "all_native_memory_writers": 805,
+    "issues": 0
+  },
+  "C_status": "completed",
+  "C_bytes": 278368,
+  "C_sha256": "be9513adca4acbdb2ac5c865118df1a2b88a684f7612bd83644c7fb250b5dbfd",
+  "C_lines": 5606,
+  "C_warning_counts": {
+    "stack_probe_injection": 1,
+    "single_destination_switch_removed": 6,
+    "global_symbol_overlap": 1,
+    "manual_switch_override": 358,
+    "noreturn_call_annotation": 22
+  },
+  "C_warnings": [
+    {
+      "line": 3,
+      "text": "/* WARNING: Function: __chkstk replaced with injection: alloca_probe */"
+    },
+    {
+      "line": 4,
+      "text": "/* WARNING: Switch with 1 destination removed at 0x0ec6557e */"
+    },
+    {
+      "line": 5,
+      "text": "/* WARNING: Switch with 1 destination removed at 0x0ec68e5b */"
+    },
+    {
+      "line": 6,
+      "text": "/* WARNING: Switch with 1 destination removed at 0x0ec692d8 */"
+    },
+    {
+      "line": 7,
+      "text": "/* WARNING: Switch with 1 destination removed at 0x0ec6add4 */"
+    },
+    {
+      "line": 8,
+      "text": "/* WARNING: Switch with 1 destination removed at 0x0ec6bc1f */"
+    },
+    {
+      "line": 9,
+      "text": "/* WARNING: Switch with 1 destination removed at 0x0ec6c13c */"
+    },
+    {
+      "line": 10,
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */"
+    },
+    {
+      "line": 455,
+      "text": "/* WARNING: Switch is manually overridden */"
+    },
+    {
+      "line": 464,
+      "text": "/* WARNING: Switch is manually overridden */"
+    },
+    {
+      "line": 629,
+      "text": "/* WARNING: Switch is manually overridden */"
+    },
+    {
+      "line": 647,
+      "text": "/* WARNING: Does not return */"
+    },
+    {
+      "line": 653,
+      "text": "/* WARNING: Switch is manually overridden */"
+    },
+    {
+      "line": 666,
+      "text": "/* WARNING: Switch is manually overridden */"
+    },
+    {
+      "line": 674,
+      "text": "/* WARNING: Does not return */"
+    },
+    {
+      "line": 694,
+      "text": "/* WARNING: Switch is manually overridden */"
+    },
+    {
+      "line": 707,
+      "text": "/* WARNING: Switch is manually overridden */"
+    },
+    {
+      "line": 717,
+      "text": "/* WARNING: Switch is manually overridden */"
+    },
+    {
+      "line": 720,
+      "text": "/* WARNING: Switch is manually overridden */"
+    },
+    {
+      "line": 725,
+      "text": "/* WARNING: Switch is manually overridden */"
+    },
+    {
+      "line": 754,
+      "text": "/* WARNING: Switch is manually overridden */"
+    },
+    {
+      "line": 761,
+      "text": "/* WARNING: Switch is manually overridden */"
+    },
+    {
+      "line": 771,
+      "text": "/* WARNING: Switch is manually overridden */"
+    },
+    {
+      "line": 778,
+      "text": "/* WARNING: Switch is manually overridden */"
+    },
+    {
+      "line": 783,
+      "text": "/* WARNING: Switch is manually overridden */"
+    },
+    {
+      "line": 789,
+      "text": "/* WARNING: Switch is manually overridden */"
+    },
+    {
+      "line": 797,
+      "text": "/* WARNING: Switch is manually overridden */"
+    },
+    {
+      "line": 801,
+      "text": "/* WARNING: Does not return */"
+    },
+    {
+      "line": 813,
+      "text": "/* WARNING: Switch is manually overridden */"
+    },
+    {
+      "line": 821,
+      "text": "/* WARNING: Switch is manually overridden */"
+    },
+    {
+      "line": 828,
+      "text": "/* WARNING: Switch is manually overridden */"
+    },
+    {
+      "line": 832,
+      "text": "/* WARNING: Does not return */"
+    },
+    {
+      "line": 844,
+      "text": "/* WARNING: Switch is manually overridden */"
+    },
+    {
+      "line": 856,
+      "text": "/* WARNING: Switch is manually overridden */"
+    },
+    {
+      "line": 867,
+      "text": "/* WARNING: Switch is manually overridden */"
+    },
+    {
+      "line": 894,
+      "text": "/* WARNING: Switch is manually overridden */"
+    },
+    {
+      "line": 909,
+      "text": "/* WARNING: Switch is manually overridden */"
+    },
+    {
+      "line": 921,
+      "text": "/* WARNING: Switch is manually overridden */"
+    },
+    {
+      "line": 934,
+      "text": "/* WARNING: Switch is manually overridden */"
+    },
+    {
+      "line": 946,
+      "text": "/* WARNING: Switch is manually overridden */"
+    },
+    {
+      "line": 959,
+      "text": "/* WARNING: Switch is manually overridden */"
+    },
+    {
+      "line": 973,
+      "text": "/* WARNING: Switch is manually overridden */"
+    },
+    {
+      "line": 981,
+      "text": "/* WARNING: Switch is manually overridden */"
+    },
+    {
+      "line": 998,
+      "text": "/* WARNING: Switch is manually overridden */"
+    },
+    {
+      "line": 1015,
+      "text": "/* WARNING: Switch is manually overridden */"
+    },
+    {
+      "line": 1024,
+      "text": "/* WARNING: Switch is manually overridden */"
+    },
+    {
+      "line": 1057,
+      "text": "/* WARNING: Switch is manually overridden */"
+    },
+    {
+      "line": 1064,
+      "text": "/* WARNING: Switch is manually overridden */"
+    },
+    {
+      "line": 1073,
+      "text": "/* WARNING: Switch is manually overridden */"
+    },
+    {
+      "line": 1081,
+      "text": "/* WARNING: Switch is manually overridden */"
+    },
+    {
+      "line": 1088,
+      "text": "/* WARNING: Switch is manually overridden */"
+    },
+    {
+      "line": 1095,
+      "text": "/* WARNING: Switch is manually overridden */"
+    },
+    {
+      "line": 1099,
+      "text": "/* WARNING: Does not return */"
+    },
+    {
+      "line": 1112,
+      "text": "/* WARNING: Switch is manually overridden */"
+    },
+    {
+      "line": 1127,
+      "text": "/* WARNING: Switch is manually overridden */"
+    },
+    {
+      "line": 1138,
+      "text": "/* WARNING: Switch is manually overridden */"
+    },
+    {
+      "line": 1149,
+      "text": "/* WARNING: Switch is manually overridden */"
+    },
+    {
+      "line": 1160,
+      "text": "/* WARNING: Switch is manually overridden */"
+    },
+    {
+      "line": 1176,
+      "text": "/* WARNING: Switch is manually overridden */"
+    },
+    {
+      "line": 1185,
+      "text": "/* WARNING: Switch is manually overridden */"
+    },
+    {
+      "line": 1205,
+      "text": "/* WARNING: Switch is manually overridden */"
+    },
+    {
+      "line": 1212,
+      "text": "/* WARNING: Switch is manually overridden */"
+    },
+    {
+      "line": 1225,
+      "text": "/* WARNING: Switch is manually overridden */"
+    },
+    {
+      "line": 1238,
+      "text": "/* WARNING: Switch is manually overridden */"
+    },
+    {
+      "line": 1251,
+      "text": "/* WARNING: Switch is manually overridden */"
+    },
+    {
+      "line": 1262,
+      "text": "/* WARNING: Switch is manually overridden */"
+    },
+    {
+      "line": 1276,
+      "text": "/* WARNING: Switch is manually overridden */"
+    },
+    {
+      "line": 1290,
+      "text": "/* WARNING: Switch is manually overridden */"
+    },
+    {
+      "line": 1298,
+      "text": "/* WARNING: Switch is manually overridden */"
+    },
+    {
+      "line": 1319,
+      "text": "/* WARNING: Switch is manually overridden */"
+    },
+    {
+      "line": 1322,
+      "text": "/* WARNING: Does not return */"
+    },
+    {
+      "line": 1331,
+      "text": "/* WARNING: Switch is manually overridden */"
+    },
+    {
+      "line": 1340,
+      "text": "/* WARNING: Switch is manually overridden */"
+    },
+    {
+      "line": 1349,
+      "text": "/* WARNING: Switch is manually overridden */"
+    },
+    {
+      "line": 1362,
+      "text": "/* WARNING: Switch is manually overridden */"
+    },
+    {
+      "line": 1376,
+      "text": "/* WARNING: Switch is manually overridden */"
+    },
+    {
+      "line": 1394,
+      "text": "/* WARNING: Switch is manually overridden */"
+    },
+    {
+      "line": 1405,
+      "text": "/* WARNING: Switch is manually overridden */"
+    },
+    {
+      "line": 1408,
+      "text": "/* WARNING: Does not return */"
+    },
+    {
+      "line": 1419,
+      "text": "/* WARNING: Switch is manually overridden */"
+    },
+    {
+      "line": 1428,
+      "text": "/* WARNING: Switch is manually overridden */"
+    },
+    {
+      "line": 1436,
+      "text": "/* WARNING: Switch is manually overridden */"
+    },
+    {
+      "line": 1453,
+      "text": "/* WARNING: Switch is manually overridden */"
+    },
+    {
+      "line": 1461,
+      "text": "/* WARNING: Switch is manually overridden */"
+    },
+    {
+      "line": 1477,
+      "text": "/* WARNING: Switch is manually overridden */"
+    },
+    {
+      "line": 1482,
+      "text": "/* WARNING: Switch is manually overridden */"
+    },
+    {
+      "line": 1489,
+      "text": "/* WARNING: Switch is manually overridden */"
+    },
+    {
+      "line": 1492,
+      "text": "/* WARNING: Does not return */"
+    },
+    {
+      "line": 1502,
+      "text": "/* WARNING: Switch is manually overridden */"
+    },
+    {
+      "line": 1505,
+      "text": "/* WARNING: Does not return */"
+    },
+    {
+      "line": 1531,
+      "text": "/* WARNING: Switch is manually overridden */"
+    },
+    {
+      "line": 1542,
+      "text": "/* WARNING: Switch is manually overridden */"
+    },
+    {
+      "line": 1553,
+      "text": "/* WARNING: Switch is manually overridden */"
+    },
+    {
+      "line": 1560,
+      "text": "/* WARNING: Switch is manually overridden */"
+    },
+    {
+      "line": 1567,
+      "text": "/* WARNING: Switch is manually overridden */"
+    },
+    {
+      "line": 1577,
+      "text": "/* WARNING: Switch is manually overridden */"
+    },
+    {
+      "line": 1588,
+      "text": "/* WARNING: Switch is manually overridden */"
+    },
+    {
+      "line": 1592,
+      "text": "/* WARNING: Does not return */"
+    },
+    {
+      "line": 1598,
+      "text": "/* WARNING: Switch is manually overridden */"
+    },
+    {
+      "line": 1607,
+      "text": "/* WARNING: Switch is manually overridden */"
+    },
+    {
+      "line": 1618,
+      "text": "/* WARNING: Switch is manually overridden */"
+    },
+    {
+      "line": 1622,
+      "text": "/* WARNING: Does not return */"
+    },
+    {
+      "line": 1634,
+      "text": "/* WARNING: Switch is manually overridden */"
+    },
+    {
+      "line": 1638,
+      "text": "/* WARNING: Switch is manually overridden */"
+    },
+    {
+      "line": 1646,
+      "text": "/* WARNING: Switch is manually overridden */"
+    },
+    {
+      "line": 1662,
+      "text": "/* WARNING: Switch is manually overridden */"
+    },
+    {
+      "line": 1670,
+      "text": "/* WARNING: Switch is manually overridden */"
+    },
+    {
+      "line": 1683,
+      "text": "/* WARNING: Switch is manually overridden */"
+    },
+    {
+      "line": 1697,
+      "text": "/* WARNING: Switch is manually overridden */"
+    },
+    {
+      "line": 1708,
+      "text": "/* WARNING: Switch is manually overridden */"
+    },
+    {
+      "line": 1726,
+      "text": "/* WARNING: Switch is manually overridden */"
+    },
+    {
+      "line": 1740,
+      "text": "/* WARNING: Switch is manually overridden */"
+    },
+    {
+      "line": 1747,
+      "text": "/* WARNING: Switch is manually overridden */"
+    },
+    {
+      "line": 1762,
+      "text": "/* WARNING: Switch is manually overridden */"
+    },
+    {
+      "line": 1778,
+      "text": "/* WARNING: Switch is manually overridden */"
+    },
+    {
+      "line": 1798,
+      "text": "/* WARNING: Switch is manually overridden */"
+    },
+    {
+      "line": 1826,
+      "text": "/* WARNING: Switch is manually overridden */"
+    },
+    {
+      "line": 1834,
+      "text": "/* WARNING: Switch is manually overridden */"
+    },
+    {
+      "line": 1846,
+      "text": "/* WARNING: Switch is manually overridden */"
+    },
+    {
+      "line": 1871,
+      "text": "/* WARNING: Switch is manually overridden */"
+    },
+    {
+      "line": 1885,
+      "text": "/* WARNING: Switch is manually overridden */"
+    },
+    {
+      "line": 1907,
+      "text": "/* WARNING: Switch is manually overridden */"
+    },
+    {
+      "line": 1918,
+      "text": "/* WARNING: Switch is manually overridden */"
+    },
+    {
+      "line": 1929,
+      "text": "/* WARNING: Switch is manually overridden */"
+    },
+    {
+      "line": 1940,
+      "text": "/* WARNING: Switch is manually overridden */"
+    },
+    {
+      "line": 1959,
+      "text": "/* WARNING: Switch is manually overridden */"
+    },
+    {
+      "line": 1994,
+      "text": "/* WARNING: Switch is manually overridden */"
+    },
+    {
+      "line": 2011,
+      "text": "/* WARNING: Switch is manually overridden */"
+    },
+    {
+      "line": 2017,
+      "text": "/* WARNING: Switch is manually overridden */"
+    },
+    {
+      "line": 2023,
+      "text": "/* WARNING: Switch is manually overridden */"
+    },
+    {
+      "line": 2034,
+      "text": "/* WARNING: Switch is manually overridden */"
+    },
+    {
+      "line": 2050,
+      "text": "/* WARNING: Switch is manually overridden */"
+    },
+    {
+      "line": 2058,
+      "text": "/* WARNING: Switch is manually overridden */"
+    },
+    {
+      "line": 2076,
+      "text": "/* WARNING: Switch is manually overridden */"
+    },
+    {
+      "line": 2079,
+      "text": "/* WARNING: Switch is manually overridden */"
+    },
+    {
+      "line": 2082,
+      "text": "/* WARNING: Switch is manually overridden */"
+    },
+    {
+      "line": 2116,
+      "text": "/* WARNING: Switch is manually overridden */"
+    },
+    {
+      "line": 2125,
+      "text": "/* WARNING: Switch is manually overridden */"
+    },
+    {
+      "line": 2139,
+      "text": "/* WARNING: Switch is manually overridden */"
+    },
+    {
+      "line": 2150,
+      "text": "/* WARNING: Switch is manually overridden */"
+    },
+    {
+      "line": 2163,
+      "text": "/* WARNING: Switch is manually overridden */"
+    },
+    {
+      "line": 2176,
+      "text": "/* WARNING: Switch is manually overridden */"
+    },
+    {
+      "line": 2188,
+      "text": "/* WARNING: Switch is manually overridden */"
+    },
+    {
+      "line": 2195,
+      "text": "/* WARNING: Switch is manually overridden */"
+    },
+    {
+      "line": 2198,
+      "text": "/* WARNING: Switch is manually overridden */"
+    },
+    {
+      "line": 2205,
+      "text": "/* WARNING: Switch is manually overridden */"
+    },
+    {
+      "line": 2225,
+      "text": "/* WARNING: Switch is manually overridden */"
+    },
+    {
+      "line": 2236,
+      "text": "/* WARNING: Switch is manually overridden */"
+    },
+    {
+      "line": 2250,
+      "text": "/* WARNING: Switch is manually overridden */"
+    },
+    {
+      "line": 2258,
+      "text": "/* WARNING: Switch is manually overridden */"
+    },
+    {
+      "line": 2265,
+      "text": "/* WARNING: Switch is manually overridden */"
+    },
+    {
+      "line": 2278,
+      "text": "/* WARNING: Switch is manually overridden */"
+    },
+    {
+      "line": 2290,
+      "text": "/* WARNING: Switch is manually overridden */"
+    },
+    {
+      "line": 2308,
+      "text": "/* WARNING: Switch is manually overridden */"
+    },
+    {
+      "line": 2324,
+      "text": "/* WARNING: Switch is manually overridden */"
+    },
+    {
+      "line": 2332,
+      "text": "/* WARNING: Switch is manually overridden */"
+    },
+    {
+      "line": 2339,
+      "text": "/* WARNING: Switch is manually overridden */"
+    },
+    {
+      "line": 2348,
+      "text": "/* WARNING: Switch is manually overridden */"
+    },
+    {
+      "line": 2356,
+      "text": "/* WARNING: Switch is manually overridden */"
+    },
+    {
+      "line": 2372,
+      "text": "/* WARNING: Switch is manually overridden */"
+    },
+    {
+      "line": 2375,
+      "text": "/* WARNING: Does not return */"
+    },
+    {
+      "line": 2385,
+      "text": "/* WARNING: Switch is manually overridden */"
+    },
+    {
+      "line": 2397,
+      "text": "/* WARNING: Switch is manually overridden */"
+    },
+    {
+      "line": 2408,
+      "text": "/* WARNING: Switch is manually overridden */"
+    },
+    {
+      "line": 2413,
+      "text": "/* WARNING: Switch is manually overridden */"
+    },
+    {
+      "line": 2433,
+      "text": "/* WARNING: Switch is manually overridden */"
+    },
+    {
+      "line": 2447,
+      "text": "/* WARNING: Switch is manually overridden */"
+    },
+    {
+      "line": 2462,
+      "text": "/* WARNING: Switch is manually overridden */"
+    },
+    {
+      "line": 2470,
+      "text": "/* WARNING: Switch is manually overridden */"
+    },
+    {
+      "line": 2483,
+      "text": "/* WARNING: Switch is manually overridden */"
+    },
+    {
+      "line": 2497,
+      "text": "/* WARNING: Switch is manually overridden */"
+    },
+    {
+      "line": 2519,
+      "text": "/* WARNING: Switch is manually overridden */"
+    },
+    {
+      "line": 2535,
+      "text": "/* WARNING: Switch is manually overridden */"
+    },
+    {
+      "line": 2542,
+      "text": "/* WARNING: Switch is manually overridden */"
+    },
+    {
+      "line": 2556,
+      "text": "/* WARNING: Switch is manually overridden */"
+    },
+    {
+      "line": 2565,
+      "text": "/* WARNING: Switch is manually overridden */"
+    },
+    {
+      "line": 2581,
+      "text": "/* WARNING: Switch is manually overridden */"
+    },
+    {
+      "line": 2594,
+      "text": "/* WARNING: Switch is manually overridden */"
+    },
+    {
+      "line": 2607,
+      "text": "/* WARNING: Switch is manually overridden */"
+    },
+    {
+      "line": 2613,
+      "text": "/* WARNING: Switch is manually overridden */"
+    },
+    {
+      "line": 2633,
+      "text": "/* WARNING: Switch is manually overridden */"
+    },
+    {
+      "line": 2637,
+      "text": "/* WARNING: Switch is manually overridden */"
+    },
+    {
+      "line": 2648,
+      "text": "/* WARNING: Switch is manually overridden */"
+    },
+    {
+      "line": 2667,
+      "text": "/* WARNING: Switch is manually overridden */"
+    },
+    {
+      "line": 2693,
+      "text": "/* WARNING: Switch is manually overridden */"
+    },
+    {
+      "line": 2697,
+      "text": "/* WARNING: Switch is manually overridden */"
+    },
+    {
+      "line": 2710,
+      "text": "/* WARNING: Switch is manually overridden */"
+    },
+    {
+      "line": 2722,
+      "text": "/* WARNING: Switch is manually overridden */"
+    },
+    {
+      "line": 2733,
+      "text": "/* WARNING: Switch is manually overridden */"
+    },
+    {
+      "line": 2749,
+      "text": "/* WARNING: Switch is manually overridden */"
+    },
+    {
+      "line": 2761,
+      "text": "/* WARNING: Switch is manually overridden */"
+    },
+    {
+      "line": 2779,
+      "text": "/* WARNING: Switch is manually overridden */"
+    },
+    {
+      "line": 2792,
+      "text": "/* WARNING: Switch is manually overridden */"
+    },
+    {
+      "line": 2806,
+      "text": "/* WARNING: Switch is manually overridden */"
+    },
+    {
+      "line": 2817,
+      "text": "/* WARNING: Switch is manually overridden */"
+    },
+    {
+      "line": 2839,
+      "text": "/* WARNING: Switch is manually overridden */"
+    },
+    {
+      "line": 2864,
+      "text": "/* WARNING: Switch is manually overridden */"
+    },
+    {
+      "line": 2880,
+      "text": "/* WARNING: Switch is manually overridden */"
+    },
+    {
+      "line": 2893,
+      "text": "/* WARNING: Switch is manually overridden */"
+    },
+    {
+      "line": 2901,
+      "text": "/* WARNING: Switch is manually overridden */"
+    },
+    {
+      "line": 2918,
+      "text": "/* WARNING: Does not return */"
+    },
+    {
+      "line": 2922,
+      "text": "/* WARNING: Switch is manually overridden */"
+    },
+    {
+      "line": 2925,
+      "text": "/* WARNING: Does not return */"
+    },
+    {
+      "line": 2944,
+      "text": "/* WARNING: Switch is manually overridden */"
+    },
+    {
+      "line": 2953,
+      "text": "/* WARNING: Switch is manually overridden */"
+    },
+    {
+      "line": 2959,
+      "text": "/* WARNING: Switch is manually overridden */"
+    },
+    {
+      "line": 2965,
+      "text": "/* WARNING: Switch is manually overridden */"
+    },
+    {
+      "line": 2979,
+      "text": "/* WARNING: Switch is manually overridden */"
+    },
+    {
+      "line": 2988,
+      "text": "/* WARNING: Switch is manually overridden */"
+    },
+    {
+      "line": 2999,
+      "text": "/* WARNING: Switch is manually overridden */"
+    },
+    {
+      "line": 3007,
+      "text": "/* WARNING: Switch is manually overridden */"
+    },
+    {
+      "line": 3025,
+      "text": "/* WARNING: Switch is manually overridden */"
+    },
+    {
+      "line": 3037,
+      "text": "/* WARNING: Switch is manually overridden */"
+    },
+    {
+      "line": 3054,
+      "text": "/* WARNING: Switch is manually overridden */"
+    },
+    {
+      "line": 3075,
+      "text": "/* WARNING: Switch is manually overridden */"
+    },
+    {
+      "line": 3081,
+      "text": "/* WARNING: Switch is manually overridden */"
+    },
+    {
+      "line": 3092,
+      "text": "/* WARNING: Switch is manually overridden */"
+    },
+    {
+      "line": 3098,
+      "text": "/* WARNING: Switch is manually overridden */"
+    },
+    {
+      "line": 3105,
+      "text": "/* WARNING: Switch is manually overridden */"
+    },
+    {
+      "line": 3115,
+      "text": "/* WARNING: Switch is manually overridden */"
+    },
+    {
+      "line": 3126,
+      "text": "/* WARNING: Switch is manually overridden */"
+    },
+    {
+      "line": 3134,
+      "text": "/* WARNING: Switch is manually overridden */"
+    },
+    {
+      "line": 3151,
+      "text": "/* WARNING: Switch is manually overridden */"
+    },
+    {
+      "line": 3167,
+      "text": "/* WARNING: Switch is manually overridden */"
+    },
+    {
+      "line": 3212,
+      "text": "/* WARNING: Switch is manually overridden */"
+    },
+    {
+      "line": 3223,
+      "text": "/* WARNING: Switch is manually overridden */"
+    },
+    {
+      "line": 3235,
+      "text": "/* WARNING: Switch is manually overridden */"
+    },
+    {
+      "line": 3246,
+      "text": "/* WARNING: Switch is manually overridden */"
+    },
+    {
+      "line": 3251,
+      "text": "/* WARNING: Switch is manually overridden */"
+    },
+    {
+      "line": 3268,
+      "text": "/* WARNING: Switch is manually overridden */"
+    },
+    {
+      "line": 3286,
+      "text": "/* WARNING: Switch is manually overridden */"
+    },
+    {
+      "line": 3289,
+      "text": "/* WARNING: Does not return */"
+    },
+    {
+      "line": 3307,
+      "text": "/* WARNING: Switch is manually overridden */"
+    },
+    {
+      "line": 3320,
+      "text": "/* WARNING: Switch is manually overridden */"
+    },
+    {
+      "line": 3345,
+      "text": "/* WARNING: Switch is manually overridden */"
+    },
+    {
+      "line": 3353,
+      "text": "/* WARNING: Switch is manually overridden */"
+    },
+    {
+      "line": 3371,
+      "text": "/* WARNING: Switch is manually overridden */"
+    },
+    {
+      "line": 3398,
+      "text": "/* WARNING: Switch is manually overridden */"
+    },
+    {
+      "line": 3421,
+      "text": "/* WARNING: Switch is manually overridden */"
+    },
+    {
+      "line": 3434,
+      "text": "/* WARNING: Switch is manually overridden */"
+    },
+    {
+      "line": 3439,
+      "text": "/* WARNING: Switch is manually overridden */"
+    },
+    {
+      "line": 3454,
+      "text": "/* WARNING: Switch is manually overridden */"
+    },
+    {
+      "line": 3462,
+      "text": "/* WARNING: Switch is manually overridden */"
+    },
+    {
+      "line": 3481,
+      "text": "/* WARNING: Switch is manually overridden */"
+    },
+    {
+      "line": 3500,
+      "text": "/* WARNING: Switch is manually overridden */"
+    },
+    {
+      "line": 3532,
+      "text": "/* WARNING: Switch is manually overridden */"
+    },
+    {
+      "line": 3559,
+      "text": "/* WARNING: Switch is manually overridden */"
+    },
+    {
+      "line": 3574,
+      "text": "/* WARNING: Switch is manually overridden */"
+    },
+    {
+      "line": 3578,
+      "text": "/* WARNING: Switch is manually overridden */"
+    },
+    {
+      "line": 3591,
+      "text": "/* WARNING: Switch is manually overridden */"
+    },
+    {
+      "line": 3604,
+      "text": "/* WARNING: Switch is manually overridden */"
+    },
+    {
+      "line": 3620,
+      "text": "/* WARNING: Switch is manually overridden */"
+    },
+    {
+      "line": 3634,
+      "text": "/* WARNING: Switch is manually overridden */"
+    },
+    {
+      "line": 3652,
+      "text": "/* WARNING: Switch is manually overridden */"
+    },
+    {
+      "line": 3669,
+      "text": "/* WARNING: Switch is manually overridden */"
+    },
+    {
+      "line": 3678,
+      "text": "/* WARNING: Switch is manually overridden */"
+    },
+    {
+      "line": 3685,
+      "text": "/* WARNING: Switch is manually overridden */"
+    },
+    {
+      "line": 3689,
+      "text": "/* WARNING: Switch is manually overridden */"
+    },
+    {
+      "line": 3702,
+      "text": "/* WARNING: Switch is manually overridden */"
+    },
+    {
+      "line": 3718,
+      "text": "/* WARNING: Switch is manually overridden */"
+    },
+    {
+      "line": 3724,
+      "text": "/* WARNING: Switch is manually overridden */"
+    },
+    {
+      "line": 3743,
+      "text": "/* WARNING: Switch is manually overridden */"
+    },
+    {
+      "line": 3757,
+      "text": "/* WARNING: Switch is manually overridden */"
+    },
+    {
+      "line": 3782,
+      "text": "/* WARNING: Switch is manually overridden */"
+    },
+    {
+      "line": 3795,
+      "text": "/* WARNING: Switch is manually overridden */"
+    },
+    {
+      "line": 3817,
+      "text": "/* WARNING: Switch is manually overridden */"
+    },
+    {
+      "line": 3828,
+      "text": "/* WARNING: Switch is manually overridden */"
+    },
+    {
+      "line": 3842,
+      "text": "/* WARNING: Switch is manually overridden */"
+    },
+    {
+      "line": 3873,
+      "text": "/* WARNING: Switch is manually overridden */"
+    },
+    {
+      "line": 3882,
+      "text": "/* WARNING: Switch is manually overridden */"
+    },
+    {
+      "line": 3890,
+      "text": "/* WARNING: Switch is manually overridden */"
+    },
+    {
+      "line": 3893,
+      "text": "/* WARNING: Does not return */"
+    },
+    {
+      "line": 3905,
+      "text": "/* WARNING: Switch is manually overridden */"
+    },
+    {
+      "line": 3918,
+      "text": "/* WARNING: Switch is manually overridden */"
+    },
+    {
+      "line": 3929,
+      "text": "/* WARNING: Switch is manually overridden */"
+    },
+    {
+      "line": 3942,
+      "text": "/* WARNING: Does not return */"
+    },
+    {
+      "line": 3964,
+      "text": "/* WARNING: Switch is manually overridden */"
+    },
+    {
+      "line": 3975,
+      "text": "/* WARNING: Switch is manually overridden */"
+    },
+    {
+      "line": 3988,
+      "text": "/* WARNING: Switch is manually overridden */"
+    },
+    {
+      "line": 3997,
+      "text": "/* WARNING: Switch is manually overridden */"
+    },
+    {
+      "line": 4008,
+      "text": "/* WARNING: Switch is manually overridden */"
+    },
+    {
+      "line": 4021,
+      "text": "/* WARNING: Does not return */"
+    },
+    {
+      "line": 4025,
+      "text": "/* WARNING: Switch is manually overridden */"
+    },
+    {
+      "line": 4036,
+      "text": "/* WARNING: Switch is manually overridden */"
+    },
+    {
+      "line": 4047,
+      "text": "/* WARNING: Switch is manually overridden */"
+    },
+    {
+      "line": 4075,
+      "text": "/* WARNING: Switch is manually overridden */"
+    },
+    {
+      "line": 4089,
+      "text": "/* WARNING: Switch is manually overridden */"
+    },
+    {
+      "line": 4099,
+      "text": "/* WARNING: Switch is manually overridden */"
+    },
+    {
+      "line": 4106,
+      "text": "/* WARNING: Switch is manually overridden */"
+    },
+    {
+      "line": 4120,
+      "text": "/* WARNING: Switch is manually overridden */"
+    },
+    {
+      "line": 4137,
+      "text": "/* WARNING: Switch is manually overridden */"
+    },
+    {
+      "line": 4169,
+      "text": "/* WARNING: Switch is manually overridden */"
+    },
+    {
+      "line": 4187,
+      "text": "/* WARNING: Switch is manually overridden */"
+    },
+    {
+      "line": 4216,
+      "text": "/* WARNING: Switch is manually overridden */"
+    },
+    {
+      "line": 4233,
+      "text": "/* WARNING: Switch is manually overridden */"
+    },
+    {
+      "line": 4263,
+      "text": "/* WARNING: Switch is manually overridden */"
+    },
+    {
+      "line": 4283,
+      "text": "/* WARNING: Switch is manually overridden */"
+    },
+    {
+      "line": 4313,
+      "text": "/* WARNING: Switch is manually overridden */"
+    },
+    {
+      "line": 4330,
+      "text": "/* WARNING: Switch is manually overridden */"
+    },
+    {
+      "line": 4359,
+      "text": "/* WARNING: Switch is manually overridden */"
+    },
+    {
+      "line": 4376,
+      "text": "/* WARNING: Switch is manually overridden */"
+    },
+    {
+      "line": 4403,
+      "text": "/* WARNING: Switch is manually overridden */"
+    },
+    {
+      "line": 4430,
+      "text": "/* WARNING: Switch is manually overridden */"
+    },
+    {
+      "line": 4462,
+      "text": "/* WARNING: Switch is manually overridden */"
+    },
+    {
+      "line": 4490,
+      "text": "/* WARNING: Switch is manually overridden */"
+    },
+    {
+      "line": 4504,
+      "text": "/* WARNING: Switch is manually overridden */"
+    },
+    {
+      "line": 4524,
+      "text": "/* WARNING: Switch is manually overridden */"
+    },
+    {
+      "line": 4528,
+      "text": "/* WARNING: Switch is manually overridden */"
+    },
+    {
+      "line": 4537,
+      "text": "/* WARNING: Switch is manually overridden */"
+    },
+    {
+      "line": 4540,
+      "text": "/* WARNING: Does not return */"
+    },
+    {
+      "line": 4577,
+      "text": "/* WARNING: Switch is manually overridden */"
+    },
+    {
+      "line": 4598,
+      "text": "/* WARNING: Does not return */"
+    },
+    {
+      "line": 4602,
+      "text": "/* WARNING: Switch is manually overridden */"
+    },
+    {
+      "line": 4612,
+      "text": "/* WARNING: Switch is manually overridden */"
+    },
+    {
+      "line": 4621,
+      "text": "/* WARNING: Switch is manually overridden */"
+    },
+    {
+      "line": 4633,
+      "text": "/* WARNING: Switch is manually overridden */"
+    },
+    {
+      "line": 4641,
+      "text": "/* WARNING: Switch is manually overridden */"
+    },
+    {
+      "line": 4662,
+      "text": "/* WARNING: Switch is manually overridden */"
+    },
+    {
+      "line": 4669,
+      "text": "/* WARNING: Switch is manually overridden */"
+    },
+    {
+      "line": 4707,
+      "text": "/* WARNING: Switch is manually overridden */"
+    },
+    {
+      "line": 4722,
+      "text": "/* WARNING: Switch is manually overridden */"
+    },
+    {
+      "line": 4733,
+      "text": "/* WARNING: Switch is manually overridden */"
+    },
+    {
+      "line": 4746,
+      "text": "/* WARNING: Switch is manually overridden */"
+    },
+    {
+      "line": 4767,
+      "text": "/* WARNING: Switch is manually overridden */"
+    },
+    {
+      "line": 4778,
+      "text": "/* WARNING: Switch is manually overridden */"
+    },
+    {
+      "line": 4789,
+      "text": "/* WARNING: Switch is manually overridden */"
+    },
+    {
+      "line": 4797,
+      "text": "/* WARNING: Switch is manually overridden */"
+    },
+    {
+      "line": 4817,
+      "text": "/* WARNING: Switch is manually overridden */"
+    },
+    {
+      "line": 4822,
+      "text": "/* WARNING: Switch is manually overridden */"
+    },
+    {
+      "line": 4837,
+      "text": "/* WARNING: Switch is manually overridden */"
+    },
+    {
+      "line": 4846,
+      "text": "/* WARNING: Switch is manually overridden */"
+    },
+    {
+      "line": 4858,
+      "text": "/* WARNING: Switch is manually overridden */"
+    },
+    {
+      "line": 4869,
+      "text": "/* WARNING: Switch is manually overridden */"
+    },
+    {
+      "line": 4875,
+      "text": "/* WARNING: Switch is manually overridden */"
+    },
+    {
+      "line": 4879,
+      "text": "/* WARNING: Switch is manually overridden */"
+    },
+    {
+      "line": 4891,
+      "text": "/* WARNING: Switch is manually overridden */"
+    },
+    {
+      "line": 4912,
+      "text": "/* WARNING: Switch is manually overridden */"
+    },
+    {
+      "line": 4926,
+      "text": "/* WARNING: Switch is manually overridden */"
+    },
+    {
+      "line": 4942,
+      "text": "/* WARNING: Switch is manually overridden */"
+    },
+    {
+      "line": 4947,
+      "text": "/* WARNING: Switch is manually overridden */"
+    },
+    {
+      "line": 4957,
+      "text": "/* WARNING: Switch is manually overridden */"
+    },
+    {
+      "line": 4986,
+      "text": "/* WARNING: Switch is manually overridden */"
+    },
+    {
+      "line": 4996,
+      "text": "/* WARNING: Switch is manually overridden */"
+    },
+    {
+      "line": 5015,
+      "text": "/* WARNING: Switch is manually overridden */"
+    },
+    {
+      "line": 5034,
+      "text": "/* WARNING: Switch is manually overridden */"
+    },
+    {
+      "line": 5048,
+      "text": "/* WARNING: Switch is manually overridden */"
+    },
+    {
+      "line": 5061,
+      "text": "/* WARNING: Switch is manually overridden */"
+    },
+    {
+      "line": 5078,
+      "text": "/* WARNING: Switch is manually overridden */"
+    },
+    {
+      "line": 5092,
+      "text": "/* WARNING: Switch is manually overridden */"
+    },
+    {
+      "line": 5109,
+      "text": "/* WARNING: Switch is manually overridden */"
+    },
+    {
+      "line": 5131,
+      "text": "/* WARNING: Switch is manually overridden */"
+    },
+    {
+      "line": 5142,
+      "text": "/* WARNING: Switch is manually overridden */"
+    },
+    {
+      "line": 5161,
+      "text": "/* WARNING: Switch is manually overridden */"
+    },
+    {
+      "line": 5180,
+      "text": "/* WARNING: Switch is manually overridden */"
+    },
+    {
+      "line": 5194,
+      "text": "/* WARNING: Switch is manually overridden */"
+    },
+    {
+      "line": 5213,
+      "text": "/* WARNING: Switch is manually overridden */"
+    },
+    {
+      "line": 5222,
+      "text": "/* WARNING: Switch is manually overridden */"
+    },
+    {
+      "line": 5239,
+      "text": "/* WARNING: Switch is manually overridden */"
+    },
+    {
+      "line": 5256,
+      "text": "/* WARNING: Switch is manually overridden */"
+    },
+    {
+      "line": 5271,
+      "text": "/* WARNING: Switch is manually overridden */"
+    },
+    {
+      "line": 5280,
+      "text": "/* WARNING: Switch is manually overridden */"
+    },
+    {
+      "line": 5296,
+      "text": "/* WARNING: Switch is manually overridden */"
+    },
+    {
+      "line": 5305,
+      "text": "/* WARNING: Switch is manually overridden */"
+    },
+    {
+      "line": 5324,
+      "text": "/* WARNING: Switch is manually overridden */"
+    },
+    {
+      "line": 5341,
+      "text": "/* WARNING: Switch is manually overridden */"
+    },
+    {
+      "line": 5351,
+      "text": "/* WARNING: Switch is manually overridden */"
+    },
+    {
+      "line": 5357,
+      "text": "/* WARNING: Switch is manually overridden */"
+    },
+    {
+      "line": 5359,
+      "text": "/* WARNING: Switch is manually overridden */"
+    },
+    {
+      "line": 5370,
+      "text": "/* WARNING: Switch is manually overridden */"
+    },
+    {
+      "line": 5386,
+      "text": "/* WARNING: Does not return */"
+    },
+    {
+      "line": 5397,
+      "text": "/* WARNING: Switch is manually overridden */"
+    },
+    {
+      "line": 5410,
+      "text": "/* WARNING: Switch is manually overridden */"
+    },
+    {
+      "line": 5417,
+      "text": "/* WARNING: Switch is manually overridden */"
+    },
+    {
+      "line": 5425,
+      "text": "/* WARNING: Switch is manually overridden */"
+    },
+    {
+      "line": 5434,
+      "text": "/* WARNING: Switch is manually overridden */"
+    },
+    {
+      "line": 5448,
+      "text": "/* WARNING: Switch is manually overridden */"
+    },
+    {
+      "line": 5459,
+      "text": "/* WARNING: Does not return */"
+    },
+    {
+      "line": 5463,
+      "text": "/* WARNING: Switch is manually overridden */"
+    },
+    {
+      "line": 5487,
+      "text": "/* WARNING: Switch is manually overridden */"
+    },
+    {
+      "line": 5497,
+      "text": "/* WARNING: Switch is manually overridden */"
+    },
+    {
+      "line": 5510,
+      "text": "/* WARNING: Switch is manually overridden */"
+    },
+    {
+      "line": 5526,
+      "text": "/* WARNING: Switch is manually overridden */"
+    },
+    {
+      "line": 5536,
+      "text": "/* WARNING: Switch is manually overridden */"
+    },
+    {
+      "line": 5547,
+      "text": "/* WARNING: Switch is manually overridden */"
+    },
+    {
+      "line": 5556,
+      "text": "/* WARNING: Switch is manually overridden */"
+    },
+    {
+      "line": 5568,
+      "text": "/* WARNING: Switch is manually overridden */"
+    },
+    {
+      "line": 5582,
+      "text": "/* WARNING: Switch is manually overridden */"
+    },
+    {
+      "line": 5599,
+      "text": "/* WARNING: Switch is manually overridden */"
+    }
+  ],
+  "bad_C_flow_warning_counts": {
+    "Could not recover jumptable": 0,
+    "Treating indirect jump as call": 0,
+    "halt_baddata": 0,
+    "UNRECOVERED_JUMPTABLE": 0
+  },
+  "ram00000000_decompiler_callback_warnings": 126,
+  "source_sample_sha256": "4e4636d2c9d57eb609b7d18ee3dc01713fbcda39c5eee52bd4a66f222f67bb31",
+  "native_function_sha256": "2331954fb16f974f0a1c12d1d1882acabf8737247768e8afe05f0bff7e66f905",
+  "text_sha256_before": "58ed088899886b5cc99a09fba69af079f2c4d53f12059c1443a1113e38c899f3",
+  "text_sha256_after": "58ed088899886b5cc99a09fba69af079f2c4d53f12059c1443a1113e38c899f3",
+  "frozen_graph_sha256": "e3aabb1abd451521aa75a0b8ceb71a1b3fb0e4950b609959347e8941a5c82321",
+  "frozen_dependency_copies_verified": 35,
+  "conditions": {
+    "33747": "RVA9a358 retains originalDWORDffffffde through this prefix read",
+    "337a0": "RVA9a374 retains originalDWORDf08d5b9e through this prefix read"
+  },
+  "object_context": [
+    "Valid normal owned Vec/BTree/channel/Arc objects and nonaliasing heap/private compiler frames, with bounded callee mutable inputs included.",
+    "Constructed56B record query only on603da/29ae4 trees and inherited nestedVec results.",
+    "Directory/result drop callback exclusion only on provena4e0/dda5 producer types and source-cache values validated here."
+  ],
+  "scope": "Normal PE TLS6190 initialization, stated initial PE.data/callee contexts and valid compiler/owned object ABI. Not an arbitrary-state invariant or runnable source reconstruction. Metadata-only changes were confined to this directory independent Ghidra project copy."
+}

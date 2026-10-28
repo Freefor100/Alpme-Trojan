@@ -1,0 +1,324 @@
+{
+  "status": "COMPLETE_IN_DECLARED_NORMAL_CONTEXT",
+  "entry": "17:0x2f497",
+  "final_gate": {
+    "path": "C:\\Users\\leo\\Documents\\Codex\\2026-10-26\\ni\\work\\alpme_analysis\\semantic_closure_20261027\\round4_browser_17_2f497_gate\\17_2f497_final_normal_gate.json",
+    "sha256": "25e74429f2c20f5980644bb4ba866d2b5678b3e0a42338f6363cd1d53a6abc57",
+    "bytes": 552717
+  },
+  "verified_normal_plan": {
+    "path": "C:\\Users\\leo\\Documents\\Codex\\2026-10-26\\ni\\work\\alpme_analysis\\semantic_closure_20261027\\round4_browser_17_2f497_gate\\17_2f497_verified_normal_plan.json",
+    "sha256": "0c5805b3d4414fd9130b125e890e38159f18dced4e4f441b5042f5fd7d2200bb",
+    "bytes": 151250
+  },
+  "independent_C": {
+    "path": "C:\\Users\\leo\\Documents\\Codex\\2026-10-26\\ni\\work\\alpme_analysis\\semantic_closure_20261027\\round4_browser_17_2f497_gate\\verified_exports\\17_payload.dll.bin_0x2f497.c",
+    "sha256": "937816b1c224fab042df4f7ad1ebbf52c82af2b913ee3f9ea2cb3dd579c7b958",
+    "bytes": 172474
+  },
+  "independent_C_metadata": {
+    "path": "C:\\Users\\leo\\Documents\\Codex\\2026-10-26\\ni\\work\\alpme_analysis\\semantic_closure_20261027\\round4_browser_17_2f497_gate\\verified_exports\\17_payload.dll.bin_0x2f497_listing_retry.json",
+    "sha256": "07d9b14bb5f6391aae3dbbf2dcc9c83547d9aa9db3873e4b4db116cf4b07ba8d",
+    "bytes": 1348
+  },
+  "native_graph": {
+    "instruction_sites": 5212,
+    "computed_sites": 230,
+    "unresolved": 0,
+    "candidate_and_natural_and_verified_target_sets_identical": true,
+    "forced_slots_or_edges": false
+  },
+  "all_native_writers": 583,
+  "all_native_calls": 259,
+  "original_unknown_nonSP_sites": 85,
+  "typed_exclusion_count": 83,
+  "typed_count_explanation": "85 original nonSP unknown sites:3 proved actualprivate descriptor writers are now ordinary finite native stack writes; remaining82 externalowned/out stores plus1 architectural REP writer form83 typed obligations.",
+  "source_read_gate": {
+    "finite_native": 175,
+    "constructor_descriptor_and_seed": 176,
+    "opaque_original_output_pointer": 5,
+    "supplemental_1005_holder_fields": 3,
+    "total": 359,
+    "issues": 0,
+    "native_constructor_seed_matches": 44
+  },
+  "output_ABI": {
+    "certificate": {
+      "path": "C:\\Users\\leo\\Documents\\Codex\\2026-10-26\\ni\\work\\alpme_analysis\\semantic_closure_20261027\\round4_browser_17_2f497_gate\\17_2f497_original_output_span.json",
+      "sha256": "16ae332dd9f2a85201a8ed2603239ebf1b6c59fcffbae120b495adec7bd13fb4",
+      "bytes": 6775
+    },
+    "originalRCX_max_maywrite": [
+      0,
+      72
+    ],
+    "failure_writes": [
+      8,
+      16
+    ],
+    "success_copy_bytes": 72,
+    "all5_destinations_and_no_later_child_forward_proved": true
+  },
+  "new_helper_closure": {
+    "path": "C:\\Users\\leo\\Documents\\Codex\\2026-10-26\\ni\\work\\alpme_analysis\\semantic_closure_20261027\\round4_browser_17_2f497_gate\\17_1b4bb_typed_caller_effects.json",
+    "sha256": "2a32f398795000f1c8fe935b7de8c59690b7c2a15ddecbb946bc39dec52754ca",
+    "bytes": 70742
+  },
+  "direct_indirect_API_targets": [
+    {
+      "site": "0x2fc97",
+      "API": "VirtualQueryEx",
+      "frame_write_ranges": [
+        [
+          2288,
+          48
+        ]
+      ]
+    },
+    {
+      "site": "0x3003e",
+      "API": "ReadProcessMemory",
+      "frame_write_ranges": [
+        [
+          944,
+          8
+        ]
+      ]
+    },
+    {
+      "site": "0x30799",
+      "API": "CloseHandle",
+      "frame_write_ranges": []
+    },
+    {
+      "site": "0x30889",
+      "API": "CloseHandle",
+      "frame_write_ranges": []
+    },
+    {
+      "site": "0x30f15",
+      "API": "CreateToolhelp32Snapshot",
+      "frame_write_ranges": []
+    },
+    {
+      "site": "0x310f2",
+      "API": "LoadLibraryA",
+      "frame_write_ranges": []
+    },
+    {
+      "site": "0x31254",
+      "API": "ResumeThread",
+      "frame_write_ranges": []
+    },
+    {
+      "site": "0x3125b",
+      "API": "CloseHandle",
+      "frame_write_ranges": []
+    },
+    {
+      "site": "0x317d4",
+      "API": "ReadProcessMemory",
+      "frame_write_ranges": [
+        [
+          104,
+          8
+        ],
+        [
+          944,
+          179
+        ]
+      ]
+    },
+    {
+      "site": "0x31f93",
+      "API": "Thread32Next",
+      "frame_write_ranges": [
+        [
+          944,
+          28
+        ]
+      ]
+    },
+    {
+      "site": "0x32189",
+      "API": "VirtualQueryEx",
+      "frame_write_ranges": [
+        [
+          2288,
+          48
+        ]
+      ]
+    },
+    {
+      "site": "0x32393",
+      "API": "OpenThread",
+      "frame_write_ranges": []
+    },
+    {
+      "site": "0x3247c",
+      "API": "OpenProcess",
+      "frame_write_ranges": []
+    },
+    {
+      "site": "0x32db2",
+      "API": "SuspendThread",
+      "frame_write_ranges": []
+    },
+    {
+      "site": "0x340c7",
+      "API": "CloseHandle",
+      "frame_write_ranges": []
+    },
+    {
+      "site": "0x34214",
+      "API": "ReadProcessMemory",
+      "frame_write_ranges": [
+        [
+          104,
+          8
+        ],
+        [
+          944,
+          123
+        ]
+      ]
+    },
+    {
+      "site": "0x3429a",
+      "API": "Thread32First",
+      "frame_write_ranges": [
+        [
+          944,
+          28
+        ]
+      ]
+    },
+    {
+      "site": "0x3450c",
+      "API": "WriteProcessMemory",
+      "frame_write_ranges": [
+        [
+          2288,
+          8
+        ]
+      ]
+    },
+    {
+      "site": "0x34a6a",
+      "API": "WriteProcessMemory",
+      "frame_write_ranges": [
+        [
+          104,
+          8
+        ]
+      ]
+    },
+    {
+      "site": "0x34adb",
+      "API": "VirtualFreeEx",
+      "frame_write_ranges": []
+    },
+    {
+      "site": "0x34e93",
+      "API": "VirtualAllocEx",
+      "frame_write_ranges": []
+    },
+    {
+      "site": "0x35050",
+      "API": "SuspendThread",
+      "frame_write_ranges": []
+    },
+    {
+      "site": "0x35088",
+      "API": "SetThreadContext",
+      "frame_write_ranges": []
+    },
+    {
+      "site": "0x3508f",
+      "API": "ResumeThread",
+      "frame_write_ranges": []
+    },
+    {
+      "site": "0x35096",
+      "API": "CloseHandle",
+      "frame_write_ranges": []
+    },
+    {
+      "site": "0x35186",
+      "API": "SetThreadContext",
+      "frame_write_ranges": []
+    },
+    {
+      "site": "0x3519f",
+      "API": "ResumeThread",
+      "frame_write_ranges": []
+    },
+    {
+      "site": "0x3543d",
+      "API": "GetProcAddress",
+      "frame_write_ranges": []
+    },
+    {
+      "site": "0x358b6",
+      "API": "GetThreadContext",
+      "frame_write_ranges": [
+        [
+          3520,
+          1232
+        ]
+      ]
+    }
+  ],
+  "indirect_API_target_count": 29,
+  "module_API_resolver_bindings": 21,
+  "text_sha256_before": "9719f0233f0af40eab63a0548511aa13e6ba06863e1aef96376fc12ef95f3ea4",
+  "text_sha256_after": "9719f0233f0af40eab63a0548511aa13e6ba06863e1aef96376fc12ef95f3ea4",
+  "quality": {
+    "completed": true,
+    "lines": 3920,
+    "bytes": 172474,
+    "fatal_or_truncation_markers": {
+      "unrecovered jumptable": 0,
+      "Could not recover jumptable": 0,
+      "halt_baddata": 0,
+      "invalid instruction": 0,
+      "overlaps instruction": 0
+    },
+    "warnings": {
+      "Function: __chkstk replaced with injection: alloca_probe": 1,
+      "Removing unreachable block (ram,0x08fa00b6)": 1,
+      "Removing unreachable block (ram,0x08fa23d9)": 1,
+      "Removing unreachable block (ram,0x08fa439d)": 1,
+      "Switch with 1 destination removed at 0x08f9fb03": 1,
+      "Switch with 1 destination removed at 0x08fa0385": 1,
+      "Switch with 1 destination removed at 0x08fa1545": 1,
+      "Switch with 1 destination removed at 0x08fa15d3": 1,
+      "Switch with 1 destination removed at 0x08fa1725": 1,
+      "Switch with 1 destination removed at 0x08fa1c87": 1,
+      "Switch with 1 destination removed at 0x08fa2b87": 1,
+      "Switch with 1 destination removed at 0x08fa36fb": 1,
+      "Switch with 1 destination removed at 0x08fa45a7": 1,
+      "Switch with 1 destination removed at 0x08fa4f5a": 1,
+      "Type propagation algorithm not settling": 1,
+      "Globals starting with '_' overlap smaller symbols at the same address": 1,
+      "Switch is manually overridden": 226,
+      "Does not return": 1
+    },
+    "type_propagation_warning_retained": true,
+    "not_source_identical": true
+  },
+  "normal_context": [
+    "Original initialized PE/TLS and named readonly/global seed constants remain unchanged.",
+    "Normal compiler ABI: distinct active private frames, caller owns live writable72B originalout object; inputEDX PID is scalar.",
+    "Valid Rust-owned local Vec/BTree descriptors and standard allocation/reserve/split/drop invariants, with nonwrapping in-bounds capacity/index arithmetic. OS process/thread handles and remote virtual addresses remain scalars, never local ownednode pointers.",
+    "Correct named WindowsAPI ABI and version-specific helper contracts, without assuming any API success or Chrome-version compatibility."
+  ],
+  "capacity_limit": "Valid owned Rust Vec/BTree capacity/length/index/height invariants remain named premises. This closes object provenance/type separation in that context; it does not claim arbitrary corrupted-state memory safety or API success.",
+  "semantic_result": "PID-directed Windows process-memory workflow with named API/static resolver targets and local owned collections; resulting output is three24B aggregates copied as72B on success, failure sentinel atoutput+8. This analysis does not validate real browser/key compatibility or execute the workflow.",
+  "old_frozen_manifest": {
+    "checked": 296,
+    "changed": []
+  },
+  "specimen_or_API_execution": false,
+  "sample_bytes_changed": false
+}

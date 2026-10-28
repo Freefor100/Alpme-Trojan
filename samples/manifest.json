@@ -1,0 +1,36 @@
+{
+  "archive_password": "infected",
+  "archive_encryption": "ZIP AES256",
+  "warning": "不要在宿主机运行EXE或加载DLL。",
+  "samples": [
+    {
+      "kind": "original-exe",
+      "archive": "samples/17si-19si.samples.zip",
+      "member": "17si.exe",
+      "bytes": 1136640,
+      "sha256": "2e1363e7220befe88eeb2b9b9490640f9834be0dd789c01471a69de8f69e6dfa"
+    },
+    {
+      "kind": "original-exe",
+      "archive": "samples/17si-19si.samples.zip",
+      "member": "19si.exe",
+      "bytes": 1199616,
+      "sha256": "5afbebb7ed01515ed80ca9c9e7e4c7b01c7652e220b2c2a19452356688e79244"
+    },
+    {
+      "kind": "reconstructed-analysis-payload",
+      "archive": "recovered/reconstructed-payloads.zip",
+      "member": "17_payload.dll.bin",
+      "bytes": 648192,
+      "sha256": "1dfb1ef139176bdbbf88858d47f22e042eadd4658fff7603b50f1b87bfd7675c"
+    },
+    {
+      "kind": "reconstructed-analysis-payload",
+      "archive": "recovered/reconstructed-payloads.zip",
+      "member": "19_payload.dll.bin",
+      "bytes": 643584,
+      "sha256": "62a0a9eda6d8a7f75619a0edde2f57649c174e19ff0d082ba347f4ec40d3faaf"
+    }
+  ],
+  "payload_note": "reconstructed-payloads.zip内为既有静态工程输入，PE头及分析基址已有重建/规范化；不是作者原始DLL文件。映射详见evidence/analysis-inputs.json。"
+}

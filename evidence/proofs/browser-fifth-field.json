@@ -1,0 +1,1650 @@
+{
+  "status": "ALL27_FROZEN_NUMERIC_CANDIDATES_EXCLUDED_IN_NORMAL_TYPED_ADDRESS_MODEL",
+  "scope": "Only frozen16+10 selfrelative bias candidates plus1 rawRVA numeric candidate. No repetition of whole.text/raw51/56 RIP/config scans.",
+  "prior_frozen_audit": {
+    "path": "C:\\Users\\leo\\Documents\\Codex\\2026-10-26\\ni\\work\\alpme_analysis\\semantic_closure_20261027\\round4_network_core\\fifthfield_address_audit\\fifthfield_frozen_address_findings.json",
+    "sha256": "eeeee3b71e0578b0e87c54502086ab486ef63ade562a199057cf5d5c4042c37f",
+    "unchanged": true
+  },
+  "versions": [
+    {
+      "version": "17",
+      "source_sha256": "24f7eed14b69c561bd2dde6aa61759cabc8588293e9a0099dde8e381f96f228a",
+      "config": "0x99270",
+      "fifth": "0x993bb",
+      "candidate_items": 16,
+      "unique_windows": 8,
+      "excluded_items": 16,
+      "unresolved_specific_windows": [],
+      "rows": [
+        {
+          "candidate": {
+            "section": ".rdata",
+            "word_rva": "0x92595",
+            "alignment": 1,
+            "relative_base_bias": 0,
+            "signed_value": 28160,
+            "target_rva": "0x99395",
+            "config_offset": "0x125",
+            "kind": "self-relative32 numeric candidate only; not a proved pointer/consumer"
+          },
+          "original_bytes": "006e0000",
+          "classification": "misaligned_window_inside_UTF16_locale_name",
+          "forms_config_pointer": false,
+          "operational_consumer": false,
+          "UTF16_object": {
+            "start": "0x92594",
+            "text": "mn",
+            "bytes": "6d006e000000"
+          },
+          "actual_address_sources": [
+            {
+              "relocation_rva": "0x8dc08",
+              "whole64bit_pointer": "0x9002594",
+              "target_UTF16_rva": "0x92594",
+              "following_scalar": "0x56"
+            },
+            {
+              "relocation_rva": "0x8ef40",
+              "whole64bit_pointer": "0x9002594",
+              "target_UTF16_rva": "0x92594",
+              "following_scalar": "0x3d"
+            }
+          ],
+          "exclusion": "The4byte candidate starts at the high byte of a UTF16 code unit and crosses subsequent code-unit/padding bytes. Actual incoming DIR64 pointers address this locale string, not the arithmetic self-relative window. Under normal typed constant-object/UTF16 ABI it is character data, not a signed self-relative address field."
+        },
+        {
+          "candidate": {
+            "section": ".rdata",
+            "word_rva": "0x92595",
+            "alignment": 1,
+            "relative_base_bias": 4,
+            "signed_value": 28160,
+            "target_rva": "0x99399",
+            "config_offset": "0x129",
+            "kind": "self-relative32 numeric candidate only; not a proved pointer/consumer"
+          },
+          "original_bytes": "006e0000",
+          "classification": "misaligned_window_inside_UTF16_locale_name",
+          "forms_config_pointer": false,
+          "operational_consumer": false,
+          "UTF16_object": {
+            "start": "0x92594",
+            "text": "mn",
+            "bytes": "6d006e000000"
+          },
+          "actual_address_sources": [
+            {
+              "relocation_rva": "0x8dc08",
+              "whole64bit_pointer": "0x9002594",
+              "target_UTF16_rva": "0x92594",
+              "following_scalar": "0x56"
+            },
+            {
+              "relocation_rva": "0x8ef40",
+              "whole64bit_pointer": "0x9002594",
+              "target_UTF16_rva": "0x92594",
+              "following_scalar": "0x3d"
+            }
+          ],
+          "exclusion": "The4byte candidate starts at the high byte of a UTF16 code unit and crosses subsequent code-unit/padding bytes. Actual incoming DIR64 pointers address this locale string, not the arithmetic self-relative window. Under normal typed constant-object/UTF16 ABI it is character data, not a signed self-relative address field."
+        },
+        {
+          "candidate": {
+            "section": ".rdata",
+            "word_rva": "0x9259d",
+            "alignment": 1,
+            "relative_base_bias": 0,
+            "signed_value": 28160,
+            "target_rva": "0x9939d",
+            "config_offset": "0x12d",
+            "kind": "self-relative32 numeric candidate only; not a proved pointer/consumer"
+          },
+          "original_bytes": "006e0000",
+          "classification": "misaligned_window_inside_UTF16_locale_name",
+          "forms_config_pointer": false,
+          "operational_consumer": false,
+          "UTF16_object": {
+            "start": "0x9259c",
+            "text": "kn",
+            "bytes": "6b006e000000"
+          },
+          "actual_address_sources": [
+            {
+              "relocation_rva": "0x8dbd8",
+              "whole64bit_pointer": "0x900259c",
+              "target_UTF16_rva": "0x9259c",
+              "following_scalar": "0x4e"
+            },
+            {
+              "relocation_rva": "0x8ee40",
+              "whole64bit_pointer": "0x900259c",
+              "target_UTF16_rva": "0x9259c",
+              "following_scalar": "0x3a"
+            }
+          ],
+          "exclusion": "The4byte candidate starts at the high byte of a UTF16 code unit and crosses subsequent code-unit/padding bytes. Actual incoming DIR64 pointers address this locale string, not the arithmetic self-relative window. Under normal typed constant-object/UTF16 ABI it is character data, not a signed self-relative address field."
+        },
+        {
+          "candidate": {
+            "section": ".rdata",
+            "word_rva": "0x9259d",
+            "alignment": 1,
+            "relative_base_bias": 4,
+            "signed_value": 28160,
+            "target_rva": "0x993a1",
+            "config_offset": "0x131",
+            "kind": "self-relative32 numeric candidate only; not a proved pointer/consumer"
+          },
+          "original_bytes": "006e0000",
+          "classification": "misaligned_window_inside_UTF16_locale_name",
+          "forms_config_pointer": false,
+          "operational_consumer": false,
+          "UTF16_object": {
+            "start": "0x9259c",
+            "text": "kn",
+            "bytes": "6b006e000000"
+          },
+          "actual_address_sources": [
+            {
+              "relocation_rva": "0x8dbd8",
+              "whole64bit_pointer": "0x900259c",
+              "target_UTF16_rva": "0x9259c",
+              "following_scalar": "0x4e"
+            },
+            {
+              "relocation_rva": "0x8ee40",
+              "whole64bit_pointer": "0x900259c",
+              "target_UTF16_rva": "0x9259c",
+              "following_scalar": "0x3a"
+            }
+          ],
+          "exclusion": "The4byte candidate starts at the high byte of a UTF16 code unit and crosses subsequent code-unit/padding bytes. Actual incoming DIR64 pointers address this locale string, not the arithmetic self-relative window. Under normal typed constant-object/UTF16 ABI it is character data, not a signed self-relative address field."
+        },
+        {
+          "candidate": {
+            "section": ".rdata",
+            "word_rva": "0x925a5",
+            "alignment": 1,
+            "relative_base_bias": 0,
+            "signed_value": 28160,
+            "target_rva": "0x993a5",
+            "config_offset": "0x135",
+            "kind": "self-relative32 numeric candidate only; not a proved pointer/consumer"
+          },
+          "original_bytes": "006e0000",
+          "classification": "misaligned_window_inside_UTF16_locale_name",
+          "forms_config_pointer": false,
+          "operational_consumer": false,
+          "UTF16_object": {
+            "start": "0x925a4",
+            "text": "en",
+            "bytes": "65006e000000"
+          },
+          "actual_address_sources": [
+            {
+              "relocation_rva": "0x8d8b8",
+              "whole64bit_pointer": "0x90025a4",
+              "target_UTF16_rva": "0x925a4",
+              "following_scalar": "0xa"
+            },
+            {
+              "relocation_rva": "0x8e950",
+              "whole64bit_pointer": "0x90025a4",
+              "target_UTF16_rva": "0x925a4",
+              "following_scalar": "0x8"
+            }
+          ],
+          "exclusion": "The4byte candidate starts at the high byte of a UTF16 code unit and crosses subsequent code-unit/padding bytes. Actual incoming DIR64 pointers address this locale string, not the arithmetic self-relative window. Under normal typed constant-object/UTF16 ABI it is character data, not a signed self-relative address field."
+        },
+        {
+          "candidate": {
+            "section": ".rdata",
+            "word_rva": "0x925a5",
+            "alignment": 1,
+            "relative_base_bias": 4,
+            "signed_value": 28160,
+            "target_rva": "0x993a9",
+            "config_offset": "0x139",
+            "kind": "self-relative32 numeric candidate only; not a proved pointer/consumer"
+          },
+          "original_bytes": "006e0000",
+          "classification": "misaligned_window_inside_UTF16_locale_name",
+          "forms_config_pointer": false,
+          "operational_consumer": false,
+          "UTF16_object": {
+            "start": "0x925a4",
+            "text": "en",
+            "bytes": "65006e000000"
+          },
+          "actual_address_sources": [
+            {
+              "relocation_rva": "0x8d8b8",
+              "whole64bit_pointer": "0x90025a4",
+              "target_UTF16_rva": "0x925a4",
+              "following_scalar": "0xa"
+            },
+            {
+              "relocation_rva": "0x8e950",
+              "whole64bit_pointer": "0x90025a4",
+              "target_UTF16_rva": "0x925a4",
+              "following_scalar": "0x8"
+            }
+          ],
+          "exclusion": "The4byte candidate starts at the high byte of a UTF16 code unit and crosses subsequent code-unit/padding bytes. Actual incoming DIR64 pointers address this locale string, not the arithmetic self-relative window. Under normal typed constant-object/UTF16 ABI it is character data, not a signed self-relative address field."
+        },
+        {
+          "candidate": {
+            "section": ".rdata",
+            "word_rva": "0x93cf7",
+            "alignment": 3,
+            "relative_base_bias": 0,
+            "signed_value": 22016,
+            "target_rva": "0x992f7",
+            "config_offset": "0x87",
+            "kind": "self-relative32 numeric candidate only; not a proved pointer/consumer"
+          },
+          "original_bytes": "00560000",
+          "classification": "misaligned_window_inside_UTF16_locale_name",
+          "forms_config_pointer": false,
+          "operational_consumer": false,
+          "UTF16_object": {
+            "start": "0x93cf0",
+            "text": "es-SV",
+            "bytes": "650073002d00530056000000"
+          },
+          "actual_address_sources": [
+            {
+              "relocation_rva": "0x8e618",
+              "whole64bit_pointer": "0x9003cf0",
+              "target_UTF16_rva": "0x93cf0",
+              "following_scalar": "0x480a"
+            }
+          ],
+          "exclusion": "The4byte candidate starts at the high byte of a UTF16 code unit and crosses subsequent code-unit/padding bytes. Actual incoming DIR64 pointers address this locale string, not the arithmetic self-relative window. Under normal typed constant-object/UTF16 ABI it is character data, not a signed self-relative address field."
+        },
+        {
+          "candidate": {
+            "section": ".rdata",
+            "word_rva": "0x93cf7",
+            "alignment": 3,
+            "relative_base_bias": 4,
+            "signed_value": 22016,
+            "target_rva": "0x992fb",
+            "config_offset": "0x8b",
+            "kind": "self-relative32 numeric candidate only; not a proved pointer/consumer"
+          },
+          "original_bytes": "00560000",
+          "classification": "misaligned_window_inside_UTF16_locale_name",
+          "forms_config_pointer": false,
+          "operational_consumer": false,
+          "UTF16_object": {
+            "start": "0x93cf0",
+            "text": "es-SV",
+            "bytes": "650073002d00530056000000"
+          },
+          "actual_address_sources": [
+            {
+              "relocation_rva": "0x8e618",
+              "whole64bit_pointer": "0x9003cf0",
+              "target_UTF16_rva": "0x93cf0",
+              "following_scalar": "0x480a"
+            }
+          ],
+          "exclusion": "The4byte candidate starts at the high byte of a UTF16 code unit and crosses subsequent code-unit/padding bytes. Actual incoming DIR64 pointers address this locale string, not the arithmetic self-relative window. Under normal typed constant-object/UTF16 ABI it is character data, not a signed self-relative address field."
+        },
+        {
+          "candidate": {
+            "section": ".rdata",
+            "word_rva": "0x93d09",
+            "alignment": 1,
+            "relative_base_bias": 0,
+            "signed_value": 22016,
+            "target_rva": "0x99309",
+            "config_offset": "0x99",
+            "kind": "self-relative32 numeric candidate only; not a proved pointer/consumer"
+          },
+          "original_bytes": "00560000",
+          "classification": "misaligned_window_inside_UTF16_locale_name",
+          "forms_config_pointer": false,
+          "operational_consumer": false,
+          "UTF16_object": {
+            "start": "0x93d00",
+            "text": "div-MV",
+            "bytes": "6400690076002d004d0056000000"
+          },
+          "actual_address_sources": [
+            {
+              "relocation_rva": "0x8e0e8",
+              "whole64bit_pointer": "0x9003d00",
+              "target_UTF16_rva": "0x93d00",
+              "following_scalar": "0x46b"
+            }
+          ],
+          "exclusion": "The4byte candidate starts at the high byte of a UTF16 code unit and crosses subsequent code-unit/padding bytes. Actual incoming DIR64 pointers address this locale string, not the arithmetic self-relative window. Under normal typed constant-object/UTF16 ABI it is character data, not a signed self-relative address field."
+        },
+        {
+          "candidate": {
+            "section": ".rdata",
+            "word_rva": "0x93d09",
+            "alignment": 1,
+            "relative_base_bias": 4,
+            "signed_value": 22016,
+            "target_rva": "0x9930d",
+            "config_offset": "0x9d",
+            "kind": "self-relative32 numeric candidate only; not a proved pointer/consumer"
+          },
+          "original_bytes": "00560000",
+          "classification": "misaligned_window_inside_UTF16_locale_name",
+          "forms_config_pointer": false,
+          "operational_consumer": false,
+          "UTF16_object": {
+            "start": "0x93d00",
+            "text": "div-MV",
+            "bytes": "6400690076002d004d0056000000"
+          },
+          "actual_address_sources": [
+            {
+              "relocation_rva": "0x8e0e8",
+              "whole64bit_pointer": "0x9003d00",
+              "target_UTF16_rva": "0x93d00",
+              "following_scalar": "0x46b"
+            }
+          ],
+          "exclusion": "The4byte candidate starts at the high byte of a UTF16 code unit and crosses subsequent code-unit/padding bytes. Actual incoming DIR64 pointers address this locale string, not the arithmetic self-relative window. Under normal typed constant-object/UTF16 ABI it is character data, not a signed self-relative address field."
+        },
+        {
+          "candidate": {
+            "section": ".rdata",
+            "word_rva": "0x93d17",
+            "alignment": 3,
+            "relative_base_bias": 0,
+            "signed_value": 22016,
+            "target_rva": "0x99317",
+            "config_offset": "0xa7",
+            "kind": "self-relative32 numeric candidate only; not a proved pointer/consumer"
+          },
+          "original_bytes": "00560000",
+          "classification": "misaligned_window_inside_UTF16_locale_name",
+          "forms_config_pointer": false,
+          "operational_consumer": false,
+          "UTF16_object": {
+            "start": "0x93d10",
+            "text": "lv-LV",
+            "bytes": "6c0076002d004c0056000000"
+          },
+          "actual_address_sources": [
+            {
+              "relocation_rva": "0x8de98",
+              "whole64bit_pointer": "0x9003d10",
+              "target_UTF16_rva": "0x93d10",
+              "following_scalar": "0x427"
+            }
+          ],
+          "exclusion": "The4byte candidate starts at the high byte of a UTF16 code unit and crosses subsequent code-unit/padding bytes. Actual incoming DIR64 pointers address this locale string, not the arithmetic self-relative window. Under normal typed constant-object/UTF16 ABI it is character data, not a signed self-relative address field."
+        },
+        {
+          "candidate": {
+            "section": ".rdata",
+            "word_rva": "0x93d17",
+            "alignment": 3,
+            "relative_base_bias": 4,
+            "signed_value": 22016,
+            "target_rva": "0x9931b",
+            "config_offset": "0xab",
+            "kind": "self-relative32 numeric candidate only; not a proved pointer/consumer"
+          },
+          "original_bytes": "00560000",
+          "classification": "misaligned_window_inside_UTF16_locale_name",
+          "forms_config_pointer": false,
+          "operational_consumer": false,
+          "UTF16_object": {
+            "start": "0x93d10",
+            "text": "lv-LV",
+            "bytes": "6c0076002d004c0056000000"
+          },
+          "actual_address_sources": [
+            {
+              "relocation_rva": "0x8de98",
+              "whole64bit_pointer": "0x9003d10",
+              "target_UTF16_rva": "0x93d10",
+              "following_scalar": "0x427"
+            }
+          ],
+          "exclusion": "The4byte candidate starts at the high byte of a UTF16 code unit and crosses subsequent code-unit/padding bytes. Actual incoming DIR64 pointers address this locale string, not the arithmetic self-relative window. Under normal typed constant-object/UTF16 ABI it is character data, not a signed self-relative address field."
+        },
+        {
+          "candidate": {
+            "section": ".rdata",
+            "word_rva": "0x93d77",
+            "alignment": 3,
+            "relative_base_bias": 0,
+            "signed_value": 21760,
+            "target_rva": "0x99277",
+            "config_offset": "0x7",
+            "kind": "self-relative32 numeric candidate only; not a proved pointer/consumer"
+          },
+          "original_bytes": "00550000",
+          "classification": "misaligned_window_inside_UTF16_locale_name",
+          "forms_config_pointer": false,
+          "operational_consumer": false,
+          "UTF16_object": {
+            "start": "0x93d70",
+            "text": "en-AU",
+            "bytes": "65006e002d00410055000000"
+          },
+          "actual_address_sources": [
+            {
+              "relocation_rva": "0x8e268",
+              "whole64bit_pointer": "0x9003d70",
+              "target_UTF16_rva": "0x93d70",
+              "following_scalar": "0xc0a"
+            }
+          ],
+          "exclusion": "The4byte candidate starts at the high byte of a UTF16 code unit and crosses subsequent code-unit/padding bytes. Actual incoming DIR64 pointers address this locale string, not the arithmetic self-relative window. Under normal typed constant-object/UTF16 ABI it is character data, not a signed self-relative address field."
+        },
+        {
+          "candidate": {
+            "section": ".rdata",
+            "word_rva": "0x93d77",
+            "alignment": 3,
+            "relative_base_bias": 4,
+            "signed_value": 21760,
+            "target_rva": "0x9927b",
+            "config_offset": "0xb",
+            "kind": "self-relative32 numeric candidate only; not a proved pointer/consumer"
+          },
+          "original_bytes": "00550000",
+          "classification": "misaligned_window_inside_UTF16_locale_name",
+          "forms_config_pointer": false,
+          "operational_consumer": false,
+          "UTF16_object": {
+            "start": "0x93d70",
+            "text": "en-AU",
+            "bytes": "65006e002d00410055000000"
+          },
+          "actual_address_sources": [
+            {
+              "relocation_rva": "0x8e268",
+              "whole64bit_pointer": "0x9003d70",
+              "target_UTF16_rva": "0x93d70",
+              "following_scalar": "0xc0a"
+            }
+          ],
+          "exclusion": "The4byte candidate starts at the high byte of a UTF16 code unit and crosses subsequent code-unit/padding bytes. Actual incoming DIR64 pointers address this locale string, not the arithmetic self-relative window. Under normal typed constant-object/UTF16 ABI it is character data, not a signed self-relative address field."
+        },
+        {
+          "candidate": {
+            "section": ".rdata",
+            "word_rva": "0x971cb",
+            "alignment": 3,
+            "relative_base_bias": 0,
+            "signed_value": 8448,
+            "target_rva": "0x992cb",
+            "config_offset": "0x5b",
+            "kind": "self-relative32 numeric candidate only; not a proved pointer/consumer"
+          },
+          "original_bytes": "00210000",
+          "classification": "crosses_two_PE_unwind_metadata_fields",
+          "forms_config_pointer": false,
+          "operational_consumer": false,
+          "runtime_function_record": {
+            "rva": "0x971c0",
+            "BeginAddress": "0x7a810",
+            "EndAddress": "0x7a8a2",
+            "UnwindData": "0x97194",
+            "bytes": "10a80700a2a8070094710900"
+          },
+          "next_unwind_info": {
+            "rva": "0x971cc",
+            "version": 1,
+            "flags_CHAININFO": 4,
+            "count_codes": 0,
+            "bytes": "21000000"
+          },
+          "exclusion": "Candidate begins at the final zero byte of UnwindData97194 and continues into the next UNWIND_INFO header21/00/00. The PE unwinder consumes the12B RUNTIME_FUNCTION and separate header, not signed32 value2100 at971cb."
+        },
+        {
+          "candidate": {
+            "section": ".rdata",
+            "word_rva": "0x971cb",
+            "alignment": 3,
+            "relative_base_bias": 4,
+            "signed_value": 8448,
+            "target_rva": "0x992cf",
+            "config_offset": "0x5f",
+            "kind": "self-relative32 numeric candidate only; not a proved pointer/consumer"
+          },
+          "original_bytes": "00210000",
+          "classification": "crosses_two_PE_unwind_metadata_fields",
+          "forms_config_pointer": false,
+          "operational_consumer": false,
+          "runtime_function_record": {
+            "rva": "0x971c0",
+            "BeginAddress": "0x7a810",
+            "EndAddress": "0x7a8a2",
+            "UnwindData": "0x97194",
+            "bytes": "10a80700a2a8070094710900"
+          },
+          "next_unwind_info": {
+            "rva": "0x971cc",
+            "version": 1,
+            "flags_CHAININFO": 4,
+            "count_codes": 0,
+            "bytes": "21000000"
+          },
+          "exclusion": "Candidate begins at the final zero byte of UnwindData97194 and continues into the next UNWIND_INFO header21/00/00. The PE unwinder consumes the12B RUNTIME_FUNCTION and separate header, not signed32 value2100 at971cb."
+        }
+      ]
+    },
+    {
+      "version": "19",
+      "source_sha256": "4e4636d2c9d57eb609b7d18ee3dc01713fbcda39c5eee52bd4a66f222f67bb31",
+      "config": "0x966a8",
+      "fifth": "0x967f3",
+      "candidate_items": 11,
+      "unique_windows": 6,
+      "excluded_items": 11,
+      "unresolved_specific_windows": [],
+      "rows": [
+        {
+          "candidate": {
+            "section": ".rdata",
+            "word_rva": "0x8669b",
+            "alignment": 3,
+            "relative_base_bias": 0,
+            "signed_value": 65797,
+            "target_rva": "0x967a0",
+            "config_offset": "0xf8",
+            "kind": "self-relative32 numeric candidate only; not a proved pointer/consumer"
+          },
+          "original_bytes": "05010100",
+          "classification": "four_byte_window_in_compressed_Unicode_membership_byte_table",
+          "forms_config_pointer": false,
+          "operational_consumer": false,
+          "table": {
+            "base": "0x86446",
+            "candidate_byte_offset": 597,
+            "actual_four_byte_weights": [
+              5,
+              1,
+              1,
+              0
+            ]
+          },
+          "reader": {
+            "entry": "0x3ccb2",
+            "native_instructions": 56,
+            "byte_load": {
+              "rva": "0x3cd4b",
+              "bytes": "460fb60418",
+              "asm": "movzx r8d, byte ptr [rax + r11]"
+            },
+            "table_base": {
+              "rva": "0x3cd41",
+              "bytes": "4c8d1dfe960400",
+              "asm": "lea r11, [rip + 0x496fe]"
+            },
+            "native": [
+              {
+                "rva": "0x3ccb2",
+                "bytes": "56",
+                "asm": "push rsi"
+              },
+              {
+                "rva": "0x3ccb3",
+                "bytes": "ba24000000",
+                "asm": "mov edx, 0x24"
+              },
+              {
+                "rva": "0x3ccb8",
+                "bytes": "4c8d1d612e0400",
+                "asm": "lea r11, [rip + 0x42e61]"
+              },
+              {
+                "rva": "0x3ccbf",
+                "bytes": "31c0",
+                "asm": "xor eax, eax"
+              },
+              {
+                "rva": "0x3ccc1",
+                "bytes": "41b8ffff1f00",
+                "asm": "mov r8d, 0x1fffff"
+              },
+              {
+                "rva": "0x3ccc7",
+                "bytes": "4c8bd2",
+                "asm": "mov r10, rdx"
+              },
+              {
+                "rva": "0x3ccca",
+                "bytes": "49d1ea",
+                "asm": "shr r10, 1"
+              },
+              {
+                "rva": "0x3cccd",
+                "bytes": "4c8bc8",
+                "asm": "mov r9, rax"
+              },
+              {
+                "rva": "0x3ccd0",
+                "bytes": "4c01d0",
+                "asm": "add rax, r10"
+              },
+              {
+                "rva": "0x3ccd3",
+                "bytes": "418b3483",
+                "asm": "mov esi, dword ptr [r11 + rax*4]"
+              },
+              {
+                "rva": "0x3ccd7",
+                "bytes": "4123f0",
+                "asm": "and esi, r8d"
+              },
+              {
+                "rva": "0x3ccda",
+                "bytes": "3bce",
+                "asm": "cmp ecx, esi"
+              },
+              {
+                "rva": "0x3ccdc",
+                "bytes": "490f42c1",
+                "asm": "cmovb rax, r9"
+              },
+              {
+                "rva": "0x3cce0",
+                "bytes": "4c29d2",
+                "asm": "sub rdx, r10"
+              },
+              {
+                "rva": "0x3cce3",
+                "bytes": "4883fa01",
+                "asm": "cmp rdx, 1"
+              },
+              {
+                "rva": "0x3cce7",
+                "bytes": "77de",
+                "asm": "ja 0x18003ccc7"
+              },
+              {
+                "rva": "0x3cce9",
+                "bytes": "8bd1",
+                "asm": "mov edx, ecx"
+              },
+              {
+                "rva": "0x3cceb",
+                "bytes": "c1e20b",
+                "asm": "shl edx, 0xb"
+              },
+              {
+                "rva": "0x3ccee",
+                "bytes": "458b0c83",
+                "asm": "mov r9d, dword ptr [r11 + rax*4]"
+              },
+              {
+                "rva": "0x3ccf2",
+                "bytes": "41c1e10b",
+                "asm": "shl r9d, 0xb"
+              },
+              {
+                "rva": "0x3ccf6",
+                "bytes": "4531c0",
+                "asm": "xor r8d, r8d"
+              },
+              {
+                "rva": "0x3ccf9",
+                "bytes": "443bca",
+                "asm": "cmp r9d, edx"
+              },
+              {
+                "rva": "0x3ccfc",
+                "bytes": "410f94c0",
+                "asm": "sete r8b"
+              },
+              {
+                "rva": "0x3cd00",
+                "bytes": "4911c0",
+                "asm": "adc r8, rax"
+              },
+              {
+                "rva": "0x3cd03",
+                "bytes": "438b0483",
+                "asm": "mov eax, dword ptr [r11 + r8*4]"
+              },
+              {
+                "rva": "0x3cd07",
+                "bytes": "c1e815",
+                "asm": "shr eax, 0x15"
+              },
+              {
+                "rva": "0x3cd0a",
+                "bytes": "ba9f030000",
+                "asm": "mov edx, 0x39f"
+              },
+              {
+                "rva": "0x3cd0f",
+                "bytes": "4983f822",
+                "asm": "cmp r8, 0x22"
+              },
+              {
+                "rva": "0x3cd13",
+                "bytes": "770d",
+                "asm": "ja 0x18003cd22"
+              },
+              {
+                "rva": "0x3cd15",
+                "bytes": "438b548304",
+                "asm": "mov edx, dword ptr [r11 + r8*4 + 4]"
+              },
+              {
+                "rva": "0x3cd1a",
+                "bytes": "c1ea15",
+                "asm": "shr edx, 0x15"
+              },
+              {
+                "rva": "0x3cd1d",
+                "bytes": "4d85c0",
+                "asm": "test r8, r8"
+              },
+              {
+                "rva": "0x3cd20",
+                "bytes": "7442",
+                "asm": "je 0x18003cd64"
+              },
+              {
+                "rva": "0x3cd22",
+                "bytes": "41b9ffff1f00",
+                "asm": "mov r9d, 0x1fffff"
+              },
+              {
+                "rva": "0x3cd28",
+                "bytes": "47234c83fc",
+                "asm": "and r9d, dword ptr [r11 + r8*4 - 4]"
+              },
+              {
+                "rva": "0x3cd2d",
+                "bytes": "4c8bd8",
+                "asm": "mov r11, rax"
+              },
+              {
+                "rva": "0x3cd30",
+                "bytes": "49f7d3",
+                "asm": "not r11"
+              },
+              {
+                "rva": "0x3cd33",
+                "bytes": "4c03da",
+                "asm": "add r11, rdx"
+              },
+              {
+                "rva": "0x3cd36",
+                "bytes": "7428",
+                "asm": "je 0x18003cd60"
+              },
+              {
+                "rva": "0x3cd38",
+                "bytes": "4429c9",
+                "asm": "sub ecx, r9d"
+              },
+              {
+                "rva": "0x3cd3b",
+                "bytes": "48ffca",
+                "asm": "dec rdx"
+              },
+              {
+                "rva": "0x3cd3e",
+                "bytes": "4531c0",
+                "asm": "xor r8d, r8d"
+              },
+              {
+                "rva": "0x3cd41",
+                "bytes": "4c8d1dfe960400",
+                "asm": "lea r11, [rip + 0x496fe]"
+              },
+              {
+                "rva": "0x3cd48",
+                "bytes": "458bc8",
+                "asm": "mov r9d, r8d"
+              },
+              {
+                "rva": "0x3cd4b",
+                "bytes": "460fb60418",
+                "asm": "movzx r8d, byte ptr [rax + r11]"
+              },
+              {
+                "rva": "0x3cd50",
+                "bytes": "4501c8",
+                "asm": "add r8d, r9d"
+              },
+              {
+                "rva": "0x3cd53",
+                "bytes": "413bc8",
+                "asm": "cmp ecx, r8d"
+              },
+              {
+                "rva": "0x3cd56",
+                "bytes": "7208",
+                "asm": "jb 0x18003cd60"
+              },
+              {
+                "rva": "0x3cd58",
+                "bytes": "48ffc0",
+                "asm": "inc rax"
+              },
+              {
+                "rva": "0x3cd5b",
+                "bytes": "483bd0",
+                "asm": "cmp rdx, rax"
+              },
+              {
+                "rva": "0x3cd5e",
+                "bytes": "75e8",
+                "asm": "jne 0x18003cd48"
+              },
+              {
+                "rva": "0x3cd60",
+                "bytes": "2401",
+                "asm": "and al, 1"
+              },
+              {
+                "rva": "0x3cd62",
+                "bytes": "5e",
+                "asm": "pop rsi"
+              },
+              {
+                "rva": "0x3cd63",
+                "bytes": "c3",
+                "asm": "ret "
+              },
+              {
+                "rva": "0x3cd64",
+                "bytes": "4531c9",
+                "asm": "xor r9d, r9d"
+              },
+              {
+                "rva": "0x3cd67",
+                "bytes": "ebc4",
+                "asm": "jmp 0x18003cd2d"
+              }
+            ]
+          },
+          "exclusion": "Reader loads one BYTE weight at a time, accumulates integer range lengths and compares an input Unicode scalar; result lowbit is membership parity. It never loads this4byte window as signed displacement, adds it to8669b or treats it as config pointer."
+        },
+        {
+          "candidate": {
+            "section": ".rdata",
+            "word_rva": "0x8669b",
+            "alignment": 3,
+            "relative_base_bias": 4,
+            "signed_value": 65797,
+            "target_rva": "0x967a4",
+            "config_offset": "0xfc",
+            "kind": "self-relative32 numeric candidate only; not a proved pointer/consumer"
+          },
+          "original_bytes": "05010100",
+          "classification": "four_byte_window_in_compressed_Unicode_membership_byte_table",
+          "forms_config_pointer": false,
+          "operational_consumer": false,
+          "table": {
+            "base": "0x86446",
+            "candidate_byte_offset": 597,
+            "actual_four_byte_weights": [
+              5,
+              1,
+              1,
+              0
+            ]
+          },
+          "reader": {
+            "entry": "0x3ccb2",
+            "native_instructions": 56,
+            "byte_load": {
+              "rva": "0x3cd4b",
+              "bytes": "460fb60418",
+              "asm": "movzx r8d, byte ptr [rax + r11]"
+            },
+            "table_base": {
+              "rva": "0x3cd41",
+              "bytes": "4c8d1dfe960400",
+              "asm": "lea r11, [rip + 0x496fe]"
+            },
+            "native": [
+              {
+                "rva": "0x3ccb2",
+                "bytes": "56",
+                "asm": "push rsi"
+              },
+              {
+                "rva": "0x3ccb3",
+                "bytes": "ba24000000",
+                "asm": "mov edx, 0x24"
+              },
+              {
+                "rva": "0x3ccb8",
+                "bytes": "4c8d1d612e0400",
+                "asm": "lea r11, [rip + 0x42e61]"
+              },
+              {
+                "rva": "0x3ccbf",
+                "bytes": "31c0",
+                "asm": "xor eax, eax"
+              },
+              {
+                "rva": "0x3ccc1",
+                "bytes": "41b8ffff1f00",
+                "asm": "mov r8d, 0x1fffff"
+              },
+              {
+                "rva": "0x3ccc7",
+                "bytes": "4c8bd2",
+                "asm": "mov r10, rdx"
+              },
+              {
+                "rva": "0x3ccca",
+                "bytes": "49d1ea",
+                "asm": "shr r10, 1"
+              },
+              {
+                "rva": "0x3cccd",
+                "bytes": "4c8bc8",
+                "asm": "mov r9, rax"
+              },
+              {
+                "rva": "0x3ccd0",
+                "bytes": "4c01d0",
+                "asm": "add rax, r10"
+              },
+              {
+                "rva": "0x3ccd3",
+                "bytes": "418b3483",
+                "asm": "mov esi, dword ptr [r11 + rax*4]"
+              },
+              {
+                "rva": "0x3ccd7",
+                "bytes": "4123f0",
+                "asm": "and esi, r8d"
+              },
+              {
+                "rva": "0x3ccda",
+                "bytes": "3bce",
+                "asm": "cmp ecx, esi"
+              },
+              {
+                "rva": "0x3ccdc",
+                "bytes": "490f42c1",
+                "asm": "cmovb rax, r9"
+              },
+              {
+                "rva": "0x3cce0",
+                "bytes": "4c29d2",
+                "asm": "sub rdx, r10"
+              },
+              {
+                "rva": "0x3cce3",
+                "bytes": "4883fa01",
+                "asm": "cmp rdx, 1"
+              },
+              {
+                "rva": "0x3cce7",
+                "bytes": "77de",
+                "asm": "ja 0x18003ccc7"
+              },
+              {
+                "rva": "0x3cce9",
+                "bytes": "8bd1",
+                "asm": "mov edx, ecx"
+              },
+              {
+                "rva": "0x3cceb",
+                "bytes": "c1e20b",
+                "asm": "shl edx, 0xb"
+              },
+              {
+                "rva": "0x3ccee",
+                "bytes": "458b0c83",
+                "asm": "mov r9d, dword ptr [r11 + rax*4]"
+              },
+              {
+                "rva": "0x3ccf2",
+                "bytes": "41c1e10b",
+                "asm": "shl r9d, 0xb"
+              },
+              {
+                "rva": "0x3ccf6",
+                "bytes": "4531c0",
+                "asm": "xor r8d, r8d"
+              },
+              {
+                "rva": "0x3ccf9",
+                "bytes": "443bca",
+                "asm": "cmp r9d, edx"
+              },
+              {
+                "rva": "0x3ccfc",
+                "bytes": "410f94c0",
+                "asm": "sete r8b"
+              },
+              {
+                "rva": "0x3cd00",
+                "bytes": "4911c0",
+                "asm": "adc r8, rax"
+              },
+              {
+                "rva": "0x3cd03",
+                "bytes": "438b0483",
+                "asm": "mov eax, dword ptr [r11 + r8*4]"
+              },
+              {
+                "rva": "0x3cd07",
+                "bytes": "c1e815",
+                "asm": "shr eax, 0x15"
+              },
+              {
+                "rva": "0x3cd0a",
+                "bytes": "ba9f030000",
+                "asm": "mov edx, 0x39f"
+              },
+              {
+                "rva": "0x3cd0f",
+                "bytes": "4983f822",
+                "asm": "cmp r8, 0x22"
+              },
+              {
+                "rva": "0x3cd13",
+                "bytes": "770d",
+                "asm": "ja 0x18003cd22"
+              },
+              {
+                "rva": "0x3cd15",
+                "bytes": "438b548304",
+                "asm": "mov edx, dword ptr [r11 + r8*4 + 4]"
+              },
+              {
+                "rva": "0x3cd1a",
+                "bytes": "c1ea15",
+                "asm": "shr edx, 0x15"
+              },
+              {
+                "rva": "0x3cd1d",
+                "bytes": "4d85c0",
+                "asm": "test r8, r8"
+              },
+              {
+                "rva": "0x3cd20",
+                "bytes": "7442",
+                "asm": "je 0x18003cd64"
+              },
+              {
+                "rva": "0x3cd22",
+                "bytes": "41b9ffff1f00",
+                "asm": "mov r9d, 0x1fffff"
+              },
+              {
+                "rva": "0x3cd28",
+                "bytes": "47234c83fc",
+                "asm": "and r9d, dword ptr [r11 + r8*4 - 4]"
+              },
+              {
+                "rva": "0x3cd2d",
+                "bytes": "4c8bd8",
+                "asm": "mov r11, rax"
+              },
+              {
+                "rva": "0x3cd30",
+                "bytes": "49f7d3",
+                "asm": "not r11"
+              },
+              {
+                "rva": "0x3cd33",
+                "bytes": "4c03da",
+                "asm": "add r11, rdx"
+              },
+              {
+                "rva": "0x3cd36",
+                "bytes": "7428",
+                "asm": "je 0x18003cd60"
+              },
+              {
+                "rva": "0x3cd38",
+                "bytes": "4429c9",
+                "asm": "sub ecx, r9d"
+              },
+              {
+                "rva": "0x3cd3b",
+                "bytes": "48ffca",
+                "asm": "dec rdx"
+              },
+              {
+                "rva": "0x3cd3e",
+                "bytes": "4531c0",
+                "asm": "xor r8d, r8d"
+              },
+              {
+                "rva": "0x3cd41",
+                "bytes": "4c8d1dfe960400",
+                "asm": "lea r11, [rip + 0x496fe]"
+              },
+              {
+                "rva": "0x3cd48",
+                "bytes": "458bc8",
+                "asm": "mov r9d, r8d"
+              },
+              {
+                "rva": "0x3cd4b",
+                "bytes": "460fb60418",
+                "asm": "movzx r8d, byte ptr [rax + r11]"
+              },
+              {
+                "rva": "0x3cd50",
+                "bytes": "4501c8",
+                "asm": "add r8d, r9d"
+              },
+              {
+                "rva": "0x3cd53",
+                "bytes": "413bc8",
+                "asm": "cmp ecx, r8d"
+              },
+              {
+                "rva": "0x3cd56",
+                "bytes": "7208",
+                "asm": "jb 0x18003cd60"
+              },
+              {
+                "rva": "0x3cd58",
+                "bytes": "48ffc0",
+                "asm": "inc rax"
+              },
+              {
+                "rva": "0x3cd5b",
+                "bytes": "483bd0",
+                "asm": "cmp rdx, rax"
+              },
+              {
+                "rva": "0x3cd5e",
+                "bytes": "75e8",
+                "asm": "jne 0x18003cd48"
+              },
+              {
+                "rva": "0x3cd60",
+                "bytes": "2401",
+                "asm": "and al, 1"
+              },
+              {
+                "rva": "0x3cd62",
+                "bytes": "5e",
+                "asm": "pop rsi"
+              },
+              {
+                "rva": "0x3cd63",
+                "bytes": "c3",
+                "asm": "ret "
+              },
+              {
+                "rva": "0x3cd64",
+                "bytes": "4531c9",
+                "asm": "xor r9d, r9d"
+              },
+              {
+                "rva": "0x3cd67",
+                "bytes": "ebc4",
+                "asm": "jmp 0x18003cd2d"
+              }
+            ]
+          },
+          "exclusion": "Reader loads one BYTE weight at a time, accumulates integer range lengths and compares an input Unicode scalar; result lowbit is membership parity. It never loads this4byte window as signed displacement, adds it to8669b or treats it as config pointer."
+        },
+        {
+          "candidate": {
+            "section": ".rdata",
+            "word_rva": "0x8993b",
+            "alignment": 3,
+            "relative_base_bias": 0,
+            "signed_value": 52735,
+            "target_rva": "0x9673a",
+            "config_offset": "0x92",
+            "kind": "self-relative32 numeric candidate only; not a proved pointer/consumer"
+          },
+          "original_bytes": "ffcd0000",
+          "classification": "misaligned_window_crosses_two_code_dispatch_dwords",
+          "forms_config_pointer": false,
+          "operational_consumer": false,
+          "actual_object": {
+            "aligned_left_rva": "0x89938",
+            "aligned_left_signed": -39,
+            "left_bytes": "d9ffffff",
+            "aligned_right_rva": "0x8993c",
+            "aligned_right_signed": 205,
+            "right_bytes": "cd000000",
+            "candidate_offset_inside_left": 3
+          },
+          "aligned_reader_instructions": [
+            {
+              "rva": "0x56ab9",
+              "bytes": "488d0d7c2e0300",
+              "asm": "lea rcx, [rip + 0x32e7c]"
+            },
+            {
+              "rva": "0x56ac6",
+              "bytes": "4c0f44d1",
+              "asm": "cmove r10, rcx"
+            },
+            {
+              "rva": "0x57233",
+              "bytes": "488d05fe260300",
+              "asm": "lea rax, [rip + 0x326fe]"
+            },
+            {
+              "rva": "0x5723a",
+              "bytes": "488d0d9b270300",
+              "asm": "lea rcx, [rip + 0x3279b]"
+            },
+            {
+              "rva": "0x57241",
+              "bytes": "480f44c8",
+              "asm": "cmove rcx, rax"
+            },
+            {
+              "rva": "0x57245",
+              "bytes": "486301",
+              "asm": "movsxd rax, dword ptr [rcx]"
+            },
+            {
+              "rva": "0x57248",
+              "bytes": "4803c6",
+              "asm": "add rax, rsi"
+            },
+            {
+              "rva": "0x5724b",
+              "bytes": "ffe0",
+              "asm": "jmp rax"
+            }
+          ],
+          "exclusion": "The actual object consists of aligned signed32 dispatch entries. Native LEA/CMOV chooses aligned table-entry addresses, MOVSXD reads4B, and an executable-code anchor is added before JMP. The candidate offset+3 concatenates bytes from two distinct entries; no modulebase+RVA or wordaddress+selfrelative pointer producer is represented by this raw window."
+        },
+        {
+          "candidate": {
+            "section": ".rdata",
+            "word_rva": "0x8993b",
+            "alignment": 3,
+            "relative_base_bias": 4,
+            "signed_value": 52735,
+            "target_rva": "0x9673e",
+            "config_offset": "0x96",
+            "kind": "self-relative32 numeric candidate only; not a proved pointer/consumer"
+          },
+          "original_bytes": "ffcd0000",
+          "classification": "misaligned_window_crosses_two_code_dispatch_dwords",
+          "forms_config_pointer": false,
+          "operational_consumer": false,
+          "actual_object": {
+            "aligned_left_rva": "0x89938",
+            "aligned_left_signed": -39,
+            "left_bytes": "d9ffffff",
+            "aligned_right_rva": "0x8993c",
+            "aligned_right_signed": 205,
+            "right_bytes": "cd000000",
+            "candidate_offset_inside_left": 3
+          },
+          "aligned_reader_instructions": [
+            {
+              "rva": "0x56ab9",
+              "bytes": "488d0d7c2e0300",
+              "asm": "lea rcx, [rip + 0x32e7c]"
+            },
+            {
+              "rva": "0x56ac6",
+              "bytes": "4c0f44d1",
+              "asm": "cmove r10, rcx"
+            },
+            {
+              "rva": "0x57233",
+              "bytes": "488d05fe260300",
+              "asm": "lea rax, [rip + 0x326fe]"
+            },
+            {
+              "rva": "0x5723a",
+              "bytes": "488d0d9b270300",
+              "asm": "lea rcx, [rip + 0x3279b]"
+            },
+            {
+              "rva": "0x57241",
+              "bytes": "480f44c8",
+              "asm": "cmove rcx, rax"
+            },
+            {
+              "rva": "0x57245",
+              "bytes": "486301",
+              "asm": "movsxd rax, dword ptr [rcx]"
+            },
+            {
+              "rva": "0x57248",
+              "bytes": "4803c6",
+              "asm": "add rax, rsi"
+            },
+            {
+              "rva": "0x5724b",
+              "bytes": "ffe0",
+              "asm": "jmp rax"
+            }
+          ],
+          "exclusion": "The actual object consists of aligned signed32 dispatch entries. Native LEA/CMOV chooses aligned table-entry addresses, MOVSXD reads4B, and an executable-code anchor is added before JMP. The candidate offset+3 concatenates bytes from two distinct entries; no modulebase+RVA or wordaddress+selfrelative pointer producer is represented by this raw window."
+        },
+        {
+          "candidate": {
+            "section": ".rdata",
+            "word_rva": "0x89b5b",
+            "alignment": 3,
+            "relative_base_bias": 0,
+            "signed_value": 52223,
+            "target_rva": "0x9675a",
+            "config_offset": "0xb2",
+            "kind": "self-relative32 numeric candidate only; not a proved pointer/consumer"
+          },
+          "original_bytes": "ffcb0000",
+          "classification": "misaligned_window_crosses_two_code_dispatch_dwords",
+          "forms_config_pointer": false,
+          "operational_consumer": false,
+          "actual_object": {
+            "aligned_left_rva": "0x89b58",
+            "aligned_left_signed": -40,
+            "left_bytes": "d8ffffff",
+            "aligned_right_rva": "0x89b5c",
+            "aligned_right_signed": 203,
+            "right_bytes": "cb000000",
+            "candidate_offset_inside_left": 3
+          },
+          "aligned_reader_instructions": [
+            {
+              "rva": "0x46a40",
+              "bytes": "488d2d49020000",
+              "asm": "lea rbp, [rip + 0x249]"
+            },
+            {
+              "rva": "0x46c2f",
+              "bytes": "488d0d562f0400",
+              "asm": "lea rcx, [rip + 0x42f56]"
+            },
+            {
+              "rva": "0x46c36",
+              "bytes": "488d051f2f0400",
+              "asm": "lea rax, [rip + 0x42f1f]"
+            },
+            {
+              "rva": "0x46c3d",
+              "bytes": "480f44c8",
+              "asm": "cmove rcx, rax"
+            },
+            {
+              "rva": "0x46c41",
+              "bytes": "486301",
+              "asm": "movsxd rax, dword ptr [rcx]"
+            },
+            {
+              "rva": "0x46c44",
+              "bytes": "4801e8",
+              "asm": "add rax, rbp"
+            },
+            {
+              "rva": "0x46c47",
+              "bytes": "ffe0",
+              "asm": "jmp rax"
+            }
+          ],
+          "exclusion": "The actual object consists of aligned signed32 dispatch entries. Native LEA/CMOV chooses aligned table-entry addresses, MOVSXD reads4B, and an executable-code anchor is added before JMP. The candidate offset+3 concatenates bytes from two distinct entries; no modulebase+RVA or wordaddress+selfrelative pointer producer is represented by this raw window."
+        },
+        {
+          "candidate": {
+            "section": ".rdata",
+            "word_rva": "0x89b5b",
+            "alignment": 3,
+            "relative_base_bias": 4,
+            "signed_value": 52223,
+            "target_rva": "0x9675e",
+            "config_offset": "0xb6",
+            "kind": "self-relative32 numeric candidate only; not a proved pointer/consumer"
+          },
+          "original_bytes": "ffcb0000",
+          "classification": "misaligned_window_crosses_two_code_dispatch_dwords",
+          "forms_config_pointer": false,
+          "operational_consumer": false,
+          "actual_object": {
+            "aligned_left_rva": "0x89b58",
+            "aligned_left_signed": -40,
+            "left_bytes": "d8ffffff",
+            "aligned_right_rva": "0x89b5c",
+            "aligned_right_signed": 203,
+            "right_bytes": "cb000000",
+            "candidate_offset_inside_left": 3
+          },
+          "aligned_reader_instructions": [
+            {
+              "rva": "0x46a40",
+              "bytes": "488d2d49020000",
+              "asm": "lea rbp, [rip + 0x249]"
+            },
+            {
+              "rva": "0x46c2f",
+              "bytes": "488d0d562f0400",
+              "asm": "lea rcx, [rip + 0x42f56]"
+            },
+            {
+              "rva": "0x46c36",
+              "bytes": "488d051f2f0400",
+              "asm": "lea rax, [rip + 0x42f1f]"
+            },
+            {
+              "rva": "0x46c3d",
+              "bytes": "480f44c8",
+              "asm": "cmove rcx, rax"
+            },
+            {
+              "rva": "0x46c41",
+              "bytes": "486301",
+              "asm": "movsxd rax, dword ptr [rcx]"
+            },
+            {
+              "rva": "0x46c44",
+              "bytes": "4801e8",
+              "asm": "add rax, rbp"
+            },
+            {
+              "rva": "0x46c47",
+              "bytes": "ffe0",
+              "asm": "jmp rax"
+            }
+          ],
+          "exclusion": "The actual object consists of aligned signed32 dispatch entries. Native LEA/CMOV chooses aligned table-entry addresses, MOVSXD reads4B, and an executable-code anchor is added before JMP. The candidate offset+3 concatenates bytes from two distinct entries; no modulebase+RVA or wordaddress+selfrelative pointer producer is represented by this raw window."
+        },
+        {
+          "candidate": {
+            "section": ".rdata",
+            "word_rva": "0x8cc67",
+            "alignment": 3,
+            "relative_base_bias": 0,
+            "signed_value": 39680,
+            "target_rva": "0x96767",
+            "config_offset": "0xbf",
+            "kind": "self-relative32 numeric candidate only; not a proved pointer/consumer"
+          },
+          "original_bytes": "009b0000",
+          "classification": "crosses_DIR64_locale_pointer_and_adjacent_scalar",
+          "forms_config_pointer": false,
+          "operational_consumer": false,
+          "actual_object": {
+            "relocation_rva": "0x8cc60",
+            "whole_pointer_bytes": "101b080400000000",
+            "whole_pointer_value": "0x4081b10",
+            "snapshot_base": "0x3ff0000",
+            "locale_data_target_rva": "0x91b10",
+            "first_UTF16_locale_name": "az-az-cyrl",
+            "next_scalar_rva": "0x8cc68",
+            "next_scalar": "0x9b"
+          },
+          "exclusion": "The candidate begins at byte7 of a genuine relocated64bit pointer and crosses into its adjacent scalar field. Its actual pointer targets readonly UTF16 locale-name data. The31/32bit numeric coincidence is not a separately stored RVA/selfrelative field and does not point to config."
+        },
+        {
+          "candidate": {
+            "section": ".rdata",
+            "word_rva": "0x8cc67",
+            "alignment": 3,
+            "relative_base_bias": 4,
+            "signed_value": 39680,
+            "target_rva": "0x9676b",
+            "config_offset": "0xc3",
+            "kind": "self-relative32 numeric candidate only; not a proved pointer/consumer"
+          },
+          "original_bytes": "009b0000",
+          "classification": "crosses_DIR64_locale_pointer_and_adjacent_scalar",
+          "forms_config_pointer": false,
+          "operational_consumer": false,
+          "actual_object": {
+            "relocation_rva": "0x8cc60",
+            "whole_pointer_bytes": "101b080400000000",
+            "whole_pointer_value": "0x4081b10",
+            "snapshot_base": "0x3ff0000",
+            "locale_data_target_rva": "0x91b10",
+            "first_UTF16_locale_name": "az-az-cyrl",
+            "next_scalar_rva": "0x8cc68",
+            "next_scalar": "0x9b"
+          },
+          "exclusion": "The candidate begins at byte7 of a genuine relocated64bit pointer and crosses into its adjacent scalar field. Its actual pointer targets readonly UTF16 locale-name data. The31/32bit numeric coincidence is not a separately stored RVA/selfrelative field and does not point to config."
+        },
+        {
+          "candidate": {
+            "section": ".rdata",
+            "word_rva": "0x8d267",
+            "alignment": 3,
+            "relative_base_bias": 0,
+            "signed_value": 38144,
+            "target_rva": "0x96767",
+            "config_offset": "0xbf",
+            "kind": "self-relative32 numeric candidate only; not a proved pointer/consumer"
+          },
+          "original_bytes": "00950000",
+          "classification": "crosses_DIR64_locale_pointer_and_adjacent_scalar",
+          "forms_config_pointer": false,
+          "operational_consumer": false,
+          "actual_object": {
+            "relocation_rva": "0x8d260",
+            "whole_pointer_bytes": "501d080400000000",
+            "whole_pointer_value": "0x4081d50",
+            "snapshot_base": "0x3ff0000",
+            "locale_data_target_rva": "0x91d50",
+            "first_UTF16_locale_name": "it-ch",
+            "next_scalar_rva": "0x8d268",
+            "next_scalar": "0x95"
+          },
+          "exclusion": "The candidate begins at byte7 of a genuine relocated64bit pointer and crosses into its adjacent scalar field. Its actual pointer targets readonly UTF16 locale-name data. The31/32bit numeric coincidence is not a separately stored RVA/selfrelative field and does not point to config."
+        },
+        {
+          "candidate": {
+            "section": ".rdata",
+            "word_rva": "0x8d267",
+            "alignment": 3,
+            "relative_base_bias": 4,
+            "signed_value": 38144,
+            "target_rva": "0x9676b",
+            "config_offset": "0xc3",
+            "kind": "self-relative32 numeric candidate only; not a proved pointer/consumer"
+          },
+          "original_bytes": "00950000",
+          "classification": "crosses_DIR64_locale_pointer_and_adjacent_scalar",
+          "forms_config_pointer": false,
+          "operational_consumer": false,
+          "actual_object": {
+            "relocation_rva": "0x8d260",
+            "whole_pointer_bytes": "501d080400000000",
+            "whole_pointer_value": "0x4081d50",
+            "snapshot_base": "0x3ff0000",
+            "locale_data_target_rva": "0x91d50",
+            "first_UTF16_locale_name": "it-ch",
+            "next_scalar_rva": "0x8d268",
+            "next_scalar": "0x95"
+          },
+          "exclusion": "The candidate begins at byte7 of a genuine relocated64bit pointer and crosses into its adjacent scalar field. Its actual pointer targets readonly UTF16 locale-name data. The31/32bit numeric coincidence is not a separately stored RVA/selfrelative field and does not point to config."
+        },
+        {
+          "candidate": {
+            "section": ".rdata",
+            "location_rva": "0x8a2f3",
+            "width": 4,
+            "alignment": 3,
+            "writable_section": false,
+            "value": "0x966ff",
+            "address_form": "RVA32/64",
+            "target_rva": "0x966ff",
+            "config_offset": "0x57",
+            "whole_config_base": false,
+            "exact_fifth_address": false
+          },
+          "original_bytes": "ff660900",
+          "classification": "misaligned_window_crosses_two_code_dispatch_dwords",
+          "forms_config_pointer": false,
+          "operational_consumer": false,
+          "actual_object": {
+            "aligned_left_rva": "0x8a2f0",
+            "aligned_left_signed": -9182,
+            "left_bytes": "22dcffff",
+            "aligned_right_rva": "0x8a2f4",
+            "aligned_right_signed": 2406,
+            "right_bytes": "66090000",
+            "candidate_offset_inside_left": 3
+          },
+          "aligned_reader_instructions": [
+            {
+              "rva": "0x3d56f",
+              "bytes": "488d0d7acd0400",
+              "asm": "lea rcx, [rip + 0x4cd7a]"
+            },
+            {
+              "rva": "0x3d576",
+              "bytes": "488d05f3d00400",
+              "asm": "lea rax, [rip + 0x4d0f3]"
+            },
+            {
+              "rva": "0x3d57d",
+              "bytes": "480f45c1",
+              "asm": "cmovne rax, rcx"
+            },
+            {
+              "rva": "0x3d581",
+              "bytes": "486300",
+              "asm": "movsxd rax, dword ptr [rax]"
+            },
+            {
+              "rva": "0x3d584",
+              "bytes": "4c01e8",
+              "asm": "add rax, r13"
+            },
+            {
+              "rva": "0x3d594",
+              "bytes": "ffe0",
+              "asm": "jmp rax"
+            }
+          ],
+          "exclusion": "The actual object consists of aligned signed32 dispatch entries. Native LEA/CMOV chooses aligned table-entry addresses, MOVSXD reads4B, and an executable-code anchor is added before JMP. The candidate offset+3 concatenates bytes from two distinct entries; no modulebase+RVA or wordaddress+selfrelative pointer producer is represented by this raw window.",
+          "actual_dispatch_target_evidence": {
+            "site_rva": "0x3d594",
+            "instruction": "jmp rax",
+            "targets_rva": [
+              "0x3f8ce",
+              "0x3fbd1"
+            ],
+            "complete_over_abstract_states": true,
+            "original_bytes": "ffe0"
+          }
+        }
+      ]
+    }
+  ],
+  "result": "These27 numeric windows do not form a flag/wholeconfig address or any actual operational consumer. Together with the prior full address-root and no-escape audit, the fifth wire boolean is parsed and retained in config+14b without an operational consumer in these reviewed builds under normal PE/compiler/object ABI.",
+  "interpretation": "No supported cloud-control operation is assigned to fifthfield. Its parsing/publication is proven; a named runtime feature or new cloud-controlled branch is not evidenced. Do not invent an author-intended/future feature.",
+  "normal_context": [
+    "Original PE/read-onlydata/TLS and native code remain unchanged.",
+    "Normal compiler constant-object representations, Windows PE unwind ABI, and already-proven config pointer/Once/clipper header no-escape lifetimes.",
+    "No external mutation/selfmodifyingcode/arbitrary constructed pointers outside the reviewed global-address model."
+  ],
+  "remaining_boundary": "This is the normal typed static address/consumer conclusion, not a theorem over arbitrary PEB/modulebase split-constant synthesis, injected pointers or adversarial memory corruption. No concrete candidate from the frozen list remains open.",
+  "native_specimen_API_or_C2_execution": false,
+  "sample_bytes_changed": false
+}

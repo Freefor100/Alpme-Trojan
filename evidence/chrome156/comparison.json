@@ -1,0 +1,148 @@
+{
+  "scope": "Source-level defensive comparison. Uses exact-version public source and saved fictional test logs only. No current-browser object-layout adaptation, process access, key extraction or actual-secret decryption.",
+  "chrome_version": "156.0.8078.48",
+  "official_sources": [
+    {
+      "url": "https://raw.githubusercontent.com/chromium/chromium/156.0.8078.48/components/os_crypt/async/common/encryptor.h",
+      "source_relative_path": "components/os_crypt/async/common/encryptor.h",
+      "saved_as": "components__os_crypt__async__common__encryptor.h.txt",
+      "bytes": 8568,
+      "sha256": "737da70e05ad14b30aedabc7a59375815360413817f8dba90f8667cffdab6a77",
+      "status": "saved_public_text"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/chromium/chromium/156.0.8078.48/components/os_crypt/async/common/encryptor.cc",
+      "source_relative_path": "components/os_crypt/async/common/encryptor.cc",
+      "saved_as": "components__os_crypt__async__common__encryptor.cc.txt",
+      "bytes": 9962,
+      "sha256": "3d58a27499e97d059e57ffdbd127e865282986d8e6197b39725b75e99d6ef3d0",
+      "status": "saved_public_text"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/chromium/chromium/156.0.8078.48/components/os_crypt/async/common/encryptor_mojom_traits.cc",
+      "source_relative_path": "components/os_crypt/async/common/encryptor_mojom_traits.cc",
+      "saved_as": "components__os_crypt__async__common__encryptor_mojom_traits.cc.txt",
+      "bytes": 4384,
+      "sha256": "831c3ba969f0d026cd65fd01acf666a7672f1ea5c8185968e36e5fe6ffbdd760",
+      "status": "saved_public_text"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/chromium/chromium/156.0.8078.48/chrome/browser/os_crypt/app_bound_encryption_provider_win.h",
+      "source_relative_path": "chrome/browser/os_crypt/app_bound_encryption_provider_win.h",
+      "saved_as": "chrome__browser__os_crypt__app_bound_encryption_provider_win.h.txt",
+      "bytes": 4632,
+      "sha256": "338fcc9571f9ae75b9dca78308651050c0d3a36b916ef7712631defad929f23a",
+      "status": "saved_public_text"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/chromium/chromium/156.0.8078.48/chrome/browser/os_crypt/app_bound_encryption_provider_win.cc",
+      "source_relative_path": "chrome/browser/os_crypt/app_bound_encryption_provider_win.cc",
+      "saved_as": "chrome__browser__os_crypt__app_bound_encryption_provider_win.cc.txt",
+      "bytes": 14091,
+      "sha256": "cecb69b3d74dc5e20326ede164d1608573318744a5ff81b90c28e2df8836f0f7",
+      "status": "saved_public_text"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/chromium/chromium/156.0.8078.48/chrome/browser/os_crypt/app_bound_encryption_win.cc",
+      "source_relative_path": "chrome/browser/os_crypt/app_bound_encryption_win.cc",
+      "saved_as": "chrome__browser__os_crypt__app_bound_encryption_win.cc.txt",
+      "bytes": 10241,
+      "sha256": "c42e6401af21979308a8cbb022f011d6301fc323f5d3c3cad8ca41c801a01c98",
+      "status": "saved_public_text"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/chromium/chromium/156.0.8078.48/components/password_manager/core/browser/password_store/login_database.cc",
+      "source_relative_path": "components/password_manager/core/browser/password_store/login_database.cc",
+      "saved_as": "components__password_manager__core__browser__password_store__login_database.cc.txt",
+      "bytes": 93240,
+      "sha256": "3f5ec601991ffa0d01fea4903df34d8a667337fae44a4f5f9df4961365136b30",
+      "status": "saved_public_text"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/chromium/chromium/156.0.8078.48/net/extras/sqlite/sqlite_persistent_cookie_store.cc",
+      "source_relative_path": "net/extras/sqlite/sqlite_persistent_cookie_store.cc",
+      "saved_as": "net__extras__sqlite__sqlite_persistent_cookie_store.cc.txt",
+      "bytes": 64289,
+      "sha256": "cebb7f21100ed85ec40d53386e27c33e409fcff95d197d26da89c23805d8aaa9",
+      "status": "saved_public_text"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/chromium/chromium/156.0.8078.48/components/autofill/core/browser/webdata/payments/payments_autofill_table.cc",
+      "source_relative_path": "components/autofill/core/browser/webdata/payments/payments_autofill_table.cc",
+      "saved_as": "components__autofill__core__browser__webdata__payments__payments_autofill_table.cc.txt",
+      "bytes": 99650,
+      "sha256": "f211dc386b353b9c62224957fcaac6b4a4325a19ef08fe35b7db512f5449952f",
+      "status": "saved_public_text"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/chromium/chromium/156.0.8078.48/chrome/elevation_service/caller_validation.cc",
+      "source_relative_path": "chrome/elevation_service/caller_validation.cc",
+      "saved_as": "chrome__elevation_service__caller_validation.cc.txt",
+      "bytes": 10093,
+      "sha256": "96694ddb7fc58da21e4f2997f305e093e3a8cc854dc3c8edd0fc4536b3173246",
+      "status": "saved_public_text"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/chromium/chromium/156.0.8078.48/chrome/elevation_service/elevator.cc",
+      "source_relative_path": "chrome/elevation_service/elevator.cc",
+      "saved_as": "chrome__elevation_service__elevator.cc.txt",
+      "bytes": 17947,
+      "sha256": "1c62c207e123b8a8d490dbeeb77d231a38d244244af7011165c8b6d7605b7435",
+      "status": "saved_public_text"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/chromium/chromium/156.0.8078.48/chrome/installer/util/isolation_support.cc",
+      "source_relative_path": "chrome/installer/util/isolation_support.cc",
+      "saved_as": "chrome__installer__util__isolation_support.cc.txt",
+      "bytes": 1359,
+      "sha256": "5d1a212ab067ce8615d77d0063a61cde9d7fae129f7be84969d3b0853fe03ba2",
+      "status": "saved_public_text"
+    }
+  ],
+  "findings_zh": [
+    "Local State的APPB键容器由应用绑定服务处理；provider在成功后构造AES256GCM Encryptor::Key。v20是该provider的记录前缀。",
+    "Key构造在Windows上调用CryptProtectMemory(SAME_PROCESS)，并记录保护是否成功。使用AES-GCM时复制键、按保护状态解保护副本，结束清零临时副本。原缓存对象可继续持有受保护键。",
+    "Mojo传递键时使用受控共享内存；发送侧在自身上下文解保护副本，接收侧复制后清零共享副本并在接收进程重新保护。",
+    "这解释样本为何扫描浏览器私有内存并安排进程内CryptUnprotectMemory：目标是内容加密键及其持有进程上下文。",
+    "样本结果通道三个字段及合成prefix测试的路由已经分别核对。第三字段保留程序原名aster_encryption_key，不把a10当作Chrome标准v20 provider。",
+    "键必须与相应provider/资料库记录匹配，内容解密还要通过认证；当前未执行真实Chrome156键/记录验证。",
+    "156的Cookie数据库先解密encrypted_value，再核对明文前缀中的域名SHA256并去掉该前缀；Cookie库schema24的绑定校验与AES-GCM认证不是同一个检查。",
+    "Login Data的password_value是加密blob，读取时交给decryptor；支付Web Data也有card_number_encrypted等加密列。内容可恢复性取决于该记录provider对应的键，不能把一个v20键当所有浏览器或钱包的通用解密钥匙。",
+    "156默认的kEncryptWithIsolatedState还绑定进程隔离状态。elevation_service验证调用进程的访问令牌中是否存在installer::GetIsolationAttributeName()指定的安全属性；曾绑定隔离状态的数据拒绝未隔离调用者，并保留原有可执行程序路径校验。这不是用户资料目录绑定。",
+    "该服务校验约束经服务解封APPB容器的调用者；已经获得合法键的浏览器进程内部仍使用Encryptor::Key及CryptProtectMemory。样本的进程内解保护准备与服务接口校验是不同环节，实际是否有目标进程访问权、匹配其对象布局并完成调用仍需分别验证。"
+  ],
+  "saved_routing_fixture": {
+    "path": "work/alpme_analysis/recovered_code_20261027/capability_audit19/APPB_MOCK_KEY_RETURN19.json",
+    "sha256": "ca41db35bf286d47abf341c1c52b68aa41f890c5391dfcd4df829f61aebc40e9",
+    "scope": "This old test stubs acquisition helper and verifies native result routing; does not prove real key acquisition."
+  },
+  "saved_original_helper_variants": {
+    "path": "work/alpme_analysis/semantic_closure_20261027/browser_keys/full_key_variants19.json",
+    "sha256": "4a6373542fcd9a56aa0fbfef8cc1b8497482950c676f1ed04999620747eef0b5",
+    "matrix": [
+      {
+        "synthetic_case": "v10",
+        "32_byte_result_fields": [
+          "dpapi_encryption_key"
+        ],
+        "API_values_mocked": true
+      },
+      {
+        "synthetic_case": "a10",
+        "32_byte_result_fields": [
+          "aster_encryption_key"
+        ],
+        "API_values_mocked": true
+      },
+      {
+        "synthetic_case": "v20_unprotected_byte",
+        "32_byte_result_fields": [
+          "encryption_key"
+        ],
+        "API_values_mocked": true
+      }
+    ],
+    "scope": "Original helper instructions with fictional candidate objects and mocked OS APIs; no actual browser key."
+  },
+  "open_validation": "Installed optimized-binary candidate match and actual authenticated decryption remain untested; not a new memory-scanning signature or adapter."
+}

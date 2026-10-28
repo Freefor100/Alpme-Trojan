@@ -1,0 +1,313 @@
+{
+  "description": "Original evidence and published text hashes. Redaction of analyst workspace/user paths can change text hashes. Sample archive member bytes remain exact.",
+  "files": [
+    {
+      "published_path": "reports/Alpme_17si_19si_Analysis_ZH_v3.1.zh-CN.pdf",
+      "source_path": "output/pdf/alpme_report_v3_1/Alpme_17si_19si_Analysis_ZH_v3_1.pdf",
+      "source_sha256": "5b59f367b53dfddf82ee9339589df9d2c46d842f324a0c240e72613822d9eb5c",
+      "published_sha256": "5b59f367b53dfddf82ee9339589df9d2c46d842f324a0c240e72613822d9eb5c",
+      "text_redacted": false
+    },
+    {
+      "published_path": "reports/latex/report.tex",
+      "source_path": "output/pdf/alpme_report_v3_1/Alpme_17si_19si_Analysis_ZH_v3_1.tex",
+      "source_sha256": "027a6da6f0f502c5d2c6de1ffe3a5a0b6a021a1a6e9cb5563b22244ed1478a1d",
+      "published_sha256": "027a6da6f0f502c5d2c6de1ffe3a5a0b6a021a1a6e9cb5563b22244ed1478a1d",
+      "text_redacted": false
+    },
+    {
+      "published_path": "reports/latex/assets/sandbox_popup.png",
+      "source_path": "output/pdf/alpme_report_v3_1/assets/sandbox_popup.png",
+      "source_sha256": "c9230d1c203a1165e93820160db8f75375a8bc0c085fa45212ac72cd9e467a0a",
+      "published_sha256": "c9230d1c203a1165e93820160db8f75375a8bc0c085fa45212ac72cd9e467a0a",
+      "text_redacted": false
+    },
+    {
+      "published_path": "analysis/targets/collection-tasks.csv",
+      "source_path": "output/pdf/alpme_report_v3_1/data/完整采集任务.csv",
+      "source_sha256": "12d3f0ed8c06f028b8ecb889793b6c5d5c26ff3ca03884c087facb3d29bdbc87",
+      "published_sha256": "813359e9fd857ffaef621c73db1fe876c69941e3b92b4b699464417d72f21b18",
+      "text_redacted": true
+    },
+    {
+      "published_path": "analysis/targets/extension-exclusion-terms.csv",
+      "source_path": "output/pdf/alpme_report_v3_1/data/扩展排除词表.csv",
+      "source_sha256": "7a99b9e3321860f273cbfc8aa4abd49c133158f101f5ac7c366300c906dfe610",
+      "published_sha256": "a8f4118a687157a29d976c16c31c83bab6a5974a7bfddcb786887767d539f46d",
+      "text_redacted": true
+    },
+    {
+      "published_path": "analysis/targets/payload-fragments.csv",
+      "source_path": "output/pdf/alpme_report_v3_1/data/载荷片段定位.csv",
+      "source_sha256": "0e1ddbd1725d83837dad19458eb0bbfa74472094f62434772dbe01ab5275dfdf",
+      "published_sha256": "76acb2e535f625d2263f6af231591fe423c1cae97e6b18d362d6bb274533f1b6",
+      "text_redacted": true
+    },
+    {
+      "published_path": "analysis/legacy-41-status.csv",
+      "source_path": "output/pdf/alpme_report_v3_1/data/函数恢复状态.csv",
+      "source_sha256": "fb035c44cd1d0afcde4b40bf0bfe0b6501b007032bfefb0b54bdbd4b98c7d77f",
+      "published_sha256": "12ed488c52c35332eeb40089fa63e55d87a951718cc920eeeca52228eb7a0a02",
+      "text_redacted": true
+    },
+    {
+      "published_path": "evidence/pe-structure.json",
+      "source_path": "outputs/alpme-original-structure-map-20261027.json",
+      "source_sha256": "2f5764246f06a8adcdcb01e1f371437179be866a166abbf15e456e67c40262df",
+      "published_sha256": "2f5764246f06a8adcdcb01e1f371437179be866a166abbf15e456e67c40262df",
+      "text_redacted": false
+    },
+    {
+      "published_path": "evidence/analysis-inputs.json",
+      "source_path": "work/alpme_analysis/full_static_project_20261027/input_manifest.json",
+      "source_sha256": "06a043edce4d4b579eb81367797137aee5d3364f919081f1693bb93ea9b3ef06",
+      "published_sha256": "06a043edce4d4b579eb81367797137aee5d3364f919081f1693bb93ea9b3ef06",
+      "text_redacted": false
+    },
+    {
+      "published_path": "evidence/extension/manifest-summary.json",
+      "source_path": "outputs/alpme_evidence/14_extension_manifest_summary.json",
+      "source_sha256": "de50ce92a045b35b4477eaaa645ae63fcc1e69dcfd9ac493560e06d93c8c796d",
+      "published_sha256": "de50ce92a045b35b4477eaaa645ae63fcc1e69dcfd9ac493560e06d93c8c796d",
+      "text_redacted": false
+    },
+    {
+      "published_path": "evidence/extension/delivery-chain.js.txt",
+      "source_path": "outputs/alpme-evidence-20261027/01_extension_partner_source.txt",
+      "source_sha256": "5d8b205494d2ed6737dbca90717389bc99b3b7108b535b69bff1530f7ff6804f",
+      "published_sha256": "5d8b205494d2ed6737dbca90717389bc99b3b7108b535b69bff1530f7ff6804f",
+      "text_redacted": false
+    },
+    {
+      "published_path": "evidence/extension/remote-logging.js.txt",
+      "source_path": "outputs/alpme-evidence-20261027/02_extension_remote_logging_source.txt",
+      "source_sha256": "3129e63212697d126cfb61105c204eb6367fa379197309376611a092c742105f",
+      "published_sha256": "3129e63212697d126cfb61105c204eb6367fa379197309376611a092c742105f",
+      "text_redacted": false
+    },
+    {
+      "published_path": "evidence/extension/skill-parser.js.txt",
+      "source_path": "outputs/alpme-evidence-20261027/03_extension_skill_parser_source.txt",
+      "source_sha256": "1718be34d22b1beffdb9283b523aca91879d301327ab5027e95c4b408e983958",
+      "published_sha256": "1718be34d22b1beffdb9283b523aca91879d301327ab5027e95c4b408e983958",
+      "text_redacted": false
+    },
+    {
+      "published_path": "evidence/extension/mcp-startup.js.txt",
+      "source_path": "outputs/alpme-evidence-20261027/04_extension_mcp_startup_source.txt",
+      "source_sha256": "309375a4bfac8339f5c0552dafe134c14c7aa5915a5311baa89e3ad23d7b3872",
+      "published_sha256": "309375a4bfac8339f5c0552dafe134c14c7aa5915a5311baa89e3ad23d7b3872",
+      "text_redacted": false
+    },
+    {
+      "published_path": "evidence/extension/secret-storage.js.txt",
+      "source_path": "outputs/alpme-evidence-20261027/05_extension_secret_storage_source.txt",
+      "source_sha256": "6fd4eba22e754e6f7a56ee799c1381109a4dd469c5b55714773f65637e77f280",
+      "published_sha256": "6fd4eba22e754e6f7a56ee799c1381109a4dd469c5b55714773f65637e77f280",
+      "text_redacted": false
+    },
+    {
+      "published_path": "evidence/extension/custom-tools.js.txt",
+      "source_path": "outputs/alpme-evidence-20261027/06_extension_custom_tools_source.txt",
+      "source_sha256": "ad5a8eb29559af43d9779dea841a68a0371d197436037c43441491c1b974bf64",
+      "published_sha256": "ad5a8eb29559af43d9779dea841a68a0371d197436037c43441491c1b974bf64",
+      "text_redacted": false
+    },
+    {
+      "published_path": "evidence/extension/update-import.js.txt",
+      "source_path": "outputs/alpme-evidence-20261027/07_extension_update_import_source.txt",
+      "source_sha256": "52420c11d32e52ac4a03774c130497638a17653cdcfab5a734a5239c964b2c7d",
+      "published_sha256": "52420c11d32e52ac4a03774c130497638a17653cdcfab5a734a5239c964b2c7d",
+      "text_redacted": false
+    },
+    {
+      "published_path": "evidence/proofs/17-file-collector.json",
+      "source_path": "work/alpme_analysis/semantic_closure_20261027/round3_file_dispatch/normal_collector_closure.json",
+      "source_sha256": "22926c588cc3fe8d0dc223247287eb2de5739df399f3a65b825212d5bb4a4654",
+      "published_sha256": "22926c588cc3fe8d0dc223247287eb2de5739df399f3a65b825212d5bb4a4654",
+      "text_redacted": false
+    },
+    {
+      "published_path": "evidence/proofs/19-file-collector.json",
+      "source_path": "work/alpme_analysis/semantic_closure_20261027/round3_file_dispatch19/final_quality_summary.json",
+      "source_sha256": "e6745f5f462542ea8f81392ae46346fe700ef1f025595ba6afbe1bc4ec86177b",
+      "published_sha256": "e6745f5f462542ea8f81392ae46346fe700ef1f025595ba6afbe1bc4ec86177b",
+      "text_redacted": false
+    },
+    {
+      "published_path": "evidence/proofs/network-cores.json",
+      "source_path": "work/alpme_analysis/semantic_closure_20261027/round4_network_core/network_core_closure.json",
+      "source_sha256": "ede867fc40cab30d1fde885517cc3f137c5f9ecb20ba68319654088a8f22b0c2",
+      "published_sha256": "ede867fc40cab30d1fde885517cc3f137c5f9ecb20ba68319654088a8f22b0c2",
+      "text_redacted": false
+    },
+    {
+      "published_path": "evidence/proofs/17-browser-memory.json",
+      "source_path": "work/alpme_analysis/semantic_closure_20261027/round4_browser_17_2f497_gate/17_2f497_final_receipt.json",
+      "source_sha256": "e9cfdb4efb7af3bab94179e5b2147e70d76051c3186a4278207925a1bbcb7064",
+      "published_sha256": "e9cfdb4efb7af3bab94179e5b2147e70d76051c3186a4278207925a1bbcb7064",
+      "text_redacted": false
+    },
+    {
+      "published_path": "evidence/proofs/17-browser-prepare.json",
+      "source_path": "work/alpme_analysis/semantic_closure_20261027/round4_network_core/prep17_227e8_gate/17_227e8_final_receipt.json",
+      "source_sha256": "5ea4b2cd91e47542af8a872572b6b4d5196270325151fc978a485f799685b7c8",
+      "published_sha256": "5ea4b2cd91e47542af8a872572b6b4d5196270325151fc978a485f799685b7c8",
+      "text_redacted": false
+    },
+    {
+      "published_path": "evidence/proofs/19-browser-memory.json",
+      "source_path": "work/alpme_analysis/semantic_closure_20261027/round4_browser_core/19_1aab1_final_quality_summary.json",
+      "source_sha256": "3a1499d41665a07fcf2ac287b7606976d35c2ac925a18be79a98c45717445762",
+      "published_sha256": "3a1499d41665a07fcf2ac287b7606976d35c2ac925a18be79a98c45717445762",
+      "text_redacted": false
+    },
+    {
+      "published_path": "evidence/proofs/19-browser-prepare.json",
+      "source_path": "work/alpme_analysis/semantic_closure_20261027/round4_browser_core/19_3d057_final_quality_summary.json",
+      "source_sha256": "f79a5484cd19128ffad63c0c60e219292e56c9db69687f5fae5073f1695fac4f",
+      "published_sha256": "f79a5484cd19128ffad63c0c60e219292e56c9db69687f5fae5073f1695fac4f",
+      "text_redacted": false
+    },
+    {
+      "published_path": "evidence/proofs/19-browser-semantics.json",
+      "source_path": "work/alpme_analysis/semantic_closure_20261027/round4_browser_core/19_browser_semantic_digest_20261028.json",
+      "source_sha256": "5368706023b939e4a3690ab39f84025fccce6ecde9dfe18c2136393f7a533c56",
+      "published_sha256": "5368706023b939e4a3690ab39f84025fccce6ecde9dfe18c2136393f7a533c56",
+      "text_redacted": false
+    },
+    {
+      "published_path": "evidence/proofs/cloud-lifecycle.json",
+      "source_path": "work/alpme_analysis/semantic_closure_20261027/round4_network_core/cloud_lifecycle_review/cloud_lifecycle_findings.json",
+      "source_sha256": "c5f832a0f79c340d64bdfc27f281675deff8cacc79dbc0633a9d721aa1668c60",
+      "published_sha256": "c5f832a0f79c340d64bdfc27f281675deff8cacc79dbc0633a9d721aa1668c60",
+      "text_redacted": false
+    },
+    {
+      "published_path": "evidence/proofs/profile-name-predicate.json",
+      "source_path": "work/alpme_analysis/semantic_closure_20261027/round4_network_core/browser_profile_name_predicate/profile_name_predicate_closure.json",
+      "source_sha256": "fdcda7ffe808badc4d0beb8c6e9ed5a4b606d504226db390d9bea2b575dd5dae",
+      "published_sha256": "fdcda7ffe808badc4d0beb8c6e9ed5a4b606d504226db390d9bea2b575dd5dae",
+      "text_redacted": false
+    },
+    {
+      "published_path": "evidence/proofs/four-cleanup-sites.json",
+      "source_path": "work/alpme_analysis/semantic_closure_20261027/round3_cleanup_finish/four_cleanup_callbacks_finished.json",
+      "source_sha256": "da162bc2a56af6f4533e1f27043a7bc8f6f8c526cbb7f354b7ef135516854cbd",
+      "published_sha256": "da162bc2a56af6f4533e1f27043a7bc8f6f8c526cbb7f354b7ef135516854cbd",
+      "text_redacted": false
+    },
+    {
+      "published_path": "evidence/proofs/browser-fifth-field.json",
+      "source_path": "work/alpme_analysis/semantic_closure_20261027/round4_network_core/fifthfield_numeric_closure/fifthfield_numeric_candidate_closure.json",
+      "source_sha256": "7b1ecfdf73089105a5709a5d2b0c2e01e510a2f0e76cf1963c3f7a2378784a13",
+      "published_sha256": "7b1ecfdf73089105a5709a5d2b0c2e01e510a2f0e76cf1963c3f7a2378784a13",
+      "text_redacted": false
+    },
+    {
+      "published_path": "evidence/chrome156/sources.json",
+      "source_path": "work/alpme_analysis/semantic_closure_20261027/round3_chrome_sources/source_manifest.json",
+      "source_sha256": "9eff01682fd440af1696f5143fb9e5fd43a3d0175337772fb88d6c7fee7dcee0",
+      "published_sha256": "9eff01682fd440af1696f5143fb9e5fd43a3d0175337772fb88d6c7fee7dcee0",
+      "text_redacted": false
+    },
+    {
+      "published_path": "evidence/chrome156/comparison.json",
+      "source_path": "work/alpme_analysis/semantic_closure_20261027/round3_chrome_sources/chrome_source_comparison.json",
+      "source_sha256": "e2d686586c0bef5d4f27d83309908d7cb07dffd7686f48d58b54946bd0f6acaf",
+      "published_sha256": "e2d686586c0bef5d4f27d83309908d7cb07dffd7686f48d58b54946bd0f6acaf",
+      "text_redacted": false
+    },
+    {
+      "published_path": "recovered/17si/loader/assembly.asm",
+      "source_path": "work/alpme_analysis/full_static_project_20261027/exports/17_loader.exe.bin/all_executable_sections_linear.asm",
+      "source_sha256": "3e018b3610fc8278d788b15f4f091b13b38409c9973934baa1a1af5bbc16ad0c",
+      "published_sha256": "3e018b3610fc8278d788b15f4f091b13b38409c9973934baa1a1af5bbc16ad0c",
+      "text_redacted": false
+    },
+    {
+      "published_path": "recovered/17si/payload/assembly.asm",
+      "source_path": "work/alpme_analysis/full_static_project_20261027/exports/17_payload.dll.bin/all_executable_sections_linear.asm",
+      "source_sha256": "374e3f71668bb63c63217b66f1745799ef0383063731a13dea301b12ca8ff86c",
+      "published_sha256": "374e3f71668bb63c63217b66f1745799ef0383063731a13dea301b12ca8ff86c",
+      "text_redacted": false
+    },
+    {
+      "published_path": "recovered/17si/payload/verified/0x227e8.c",
+      "source_path": "work/alpme_analysis/semantic_closure_20261027/round4_network_core/prep17_227e8_gate/17_payload.dll.bin_0x227e8_normal_context.c",
+      "source_sha256": "d53d2b4466ed495c1f585662e4b66dde9a4c97b1eeadc90aaa3b20c2b28bce41",
+      "published_sha256": "d53d2b4466ed495c1f585662e4b66dde9a4c97b1eeadc90aaa3b20c2b28bce41",
+      "text_redacted": false
+    },
+    {
+      "published_path": "recovered/17si/payload/verified/0x2f497.c",
+      "source_path": "work/alpme_analysis/semantic_closure_20261027/round4_browser_17_2f497_gate/verified_exports/17_payload.dll.bin_0x2f497.c",
+      "source_sha256": "937816b1c224fab042df4f7ad1ebbf52c82af2b913ee3f9ea2cb3dd579c7b958",
+      "published_sha256": "937816b1c224fab042df4f7ad1ebbf52c82af2b913ee3f9ea2cb3dd579c7b958",
+      "text_redacted": false
+    },
+    {
+      "published_path": "recovered/17si/payload/verified/0x3c026.c",
+      "source_path": "work/alpme_analysis/semantic_closure_20261027/round3_file_dispatch/17_payload.dll.bin_0x3c026_normal_context.c",
+      "source_sha256": "f11bb58965322399c699fea3bc2ea7fa8e021254b0cabdd3d344061c630a892e",
+      "published_sha256": "f11bb58965322399c699fea3bc2ea7fa8e021254b0cabdd3d344061c630a892e",
+      "text_redacted": false
+    },
+    {
+      "published_path": "recovered/17si/payload/verified/0x467ce.c",
+      "source_path": "work/alpme_analysis/semantic_closure_20261027/round4_network_core/17_payload.dll.bin_0x467ce_normal_context.c",
+      "source_sha256": "d908756f8f3ade257438f87513053b0d62834a718830134028887f7d2d072e93",
+      "published_sha256": "d908756f8f3ade257438f87513053b0d62834a718830134028887f7d2d072e93",
+      "text_redacted": false
+    },
+    {
+      "published_path": "recovered/19si/loader/assembly.asm",
+      "source_path": "work/alpme_analysis/full_static_project_20261027/exports/19_loader.exe.bin/all_executable_sections_linear.asm",
+      "source_sha256": "5b60048d82c2b44f182b01f2c8ea4d6097d1e2ac8849949e361de064970a7490",
+      "published_sha256": "5b60048d82c2b44f182b01f2c8ea4d6097d1e2ac8849949e361de064970a7490",
+      "text_redacted": false
+    },
+    {
+      "published_path": "recovered/19si/payload/assembly.asm",
+      "source_path": "work/alpme_analysis/full_static_project_20261027/exports/19_payload.dll.bin/all_executable_sections_linear.asm",
+      "source_sha256": "ecd3ec248d0b42ed471a6b9169c150f4013f4aeb6a02e6574bf785b4a63dbebe",
+      "published_sha256": "ecd3ec248d0b42ed471a6b9169c150f4013f4aeb6a02e6574bf785b4a63dbebe",
+      "text_redacted": false
+    },
+    {
+      "published_path": "recovered/19si/payload/verified/0x4665.c",
+      "source_path": "work/alpme_analysis/semantic_closure_20261027/round4_network_core/19_payload.dll.bin_0x4665_normal_context.c",
+      "source_sha256": "3922481f021adf7c52a0d79e73c80f327d0ddd487a47e8274441e0e0b71329a9",
+      "published_sha256": "3922481f021adf7c52a0d79e73c80f327d0ddd487a47e8274441e0e0b71329a9",
+      "text_redacted": false
+    },
+    {
+      "published_path": "recovered/19si/payload/verified/0x1557e.c",
+      "source_path": "work/alpme_analysis/semantic_closure_20261027/round4_network_core/19_payload.dll.bin_0x1557e_normal_context.c",
+      "source_sha256": "825e69af2d33f0aa5604ed9337a6cfa62c3b481fe40b7cfccc4056df120e101d",
+      "published_sha256": "825e69af2d33f0aa5604ed9337a6cfa62c3b481fe40b7cfccc4056df120e101d",
+      "text_redacted": false
+    },
+    {
+      "published_path": "recovered/19si/payload/verified/0x1aab1.c",
+      "source_path": "work/alpme_analysis/semantic_closure_20261027/round4_browser_core/normal_exports/19_payload.dll.bin_0x1aab1.c",
+      "source_sha256": "5cbd882bdd418bff8fd30ed1ac6939a2a2508194f3f95d1e6a9004fdd09ee0a2",
+      "published_sha256": "5cbd882bdd418bff8fd30ed1ac6939a2a2508194f3f95d1e6a9004fdd09ee0a2",
+      "text_redacted": false
+    },
+    {
+      "published_path": "recovered/19si/payload/verified/0x33152.c",
+      "source_path": "work/alpme_analysis/semantic_closure_20261027/round3_file_dispatch19/19_payload.dll.bin_0x33152_normal_context.c",
+      "source_sha256": "be9513adca4acbdb2ac5c865118df1a2b88a684f7612bd83644c7fb250b5dbfd",
+      "published_sha256": "be9513adca4acbdb2ac5c865118df1a2b88a684f7612bd83644c7fb250b5dbfd",
+      "text_redacted": false
+    },
+    {
+      "published_path": "recovered/19si/payload/verified/0x3d057.c",
+      "source_path": "work/alpme_analysis/semantic_closure_20261027/round4_browser_core/normal_exports/19_payload.dll.bin_0x3d057.c",
+      "source_sha256": "421887fd11d0f712399d1ac388c6e7eeb479d9f2acc088d5da3510c01f0e1e82",
+      "published_sha256": "421887fd11d0f712399d1ac388c6e7eeb479d9f2acc088d5da3510c01f0e1e82",
+      "text_redacted": false
+    }
+  ]
+}

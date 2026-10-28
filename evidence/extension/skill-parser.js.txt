@@ -1,0 +1,490 @@
+Static source evidence. Parsed as text/AST only; specimen was not imported or executed.
+Offsets identify UTF-16 positions in extension_decoded.js.
+
+
+===== nCe =====
+
+// decoded source offsets 24527611..24546996 (UTF-16)
+class {
+  ["skills"] = new Map();
+  ["providerRef"];
+  ["disposables"] = [];
+  ["isDisposed"] = !0x1;
+  constructor(_0x16edc0) {
+    this["providerRef"] = new WeakRef(_0x16edc0);
+  }
+  async ["initialize"]() {
+    (await this["discoverSkills"](), await this['setupFileWatchers']());
+  }
+  async ["discoverSkills"]() {
+    this["skills"]["clear"]();
+    let _0x1b09b6 = await this["getSkillsDirectories"]();
+    for (let {dir: _0x2fbf8f, source: _0x2b68bb, mode: _0x5ee395} of _0x1b09b6) await this["scanSkillsDirectory"](_0x2fbf8f, _0x2b68bb, _0x5ee395);
+  }
+  async ['scanSkillsDirectory'](_0x3c5981, _0x478833, _0x85a71a) {
+    if (await HBt(_0x3c5981)) try {
+      let _0x2ea0b1 = await Co['realpath'](_0x3c5981), _0x37bf03 = await Co["readdir"](_0x2ea0b1);
+      for (let _0x10f5d4 of _0x37bf03) {
+        let _0x198a95 = ki['join'](_0x2ea0b1, _0x10f5d4);
+        (await Co["stat"](_0x198a95)["catch"](() => null))?.["isDirectory"]() && await this["loadSkillMetadata"](_0x198a95, _0x478833, _0x85a71a, _0x10f5d4);
+      }
+    } catch {}
+  }
+  async ["loadSkillMetadata"](_0x3c1c25, _0x162fc1, _0x251c24, _0x3eb9a3) {
+    let _0x2dc7b3 = ki['join'](_0x3c1c25, 'SKILL.md');
+    if (await Tse(_0x2dc7b3)) try {
+      let _0x16a9f5 = await Co["readFile"](_0x2dc7b3, "utf-8"), {data: _0x3bad3a, content: _0x41279b} = (0x0, fq["default"])(_0x16a9f5);
+      if (!_0x3bad3a["name"] || typeof _0x3bad3a["name"] != "string") {
+        console["error"]("Skill at " + _0x3c1c25 + " is missing required 'name' field");
+        return;
+      }
+      if (!_0x3bad3a['description'] || typeof _0x3bad3a["description"] != "string") {
+        console['error']("Skill at " + _0x3c1c25 + '\x20is\x20missing\x20required\x20\x27description\x27\x20field');
+        return;
+      }
+      let _0x3bc004 = _0x3eb9a3 || ki['basename'](_0x3c1c25);
+      if (_0x3bad3a["name"] !== _0x3bc004) {
+        console['error']('Skill\x20name\x20\x22' + _0x3bad3a["name"] + "\" doesn't match directory \"" + _0x3bc004 + '\x22');
+        return;
+      }
+      let _0x4bd309 = W3e(_0x3bc004);
+      if (!_0x4bd309["valid"]) {
+        let _0x1996b4 = this['getSkillNameErrorMessage'](_0x3bc004, _0x4bd309['error']);
+        console["error"]("Skill name \"" + _0x3bc004 + '\x22\x20is\x20invalid:\x20' + _0x1996b4);
+        return;
+      }
+      let _0x3c854e = _0x3bad3a["description"]["trim"]();
+      if (_0x3c854e['length'] < 0x1 || _0x3c854e['length'] > 0x400) {
+        console["error"]("Skill \"" + _0x3bc004 + "\" has an invalid description length: must be 1-1024 characters (got " + _0x3c854e['length'] + ')');
+        return;
+      }
+      let _0x58daf9;
+      Array["isArray"](_0x3bad3a["modeSlugs"]) ? (_0x58daf9 = _0x3bad3a["modeSlugs"]["filter"](_0x3edffd => typeof _0x3edffd == 'string' && _0x3edffd['length'] > 0x0), _0x58daf9["length"] === 0x0 && (_0x58daf9 = void 0x0)) : typeof _0x3bad3a['mode'] == "string" && _0x3bad3a['mode']["length"] > 0x0 ? _0x58daf9 = [_0x3bad3a['mode']] : _0x251c24 && (_0x58daf9 = [_0x251c24]);
+      let _0x3d5f79 = _0x58daf9?.[0x0], _0x2d5f70 = this['getSkillKey'](_0x3bc004, _0x162fc1, _0x3d5f79);
+      this["skills"]["set"](_0x2d5f70, {
+        'name': _0x3bc004,
+        'description': _0x3c854e,
+        'path': _0x2dc7b3,
+        'source': _0x162fc1,
+        'mode': _0x3d5f79,
+        'modeSlugs': _0x58daf9
+      });
+    } catch (_0x48cd3b) {
+      console["error"]("Failed to load skill at " + _0x3c1c25 + ':', _0x48cd3b);
+    }
+  }
+  ["getSkillsForMode"](_0x57d651) {
+    let _0x360fee = new Map();
+    for (let _0x4f86f2 of this["skills"]['values']()) {
+      if (!this['isSkillAvailableInMode'](_0x4f86f2, _0x57d651)) continue;
+      let _0x54567f = _0x360fee["get"](_0x4f86f2["name"]);
+      if (!_0x54567f) {
+        _0x360fee["set"](_0x4f86f2['name'], _0x4f86f2);
+        continue;
+      }
+      this["shouldOverrideSkill"](_0x54567f, _0x4f86f2) && _0x360fee["set"](_0x4f86f2["name"], _0x4f86f2);
+    }
+    return Array['from'](_0x360fee['values']());
+  }
+  ["isSkillAvailableInMode"](_0x2bf161, _0x5cf3ba) {
+    return !_0x2bf161['modeSlugs'] || _0x2bf161["modeSlugs"]['length'] === 0x0 ? !0x0 : _0x2bf161["modeSlugs"]["includes"](_0x5cf3ba);
+  }
+  ['shouldOverrideSkill'](_0x3fad4c, _0x58a8d8) {
+    let _0x29402b = {
+      'project': 0x2,
+      'global': 0x1
+    }, _0x5627c9 = _0x29402b[_0x3fad4c["source"]] ?? 0x0, _0x3302bb = _0x29402b[_0x58a8d8["source"]] ?? 0x0;
+    if (_0x3302bb > _0x5627c9) return !0x0;
+    if (_0x3302bb < _0x5627c9) return !0x1;
+    let _0x119eca = _0x3fad4c["modeSlugs"] && _0x3fad4c["modeSlugs"]['length'] > 0x0, _0xb20262 = _0x58a8d8["modeSlugs"] && _0x58a8d8["modeSlugs"]["length"] > 0x0;
+    return !!(_0xb20262 && !_0x119eca);
+  }
+  ['getAllSkills']() {
+    return Array['from'](this["skills"]["values"]());
+  }
+  async ["getSkillContent"](_0x21ac3a, _0x2aed5c) {
+    let _0x1d89e5;
+    if ((_0x2aed5c ? _0x1d89e5 = this["getSkillsForMode"](_0x2aed5c)["find"](_0x1aea4f => _0x1aea4f["name"] === _0x21ac3a) : _0x1d89e5 = Array["from"](this["skills"]['values']())["find"](_0x3c2450 => _0x3c2450["name"] === _0x21ac3a), !_0x1d89e5)) return null;
+    let _0xec4ddb = await Co["readFile"](_0x1d89e5['path'], 'utf-8'), {content: _0x166f7f} = (0x0, fq['default'])(_0xec4ddb);
+    return {
+      ..._0x1d89e5,
+      'instructions': _0x166f7f["trim"]()
+    };
+  }
+  ['getSkillsMetadata']() {
+    return this["getAllSkills"]();
+  }
+  ["getSkill"](_0x50cdc3, _0x18ef17, _0x479935) {
+    let _0x5001c1 = this['getSkillKey'](_0x50cdc3, _0x18ef17, _0x479935);
+    return this['skills']["get"](_0x5001c1);
+  }
+  ["findSkillByNameAndSource"](_0x510280, _0x3ae02d) {
+    for (let _0x1d564f of this["skills"]["values"]()) if (_0x1d564f["name"] === _0x510280 && _0x1d564f["source"] === _0x3ae02d) return _0x1d564f;
+  }
+  ["validateSkillName"](_0xa52a32) {
+    let _0x29cbe6 = W3e(_0xa52a32);
+    return _0x29cbe6["valid"] ? {
+      'valid': !0x0
+    } : {
+      'valid': !0x1,
+      'error': this["getSkillNameErrorMessage"](_0xa52a32, _0x29cbe6["error"])
+    };
+  }
+  ['getSkillNameErrorMessage'](_0x42e59a, _0x6d85f8) {
+    switch (_0x6d85f8) {
+      case "empty":
+        return nt("skills:errors.name_length", {
+          'maxLength': 0x40,
+          'length': _0x42e59a["length"]
+        });
+      case "too_long":
+        return nt("skills:errors.name_length", {
+          'maxLength': 0x40,
+          'length': _0x42e59a["length"]
+        });
+      case "invalid_format":
+        return nt("skills:errors.name_format");
+    }
+  }
+  async ["createSkill"](_0x50af35, _0x241fea, _0x464fea, _0x5af222) {
+    let _0x2ca7d2 = this["validateSkillName"](_0x50af35);
+    if (!_0x2ca7d2["valid"]) throw new Error(_0x2ca7d2['error']);
+    let _0x468581 = _0x464fea['trim']();
+    if (_0x468581["length"] < 0x1 || _0x468581['length'] > 0x400) throw new Error(nt("skills:errors.description_length", {
+      'length': _0x468581['length']
+    }));
+    let _0x3ffd3c;
+    if (_0x241fea === "global") _0x3ffd3c = Yh(); else {
+      let _0xe5d0f7 = this['providerRef']["deref"]();
+      if (!_0xe5d0f7?.["cwd"]) throw new Error(nt("skills:errors.no_workspace"));
+      _0x3ffd3c = ki["join"](_0xe5d0f7["cwd"], '.alpme');
+    }
+    let _0x1d7fb8 = ki['join'](_0x3ffd3c, 'skills'), _0x225321 = ki['join'](_0x1d7fb8, _0x50af35), _0x5c3215 = ki['join'](_0x225321, "SKILL.md");
+    if (await Tse(_0x5c3215)) throw new Error(nt("skills:errors.already_exists", {
+      'name': _0x50af35,
+      'path': _0x5c3215
+    }));
+    await Co["mkdir"](_0x225321, {
+      'recursive': !0x0
+    });
+    let _0x1262d5 = _0x50af35["split"]('-')["map"](_0x25d112 => _0x25d112["charAt"](0x0)["toUpperCase"]() + _0x25d112["slice"](0x1))['join']('\x20'), _0x158384 = ["name: " + _0x50af35, 'description:\x20' + _0x468581];
+    if (_0x5af222 && _0x5af222["length"] > 0x0) {
+      _0x158384['push']("modeSlugs:");
+      for (let _0x39b715 of _0x5af222) _0x158384["push"]("  - " + _0x39b715);
+    }
+    let _0x5bb6f5 = '---\x0a' + _0x158384["join"]('\x0a') + "\n---\n\n# " + _0x1262d5 + "\n\n## Instructions\n\nAdd your skill instructions here.\n";
+    return (await Co["writeFile"](_0x5c3215, _0x5bb6f5, "utf-8"), await this['discoverSkills'](), _0x5c3215);
+  }
+  async ['deleteSkill'](_0x35f20e, _0x9a9c80, _0x323997) {
+    let _0x3a6eb9 = this["getSkill"](_0x35f20e, _0x9a9c80, _0x323997);
+    if (!_0x3a6eb9) {
+      let _0xf559ba = _0x323997 ? " (mode: " + _0x323997 + ')' : '';
+      throw new Error(nt('skills:errors.not_found', {
+        'name': _0x35f20e,
+        'source': _0x9a9c80,
+        'modeInfo': _0xf559ba
+      }));
+    }
+    let _0x1cc191 = ki["dirname"](_0x3a6eb9["path"]);
+    (await Co['rm'](_0x1cc191, {
+      'recursive': !0x0,
+      'force': !0x0
+    }), await this["discoverSkills"]());
+  }
+  async ["moveSkill"](_0x491919, _0x2a247f, _0x3b542f, _0x34e916) {
+    if (_0x3b542f === _0x34e916) return;
+    if (!this["getSkill"](_0x491919, _0x2a247f, _0x3b542f)) {
+      let _0x792ebb = _0x3b542f ? " (mode: " + _0x3b542f + ')' : '';
+      throw new Error(nt("skills:errors.not_found", {
+        'name': _0x491919,
+        'source': _0x2a247f,
+        'modeInfo': _0x792ebb
+      }));
+    }
+    let _0xcb3889;
+    if (_0x2a247f === "global") _0xcb3889 = Yh(); else {
+      let _0x29eec3 = this["providerRef"]["deref"]();
+      if (!_0x29eec3?.["cwd"]) throw new Error(nt('skills:errors.no_workspace'));
+      _0xcb3889 = ki["join"](_0x29eec3["cwd"], '.alpme');
+    }
+    let _0x30bbf6 = _0x3b542f ? 'skills-' + _0x3b542f : "skills", _0x9d1141 = _0x34e916 ? "skills-" + _0x34e916 : 'skills', _0x53bacd = ki["join"](_0xcb3889, _0x30bbf6, _0x491919), _0xab79d1 = ki['join'](_0xcb3889, _0x9d1141), _0x2a298f = ki["join"](_0xab79d1, _0x491919), _0x31d277 = ki["join"](_0x2a298f, "SKILL.md");
+    if (await Tse(_0x31d277)) throw new Error(nt("skills:errors.already_exists", {
+      'name': _0x491919,
+      'path': _0x31d277
+    }));
+    (await Co["mkdir"](_0xab79d1, {
+      'recursive': !0x0
+    }), await Co["rename"](_0x53bacd, _0x2a298f));
+    let _0x375c9f = ki["join"](_0xcb3889, _0x30bbf6);
+    try {
+      (await Co["readdir"](_0x375c9f))["length"] === 0x0 && await Co["rmdir"](_0x375c9f);
+    } catch {}
+    await this["discoverSkills"]();
+  }
+  async ["updateSkillModes"](_0x28fea9, _0x3190ac, _0x11ef79) {
+    let _0x5a62b0;
+    for (let _0x21afdb of this["skills"]['values']()) if (_0x21afdb["name"] === _0x28fea9 && _0x21afdb["source"] === _0x3190ac) {
+      _0x5a62b0 = _0x21afdb;
+      break;
+    }
+    if (!_0x5a62b0) throw new Error(nt("skills:errors.not_found", {
+      'name': _0x28fea9,
+      'source': _0x3190ac,
+      'modeInfo': ''
+    }));
+    let _0x1c1632 = await Co["readFile"](_0x5a62b0["path"], "utf-8"), {data: _0x4714a4, content: _0x52d26d} = (0x0, fq['default'])(_0x1c1632);
+    _0x11ef79 && _0x11ef79['length'] > 0x0 ? (_0x4714a4["modeSlugs"] = _0x11ef79, delete _0x4714a4["mode"]) : (delete _0x4714a4['modeSlugs'], delete _0x4714a4["mode"]);
+    let _0x1cae54 = fq["default"]["stringify"](_0x52d26d, _0x4714a4);
+    (await Co["writeFile"](_0x5a62b0['path'], _0x1cae54, "utf-8"), await this["discoverSkills"]());
+  }
+  async ["getSkillsDirectories"]() {
+    let _0x4a1505 = [], _0x5288f7 = Yh(), _0x53ec74 = AQe(), _0x54c2d8 = this["providerRef"]['deref'](), _0x2fc202 = _0x54c2d8?.["cwd"] ? ki["join"](_0x54c2d8["cwd"], '.alpme') : null, _0x103937 = _0x54c2d8?.['cwd'] ? GQe(_0x54c2d8["cwd"]) : null, _0x252a80 = await this["getAvailableModes"]();
+    _0x4a1505["push"]({
+      'dir': ki["join"](_0x53ec74, "skills"),
+      'source': "global"
+    });
+    for (let _0x5bb68c of _0x252a80) _0x4a1505["push"]({
+      'dir': ki["join"](_0x53ec74, "skills-" + _0x5bb68c),
+      'source': 'global',
+      'mode': _0x5bb68c
+    });
+    if (_0x103937) {
+      _0x4a1505["push"]({
+        'dir': ki['join'](_0x103937, "skills"),
+        'source': 'project'
+      });
+      for (let _0x13398e of _0x252a80) _0x4a1505['push']({
+        'dir': ki["join"](_0x103937, "skills-" + _0x13398e),
+        'source': "project",
+        'mode': _0x13398e
+      });
+    }
+    _0x4a1505['push']({
+      'dir': ki["join"](_0x5288f7, "skills"),
+      'source': "global"
+    });
+    for (let _0x34aeaf of _0x252a80) _0x4a1505["push"]({
+      'dir': ki['join'](_0x5288f7, "skills-" + _0x34aeaf),
+      'source': "global",
+      'mode': _0x34aeaf
+    });
+    if (_0x2fc202) {
+      _0x4a1505["push"]({
+        'dir': ki['join'](_0x2fc202, "skills"),
+        'source': "project"
+      });
+      for (let _0x1174ab of _0x252a80) _0x4a1505["push"]({
+        'dir': ki["join"](_0x2fc202, "skills-" + _0x1174ab),
+        'source': "project",
+        'mode': _0x1174ab
+      });
+    }
+    return _0x4a1505;
+  }
+  async ["getAvailableModes"]() {
+    let _0x1a005f = this["providerRef"]['deref'](), _0x323aad = yl["map"](_0x4295ef => _0x4295ef['slug']);
+    if (!_0x1a005f) return _0x323aad;
+    try {
+      let _0x4975e7 = await _0x1a005f["customModesManager"]['getCustomModes']();
+      return Hse(_0x4975e7)['map'](_0x2a79a5 => _0x2a79a5["slug"]);
+    } catch {
+      return _0x323aad;
+    }
+  }
+  ["getSkillKey"](_0x1bea08, _0x1caaaf, _0x368ff9) {
+    return _0x1caaaf + ':' + (_0x368ff9 || "generic") + ':' + _0x1bea08;
+  }
+  async ["setupFileWatchers"]() {
+    if (process.env.NODE_ENV === "test" || !BQ["workspace"]["createFileSystemWatcher"]) return;
+    let _0x4ae820 = this["providerRef"]["deref"]();
+    if (!_0x4ae820?.["cwd"]) return;
+    let _0x432d84 = Yh(), _0xb737b6 = AQe(), _0x3ef446 = ki["join"](_0x4ae820["cwd"], '.alpme'), _0x32e79d = GQe(_0x4ae820["cwd"]);
+    (this["watchDirectory"](ki["join"](_0x432d84, "skills")), this['watchDirectory'](ki['join'](_0xb737b6, 'skills')), this["watchDirectory"](ki['join'](_0x3ef446, "skills")), this["watchDirectory"](ki["join"](_0x32e79d, "skills")));
+    let _0x2f5a07 = await this["getAvailableModes"]();
+    for (let _0x120222 of _0x2f5a07) (this["watchDirectory"](ki["join"](_0x432d84, "skills-" + _0x120222)), this["watchDirectory"](ki["join"](_0x3ef446, "skills-" + _0x120222)), this["watchDirectory"](ki['join'](_0xb737b6, "skills-" + _0x120222)), this["watchDirectory"](ki['join'](_0x32e79d, 'skills-' + _0x120222)));
+  }
+  ["watchDirectory"](_0x1a6cda) {
+    if (process.env.NODE_ENV === 'test' || !BQ["workspace"]["createFileSystemWatcher"]) return;
+    let _0x2c167e = new BQ['RelativePattern'](_0x1a6cda, '**/SKILL.md'), _0x3f1537 = BQ["workspace"]["createFileSystemWatcher"](_0x2c167e);
+    (_0x3f1537['onDidChange'](async _0x3ccb98 => {
+      this["isDisposed"] || await this["discoverSkills"]();
+    }), _0x3f1537["onDidCreate"](async _0x464d2 => {
+      this["isDisposed"] || await this["discoverSkills"]();
+    }), _0x3f1537["onDidDelete"](async _0x535d5b => {
+      this['isDisposed'] || await this['discoverSkills']();
+    }), this["disposables"]["push"](_0x3f1537));
+  }
+  async ["dispose"]() {
+    (this["isDisposed"] = !0x0, this["disposables"]["forEach"](_0x1e1155 => _0x1e1155["dispose"]()), this["disposables"] = [], this["skills"]['clear']());
+  }
+}
+
+===== pst =====
+
+// decoded source offsets 22347554..22352635 (UTF-16)
+ye((_0x40c55c, _0x13049e) => {
+  'use strict';
+  var _0x1d2a01 = require('fs'), _0x468450 = BQr(), _0xddb4c7 = pq(), _0x31474d = dst(), _0x2f3676 = VDr(), _0xc4a67b = cst(), _0x3c3842 = XDr(), _0xf46a02 = MDr(), _0xec5c03 = rCe();
+  function _0x29dacb(_0x2caab6, _0x5b8607) {
+    if (_0x2caab6 === '') return {
+      'data': {},
+      'content': _0x2caab6,
+      'excerpt': '',
+      'orig': _0x2caab6
+    };
+    let _0x19de18 = _0x3c3842(_0x2caab6), _0x127391 = _0x29dacb["cache"][_0x19de18["content"]];
+    if (!_0x5b8607) {
+      if (_0x127391) return (_0x19de18 = Object["assign"]({}, _0x127391), _0x19de18['orig'] = _0x127391["orig"], _0x19de18);
+      _0x29dacb["cache"][_0x19de18["content"]] = _0x19de18;
+    }
+    return _0x2ebbfb(_0x19de18, _0x5b8607);
+  }
+  function _0x2ebbfb(_0x42b945, _0x3972f3) {
+    let _0x3624ec = _0xddb4c7(_0x3972f3), _0x42752b = _0x3624ec["delimiters"][0x0], _0x26c626 = '\x0a' + _0x3624ec["delimiters"][0x1], _0x41a849 = _0x42b945["content"];
+    _0x3624ec["language"] && (_0x42b945["language"] = _0x3624ec["language"]);
+    let _0x32ef46 = _0x42752b["length"];
+    if (!_0xec5c03["startsWith"](_0x41a849, _0x42752b, _0x32ef46)) return (_0x2f3676(_0x42b945, _0x3624ec), _0x42b945);
+    if (_0x41a849["charAt"](_0x32ef46) === _0x42752b["slice"](-0x1)) return _0x42b945;
+    _0x41a849 = _0x41a849["slice"](_0x32ef46);
+    let _0x10d2fc = _0x41a849["length"], _0x233b03 = _0x29dacb["language"](_0x41a849, _0x3624ec);
+    _0x233b03['name'] && (_0x42b945['language'] = _0x233b03["name"], _0x41a849 = _0x41a849["slice"](_0x233b03["raw"]["length"]));
+    let _0x40f256 = _0x41a849["indexOf"](_0x26c626);
+    return (_0x40f256 === -0x1 && (_0x40f256 = _0x10d2fc), _0x42b945['matter'] = _0x41a849["slice"](0x0, _0x40f256), _0x42b945["matter"]["replace"](/^\s*#[^\n]+/gm, '')["trim"]() === '' ? (_0x42b945["isEmpty"] = !0x0, _0x42b945["empty"] = _0x42b945["content"], _0x42b945['data'] = {}) : _0x42b945['data'] = _0xf46a02(_0x42b945["language"], _0x42b945['matter'], _0x3624ec), _0x40f256 === _0x10d2fc ? _0x42b945["content"] = '' : (_0x42b945["content"] = _0x41a849["slice"](_0x40f256 + _0x26c626["length"]), _0x42b945["content"][0x0] === '\x0d' && (_0x42b945['content'] = _0x42b945["content"]["slice"](0x1)), _0x42b945["content"][0x0] === '\x0a' && (_0x42b945["content"] = _0x42b945["content"]['slice'](0x1))), _0x2f3676(_0x42b945, _0x3624ec), (_0x3624ec['sections'] === !0x0 || typeof _0x3624ec["section"] == 'function') && _0x468450(_0x42b945, _0x3624ec["section"]), _0x42b945);
+  }
+  (_0x29dacb['engines'] = _0xc4a67b, _0x29dacb["stringify"] = function (_0x3a647b, _0x38ebad, _0x5d485a) {
+    return (typeof _0x3a647b == "string" && (_0x3a647b = _0x29dacb(_0x3a647b, _0x5d485a)), _0x31474d(_0x3a647b, _0x38ebad, _0x5d485a));
+  }, _0x29dacb['read'] = function (_0x4dd7b5, _0x2efb4b) {
+    let _0x12fcf8 = _0x1d2a01["readFileSync"](_0x4dd7b5, 'utf8'), _0x7e07b = _0x29dacb(_0x12fcf8, _0x2efb4b);
+    return (_0x7e07b["path"] = _0x4dd7b5, _0x7e07b);
+  }, _0x29dacb["test"] = function (_0x4d5202, _0xd61a87) {
+    return _0xec5c03['startsWith'](_0x4d5202, _0xddb4c7(_0xd61a87)["delimiters"][0x0]);
+  }, _0x29dacb["language"] = function (_0x418906, _0xb8e6e2) {
+    let _0x5046a7 = _0xddb4c7(_0xb8e6e2)['delimiters'][0x0];
+    _0x29dacb["test"](_0x418906) && (_0x418906 = _0x418906["slice"](_0x5046a7["length"]));
+    let _0x538991 = _0x418906["slice"](0x0, _0x418906["search"](/\r?\n/));
+    return {
+      'raw': _0x538991,
+      'name': _0x538991 ? _0x538991["trim"]() : ''
+    };
+  }, _0x29dacb["cache"] = {}, _0x29dacb["clearCache"] = function () {
+    _0x29dacb["cache"] = {};
+  }, _0x13049e["exports"] = _0x29dacb);
+})
+
+===== pq =====
+
+// decoded source offsets 22339850..22340907 (UTF-16)
+ye((_0xaf107b, _0x5c04fc) => {
+  'use strict';
+  var _0x47a5a7 = cst(), _0x4e2882 = rCe();
+  _0x5c04fc["exports"] = function (_0x16075c) {
+    let _0x2fa2e2 = Object["assign"]({}, _0x16075c);
+    return (_0x2fa2e2["delimiters"] = _0x4e2882["arrayify"](_0x2fa2e2['delims'] || _0x2fa2e2["delimiters"] || "---"), _0x2fa2e2["delimiters"]["length"] === 0x1 && _0x2fa2e2["delimiters"]["push"](_0x2fa2e2['delimiters'][0x0]), _0x2fa2e2['language'] = (_0x2fa2e2['language'] || _0x2fa2e2["lang"] || "yaml")["toLowerCase"](), _0x2fa2e2['engines'] = Object["assign"]({}, _0x47a5a7, _0x2fa2e2["parsers"], _0x2fa2e2['engines']), _0x2fa2e2);
+  };
+})
+
+===== MDr =====
+
+// decoded source offsets 22346975..22347549 (UTF-16)
+ye((_0x4e338b, _0x383e73) => {
+  'use strict';
+  var _0x239968 = ust(), _0x4c48eb = pq();
+  _0x383e73['exports'] = function (_0x4f63ba, _0x58cd0e, _0x3898c0) {
+    let _0x45a816 = _0x4c48eb(_0x3898c0), _0x4442ed = _0x239968(_0x4f63ba, _0x45a816);
+    if (typeof _0x4442ed["parse"] != "function") throw new TypeError("expected \"" + _0x4f63ba + ".parse\" to be a function");
+    return _0x4442ed["parse"](_0x58cd0e, _0x45a816);
+  };
+})
+
+===== ust =====
+
+// decoded source offsets 22340912..22342009 (UTF-16)
+ye((_0x3107b5, _0x5aebbe) => {
+  'use strict';
+  _0x5aebbe["exports"] = function (_0x39bc1a, _0x18cf59) {
+    let _0x461fd1 = _0x18cf59["engines"][_0x39bc1a] || _0x18cf59["engines"][_0x176023(_0x39bc1a)];
+    if (typeof _0x461fd1 > 'u') throw new Error('gray-matter\x20engine\x20\x22' + _0x39bc1a + "\" is not registered");
+    return (typeof _0x461fd1 == 'function' && (_0x461fd1 = {
+      'parse': _0x461fd1
+    }), _0x461fd1);
+  };
+  function _0x176023(_0x19f5b9) {
+    switch (_0x19f5b9["toLowerCase"]()) {
+      case 'js':
+      case "javascript":
+        return "javascript";
+      case "coffee":
+      case "coffeescript":
+      case "cson":
+        return "coffee";
+      case 'yaml':
+      case "yml":
+        return 'yaml';
+      default:
+        return _0x19f5b9;
+    }
+  }
+})
+
+===== cst =====
+
+// decoded source offsets 22335354..22337039 (UTF-16)
+ye((_0x508b89, _0x26ee82) => {
+  'use strict';
+  var _0x31b00b = SDr(), _0x161656 = _0x508b89 = _0x26ee82["exports"];
+  (_0x161656["yaml"] = {
+    'parse': _0x31b00b['safeLoad']["bind"](_0x31b00b),
+    'stringify': _0x31b00b["safeDump"]["bind"](_0x31b00b)
+  }, _0x161656["json"] = {
+    'parse': JSON["parse"]["bind"](JSON),
+    'stringify': function (_0x5b1911, _0x14d820) {
+      let _0xe697cc = Object["assign"]({
+        'replacer': null,
+        'space': 0x2
+      }, _0x14d820);
+      return JSON["stringify"](_0x5b1911, _0xe697cc["replacer"], _0xe697cc["space"]);
+    }
+  }, _0x161656['javascript'] = {
+    'parse': function _0x2f0b8b(_0x351f99, _0x22b03f, _0x11eb5e) {
+      try {
+        return (_0x11eb5e !== !0x1 && (_0x351f99 = "(function() {\nreturn " + _0x351f99["trim"]() + ';\x0a}());'), eval(_0x351f99) || ({}));
+      } catch (_0x298ffb) {
+        if (_0x11eb5e !== !0x1 && (/(unexpected|identifier)/i)["test"](_0x298ffb["message"])) return _0x2f0b8b(_0x351f99, _0x22b03f, !0x1);
+        throw new SyntaxError(_0x298ffb);
+      }
+    },
+    'stringify': function () {
+      throw new Error('stringifying\x20JavaScript\x20is\x20not\x20supported');
+    }
+  });
+})
+
+===== Yh =====
+
+// decoded source offsets 3241245..3241458 (UTF-16)
+function Yh() {
+  let _0x326cf5 = xQe["homedir"]();
+  return IC["join"](_0x326cf5, '.alpme');
+}
+
+===== AQe =====
+
+// decoded source offsets 3241458..3241676 (UTF-16)
+function AQe() {
+  let _0x23b203 = xQe["homedir"]();
+  return IC["join"](_0x23b203, ".agents");
+}
+
+===== HB =====
+
+// decoded source offsets 3241900..3242095 (UTF-16)
+function HB(_0x5c8a75) {
+  return IC["join"](_0x5c8a75, '.alpme');
+}
+
+===== GQe =====
+
+// decoded source offsets 3241676..3241900 (UTF-16)
+function GQe(_0x505215) {
+  return IC["join"](_0x505215, ".agents");
+}

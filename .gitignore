@@ -1,0 +1,13 @@
+*.exe
+*.dll
+*.bin
+*.pdb
+*.vscdb*
+*.sqlite*
+*.db
+.env
+.env.*
+__pycache__/
+*.pyc
+*.log
+*.tmp

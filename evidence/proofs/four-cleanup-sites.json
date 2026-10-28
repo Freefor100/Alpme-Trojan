@@ -1,0 +1,108 @@
+{
+  "status": "FOUR_SPECIFIED_CLEANUP_CALLBACKS_CLOSED_IN_VERIFIED_NORMAL_CONTEXT",
+  "scope": "NormalPE/TLS/data initialization, validated calleemutable spans, valid ownedobjects/nonaliasing privatecompilerframes. This is not an arbitrarycorruptstate or arbitraryexternalTLSwrite theorem.",
+  "sites": [
+    {
+      "version": "17",
+      "site": "0x3dc37",
+      "nearest_producers": [
+        "0x4091b",
+        "0x444c1"
+      ],
+      "callee": "0x4a0d2",
+      "error_lowtag": 2,
+      "actual_error_target": "0x3dc41",
+      "normal_invoked_target_set": []
+    },
+    {
+      "version": "17",
+      "site": "0x40666",
+      "nearest_producers": [
+        "0x4314c"
+      ],
+      "callee": "0x4a0d2",
+      "error_lowtag": 2,
+      "actual_error_target": "0x40671",
+      "normal_invoked_target_set": []
+    },
+    {
+      "version": "19",
+      "site": "0x3b08e",
+      "nearest_producers": [
+        "0x39620"
+      ],
+      "callee": "0xdda5",
+      "error_lowtag": 2,
+      "actual_error_target": "0x39f58",
+      "normal_invoked_target_set": []
+    },
+    {
+      "version": "19",
+      "site": "0x3b10c",
+      "nearest_producers": [
+        "0x39c9c"
+      ],
+      "callee": "0xdda5",
+      "error_lowtag": 2,
+      "actual_error_target": "0x390eb",
+      "normal_invoked_target_set": []
+    }
+  ],
+  "proof_integrity": {
+    "17": {
+      "original_instructions": 7729,
+      "entry_reachable": 7729,
+      "computed_sites": 365,
+      "source": "C:\\Users\\leo\\Documents\\Codex\\2026-10-26\\ni\\work\\alpme_analysis\\semantic_closure_20261027\\round3_r14proof\\candidate_normal_context_edges.json",
+      "sha256": "5dcb2c7648d9985dc776f8dddd3402958a3e3362c9b1c13152748450a88e689d"
+    },
+    "19": {
+      "original_instructions": 7720,
+      "entry_reachable": 7720,
+      "computed_sites": 358,
+      "explicit_memory_writers": 805,
+      "independent_alias_reads": 155,
+      "alias_status": "PASS",
+      "unknown": 0,
+      "outside": 0,
+      "forced_cache_EA_projection": false,
+      "source": "C:\\Users\\leo\\Documents\\Codex\\2026-10-26\\ni\\work\\alpme_analysis\\semantic_closure_20261027\\round3_file_dispatch19\\verified_normal_static_cfg.json",
+      "sha256": "e3aabb1abd451521aa75a0b8ceb71a1b3fb0e4950b609959347e8941a5c82321"
+    }
+  },
+  "concrete_family_effects": "Separately byte-verified custombox constructor/drop families17:50670→3bafb and19:10112→227c7 perform memoryrelease only (GetProcessHeap/HeapFree and concreteinnerdrops). They are ABIcompatible families, not actualproducer targets of these four normaldirectory errorpaths.",
+  "cleanup_semantics": "At all four sites: None skipsunpack,Some success hasnonnullowner and skipserror-dispatch,Some error hasowner0 and(u64(u32(GetLastError()))<<32)|2. Tag1callback is notinvoked. Actualinvokedcallback targetsets are all empty.",
+  "file_registry_persistence": "No specified callback call executes in this normalcontext. Iteratorproducer mayclose directoryhandles/readGetLastError; concretecustomboxdrop family has no filedeletion/registrywrite/persistence setup. The surroundingprogram has separatelydocumented file/process/registry behaviors, including the fixedcfgwrite in browserprep; those are outside thiscleanup-only conclusion.",
+  "corrections": [
+    "No singleton3bafb/227c7 claim from ABI compatibility.",
+    "No directoryOSerror lowtag1: it is2.",
+    "No UTF8error valid_up_to integer treatedasownedpointer; oldphysicalaggregate lifetimes are overwritten beforetheseunpacks.",
+    "19firstindex10h is derivedfromnormalPE TLS320, not frozenfromanoldmocktrace.",
+    "19SPc8 initial8 is a priorlifetime; the correctlatestDWORD writer38642 produces0 here.",
+    "19 outputpointerR13 has sixliteralSP1560 reachingdefs, not an assumedpointervalue.",
+    "19 naturalcompletegraph and155read/805writer aliasPASS used; oldpartialGhidra1block and candidategraphs are not completeness evidence."
+  ],
+  "artifacts": [
+    {
+      "path": "C:\\Users\\leo\\Documents\\Codex\\2026-10-26\\ni\\work\\alpme_analysis\\semantic_closure_20261027\\round3_cleanup_finish\\17_cleanup_finished.json",
+      "sha256": "10ca51152a3fe2581a9c7229b25bb12c1631c4c89ffa2b9e16ff8694c429ad9b"
+    },
+    {
+      "path": "C:\\Users\\leo\\Documents\\Codex\\2026-10-26\\ni\\work\\alpme_analysis\\semantic_closure_20261027\\round3_cleanup_finish\\17_complete_graph_integrity.json",
+      "sha256": "10055ea8318325c20284bb19c67dd85089412d1a3eccd2f1a1bc1af3febaa942"
+    },
+    {
+      "path": "C:\\Users\\leo\\Documents\\Codex\\2026-10-26\\ni\\work\\alpme_analysis\\semantic_closure_20261027\\round3_cleanup_finish\\19_cleanup_finished.json",
+      "sha256": "0f0684575ae4d31fd6d1596f2b7085266fbe2f059e248522885b7a9f33341ece"
+    },
+    {
+      "path": "C:\\Users\\leo\\Documents\\Codex\\2026-10-26\\ni\\work\\alpme_analysis\\semantic_closure_20261027\\round3_cleanup_finish\\19_cleanup_normal_reaching.json",
+      "sha256": "3913dc7b3d44ee135473843f6e06412b0898ef09a5397aadf8c6311a3de6a19d"
+    },
+    {
+      "path": "C:\\Users\\leo\\Documents\\Codex\\2026-10-26\\ni\\work\\alpme_analysis\\semantic_closure_20261027\\round3_cleanup_finish\\concrete_drop_family_effects.json",
+      "sha256": "f06ed322f04ee2e2cd502f454a2f9f11b3f7f398bd618b0a7e8f6a45bc5f3934"
+    }
+  ],
+  "no_original_API_CPU_browser_key_or_network_execution": true
+}

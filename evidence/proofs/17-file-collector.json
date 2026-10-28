@@ -1,0 +1,127 @@
+{
+  "entry": "17:0x3c026",
+  "native_extent": [
+    "0x3c026",
+    "0x45d49(exclusive)"
+  ],
+  "status": "complete CFG and structured decompiler C under stated normal initialization/object context",
+  "source_sha256": "24f7eed14b69c561bd2dde6aa61759cabc8588293e9a0099dde8e381f96f228a",
+  "source_unchanged": true,
+  "sample_execution": false,
+  "native_function_sha256": "842da655f9ca11f81ca65d659bc6e9021743ed36dcd8b1a68875613030d00b38",
+  "text_sha256_before": "9719f0233f0af40eab63a0548511aa13e6ba06863e1aef96376fc12ef95f3ea4",
+  "text_sha256_after": "9719f0233f0af40eab63a0548511aa13e6ba06863e1aef96376fc12ef95f3ea4",
+  "original_instruction_starts": 7729,
+  "computed_jump_sites": 365,
+  "all_original_computed_sites_have_nonempty_proven_targets": true,
+  "all_targets_original_instruction_boundaries": true,
+  "out_of_extent_targets": [],
+  "C": {
+    "path": "work\\alpme_analysis\\semantic_closure_20261027\\round3_file_dispatch\\17_payload.dll.bin_0x3c026_normal_context.c",
+    "bytes": 274632,
+    "lines": 5726,
+    "sha256": "f11bb58965322399c699fea3bc2ea7fa8e021254b0cabdd3d344061c630a892e",
+    "status": "completed",
+    "error": "",
+    "counts": {
+      "WARNING": 431,
+      "manual_switch": 365,
+      "single_destination_switch_removed": 40,
+      "does_not_return": 22,
+      "unreachable_block_removed": 2,
+      "chkstk_injection": 1,
+      "overlapping_globals": 1,
+      "invalidInstructionException": 22,
+      "unrecovered_jump_table": 0,
+      "indirect_jump_as_call": 0,
+      "halt_baddata": 0,
+      "UnimplementedPcode": 0
+    },
+    "timeout_seconds": 300,
+    "pointer_type_inference_and_extra_structuring": false
+  },
+  "first_attempt": {
+    "status": "timeout",
+    "timeout_seconds": 120,
+    "evidence_preserved": true
+  },
+  "normal_context_only": true,
+  "context_preconditions": [
+    "Normal PE TLS template with flag215 initially0, then original2af30 initializer; no external mutation of obfuscation TLS constants.",
+    "Normal original PE data values named by the bounded-callee proofs, including99e80,99208,98aa0,9a170,9c3bc; not arbitrary-state invariants.",
+    "Valid Windows x64 ABI frames and in-bounds owned Vec/String/Arc/iterator objects: heap storage is distinct from the three private scalar slots.",
+    "Module loader/cache and CNG scalar handles follow their normal API/object contracts.",
+    "Normal directory error payload lifecycles exclude the two generic lowtag1 vtable callbacks; generic native callback code is retained and no arbitrary callback side-effect contract is claimed."
+  ],
+  "slot_phase_proof": {
+    "b0": {
+      "writer": "0x3f559",
+      "value": 1,
+      "lookups": 19
+    },
+    "b8": {
+      "writer": "0x40dfb",
+      "value": 0,
+      "lookups": 15,
+      "distinct_pointer_writer": "0x3c827"
+    },
+    "1b8": {
+      "writer": "0x40def",
+      "value": 2,
+      "lookups": 6
+    }
+  },
+  "other_reaching_definitions": {
+    "R14B_at442b8": [
+      "421c3 after callee665a1 proved AL in {0,1}; upper bits not summarized",
+      "4383a =1",
+      "44cea =0"
+    ],
+    "latent_jumps": [
+      "3deb3 local finite set",
+      "41ac7 RBX unique reaching definition3e530"
+    ]
+  },
+  "side_effect_scope": "Phase-specific three scalar slots; original outputs and mutable inputs have separate spans, including4a552 RCX24+RDX72,4a0d2 RCX0x260+RDX0x14,4a5cb mutable RCX72,2a7b4 RCX32,62908/3bc65 RCX16. Owned heap distinctness is an explicit valid-object premise.",
+  "generic_finite_AI": {
+    "naturally_complete": false,
+    "unresolved_count_in_preserved_diagnostic_snapshot": 40,
+    "not_relabelled_as_success": true
+  },
+  "whole_frame_retention_verified": false,
+  "callback_scope": "Two generic lowtag1 vtable callback calls excluded only in normal directory error payload lifecycles; native callback source retained, no arbitrary-callback footprint claimed.",
+  "semantic_observations": [
+    "Normal AES-GCM branch uses input nonce at+3 length12, ciphertext at+15, last16-byte tag; length arithmetic gives fixed31-byte envelope overhead. Key-generation argument length32.",
+    "BCryptDecrypt conservative private-frame write spans are c80..cd7 (88B auth-info) and230..233 (ULONG result count); IV and MAC-context pointers are NULL and output bytes go to owned heap.",
+    "Successful GCM output length is clamped to min(requested/allocated length, returned ULONG byte count) before result construction.",
+    "Application-specific literals include Discord LevelDB/log selection, Roblox LocalStorage, Steam local.vdf and ConnectCache fields; these are behavior selectors, not host artifacts read during analysis."
+  ],
+  "limitations": [
+    "C is a conditional analysis artifact, not original source/rebuild equivalence or arbitrary-state proof.",
+    "431 warnings are explicitly counted; original panic/UD2 sites remain and22 invalidInstructionException occurrences are not silently removed.",
+    "This closes this one core function; legacy41 failures and all2254 native function recoveries are different coverage populations."
+  ],
+  "evidence_sha256": {
+    "work\\alpme_analysis\\semantic_closure_20261027\\round3_strings\\utf_output_span_proof.json": "899f78bcdbb11c63e1039503fbbd7f74f1cfe9ab860f41b98e72158017d38e63",
+    "work\\alpme_analysis\\semantic_closure_20261027\\round3_r14proof\\callee_141d7\\normal_output_24B_proof.json": "2d92f0b458dfe1fbee8b2a197126ecf22e1f141474cb7fa3bf4b5ef42a404a8a",
+    "work\\alpme_analysis\\semantic_closure_20261027\\round3_r14proof\\callee_4f1f9\\output_span_proof.json": "2b7adbe9a352f2a7630dcfffd8e6666edca93abc914efe5c2877c9d06c8711f3",
+    "work\\alpme_analysis\\semantic_closure_20261027\\round3_r14proof\\callee_extra_spans\\three_callee_span_verification.json": "d66152eb82d0369e49985687b75a8c4a7bee011184de66bb00393fcaad4d38bf",
+    "work\\alpme_analysis\\semantic_closure_20261027\\round3_r14proof\\callee_8e81\\output_and_input_span_proof.json": "b0ff9af23bca42be96245dd905b0c716a5b7eeea64294b37df59139038e1b532",
+    "work\\alpme_analysis\\semantic_closure_20261027\\round3_strings\\remaining_frame_span_proof.json": "ffe153c4af847e605aa18e63c015507926e068aef60d4117ab5738901ea72fa5",
+    "work\\alpme_analysis\\semantic_closure_20261027\\round3_strings\\last_three_helper_span_proof.json": "2a1a93e93f2900c6ec332910bdc863f4a90ccfcb476a8891b9f51a5beb23f197",
+    "work\\alpme_analysis\\semantic_closure_20261027\\round3_strings\\bcrypt_frame_effect_proof.json": "9a023f7fe0303280735cf40c4906041744c2688c44b6178cc98db3ef593cefe5",
+    "work\\alpme_analysis\\semantic_closure_20261027\\round3_r14proof\\665a1_return_and_footprint_proof.json": "0399fa13194cd602f4643d15deff6ff1f9f78609923206807357b53d7e135358",
+    "work\\alpme_analysis\\semantic_closure_20261027\\round3_file_dispatch\\phase_context\\5637c_contextual_frame_effect.json": "c3f634bcf588ca66c4e32085c1db0362bb22166d5fa249355dab8d0fe81d37c5",
+    "work\\alpme_analysis\\semantic_closure_20261027\\round3_r14proof\\candidate_normal_context_edges.json": "5dcb2c7648d9985dc776f8dddd3402958a3e3362c9b1c13152748450a88e689d",
+    "work\\alpme_analysis\\semantic_closure_20261027\\round3_r14proof\\normal_context_quality_summary.json": "8343e36c7ba8c3af2951512db46dd800260028e7ce0083df3eb4b83cc300da98",
+    "work\\alpme_analysis\\semantic_closure_20261027\\round3_file_dispatch\\phase_context\\normal_index_candidates_v2.json": "da03506e89e37fa3c32fa48723721429910e27ae5bf3d22b6e4a124b3a275ba1",
+    "work\\alpme_analysis\\semantic_closure_20261027\\round3_file_dispatch\\phase_context\\candidate_v2_full_cfg_reaching_writers.json": "66d52c5f0f041c81f5fe025bc5119af5cc0d45dbd2cbde2bc70451e0b694f1aa",
+    "work\\alpme_analysis\\semantic_closure_20261027\\round3_file_dispatch\\phase_context\\CNG_close_shared_lifecycle_proof.json": "90042c9d05d4970e5b921be16b9ca4b841d077a8360d4dd3fd58103a66838573",
+    "work\\alpme_analysis\\semantic_closure_20261027\\round3_cleanup_finish\\17_cleanup_finished.json": "10ca51152a3fe2581a9c7229b25bb12c1631c4c89ffa2b9e16ff8694c429ad9b",
+    "work\\alpme_analysis\\semantic_closure_20261027\\round3_cleanup_finish\\17_complete_graph_integrity.json": "10055ea8318325c20284bb19c67dd85089412d1a3eccd2f1a1bc1af3febaa942",
+    "work\\alpme_analysis\\semantic_closure_20261027\\round3_file_dispatch\\17_payload.dll.bin_0x3c026_attempt1_timeout.json": "77d4fdaf5aafc89cad014995e40349e38a5faf749302e393342a2e9d407b335e",
+    "work\\alpme_analysis\\semantic_closure_20261027\\round3_file_dispatch\\phase_context\\normal_collector_export_plan.json": "970cddc7169294cd08e4cab0ed6381e1900b44c0c63ed141a5c2c248df6e5b4a",
+    "work\\alpme_analysis\\semantic_closure_20261027\\round3_file_dispatch\\phase_context\\normal_tls_footprints.json": "db857c26a6defb3cdb45e982fe867ef93f226f8332922952ae264ee92e16c5c2",
+    "work\\alpme_analysis\\semantic_closure_20261027\\round3_file_dispatch\\RecoverNormalCollector.java": "3b4989556b7cf05c31b879eb16deb9a303a78a62de6cebe7b6a16a8ece1a6516"
+  }
+}

@@ -1,0 +1,81 @@
+解释性恢复逻辑。名称由分析者指定；省略常规分配器/线程/Result表示。
+完整原生指令和当前C表示在相邻17si/19si目录。此文件不是可执行代码或作者源码。
+
+外层(sample):
+    初始化本地状态和系统接口
+    从Shell_TrayWnd得到Explorer PID，尝试打开进程
+    按原生片段顺序拼接外层.rdata/.data里的编码数据
+    使用对应字母表、噪声规则、XOR和位级LZ恢复内层节数据
+    准备映像：导入解析、重定位、映像/上下文/启动代码
+    远程分配和写入；CreateRemoteThread进入启动代码
+    本地资源清理。内层工作生命周期独立于扩展/外层退出
+
+内层主入口:
+    初始化PE/TLS依赖状态，执行环境检查
+    若命中本案SMBIOS Type7==0门禁：yolo消息框，然后返回
+    组织主机指纹 -> 序列化/压缩/通信包装
+    调用一次初始配置HTTP；传输或解析失败则清理返回
+    解析并发布配置；启动dispatcher和结果消费
+    结果频道每产生结果，可启动上传线程
+    上传回复检查后释放，不再解析为配置命令
+    本条主流程没有周期重新获取配置回边
+
+配置(normal_root):
+    截图: 17 C6 / 19 A6
+    普通浏览器: 17 E1 / 19 64
+        wire0 Cookies; wire1登录; wire2 History; wire3 WebData
+        wire4保存为config+14b，本地两份正常构建无操作消费者
+    文件/注册表: 17 D3 / 19 81
+    剪贴板: 17 15 / 19 DB，十组地址配置
+    下载执行: 17 83 / 19 E3，URL列表
+
+采集调度:
+    普通文件/注册表、Chromium、Gecko和扩展存储走相应线程
+    截图开关只在尝试循环外读取一次
+        17最多4次、19最多3次尝试
+        常规失败wait112/78ms后计数递减
+        成功构造BMP并send结果频道后退出
+    可选剪贴板分支持续检查地址形状并按配置替换
+    可选URL分支下载到Temp，选择程序/安装器/脚本解释器启动
+
+文件任务(job):
+    展开根路径中的环境变量/指定注册表表达式
+    枚举目录项；依据目录属性和重解析类型决定是否进入
+    文件名正向模式OR合并，!规则否决，遵守深度/大小边界
+    普通读取；特定失败重试；共享锁/占用时可借用匹配既有句柄
+    将内容、逻辑名称与分类交给结果通道
+    selector还可触发Steam/Roblox/Discord的专用令牌处理
+
+浏览器根与profile:
+    从APPDATA/LOCALAPPDATA两层目录查找User Data/Local State或Profiles
+    Chromium Default单独检查
+    其他名字门: length>=8 且 memcmp(name,"Profile ",8)==0
+        区分大小写，无数字后缀条件；保留完整basename
+    原始根初始化器、单profile与部分扩展采集函数仍有待审分支
+
+19准备浏览器上下文:
+    LastBrowser路径和app-bound相关解码结果可用时进入准备线程
+    通过进程映像路径和候选PID记录筛选目标
+    需要创建时：TokenElevation为0/失败 -> 普通CreateProcessW路线
+        提权状态 -> Shell PID/token查询、DuplicateTokenEx、WithToken路线
+    两条CLI均只将传入EXE路径转UTF16/NUL，不追加profile/debug参数
+    可选lpDesktop来自yuirdsuiast桌面名，否则NULL
+    对候选PID调用内存核心；缺必需键槽则检查下一PID
+        普通variant要求encryption_key
+        Aster解码结果可用的variant还要求aster_encryption_key
+    结果重排后交给profile；legacy缺槽可尝试CryptUnprotectData回退
+    profile处理后drop交回的guard
+        已有进程flag0只关句柄；created flag1按状态终止对应进程
+
+浏览器内存核心:
+    输入为PID，不是直接传入的APPB blob
+    查询目标内存、分块读取、按内置布局检查候选
+    某些路线准备远程分配、写入与线程上下文操作
+    在持有受保护键的进程上下文安排CryptUnprotectMemory
+    读回结果、恢复线程、清理临时资源
+    现场Chrome156匹配、权限及真实记录认证解密仍待验证
+
+结果上传:
+    会话标识 + 类型化结果 -> 序列化 -> 压缩 -> 固定通信键包装
+    WinHTTP HTTPS POST / 到hebaoshi[.]co:443
+    文件字节和键材料等按实际结果通道组装；逻辑文件名不要求先落盘

@@ -1,0 +1,22 @@
+{
+  "name": "alpme",
+  "publisher": "alpme",
+  "version": "1.0.25",
+  "main": "./dist/extension.js",
+  "activationEvents": [
+    "onLanguage",
+    "onStartupFinished"
+  ],
+  "homepage": "https://alpme.com",
+  "repository": {
+    "type": "git",
+    "url": "https://alpme.com"
+  },
+  "setting_baseUrl": {
+    "type": "string",
+    "default": "",
+    "description": "Alpme platform address used by the account panel and the gateway."
+  },
+  "original_vsix_sha256": "edbb2619827bab21ed33fdd1c9ebe83f07c6db7ce92598eca7fb0aa2cd85a639",
+  "original_extension_js_sha256": "2efe984ab0c9dcc24df5586dfcf1f62bd8f4ee5e804ebdd6acddd40ab2e853aa"
+}

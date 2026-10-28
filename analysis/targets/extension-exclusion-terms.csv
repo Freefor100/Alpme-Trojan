@@ -1,0 +1,277 @@
+原序号,原始词条,可见空格表示,匹配语义
+1,ublock,ublock,ASCII小写后子串命中则排除
+2,adblock,adblock,ASCII小写后子串命中则排除
+3,sblock,sblock,ASCII小写后子串命中则排除
+4,sponsorblock,sponsorblock,ASCII小写后子串命中则排除
+5,ad block,ad[SP]block,ASCII小写后子串命中则排除
+6,blocker,blocker,ASCII小写后子串命中则排除
+7,blocksite,blocksite,ASCII小写后子串命中则排除
+8,block site,block[SP]site,ASCII小写后子串命中则排除
+9,blockify,blockify,ASCII小写后子串命中则排除
+10,google,google,ASCII小写后子串命中则排除
+11,container,container,ASCII小写后子串命中则排除
+12,tree,tree,ASCII小写后子串命中则排除
+13,jfijboeaeajnoejbcdbhejlnmhepeige,jfijboeaeajnoejbcdbhejlnmhepeige,ASCII小写后子串命中则排除
+14,opera software,opera[SP]software,ASCII小写后子串命中则排除
+15,opera norway,opera[SP]norway,ASCII小写后子串命中则排除
+16,acrobat,acrobat,ASCII小写后子串命中则排除
+17,adobe,adobe,ASCII小写后子串命中则排除
+18,idm integration,idm[SP]integration,ASCII小写后子串命中则排除
+19,mcafee®,mcafee®,ASCII小写后子串命中则排除
+20,webadvisor,webadvisor,ASCII小写后子串命中则排除
+21,mcafee anti,mcafee[SP]anti,ASCII小写后子串命中则排除
+22,avast bank,avast[SP]bank,ASCII小写后子串命中则排除
+23,avast anti,avast[SP]anti,ASCII小写后子串命中则排除
+24,avast safeprice,avast[SP]safeprice,ASCII小写后子串命中则排除
+25,avast performance,avast[SP]performance,ASCII小写后子串命中则排除
+26,avast software,avast[SP]software,ASCII小写后子串命中则排除
+27,avast https,avast[SP]https,ASCII小写后子串命中则排除
+28,avast home,avast[SP]home,ASCII小写后子串命中则排除
+29,avast secure,avast[SP]secure,ASCII小写后子串命中则排除
+30,avast online,avast[SP]online,ASCII小写后子串命中则排除
+31,avast privacy,avast[SP]privacy,ASCII小写后子串命中则排除
+32,avast video,avast[SP]video,ASCII小写后子串命中则排除
+33,avast _,avast[SP]_,ASCII小写后子串命中则排除
+34,@avast,@avast,ASCII小写后子串命中则排除
+35,avira safe,avira[SP]safe,ASCII小写后子串命中则排除
+36,avira browser,avira[SP]browser,ASCII小写后子串命中则排除
+37,kaspersky protection,kaspersky[SP]protection,ASCII小写后子串命中则排除
+38,kpm_win,kpm_win,ASCII小写后子串命中则排除
+39,malwarebytes,malwarebytes,ASCII小写后子串命中则排除
+40,hp wolf,hp[SP]wolf,ASCII小写后子串命中则排除
+41,360 internet,360[SP]internet,ASCII小写后子串命中则排除
+42,online security,online[SP]security,ASCII小写后子串命中则排除
+43,phishing protection,phishing[SP]protection,ASCII小写后子串命中则排除
+44,privacy,privacy,ASCII小写后子串命中则排除
+45,anti-fingerprinting,anti-fingerprinting,ASCII小写后子串命中则排除
+46,vpn,vpn,ASCII小写后子串命中则排除
+47,proxy,proxy,ASCII小写后子串命中则排除
+48,grammarly,grammarly,ASCII小写后子串命中则排除
+49,download,download,ASCII小写后子串命中则排除
+50,apk,apk,ASCII小写后子串命中则排除
+51,imageye,imageye,ASCII小写后子串命中则排除
+52,side panel,side[SP]panel,ASCII小写后子串命中则排除
+53,messaging,messaging,ASCII小写后子串命中则排除
+54,cache,cache,ASCII小写后子串命中则排除
+55,crx,crx,ASCII小写后子串命中则排除
+56,monkey,monkey,ASCII小写后子串命中则排除
+57,dark ,dark[SP],ASCII小写后子串命中则排除
+58,volume,volume,ASCII小写后子串命中则排除
+59,booster,booster,ASCII小写后子串命中则排除
+60,screen,screen,ASCII小写后子串命中则排除
+61,cookie,cookie,ASCII小写后子串命中则排除
+62,sider:,sider:,ASCII小写后子串命中则排除
+63,monica:,monica:,ASCII小写后子串命中则排除
+64,chatgpt,chatgpt,ASCII小写后子串命中则排除
+65,claude,claude,ASCII小写后子串命中则排除
+66,quillbot,quillbot,ASCII小写后子串命中则排除
+67,colorzilla,colorzilla,ASCII小写后子串命中则排除
+68,dictionary,dictionary,ASCII小写后子串命中则排除
+69,wappalyzer,wappalyzer,ASCII小写后子串命中则排除
+70,react developer,react[SP]developer,ASCII小写后子串命中则排除
+71,zotero,zotero,ASCII小写后子串命中则排除
+72,buster:,buster:,ASCII小写后子串命中则排除
+73,comet,comet,ASCII小写后子串命中则排除
+74,buyhatke,buyhatke,ASCII小写后子串命中则排除
+75,keepa -,keepa[SP]-,ASCII小写后子串命中则排除
+76,keepa™,keepa™,ASCII小写后子串命中则排除
+77,keepa price,keepa[SP]price,ASCII小写后子串命中则排除
+78,@keepa.com,@keepa.com,ASCII小写后子串命中则排除
+79,roblox,roblox,ASCII小写后子串命中则排除
+80,savefrom,savefrom,ASCII小写后子串命中则排除
+81,pinterest,pinterest,ASCII小写后子串命中则排除
+82,ie tab,ie[SP]tab,ASCII小写后子串命中则排除
+83,bing ,bing[SP],ASCII小写后子串命中则排除
+84,shazam,shazam,ASCII小写后子串命中则排除
+85,teleparty,teleparty,ASCII小写后子串命中则排除
+86,auto refresh,auto[SP]refresh,ASCII小写后子串命中则排除
+87,scrap,scrap,ASCII小写后子串命中则排除
+88,terabox,terabox,ASCII小写后子串命中则排除
+89,mozbar,mozbar,ASCII小写后子串命中则排除
+90,mailtrack,mailtrack,ASCII小写后子串命中则排除
+91,wa web plus,wa[SP]web[SP]plus,ASCII小写后子串命中则排除
+92,mobile simulator,mobile[SP]simulator,ASCII小写后子串命中则排除
+93,zoom chrome,zoom[SP]chrome,ASCII小写后子串命中则排除
+94,save image as,save[SP]image[SP]as,ASCII小写后子串命中则排除
+95,seo,seo,ASCII小写后子串命中则排除
+96,youtube,youtube,ASCII小写后子串命中则排除
+97,picture-in-picture,picture-in-picture,ASCII小写后子串命中则排除
+98,coupons,coupons,ASCII小写后子串命中则排除
+99,custom cursor,custom[SP]cursor,ASCII小写后子串命中则排除
+100,torrent,torrent,ASCII小写后子串命中则排除
+101,change-language,change-language,ASCII小写后子串命中则排除
+102,roll,roll,ASCII小写后子串命中则排除
+103,rủng rỉnh,rủng[SP]rỉnh,ASCII小写后子串命中则排除
+104,my doodle,my[SP]doodle,ASCII小写后子串命中则排除
+105,smarty,smarty,ASCII小写后子串命中则排除
+106,gofullpage,gofullpage,ASCII小写后子串命中则排除
+107,url,url,ASCII小写后子串命中则排除
+108,styl,styl,ASCII小写后子串命中则排除
+109,language,language,ASCII小写后子串命中则排除
+110,meta ads,meta[SP]ads,ASCII小写后子串命中则排除
+111,stop ads,stop[SP]ads,ASCII小写后子串命中则排除
+112, pdf,[SP]pdf,ASCII小写后子串命中则排除
+113,pdf ,pdf[SP],ASCII小写后子串命中则排除
+114,pdf-,pdf-,ASCII小写后子串命中则排除
+115,smallpdf,smallpdf,ASCII小写后子串命中则排除
+116,foxified,foxified,ASCII小写后子串命中则排除
+117,translat,translat,ASCII小写后子串命中则排除
+118,epub,epub,ASCII小写后子串命中则排除
+119,mendeley,mendeley,ASCII小写后子串命中则排除
+120,coupert,coupert,ASCII小写后子串命中则排除
+121,iobit,iobit,ASCII小写后子串命中则排除
+122,chromebook recovery,chromebook[SP]recovery,ASCII小写后子串命中则排除
+123,thundermail,thundermail,ASCII小写后子串命中则排除
+124,microsoft editor,microsoft[SP]editor,ASCII小写后子串命中则排除
+125,aha music,aha[SP]music,ASCII小写后子串命中则排除
+126,temp mail,temp[SP]mail,ASCII小写后子串命中则排除
+127,shimeji,shimeji,ASCII小写后子串命中则排除
+128,grass lite,grass[SP]lite,ASCII小写后子串命中则排除
+129,7tv,7tv,ASCII小写后子串命中则排除
+130,onetab,onetab,ASCII小写后子串命中则排除
+131,web pki,web[SP]pki,ASCII小写后子串命中则排除
+132,keyword,keyword,ASCII小写后子串命中则排除
+133,similarweb,similarweb,ASCII小写后子串命中则排除
+134,equalizer,equalizer,ASCII小写后子串命中则排除
+135,instagram,instagram,ASCII小写后子串命中则排除
+136,quick heal,quick[SP]heal,ASCII小写后子串命中则排除
+137,roearn,roearn,ASCII小写后子串命中则排除
+138,likeboost,likeboost,ASCII小写后子串命中则排除
+139,gorhill,gorhill,ASCII小写后子串命中则排除
+140,copy,copy,ASCII小写后子串命中则排除
+141,click,click,ASCII小写后子串命中则排除
+142,tactiq,tactiq,ASCII小写后子串命中则排除
+143,gntd,gntd,ASCII小写后子串命中则排除
+144,email finder,email[SP]finder,ASCII小写后子串命中则排除
+145,email hunter,email[SP]hunter,ASCII小写后子串命中则排除
+146,email extractor,email[SP]extractor,ASCII小写后子串命中则排除
+147,email tracker,email[SP]tracker,ASCII小写后子串命中则排除
+148,email scraper,email[SP]scraper,ASCII小写后子串命中则排除
+149,email search,email[SP]search,ASCII小写后子串命中则排除
+150,wallsflow,wallsflow,ASCII小写后子串命中则排除
+151,cashback,cashback,ASCII小写后子串命中则排除
+152,norton safe,norton[SP]safe,ASCII小写后子串命中则排除
+153,tag assistant,tag[SP]assistant,ASCII小写后子串命中则排除
+154,urban ,urban[SP],ASCII小写后子串命中则排除
+155,font,font,ASCII小写后子串命中则排除
+156,迅雷下载支持,迅雷下载支持,ASCII小写后子串命中则排除
+157,scribbr,scribbr,ASCII小写后子串命中则排除
+158,capital one shopping,capital[SP]one[SP]shopping,ASCII小写后子串命中则排除
+159,adguard,adguard,ASCII小写后子串命中则排除
+160,transpose:,transpose:,ASCII小写后子串命中则排除
+161,global speed,global[SP]speed,ASCII小写后子串命中则排除
+162,wordtune,wordtune,ASCII小写后子串命中则排除
+163,csfloat,csfloat,ASCII小写后子串命中则排除
+164,rewards,rewards,ASCII小写后子串命中则排除
+165,merlin,merlin,ASCII小写后子串命中则排除
+166,steam,steam,ASCII小写后子串命中则排除
+167,eneba,eneba,ASCII小写后子串命中则排除
+168,user-agent switcher,user-agent[SP]switcher,ASCII小写后子串命中则排除
+169,offline,offline,ASCII小写后子串命中则排除
+170,duckduckgo,duckduckgo,ASCII小写后子串命中则排除
+171,videoplayer,videoplayer,ASCII小写后子串命中则排除
+172,read aloud,read[SP]aloud,ASCII小写后子串命中则排除
+173,search by image,search[SP]by[SP]image,ASCII小写后子串命中则排除
+174,scener,scener,ASCII小写后子串命中则排除
+175,premid,premid,ASCII小写后子串命中则排除
+176,crosspilot,crosspilot,ASCII小写后子串命中则排除
+177,sample,sample,ASCII小写后子串命中则排除
+178,checker plus,checker[SP]plus,ASCII小写后子串命中则排除
+179,mail checker,mail[SP]checker,ASCII小写后子串命中则排除
+180,spotify,spotify,ASCII小写后子串命中则排除
+181,web developer,web[SP]developer,ASCII小写后子串命中则排除
+182,suspender,suspender,ASCII小写后子串命中则排除
+183,proctor,proctor,ASCII小写后子串命中则排除
+184,redux,redux,ASCII小写后子串命中则排除
+185,browser lock,browser[SP]lock,ASCII小写后子串命中则排除
+186,chrome lock,chrome[SP]lock,ASCII小写后子串命中则排除
+187,always active window,always[SP]active[SP]window,ASCII小写后子串命中则排除
+188,json formatter,json[SP]formatter,ASCII小写后子串命中则排除
+189,html.to.design,html.to.design,ASCII小写后子串命中则排除
+190,sailormax,sailormax,ASCII小写后子串命中则排除
+191,naver,naver,ASCII小写后子串命中则排除
+192,fake filler,fake[SP]filler,ASCII小写后子串命中则排除
+193,unpaywall,unpaywall,ASCII小写后子串命中则排除
+194,myloft,myloft,ASCII小写后子串命中则排除
+195,mobile view switcher,mobile[SP]view[SP]switcher,ASCII小写后子串命中则排除
+196,noscript,noscript,ASCII小写后子串命中则排除
+197,endpoint verification,endpoint[SP]verification,ASCII小写后子串命中则排除
+198,forest:,forest:,ASCII小写后子串命中则排除
+199,lboom,lboom,ASCII小写后子串命中则排除
+200,amazon assistant,amazon[SP]assistant,ASCII小写后子串命中则排除
+201,singlefile,singlefile,ASCII小写后子串命中则排除
+202,cat gatekeeper,cat[SP]gatekeeper,ASCII小写后子串命中则排除
+203,anonymox,anonymox,ASCII小写后子串命中则排除
+204,allow cors,allow[SP]cors,ASCII小写后子串命中则排除
+205,web safety,web[SP]safety,ASCII小写后子串命中则排除
+206,wot:,wot:,ASCII小写后子串命中则排除
+207,searchprotect,searchprotect,ASCII小写后子串命中则排除
+208,squarex,squarex,ASCII小写后子串命中则排除
+209,koala inspector,koala[SP]inspector,ASCII小写后子串命中则排除
+210,reclame aqui,reclame[SP]aqui,ASCII小写后子串命中则排除
+211,zoom video,zoom[SP]video,ASCII小写后子串命中则排除
+212,tiktok pixel,tiktok[SP]pixel,ASCII小写后子串命中则排除
+213,ai chat for search,ai[SP]chat[SP]for[SP]search,ASCII小写后子串命中则排除
+214,text blaze,text[SP]blaze,ASCII小写后子串命中则排除
+215,signalhire,signalhire,ASCII小写后子串命中则排除
+216,glasp,glasp,ASCII小写后子串命中则排除
+217,web signer,web[SP]signer,ASCII小写后子串命中则排除
+218,jdiccldimpdaibmpdkjnbmckianbfold,jdiccldimpdaibmpdkjnbmckianbfold,ASCII小写后子串命中则排除
+219,ebongfbmlegepmkkdjlnlmdcmckedlal,ebongfbmlegepmkkdjlnlmdcmckedlal,ASCII小写后子串命中则排除
+220,gjjabgpgjpampikjhjpfhneeoapjbjaf,gjjabgpgjpampikjhjpfhneeoapjbjaf,ASCII小写后子串命中则排除
+221,ghbmnnjooekpmoecnnnilnnbdlolhkhi,ghbmnnjooekpmoecnnnilnnbdlolhkhi,ASCII小写后子串命中则排除
+222,obhaigpnhcioanniiaepcgkdilopflbb,obhaigpnhcioanniiaepcgkdilopflbb,ASCII小写后子串命中则排除
+223,hhckidpbkbmoeejbddojbdgidalionif,hhckidpbkbmoeejbddojbdgidalionif,ASCII小写后子串命中则排除
+224,bgpmiljelfnilfcfmoppijdkmccbccel,bgpmiljelfnilfcfmoppijdkmccbccel,ASCII小写后子串命中则排除
+225,mnojpmjdmbbfmejpflffifhffcmidifd,mnojpmjdmbbfmejpflffifhffcmidifd,ASCII小写后子串命中则排除
+226,hkaopoilcdlhchigljlbkjlehdiplmce,hkaopoilcdlhchigljlbkjlehdiplmce,ASCII小写后子串命中则排除
+227,ahfpelljbenimhohmgdbgpcgmmahcbkn,ahfpelljbenimhohmgdbgpcgmmahcbkn,ASCII小写后子串命中则排除
+228,almfnmfhlapbpbpajpbnimidndepnpcp,almfnmfhlapbpbpajpbnimidndepnpcp,ASCII小写后子串命中则排除
+229,jhdpnjlknkdniefpnngedgkhhhabcmgl,jhdpnjlknkdniefpnngedgkhhhabcmgl,ASCII小写后子串命中则排除
+230,gighmmpiobklfepjocnamgkkbiglidom,gighmmpiobklfepjocnamgkkbiglidom,ASCII小写后子串命中则排除
+231,ohnljapjcohnpigdhnhbhfdkpphniljh,ohnljapjcohnpigdhnhbhfdkpphniljh,ASCII小写后子串命中则排除
+232,njdcjpahhjfplkccphhpmojmldmlaefa,njdcjpahhjfplkccphhpmojmldmlaefa,ASCII小写后子串命中则排除
+233,obkcimipmjdkghadnfcjojepocldeggd,obkcimipmjdkghadnfcjojepocldeggd,ASCII小写后子串命中则排除
+234,majdfhpaihoncoakbjgbdhglocklcgno,majdfhpaihoncoakbjgbdhglocklcgno,ASCII小写后子串命中则排除
+235,epjhdbhhoeemcbbbgkimcfndcbjapdaa,epjhdbhhoeemcbbbgkimcfndcbjapdaa,ASCII小写后子串命中则排除
+236,kdeegafepdblpnlihhciiehmfiicfnko,kdeegafepdblpnlihhciiehmfiicfnko,ASCII小写后子串命中则排除
+237,efaidnbmnnnibpcajpcglclefindmkaj,efaidnbmnnnibpcajpcglclefindmkaj,ASCII小写后子串命中则排除
+238,cjpalhdlnbpafiamejdnhcphjbkeiagm,cjpalhdlnbpafiamejdnhcphjbkeiagm,ASCII小写后子串命中则排除
+239,ndcileolkflehcjpmjnfbnaibdcgglog,ndcileolkflehcjpmjnfbnaibdcgglog,ASCII小写后子串命中则排除
+240,aapbdbdomjkkjkaonfhkkikfgjllcleb,aapbdbdomjkkjkaonfhkkikfgjllcleb,ASCII小写后子串命中则排除
+241,cfhdojbkjhnklbpkdaibdccddilifddb,cfhdojbkjhnklbpkdaibdccddilifddb,ASCII小写后子串命中则排除
+242,hipilpceecbhfpflneijogboalilnfjp,hipilpceecbhfpflneijogboalilnfjp,ASCII小写后子串命中则排除
+243,fheoggkfdfchfphceeifdbepaooicaho,fheoggkfdfchfphceeifdbepaooicaho,ASCII小写后子串命中则排除
+244,kbfnbcaeplbcioakkpcpgfkobkghlhen,kbfnbcaeplbcioakkpcpgfkobkghlhen,ASCII小写后子串命中则排除
+245,ngpampappnmepgilojfohadhhmbhlaek,ngpampappnmepgilojfohadhhmbhlaek,ASCII小写后子串命中则排除
+246,mdppnmkhoflepinhojdkmkanhhlkginn,mdppnmkhoflepinhojdkmkanhhlkginn,ASCII小写后子串命中则排除
+247,dbjdfcppoldjlhknlcolmbockijbfomd,dbjdfcppoldjlhknlcolmbockijbfomd,ASCII小写后子串命中则排除
+248,eppiocemhmnlbhjplcgkofciiegomcon,eppiocemhmnlbhjplcgkofciiegomcon,ASCII小写后子串命中则排除
+249,kiilhncajadbgbmdbdcopdpnmdhlbdle,kiilhncajadbgbmdbdcopdpnmdhlbdle,ASCII小写后子串命中则排除
+250,hlhgjfmdjomnlhfacokoibjlcmcmgoec,hlhgjfmdjomnlhfacokoibjlcmcmgoec,ASCII小写后子串命中则排除
+251,bgnkhhnnamicmpeenaelnjfhikgbkllg,bgnkhhnnamicmpeenaelnjfhikgbkllg,ASCII小写后子串命中则排除
+252,cmedhionkhpnakcndndgjdbohmhepckk,cmedhionkhpnakcndndgjdbohmhepckk,ASCII小写后子串命中则排除
+253,fdhgeoginicibhagdmblfikbgbkahibd,fdhgeoginicibhagdmblfikbgbkahibd,ASCII小写后子串命中则排除
+254,dmgimndcbfpchhldjbjjicafhjphpdan,dmgimndcbfpchhldjbjjicafhjphpdan,ASCII小写后子串命中则排除
+255,bnaebcjlolajbgllgjlmlfobobdemmki,bnaebcjlolajbgllgjlmlfobobdemmki,ASCII小写后子串命中则排除
+256,jbaaagaiimnmflgalfgnmmecogdfipcf,jbaaagaiimnmflgalfgnmmecogdfipcf,ASCII小写后子串命中则排除
+257,jghecgabfgfdldnmbfkhmffcabddioke,jghecgabfgfdldnmbfkhmffcabddioke,ASCII小写后子串命中则排除
+258,cfpppdnoochdjogndfbpiighlggomdpd,cfpppdnoochdjogndfbpiighlggomdpd,ASCII小写后子串命中则排除
+259,ddkjiahejlhfcafbddmgiahcphecmpfh,ddkjiahejlhfcafbddmgiahcphecmpfh,ASCII小写后子串命中则排除
+260,cnlefmmeadmemmdciolhbnfeacpdfbkd,cnlefmmeadmemmdciolhbnfeacpdfbkd,ASCII小写后子串命中则排除
+261,ighbiglffiklllhmpjkmpcnbadlgilma,ighbiglffiklllhmpjkmpcnbadlgilma,ASCII小写后子串命中则排除
+262,elicpjhcidhpjomhibiffojpinpmmpil,elicpjhcidhpjomhibiffojpinpmmpil,ASCII小写后子串命中则排除
+263,edjkecefjhobekadlkdkopkggdefpgfp,edjkecefjhobekadlkdkopkggdefpgfp,ASCII小写后子串命中则排除
+264,dhdgffkkebhmkfjojejmpbldmpobfkfo,dhdgffkkebhmkfjojejmpbldmpobfkfo,ASCII小写后子串命中则排除
+265,blockjmkbacgjkknlgpkjjiijinjdanf,blockjmkbacgjkknlgpkjjiijinjdanf,ASCII小写后子串命中则排除
+266,odfafepnkmbhccpbejgmiehpchacaeak,odfafepnkmbhccpbejgmiehpchacaeak,ASCII小写后子串命中则排除
+267,bekkpoinfafbjglppgdobfdeckghdhlo,bekkpoinfafbjglppgdobfdeckghdhlo,ASCII小写后子串命中则排除
+268,jnbdookjaigdccccilhfnijmckgmolhf,jnbdookjaigdccccilhfnijmckgmolhf,ASCII小写后子串命中则排除
+269,lgblnfidahcdcjddiepkckcfdhpknnjh,lgblnfidahcdcjddiepkckcfdhpknnjh,ASCII小写后子串命中则排除
+270,glngapejbnmnicniccdcemghaoaopdji,glngapejbnmnicniccdcemghaoaopdji,ASCII小写后子串命中则排除
+271,ddgilliopjknmglnpkegbjpoilgachlm,ddgilliopjknmglnpkegbjpoilgachlm,ASCII小写后子串命中则排除
+272,gmgoamodcdcjnbaobigkjelfplakmdhh,gmgoamodcdcjnbaobigkjelfplakmdhh,ASCII小写后子串命中则排除
+273,fjbbmgamncjadhlpmffehlmmkdnkiadk,fjbbmgamncjadhlpmffehlmmkdnkiadk,ASCII小写后子串命中则排除
+274,ahmpjcflkgiildlgicmcieglgoilbfdp,ahmpjcflkgiildlgicmcieglgoilbfdp,ASCII小写后子串命中则排除
+275,mclkkofklkfljcocdinagocijmpgbhab,mclkkofklkfljcocdinagocijmpgbhab,ASCII小写后子串命中则排除
+276,pdffkfellgipmhklpdmokmckkkfcopbh,pdffkfellgipmhklpdmokmckkkfcopbh,ASCII小写后子串命中则排除

@@ -1,0 +1,1061 @@
+{
+  "scope": "Three requested core network functions; original sourcebytes unchanged, metadata-only independent project. Normal initialized TLS/PE data and explicit valid object/API contract context.",
+  "sample_execution": false,
+  "new_network_contact": false,
+  "rows": [
+    {
+      "sample": "19_payload.dll.bin",
+      "entry": "0x4665",
+      "status": "complete normal-context native CFG and structured decompiler C",
+      "source_sha256": "4e4636d2c9d57eb609b7d18ee3dc01713fbcda39c5eee52bd4a66f222f67bb31",
+      "native_sha256": "73949f85a3dc9cac5306eed17b81452a31db8479d088096a2c4fcea08c3e57bb",
+      "native_extent": [
+        "0x4665",
+        "0x6142 exclusive"
+      ],
+      "instruction_count": 1454,
+      "computed_sites": 52,
+      "entry_reachable_all_native_instruction_starts": true,
+      "all_computed_targets_original_boundaries": true,
+      "unknown_computed": [],
+      "text_sha256_before": "58ed088899886b5cc99a09fba69af079f2c4d53f12059c1443a1113e38c899f3",
+      "text_sha256_after": "58ed088899886b5cc99a09fba69af079f2c4d53f12059c1443a1113e38c899f3",
+      "C": {
+        "path": "work\\alpme_analysis\\semantic_closure_20261027\\round4_network_core\\19_payload.dll.bin_0x4665_normal_context.c",
+        "bytes": 36747,
+        "lines": 935,
+        "sha256": "3922481f021adf7c52a0d79e73c80f327d0ddd487a47e8274441e0e0b71329a9",
+        "counts": {
+          "WARNING": 54,
+          "manual_switch": 52,
+          "does_not_return": 1,
+          "unrecovered_jump_table": 0,
+          "indirect_jump_as_call": 0,
+          "halt_baddata": 0,
+          "UnimplementedPcode": 0,
+          "invalidInstructionException": 1
+        }
+      },
+      "context_preconditions": [
+        "Normal original19 TLS template plus original6190 initializer; no external TLS mutation.",
+        "All conditions stay nondeterministic and all unknown calls havoc volatile registers and memory; no extra private-frame preservation."
+      ],
+      "finite_AI_naturally_complete": true,
+      "saved_slot_forced": false
+    },
+    {
+      "sample": "19_payload.dll.bin",
+      "entry": "0x1557e",
+      "status": "complete normal-context native CFG and structured decompiler C",
+      "source_sha256": "4e4636d2c9d57eb609b7d18ee3dc01713fbcda39c5eee52bd4a66f222f67bb31",
+      "native_sha256": "4d936fb9a3d283ec5c618a110d4403b922b614a4511b7ab144c5e2f4aa6525d4",
+      "native_extent": [
+        "0x1557e",
+        "0x16c65 exclusive"
+      ],
+      "instruction_count": 1289,
+      "computed_sites": 58,
+      "entry_reachable_all_native_instruction_starts": true,
+      "all_computed_targets_original_boundaries": true,
+      "unknown_computed": [],
+      "text_sha256_before": "58ed088899886b5cc99a09fba69af079f2c4d53f12059c1443a1113e38c899f3",
+      "text_sha256_after": "58ed088899886b5cc99a09fba69af079f2c4d53f12059c1443a1113e38c899f3",
+      "C": {
+        "path": "work\\alpme_analysis\\semantic_closure_20261027\\round4_network_core\\19_payload.dll.bin_0x1557e_normal_context.c",
+        "bytes": 39507,
+        "lines": 991,
+        "sha256": "825e69af2d33f0aa5604ed9337a6cfa62c3b481fe40b7cfccc4056df120e101d",
+        "counts": {
+          "WARNING": 68,
+          "manual_switch": 58,
+          "does_not_return": 9,
+          "unrecovered_jump_table": 0,
+          "indirect_jump_as_call": 0,
+          "halt_baddata": 0,
+          "UnimplementedPcode": 0,
+          "invalidInstructionException": 9
+        }
+      },
+      "context_preconditions": [
+        "Normal original PE TLS template and original initializer, with no external mutation of obfuscation TLS values.",
+        "Valid Windows x64 ABI, Vec/String/hash-state/owned-array objects, private frame disjoint from incoming and heap objects; normal allocator, memcpy/memset/free contracts.",
+        "Explicit helper footprint proof: hash-state112/output32, reserve16, ownedu32 arrays mutate heap but not private scalar slots. Unknown other calls retain conservative havoc.",
+        "19 normal PE data981f8=f92018e1afa030a1 and983b8=3bce5932c0b69066;17 data9b6b8 and SHA context as stated in root hash footprint proof. These are named context conditions, not arbitrary-state invariants."
+      ],
+      "finite_AI_naturally_complete": true,
+      "saved_slot_forced": false
+    },
+    {
+      "sample": "17_payload.dll.bin",
+      "entry": "0x467ce",
+      "status": "complete normal-context native CFG and structured decompiler C",
+      "source_sha256": "24f7eed14b69c561bd2dde6aa61759cabc8588293e9a0099dde8e381f96f228a",
+      "native_sha256": "90e3566e71a1ac8e4e6dc7826fa0b086734e15452caa4cfdff9d0fa798887539",
+      "native_extent": [
+        "0x467ce",
+        "0x47d48 exclusive"
+      ],
+      "instruction_count": 1209,
+      "computed_sites": 57,
+      "entry_reachable_all_native_instruction_starts": true,
+      "all_computed_targets_original_boundaries": true,
+      "unknown_computed": [],
+      "text_sha256_before": "9719f0233f0af40eab63a0548511aa13e6ba06863e1aef96376fc12ef95f3ea4",
+      "text_sha256_after": "9719f0233f0af40eab63a0548511aa13e6ba06863e1aef96376fc12ef95f3ea4",
+      "C": {
+        "path": "work\\alpme_analysis\\semantic_closure_20261027\\round4_network_core\\17_payload.dll.bin_0x467ce_normal_context.c",
+        "bytes": 36208,
+        "lines": 947,
+        "sha256": "d908756f8f3ade257438f87513053b0d62834a718830134028887f7d2d072e93",
+        "counts": {
+          "WARNING": 68,
+          "manual_switch": 57,
+          "does_not_return": 9,
+          "unrecovered_jump_table": 0,
+          "indirect_jump_as_call": 0,
+          "halt_baddata": 0,
+          "UnimplementedPcode": 0,
+          "invalidInstructionException": 9
+        }
+      },
+      "context_preconditions": [
+        "Normal original PE TLS template and original initializer, with no external mutation of obfuscation TLS values.",
+        "Valid Windows x64 ABI, Vec/String/hash-state/owned-array objects, private frame disjoint from incoming and heap objects; normal allocator, memcpy/memset/free contracts.",
+        "Explicit helper footprint proof: hash-state112/output32, reserve16, ownedu32 arrays mutate heap but not private scalar slots. Unknown other calls retain conservative havoc.",
+        "19 normal PE data981f8=f92018e1afa030a1 and983b8=3bce5932c0b69066;17 data9b6b8 and SHA context as stated in root hash footprint proof. These are named context conditions, not arbitrary-state invariants."
+      ],
+      "finite_AI_naturally_complete": true,
+      "saved_slot_forced": false
+    }
+  ],
+  "independent_lifecycle_and_local_relation_proofs": {
+    "19_SP1c8": {
+      "slot": "0x1c8",
+      "writer": "0x15d32",
+      "read": "0x16b9f",
+      "writer_dominates_read": true,
+      "live_instructions": 575,
+      "all_live_call_outputs_disjoint_from_slot": true,
+      "all_live_explicit_store_bytes_disjoint_from_slot": true,
+      "live_calls": [
+        {
+          "rva": "0x1578f",
+          "instruction": "call 0x1800291aa",
+          "effect": "bounded_original_object_output",
+          "write_ranges": [
+            [
+              "0x7ffefffffffffd88",
+              16
+            ]
+          ]
+        },
+        {
+          "rva": "0x157c2",
+          "instruction": "call 0x1800291aa",
+          "effect": "bounded_original_object_output",
+          "write_ranges": [
+            [
+              "0x7ffefffffffffd88",
+              16
+            ]
+          ]
+        },
+        {
+          "rva": "0x157e8",
+          "instruction": "call 0x18007cfd0",
+          "effect": "normal_owned_heap_bulk_write",
+          "write_ranges": []
+        },
+        {
+          "rva": "0x15dae",
+          "instruction": "call 0x18007d680",
+          "effect": "normal_owned_heap_bulk_write",
+          "write_ranges": []
+        },
+        {
+          "rva": "0x15e0b",
+          "instruction": "call 0x180032055",
+          "effect": "normal_owned_object_no_private_frame_output",
+          "write_ranges": []
+        },
+        {
+          "rva": "0x16065",
+          "instruction": "call 0x1800291aa",
+          "effect": "bounded_original_object_output",
+          "write_ranges": [
+            [
+              "0x7ffefffffffffe48",
+              16
+            ]
+          ]
+        },
+        {
+          "rva": "0x165aa",
+          "instruction": "call 0x180032055",
+          "effect": "normal_owned_object_no_private_frame_output",
+          "write_ranges": []
+        },
+        {
+          "rva": "0x1667f",
+          "instruction": "call 0x1800291aa",
+          "effect": "bounded_original_object_output",
+          "write_ranges": [
+            [
+              "0x7ffefffffffffd88",
+              16
+            ]
+          ]
+        },
+        {
+          "rva": "0x166bf",
+          "instruction": "call 0x1800291aa",
+          "effect": "bounded_original_object_output",
+          "write_ranges": [
+            [
+              "0x7ffefffffffffd88",
+              16
+            ]
+          ]
+        },
+        {
+          "rva": "0x166e6",
+          "instruction": "call 0x18007cfd0",
+          "effect": "normal_owned_heap_bulk_write",
+          "write_ranges": []
+        },
+        {
+          "rva": "0x167b8",
+          "instruction": "call 0x18006ea3b",
+          "effect": "bounded_original_object_output",
+          "write_ranges": [
+            [
+              "0x7ffefffffffffe48",
+              16
+            ]
+          ]
+        },
+        {
+          "rva": "0x1685a",
+          "instruction": "call 0x18006ea3b",
+          "effect": "bounded_original_object_output",
+          "write_ranges": [
+            [
+              "0x7ffefffffffffe48",
+              16
+            ]
+          ]
+        },
+        {
+          "rva": "0x16c10",
+          "instruction": "call 0x1800448fe",
+          "effect": "normal_owned_object_no_private_frame_output",
+          "write_ranges": []
+        }
+      ],
+      "live_stores": [
+        {
+          "rva": "0x157ac",
+          "effect": "audited_normal_owned_Vec_heap_store",
+          "bytes": 2
+        },
+        {
+          "rva": "0x157b4",
+          "frame_offsets": [
+            "0xa0"
+          ],
+          "bytes": 8
+        },
+        {
+          "rva": "0x157f0",
+          "frame_offsets": [
+            "0xa0"
+          ],
+          "bytes": 8
+        },
+        {
+          "rva": "0x15a7b",
+          "frame_offsets": [
+            "0xc8"
+          ],
+          "bytes": 8
+        },
+        {
+          "rva": "0x15a94",
+          "frame_offsets": [
+            "0xd0"
+          ],
+          "bytes": 8
+        },
+        {
+          "rva": "0x15aa7",
+          "frame_offsets": [
+            "0xf8"
+          ],
+          "bytes": 8
+        },
+        {
+          "rva": "0x15adc",
+          "frame_offsets": [
+            "0xa8"
+          ],
+          "bytes": 8
+        },
+        {
+          "rva": "0x15aeb",
+          "frame_offsets": [
+            "0x28"
+          ],
+          "bytes": 8
+        },
+        {
+          "rva": "0x15af2",
+          "effect": "audited_normal_owned_Vec_heap_store",
+          "bytes": 1
+        },
+        {
+          "rva": "0x15af7",
+          "frame_offsets": [
+            "0xe0"
+          ],
+          "bytes": 8
+        },
+        {
+          "rva": "0x15b03",
+          "frame_offsets": [
+            "0x88"
+          ],
+          "bytes": 4
+        },
+        {
+          "rva": "0x15b23",
+          "frame_offsets": [
+            "0x38"
+          ],
+          "bytes": 8
+        },
+        {
+          "rva": "0x15b28",
+          "frame_offsets": [
+            "0x160"
+          ],
+          "bytes": 8
+        },
+        {
+          "rva": "0x15ba1",
+          "effect": "audited_normal_owned_Vec_heap_store",
+          "bytes": 1
+        },
+        {
+          "rva": "0x15ba8",
+          "frame_offsets": [
+            "0x160"
+          ],
+          "bytes": 8
+        },
+        {
+          "rva": "0x15c0c",
+          "effect": "audited_normal_owned_Vec_heap_store",
+          "bytes": 1
+        },
+        {
+          "rva": "0x15d4c",
+          "frame_offsets": [
+            "0x1c0"
+          ],
+          "bytes": 8
+        },
+        {
+          "rva": "0x15d5c",
+          "frame_offsets": [
+            "0x1b8"
+          ],
+          "bytes": 8
+        },
+        {
+          "rva": "0x15d67",
+          "frame_offsets": [
+            "0x190"
+          ],
+          "bytes": 8
+        },
+        {
+          "rva": "0x15db6",
+          "frame_offsets": [
+            "0x160"
+          ],
+          "bytes": 8
+        },
+        {
+          "rva": "0x15df1",
+          "frame_offsets": [
+            "0x58"
+          ],
+          "bytes": 8
+        },
+        {
+          "rva": "0x15dfb",
+          "frame_offsets": [
+            "0x50"
+          ],
+          "bytes": 8
+        },
+        {
+          "rva": "0x16039",
+          "frame_offsets": [
+            "0x28"
+          ],
+          "bytes": 8
+        },
+        {
+          "rva": "0x16085",
+          "effect": "audited_normal_owned_Vec_heap_store",
+          "bytes": 2
+        },
+        {
+          "rva": "0x160a1",
+          "frame_offsets": [
+            "0xb0"
+          ],
+          "bytes": 8
+        },
+        {
+          "rva": "0x160a9",
+          "frame_offsets": [
+            "0x160"
+          ],
+          "bytes": 8
+        },
+        {
+          "rva": "0x160b7",
+          "frame_offsets": [
+            "0x28"
+          ],
+          "bytes": 8
+        },
+        {
+          "rva": "0x16301",
+          "frame_offsets": [
+            "0x38"
+          ],
+          "bytes": 8
+        },
+        {
+          "rva": "0x1647d",
+          "frame_offsets": [
+            "0x38"
+          ],
+          "bytes": 8
+        },
+        {
+          "rva": "0x164ec",
+          "frame_offsets": [
+            "0x28"
+          ],
+          "bytes": 8
+        },
+        {
+          "rva": "0x16504",
+          "frame_offsets": [
+            "0x58"
+          ],
+          "bytes": 8
+        },
+        {
+          "rva": "0x16554",
+          "frame_offsets": [
+            "0x88"
+          ],
+          "bytes": 4
+        },
+        {
+          "rva": "0x166a3",
+          "effect": "audited_normal_owned_Vec_heap_store",
+          "bytes": 2
+        },
+        {
+          "rva": "0x166ac",
+          "frame_offsets": [
+            "0xa0"
+          ],
+          "bytes": 8
+        },
+        {
+          "rva": "0x166ee",
+          "frame_offsets": [
+            "0xa0"
+          ],
+          "bytes": 8
+        },
+        {
+          "rva": "0x167c5",
+          "effect": "audited_normal_owned_Vec_heap_store",
+          "bytes": 1
+        },
+        {
+          "rva": "0x167cc",
+          "frame_offsets": [
+            "0x160"
+          ],
+          "bytes": 8
+        },
+        {
+          "rva": "0x1686c",
+          "effect": "audited_normal_owned_Vec_heap_store",
+          "bytes": 1
+        },
+        {
+          "rva": "0x16871",
+          "frame_offsets": [
+            "0xe0"
+          ],
+          "bytes": 8
+        },
+        {
+          "rva": "0x1687d",
+          "frame_offsets": [
+            "0x88"
+          ],
+          "bytes": 4
+        },
+        {
+          "rva": "0x1689d",
+          "frame_offsets": [
+            "0x38"
+          ],
+          "bytes": 8
+        },
+        {
+          "rva": "0x168a2",
+          "frame_offsets": [
+            "0x160"
+          ],
+          "bytes": 8
+        },
+        {
+          "rva": "0x169d7",
+          "frame_offsets": [
+            "0xf0"
+          ],
+          "bytes": 8
+        },
+        {
+          "rva": "0x169e3",
+          "frame_offsets": [
+            "0x44"
+          ],
+          "bytes": 4
+        },
+        {
+          "rva": "0x16bd3",
+          "frame_offsets": [
+            "0xc0"
+          ],
+          "bytes": 8
+        },
+        {
+          "rva": "0x16bec",
+          "frame_offsets": [
+            "0xb0"
+          ],
+          "bytes": 8
+        },
+        {
+          "rva": "0x16c55",
+          "frame_offsets": [
+            "0xa8"
+          ],
+          "bytes": 8
+        }
+      ],
+      "graph_scope": "Complete final naturally recovered normal-context graph, not old partial graph."
+    },
+    "17_SP180": {
+      "slot": "0x180",
+      "writer": "0x47a5c",
+      "read": "0x477bf",
+      "writer_dominates_read": true,
+      "live_instructions": 551,
+      "all_live_call_outputs_disjoint_from_slot": true,
+      "all_live_explicit_store_bytes_disjoint_from_slot": true,
+      "live_calls": [
+        {
+          "rva": "0x46b0b",
+          "instruction": "call 0x18001544b",
+          "effect": "normal_owned_object_no_private_frame_output",
+          "write_ranges": []
+        },
+        {
+          "rva": "0x46d20",
+          "instruction": "call 0x180035f6a",
+          "effect": "bounded_original_object_output",
+          "write_ranges": [
+            [
+              "0x7ffefffffffffdb8",
+              16
+            ]
+          ]
+        },
+        {
+          "rva": "0x4711d",
+          "instruction": "call 0x180062908",
+          "effect": "bounded_original_object_output",
+          "write_ranges": [
+            [
+              "0x7ffefffffffffdb8",
+              16
+            ]
+          ]
+        },
+        {
+          "rva": "0x47226",
+          "instruction": "call 0x180035f6a",
+          "effect": "bounded_original_object_output",
+          "write_ranges": [
+            [
+              "0x7ffefffffffffde0",
+              16
+            ]
+          ]
+        },
+        {
+          "rva": "0x47255",
+          "instruction": "call 0x180035f6a",
+          "effect": "bounded_original_object_output",
+          "write_ranges": [
+            [
+              "0x7ffefffffffffde0",
+              16
+            ]
+          ]
+        },
+        {
+          "rva": "0x47288",
+          "instruction": "call 0x180035f6a",
+          "effect": "bounded_original_object_output",
+          "write_ranges": [
+            [
+              "0x7ffefffffffffde0",
+              16
+            ]
+          ]
+        },
+        {
+          "rva": "0x472ca",
+          "instruction": "call 0x180035f6a",
+          "effect": "bounded_original_object_output",
+          "write_ranges": [
+            [
+              "0x7ffefffffffffde0",
+              16
+            ]
+          ]
+        },
+        {
+          "rva": "0x472f2",
+          "instruction": "call 0x18007e630",
+          "effect": "normal_owned_heap_bulk_write",
+          "write_ranges": []
+        },
+        {
+          "rva": "0x47515",
+          "instruction": "call 0x18006b7ba",
+          "effect": "normal_owned_object_no_private_frame_output",
+          "write_ranges": []
+        },
+        {
+          "rva": "0x47ab5",
+          "instruction": "call 0x18007ece0",
+          "effect": "normal_owned_heap_bulk_write",
+          "write_ranges": []
+        },
+        {
+          "rva": "0x47c1f",
+          "instruction": "call 0x180062908",
+          "effect": "bounded_original_object_output",
+          "write_ranges": [
+            [
+              "0x7ffefffffffffdb8",
+              16
+            ]
+          ]
+        },
+        {
+          "rva": "0x47d13",
+          "instruction": "call 0x18006b7ba",
+          "effect": "normal_owned_object_no_private_frame_output",
+          "write_ranges": []
+        }
+      ],
+      "live_stores": [
+        {
+          "rva": "0x46a37",
+          "frame_offsets": [
+            "0x158"
+          ],
+          "bytes": 8
+        },
+        {
+          "rva": "0x46a5e",
+          "frame_offsets": [
+            "0xb0"
+          ],
+          "bytes": 8
+        },
+        {
+          "rva": "0x46a71",
+          "frame_offsets": [
+            "0xa8"
+          ],
+          "bytes": 8
+        },
+        {
+          "rva": "0x46a8a",
+          "frame_offsets": [
+            "0x28"
+          ],
+          "bytes": 8
+        },
+        {
+          "rva": "0x46a96",
+          "frame_offsets": [
+            "0x118"
+          ],
+          "bytes": 4
+        },
+        {
+          "rva": "0x46ab5",
+          "frame_offsets": [
+            "0xe0"
+          ],
+          "bytes": 8
+        },
+        {
+          "rva": "0x46acb",
+          "frame_offsets": [
+            "0x188"
+          ],
+          "bytes": 8
+        },
+        {
+          "rva": "0x46ad9",
+          "frame_offsets": [
+            "0x190"
+          ],
+          "bytes": 8
+        },
+        {
+          "rva": "0x46ae1",
+          "frame_offsets": [
+            "0xd8"
+          ],
+          "bytes": 4
+        },
+        {
+          "rva": "0x46aef",
+          "frame_offsets": [
+            "0xe8"
+          ],
+          "bytes": 8
+        },
+        {
+          "rva": "0x46d44",
+          "effect": "audited_normal_owned_Vec_heap_store",
+          "bytes": 2
+        },
+        {
+          "rva": "0x46d60",
+          "frame_offsets": [
+            "0x28"
+          ],
+          "bytes": 8
+        },
+        {
+          "rva": "0x46d65",
+          "frame_offsets": [
+            "0xa0"
+          ],
+          "bytes": 8
+        },
+        {
+          "rva": "0x47073",
+          "effect": "audited_normal_owned_Vec_heap_store",
+          "bytes": 1
+        },
+        {
+          "rva": "0x4707e",
+          "frame_offsets": [
+            "0xa0"
+          ],
+          "bytes": 8
+        },
+        {
+          "rva": "0x47132",
+          "effect": "audited_normal_owned_Vec_heap_store",
+          "bytes": 1
+        },
+        {
+          "rva": "0x4713d",
+          "frame_offsets": [
+            "0xa0"
+          ],
+          "bytes": 8
+        },
+        {
+          "rva": "0x471e6",
+          "effect": "audited_normal_owned_Vec_heap_store",
+          "bytes": 1
+        },
+        {
+          "rva": "0x4723f",
+          "effect": "audited_normal_owned_Vec_heap_store",
+          "bytes": 2
+        },
+        {
+          "rva": "0x47247",
+          "frame_offsets": [
+            "0xc8"
+          ],
+          "bytes": 8
+        },
+        {
+          "rva": "0x472ad",
+          "effect": "audited_normal_owned_Vec_heap_store",
+          "bytes": 2
+        },
+        {
+          "rva": "0x472b5",
+          "frame_offsets": [
+            "0xc8"
+          ],
+          "bytes": 8
+        },
+        {
+          "rva": "0x472fa",
+          "frame_offsets": [
+            "0xc8"
+          ],
+          "bytes": 8
+        },
+        {
+          "rva": "0x473ad",
+          "frame_offsets": [
+            "0x28"
+          ],
+          "bytes": 8
+        },
+        {
+          "rva": "0x473fe",
+          "frame_offsets": [
+            "0x1b8"
+          ],
+          "bytes": 8
+        },
+        {
+          "rva": "0x47412",
+          "frame_offsets": [
+            "0xf0"
+          ],
+          "bytes": 8
+        },
+        {
+          "rva": "0x475ae",
+          "frame_offsets": [
+            "0xe0"
+          ],
+          "bytes": 8
+        },
+        {
+          "rva": "0x4762c",
+          "frame_offsets": [
+            "0x3c"
+          ],
+          "bytes": 4
+        },
+        {
+          "rva": "0x47a77",
+          "frame_offsets": [
+            "0x178"
+          ],
+          "bytes": 8
+        },
+        {
+          "rva": "0x47a86",
+          "frame_offsets": [
+            "0x170"
+          ],
+          "bytes": 8
+        },
+        {
+          "rva": "0x47a95",
+          "frame_offsets": [
+            "0x168"
+          ],
+          "bytes": 8
+        },
+        {
+          "rva": "0x47abf",
+          "frame_offsets": [
+            "0xa0"
+          ],
+          "bytes": 8
+        },
+        {
+          "rva": "0x47af5",
+          "frame_offsets": [
+            "0x58"
+          ],
+          "bytes": 8
+        },
+        {
+          "rva": "0x47afa",
+          "frame_offsets": [
+            "0x40"
+          ],
+          "bytes": 8
+        },
+        {
+          "rva": "0x47b6a",
+          "frame_offsets": [
+            "0x28"
+          ],
+          "bytes": 8
+        },
+        {
+          "rva": "0x47c2f",
+          "effect": "audited_normal_owned_Vec_heap_store",
+          "bytes": 1
+        },
+        {
+          "rva": "0x47c34",
+          "frame_offsets": [
+            "0x110"
+          ],
+          "bytes": 8
+        },
+        {
+          "rva": "0x47c45",
+          "frame_offsets": [
+            "0x3c"
+          ],
+          "bytes": 4
+        },
+        {
+          "rva": "0x47c67",
+          "frame_offsets": [
+            "0xa0"
+          ],
+          "bytes": 8
+        },
+        {
+          "rva": "0x47cb3",
+          "frame_offsets": [
+            "0x48"
+          ],
+          "bytes": 8
+        },
+        {
+          "rva": "0x47cba",
+          "effect": "audited_normal_owned_Vec_heap_store",
+          "bytes": 1
+        },
+        {
+          "rva": "0x47cbf",
+          "frame_offsets": [
+            "0x110"
+          ],
+          "bytes": 8
+        },
+        {
+          "rva": "0x47ccb",
+          "frame_offsets": [
+            "0x3c"
+          ],
+          "bytes": 4
+        },
+        {
+          "rva": "0x47ced",
+          "frame_offsets": [
+            "0xa0"
+          ],
+          "bytes": 8
+        }
+      ],
+      "graph_scope": "Complete final naturally recovered normal-context graph, not old partial graph."
+    },
+    "17_local_arithmetic": {
+      "chain": [
+        {
+          "rva": "0x47a18",
+          "bytes": "8b942420010000",
+          "asm": "mov edx, dword ptr [rsp + 0x120]"
+        },
+        {
+          "rva": "0x47a1f",
+          "bytes": "2bd1",
+          "asm": "sub edx, ecx"
+        },
+        {
+          "rva": "0x47a21",
+          "bytes": "4189d8",
+          "asm": "mov r8d, ebx"
+        },
+        {
+          "rva": "0x47a24",
+          "bytes": "4129c8",
+          "asm": "sub r8d, ecx"
+        },
+        {
+          "rva": "0x47a27",
+          "bytes": "4403c2",
+          "asm": "add r8d, edx"
+        },
+        {
+          "rva": "0x47a2a",
+          "bytes": "4129d8",
+          "asm": "sub r8d, ebx"
+        }
+      ],
+      "single_straight_line_predecessor_chain": true,
+      "identity": "(EBX-ECX)+(DWORD[SP120]-ECX)-EBX = DWORD[SP120]-2*ECX mod2^32; actual reachingDWORD2f,ECX38h =>R8Dffffffbf thenNOT=>40h.",
+      "unsigned_index_store": "468b4 MOVZX ECX,CL proves0..255;468b7 writes conservatively [SP1f0,SP2f3), independent of unknown globalbyte and disjoint fromSP120."
+    },
+    "19byte4xor": [
+      0,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
+    "17byte7xor": [
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ]
+  },
+  "normal_data_preconditions": {
+    "19:981f8": "0xf92018e1afa030a1",
+    "19:983b8": "0x3bce5932c0b69066"
+  },
+  "limits": [
+    "Structured analysis C is not original source recovery, rebuild equivalence or arbitrary-state proof.",
+    "Ordinary panic/UD2 sites retained and counted; their presence is distinguished from halt_baddata or missing dispatch targets.",
+    "Remaining whole-program core gaps are tracked separately; legacy41 is not the population of all core CFG completeness."
+  ],
+  "evidence_sha256": {
+    "work\\alpme_analysis\\semantic_closure_20261027\\round4_network_core\\helper_footprint_proof.json": "d84eeeb257858907c16c4ed86b6357f936f0c98231533f6a539662f59eba8e5f",
+    "work\\alpme_analysis\\semantic_closure_20261027\\round4_network_core\\network_static.py": "06d3f7fc2e668474879794d33e2048cda4b53de37ae8aecd0fbbe519c808d96a",
+    "work\\alpme_analysis\\semantic_closure_20261027\\round4_network_core\\prove_helper_footprints.py": "268f58800b0d3cfc53d9f2c6c8817a47c7a98ad943060b125640b8817a558a0e",
+    "work\\alpme_analysis\\semantic_closure_20261027\\round3_strings\\17_sha_memory_effects.json": "9e90e944cc40cbc3630e9292c8bdb77c8f52022798065de3e3a239df7dce1735",
+    "work\\alpme_analysis\\semantic_closure_20261027\\round3_strings\\misc_packet_and_file_effects.json": "81fcf4ca333dccb913e45724ed69e2d6d6c66978781608787583ba046ccd31e7",
+    "work\\alpme_analysis\\semantic_closure_20261027\\round4_network_core\\19_4665_plan.json": "5c6aaee68244936dd0cda83b9569e82d544fefb2066afc7822db85ac4772857c",
+    "work\\alpme_analysis\\semantic_closure_20261027\\round4_network_core\\19_payload.dll.bin_0x4665_normal_context_retry.json": "9984595a42e4827ead9f6d924c7f4ffba6eebaaba199e4877f77763d499342b2",
+    "work\\alpme_analysis\\semantic_closure_20261027\\round4_network_core\\19_1557e_plan.json": "95c6339483a5511c0f70fe6958253363047e3f21fab6fcf3990ab2379b10a92e",
+    "work\\alpme_analysis\\semantic_closure_20261027\\round4_network_core\\19_payload.dll.bin_0x1557e_normal_context_retry.json": "f8a0c10f57986fb01fde03c28942a3a0a983bca22355655bf23580af153b8cfd",
+    "work\\alpme_analysis\\semantic_closure_20261027\\round4_network_core\\17_467ce_plan.json": "5a57432d212d6a28a7d0fc42068ec52767bb573cabf985ff4b1c182b9760ecc1",
+    "work\\alpme_analysis\\semantic_closure_20261027\\round4_network_core\\17_payload.dll.bin_0x467ce_normal_context_retry.json": "6b535cc81a3942f38f66356a0f6e93413db205d9a6d5785898c9fdca81a24d4d"
+  }
+}

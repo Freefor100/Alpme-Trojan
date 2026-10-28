@@ -1,0 +1,43 @@
+{
+  "status": "PASS",
+  "function": "19:1aab1",
+  "normal_graph_sha256": "434f047daa037d8f6e226f3aa937b8e128fee61da71045f55a2af852324bdebe",
+  "source_native_sha256": "4e4636d2c9d57eb609b7d18ee3dc01713fbcda39c5eee52bd4a66f222f67bb31",
+  "native_instructions": 5392,
+  "native_indirect_dispatch_sites": 231,
+  "unknown_targets": 0,
+  "outside_targets": 0,
+  "independent_source_reads": 250,
+  "independent_source_bytes": 463,
+  "explicit_memory_writers": 596,
+  "all_native_calls_accounted": 258,
+  "frozen_dependencies_verified": 19,
+  "C_file": "C:\\Users\\leo\\Documents\\Codex\\2026-10-26\\ni\\work\\alpme_analysis\\semantic_closure_20261027\\round4_browser_core\\normal_exports\\19_payload.dll.bin_0x1aab1.c",
+  "C_sha256": "5cbd882bdd418bff8fd30ed1ac6939a2a2508194f3f95d1e6a9004fdd09ee0a2",
+  "C_bytes": 191599,
+  "C_lines": 4067,
+  "C_decompile_completed": true,
+  "missing_dispatch_markers": 0,
+  "indirect_jump_as_call_markers": 0,
+  "halt_or_invalid_instruction_markers": 0,
+  "warning_categories": {
+    "standard_stack_probe_injection": 1,
+    "decompiler_optimizer_removed_block": 2,
+    "single_target_switch_simplified": 10,
+    "overlapping_global_symbols": 1,
+    "manual_jump_table_override": 225,
+    "nonreturning_error_path": 1
+  },
+  "C_presentation_boundary": "Decompiler optimizer warnings are retained as presentation warnings; no universal native reachability claim is inferred from them. Raw original sequential native listing and independently complete5392/231 graph are authoritative.",
+  "original_text_memory_sha256": "58ed088899886b5cc99a09fba69af079f2c4d53f12059c1443a1113e38c899f3",
+  "text_unchanged": true,
+  "project_scope": "Only normal19_memory_project private copy; no original/shared Ghidra project or sample bytes changed.",
+  "execution_boundary": "Ghidra analysis only; no specimen/native instruction/API/browser/key/network execution.",
+  "proof_scope": "VERIFIED_NORMAL_PE_TLS_AND_VALID_OWNED_OBJECT_ABI_COMPLETE_NATIVE_CFG; conditional on listed native API/callee/type contracts, not arbitrary corrupt-state proof",
+  "conditions": [
+    "Original PE TLS template and statically decoded6190 initializer; named PE obfuscation data values remainnormal at listed reads.",
+    "Validowned Vec/BTree/Arc/String/remote buffers and disjoint caller/helper/private stack frames; standardWindowsx64 ABI includingDF0.",
+    "Normalowned Once/module/procedure caches, exact public API names, and declaredbounded API output/readonlyinput contracts.",
+    "Third scanRPM interval valid and arithmetic nonoverflowing to bound request by800010; no claim for arbitrary corrupted interval states."
+  ]
+}
