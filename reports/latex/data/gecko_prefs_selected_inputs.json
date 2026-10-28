@@ -1,0 +1,1379 @@
+{
+  "status": "PASS_NATIVE_ANCHORED_SELECTED_UTF8_TRANSLITERATION",
+  "source_sha256": {
+    "17": "24f7eed14b69c561bd2dde6aa61759cabc8588293e9a0099dde8e381f96f228a",
+    "19": "4e4636d2c9d57eb609b7d18ee3dc01713fbcda39c5eee52bd4a66f222f67bb31"
+  },
+  "scope": "Selected complete synthetic UTF-8 prefs.js inputs. Native branch/constants and original dataflow inspected; only the Python semantic transliteration is evaluated. Not a universal malformed UTF-8 proof, JavaScript parser, JSON parser or native specimen execution.",
+  "behavior_zh": [
+    "逐行查找包含固定键子串的第一行；不验证 user_pref 函数名、注释或完整键名边界。",
+    "在键后找逗号，再找第一个双引号；按反斜杠跳过下一字节来寻找结尾引号；找不到结尾时接受到行尾。",
+    "外层只解码双引号、斜杠、反斜杠、n、r、t 六种转义；未知转义原样保留反斜杠与后续 Unicode 标量，末尾单独反斜杠丢弃。",
+    "不会解码 Unicode uXXXX、代理对、xHH、b 或 f；并不按完整 JS/JSON 转义规范拒绝输入。",
+    "解码后仅扫描原始双引号 token，跳过反斜杠及下一字节但不做第二次反转义；每两项按 UUID→扩展 ID 插入，奇数尾项丢弃，重复 UUID 后值替换。",
+    "内部 token 的右引号缺失时取至缓冲区结尾，仍可组成配对；完整 JSON 结构和冒号/逗号语法未验证。"
+  ],
+  "native19": [
+    {
+      "rva": "0x4b658",
+      "asm": "mov rbp, rax",
+      "bytes": "4889c5"
+    },
+    {
+      "rva": "0x4bd6a",
+      "asm": "cmp byte ptr [rax + rcx], 0x2c",
+      "bytes": "803c082c"
+    },
+    {
+      "rva": "0x4c064",
+      "asm": "mov cl, 0x22",
+      "bytes": "b122"
+    },
+    {
+      "rva": "0x4b782",
+      "asm": "movzx ecx, byte ptr [rbp + rax]",
+      "bytes": "0fb64c0500"
+    },
+    {
+      "rva": "0x4b787",
+      "asm": "cmp ecx, 0x5c",
+      "bytes": "83f95c"
+    },
+    {
+      "rva": "0x4b790",
+      "asm": "add rax, 2",
+      "bytes": "4883c002"
+    },
+    {
+      "rva": "0x4b7a0",
+      "asm": "cmp rax, r13",
+      "bytes": "493bc5"
+    },
+    {
+      "rva": "0x4b762",
+      "asm": "cmp ecx, 0x22",
+      "bytes": "83f922"
+    },
+    {
+      "rva": "0x4b765",
+      "asm": "je 0x18004b7a0",
+      "bytes": "7439"
+    },
+    {
+      "rva": "0x4b954",
+      "asm": "cmp esi, 0x5c",
+      "bytes": "83fe5c"
+    },
+    {
+      "rva": "0x4aad2",
+      "asm": "cmp rbp, rbx",
+      "bytes": "4839dd"
+    },
+    {
+      "rva": "0x4b8a5",
+      "asm": "cmp esi, 0x6d",
+      "bytes": "83fe6d"
+    },
+    {
+      "rva": "0x4b8ae",
+      "asm": "cmp esi, 0x6e",
+      "bytes": "83fe6e"
+    },
+    {
+      "rva": "0x4b8bd",
+      "asm": "cmp esi, 0x72",
+      "bytes": "83fe72"
+    },
+    {
+      "rva": "0x4b8c2",
+      "asm": "cmp esi, 0x74",
+      "bytes": "83fe74"
+    },
+    {
+      "rva": "0x4b8cb",
+      "asm": "mov byte ptr [r10 + r13], 9",
+      "bytes": "43c6042a09"
+    },
+    {
+      "rva": "0x4b8eb",
+      "asm": "mov byte ptr [r10 + r13], 0xa",
+      "bytes": "43c6042a0a"
+    },
+    {
+      "rva": "0x4b8f2",
+      "asm": "mov byte ptr [r10 + r13], 0xd",
+      "bytes": "43c6042a0d"
+    },
+    {
+      "rva": "0x4c2c5",
+      "asm": "cmp esi, 0x22",
+      "bytes": "83fe22"
+    },
+    {
+      "rva": "0x4c2d4",
+      "asm": "cmp esi, 0x2f",
+      "bytes": "83fe2f"
+    },
+    {
+      "rva": "0x4c2d9",
+      "asm": "cmp esi, 0x5c",
+      "bytes": "83fe5c"
+    },
+    {
+      "rva": "0x4c2de",
+      "asm": "mov byte ptr [r10 + r13], 0x5c",
+      "bytes": "43c6042a5c"
+    },
+    {
+      "rva": "0x4c292",
+      "asm": "mov byte ptr [r10 + r13], 0x22",
+      "bytes": "43c6042a22"
+    },
+    {
+      "rva": "0x4c327",
+      "asm": "mov byte ptr [r10 + r13], 0x2f",
+      "bytes": "43c6042a2f"
+    },
+    {
+      "rva": "0x4c2e8",
+      "asm": "mov byte ptr [r10 + r13], 0x5c",
+      "bytes": "43c6042a5c"
+    },
+    {
+      "rva": "0x4c31e",
+      "asm": "mov byte ptr [r10 + rdi], sil",
+      "bytes": "4188343a"
+    },
+    {
+      "rva": "0x4aa74",
+      "asm": "cmp byte ptr [r10 + rax], 0x22",
+      "bytes": "41803c0222"
+    },
+    {
+      "rva": "0x4ab02",
+      "asm": "cmp r11d, 0x5c",
+      "bytes": "4183fb5c"
+    },
+    {
+      "rva": "0x4ab08",
+      "asm": "inc rbp",
+      "bytes": "48ffc5"
+    },
+    {
+      "rva": "0x4ab18",
+      "asm": "mov r8, rbp",
+      "bytes": "4989e8"
+    },
+    {
+      "rva": "0x4ab65",
+      "asm": "call 0x1800071df",
+      "bytes": "e875c6fbff"
+    },
+    {
+      "rva": "0x4ab76",
+      "asm": "cmp rax, -1",
+      "bytes": "4883f8ff"
+    },
+    {
+      "rva": "0x4abaa",
+      "asm": "call 0x18006dc25",
+      "bytes": "e876300200"
+    }
+  ],
+  "native17_escape_switch": [
+    {
+      "rva": "0x6da62",
+      "asm": "cmp r14d, 0x6d",
+      "bytes": "4183fe6d"
+    },
+    {
+      "rva": "0x6da68",
+      "asm": "cmp r14d, 0x22",
+      "bytes": "4183fe22"
+    },
+    {
+      "rva": "0x6da7a",
+      "asm": "cmp r14d, 0x2f",
+      "bytes": "4183fe2f"
+    },
+    {
+      "rva": "0x6dae7",
+      "asm": "cmp r14d, 0x6e",
+      "bytes": "4183fe6e"
+    },
+    {
+      "rva": "0x6daf5",
+      "asm": "cmp r14d, 0x72",
+      "bytes": "4183fe72"
+    },
+    {
+      "rva": "0x6daff",
+      "asm": "cmp r14d, 0x74",
+      "bytes": "4183fe74"
+    },
+    {
+      "rva": "0x6db2d",
+      "asm": "cmp r14d, 0x5c",
+      "bytes": "4183fe5c"
+    },
+    {
+      "rva": "0x6db7e",
+      "asm": "mov r13, rbp",
+      "bytes": "4c8bed"
+    }
+  ],
+  "native17_output_values": [
+    {
+      "store": {
+        "rva": "0x6dac7",
+        "asm": "mov byte ptr [rsi + r15], al",
+        "bytes": "4288043e"
+      },
+      "value": 10,
+      "register": "rax",
+      "native_reaching_values": [
+        "0xa"
+      ]
+    },
+    {
+      "store": {
+        "rva": "0x6dd2b",
+        "asm": "mov byte ptr [rsi + r15], al",
+        "bytes": "4288043e"
+      },
+      "value": 13,
+      "register": "rax",
+      "native_reaching_values": [
+        "0xd"
+      ]
+    },
+    {
+      "store": {
+        "rva": "0x6db0c",
+        "asm": "mov byte ptr [rsi + r15], al",
+        "bytes": "4288043e"
+      },
+      "value": 9,
+      "register": "rax",
+      "native_reaching_values": [
+        "0x9"
+      ]
+    },
+    {
+      "store": {
+        "rva": "0x6db3a",
+        "asm": "mov byte ptr [rsi + r15], al",
+        "bytes": "4288043e"
+      },
+      "value": 92,
+      "register": "rax",
+      "native_reaching_values": [
+        "0x5c"
+      ]
+    },
+    {
+      "store": {
+        "rva": "0x6db87",
+        "asm": "mov byte ptr [rsi + r15], bpl",
+        "bytes": "42882c3e"
+      },
+      "value": 92,
+      "register": "rbp",
+      "native_reaching_values": [
+        "0x5c"
+      ]
+    },
+    {
+      "store": {
+        "rva": "0x6de01",
+        "asm": "mov byte ptr [rsi + r15], al",
+        "bytes": "4288043e"
+      },
+      "value": 34,
+      "register": "rax",
+      "native_reaching_values": [
+        "0x22"
+      ]
+    },
+    {
+      "store": {
+        "rva": "0x6da84",
+        "asm": "mov byte ptr [rsi + r15], 0x2f",
+        "bytes": "42c6043e2f"
+      },
+      "value": 47,
+      "source": "native literal immediate"
+    }
+  ],
+  "synthetic_cases": [
+    {
+      "name": "normal",
+      "full_input_utf8": "user_pref(\"extensions.webextensions.uuids\", \"{\\\"addon@x\\\":\\\"uuid\\\"}\" );",
+      "full_input_hex": "757365725f707265662822657874656e73696f6e732e776562657874656e73696f6e732e7575696473222c20227b5c226164646f6e40785c223a5c22757569645c227d2220293b",
+      "expected_map": {
+        "uuid": "addon@x"
+      },
+      "actual": {
+        "map": {
+          "uuid": "addon@x"
+        },
+        "trace": [
+          {
+            "stage": "first matching line",
+            "line": 0,
+            "tail": "\", \"{\\\"addon@x\\\":\\\"uuid\\\"}\" );"
+          },
+          {
+            "stage": "outer quoted string",
+            "closed": true,
+            "raw_utf8": "{\\\"addon@x\\\":\\\"uuid\\\"}",
+            "decoded_utf8": "{\"addon@x\":\"uuid\"}",
+            "escapes": [
+              {
+                "escape": "\\\"",
+                "kind": "six recognized escapes",
+                "output": "\""
+              },
+              {
+                "escape": "\\\"",
+                "kind": "six recognized escapes",
+                "output": "\""
+              },
+              {
+                "escape": "\\\"",
+                "kind": "six recognized escapes",
+                "output": "\""
+              },
+              {
+                "escape": "\\\"",
+                "kind": "six recognized escapes",
+                "output": "\""
+              }
+            ]
+          },
+          {
+            "stage": "raw quoted token pairs",
+            "tokens": [
+              "addon@x",
+              "uuid"
+            ],
+            "insertion": "second token as UUID key; first token as ID value; duplicate keys replace previous value",
+            "unpaired_last_token_discarded": false
+          }
+        ],
+        "tokens": [
+          "addon@x",
+          "uuid"
+        ]
+      }
+    },
+    {
+      "name": "unknown_q",
+      "full_input_utf8": "user_pref(\"extensions.webextensions.uuids\", \"{\\\"addon\\q@x\\\":\\\"uuid\\\"}\" );",
+      "full_input_hex": "757365725f707265662822657874656e73696f6e732e776562657874656e73696f6e732e7575696473222c20227b5c226164646f6e5c7140785c223a5c22757569645c227d2220293b",
+      "expected_map": {
+        "uuid": "addon\\q@x"
+      },
+      "actual": {
+        "map": {
+          "uuid": "addon\\q@x"
+        },
+        "trace": [
+          {
+            "stage": "first matching line",
+            "line": 0,
+            "tail": "\", \"{\\\"addon\\q@x\\\":\\\"uuid\\\"}\" );"
+          },
+          {
+            "stage": "outer quoted string",
+            "closed": true,
+            "raw_utf8": "{\\\"addon\\q@x\\\":\\\"uuid\\\"}",
+            "decoded_utf8": "{\"addon\\q@x\":\"uuid\"}",
+            "escapes": [
+              {
+                "escape": "\\\"",
+                "kind": "six recognized escapes",
+                "output": "\""
+              },
+              {
+                "escape": "\\q",
+                "kind": "unknown escape preserved literally",
+                "output": "\\q"
+              },
+              {
+                "escape": "\\\"",
+                "kind": "six recognized escapes",
+                "output": "\""
+              },
+              {
+                "escape": "\\\"",
+                "kind": "six recognized escapes",
+                "output": "\""
+              },
+              {
+                "escape": "\\\"",
+                "kind": "six recognized escapes",
+                "output": "\""
+              }
+            ]
+          },
+          {
+            "stage": "raw quoted token pairs",
+            "tokens": [
+              "addon\\q@x",
+              "uuid"
+            ],
+            "insertion": "second token as UUID key; first token as ID value; duplicate keys replace previous value",
+            "unpaired_last_token_discarded": false
+          }
+        ],
+        "tokens": [
+          "addon\\q@x",
+          "uuid"
+        ]
+      }
+    },
+    {
+      "name": "unicode_escape_is_literal",
+      "full_input_utf8": "user_pref(\"extensions.webextensions.uuids\", \"{\\\"addon@x\\\":\\\"\\u0075uid\\\"}\" );",
+      "full_input_hex": "757365725f707265662822657874656e73696f6e732e776562657874656e73696f6e732e7575696473222c20227b5c226164646f6e40785c223a5c225c75303037357569645c227d2220293b",
+      "expected_map": {
+        "\\u0075uid": "addon@x"
+      },
+      "actual": {
+        "map": {
+          "\\u0075uid": "addon@x"
+        },
+        "trace": [
+          {
+            "stage": "first matching line",
+            "line": 0,
+            "tail": "\", \"{\\\"addon@x\\\":\\\"\\u0075uid\\\"}\" );"
+          },
+          {
+            "stage": "outer quoted string",
+            "closed": true,
+            "raw_utf8": "{\\\"addon@x\\\":\\\"\\u0075uid\\\"}",
+            "decoded_utf8": "{\"addon@x\":\"\\u0075uid\"}",
+            "escapes": [
+              {
+                "escape": "\\\"",
+                "kind": "six recognized escapes",
+                "output": "\""
+              },
+              {
+                "escape": "\\\"",
+                "kind": "six recognized escapes",
+                "output": "\""
+              },
+              {
+                "escape": "\\\"",
+                "kind": "six recognized escapes",
+                "output": "\""
+              },
+              {
+                "escape": "\\u",
+                "kind": "unknown escape preserved literally",
+                "output": "\\u"
+              },
+              {
+                "escape": "\\\"",
+                "kind": "six recognized escapes",
+                "output": "\""
+              }
+            ]
+          },
+          {
+            "stage": "raw quoted token pairs",
+            "tokens": [
+              "addon@x",
+              "\\u0075uid"
+            ],
+            "insertion": "second token as UUID key; first token as ID value; duplicate keys replace previous value",
+            "unpaired_last_token_discarded": false
+          }
+        ],
+        "tokens": [
+          "addon@x",
+          "\\u0075uid"
+        ]
+      }
+    },
+    {
+      "name": "surrogate_pair_is_literal",
+      "full_input_utf8": "user_pref(\"extensions.webextensions.uuids\", \"{\\\"addon@x\\\":\\\"\\ud83d\\ude00\\\"}\" );",
+      "full_input_hex": "757365725f707265662822657874656e73696f6e732e776562657874656e73696f6e732e7575696473222c20227b5c226164646f6e40785c223a5c225c75643833645c75646530305c227d2220293b",
+      "expected_map": {
+        "\\ud83d\\ude00": "addon@x"
+      },
+      "actual": {
+        "map": {
+          "\\ud83d\\ude00": "addon@x"
+        },
+        "trace": [
+          {
+            "stage": "first matching line",
+            "line": 0,
+            "tail": "\", \"{\\\"addon@x\\\":\\\"\\ud83d\\ude00\\\"}\" );"
+          },
+          {
+            "stage": "outer quoted string",
+            "closed": true,
+            "raw_utf8": "{\\\"addon@x\\\":\\\"\\ud83d\\ude00\\\"}",
+            "decoded_utf8": "{\"addon@x\":\"\\ud83d\\ude00\"}",
+            "escapes": [
+              {
+                "escape": "\\\"",
+                "kind": "six recognized escapes",
+                "output": "\""
+              },
+              {
+                "escape": "\\\"",
+                "kind": "six recognized escapes",
+                "output": "\""
+              },
+              {
+                "escape": "\\\"",
+                "kind": "six recognized escapes",
+                "output": "\""
+              },
+              {
+                "escape": "\\u",
+                "kind": "unknown escape preserved literally",
+                "output": "\\u"
+              },
+              {
+                "escape": "\\u",
+                "kind": "unknown escape preserved literally",
+                "output": "\\u"
+              },
+              {
+                "escape": "\\\"",
+                "kind": "six recognized escapes",
+                "output": "\""
+              }
+            ]
+          },
+          {
+            "stage": "raw quoted token pairs",
+            "tokens": [
+              "addon@x",
+              "\\ud83d\\ude00"
+            ],
+            "insertion": "second token as UUID key; first token as ID value; duplicate keys replace previous value",
+            "unpaired_last_token_discarded": false
+          }
+        ],
+        "tokens": [
+          "addon@x",
+          "\\ud83d\\ude00"
+        ]
+      }
+    },
+    {
+      "name": "b_f_x_unknown",
+      "full_input_utf8": "user_pref(\"extensions.webextensions.uuids\", \"{\\\"addon\\b\\f\\x41@x\\\":\\\"uuid\\\"}\" );",
+      "full_input_hex": "757365725f707265662822657874656e73696f6e732e776562657874656e73696f6e732e7575696473222c20227b5c226164646f6e5c625c665c78343140785c223a5c22757569645c227d2220293b",
+      "expected_map": {
+        "uuid": "addon\\b\\f\\x41@x"
+      },
+      "actual": {
+        "map": {
+          "uuid": "addon\\b\\f\\x41@x"
+        },
+        "trace": [
+          {
+            "stage": "first matching line",
+            "line": 0,
+            "tail": "\", \"{\\\"addon\\b\\f\\x41@x\\\":\\\"uuid\\\"}\" );"
+          },
+          {
+            "stage": "outer quoted string",
+            "closed": true,
+            "raw_utf8": "{\\\"addon\\b\\f\\x41@x\\\":\\\"uuid\\\"}",
+            "decoded_utf8": "{\"addon\\b\\f\\x41@x\":\"uuid\"}",
+            "escapes": [
+              {
+                "escape": "\\\"",
+                "kind": "six recognized escapes",
+                "output": "\""
+              },
+              {
+                "escape": "\\b",
+                "kind": "unknown escape preserved literally",
+                "output": "\\b"
+              },
+              {
+                "escape": "\\f",
+                "kind": "unknown escape preserved literally",
+                "output": "\\f"
+              },
+              {
+                "escape": "\\x",
+                "kind": "unknown escape preserved literally",
+                "output": "\\x"
+              },
+              {
+                "escape": "\\\"",
+                "kind": "six recognized escapes",
+                "output": "\""
+              },
+              {
+                "escape": "\\\"",
+                "kind": "six recognized escapes",
+                "output": "\""
+              },
+              {
+                "escape": "\\\"",
+                "kind": "six recognized escapes",
+                "output": "\""
+              }
+            ]
+          },
+          {
+            "stage": "raw quoted token pairs",
+            "tokens": [
+              "addon\\b\\f\\x41@x",
+              "uuid"
+            ],
+            "insertion": "second token as UUID key; first token as ID value; duplicate keys replace previous value",
+            "unpaired_last_token_discarded": false
+          }
+        ],
+        "tokens": [
+          "addon\\b\\f\\x41@x",
+          "uuid"
+        ]
+      }
+    },
+    {
+      "name": "six_recognized_escapes",
+      "full_input_utf8": "user_pref(\"extensions.webextensions.uuids\", \"{\\\"a\\/b\\\\c\\\":\\\"u\\n\\r\\t\\\"}\" );",
+      "full_input_hex": "757365725f707265662822657874656e73696f6e732e776562657874656e73696f6e732e7575696473222c20227b5c22615c2f625c5c635c223a5c22755c6e5c725c745c227d2220293b",
+      "expected_map": {
+        "u\n\r\t": "a/b\\c"
+      },
+      "actual": {
+        "map": {
+          "u\n\r\t": "a/b\\c"
+        },
+        "trace": [
+          {
+            "stage": "first matching line",
+            "line": 0,
+            "tail": "\", \"{\\\"a\\/b\\\\c\\\":\\\"u\\n\\r\\t\\\"}\" );"
+          },
+          {
+            "stage": "outer quoted string",
+            "closed": true,
+            "raw_utf8": "{\\\"a\\/b\\\\c\\\":\\\"u\\n\\r\\t\\\"}",
+            "decoded_utf8": "{\"a/b\\c\":\"u\n\r\t\"}",
+            "escapes": [
+              {
+                "escape": "\\\"",
+                "kind": "six recognized escapes",
+                "output": "\""
+              },
+              {
+                "escape": "\\/",
+                "kind": "six recognized escapes",
+                "output": "/"
+              },
+              {
+                "escape": "\\\\",
+                "kind": "six recognized escapes",
+                "output": "\\"
+              },
+              {
+                "escape": "\\\"",
+                "kind": "six recognized escapes",
+                "output": "\""
+              },
+              {
+                "escape": "\\\"",
+                "kind": "six recognized escapes",
+                "output": "\""
+              },
+              {
+                "escape": "\\n",
+                "kind": "six recognized escapes",
+                "output": "\n"
+              },
+              {
+                "escape": "\\r",
+                "kind": "six recognized escapes",
+                "output": "\r"
+              },
+              {
+                "escape": "\\t",
+                "kind": "six recognized escapes",
+                "output": "\t"
+              },
+              {
+                "escape": "\\\"",
+                "kind": "six recognized escapes",
+                "output": "\""
+              }
+            ]
+          },
+          {
+            "stage": "raw quoted token pairs",
+            "tokens": [
+              "a/b\\c",
+              "u\n\r\t"
+            ],
+            "insertion": "second token as UUID key; first token as ID value; duplicate keys replace previous value",
+            "unpaired_last_token_discarded": false
+          }
+        ],
+        "tokens": [
+          "a/b\\c",
+          "u\n\r\t"
+        ]
+      }
+    },
+    {
+      "name": "unknown_unicode_scalar",
+      "full_input_utf8": "user_pref(\"extensions.webextensions.uuids\", \"{\\\"addon\\你@x\\\":\\\"uuid\\\"}\" );",
+      "full_input_hex": "757365725f707265662822657874656e73696f6e732e776562657874656e73696f6e732e7575696473222c20227b5c226164646f6e5ce4bda040785c223a5c22757569645c227d2220293b",
+      "expected_map": {
+        "uuid": "addon\\你@x"
+      },
+      "actual": {
+        "map": {
+          "uuid": "addon\\你@x"
+        },
+        "trace": [
+          {
+            "stage": "first matching line",
+            "line": 0,
+            "tail": "\", \"{\\\"addon\\你@x\\\":\\\"uuid\\\"}\" );"
+          },
+          {
+            "stage": "outer quoted string",
+            "closed": true,
+            "raw_utf8": "{\\\"addon\\你@x\\\":\\\"uuid\\\"}",
+            "decoded_utf8": "{\"addon\\你@x\":\"uuid\"}",
+            "escapes": [
+              {
+                "escape": "\\\"",
+                "kind": "six recognized escapes",
+                "output": "\""
+              },
+              {
+                "escape": "\\你",
+                "kind": "unknown escape preserved literally",
+                "output": "\\你"
+              },
+              {
+                "escape": "\\\"",
+                "kind": "six recognized escapes",
+                "output": "\""
+              },
+              {
+                "escape": "\\\"",
+                "kind": "six recognized escapes",
+                "output": "\""
+              },
+              {
+                "escape": "\\\"",
+                "kind": "six recognized escapes",
+                "output": "\""
+              }
+            ]
+          },
+          {
+            "stage": "raw quoted token pairs",
+            "tokens": [
+              "addon\\你@x",
+              "uuid"
+            ],
+            "insertion": "second token as UUID key; first token as ID value; duplicate keys replace previous value",
+            "unpaired_last_token_discarded": false
+          }
+        ],
+        "tokens": [
+          "addon\\你@x",
+          "uuid"
+        ]
+      }
+    },
+    {
+      "name": "unclosed_outer_quote",
+      "full_input_utf8": "user_pref(\"extensions.webextensions.uuids\", \"{\\\"addon@x\\\":\\\"uuid\\\"}",
+      "full_input_hex": "757365725f707265662822657874656e73696f6e732e776562657874656e73696f6e732e7575696473222c20227b5c226164646f6e40785c223a5c22757569645c227d",
+      "expected_map": {
+        "uuid": "addon@x"
+      },
+      "actual": {
+        "map": {
+          "uuid": "addon@x"
+        },
+        "trace": [
+          {
+            "stage": "first matching line",
+            "line": 0,
+            "tail": "\", \"{\\\"addon@x\\\":\\\"uuid\\\"}"
+          },
+          {
+            "stage": "outer quoted string",
+            "closed": false,
+            "raw_utf8": "{\\\"addon@x\\\":\\\"uuid\\\"}",
+            "decoded_utf8": "{\"addon@x\":\"uuid\"}",
+            "escapes": [
+              {
+                "escape": "\\\"",
+                "kind": "six recognized escapes",
+                "output": "\""
+              },
+              {
+                "escape": "\\\"",
+                "kind": "six recognized escapes",
+                "output": "\""
+              },
+              {
+                "escape": "\\\"",
+                "kind": "six recognized escapes",
+                "output": "\""
+              },
+              {
+                "escape": "\\\"",
+                "kind": "six recognized escapes",
+                "output": "\""
+              }
+            ]
+          },
+          {
+            "stage": "raw quoted token pairs",
+            "tokens": [
+              "addon@x",
+              "uuid"
+            ],
+            "insertion": "second token as UUID key; first token as ID value; duplicate keys replace previous value",
+            "unpaired_last_token_discarded": false
+          }
+        ],
+        "tokens": [
+          "addon@x",
+          "uuid"
+        ]
+      }
+    },
+    {
+      "name": "trailing_backslash_dropped",
+      "full_input_utf8": "user_pref(\"extensions.webextensions.uuids\", \"{\\\"addon@x\\\":\\\"uuid\\\"}\\",
+      "full_input_hex": "757365725f707265662822657874656e73696f6e732e776562657874656e73696f6e732e7575696473222c20227b5c226164646f6e40785c223a5c22757569645c227d5c",
+      "expected_map": {
+        "uuid": "addon@x"
+      },
+      "actual": {
+        "map": {
+          "uuid": "addon@x"
+        },
+        "trace": [
+          {
+            "stage": "first matching line",
+            "line": 0,
+            "tail": "\", \"{\\\"addon@x\\\":\\\"uuid\\\"}\\"
+          },
+          {
+            "stage": "outer quoted string",
+            "closed": false,
+            "raw_utf8": "{\\\"addon@x\\\":\\\"uuid\\\"}\\",
+            "decoded_utf8": "{\"addon@x\":\"uuid\"}",
+            "escapes": [
+              {
+                "escape": "\\\"",
+                "kind": "six recognized escapes",
+                "output": "\""
+              },
+              {
+                "escape": "\\\"",
+                "kind": "six recognized escapes",
+                "output": "\""
+              },
+              {
+                "escape": "\\\"",
+                "kind": "six recognized escapes",
+                "output": "\""
+              },
+              {
+                "escape": "\\\"",
+                "kind": "six recognized escapes",
+                "output": "\""
+              },
+              {
+                "kind": "terminal backslash dropped"
+              }
+            ]
+          },
+          {
+            "stage": "raw quoted token pairs",
+            "tokens": [
+              "addon@x",
+              "uuid"
+            ],
+            "insertion": "second token as UUID key; first token as ID value; duplicate keys replace previous value",
+            "unpaired_last_token_discarded": false
+          }
+        ],
+        "tokens": [
+          "addon@x",
+          "uuid"
+        ]
+      }
+    },
+    {
+      "name": "terminal_backslash_only",
+      "full_input_utf8": "user_pref(\"extensions.webextensions.uuids\", \"\\",
+      "full_input_hex": "757365725f707265662822657874656e73696f6e732e776562657874656e73696f6e732e7575696473222c20225c",
+      "expected_map": {},
+      "actual": {
+        "map": {},
+        "trace": [
+          {
+            "stage": "first matching line",
+            "line": 0,
+            "tail": "\", \"\\"
+          },
+          {
+            "stage": "outer quoted string",
+            "closed": false,
+            "raw_utf8": "\\",
+            "decoded_utf8": "",
+            "escapes": [
+              {
+                "kind": "terminal backslash dropped"
+              }
+            ]
+          },
+          {
+            "stage": "raw quoted token pairs",
+            "tokens": [],
+            "insertion": "second token as UUID key; first token as ID value; duplicate keys replace previous value",
+            "unpaired_last_token_discarded": false
+          }
+        ],
+        "tokens": []
+      }
+    },
+    {
+      "name": "unterminated_inner_token",
+      "full_input_utf8": "user_pref(\"extensions.webextensions.uuids\", \"{\\\"addon@x\\\":\\\"uuid\" );",
+      "full_input_hex": "757365725f707265662822657874656e73696f6e732e776562657874656e73696f6e732e7575696473222c20227b5c226164646f6e40785c223a5c22757569642220293b",
+      "expected_map": {
+        "uuid": "addon@x"
+      },
+      "actual": {
+        "map": {
+          "uuid": "addon@x"
+        },
+        "trace": [
+          {
+            "stage": "first matching line",
+            "line": 0,
+            "tail": "\", \"{\\\"addon@x\\\":\\\"uuid\" );"
+          },
+          {
+            "stage": "outer quoted string",
+            "closed": true,
+            "raw_utf8": "{\\\"addon@x\\\":\\\"uuid",
+            "decoded_utf8": "{\"addon@x\":\"uuid",
+            "escapes": [
+              {
+                "escape": "\\\"",
+                "kind": "six recognized escapes",
+                "output": "\""
+              },
+              {
+                "escape": "\\\"",
+                "kind": "six recognized escapes",
+                "output": "\""
+              },
+              {
+                "escape": "\\\"",
+                "kind": "six recognized escapes",
+                "output": "\""
+              }
+            ]
+          },
+          {
+            "stage": "raw quoted token pairs",
+            "tokens": [
+              "addon@x",
+              "uuid"
+            ],
+            "insertion": "second token as UUID key; first token as ID value; duplicate keys replace previous value",
+            "unpaired_last_token_discarded": false
+          }
+        ],
+        "tokens": [
+          "addon@x",
+          "uuid"
+        ]
+      }
+    },
+    {
+      "name": "raw_pairs_without_json_object",
+      "full_input_utf8": "user_pref(\"extensions.webextensions.uuids\", \"[\\\"addon@x\\\",\\\"uuid\\\",\\\"orphan\\\"]\" );",
+      "full_input_hex": "757365725f707265662822657874656e73696f6e732e776562657874656e73696f6e732e7575696473222c20225b5c226164646f6e40785c222c5c22757569645c222c5c226f727068616e5c225d2220293b",
+      "expected_map": {
+        "uuid": "addon@x"
+      },
+      "actual": {
+        "map": {
+          "uuid": "addon@x"
+        },
+        "trace": [
+          {
+            "stage": "first matching line",
+            "line": 0,
+            "tail": "\", \"[\\\"addon@x\\\",\\\"uuid\\\",\\\"orphan\\\"]\" );"
+          },
+          {
+            "stage": "outer quoted string",
+            "closed": true,
+            "raw_utf8": "[\\\"addon@x\\\",\\\"uuid\\\",\\\"orphan\\\"]",
+            "decoded_utf8": "[\"addon@x\",\"uuid\",\"orphan\"]",
+            "escapes": [
+              {
+                "escape": "\\\"",
+                "kind": "six recognized escapes",
+                "output": "\""
+              },
+              {
+                "escape": "\\\"",
+                "kind": "six recognized escapes",
+                "output": "\""
+              },
+              {
+                "escape": "\\\"",
+                "kind": "six recognized escapes",
+                "output": "\""
+              },
+              {
+                "escape": "\\\"",
+                "kind": "six recognized escapes",
+                "output": "\""
+              },
+              {
+                "escape": "\\\"",
+                "kind": "six recognized escapes",
+                "output": "\""
+              },
+              {
+                "escape": "\\\"",
+                "kind": "six recognized escapes",
+                "output": "\""
+              }
+            ]
+          },
+          {
+            "stage": "raw quoted token pairs",
+            "tokens": [
+              "addon@x",
+              "uuid",
+              "orphan"
+            ],
+            "insertion": "second token as UUID key; first token as ID value; duplicate keys replace previous value",
+            "unpaired_last_token_discarded": true
+          }
+        ],
+        "tokens": [
+          "addon@x",
+          "uuid",
+          "orphan"
+        ]
+      }
+    },
+    {
+      "name": "duplicate_uuid_last_wins",
+      "full_input_utf8": "user_pref(\"extensions.webextensions.uuids\", \"{\\\"first@x\\\":\\\"u\\\",\\\"second@x\\\":\\\"u\\\"}\" );",
+      "full_input_hex": "757365725f707265662822657874656e73696f6e732e776562657874656e73696f6e732e7575696473222c20227b5c22666972737440785c223a5c22755c222c5c227365636f6e6440785c223a5c22755c227d2220293b",
+      "expected_map": {
+        "u": "second@x"
+      },
+      "actual": {
+        "map": {
+          "u": "second@x"
+        },
+        "trace": [
+          {
+            "stage": "first matching line",
+            "line": 0,
+            "tail": "\", \"{\\\"first@x\\\":\\\"u\\\",\\\"second@x\\\":\\\"u\\\"}\" );"
+          },
+          {
+            "stage": "outer quoted string",
+            "closed": true,
+            "raw_utf8": "{\\\"first@x\\\":\\\"u\\\",\\\"second@x\\\":\\\"u\\\"}",
+            "decoded_utf8": "{\"first@x\":\"u\",\"second@x\":\"u\"}",
+            "escapes": [
+              {
+                "escape": "\\\"",
+                "kind": "six recognized escapes",
+                "output": "\""
+              },
+              {
+                "escape": "\\\"",
+                "kind": "six recognized escapes",
+                "output": "\""
+              },
+              {
+                "escape": "\\\"",
+                "kind": "six recognized escapes",
+                "output": "\""
+              },
+              {
+                "escape": "\\\"",
+                "kind": "six recognized escapes",
+                "output": "\""
+              },
+              {
+                "escape": "\\\"",
+                "kind": "six recognized escapes",
+                "output": "\""
+              },
+              {
+                "escape": "\\\"",
+                "kind": "six recognized escapes",
+                "output": "\""
+              },
+              {
+                "escape": "\\\"",
+                "kind": "six recognized escapes",
+                "output": "\""
+              },
+              {
+                "escape": "\\\"",
+                "kind": "six recognized escapes",
+                "output": "\""
+              }
+            ]
+          },
+          {
+            "stage": "raw quoted token pairs",
+            "tokens": [
+              "first@x",
+              "u",
+              "second@x",
+              "u"
+            ],
+            "insertion": "second token as UUID key; first token as ID value; duplicate keys replace previous value",
+            "unpaired_last_token_discarded": false
+          }
+        ],
+        "tokens": [
+          "first@x",
+          "u",
+          "second@x",
+          "u"
+        ]
+      }
+    },
+    {
+      "name": "empty_uuid_token",
+      "full_input_utf8": "user_pref(\"extensions.webextensions.uuids\", \"{\\\"addon@x\\\":\\\"\\\"}\" );",
+      "full_input_hex": "757365725f707265662822657874656e73696f6e732e776562657874656e73696f6e732e7575696473222c20227b5c226164646f6e40785c223a5c225c227d2220293b",
+      "expected_map": {
+        "": "addon@x"
+      },
+      "actual": {
+        "map": {
+          "": "addon@x"
+        },
+        "trace": [
+          {
+            "stage": "first matching line",
+            "line": 0,
+            "tail": "\", \"{\\\"addon@x\\\":\\\"\\\"}\" );"
+          },
+          {
+            "stage": "outer quoted string",
+            "closed": true,
+            "raw_utf8": "{\\\"addon@x\\\":\\\"\\\"}",
+            "decoded_utf8": "{\"addon@x\":\"\"}",
+            "escapes": [
+              {
+                "escape": "\\\"",
+                "kind": "six recognized escapes",
+                "output": "\""
+              },
+              {
+                "escape": "\\\"",
+                "kind": "six recognized escapes",
+                "output": "\""
+              },
+              {
+                "escape": "\\\"",
+                "kind": "six recognized escapes",
+                "output": "\""
+              },
+              {
+                "escape": "\\\"",
+                "kind": "six recognized escapes",
+                "output": "\""
+              }
+            ]
+          },
+          {
+            "stage": "raw quoted token pairs",
+            "tokens": [
+              "addon@x",
+              ""
+            ],
+            "insertion": "second token as UUID key; first token as ID value; duplicate keys replace previous value",
+            "unpaired_last_token_discarded": false
+          }
+        ],
+        "tokens": [
+          "addon@x",
+          ""
+        ]
+      }
+    },
+    {
+      "name": "first_bad_matching_line_blocks_later_good_line",
+      "full_input_utf8": "// extensions.webextensions.uuids no value\r\nuser_pref(\"extensions.webextensions.uuids\", \"{\\\"addon@x\\\":\\\"uuid\\\"}\" );",
+      "full_input_hex": "2f2f20657874656e73696f6e732e776562657874656e73696f6e732e7575696473206e6f2076616c75650d0a757365725f707265662822657874656e73696f6e732e776562657874656e73696f6e732e7575696473222c20227b5c226164646f6e40785c223a5c22757569645c227d2220293b",
+      "expected_map": {},
+      "actual": {
+        "map": {},
+        "trace": [
+          {
+            "stage": "first matching line",
+            "line": 0,
+            "tail": " no value"
+          },
+          "no comma after key"
+        ],
+        "tokens": []
+      }
+    },
+    {
+      "name": "comment_and_substring_match",
+      "full_input_utf8": "// user_pref(\"prefix.extensions.webextensions.uuids.suffix\", \"{\\\"addon@x\\\":\\\"uuid\\\"}\" );",
+      "full_input_hex": "2f2f20757365725f7072656628227072656669782e657874656e73696f6e732e776562657874656e73696f6e732e75756964732e737566666978222c20227b5c226164646f6e40785c223a5c22757569645c227d2220293b",
+      "expected_map": {
+        "uuid": "addon@x"
+      },
+      "actual": {
+        "map": {
+          "uuid": "addon@x"
+        },
+        "trace": [
+          {
+            "stage": "first matching line",
+            "line": 0,
+            "tail": ".suffix\", \"{\\\"addon@x\\\":\\\"uuid\\\"}\" );"
+          },
+          {
+            "stage": "outer quoted string",
+            "closed": true,
+            "raw_utf8": "{\\\"addon@x\\\":\\\"uuid\\\"}",
+            "decoded_utf8": "{\"addon@x\":\"uuid\"}",
+            "escapes": [
+              {
+                "escape": "\\\"",
+                "kind": "six recognized escapes",
+                "output": "\""
+              },
+              {
+                "escape": "\\\"",
+                "kind": "six recognized escapes",
+                "output": "\""
+              },
+              {
+                "escape": "\\\"",
+                "kind": "six recognized escapes",
+                "output": "\""
+              },
+              {
+                "escape": "\\\"",
+                "kind": "six recognized escapes",
+                "output": "\""
+              }
+            ]
+          },
+          {
+            "stage": "raw quoted token pairs",
+            "tokens": [
+              "addon@x",
+              "uuid"
+            ],
+            "insertion": "second token as UUID key; first token as ID value; duplicate keys replace previous value",
+            "unpaired_last_token_discarded": false
+          }
+        ],
+        "tokens": [
+          "addon@x",
+          "uuid"
+        ]
+      }
+    },
+    {
+      "name": "no_opening_quote",
+      "full_input_utf8": "user_pref(\"extensions.webextensions.uuids\", false);",
+      "full_input_hex": "757365725f707265662822657874656e73696f6e732e776562657874656e73696f6e732e7575696473222c2066616c7365293b",
+      "expected_map": {},
+      "actual": {
+        "map": {},
+        "trace": [
+          {
+            "stage": "first matching line",
+            "line": 0,
+            "tail": "\", false);"
+          },
+          "no opening quote after comma"
+        ],
+        "tokens": []
+      }
+    },
+    {
+      "name": "empty_value",
+      "full_input_utf8": "user_pref(\"extensions.webextensions.uuids\", \"\" );",
+      "full_input_hex": "757365725f707265662822657874656e73696f6e732e776562657874656e73696f6e732e7575696473222c20222220293b",
+      "expected_map": {},
+      "actual": {
+        "map": {},
+        "trace": [
+          {
+            "stage": "first matching line",
+            "line": 0,
+            "tail": "\", \"\" );"
+          },
+          {
+            "stage": "outer quoted string",
+            "closed": true,
+            "raw_utf8": "",
+            "decoded_utf8": "",
+            "escapes": []
+          },
+          {
+            "stage": "raw quoted token pairs",
+            "tokens": [],
+            "insertion": "second token as UUID key; first token as ID value; duplicate keys replace previous value",
+            "unpaired_last_token_discarded": false
+          }
+        ],
+        "tokens": []
+      }
+    },
+    {
+      "name": "key_absent",
+      "full_input_utf8": "user_pref(\"something.else\", \"value\");",
+      "full_input_hex": "757365725f707265662822736f6d657468696e672e656c7365222c202276616c756522293b",
+      "expected_map": {},
+      "actual": {
+        "map": {},
+        "trace": [
+          "no line contains fixed key substring"
+        ],
+        "tokens": []
+      }
+    }
+  ],
+  "native_execution": false,
+  "network": false,
+  "host_data": false
+}

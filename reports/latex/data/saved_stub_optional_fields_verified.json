@@ -1,0 +1,36 @@
+{
+  "status": "PASS_SAVED_LOADER_OPTIONAL_FIELDS_ZERO",
+  "method": "Capstone decode and literal/write checks on previously captured buffers; no specimen, instructions, API, browser, secret or network execution.",
+  "rows": [
+    {
+      "sample": "17",
+      "captured_buffer_sha256": "1300a6985bad407cfdfd289a6b2161db80f5435647d181e47c3ae5aa54ca5653",
+      "old_receipt_sha256": "84bf001c0363f469dd71f8b1206eaea3d4c6df6df4d12478111cce2a81a4e13b",
+      "stub_sha256": "0651bdf19733515fa08b7f7ce391981bbd7faa5503394821be56132a6a15a29b",
+      "stub_bytes": 395,
+      "private_initializer_register_zero": true,
+      "callback_start_RVA": 0,
+      "callback_interval_bytes": 0,
+      "callbacks_in_this_saved_stub": [],
+      "DLL_entry_RVA": "0x7e2c0",
+      "DLL_entry_runtime_address_in_saved_model": "0x7607e2c0",
+      "entry_load_instruction": "0x760a5542",
+      "scope": "Only these saved normal construction results; not all possible output buffers under other OS/helper-resolution conditions."
+    },
+    {
+      "sample": "19",
+      "captured_buffer_sha256": "7172c0d1344ee5124989f5e4d9053b796b5ae541ae0f05e3c176e51bb97d2042",
+      "old_receipt_sha256": "117ac9db3a922c04691f1fdac3bac65d00b6265c89d0b06b9ea3b4ff3082b74d",
+      "stub_sha256": "6166fa62d096c0ba08d7be6bf6337c329304fc73888fcf4fa6712aa5beaece3c",
+      "stub_bytes": 345,
+      "private_initializer_register_zero": true,
+      "callback_start_RVA": 0,
+      "callback_interval_bytes": 0,
+      "callbacks_in_this_saved_stub": [],
+      "DLL_entry_RVA": "0x7cc60",
+      "DLL_entry_runtime_address_in_saved_model": "0x6df060",
+      "entry_load_instruction": "0x705926",
+      "scope": "Only these saved normal construction results; not all possible output buffers under other OS/helper-resolution conditions."
+    }
+  ]
+}

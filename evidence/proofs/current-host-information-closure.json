@@ -1,0 +1,1117 @@
+{
+  "status": "PASS_BOTH_LARGE_COLLECTORS_CONDITIONAL_LOCAL_CLOSURE",
+  "functions": [
+    {
+      "version": "17",
+      "entry": "0x1593b",
+      "end": "0x1b478",
+      "status": "PASS_CONDITIONAL_ORIGINAL_NATIVE_CFG_SOURCE_AND_STORE_CLOSURE",
+      "original_PE_sha256": "24f7eed14b69c561bd2dde6aa61759cabc8588293e9a0099dde8e381f96f228a",
+      "native_sha256": "24f86b729f0c32176aa5394ce3c7f3e9858960e150413b58ecb5dd228a48a907",
+      "native_bytes": 23357,
+      "native_instructions": 4730,
+      "entry_reachable_instructions": 4729,
+      "unreachable_native_instructions": [
+        {
+          "site": "0x1b476",
+          "asm": "ud2 ",
+          "reason": "No native predecessor; genuine UD2, not a missing CFG edge"
+        }
+      ],
+      "computed_jumps": 168,
+      "computed_branch_source_queries": 168,
+      "source_reads": 276,
+      "tracked_source_bytes": 336,
+      "independent_writer_gate_steps": 58314,
+      "source_issues": [],
+      "failed_queries": [],
+      "target_set_contradictions": [],
+      "unresolved_computed_branches": [],
+      "out_of_extent_targets": [],
+      "all_native_calls": 288,
+      "all_native_call_effects_bounded": true,
+      "indirect_CALLs": [
+        {
+          "site": "0x15c43",
+          "asm": "call rbx",
+          "resolver": "0x15bda",
+          "module": "kernel32.dll",
+          "API": "GetUserDefaultLocaleName",
+          "native_hash_scalars": {
+            "rcx": [
+              "0x239e6708"
+            ],
+            "r8": [
+              "0x77422023"
+            ]
+          },
+          "status": "正常初始化、命名PE标量及合法owned/API ABI条件下：原生完整解码、resolver生产者、私有来源生命周期与调用写界联合证明已通过"
+        },
+        {
+          "site": "0x15f5a",
+          "asm": "call rbx",
+          "resolver": "0x15e86",
+          "module": "ntdll.dll",
+          "API": "RtlGetVersion",
+          "native_hash_scalars": {
+            "rcx": [
+              "0x4a015902"
+            ],
+            "r8": [
+              "0x8c35d8b4"
+            ]
+          },
+          "status": "正常初始化、命名PE标量及合法owned/API ABI条件下：原生完整解码、resolver生产者、私有来源生命周期与调用写界联合证明已通过"
+        },
+        {
+          "site": "0x1643b",
+          "asm": "call rbx",
+          "resolver": "0x163c2",
+          "module": "kernel32.dll",
+          "API": "GetComputerNameW",
+          "native_hash_scalars": {
+            "rcx": [
+              "0x239e6708"
+            ],
+            "r8": [
+              "0x1fc822d1"
+            ]
+          },
+          "status": "正常初始化、命名PE标量及合法owned/API ABI条件下：原生完整解码、resolver生产者、私有来源生命周期与调用写界联合证明已通过"
+        },
+        {
+          "site": "0x1669b",
+          "asm": "call rsi",
+          "resolver": "0x165e3",
+          "module": "kernel32.dll",
+          "API": "GlobalMemoryStatusEx",
+          "native_hash_scalars": {
+            "rcx": [
+              "0x239e6708"
+            ],
+            "r8": [
+              "0x41619231"
+            ]
+          },
+          "status": "正常初始化、命名PE标量及合法owned/API ABI条件下：原生完整解码、resolver生产者、私有来源生命周期与调用写界联合证明已通过"
+        },
+        {
+          "site": "0x16b65",
+          "asm": "call rsi",
+          "resolver": "0x16aea",
+          "module": "advapi32.dll",
+          "API": "RegEnumKeyExW",
+          "native_hash_scalars": {
+            "rcx": [
+              "0x7e06f57a"
+            ],
+            "r8": [
+              "0x71fbecae"
+            ]
+          },
+          "status": "正常初始化、命名PE标量及合法owned/API ABI条件下：原生完整解码、resolver生产者、私有来源生命周期与调用写界联合证明已通过"
+        },
+        {
+          "site": "0x17cbe",
+          "asm": "call r14",
+          "resolver": "0x17bf0",
+          "module": "user32.dll",
+          "API": "EnumDisplayDevicesW",
+          "native_hash_scalars": {
+            "rcx": [
+              "0x992dd8de"
+            ],
+            "r8": [
+              "0x65010d3f"
+            ]
+          },
+          "status": "正常初始化、命名PE标量及合法owned/API ABI条件下：原生完整解码、resolver生产者、私有来源生命周期与调用写界联合证明已通过"
+        },
+        {
+          "site": "0x181c2",
+          "asm": "call r14",
+          "resolver": "0x17bf0",
+          "module": "user32.dll",
+          "API": "EnumDisplayDevicesW",
+          "native_hash_scalars": {
+            "rcx": [
+              "0x992dd8de"
+            ],
+            "r8": [
+              "0x65010d3f"
+            ]
+          },
+          "status": "正常初始化、命名PE标量及合法owned/API ABI条件下：原生完整解码、resolver生产者、私有来源生命周期与调用写界联合证明已通过"
+        },
+        {
+          "site": "0x184e2",
+          "asm": "call rbx",
+          "resolver": "0x18417",
+          "module": "advapi32.dll",
+          "API": "GetUserNameW",
+          "native_hash_scalars": {
+            "rcx": [
+              "0x7e06f57a"
+            ],
+            "r8": [
+              "0x30a723a3"
+            ]
+          },
+          "status": "正常初始化、命名PE标量及合法owned/API ABI条件下：原生完整解码、resolver生产者、私有来源生命周期与调用写界联合证明已通过"
+        },
+        {
+          "site": "0x18868",
+          "asm": "call qword ptr [rsp + 0x68]",
+          "resolver": "0x18715",
+          "module": "kernel32.dll",
+          "API": "GetVolumeInformationW",
+          "native_hash_scalars": {
+            "rcx": [
+              "0x239e6708"
+            ],
+            "r8": [
+              "0xa01b141f"
+            ]
+          },
+          "status": "正常初始化、命名PE标量及合法owned/API ABI条件下：原生完整解码、resolver生产者、私有来源生命周期与调用写界联合证明已通过"
+        },
+        {
+          "site": "0x18f57",
+          "asm": "call rbx",
+          "resolver": "0x18f03",
+          "module": "kernel32.dll",
+          "API": "GetSystemInfo",
+          "native_hash_scalars": {
+            "rcx": [
+              "0x239e6708"
+            ],
+            "r8": [
+              "0xfc00d98f"
+            ]
+          },
+          "status": "正常初始化、命名PE标量及合法owned/API ABI条件下：原生完整解码、resolver生产者、私有来源生命周期与调用写界联合证明已通过"
+        },
+        {
+          "site": "0x1922c",
+          "asm": "call r14",
+          "resolver": "0x191eb",
+          "module": "user32.dll",
+          "API": "SetProcessDPIAware",
+          "native_hash_scalars": {
+            "rcx": [
+              "0x992dd8de"
+            ],
+            "r8": [
+              "0xb6568d54"
+            ]
+          },
+          "status": "正常初始化、命名PE标量及合法owned/API ABI条件下：原生完整解码、resolver生产者、私有来源生命周期与调用写界联合证明已通过"
+        },
+        {
+          "site": "0x19239",
+          "asm": "call rsi",
+          "resolver": "0x19064",
+          "module": "user32.dll",
+          "API": "GetSystemMetrics",
+          "native_hash_scalars": {
+            "rcx": [
+              "0x992dd8de"
+            ],
+            "r8": [
+              "0x3e25d86c"
+            ]
+          },
+          "status": "正常初始化、命名PE标量及合法owned/API ABI条件下：原生完整解码、resolver生产者、私有来源生命周期与调用写界联合证明已通过"
+        },
+        {
+          "site": "0x19244",
+          "asm": "call rsi",
+          "resolver": "0x19064",
+          "module": "user32.dll",
+          "API": "GetSystemMetrics",
+          "native_hash_scalars": {
+            "rcx": [
+              "0x992dd8de"
+            ],
+            "r8": [
+              "0x3e25d86c"
+            ]
+          },
+          "status": "正常初始化、命名PE标量及合法owned/API ABI条件下：原生完整解码、resolver生产者、私有来源生命周期与调用写界联合证明已通过"
+        },
+        {
+          "site": "0x19817",
+          "asm": "call rsi",
+          "resolver": "0x19746",
+          "module": "kernel32",
+          "API": "LCIDToLocaleName",
+          "native_hash_scalars": {
+            "rcx": [
+              "0x1698baf2"
+            ],
+            "r8": [
+              "0xa5b0e48a"
+            ]
+          },
+          "status": "正常初始化、命名PE标量及合法owned/API ABI条件下：原生完整解码、resolver生产者、私有来源生命周期与调用写界联合证明已通过"
+        },
+        {
+          "site": "0x1ab21",
+          "asm": "call qword ptr [rsp + 0xa0]",
+          "resolver": "0x1a43d",
+          "module": "bcrypt.dll",
+          "API": "BCryptOpenAlgorithmProvider",
+          "native_hash_scalars": {
+            "rcx": [
+              "0x9d2d1a3a"
+            ],
+            "r8": [
+              "0xd8b1407c"
+            ]
+          },
+          "status": "正常初始化、命名PE标量及合法owned/API ABI条件下：原生完整解码、resolver生产者、私有来源生命周期与调用写界联合证明已通过"
+        },
+        {
+          "site": "0x1adfc",
+          "asm": "call rdi",
+          "resolver": "0x1aa5f",
+          "module": "bcrypt.dll",
+          "API": "BCryptCreateHash",
+          "native_hash_scalars": {
+            "rcx": [
+              "0x9d2d1a3a"
+            ],
+            "r8": [
+              "0xb7b2e864"
+            ]
+          },
+          "status": "正常初始化、命名PE标量及合法owned/API ABI条件下：原生完整解码、resolver生产者、私有来源生命周期与调用写界联合证明已通过"
+        },
+        {
+          "site": "0x1ae37",
+          "asm": "call qword ptr [rsp + 0x130]",
+          "resolver": "0x1a8d0",
+          "module": "bcrypt.dll",
+          "API": "BCryptCloseAlgorithmProvider",
+          "native_hash_scalars": {
+            "rcx": [
+              "0x9d2d1a3a"
+            ],
+            "r8": [
+              "0xa4c98fb8"
+            ]
+          },
+          "status": "正常初始化、命名PE标量及合法owned/API ABI条件下：原生完整解码、resolver生产者、私有来源生命周期与调用写界联合证明已通过"
+        },
+        {
+          "site": "0x1ae8b",
+          "asm": "call r14",
+          "resolver": "0x1a711",
+          "module": "bcrypt.dll",
+          "API": "BCryptHashData",
+          "native_hash_scalars": {
+            "rcx": [
+              "0x9d2d1a3a"
+            ],
+            "r8": [
+              "0x7b309c78"
+            ]
+          },
+          "status": "正常初始化、命名PE标量及合法owned/API ABI条件下：原生完整解码、resolver生产者、私有来源生命周期与调用写界联合证明已通过"
+        },
+        {
+          "site": "0x1af07",
+          "asm": "call qword ptr [rsp + 0x1f0]",
+          "resolver": "0x1a208",
+          "module": "bcrypt.dll",
+          "API": "BCryptFinishHash",
+          "native_hash_scalars": {
+            "rcx": [
+              "0x9d2d1a3a"
+            ],
+            "r8": [
+              "0x610bd8bf"
+            ]
+          },
+          "status": "正常初始化、命名PE标量及合法owned/API ABI条件下：原生完整解码、resolver生产者、私有来源生命周期与调用写界联合证明已通过"
+        },
+        {
+          "site": "0x1af17",
+          "asm": "call qword ptr [rsp + 0x130]",
+          "resolver": "0x1a8d0",
+          "module": "bcrypt.dll",
+          "API": "BCryptCloseAlgorithmProvider",
+          "native_hash_scalars": {
+            "rcx": [
+              "0x9d2d1a3a"
+            ],
+            "r8": [
+              "0xa4c98fb8"
+            ]
+          },
+          "status": "正常初始化、命名PE标量及合法owned/API ABI条件下：原生完整解码、resolver生产者、私有来源生命周期与调用写界联合证明已通过"
+        },
+        {
+          "site": "0x1af26",
+          "asm": "call qword ptr [rsp + 0x1c8]",
+          "resolver": "0x1a5ad",
+          "module": "bcrypt.dll",
+          "API": "BCryptDestroyHash",
+          "native_hash_scalars": {
+            "rcx": [
+              "0x9d2d1a3a"
+            ],
+            "r8": [
+              "0xffe39d6e"
+            ]
+          },
+          "status": "正常初始化、命名PE标量及合法owned/API ABI条件下：原生完整解码、resolver生产者、私有来源生命周期与调用写界联合证明已通过"
+        },
+        {
+          "site": "0x1aff5",
+          "asm": "call qword ptr [rsp + 0x1c8]",
+          "resolver": "0x1a5ad",
+          "module": "bcrypt.dll",
+          "API": "BCryptDestroyHash",
+          "native_hash_scalars": {
+            "rcx": [
+              "0x9d2d1a3a"
+            ],
+            "r8": [
+              "0xffe39d6e"
+            ]
+          },
+          "status": "正常初始化、命名PE标量及合法owned/API ABI条件下：原生完整解码、resolver生产者、私有来源生命周期与调用写界联合证明已通过"
+        },
+        {
+          "site": "0x1b003",
+          "asm": "call qword ptr [rsp + 0x130]",
+          "resolver": "0x1a8d0",
+          "module": "bcrypt.dll",
+          "API": "BCryptCloseAlgorithmProvider",
+          "native_hash_scalars": {
+            "rcx": [
+              "0x9d2d1a3a"
+            ],
+            "r8": [
+              "0xa4c98fb8"
+            ]
+          },
+          "status": "正常初始化、命名PE标量及合法owned/API ABI条件下：原生完整解码、resolver生产者、私有来源生命周期与调用写界联合证明已通过"
+        }
+      ],
+      "native_store_count": 532,
+      "finite_private_or_static_EA_stores": 465,
+      "owned_payload_stores": 34,
+      "original_output_stores": 33,
+      "original_RCX_output_bytes": 300,
+      "unclassified_native_store_sites": [],
+      "named_normal_PE_scalar_premises": [
+        {
+          "RVA": "0x99e80",
+          "bytes": 8,
+          "value": "0x9a060e8c27f6a3b7",
+          "status": "PASS_NAMED_SCALAR_NO_DIRECT_WRITER_OR_EXPOSURE"
+        },
+        {
+          "RVA": "0x9a170",
+          "bytes": 8,
+          "value": "0xa0106ea3fe0d0628",
+          "status": "PASS_NAMED_SCALAR_NO_DIRECT_WRITER_OR_EXPOSURE"
+        },
+        {
+          "RVA": "0x9b6b8",
+          "bytes": 8,
+          "value": "0x871c766dd0cf3b57",
+          "status": "PASS_NAMED_SCALAR_NO_DIRECT_WRITER_OR_EXPOSURE"
+        },
+        {
+          "RVA": "0x9b700",
+          "bytes": 8,
+          "value": "0xd040245488e3ea0f",
+          "status": "PASS_NAMED_SCALAR_NO_DIRECT_WRITER_OR_EXPOSURE"
+        },
+        {
+          "RVA": "0x9c1f8",
+          "bytes": 8,
+          "value": "0x93eb9e8653f32ab3",
+          "status": "PASS_NAMED_SCALAR_NO_DIRECT_WRITER_OR_EXPOSURE"
+        },
+        {
+          "RVA": "0x9c200",
+          "bytes": 8,
+          "value": "0x21d45ddd436715a5",
+          "status": "PASS_NAMED_SCALAR_NO_DIRECT_WRITER_OR_EXPOSURE"
+        },
+        {
+          "RVA": "0x9c344",
+          "bytes": 4,
+          "value": "0xeff8571",
+          "status": "PASS_NAMED_SCALAR_NO_DIRECT_WRITER_OR_EXPOSURE"
+        },
+        {
+          "RVA": "0x9c348",
+          "bytes": 4,
+          "value": "0x19157599",
+          "status": "PASS_NAMED_SCALAR_NO_DIRECT_WRITER_OR_EXPOSURE"
+        },
+        {
+          "RVA": "0x9c350",
+          "bytes": 4,
+          "value": "0xf886d677",
+          "status": "PASS_NAMED_SCALAR_NO_DIRECT_WRITER_OR_EXPOSURE"
+        },
+        {
+          "RVA": "0x9c3a2",
+          "bytes": 2,
+          "value": "0xafcf",
+          "status": "PASS_NAMED_SCALAR_NO_DIRECT_WRITER_OR_EXPOSURE"
+        },
+        {
+          "RVA": "0x9c3b8",
+          "bytes": 1,
+          "value": "0xd7",
+          "status": "PASS_NAMED_SCALAR_NO_DIRECT_WRITER_OR_EXPOSURE"
+        }
+      ],
+      "C_export": {
+        "path": "work\\alpme_analysis\\semantic_closure_20261027\\round5_large_collectors\\continuation\\normal_exports\\17_payload.dll.bin_0x1593b.c",
+        "sha256": "6f45a63b5522bd1641e7ecdc980ae2c7e7b216cdfb1c779b701dfc56e5c1c493",
+        "lines": 3027,
+        "partial_markers": {
+          "Could not recover jumptable": 0,
+          "Treating indirect jump as call": 0,
+          "halt_baddata": 0,
+          "Bad instruction data": 0,
+          "UnimplementedPcode": 0
+        },
+        "text_sha256_before_and_after": "9719f0233f0af40eab63a0548511aa13e6ba06863e1aef96376fc12ef95f3ea4",
+        "original_bytes_unchanged": true
+      },
+      "no_original_source_claim": true,
+      "no_whole_program_complete_claim": true
+    },
+    {
+      "version": "19",
+      "entry": "0x57f4f",
+      "end": "0x5df18",
+      "status": "PASS_CONDITIONAL_ORIGINAL_NATIVE_CFG_SOURCE_AND_STORE_CLOSURE",
+      "original_PE_sha256": "4e4636d2c9d57eb609b7d18ee3dc01713fbcda39c5eee52bd4a66f222f67bb31",
+      "native_sha256": "02841ed459b8c3982485b1592f85127fa12d7471c758db5bc4925c40a940a0fa",
+      "native_bytes": 24521,
+      "native_instructions": 5013,
+      "entry_reachable_instructions": 5013,
+      "unreachable_native_instructions": [],
+      "computed_jumps": 189,
+      "computed_branch_source_queries": 189,
+      "source_reads": 279,
+      "tracked_source_bytes": 427,
+      "independent_writer_gate_steps": 58559,
+      "source_issues": [],
+      "failed_queries": [],
+      "target_set_contradictions": [],
+      "unresolved_computed_branches": [],
+      "out_of_extent_targets": [],
+      "all_native_calls": 289,
+      "all_native_call_effects_bounded": true,
+      "indirect_CALLs": [
+        {
+          "site": "0x582a8",
+          "asm": "call r14",
+          "resolver": "0x5824a",
+          "module": "kernel32.dll",
+          "API": "GetComputerNameW",
+          "native_hash_scalars": {
+            "rcx": [
+              "0x57abb6db"
+            ],
+            "r8": [
+              "0x1fe9439a"
+            ]
+          },
+          "status": "正常初始化、命名PE标量及合法owned/API ABI条件下：原生完整解码、resolver生产者、私有来源生命周期与调用写界联合证明已通过"
+        },
+        {
+          "site": "0x58579",
+          "asm": "call rsi",
+          "resolver": "0x584ab",
+          "module": "user32.dll",
+          "API": "EnumDisplayDevicesW",
+          "native_hash_scalars": {
+            "rcx": [
+              "0xcabe5c71"
+            ],
+            "r8": [
+              "0xa26244ae"
+            ]
+          },
+          "status": "正常初始化、命名PE标量及合法owned/API ABI条件下：原生完整解码、resolver生产者、私有来源生命周期与调用写界联合证明已通过"
+        },
+        {
+          "site": "0x58cc8",
+          "asm": "call rsi",
+          "resolver": "0x58be1",
+          "module": "advapi32.dll",
+          "API": "RegEnumKeyExW",
+          "native_hash_scalars": {
+            "rcx": [
+              "0xe3048c13"
+            ],
+            "r8": [
+              "0xb52597d"
+            ]
+          },
+          "status": "正常初始化、命名PE标量及合法owned/API ABI条件下：原生完整解码、resolver生产者、私有来源生命周期与调用写界联合证明已通过"
+        },
+        {
+          "site": "0x59e55",
+          "asm": "call rbx",
+          "resolver": "0x59ded",
+          "module": "advapi32.dll",
+          "API": "GetUserNameW",
+          "native_hash_scalars": {
+            "rcx": [
+              "0xe3048c13"
+            ],
+            "r8": [
+              "0x5a6deddc"
+            ]
+          },
+          "status": "正常初始化、命名PE标量及合法owned/API ABI条件下：原生完整解码、resolver生产者、私有来源生命周期与调用写界联合证明已通过"
+        },
+        {
+          "site": "0x5a0c7",
+          "asm": "call rbx",
+          "resolver": "0x5a06c",
+          "module": "kernel32.dll",
+          "API": "GetUserDefaultLocaleName",
+          "native_hash_scalars": {
+            "rcx": [
+              "0x57abb6db"
+            ],
+            "r8": [
+              "0xed87a438"
+            ]
+          },
+          "status": "正常初始化、命名PE标量及合法owned/API ABI条件下：原生完整解码、resolver生产者、私有来源生命周期与调用写界联合证明已通过"
+        },
+        {
+          "site": "0x5a86e",
+          "asm": "call r15",
+          "resolver": "0x5a806",
+          "module": "kernel32",
+          "API": "LCIDToLocaleName",
+          "native_hash_scalars": {
+            "rcx": [
+              "0x8e225041"
+            ],
+            "r8": [
+              "0xb5dde5bd"
+            ]
+          },
+          "status": "正常初始化、命名PE标量及合法owned/API ABI条件下：原生完整解码、resolver生产者、私有来源生命周期与调用写界联合证明已通过"
+        },
+        {
+          "site": "0x5aedb",
+          "asm": "call rsi",
+          "resolver": "0x5ae67",
+          "module": "kernel32.dll",
+          "API": "GlobalMemoryStatusEx",
+          "native_hash_scalars": {
+            "rcx": [
+              "0x57abb6db"
+            ],
+            "r8": [
+              "0x450903b0"
+            ]
+          },
+          "status": "正常初始化、命名PE标量及合法owned/API ABI条件下：原生完整解码、resolver生产者、私有来源生命周期与调用写界联合证明已通过"
+        },
+        {
+          "site": "0x5b2f1",
+          "asm": "call qword ptr [rsp + 0x98]",
+          "resolver": "0x5b133",
+          "module": "kernel32.dll",
+          "API": "GetVolumeInformationW",
+          "native_hash_scalars": {
+            "rcx": [
+              "0x57abb6db"
+            ],
+            "r8": [
+              "0xa25c825e"
+            ]
+          },
+          "status": "正常初始化、命名PE标量及合法owned/API ABI条件下：原生完整解码、resolver生产者、私有来源生命周期与调用写界联合证明已通过"
+        },
+        {
+          "site": "0x5c10a",
+          "asm": "call qword ptr [rsp + 0x98]",
+          "resolver": "0x5bf10",
+          "module": "bcrypt.dll",
+          "API": "BCryptOpenAlgorithmProvider",
+          "native_hash_scalars": {
+            "rcx": [
+              "0xf970eb47"
+            ],
+            "r8": [
+              "0x284ce17"
+            ]
+          },
+          "status": "正常初始化、命名PE标量及合法owned/API ABI条件下：原生完整解码、resolver生产者、私有来源生命周期与调用写界联合证明已通过"
+        },
+        {
+          "site": "0x5c1b9",
+          "asm": "call qword ptr [rsp + 0x318]",
+          "resolver": "0x5bd9a",
+          "module": "bcrypt.dll",
+          "API": "BCryptCreateHash",
+          "native_hash_scalars": {
+            "rcx": [
+              "0xf970eb47"
+            ],
+            "r8": [
+              "0x2e716a23"
+            ]
+          },
+          "status": "正常初始化、命名PE标量及合法owned/API ABI条件下：原生完整解码、resolver生产者、私有来源生命周期与调用写界联合证明已通过"
+        },
+        {
+          "site": "0x5c1f0",
+          "asm": "call qword ptr [rsp + 0x210]",
+          "resolver": "0x5b99f",
+          "module": "bcrypt.dll",
+          "API": "BCryptCloseAlgorithmProvider",
+          "native_hash_scalars": {
+            "rcx": [
+              "0xf970eb47"
+            ],
+            "r8": [
+              "0x15f08025"
+            ]
+          },
+          "status": "正常初始化、命名PE标量及合法owned/API ABI条件下：原生完整解码、resolver生产者、私有来源生命周期与调用写界联合证明已通过"
+        },
+        {
+          "site": "0x5c5ad",
+          "asm": "call rbp",
+          "resolver": "0x5b846",
+          "module": "bcrypt.dll",
+          "API": "BCryptHashData",
+          "native_hash_scalars": {
+            "rcx": [
+              "0xf970eb47"
+            ],
+            "r8": [
+              "0xca83e3e7"
+            ]
+          },
+          "status": "正常初始化、命名PE标量及合法owned/API ABI条件下：原生完整解码、resolver生产者、私有来源生命周期与调用写界联合证明已通过"
+        },
+        {
+          "site": "0x5c638",
+          "asm": "call qword ptr [rsp + 0x308]",
+          "resolver": "0x5c099",
+          "module": "bcrypt.dll",
+          "API": "BCryptFinishHash",
+          "native_hash_scalars": {
+            "rcx": [
+              "0xf970eb47"
+            ],
+            "r8": [
+              "0x4c4c5294"
+            ]
+          },
+          "status": "正常初始化、命名PE标量及合法owned/API ABI条件下：原生完整解码、resolver生产者、私有来源生命周期与调用写界联合证明已通过"
+        },
+        {
+          "site": "0x5c64b",
+          "asm": "call qword ptr [rsp + 0x210]",
+          "resolver": "0x5b99f",
+          "module": "bcrypt.dll",
+          "API": "BCryptCloseAlgorithmProvider",
+          "native_hash_scalars": {
+            "rcx": [
+              "0xf970eb47"
+            ],
+            "r8": [
+              "0x15f08025"
+            ]
+          },
+          "status": "正常初始化、命名PE标量及合法owned/API ABI条件下：原生完整解码、resolver生产者、私有来源生命周期与调用写界联合证明已通过"
+        },
+        {
+          "site": "0x5c65a",
+          "asm": "call qword ptr [rsp + 0x270]",
+          "resolver": "0x5bb3a",
+          "module": "bcrypt.dll",
+          "API": "BCryptDestroyHash",
+          "native_hash_scalars": {
+            "rcx": [
+              "0xf970eb47"
+            ],
+            "r8": [
+              "0x51ac7f8d"
+            ]
+          },
+          "status": "正常初始化、命名PE标量及合法owned/API ABI条件下：原生完整解码、resolver生产者、私有来源生命周期与调用写界联合证明已通过"
+        },
+        {
+          "site": "0x5c701",
+          "asm": "call qword ptr [rsp + 0x270]",
+          "resolver": "0x5bb3a",
+          "module": "bcrypt.dll",
+          "API": "BCryptDestroyHash",
+          "native_hash_scalars": {
+            "rcx": [
+              "0xf970eb47"
+            ],
+            "r8": [
+              "0x51ac7f8d"
+            ]
+          },
+          "status": "正常初始化、命名PE标量及合法owned/API ABI条件下：原生完整解码、resolver生产者、私有来源生命周期与调用写界联合证明已通过"
+        },
+        {
+          "site": "0x5c712",
+          "asm": "call qword ptr [rsp + 0x210]",
+          "resolver": "0x5b99f",
+          "module": "bcrypt.dll",
+          "API": "BCryptCloseAlgorithmProvider",
+          "native_hash_scalars": {
+            "rcx": [
+              "0xf970eb47"
+            ],
+            "r8": [
+              "0x15f08025"
+            ]
+          },
+          "status": "正常初始化、命名PE标量及合法owned/API ABI条件下：原生完整解码、resolver生产者、私有来源生命周期与调用写界联合证明已通过"
+        },
+        {
+          "site": "0x5d00f",
+          "asm": "call qword ptr [rsp + 0x90]",
+          "resolver": "0x5cedf",
+          "module": "kernel32.dll",
+          "API": "GetSystemInfo",
+          "native_hash_scalars": {
+            "rcx": [
+              "0x57abb6db"
+            ],
+            "r8": [
+              "0xdb52fd86"
+            ]
+          },
+          "status": "正常初始化、命名PE标量及合法owned/API ABI条件下：原生完整解码、resolver生产者、私有来源生命周期与调用写界联合证明已通过"
+        },
+        {
+          "site": "0x5d125",
+          "asm": "call qword ptr [rsp + 0xe0]",
+          "resolver": "0x584ab",
+          "module": "user32.dll",
+          "API": "EnumDisplayDevicesW",
+          "native_hash_scalars": {
+            "rcx": [
+              "0xcabe5c71"
+            ],
+            "r8": [
+              "0xa26244ae"
+            ]
+          },
+          "status": "正常初始化、命名PE标量及合法owned/API ABI条件下：原生完整解码、resolver生产者、私有来源生命周期与调用写界联合证明已通过"
+        },
+        {
+          "site": "0x5d4bf",
+          "asm": "call r14",
+          "resolver": "0x5d408",
+          "module": "ntdll.dll",
+          "API": "RtlGetVersion",
+          "native_hash_scalars": {
+            "rcx": [
+              "0x16ced25f"
+            ],
+            "r8": [
+              "0x98ea2ead"
+            ]
+          },
+          "status": "正常初始化、命名PE标量及合法owned/API ABI条件下：原生完整解码、resolver生产者、私有来源生命周期与调用写界联合证明已通过"
+        },
+        {
+          "site": "0x5dbbc",
+          "asm": "call rsi",
+          "resolver": "0x5da13",
+          "module": "user32.dll",
+          "API": "SetProcessDPIAware",
+          "native_hash_scalars": {
+            "rcx": [
+              "0xcabe5c71"
+            ],
+            "r8": [
+              "0x50d502ef"
+            ]
+          },
+          "status": "正常初始化、命名PE标量及合法owned/API ABI条件下：原生完整解码、resolver生产者、私有来源生命周期与调用写界联合证明已通过"
+        },
+        {
+          "site": "0x5dbc0",
+          "asm": "call r15",
+          "resolver": "0x5db61",
+          "module": "user32.dll",
+          "API": "GetSystemMetrics",
+          "native_hash_scalars": {
+            "rcx": [
+              "0xcabe5c71"
+            ],
+            "r8": [
+              "0x7951074f"
+            ]
+          },
+          "status": "正常初始化、命名PE标量及合法owned/API ABI条件下：原生完整解码、resolver生产者、私有来源生命周期与调用写界联合证明已通过"
+        },
+        {
+          "site": "0x5dbce",
+          "asm": "call r15",
+          "resolver": "0x5db61",
+          "module": "user32.dll",
+          "API": "GetSystemMetrics",
+          "native_hash_scalars": {
+            "rcx": [
+              "0xcabe5c71"
+            ],
+            "r8": [
+              "0x7951074f"
+            ]
+          },
+          "status": "正常初始化、命名PE标量及合法owned/API ABI条件下：原生完整解码、resolver生产者、私有来源生命周期与调用写界联合证明已通过"
+        }
+      ],
+      "native_store_count": 551,
+      "finite_private_or_static_EA_stores": 489,
+      "owned_payload_stores": 29,
+      "original_output_stores": 33,
+      "original_RCX_output_bytes": 300,
+      "unclassified_native_store_sites": [],
+      "named_normal_PE_scalar_premises": [
+        {
+          "RVA": "0x96a20",
+          "bytes": 8,
+          "value": "0xb98e2b0dc32b46f1",
+          "status": "PASS_NAMED_SCALAR_NO_DIRECT_WRITER_OR_EXPOSURE"
+        },
+        {
+          "RVA": "0x97340",
+          "bytes": 8,
+          "value": "0x3f2dee6ad8f359ab",
+          "status": "PASS_NAMED_SCALAR_NO_DIRECT_WRITER_OR_EXPOSURE"
+        },
+        {
+          "RVA": "0x977e0",
+          "bytes": 8,
+          "value": "0xe3be7970580db652",
+          "status": "PASS_NAMED_SCALAR_NO_DIRECT_WRITER_OR_EXPOSURE"
+        },
+        {
+          "RVA": "0x983e0",
+          "bytes": 8,
+          "value": "0xa632f6ba87b27b92",
+          "status": "PASS_NAMED_SCALAR_NO_DIRECT_WRITER_OR_EXPOSURE"
+        },
+        {
+          "RVA": "0x9a34c",
+          "bytes": 4,
+          "value": "0xffffffe8",
+          "status": "PASS_NAMED_SCALAR_NO_DIRECT_WRITER_OR_EXPOSURE"
+        },
+        {
+          "RVA": "0x9a3e0",
+          "bytes": 1,
+          "value": "0xbb",
+          "status": "PASS_NAMED_SCALAR_NO_DIRECT_WRITER_OR_EXPOSURE"
+        }
+      ],
+      "C_export": {
+        "path": "work\\alpme_analysis\\semantic_closure_20261027\\round5_large_collectors\\continuation\\normal_exports\\19_payload.dll.bin_0x57f4f.c",
+        "sha256": "43b28d4653b4433c517aced245d98963c82db2b86a75122402104ecb0e7ab706",
+        "lines": 3290,
+        "partial_markers": {
+          "Could not recover jumptable": 0,
+          "Treating indirect jump as call": 0,
+          "halt_baddata": 0,
+          "Bad instruction data": 0,
+          "UnimplementedPcode": 0
+        },
+        "text_sha256_before_and_after": "58ed088899886b5cc99a09fba69af079f2c4d53f12059c1443a1113e38c899f3",
+        "original_bytes_unchanged": true
+      },
+      "no_original_source_claim": true,
+      "no_whole_program_complete_claim": true
+    }
+  ],
+  "explicit_conditions": [
+    "Actual normal PE/TLS initialization algebra, plus only the individually named scalar image premises. No writable Once/cache flag frozen. No external tampering or self-modifying/corrupt-memory theorem.",
+    "Windows x64 nonvolatile/private-frame ABI; original output0x12c disjoint from private compiler frame.",
+    "Valid owned Rust Vec/String/Cow/BTree and allocator/reserve/drop ownership contracts. Native constructor/reserve/data-pointer producer cuts apply, including valid indexed owned ranges and absence of arithmetic overflow.",
+    "Exact named WinAPI normal pointer/count ABI and prior version-specific Once/cache/resolver contracts; all scalar/hash/name/indirect pointer sources and all effect/EA scalar dependencies are byte-gated.",
+    "Finite target sets may conservatively retain alternatives. No original instruction byte, branch predicate, API return, descriptor seed, or expected plaintext was patched/forced."
+  ],
+  "behavior_note": "Both functions are main-level0x12c host-information collectors with14 fields. +48 keyboard layout/language Vec; +90 installed software Vec. SHA256 input is CPUID leaf1 formatted data, display-device strings, and successful C:\\ volume serial. RegQuery result drop6587f is not RegCloseKey.",
+  "proofs": [
+    {
+      "path": "work\\alpme_analysis\\semantic_closure_20261027\\round5_large_collectors\\continuation\\typed_API_source_lifetimes.json",
+      "sha256": "ea17946c9cd7b7781d0b1c8c4353236b723ce9c668e89a8badd47cb156c03f1d"
+    },
+    {
+      "path": "work\\alpme_analysis\\semantic_closure_20261027\\round5_large_collectors\\continuation\\typed_API_effect_sources.json",
+      "sha256": "21a32e4dbdfcb332e940f5c396d04d3e570d766f763f606632cb7b1617a7baef"
+    },
+    {
+      "path": "work\\alpme_analysis\\semantic_closure_20261027\\round5_large_collectors\\continuation\\prior_helper_effects.json",
+      "sha256": "98ddda6cf0fc516cb4c693be51367b61f43029f3a3a1886b898de1efee1a3fff"
+    },
+    {
+      "path": "work\\alpme_analysis\\semantic_closure_20261027\\round5_large_collectors\\continuation\\small_helper_contracts.json",
+      "sha256": "cdf88f812436eaf99839441f2d690dcfa833b1d6fe00f3abcca97c4e3c256fee"
+    },
+    {
+      "path": "work\\alpme_analysis\\semantic_closure_20261027\\round5_large_collectors\\continuation\\registry_output_alias_proof.json",
+      "sha256": "e08ec7ff03c759fc1a607c48611eb85084870167e124ad25ab73daa25a4da366"
+    },
+    {
+      "path": "work\\alpme_analysis\\semantic_closure_20261027\\round5_large_collectors\\continuation\\btree_set_contracts.json",
+      "sha256": "7edfbaf91536d1bd5e40121ccab284578b21cd73ca9508d531f4119c66e08e6a"
+    },
+    {
+      "path": "work\\alpme_analysis\\semantic_closure_20261027\\round5_large_collectors\\continuation\\regopen17_contract.json",
+      "sha256": "ba444177431615e23b2771ce429be1dc0efad550d6661d40e5af5bb3fc0be671"
+    },
+    {
+      "path": "work\\alpme_analysis\\semantic_closure_20261027\\round5_large_collectors\\continuation\\resolver_native_names.json",
+      "sha256": "475f9f66dfcdb53a30c7cb44ac70b74d2febf5f07276b88f24996c472502f986"
+    },
+    {
+      "path": "work\\alpme_analysis\\semantic_closure_20261027\\round5_large_collectors\\continuation\\resolver_name_lifetime_gates.json",
+      "sha256": "4e110ce8e0700b59de5b62e145cafa7542253eec6d1ef5a29faa54a44e2006ee"
+    },
+    {
+      "path": "work\\alpme_analysis\\semantic_closure_20261027\\round5_large_collectors\\continuation\\regopen17_finite_graph.json",
+      "sha256": "1afb3428520c640d8f045064ccc90c4178bdb66489477e7abf89e4b59081e99e"
+    },
+    {
+      "path": "work\\alpme_analysis\\semantic_closure_20261027\\round5_large_collectors\\continuation\\cpuid_loop_proof.json",
+      "sha256": "18bb3b615127885aebc452a79bb35a8f1fc7249b80926e7b5b6b490f6e7bf969"
+    },
+    {
+      "path": "work\\alpme_analysis\\semantic_closure_20261027\\round5_large_collectors\\continuation\\allocation_tag_proof.json",
+      "sha256": "088aa03fa99a8c7786feac49e80b042afa5da4c0c994374c3e5f6c6c7fa38115"
+    },
+    {
+      "path": "work\\alpme_analysis\\semantic_closure_20261027\\round5_large_collectors\\continuation\\owned_append_contracts.json",
+      "sha256": "b08be1dc802006496c33d2da8c22a4eb37468ddad826f2b860bac83931bd9a35"
+    },
+    {
+      "path": "work\\alpme_analysis\\semantic_closure_20261027\\round5_large_collectors\\continuation\\PE_scalar_provenance.json",
+      "sha256": "1edf2c56f4c9e5910dd14dcbdd1dd011b177fc5f12ff5f7edebd21418df5d294"
+    },
+    {
+      "path": "work\\alpme_analysis\\semantic_closure_20261027\\round5_large_collectors\\continuation\\record_output_and_all_stores.json",
+      "sha256": "61cd23cfb7eb048147c2298d2634ff402ba35d41711ae337a2056da3fdc16fbf"
+    },
+    {
+      "path": "work\\alpme_analysis\\semantic_closure_20261027\\round5_large_collectors\\continuation\\continue_gate.py",
+      "sha256": "cca9971feee73039f0306d46682ec52b25305ebe8dcea815ef8f69a720e846f5"
+    },
+    {
+      "path": "work\\alpme_analysis\\semantic_closure_20261027\\round5_large_collectors\\continuation\\continuation_graph.py",
+      "sha256": "cc9775312a82465e13bbadebda2d7e8c4dcd0f8d3d6623a7fb95e3bae9e2a08a"
+    },
+    {
+      "path": "work\\alpme_analysis\\semantic_closure_20261027\\round5_large_collectors\\continuation\\prove_registry_outputs.py",
+      "sha256": "5e917f1164d6413cd299eae0ff45fdb0aec205472458a403ca4eac87845679af"
+    },
+    {
+      "path": "work\\alpme_analysis\\semantic_closure_20261027\\round5_large_collectors\\continuation\\registry_graph.py",
+      "sha256": "b46cdb2eebbc1772c53c571bed90e76cdc925fecc94af73c9b32fd90e59b01e3"
+    },
+    {
+      "path": "work\\alpme_analysis\\semantic_closure_20261027\\round5_large_collectors\\continuation\\prove_small_helpers.py",
+      "sha256": "4248c5d17313657794840ad7a073348512a391fa18727208f0974bdd4aee8a34"
+    },
+    {
+      "path": "work\\alpme_analysis\\semantic_closure_20261027\\round5_large_collectors\\continuation\\prove_btree_set.py",
+      "sha256": "5f0a84a6a9b92f4f0784ac9defbdbaaa0cf8a85646e0f9e5c2e0d21462f8e567"
+    },
+    {
+      "path": "work\\alpme_analysis\\semantic_closure_20261027\\round5_large_collectors\\continuation\\regopen17_sources.py",
+      "sha256": "83b294b7b9f23ca0e4dbe25ec7cfbbaf3bf798e9fce84a251c7378bd529394c5"
+    },
+    {
+      "path": "work\\alpme_analysis\\semantic_closure_20261027\\round5_large_collectors\\continuation\\gate_regopen17.py",
+      "sha256": "4db5bc37beac99c283cce82adc6f2ccef46011a4fc0274f17036f3b9766d37e1"
+    },
+    {
+      "path": "work\\alpme_analysis\\semantic_closure_20261027\\round5_large_collectors\\continuation\\prove_cpuid_loop.py",
+      "sha256": "c76ff6a02f9eec9a249eedeb79ea4a38ec5b08f21c80f3896980fbcf432f9405"
+    },
+    {
+      "path": "work\\alpme_analysis\\semantic_closure_20261027\\round5_large_collectors\\continuation\\prove_allocation_tag.py",
+      "sha256": "f525d67689ac5a0c3a8aac0c575e1879832f5fcb1f96c1d87383ccf071e55a3a"
+    },
+    {
+      "path": "work\\alpme_analysis\\semantic_closure_20261027\\round5_large_collectors\\continuation\\prove_owned_appends.py",
+      "sha256": "c52f45eb2975776009f978ada67b17440a4c905a386b38549c0ee2cac619046b"
+    },
+    {
+      "path": "work\\alpme_analysis\\semantic_closure_20261027\\round5_large_collectors\\continuation\\prove_PE_scalar_provenance.py",
+      "sha256": "22c262ca518c86cdca14a0c57cc7d6305a71d31314d9b619a1ebcfc0fb97a0e0"
+    },
+    {
+      "path": "work\\alpme_analysis\\semantic_closure_20261027\\round5_large_collectors\\continuation\\prove_record_output.py",
+      "sha256": "817c837ec021109fbf28a3d739167c9b0d414089f945e2612bc2060fd96dc11c"
+    },
+    {
+      "path": "work\\alpme_analysis\\semantic_closure_20261027\\round5_large_collectors\\continuation\\export_collectors.py",
+      "sha256": "de02fb1630d9f591aa9c9fc15e4458f154b59ad43e6fb257d5208ed75876f3dd"
+    },
+    {
+      "path": "work\\alpme_analysis\\semantic_closure_20261027\\round5_large_collectors\\continuation\\verify_final.py",
+      "sha256": "7ff5e8f0dd04444e215d7973f208872bc8927b90f6fd7b7b2b18c36ced75c97e"
+    },
+    {
+      "path": "work\\alpme_analysis\\semantic_closure_20261027\\round5_large_collectors\\continuation\\final_findings_zh.md",
+      "sha256": "08e18b98c79559d198d5a0864df93e9744d3d1c02b53311b89862f8f491f24c5"
+    }
+  ],
+  "frozen_checkpoint_inputs": [
+    {
+      "path": "work\\alpme_analysis\\semantic_closure_20261027\\round5_large_collectors\\native_graph.py",
+      "sha256": "95c672a558ac8b4c7820b6069245d50e310e3434124cf199d7d965a117fe8c3f"
+    },
+    {
+      "path": "work\\alpme_analysis\\semantic_closure_20261027\\round5_large_collectors\\typed_API_source_gate.py",
+      "sha256": "47ce538e6c19cd7c9d4238ff44cc009f897a323190f95f609082ce2e30859bd9"
+    },
+    {
+      "path": "work\\alpme_analysis\\semantic_closure_20261027\\round5_large_collectors\\resolver_native_names.json",
+      "sha256": "7584b361f5048369e09749ace3bf92acd9738917e14f4ee47dcd51c63287719b"
+    },
+    {
+      "path": "work\\alpme_analysis\\semantic_closure_20261027\\round5_large_collectors\\17_candidate_graph.json",
+      "sha256": "e26bdaa3eb5f2c60d376b69d36bd0f8f15db11ea0e38360e0ceb2090dda84e6b"
+    },
+    {
+      "path": "work\\alpme_analysis\\semantic_closure_20261027\\round5_large_collectors\\19_candidate_graph.json",
+      "sha256": "74f9f980687936be6c4662b328c0e3f31c5cdaf12150de2ba84acb6bcdad676f"
+    },
+    {
+      "path": "work\\alpme_analysis\\semantic_closure_20261027\\round5_large_collectors\\behavior_record_map_zh.json",
+      "sha256": "23a3e0fa56fc00c4aba04b846071c843b1559144bd1d53e6a6a30989f7cda813"
+    }
+  ],
+  "sample_execution": false,
+  "API_execution": false,
+  "CPUID_execution": false,
+  "network": false,
+  "C2_access": false,
+  "host_secrets_or_personal_data_access": false,
+  "original_source_claim": false,
+  "whole_program_complete_claim": false
+}

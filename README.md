@@ -11,7 +11,7 @@
 
 ## 从哪里开始读
 
-1. [中文分析报告PDF，v3.2](reports/Alpme_17si_19si_Analysis_ZH_v3.2.zh-CN.pdf)：执行链、PE和解包、云控、读取目标、浏览器取钥、影响、证据与分析缺口。
+1. [中文分析报告PDF，v3.3](reports/Alpme_17si_19si_Analysis_ZH_v3.3.zh-CN.pdf)：执行链、PE和解包、云控、读取目标、浏览器取钥、影响、证据与分析缺口。
 2. [行为流程](analysis/BEHAVIOR.md)：适合先在GitHub上阅读，解释两个程序如何工作。
 3. [分析进度与未完成项](analysis/PROGRESS.md)：区分原字节、反编译文本和已复核的数据流。
 4. [恢复代码的阅读方法](recovered/README.md)：完整静态汇编、当前选中的反编译文本、函数索引与单独验证的核心函数。

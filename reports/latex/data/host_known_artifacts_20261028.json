@@ -1,0 +1,25 @@
+{
+  "observed_date_client_timezone": "2026-10-28 Asia/Singapore",
+  "method": "Read-only Get-Item and Get-FileHash over these three exact host paths. No executable load or execution; no file content printed.",
+  "artifacts": [
+    {
+      "path": "%USERPROFILE%\\AppData\\Local\\Temp\\setup_aa1ea45f\\17si.exe",
+      "exists": true,
+      "bytes": 1136640,
+      "lastWriteTime": "2026-10-26T17:36:52.4781099+08:00",
+      "sha256": "2e1363e7220befe88eeb2b9b9490640f9834be0dd789c01471a69de8f69e6dfa"
+    },
+    {
+      "path": "%USERPROFILE%\\AppData\\Local\\Temp\\runtime-33094ae6\\19si.exe",
+      "exists": true,
+      "bytes": 1199616,
+      "lastWriteTime": "2026-10-26T20:14:45.9043450+08:00",
+      "sha256": "5afbebb7ed01515ed80ca9c9e7e4c7b01c7652e220b2c2a19452356688e79244"
+    },
+    {
+      "path": "%USERPROFILE%\\AppData\\Local\\Temp\\dynamic-tools-cache",
+      "exists": false,
+      "errorCategory": "ObjectNotFound"
+    }
+  ]
+}

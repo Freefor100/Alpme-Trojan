@@ -41,7 +41,7 @@ flowchart TD
 
 两版用同布局的0x12c字节内部记录组织14项资料：Windows版本、计算机名、用户名、默认区域；CPU品牌和叶1标识、系统卷序列、逻辑处理器数量、物理内存MiB、屏幕宽高和显示设备；键盘布局/语言列表、已安装软件列表，以及设备指纹摘要。摘要按CPU标识文字、显示设备文字、成功取得的卷序列文字顺序计算SHA-256，再转64字符小写hex。
 
-软件枚举同时读取HKLM与HKCU下普通Uninstall及显式WOW6432Node路径，打开权限KEY_READ(0x20019)。SystemComponent、UninstallString、DisplayName、DisplayVersion是被查询的数据；读取卸载字符串在此链中不会启动卸载命令。完整字段偏移与证据见PDF及round5-host-information-fields.json；两大收集函数的来源门仍有具体未完成项。
+软件枚举同时读取HKLM与HKCU下普通Uninstall及显式WOW6432Node路径，打开权限KEY_READ(0x20019)。SystemComponent、UninstallString、DisplayName、DisplayVersion是被查询的数据；读取卸载字符串在此链中不会启动卸载命令。完整字段偏移与证据见PDF及round5-host-information-fields.json；两大收集函数现已完成正常上下文控制流、来源及全部写入范围核对。
 
 ## 云控操作与生命周期
 

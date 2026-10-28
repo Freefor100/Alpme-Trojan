@@ -1,0 +1,104 @@
+{
+  "status": "POSTSEAL_EXPLICIT_NONLITERAL_OUTPUT_ADDRESS_CAVEAT",
+  "native_execution": false,
+  "sealed_manifest_sha256": "942affd1560eb2b77acdccd39b9f7f604bb71b01ae3d6818f12b7c1dd98400bc",
+  "literal_frame_address_roots": 73,
+  "nonliteral_bindings": [
+    {
+      "version": "19",
+      "CALL": "0x50d09",
+      "target": "0x4473d",
+      "native_frame_offsets": [
+        1256
+      ],
+      "address_origins": [
+        [
+          "OTHER_DEFINITION",
+          "0x50cf4",
+          "add rcx, 0x410"
+        ]
+      ],
+      "native_constant_replay": [
+        9223090561878066408
+      ],
+      "private_source_reads": [
+        [
+          332749,
+          80,
+          8
+        ]
+      ],
+      "original_writable_PE_reads": [
+        [
+          327918,
+          623584,
+          8,
+          11975905640132541330
+        ]
+      ],
+      "status": "FRAME_ADDRESS_REPLAY_WITH_SCALAR_SOURCE_CARRY_REQUIRED",
+      "boundary": "The helper writes only its verified relative RCX span, but this nonliteral RCX value must retain its scalar/address source. It is not an unconditional lifetime proof and must not be used circularly to establish the same source preservation."
+    },
+    {
+      "version": "19",
+      "CALL": "0x5413d",
+      "target": "0x657da",
+      "native_frame_offsets": [
+        584
+      ],
+      "address_origins": [
+        [
+          "OTHER_DEFINITION",
+          "0x53960",
+          "add rdx, 0x230"
+        ]
+      ],
+      "native_constant_replay": [
+        9223090561878065736
+      ],
+      "private_source_reads": [
+        [
+          337680,
+          80,
+          8
+        ],
+        [
+          338985,
+          80,
+          8
+        ],
+        [
+          340038,
+          80,
+          8
+        ],
+        [
+          344373,
+          208,
+          8
+        ],
+        [
+          353901,
+          80,
+          8
+        ],
+        [
+          353919,
+          80,
+          8
+        ]
+      ],
+      "original_writable_PE_reads": [
+        [
+          327918,
+          623584,
+          8,
+          11975905640132541330
+        ]
+      ],
+      "status": "FRAME_ADDRESS_REPLAY_WITH_SCALAR_SOURCE_CARRY_REQUIRED",
+      "boundary": "The helper writes only its verified relative RCX span, but this nonliteral RCX value must retain its scalar/address source. It is not an unconditional lifetime proof and must not be used circularly to establish the same source preservation."
+    }
+  ],
+  "per_CALL_status": "All four original Packet CALLs remain pending. The83 helper applications are exact helper-relative footprints; two of75 native frame-address replays still have named nonliteral source carry."
+}

@@ -1,0 +1,58 @@
+{
+  "status": "POST_FREEZE_NATIVE_RANGE_AND_SP1C8_PROGRESS_GLOBAL_CARRY_PENDING",
+  "native_execution": false,
+  "frozen_v3_2_manifest_sha256": "cc5e9636d5546d5fb5196a5e7677e688760343eab52da1610cb8141eea179317",
+  "frozen_v3_2_validation": "PASS; original172 files and23 external dependencies still match",
+  "new_completed_components": {
+    "residual_RSP_indexed_native_writes": 9,
+    "residual_indexed_frame_address_forms": 2,
+    "private_SP1c8_native_and_CALL_lifetime": {
+      "status": "PASS_PRIVATE_SP1C8_NATIVE_AND_CALL_LIFETIME",
+      "reverse_states": 468,
+      "calls": 15
+    },
+    "original_creator_CFGs_reused": "17:bd48/5593instructions and19:4fef1/5317instructions, sole computed JMP each with5 immutable targets from round3_fifthfield/main_cfg_source_proof.json"
+  },
+  "remaining_global_creator_carry": {
+    "status": "PENDING",
+    "calls_to_bind": [
+      {
+        "version": "17",
+        "pre_phase_calls": 186,
+        "resolved_private_pointer_arguments": 282,
+        "minimum_frame_offset": 256
+      },
+      {
+        "version": "19",
+        "pre_phase_calls": 160,
+        "resolved_private_pointer_arguments": 271,
+        "minimum_frame_offset": 400
+      }
+    ],
+    "work": [
+      "Bind actual output/input direction, extent and reachable-object aliases for remaining pre-phase helper/API calls; unknown register arguments have not been silently classified as heap or harmless.",
+      "Finish non-RSP-base store alias analysis and any unresolved frame-derived pointer argument directions; resolved private pointer lower bounds alone are not a callee-write proof.",
+      "Then integrate original scalar carry with all14 concrete Packet producers, shared Packet non-escape and normal None/Some(unit) domain. Only after that may the4 Packet vtable CALLs change from pending."
+    ],
+    "unchanged_pending_CALLs": [
+      "17:1bd7d",
+      "17:1be17",
+      "19:44f6",
+      "19:4590"
+    ]
+  },
+  "source_code_and_new_evidence": {
+    "work\\alpme_analysis\\semantic_closure_20261027\\round5_whole_native\\call_resolution\\remaining9\\carry_call_output_inventory.json": "2ea6fd129ac9939cb1a44129c71ffddda14d7517f92d1956d7f090fd7ed6eea0",
+    "work\\alpme_analysis\\semantic_closure_20261027\\round5_whole_native\\call_resolution\\remaining9\\carry_call_output_inventory.py": "9e1383e3d7696d7147f488747951fe80b0c446517f928f868ea09d7cdcf9ceb8",
+    "work\\alpme_analysis\\semantic_closure_20261027\\round5_whole_native\\call_resolution\\remaining9\\carry_creator_inventory.json": "0c661413608484b7e5a6b28c614f81d3a506d736534270360d6d990f40d38a22",
+    "work\\alpme_analysis\\semantic_closure_20261027\\round5_whole_native\\call_resolution\\remaining9\\carry_creator_inventory.py": "11c5ce6b5d8ca3a069bc30775d952e8fcd160d262dd00b6d0d86d2ad5f1c623c",
+    "work\\alpme_analysis\\semantic_closure_20261027\\round5_whole_native\\call_resolution\\remaining9\\carry_frame_index_ranges.json": "96893c3e53c68f2771e6eb36303e152a06c07c065425e854c78688718352cc86",
+    "work\\alpme_analysis\\semantic_closure_20261027\\round5_whole_native\\call_resolution\\remaining9\\carry_frame_index_ranges.py": "a0c16acd46054ab6ce8a7a317923473791a1a08293385dac2b0218bedb3cc574",
+    "work\\alpme_analysis\\semantic_closure_20261027\\round5_whole_native\\call_resolution\\remaining9\\carry_index_source_roots.json": "1585dcf72b8a91533386f85ea8c2f402e7966ea74f7c2de98332c808a492c70e",
+    "work\\alpme_analysis\\semantic_closure_20261027\\round5_whole_native\\call_resolution\\remaining9\\carry_index_source_roots.py": "673146660b36b0c20d4121651f99e7e5b46658886acc2559bcc02627023d97b0",
+    "work\\alpme_analysis\\semantic_closure_20261027\\round5_whole_native\\call_resolution\\remaining9\\carry_progress_receipt.py": "f8d9d663c96db4aa8008acc789d2936c12e4c60c8b4d7a5e15088c9f7825f704",
+    "work\\alpme_analysis\\semantic_closure_20261027\\round5_whole_native\\call_resolution\\remaining9\\carry_sp1c8_lifetime_proof.json": "a85367d8c6285544d16e64821386c197584f71216e0e682be4eefd50b1dec61c",
+    "work\\alpme_analysis\\semantic_closure_20261027\\round5_whole_native\\call_resolution\\remaining9\\carry_sp1c8_lifetime_proof.py": "cbd430cbfc7df957cb6f2ce5e548b4588e81975470b7a3481e9405673a5ffd5d"
+  },
+  "old_files_modified": false
+}

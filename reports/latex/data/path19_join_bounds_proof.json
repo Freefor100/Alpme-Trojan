@@ -1,0 +1,175 @@
+{
+  "scope": "Static defensive path joining helper. No native specimen execution, OS calls, network, credentials or browser access; no byte patches.",
+  "source_sha256": "4e4636d2c9d57eb609b7d18ee3dc01713fbcda39c5eee52bd4a66f222f67bb31",
+  "function_rva": "0x212fc",
+  "bounds": [
+    {
+      "site": "0x21376",
+      "proof": "21359 loads zero-extended prefix intoR13; CMP R13,6 at2135e followed byJAE excludes6+."
+    },
+    {
+      "site": "0x213e9",
+      "proof": "21396..213aa computesR12=tag<6?0:(u8(tag-6)+1); OR213bb/JE213be reaches table only whenR12==0, therefore tag0..5. RDI remains nonvolatile across6aade."
+    },
+    {
+      "site": "0x2154a",
+      "proof": "21531 zero-extends stack+58 byte toRAX, CMP RAX,6/JAE2153a excludes6+."
+    },
+    {
+      "sites": [
+        "0x217f3",
+        "0x21826"
+      ],
+      "proof": "Component tags are prefix0..5,6,7 or321b3 parser tags7/8/9/ff. Iterator1a385 return paths are restored independently. Vector append21a31/21b85 preserves tag byte; read2173a excludesff at2173f/21746. index=tag<6?0:tag-5, range0..4. Parser321b3 writes sole outputtag32261 fromR11; original assignments areff,9, . =>7/ff, ..=>8/9."
+    },
+    {
+      "site": "0x21914",
+      "proof": "Only reaching definition ofR13 is21359 in conservative CFG. Per-prefix partition fromentry reaches this site only for0,1,3,4; initial prefix2 and5 go to2191c/21923 bypassing it."
+    }
+  ],
+  "final_prefix_partition": {
+    "0": true,
+    "1": true,
+    "2": false,
+    "3": true,
+    "4": true,
+    "5": false
+  },
+  "final_R13_reaching_definitions": [
+    "0x21359"
+  ],
+  "instructions": 529,
+  "overlapping_starts": [],
+  "assumptions": "Original Windows x64 nonvolatile register ABI for returning calls; all ordinary conditional edges kept. No assumed global branch values.",
+  "override_plan": {
+    "19_payload.dll.bin": {
+      "0x212fc": {
+        "0x21376": [
+          "0x218cd",
+          "0x218db",
+          "0x2191c",
+          "0x218cd",
+          "0x21a6c",
+          "0x21923"
+        ],
+        "0x213e9": [
+          "0x213ff",
+          "0x2147e",
+          "0x21405",
+          "0x213ff",
+          "0x213eb",
+          "0x213c8"
+        ],
+        "0x2154a": [
+          "0x218c2",
+          "0x214c2",
+          "0x21896",
+          "0x218c2",
+          "0x21829",
+          "0x2189d"
+        ],
+        "0x217f3": [
+          "0x21387",
+          "0x21396",
+          "0x2138f",
+          "0x21378",
+          "0x21387"
+        ],
+        "0x21826": [
+          "0x21387",
+          "0x21396",
+          "0x2138f",
+          "0x21378",
+          "0x21387"
+        ],
+        "0x21914": [
+          "0x21916",
+          "0x2192a",
+          "0x21916",
+          "0x21bb6"
+        ]
+      }
+    }
+  },
+  "decompiler_retry_followup": {
+    "19_payload.dll.bin": {
+      "0x212fc": {
+        "changes": [
+          {
+            "site": "0x21376",
+            "targets": [
+              "0x218cd",
+              "0x218db",
+              "0x2191c",
+              "0x218cd",
+              "0x21a6c",
+              "0x21923"
+            ],
+            "status": "reference_override_only_bytes_unchanged"
+          },
+          {
+            "site": "0x213e9",
+            "targets": [
+              "0x213ff",
+              "0x2147e",
+              "0x21405",
+              "0x213ff",
+              "0x213eb",
+              "0x213c8"
+            ],
+            "status": "reference_override_only_bytes_unchanged"
+          },
+          {
+            "site": "0x2154a",
+            "targets": [
+              "0x218c2",
+              "0x214c2",
+              "0x21896",
+              "0x218c2",
+              "0x21829",
+              "0x2189d"
+            ],
+            "status": "reference_override_only_bytes_unchanged"
+          },
+          {
+            "site": "0x217f3",
+            "targets": [
+              "0x21387",
+              "0x21396",
+              "0x2138f",
+              "0x21378",
+              "0x21387"
+            ],
+            "status": "reference_override_only_bytes_unchanged"
+          },
+          {
+            "site": "0x21826",
+            "targets": [
+              "0x21387",
+              "0x21396",
+              "0x2138f",
+              "0x21378",
+              "0x21387"
+            ],
+            "status": "reference_override_only_bytes_unchanged"
+          },
+          {
+            "site": "0x21914",
+            "targets": [
+              "0x21916",
+              "0x2192a",
+              "0x21916",
+              "0x21bb6"
+            ],
+            "status": "reference_override_only_bytes_unchanged"
+          }
+        ],
+        "status": "completed",
+        "error": "",
+        "elapsed_ms": 238
+      },
+      "text_sha256_before": "58ed088899886b5cc99a09fba69af079f2c4d53f12059c1443a1113e38c899f3",
+      "text_sha256_after": "58ed088899886b5cc99a09fba69af079f2c4d53f12059c1443a1113e38c899f3"
+    }
+  }
+}

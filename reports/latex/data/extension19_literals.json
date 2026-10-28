@@ -1,0 +1,150 @@
+{
+  "scope": "Actual native descriptor fields and seed; full forward codec, no inverse expected text. Private descriptor lifetime assumes normal ABI; decoded program literals only.",
+  "version": "19",
+  "codec_sha256": "cbaa7a0e9b858b0f86311c7447af60fef318fedd42de6a6392b4a1674cde5342",
+  "rows": [
+    {
+      "callsite": "0x6afe8",
+      "cache_RVA": [
+        "0x96370"
+      ],
+      "status": "native_constant_descriptor_and_seed",
+      "encoded_RVA": "0x8682d",
+      "encoded_length": 24,
+      "seed": "0x67c9046b9588189f",
+      "encoded_sha256": "df6aec3019d727cf0d7922069d4e7a2d61da9bb3791aa3a2d11c8e0c3667a141",
+      "text": "manifest.json",
+      "hex": "6d616e69666573742e6a736f6e"
+    },
+    {
+      "callsite": "0x6b0f9",
+      "cache_RVA": [
+        "0x98e40"
+      ],
+      "status": "native_constant_descriptor_and_seed",
+      "encoded_RVA": "0x82652",
+      "encoded_length": 44,
+      "seed": "0xc4db1701abe837c9",
+      "encoded_sha256": "c96cccc1cb653d78fd8a3f9ca1e8b4715997bebb48afd48bce428d89aaf0e8a9",
+      "text": "\\Local Extension Settings",
+      "hex": "5c4c6f63616c20457874656e73696f6e2053657474696e6773"
+    },
+    {
+      "callsite": "0x6b112",
+      "cache_RVA": [
+        "0x96ad0"
+      ],
+      "status": "native_constant_descriptor_and_seed",
+      "encoded_RVA": "0x862bb",
+      "encoded_length": 10,
+      "seed": "0xb0c83569458d0104",
+      "encoded_sha256": "bec4a5d48f0b2b771e405d9d0594d65664c79c950dd5d5f9bbc2dd77fb29907d",
+      "text": "name",
+      "hex": "6e616d65"
+    },
+    {
+      "callsite": "0x6b25d",
+      "cache_RVA": [
+        "0x98ab8"
+      ],
+      "status": "native_constant_descriptor_and_seed",
+      "encoded_RVA": "0x818a0",
+      "encoded_length": 15,
+      "seed": "0x1f4ef4bc91afef12",
+      "encoded_sha256": "1ad56532c911a06f08b7ce5b04b590c0a462eb820ab5e7a42b1102ff5b2a3b45",
+      "text": "message",
+      "hex": "6d657373616765"
+    },
+    {
+      "callsite": "0x6b271",
+      "cache_RVA": [
+        "0x98628"
+      ],
+      "status": "native_constant_descriptor_and_seed",
+      "encoded_RVA": "0x8393f",
+      "encoded_length": 21,
+      "seed": "0x1c7603ceb76571fe",
+      "encoded_sha256": "b448468c2cf14b1b1f2c481e0329d0db9fc4413bcf51ac8dc2f29790c5a86a54",
+      "text": "\\Extensions",
+      "hex": "5c457874656e73696f6e73"
+    },
+    {
+      "callsite": "0x6b3f7",
+      "cache_RVA": [
+        "0x99668"
+      ],
+      "status": "native_constant_descriptor_and_seed",
+      "encoded_RVA": "0x80c57",
+      "encoded_length": 13,
+      "seed": "0x58f5def721426c62",
+      "encoded_sha256": "f367dbcd9b71dfc0dc4f611c17f45d507be8f1ecde53de886c62bffa0d622726",
+      "text": "__MSG_",
+      "hex": "5f5f4d53475f"
+    },
+    {
+      "callsite": "0x6bd82",
+      "cache_RVA": [
+        "0x97028"
+      ],
+      "status": "native_constant_descriptor_and_seed",
+      "encoded_RVA": "0x85e7e",
+      "encoded_length": 16,
+      "seed": "0x4ac9530940aef68b",
+      "encoded_sha256": "1618f6bfe1dc97cff5c7270039b01aa65e6219df3ad0d347ecf331e2fff0da22",
+      "text": "_locales",
+      "hex": "5f6c6f63616c6573"
+    },
+    {
+      "callsite": "0x6c19d",
+      "cache_RVA": [
+        "0x97278"
+      ],
+      "status": "native_constant_descriptor_and_seed",
+      "encoded_RVA": "0x86bec",
+      "encoded_length": 12,
+      "seed": "0x121baee8fc8497",
+      "encoded_sha256": "f64a7fec6efc511c15eefe3d87d368e08125474d33c2fe9ec8707fbc6b260e7f",
+      "text": "en_US",
+      "hex": "656e5f5553"
+    },
+    {
+      "callsite": "0x6c8a5",
+      "cache_RVA": [
+        "0x98c40"
+      ],
+      "status": "native_constant_descriptor_and_seed",
+      "encoded_RVA": "0x82ba1",
+      "encoded_length": 24,
+      "seed": "0xaeeb7269c0f891bf",
+      "encoded_sha256": "fcbcd2c954b9fb6e211d8fe34a39e15c2b0eb003dabe68892e5d5149eec204ba",
+      "text": "messages.json",
+      "hex": "6d657373616765732e6a736f6e"
+    },
+    {
+      "callsite": "0x6ca94",
+      "cache_RVA": [
+        "0x97190"
+      ],
+      "status": "native_constant_descriptor_and_seed",
+      "encoded_RVA": "0x86439",
+      "encoded_length": 13,
+      "seed": "0x4ba1e362dc3cf83f",
+      "encoded_sha256": "e902d40ecaad7ab1d2618460edaeaa884cac22a726614714f34143e57c865501",
+      "text": "__MSG_",
+      "hex": "5f5f4d53475f"
+    },
+    {
+      "callsite": "0x6cace",
+      "cache_RVA": [
+        "0x99f58"
+      ],
+      "status": "native_constant_descriptor_and_seed",
+      "encoded_RVA": "0x819b6",
+      "encoded_length": 7,
+      "seed": "0x9ccc7fed3b82e8ac",
+      "encoded_sha256": "3ce8c32a191b76a6508b887cdb61025a45b6f3c1e12d80299c02f39972ed2ac9",
+      "text": "en",
+      "hex": "656e"
+    }
+  ]
+}

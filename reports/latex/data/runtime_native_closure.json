@@ -1,0 +1,633 @@
+{
+  "date": "2026-10-28",
+  "status": "PASS_RUNTIME_NATIVE_CFG_AND_ANALYSIS_C",
+  "diagnostic_entries": 32,
+  "direct_tail_backends": 28,
+  "native_instructions": 6668,
+  "reached_instructions": 6520,
+  "unreached_padding_NOPs": 148,
+  "computed_JMPs": 88,
+  "index0to15_sites": 24,
+  "index0to8_sites": 64,
+  "native_CALLs_or_system_calls": 0,
+  "unknown_JMPs": 0,
+  "unlinked_external_tail_edges": 0,
+  "C_exports_without_partial_markers": 60,
+  "original_readonly_reads_checked": 960,
+  "scope": "Native local control flow and original-byte analysis C. Complete read/write-loop contracts and malware-wide semantics are separate.",
+  "artifacts": {
+    "audit_runtime_cfg.py": "cda97d6aabca0ad04007c351ef4aebb0715f695f3546a9497f8c52557c4215cd",
+    "runtime_cfg_checkpoint.json": "d56e2455605fd3e8f550c0fb0f6bd561075bce8952a6c4da340256cac8a5f82c",
+    "C_export_receipt.json": "158621db427040f6cd408877d73c41f5581998bfb92b6f1d5a8620ee4f8f42c4",
+    "verify_runtime.py": "e0e0bcb20fa661102f7a825ad25c8d623d95dcc2165e21ae8e8f162ef92083a8",
+    "export_runtime_c.py": "ff9fc899cfaf0c744e510f2f77c13967a1935b9068d579afc81ae0f27e96f180",
+    "ExportRuntimeCfg.java": "c1d810b7fa4b7effb7852fd0476323631f86ede2a46ed7f9c72cf1748b9e4463"
+  },
+  "functions": [
+    {
+      "sample": "17_loader.exe.bin",
+      "entry": "0x23130",
+      "role": "diagnostic_entry",
+      "native": 347,
+      "reached": 339,
+      "computed_JMPs": 4,
+      "fresh_equal": true,
+      "native_and_readonly_bytes_match_original": true
+    },
+    {
+      "sample": "17_loader.exe.bin",
+      "entry": "0x1cd60",
+      "role": "diagnostic_entry",
+      "native": 217,
+      "reached": 212,
+      "computed_JMPs": 3,
+      "fresh_equal": true,
+      "native_and_readonly_bytes_match_original": true
+    },
+    {
+      "sample": "17_loader.exe.bin",
+      "entry": "0x1d4b0",
+      "role": "diagnostic_entry",
+      "native": 217,
+      "reached": 212,
+      "computed_JMPs": 3,
+      "fresh_equal": true,
+      "native_and_readonly_bytes_match_original": true
+    },
+    {
+      "sample": "17_loader.exe.bin",
+      "entry": "0x1d190",
+      "role": "diagnostic_entry",
+      "native": 132,
+      "reached": 130,
+      "computed_JMPs": 2,
+      "fresh_equal": true,
+      "native_and_readonly_bytes_match_original": true
+    },
+    {
+      "sample": "17_loader.exe.bin",
+      "entry": "0x1d8e0",
+      "role": "diagnostic_entry",
+      "native": 164,
+      "reached": 160,
+      "computed_JMPs": 2,
+      "fresh_equal": true,
+      "native_and_readonly_bytes_match_original": true
+    },
+    {
+      "sample": "17_loader.exe.bin",
+      "entry": "0x1db90",
+      "role": "diagnostic_entry",
+      "native": 164,
+      "reached": 160,
+      "computed_JMPs": 2,
+      "fresh_equal": true,
+      "native_and_readonly_bytes_match_original": true
+    },
+    {
+      "sample": "17_loader.exe.bin",
+      "entry": "0x237e0",
+      "role": "diagnostic_entry",
+      "native": 176,
+      "reached": 171,
+      "computed_JMPs": 4,
+      "fresh_equal": true,
+      "native_and_readonly_bytes_match_original": true
+    },
+    {
+      "sample": "17_loader.exe.bin",
+      "entry": "0x23c20",
+      "role": "diagnostic_entry",
+      "native": 93,
+      "reached": 91,
+      "computed_JMPs": 2,
+      "fresh_equal": true,
+      "native_and_readonly_bytes_match_original": true
+    },
+    {
+      "sample": "19_loader.exe.bin",
+      "entry": "0x21f30",
+      "role": "diagnostic_entry",
+      "native": 347,
+      "reached": 339,
+      "computed_JMPs": 4,
+      "fresh_equal": true,
+      "native_and_readonly_bytes_match_original": true
+    },
+    {
+      "sample": "19_loader.exe.bin",
+      "entry": "0x1bb60",
+      "role": "diagnostic_entry",
+      "native": 217,
+      "reached": 212,
+      "computed_JMPs": 3,
+      "fresh_equal": true,
+      "native_and_readonly_bytes_match_original": true
+    },
+    {
+      "sample": "19_loader.exe.bin",
+      "entry": "0x1c2b0",
+      "role": "diagnostic_entry",
+      "native": 217,
+      "reached": 212,
+      "computed_JMPs": 3,
+      "fresh_equal": true,
+      "native_and_readonly_bytes_match_original": true
+    },
+    {
+      "sample": "19_loader.exe.bin",
+      "entry": "0x1bf90",
+      "role": "diagnostic_entry",
+      "native": 132,
+      "reached": 130,
+      "computed_JMPs": 2,
+      "fresh_equal": true,
+      "native_and_readonly_bytes_match_original": true
+    },
+    {
+      "sample": "19_loader.exe.bin",
+      "entry": "0x1c6e0",
+      "role": "diagnostic_entry",
+      "native": 164,
+      "reached": 160,
+      "computed_JMPs": 2,
+      "fresh_equal": true,
+      "native_and_readonly_bytes_match_original": true
+    },
+    {
+      "sample": "19_loader.exe.bin",
+      "entry": "0x1c990",
+      "role": "diagnostic_entry",
+      "native": 164,
+      "reached": 160,
+      "computed_JMPs": 2,
+      "fresh_equal": true,
+      "native_and_readonly_bytes_match_original": true
+    },
+    {
+      "sample": "19_loader.exe.bin",
+      "entry": "0x225e0",
+      "role": "diagnostic_entry",
+      "native": 176,
+      "reached": 171,
+      "computed_JMPs": 4,
+      "fresh_equal": true,
+      "native_and_readonly_bytes_match_original": true
+    },
+    {
+      "sample": "19_loader.exe.bin",
+      "entry": "0x22a20",
+      "role": "diagnostic_entry",
+      "native": 93,
+      "reached": 91,
+      "computed_JMPs": 2,
+      "fresh_equal": true,
+      "native_and_readonly_bytes_match_original": true
+    },
+    {
+      "sample": "17_payload.dll.bin",
+      "entry": "0x7e630",
+      "role": "diagnostic_entry",
+      "native": 347,
+      "reached": 339,
+      "computed_JMPs": 4,
+      "fresh_equal": true,
+      "native_and_readonly_bytes_match_original": true
+    },
+    {
+      "sample": "17_payload.dll.bin",
+      "entry": "0x71140",
+      "role": "diagnostic_entry",
+      "native": 217,
+      "reached": 212,
+      "computed_JMPs": 3,
+      "fresh_equal": true,
+      "native_and_readonly_bytes_match_original": true
+    },
+    {
+      "sample": "17_payload.dll.bin",
+      "entry": "0x71890",
+      "role": "diagnostic_entry",
+      "native": 217,
+      "reached": 212,
+      "computed_JMPs": 3,
+      "fresh_equal": true,
+      "native_and_readonly_bytes_match_original": true
+    },
+    {
+      "sample": "17_payload.dll.bin",
+      "entry": "0x71570",
+      "role": "diagnostic_entry",
+      "native": 132,
+      "reached": 130,
+      "computed_JMPs": 2,
+      "fresh_equal": true,
+      "native_and_readonly_bytes_match_original": true
+    },
+    {
+      "sample": "17_payload.dll.bin",
+      "entry": "0x71cc0",
+      "role": "diagnostic_entry",
+      "native": 164,
+      "reached": 160,
+      "computed_JMPs": 2,
+      "fresh_equal": true,
+      "native_and_readonly_bytes_match_original": true
+    },
+    {
+      "sample": "17_payload.dll.bin",
+      "entry": "0x71f70",
+      "role": "diagnostic_entry",
+      "native": 164,
+      "reached": 160,
+      "computed_JMPs": 2,
+      "fresh_equal": true,
+      "native_and_readonly_bytes_match_original": true
+    },
+    {
+      "sample": "17_payload.dll.bin",
+      "entry": "0x7ece0",
+      "role": "diagnostic_entry",
+      "native": 176,
+      "reached": 171,
+      "computed_JMPs": 4,
+      "fresh_equal": true,
+      "native_and_readonly_bytes_match_original": true
+    },
+    {
+      "sample": "17_payload.dll.bin",
+      "entry": "0x7f080",
+      "role": "diagnostic_entry",
+      "native": 93,
+      "reached": 91,
+      "computed_JMPs": 2,
+      "fresh_equal": true,
+      "native_and_readonly_bytes_match_original": true
+    },
+    {
+      "sample": "19_payload.dll.bin",
+      "entry": "0x7cfd0",
+      "role": "diagnostic_entry",
+      "native": 347,
+      "reached": 339,
+      "computed_JMPs": 4,
+      "fresh_equal": true,
+      "native_and_readonly_bytes_match_original": true
+    },
+    {
+      "sample": "19_payload.dll.bin",
+      "entry": "0x6fae0",
+      "role": "diagnostic_entry",
+      "native": 217,
+      "reached": 212,
+      "computed_JMPs": 3,
+      "fresh_equal": true,
+      "native_and_readonly_bytes_match_original": true
+    },
+    {
+      "sample": "19_payload.dll.bin",
+      "entry": "0x70230",
+      "role": "diagnostic_entry",
+      "native": 217,
+      "reached": 212,
+      "computed_JMPs": 3,
+      "fresh_equal": true,
+      "native_and_readonly_bytes_match_original": true
+    },
+    {
+      "sample": "19_payload.dll.bin",
+      "entry": "0x6ff10",
+      "role": "diagnostic_entry",
+      "native": 132,
+      "reached": 130,
+      "computed_JMPs": 2,
+      "fresh_equal": true,
+      "native_and_readonly_bytes_match_original": true
+    },
+    {
+      "sample": "19_payload.dll.bin",
+      "entry": "0x70660",
+      "role": "diagnostic_entry",
+      "native": 164,
+      "reached": 160,
+      "computed_JMPs": 2,
+      "fresh_equal": true,
+      "native_and_readonly_bytes_match_original": true
+    },
+    {
+      "sample": "19_payload.dll.bin",
+      "entry": "0x70910",
+      "role": "diagnostic_entry",
+      "native": 164,
+      "reached": 160,
+      "computed_JMPs": 2,
+      "fresh_equal": true,
+      "native_and_readonly_bytes_match_original": true
+    },
+    {
+      "sample": "19_payload.dll.bin",
+      "entry": "0x7d680",
+      "role": "diagnostic_entry",
+      "native": 176,
+      "reached": 171,
+      "computed_JMPs": 4,
+      "fresh_equal": true,
+      "native_and_readonly_bytes_match_original": true
+    },
+    {
+      "sample": "19_payload.dll.bin",
+      "entry": "0x7da20",
+      "role": "diagnostic_entry",
+      "native": 93,
+      "reached": 91,
+      "computed_JMPs": 2,
+      "fresh_equal": true,
+      "native_and_readonly_bytes_match_original": true
+    },
+    {
+      "sample": "17_loader.exe.bin",
+      "entry": "0x23120",
+      "role": "direct_tail_backend",
+      "native": 9,
+      "reached": 9,
+      "computed_JMPs": 0,
+      "fresh_equal": true,
+      "native_and_readonly_bytes_match_original": true
+    },
+    {
+      "sample": "17_loader.exe.bin",
+      "entry": "0x21f20",
+      "role": "direct_tail_backend",
+      "native": 57,
+      "reached": 56,
+      "computed_JMPs": 0,
+      "fresh_equal": true,
+      "native_and_readonly_bytes_match_original": true
+    },
+    {
+      "sample": "17_loader.exe.bin",
+      "entry": "0x21f00",
+      "role": "direct_tail_backend",
+      "native": 9,
+      "reached": 9,
+      "computed_JMPs": 0,
+      "fresh_equal": true,
+      "native_and_readonly_bytes_match_original": true
+    },
+    {
+      "sample": "17_loader.exe.bin",
+      "entry": "0x22030",
+      "role": "direct_tail_backend",
+      "native": 57,
+      "reached": 56,
+      "computed_JMPs": 0,
+      "fresh_equal": true,
+      "native_and_readonly_bytes_match_original": true
+    },
+    {
+      "sample": "17_loader.exe.bin",
+      "entry": "0x22010",
+      "role": "direct_tail_backend",
+      "native": 9,
+      "reached": 9,
+      "computed_JMPs": 0,
+      "fresh_equal": true,
+      "native_and_readonly_bytes_match_original": true
+    },
+    {
+      "sample": "17_loader.exe.bin",
+      "entry": "0x237d0",
+      "role": "direct_tail_backend",
+      "native": 8,
+      "reached": 8,
+      "computed_JMPs": 0,
+      "fresh_equal": true,
+      "native_and_readonly_bytes_match_original": true
+    },
+    {
+      "sample": "17_loader.exe.bin",
+      "entry": "0x22120",
+      "role": "direct_tail_backend",
+      "native": 8,
+      "reached": 8,
+      "computed_JMPs": 0,
+      "fresh_equal": true,
+      "native_and_readonly_bytes_match_original": true
+    },
+    {
+      "sample": "19_loader.exe.bin",
+      "entry": "0x21f20",
+      "role": "direct_tail_backend",
+      "native": 9,
+      "reached": 9,
+      "computed_JMPs": 0,
+      "fresh_equal": true,
+      "native_and_readonly_bytes_match_original": true
+    },
+    {
+      "sample": "19_loader.exe.bin",
+      "entry": "0x20d20",
+      "role": "direct_tail_backend",
+      "native": 57,
+      "reached": 56,
+      "computed_JMPs": 0,
+      "fresh_equal": true,
+      "native_and_readonly_bytes_match_original": true
+    },
+    {
+      "sample": "19_loader.exe.bin",
+      "entry": "0x20d00",
+      "role": "direct_tail_backend",
+      "native": 9,
+      "reached": 9,
+      "computed_JMPs": 0,
+      "fresh_equal": true,
+      "native_and_readonly_bytes_match_original": true
+    },
+    {
+      "sample": "19_loader.exe.bin",
+      "entry": "0x20e30",
+      "role": "direct_tail_backend",
+      "native": 57,
+      "reached": 56,
+      "computed_JMPs": 0,
+      "fresh_equal": true,
+      "native_and_readonly_bytes_match_original": true
+    },
+    {
+      "sample": "19_loader.exe.bin",
+      "entry": "0x20e10",
+      "role": "direct_tail_backend",
+      "native": 9,
+      "reached": 9,
+      "computed_JMPs": 0,
+      "fresh_equal": true,
+      "native_and_readonly_bytes_match_original": true
+    },
+    {
+      "sample": "19_loader.exe.bin",
+      "entry": "0x225d0",
+      "role": "direct_tail_backend",
+      "native": 8,
+      "reached": 8,
+      "computed_JMPs": 0,
+      "fresh_equal": true,
+      "native_and_readonly_bytes_match_original": true
+    },
+    {
+      "sample": "19_loader.exe.bin",
+      "entry": "0x20f20",
+      "role": "direct_tail_backend",
+      "native": 8,
+      "reached": 8,
+      "computed_JMPs": 0,
+      "fresh_equal": true,
+      "native_and_readonly_bytes_match_original": true
+    },
+    {
+      "sample": "17_payload.dll.bin",
+      "entry": "0x7e620",
+      "role": "direct_tail_backend",
+      "native": 9,
+      "reached": 9,
+      "computed_JMPs": 0,
+      "fresh_equal": true,
+      "native_and_readonly_bytes_match_original": true
+    },
+    {
+      "sample": "17_payload.dll.bin",
+      "entry": "0x72240",
+      "role": "direct_tail_backend",
+      "native": 57,
+      "reached": 56,
+      "computed_JMPs": 0,
+      "fresh_equal": true,
+      "native_and_readonly_bytes_match_original": true
+    },
+    {
+      "sample": "17_payload.dll.bin",
+      "entry": "0x72220",
+      "role": "direct_tail_backend",
+      "native": 9,
+      "reached": 9,
+      "computed_JMPs": 0,
+      "fresh_equal": true,
+      "native_and_readonly_bytes_match_original": true
+    },
+    {
+      "sample": "17_payload.dll.bin",
+      "entry": "0x72350",
+      "role": "direct_tail_backend",
+      "native": 57,
+      "reached": 56,
+      "computed_JMPs": 0,
+      "fresh_equal": true,
+      "native_and_readonly_bytes_match_original": true
+    },
+    {
+      "sample": "17_payload.dll.bin",
+      "entry": "0x72330",
+      "role": "direct_tail_backend",
+      "native": 9,
+      "reached": 9,
+      "computed_JMPs": 0,
+      "fresh_equal": true,
+      "native_and_readonly_bytes_match_original": true
+    },
+    {
+      "sample": "17_payload.dll.bin",
+      "entry": "0x7ecd0",
+      "role": "direct_tail_backend",
+      "native": 8,
+      "reached": 8,
+      "computed_JMPs": 0,
+      "fresh_equal": true,
+      "native_and_readonly_bytes_match_original": true
+    },
+    {
+      "sample": "17_payload.dll.bin",
+      "entry": "0x72440",
+      "role": "direct_tail_backend",
+      "native": 8,
+      "reached": 8,
+      "computed_JMPs": 0,
+      "fresh_equal": true,
+      "native_and_readonly_bytes_match_original": true
+    },
+    {
+      "sample": "19_payload.dll.bin",
+      "entry": "0x7cfc0",
+      "role": "direct_tail_backend",
+      "native": 9,
+      "reached": 9,
+      "computed_JMPs": 0,
+      "fresh_equal": true,
+      "native_and_readonly_bytes_match_original": true
+    },
+    {
+      "sample": "19_payload.dll.bin",
+      "entry": "0x70be0",
+      "role": "direct_tail_backend",
+      "native": 57,
+      "reached": 56,
+      "computed_JMPs": 0,
+      "fresh_equal": true,
+      "native_and_readonly_bytes_match_original": true
+    },
+    {
+      "sample": "19_payload.dll.bin",
+      "entry": "0x70bc0",
+      "role": "direct_tail_backend",
+      "native": 9,
+      "reached": 9,
+      "computed_JMPs": 0,
+      "fresh_equal": true,
+      "native_and_readonly_bytes_match_original": true
+    },
+    {
+      "sample": "19_payload.dll.bin",
+      "entry": "0x70cf0",
+      "role": "direct_tail_backend",
+      "native": 57,
+      "reached": 56,
+      "computed_JMPs": 0,
+      "fresh_equal": true,
+      "native_and_readonly_bytes_match_original": true
+    },
+    {
+      "sample": "19_payload.dll.bin",
+      "entry": "0x70cd0",
+      "role": "direct_tail_backend",
+      "native": 9,
+      "reached": 9,
+      "computed_JMPs": 0,
+      "fresh_equal": true,
+      "native_and_readonly_bytes_match_original": true
+    },
+    {
+      "sample": "19_payload.dll.bin",
+      "entry": "0x7d670",
+      "role": "direct_tail_backend",
+      "native": 8,
+      "reached": 8,
+      "computed_JMPs": 0,
+      "fresh_equal": true,
+      "native_and_readonly_bytes_match_original": true
+    },
+    {
+      "sample": "19_payload.dll.bin",
+      "entry": "0x70de0",
+      "role": "direct_tail_backend",
+      "native": 8,
+      "reached": 8,
+      "computed_JMPs": 0,
+      "fresh_equal": true,
+      "native_and_readonly_bytes_match_original": true
+    }
+  ],
+  "sample_execution": false,
+  "CPU_emulation": false,
+  "API_execution": false,
+  "network": false,
+  "host_secret_access": false
+}

@@ -1,0 +1,1895 @@
+sample,function_RVA,CALL_RVA,原始指令,原始字节,操作数类别,直接目标RVA,原PE导入名,RIP指针槽RVA
+17_loader.exe.bin,0x1046,0x1056,call qword ptr [rsi + 0x20],ff5620,computed_CALL,,,
+17_loader.exe.bin,0x1046,0x1059,call qword ptr [rip + 0x7d711],ff1511d70700,original_IAT_indirect,,GetProcessHeap,0x7e770
+17_loader.exe.bin,0x1073,0x1130,call qword ptr [rip + 0x7d58a],ff158ad50700,original_IAT_indirect,,GetConsoleOutputCP,0x7e6c0
+17_loader.exe.bin,0x1073,0x113a,call qword ptr [rip + 0x7d6d0],ff15d0d60700,original_IAT_indirect,,IsValidCodePage,0x7e810
+17_loader.exe.bin,0x1073,0x1145,call qword ptr [rip + 0x7d54d],ff154dd50700,original_IAT_indirect,,GetCPInfo,0x7e698
+17_loader.exe.bin,0x1073,0x114b,call qword ptr [rip + 0x7d57f],ff157fd50700,original_IAT_indirect,,GetConsoleWindow,0x7e6d0
+17_loader.exe.bin,0x1073,0x1160,call qword ptr [rip + 0x7d562],ff1562d50700,original_IAT_indirect,,GetConsoleTitleW,0x7e6c8
+17_loader.exe.bin,0x1073,0x116a,call qword ptr [rip + 0x7d540],ff1540d50700,original_IAT_indirect,,GetConsoleCP,0x7e6b0
+17_loader.exe.bin,0x1201,0x13e5,call qword ptr [r12 + 7],41ff542407,computed_CALL,,,
+17_loader.exe.bin,0x1201,0x1449,call qword ptr [r12 + 7],41ff542407,computed_CALL,,,
+17_loader.exe.bin,0x1201,0x14dd,call qword ptr [rip + 0x7d43d],ff153dd40700,original_IAT_indirect,,WakeByAddressSingle,0x7e920
+17_loader.exe.bin,0x1201,0x14f9,call r14,41ffd6,computed_CALL,,,
+17_loader.exe.bin,0x1201,0x151f,call qword ptr [rip + 0x7d193],ff1593d10700,original_IAT_indirect,,GetConsoleMode,0x7e6b8
+17_loader.exe.bin,0x1201,0x1529,call qword ptr [rip + 0x7d191],ff1591d10700,original_IAT_indirect,,GetConsoleOutputCP,0x7e6c0
+17_loader.exe.bin,0x1201,0x1572,call rdi,ffd7,computed_CALL,,,
+17_loader.exe.bin,0x1201,0x16e0,call qword ptr [rax + 8],ff5008,computed_CALL,,,
+17_loader.exe.bin,0x1934,0x194d,call qword ptr [rip + 0x7cf85],ff1585cf0700,original_IAT_indirect,,WriteConsoleW,0x7e8d8
+17_loader.exe.bin,0x1934,0x195f,call qword ptr [rip + 0x7cdcb],ff15cbcd0700,original_IAT_indirect,,GetLastError,0x7e730
+17_loader.exe.bin,0x1a3f,0x1a8e,call qword ptr [rip + 0x7ccb4],ff15b4cc0700,original_IAT_indirect,,GetModuleHandleW,0x7e748
+17_loader.exe.bin,0x1a3f,0x1ad2,call qword ptr [rip + 0x7cba0],ff15a0cb0700,original_IAT_indirect,,FormatMessageW,0x7e678
+17_loader.exe.bin,0x1a3f,0x1b4f,call qword ptr [rip + 0x7cbdb],ff15dbcb0700,original_IAT_indirect,,GetLastError,0x7e730
+17_loader.exe.bin,0x1a3f,0x1d7e,call qword ptr [rax + 0x18],ff5018,computed_CALL,,,
+17_loader.exe.bin,0x2475,0x24b9,call qword ptr [rip + 0x7c479],ff1579c40700,original_IAT_indirect,,NtWriteFile,0x7e938
+17_loader.exe.bin,0x2475,0x24ce,call qword ptr [rip + 0x7c3f4],ff15f4c30700,original_IAT_indirect,,WaitForSingleObject,0x7e8c8
+17_loader.exe.bin,0x254d,0x27ed,call qword ptr [rsp + 0xb0],ff9424b0000000,computed_CALL,,,
+17_loader.exe.bin,0x254d,0x2b84,call rdi,ffd7,computed_CALL,,,
+17_loader.exe.bin,0x254d,0x2b93,call rbx,ffd3,computed_CALL,,,
+17_loader.exe.bin,0x254d,0x3012,call qword ptr [rsp + 0x50],ff542450,computed_CALL,,,
+17_loader.exe.bin,0x254d,0x3021,call qword ptr [rsp + 0xa8],ff9424a8000000,computed_CALL,,,
+17_loader.exe.bin,0x254d,0x32ee,call r12,41ffd4,computed_CALL,,,
+17_loader.exe.bin,0x254d,0x3417,call qword ptr [rsp + 0x508],ff942408050000,computed_CALL,,,
+17_loader.exe.bin,0x254d,0x3423,call qword ptr [rsp + 0x500],ff942400050000,computed_CALL,,,
+17_loader.exe.bin,0x254d,0x342d,call qword ptr [rsp + 0x4f8],ff9424f8040000,computed_CALL,,,
+17_loader.exe.bin,0x254d,0x3bc4,call qword ptr [rsp + 0x50],ff542450,computed_CALL,,,
+17_loader.exe.bin,0x254d,0x3bcb,call r15,41ffd7,computed_CALL,,,
+17_loader.exe.bin,0x254d,0x3de4,call qword ptr [rsp + 0xb0],ff9424b0000000,computed_CALL,,,
+17_loader.exe.bin,0x254d,0x3df3,call r13,41ffd5,computed_CALL,,,
+17_loader.exe.bin,0x254d,0x4410,call r14,41ffd6,computed_CALL,,,
+17_loader.exe.bin,0x254d,0x46c0,call rbx,ffd3,computed_CALL,,,
+17_loader.exe.bin,0x254d,0x51a9,call rsi,ffd6,computed_CALL,,,
+17_loader.exe.bin,0x254d,0x51cd,call r14,41ffd6,computed_CALL,,,
+17_loader.exe.bin,0x254d,0x5afb,call qword ptr [rax + 7],ff5007,computed_CALL,,,
+17_loader.exe.bin,0x254d,0x5d2c,call rdi,ffd7,computed_CALL,,,
+17_loader.exe.bin,0x254d,0x5d32,call rdi,ffd7,computed_CALL,,,
+17_loader.exe.bin,0x254d,0x5e89,call qword ptr [rsp + 0x50],ff542450,computed_CALL,,,
+17_loader.exe.bin,0x254d,0x5e98,call qword ptr [rsp + 0x80],ff942480000000,computed_CALL,,,
+17_loader.exe.bin,0x254d,0x6998,call qword ptr [rsp + 0x50],ff542450,computed_CALL,,,
+17_loader.exe.bin,0x254d,0x69a9,call r14,41ffd6,computed_CALL,,,
+17_loader.exe.bin,0x254d,0x6a89,call qword ptr [rsp + 0x50],ff542450,computed_CALL,,,
+17_loader.exe.bin,0x254d,0x6a93,call r13,41ffd5,computed_CALL,,,
+17_loader.exe.bin,0x254d,0x7028,call qword ptr [rsp + 0x50],ff542450,computed_CALL,,,
+17_loader.exe.bin,0x254d,0x702f,call rdi,ffd7,computed_CALL,,,
+17_loader.exe.bin,0x254d,0x7033,call rbx,ffd3,computed_CALL,,,
+17_loader.exe.bin,0x254d,0x726a,call qword ptr [rsp + 0x50],ff542450,computed_CALL,,,
+17_loader.exe.bin,0x254d,0x7288,call r15,41ffd7,computed_CALL,,,
+17_loader.exe.bin,0x254d,0x7346,call r15,41ffd7,computed_CALL,,,
+17_loader.exe.bin,0x254d,0x7351,call r12,41ffd4,computed_CALL,,,
+17_loader.exe.bin,0x254d,0x7362,call qword ptr [rsp + 0xa8],ff9424a8000000,computed_CALL,,,
+17_loader.exe.bin,0x254d,0x7474,call qword ptr [rsp + 0x50],ff542450,computed_CALL,,,
+17_loader.exe.bin,0x254d,0x749a,call rsi,ffd6,computed_CALL,,,
+17_loader.exe.bin,0x7b16,0x7b41,call rdi,ffd7,computed_CALL,,,
+17_loader.exe.bin,0x7b16,0x7e91,call qword ptr [rax + 0x18],ff5018,computed_CALL,,,
+17_loader.exe.bin,0x7b16,0x7ea0,call rdi,ffd7,computed_CALL,,,
+17_loader.exe.bin,0x7b16,0x7fd7,call r15,41ffd7,computed_CALL,,,
+17_loader.exe.bin,0x7b16,0x7ff4,call qword ptr [rsp + 0x50],ff542450,computed_CALL,,,
+17_loader.exe.bin,0x7b16,0x8095,call r15,41ffd7,computed_CALL,,,
+17_loader.exe.bin,0x809d,0x8173,call qword ptr [r14 + 7],41ff5607,computed_CALL,,,
+17_loader.exe.bin,0x809d,0x8190,call qword ptr [rip + 0x7646a],ff156a640700,original_IAT_indirect,,CloseHandle,0x7e600
+17_loader.exe.bin,0x809d,0x81bb,call qword ptr [rax + 8],ff5008,computed_CALL,,,
+17_loader.exe.bin,0x81c4,0x8251,call qword ptr [rax + 8],ff5008,computed_CALL,,,
+17_loader.exe.bin,0x81c4,0x8266,call qword ptr [rbx + 7],ff5307,computed_CALL,,,
+17_loader.exe.bin,0x81c4,0x82b0,call qword ptr [rbx + 7],ff5307,computed_CALL,,,
+17_loader.exe.bin,0x81c4,0x8315,call qword ptr [rax],ff10,computed_CALL,,,
+17_loader.exe.bin,0x8319,0x847b,call qword ptr [rip + 0x762df],ff15df620700,original_IAT_indirect,,GetPhysicallyInstalledSystemMemory,0x7e760
+17_loader.exe.bin,0x8319,0x8486,call qword ptr [rip + 0x762c4],ff15c4620700,original_IAT_indirect,,GetNativeSystemInfo,0x7e750
+17_loader.exe.bin,0x8319,0x8491,call qword ptr [rip + 0x76309],ff1509630700,original_IAT_indirect,,GetSystemPowerStatus,0x7e7a0
+17_loader.exe.bin,0x8319,0x84a6,call qword ptr [rip + 0x76304],ff1504630700,original_IAT_indirect,,GetSystemTimes,0x7e7b0
+17_loader.exe.bin,0x8319,0x84b7,call qword ptr [rip + 0x7630b],ff150b630700,original_IAT_indirect,,GlobalMemoryStatusEx,0x7e7c8
+17_loader.exe.bin,0x8319,0x84bd,call qword ptr [rip + 0x76265],ff1565620700,original_IAT_indirect,,GetLargePageMinimum,0x7e728
+17_loader.exe.bin,0x8319,0x84c8,call qword ptr [rip + 0x762ca],ff15ca620700,original_IAT_indirect,,GetSystemInfo,0x7e798
+17_loader.exe.bin,0x858c,0x8e2f,call qword ptr [rip + 0x75933],ff1533590700,original_IAT_indirect,,GetProcAddress,0x7e768
+17_loader.exe.bin,0x96e5,0x97e4,call qword ptr [rsi + rax],ff1406,computed_CALL,,,
+17_loader.exe.bin,0x96e5,0x9825,call r13,41ffd5,computed_CALL,,,
+17_loader.exe.bin,0x96e5,0x9840,call r13,41ffd5,computed_CALL,,,
+17_loader.exe.bin,0x98d9,0x9c7a,call qword ptr [rip + 0x74b10],ff15104b0700,original_IAT_indirect,,GetSystemDirectoryW,0x7e790
+17_loader.exe.bin,0x98d9,0x9c98,call qword ptr [rip + 0x74a3a],ff153a4a0700,original_IAT_indirect,,GetCurrentDirectoryW,0x7e6d8
+17_loader.exe.bin,0x98d9,0x9cb7,call qword ptr [rip + 0x74a43],ff15434a0700,original_IAT_indirect,,GetFileAttributesW,0x7e700
+17_loader.exe.bin,0x98d9,0x9cc5,call qword ptr [rip + 0x74aed],ff15ed4a0700,original_IAT_indirect,,GetTempPathW,0x7e7b8
+17_loader.exe.bin,0x98d9,0x9ce7,call qword ptr [rip + 0x74a33],ff15334a0700,original_IAT_indirect,,GetFullPathNameW,0x7e720
+17_loader.exe.bin,0x98d9,0x9d01,call qword ptr [rip + 0x74ab9],ff15b94a0700,original_IAT_indirect,,GetWindowsDirectoryW,0x7e7c0
+17_loader.exe.bin,0x98d9,0x9d12,call qword ptr [rip + 0x74a30],ff15304a0700,original_IAT_indirect,,GetModuleHandleW,0x7e748
+17_loader.exe.bin,0x98d9,0xa658,call qword ptr [rip + 0x741ca],ff15ca410700,original_IAT_indirect,,LoadLibraryA,0x7e828
+17_loader.exe.bin,0xa9a9,0xab03,call qword ptr [rip + 0x73c27],ff15273c0700,original_IAT_indirect,,GetLastError,0x7e730
+17_loader.exe.bin,0xa9a9,0xad55,call qword ptr [rip + 0x738b5],ff15b5380700,original_IAT_indirect,,CreateFileW,0x7e610
+17_loader.exe.bin,0xa9a9,0xad92,call qword ptr [rip + 0x73af8],ff15f83a0700,original_IAT_indirect,,SetFileTime,0x7e890
+17_loader.exe.bin,0xa9a9,0xadad,call qword ptr [rip + 0x7397d],ff157d390700,original_IAT_indirect,,GetLastError,0x7e730
+17_loader.exe.bin,0xa9a9,0xaf79,call qword ptr [rip + 0x737b1],ff15b1370700,original_IAT_indirect,,GetLastError,0x7e730
+17_loader.exe.bin,0xa9a9,0xb14b,call qword ptr [rip + 0x73747],ff1547370700,original_IAT_indirect,,SetLastError,0x7e898
+17_loader.exe.bin,0xa9a9,0xb15d,call qword ptr [rip + 0x735bd],ff15bd350700,original_IAT_indirect,,GetFullPathNameW,0x7e720
+17_loader.exe.bin,0xa9a9,0xb16b,call qword ptr [rip + 0x735bf],ff15bf350700,original_IAT_indirect,,GetLastError,0x7e730
+17_loader.exe.bin,0xa9a9,0xb182,call qword ptr [rip + 0x735a8],ff15a8350700,original_IAT_indirect,,GetLastError,0x7e730
+17_loader.exe.bin,0xa9a9,0xb1ae,call qword ptr [rip + 0x7357c],ff157c350700,original_IAT_indirect,,GetLastError,0x7e730
+17_loader.exe.bin,0xa9a9,0xb1d4,call qword ptr [rip + 0x73426],ff1526340700,original_IAT_indirect,,CloseHandle,0x7e600
+17_loader.exe.bin,0xb2d9,0xb2f0,call rax,ffd0,computed_CALL,,,
+17_loader.exe.bin,0xb529,0xb6a2,call qword ptr [rsi + 0x18],ff5618,computed_CALL,,,
+17_loader.exe.bin,0xb529,0xb711,call qword ptr [r15 + 0x18],41ff5718,computed_CALL,,,
+17_loader.exe.bin,0xb529,0xb729,call qword ptr [r15 + 0x20],41ff5720,computed_CALL,,,
+17_loader.exe.bin,0xb529,0xb79a,call qword ptr [rsi + 0x18],ff5618,computed_CALL,,,
+17_loader.exe.bin,0xb529,0xb7bc,call qword ptr [rsi + 0x20],ff5620,computed_CALL,,,
+17_loader.exe.bin,0xb971,0xb97c,call qword ptr [rip + 0x72efe],ff15fe2e0700,original_IAT_indirect,,SetFileInformationByHandle,0x7e880
+17_loader.exe.bin,0xb971,0xb990,call qword ptr [rip + 0x72d9a],ff159a2d0700,original_IAT_indirect,,GetLastError,0x7e730
+17_loader.exe.bin,0xb9a0,0xba02,call qword ptr [r15 + 0x20],41ff5720,computed_CALL,,,
+17_loader.exe.bin,0xba25,0xbcfa,call qword ptr [rdi + 0x18],ff5718,computed_CALL,,,
+17_loader.exe.bin,0xba25,0xbd18,call qword ptr [rdi + 0x20],ff5720,computed_CALL,,,
+17_loader.exe.bin,0xbd8e,0xc3dd,call qword ptr [rsp + 0x250],ff942450020000,computed_CALL,,,
+17_loader.exe.bin,0xbd8e,0xc721,call rbx,ffd3,computed_CALL,,,
+17_loader.exe.bin,0xbd8e,0xc898,call rsi,ffd6,computed_CALL,,,
+17_loader.exe.bin,0xbd8e,0xca1a,call qword ptr [rax + 7],ff5007,computed_CALL,,,
+17_loader.exe.bin,0xbd8e,0xda64,call qword ptr [rsp + 0x40],ff542440,computed_CALL,,,
+17_loader.exe.bin,0xbd8e,0xe1fa,call qword ptr [rsp + 0x60],ff542460,computed_CALL,,,
+17_loader.exe.bin,0xbd8e,0xe712,call qword ptr [rsp + 0x40],ff542440,computed_CALL,,,
+17_loader.exe.bin,0xbd8e,0xea21,call rbx,ffd3,computed_CALL,,,
+17_loader.exe.bin,0xbd8e,0xec77,call r14,41ffd6,computed_CALL,,,
+17_loader.exe.bin,0xbd8e,0xf448,call qword ptr [rsp + 0x60],ff542460,computed_CALL,,,
+17_loader.exe.bin,0xbd8e,0xf8d9,call qword ptr [rsp + 0x50],ff542450,computed_CALL,,,
+17_loader.exe.bin,0xbd8e,0xff7f,call rdi,ffd7,computed_CALL,,,
+17_loader.exe.bin,0xbd8e,0x103bf,call qword ptr [rdi + 7],ff5707,computed_CALL,,,
+17_loader.exe.bin,0xbd8e,0x10796,call qword ptr [rbx + 7],ff5307,computed_CALL,,,
+17_loader.exe.bin,0xbd8e,0x12380,call qword ptr [r14 + rax],41ff1406,computed_CALL,,,
+17_loader.exe.bin,0x128ed,0x128f8,call qword ptr [rip + 0x6be72],ff1572be0600,original_IAT_indirect,,GetProcessHeap,0x7e770
+17_loader.exe.bin,0x12c25,0x12caa,call qword ptr [rip + 0x6bb88],ff1588bb0600,original_IAT_indirect,,MultiByteToWideChar,0x7e838
+17_loader.exe.bin,0x12c25,0x12d36,call qword ptr [rdx + 7],ff5207,computed_CALL,,,
+17_loader.exe.bin,0x12db6,0x12dfa,call qword ptr [rip + 0x6bb30],ff1530bb0600,original_IAT_indirect,,NtReadFile,0x7e930
+17_loader.exe.bin,0x12db6,0x12e0f,call qword ptr [rip + 0x6bab3],ff15b3ba0600,original_IAT_indirect,,WaitForSingleObject,0x7e8c8
+17_loader.exe.bin,0x12e76,0x12e95,call qword ptr [r11 + 0x20],41ff5320,computed_CALL,,,
+17_loader.exe.bin,0x1305a,0x1306c,call qword ptr [rip + 0x6b6fe],ff15feb60600,original_IAT_indirect,,GetProcessHeap,0x7e770
+17_loader.exe.bin,0x14872,0x148f4,call qword ptr [rip + 0x69e0e],ff150e9e0600,original_IAT_indirect,,GetFileInformationByHandle,0x7e708
+17_loader.exe.bin,0x14872,0x14925,call qword ptr [rip + 0x69de5],ff15e59d0600,original_IAT_indirect,,GetFileInformationByHandleEx,0x7e710
+17_loader.exe.bin,0x14872,0x14962,call qword ptr [rax],ff10,computed_CALL,,,
+17_loader.exe.bin,0x14872,0x149e9,call qword ptr [r14 + 7],41ff5607,computed_CALL,,,
+17_loader.exe.bin,0x14872,0x14a86,call qword ptr [rip + 0x69ca4],ff15a49c0600,original_IAT_indirect,,GetLastError,0x7e730
+17_loader.exe.bin,0x14872,0x14b58,call qword ptr [rip + 0x69aa2],ff15a29a0600,original_IAT_indirect,,CloseHandle,0x7e600
+17_loader.exe.bin,0x14872,0x14cc6,call qword ptr [r14 + 7],41ff5607,computed_CALL,,,
+17_loader.exe.bin,0x14872,0x14cda,call qword ptr [rax + 8],ff5008,computed_CALL,,,
+17_loader.exe.bin,0x14f40,0x15005,call qword ptr [rip + 0x6906d],ff156d900600,computed_CALL,,,0x7e078
+17_loader.exe.bin,0x15350,0x1538a,call qword ptr [rip + 0x69418],ff1518940600,original_IAT_indirect,,GetSystemTimeAsFileTime,0x7e7a8
+17_loader.exe.bin,0x15350,0x1539a,call qword ptr [rip + 0x69350],ff1550930600,original_IAT_indirect,,GetCurrentThreadId,0x7e6f0
+17_loader.exe.bin,0x15350,0x153a7,call qword ptr [rip + 0x6933b],ff153b930600,original_IAT_indirect,,GetCurrentProcessId,0x7e6e8
+17_loader.exe.bin,0x15350,0x153b9,call qword ptr [rip + 0x69481],ff1581940600,original_IAT_indirect,,QueryPerformanceCounter,0x7e840
+17_loader.exe.bin,0x154f0,0x154f6,call qword ptr [rip + 0x6924c],ff154c920600,original_IAT_indirect,,GetModuleHandleW,0x7e748
+17_loader.exe.bin,0x155e0,0x15608,call qword ptr [rip + 0x68a6a],ff156a8a0600,computed_CALL,,,0x7e078
+17_loader.exe.bin,0x15630,0x15658,call qword ptr [rip + 0x68a1a],ff151a8a0600,computed_CALL,,,0x7e078
+17_loader.exe.bin,0x15940,0x159de,call rax,ffd0,computed_CALL,,,
+17_loader.exe.bin,0x15940,0x15a15,call qword ptr [rip + 0x60b75],ff15750b0600,computed_CALL,,,0x76590
+17_loader.exe.bin,0x15940,0x15a50,call qword ptr [rip + 0x68e12],ff15128e0600,original_IAT_indirect,,RtlUnwindEx,0x7e868
+17_loader.exe.bin,0x15940,0x15b33,call r8,41ffd0,computed_CALL,,,
+17_loader.exe.bin,0x15b60,0x15bc2,call qword ptr [rip + 0x684b0],ff15b0840600,computed_CALL,,,0x7e078
+17_loader.exe.bin,0x15f18,0x15f1c,call qword ptr [rip + 0x6877e],ff157e870600,original_IAT_indirect,,GetCommandLineA,0x7e6a0
+17_loader.exe.bin,0x15f18,0x15f29,call qword ptr [rip + 0x68779],ff1579870600,original_IAT_indirect,,GetCommandLineW,0x7e6a8
+17_loader.exe.bin,0x16004,0x16029,call qword ptr [rip + 0x68711],ff1511870600,original_IAT_indirect,,GetModuleHandleExW,0x7e740
+17_loader.exe.bin,0x16004,0x1603f,call qword ptr [rip + 0x68723],ff1523870600,original_IAT_indirect,,GetProcAddress,0x7e768
+17_loader.exe.bin,0x16004,0x1605b,call qword ptr [rip + 0x68627],ff1527860600,original_IAT_indirect,,FreeLibrary,0x7e688
+17_loader.exe.bin,0x16068,0x16074,call qword ptr [rip + 0x68666],ff1566860600,original_IAT_indirect,,GetCurrentProcess,0x7e6e0
+17_loader.exe.bin,0x16068,0x1607f,call qword ptr [rip + 0x6882b],ff152b880600,original_IAT_indirect,,TerminateProcess,0x7e8b0
+17_loader.exe.bin,0x16068,0x1608e,call qword ptr [rip + 0x6859c],ff159c850600,original_IAT_indirect,,ExitProcess,0x7e630
+17_loader.exe.bin,0x16098,0x160bf,call qword ptr [rip + 0x68683],ff1583860600,original_IAT_indirect,,GetModuleHandleW,0x7e748
+17_loader.exe.bin,0x172f8,0x1731e,call qword ptr [rip + 0x674e4],ff15e4740600,original_IAT_indirect,,IsProcessorFeaturePresent,0x7e808
+17_loader.exe.bin,0x17350,0x1735b,call qword ptr [rip + 0x672ef],ff15ef720600,original_IAT_indirect,,FlsAlloc,0x7e650
+17_loader.exe.bin,0x17350,0x17375,call qword ptr [rip + 0x672ed],ff15ed720600,original_IAT_indirect,,FlsSetValue,0x7e668
+17_loader.exe.bin,0x17350,0x1739b,call qword ptr [rip + 0x672b7],ff15b7720600,original_IAT_indirect,,FlsFree,0x7e658
+17_loader.exe.bin,0x173c0,0x173cf,call qword ptr [rip + 0x67283],ff1583720600,original_IAT_indirect,,FlsFree,0x7e658
+17_loader.exe.bin,0x173f0,0x17407,call qword ptr [rip + 0x67323],ff1523730600,original_IAT_indirect,,GetLastError,0x7e730
+17_loader.exe.bin,0x173f0,0x17415,call qword ptr [rip + 0x67245],ff1545720600,original_IAT_indirect,,FlsGetValue,0x7e660
+17_loader.exe.bin,0x173f0,0x1743a,call qword ptr [rip + 0x67228],ff1528720600,original_IAT_indirect,,FlsSetValue,0x7e668
+17_loader.exe.bin,0x173f0,0x17463,call qword ptr [rip + 0x671ff],ff15ff710600,original_IAT_indirect,,FlsSetValue,0x7e668
+17_loader.exe.bin,0x173f0,0x17470,call qword ptr [rip + 0x671f2],ff15f2710600,original_IAT_indirect,,FlsSetValue,0x7e668
+17_loader.exe.bin,0x173f0,0x1748a,call qword ptr [rip + 0x67408],ff1508740600,original_IAT_indirect,,SetLastError,0x7e898
+17_loader.exe.bin,0x173f0,0x174a6,call qword ptr [rip + 0x671bc],ff15bc710600,original_IAT_indirect,,FlsSetValue,0x7e668
+17_loader.exe.bin,0x173f0,0x174b6,call qword ptr [rip + 0x673dc],ff15dc730600,original_IAT_indirect,,SetLastError,0x7e898
+17_loader.exe.bin,0x175c0,0x175f0,call qword ptr [rip + 0x671fa],ff15fa710600,original_IAT_indirect,,InitializeCriticalSectionEx,0x7e7f0
+17_loader.exe.bin,0x175c0,0x1762a,call qword ptr [rip + 0x66fe8],ff15e86f0600,original_IAT_indirect,,DeleteCriticalSection,0x7e618
+17_loader.exe.bin,0x17660,0x1767a,call qword ptr [rip + 0x66f98],ff15986f0600,original_IAT_indirect,,DeleteCriticalSection,0x7e618
+17_loader.exe.bin,0x17698,0x176b8,call qword ptr [rip + 0x67202],ff1502720600,original_IAT_indirect,,VirtualProtect,0x7e8c0
+17_loader.exe.bin,0x176c8,0x176e7,call qword ptr [rip + 0x66f9b],ff159b6f0600,original_IAT_indirect,,FreeLibrary,0x7e688
+17_loader.exe.bin,0x17758,0x177fe,call qword ptr [rip + 0x66e04],ff15046e0600,original_IAT_indirect,,CompareStringW,0x7e608
+17_loader.exe.bin,0x17850,0x17927,call qword ptr [rip + 0x66eeb],ff15eb6e0600,original_IAT_indirect,,LCMapStringW,0x7e818
+17_loader.exe.bin,0x17a48,0x17ab5,call qword ptr [rip + 0x66d75],ff15756d0600,original_IAT_indirect,,LoadLibraryExW,0x7e830
+17_loader.exe.bin,0x17a48,0x17ac7,call qword ptr [rip + 0x66c63],ff15636c0600,original_IAT_indirect,,GetLastError,0x7e730
+17_loader.exe.bin,0x17a48,0x17b09,call qword ptr [rip + 0x66d21],ff15216d0600,original_IAT_indirect,,LoadLibraryExW,0x7e830
+17_loader.exe.bin,0x17a48,0x17b65,call qword ptr [rip + 0x66d55],ff15556d0600,original_IAT_indirect,,VirtualProtect,0x7e8c0
+17_loader.exe.bin,0x17a48,0x17b96,call qword ptr [rip + 0x66d24],ff15246d0600,original_IAT_indirect,,VirtualProtect,0x7e8c0
+17_loader.exe.bin,0x17a48,0x17bda,call qword ptr [rip + 0x66aa8],ff15a86a0600,original_IAT_indirect,,FreeLibrary,0x7e688
+17_loader.exe.bin,0x17a48,0x17be6,call qword ptr [rip + 0x66b7c],ff157c6b0600,original_IAT_indirect,,GetProcAddress,0x7e768
+17_loader.exe.bin,0x17c7c,0x17c9b,call qword ptr [rip + 0x66977],ff1577690600,original_IAT_indirect,,DeleteCriticalSection,0x7e618
+17_loader.exe.bin,0x17d00,0x17d04,call qword ptr [rip + 0x66a66],ff15666a0600,original_IAT_indirect,,GetProcessHeap,0x7e770
+17_loader.exe.bin,0x17e20,0x17e69,call qword ptr [rip + 0x668c1],ff15c1680600,original_IAT_indirect,,GetLastError,0x7e730
+17_loader.exe.bin,0x17e20,0x17e9c,call qword ptr [rip + 0x669f6],ff15f6690600,original_IAT_indirect,,SetLastError,0x7e898
+17_loader.exe.bin,0x1815c,0x1816b,call qword ptr [rip + 0x665bf],ff15bf650600,original_IAT_indirect,,GetLastError,0x7e730
+17_loader.exe.bin,0x1815c,0x1818a,call qword ptr [rip + 0x66708],ff1508670600,original_IAT_indirect,,SetLastError,0x7e898
+17_loader.exe.bin,0x1815c,0x181f8,call qword ptr [rip + 0x6669a],ff159a660600,original_IAT_indirect,,SetLastError,0x7e898
+17_loader.exe.bin,0x183b8,0x183e8,call qword ptr [rip + 0x6638a],ff158a630600,original_IAT_indirect,,GetStartupInfoW,0x7e778
+17_loader.exe.bin,0x183b8,0x18453,call qword ptr [rip + 0x662bf],ff15bf620600,original_IAT_indirect,,GetFileType,0x7e718
+17_loader.exe.bin,0x184b8,0x18531,call qword ptr [rip + 0x66249],ff1549620600,original_IAT_indirect,,GetStdHandle,0x7e780
+17_loader.exe.bin,0x184b8,0x18547,call qword ptr [rip + 0x661cb],ff15cb610600,original_IAT_indirect,,GetFileType,0x7e718
+17_loader.exe.bin,0x186d8,0x18753,call qword ptr [rip + 0x660b7],ff15b7600600,original_IAT_indirect,,IsValidCodePage,0x7e810
+17_loader.exe.bin,0x186d8,0x18797,call qword ptr [rip + 0x65efb],ff15fb5e0600,original_IAT_indirect,,GetCPInfo,0x7e698
+17_loader.exe.bin,0x189a0,0x189ca,call qword ptr [rip + 0x65d88],ff15885d0600,original_IAT_indirect,,GetOEMCP,0x7e758
+17_loader.exe.bin,0x189a0,0x189e1,call qword ptr [rip + 0x65ca9],ff15a95c0600,original_IAT_indirect,,GetACP,0x7e690
+17_loader.exe.bin,0x18de0,0x18e30,call qword ptr [rip + 0x65862],ff1562580600,original_IAT_indirect,,GetCPInfo,0x7e698
+17_loader.exe.bin,0x191b0,0x191c6,call qword ptr [rip + 0x6560c],ff150c560600,original_IAT_indirect,,HeapFree,0x7e7d8
+17_loader.exe.bin,0x191b0,0x191d0,call qword ptr [rip + 0x6555a],ff155a550600,original_IAT_indirect,,GetLastError,0x7e730
+17_loader.exe.bin,0x192e4,0x192ed,call qword ptr [rip + 0x65515],ff1515550600,original_IAT_indirect,,IsProcessorFeaturePresent,0x7e808
+17_loader.exe.bin,0x192e4,0x19312,call qword ptr [rip + 0x653c8],ff15c8530600,original_IAT_indirect,,GetCurrentProcess,0x7e6e0
+17_loader.exe.bin,0x1932c,0x193b7,call qword ptr [rip + 0x65493],ff1593540600,original_IAT_indirect,,RtlCaptureContext,0x7e850
+17_loader.exe.bin,0x1932c,0x193cf,call qword ptr [rip + 0x65483],ff1583540600,original_IAT_indirect,,RtlLookupFunctionEntry,0x7e858
+17_loader.exe.bin,0x1932c,0x1940a,call qword ptr [rip + 0x65460],ff1560540600,original_IAT_indirect,,RtlVirtualUnwind,0x7e870
+17_loader.exe.bin,0x1932c,0x19443,call qword ptr [rip + 0x653b7],ff15b7530600,original_IAT_indirect,,IsDebuggerPresent,0x7e800
+17_loader.exe.bin,0x1932c,0x1944d,call qword ptr [rip + 0x65455],ff1555540600,original_IAT_indirect,,SetUnhandledExceptionFilter,0x7e8a8
+17_loader.exe.bin,0x1932c,0x19458,call qword ptr [rip + 0x6545a],ff155a540600,original_IAT_indirect,,UnhandledExceptionFilter,0x7e8b8
+17_loader.exe.bin,0x1955c,0x1956f,call qword ptr [rip + 0x651bb],ff15bb510600,original_IAT_indirect,,GetLastError,0x7e730
+17_loader.exe.bin,0x1955c,0x195a4,call qword ptr [rip + 0x652ee],ff15ee520600,original_IAT_indirect,,SetLastError,0x7e898
+17_loader.exe.bin,0x195c4,0x195e0,call qword ptr [rip + 0x6514a],ff154a510600,original_IAT_indirect,,GetLastError,0x7e730
+17_loader.exe.bin,0x195c4,0x19615,call qword ptr [rip + 0x6527d],ff157d520600,original_IAT_indirect,,SetLastError,0x7e898
+17_loader.exe.bin,0x19630,0x1964c,call qword ptr [rip + 0x650de],ff15de500600,original_IAT_indirect,,GetLastError,0x7e730
+17_loader.exe.bin,0x19630,0x1965c,call qword ptr [rip + 0x65236],ff1536520600,original_IAT_indirect,,SetLastError,0x7e898
+17_loader.exe.bin,0x19f90,0x19fc1,call qword ptr [rip + 0x64651],ff1551460600,original_IAT_indirect,,DeleteCriticalSection,0x7e618
+17_loader.exe.bin,0x1a230,0x1a297,call qword ptr [rip + 0x645bb],ff15bb450600,original_IAT_indirect,,RtlLookupFunctionEntry,0x7e858
+17_loader.exe.bin,0x1a39a,0x1a3c7,call qword ptr [rip + 0x6448b],ff158b440600,original_IAT_indirect,,RtlLookupFunctionEntry,0x7e858
+17_loader.exe.bin,0x1a460,0x1a570,call qword ptr [rip + 0x642f2],ff15f2420600,original_IAT_indirect,,RtlUnwindEx,0x7e868
+17_loader.exe.bin,0x1a860,0x1a899,call qword ptr [rip + 0x637d9],ff15d9370600,computed_CALL,,,0x7e078
+17_loader.exe.bin,0x1ab80,0x1abd5,call qword ptr [rip + 0x63bf5],ff15f53b0600,original_IAT_indirect,,HeapAlloc,0x7e7d0
+17_loader.exe.bin,0x1ac00,0x1ac3e,call qword ptr [rip + 0x63b8c],ff158c3b0600,original_IAT_indirect,,HeapAlloc,0x7e7d0
+17_loader.exe.bin,0x1ac94,0x1adc6,call qword ptr [rip + 0x639bc],ff15bc390600,original_IAT_indirect,,GetStringTypeW,0x7e788
+17_loader.exe.bin,0x1b734,0x1b80a,call qword ptr [rip + 0x62f20],ff15202f0600,original_IAT_indirect,,GetLastError,0x7e730
+17_loader.exe.bin,0x1b8d4,0x1b9b2,call qword ptr [rip + 0x62d78],ff15782d0600,original_IAT_indirect,,GetLastError,0x7e730
+17_loader.exe.bin,0x1bc04,0x1bd85,call qword ptr [rip + 0x628b5],ff15b5280600,original_IAT_indirect,,FindFirstFileExW,0x7e640
+17_loader.exe.bin,0x1bc04,0x1bebb,call qword ptr [rip + 0x62787],ff1587270600,original_IAT_indirect,,FindNextFileW,0x7e648
+17_loader.exe.bin,0x1bc04,0x1befb,call qword ptr [rip + 0x62737],ff1537270600,original_IAT_indirect,,FindClose,0x7e638
+17_loader.exe.bin,0x1bc04,0x1bf27,call qword ptr [rip + 0x6270b],ff150b270600,original_IAT_indirect,,FindClose,0x7e638
+17_loader.exe.bin,0x1bf78,0x1bfb3,call qword ptr [rip + 0x6277f],ff157f270600,original_IAT_indirect,,GetModuleFileNameW,0x7e738
+17_loader.exe.bin,0x1bf78,0x1bfbd,call qword ptr [rip + 0x6276d],ff156d270600,original_IAT_indirect,,GetLastError,0x7e730
+17_loader.exe.bin,0x1c09c,0x1c13e,call qword ptr [rip + 0x625ec],ff15ec250600,original_IAT_indirect,,GetLastError,0x7e730
+17_loader.exe.bin,0x1c3c8,0x1c3e1,call qword ptr [rip + 0x62311],ff1511230600,original_IAT_indirect,,GetEnvironmentStringsW,0x7e6f8
+17_loader.exe.bin,0x1c3c8,0x1c456,call qword ptr [rip + 0x62224],ff1524220600,original_IAT_indirect,,FreeEnvironmentStringsW,0x7e680
+17_loader.exe.bin,0x1c3c8,0x1c4b2,call qword ptr [rip + 0x621c8],ff15c8210600,original_IAT_indirect,,FreeEnvironmentStringsW,0x7e680
+17_loader.exe.bin,0x1c998,0x1ca12,call qword ptr [rip + 0x61e88],ff15881e0600,original_IAT_indirect,,SetStdHandle,0x7e8a0
+17_loader.exe.bin,0x1cafc,0x1cb25,call qword ptr [rip + 0x61aed],ff15ed1a0600,original_IAT_indirect,,DeleteCriticalSection,0x7e618
+17_loader.exe.bin,0x1e424,0x1e472,call qword ptr [rip + 0x601f8],ff15f8010600,original_IAT_indirect,,FlushFileBuffers,0x7e670
+17_loader.exe.bin,0x1e424,0x1e47e,call qword ptr [rip + 0x602ac],ff15ac020600,original_IAT_indirect,,GetLastError,0x7e730
+17_loader.exe.bin,0x1e4d8,0x1e5f6,call qword ptr [rip + 0x600bc],ff15bc000600,original_IAT_indirect,,GetConsoleMode,0x7e6b8
+17_loader.exe.bin,0x1e4d8,0x1e688,call qword ptr [rip + 0x600a2],ff15a2000600,original_IAT_indirect,,GetLastError,0x7e730
+17_loader.exe.bin,0x1e4d8,0x1e74e,call qword ptr [rip + 0x6018c],ff158c010600,original_IAT_indirect,,WriteFile,0x7e8e0
+17_loader.exe.bin,0x1e4d8,0x1e758,call qword ptr [rip + 0x5ffd2],ff15d2ff0500,original_IAT_indirect,,GetLastError,0x7e730
+17_loader.exe.bin,0x1e928,0x1e9a7,call qword ptr [rip + 0x5fd13],ff1513fd0500,original_IAT_indirect,,GetConsoleOutputCP,0x7e6c0
+17_loader.exe.bin,0x1e928,0x1ec84,call qword ptr [rip + 0x5fc56],ff1556fc0500,original_IAT_indirect,,WriteFile,0x7e8e0
+17_loader.exe.bin,0x1e928,0x1ecca,call qword ptr [rip + 0x5fc10],ff1510fc0500,original_IAT_indirect,,WriteFile,0x7e8e0
+17_loader.exe.bin,0x1e928,0x1ed89,call qword ptr [rip + 0x5f9a1],ff15a1f90500,original_IAT_indirect,,GetLastError,0x7e730
+17_loader.exe.bin,0x1edbc,0x1ee74,call qword ptr [rip + 0x5fa66],ff1566fa0500,original_IAT_indirect,,WriteFile,0x7e8e0
+17_loader.exe.bin,0x1edbc,0x1ee90,call qword ptr [rip + 0x5f89a],ff159af80500,original_IAT_indirect,,GetLastError,0x7e730
+17_loader.exe.bin,0x1eec4,0x1ef90,call qword ptr [rip + 0x5f94a],ff154af90500,original_IAT_indirect,,WriteFile,0x7e8e0
+17_loader.exe.bin,0x1eec4,0x1efac,call qword ptr [rip + 0x5f77e],ff157ef70500,original_IAT_indirect,,GetLastError,0x7e730
+17_loader.exe.bin,0x1efe0,0x1f0f8,call qword ptr [rip + 0x5f7e2],ff15e2f70500,original_IAT_indirect,,WriteFile,0x7e8e0
+17_loader.exe.bin,0x1efe0,0x1f11d,call qword ptr [rip + 0x5f60d],ff150df60500,original_IAT_indirect,,GetLastError,0x7e730
+17_loader.exe.bin,0x1f154,0x1f1c7,call qword ptr [rip + 0x5f44b],ff154bf40500,original_IAT_indirect,,DeleteCriticalSection,0x7e618
+17_loader.exe.bin,0x1f650,0x1f7a8,call qword ptr [rip + 0x5f09a],ff159af00500,original_IAT_indirect,,RaiseException,0x7e848
+17_loader.exe.bin,0x1fd30,0x1fdb6,call qword ptr [rip + 0x5e2bc],ff15bce20500,computed_CALL,,,0x7e078
+17_loader.exe.bin,0x1ffd0,0x20194,call qword ptr [rip + 0x5dede],ff15dede0500,computed_CALL,,,0x7e078
+17_loader.exe.bin,0x207e5,0x20822,call qword ptr [rip + 0x5ddf8],ff15f8dd0500,original_IAT_indirect,,EncodePointer,0x7e620
+17_loader.exe.bin,0x20b12,0x20b76,call r12,41ffd4,computed_CALL,,,
+17_loader.exe.bin,0x20b12,0x20bf5,call r12,41ffd4,computed_CALL,,,
+17_loader.exe.bin,0x20b12,0x20c31,call r12,41ffd4,computed_CALL,,,
+17_loader.exe.bin,0x20b12,0x20c6e,call r12,41ffd4,computed_CALL,,,
+17_loader.exe.bin,0x20b12,0x20cc3,call r12,41ffd4,computed_CALL,,,
+17_loader.exe.bin,0x20b12,0x20cde,call r12,41ffd4,computed_CALL,,,
+17_loader.exe.bin,0x20b12,0x20cf6,call r12,41ffd4,computed_CALL,,,
+17_loader.exe.bin,0x20b12,0x20d4e,call r12,41ffd4,computed_CALL,,,
+17_loader.exe.bin,0x20b12,0x20d65,call r12,41ffd4,computed_CALL,,,
+17_loader.exe.bin,0x214a0,0x2150d,call qword ptr [rip + 0x5d2cd],ff15cdd20500,original_IAT_indirect,,HeapReAlloc,0x7e7e0
+17_loader.exe.bin,0x21754,0x218aa,call qword ptr [rip + 0x5cfc8],ff15c8cf0500,original_IAT_indirect,,SetEnvironmentVariableW,0x7e878
+17_loader.exe.bin,0x22150,0x221a2,call qword ptr [rip + 0x5c6e0],ff15e0c60500,original_IAT_indirect,,SetFilePointerEx,0x7e888
+17_loader.exe.bin,0x22150,0x221ac,call qword ptr [rip + 0x5c57e],ff157ec50500,original_IAT_indirect,,GetLastError,0x7e730
+17_loader.exe.bin,0x22450,0x2246e,call rax,ffd0,computed_CALL,,,
+17_loader.exe.bin,0x22570,0x225a6,call qword ptr [rip + 0x5bacc],ff15ccba0500,computed_CALL,,,0x7e078
+17_loader.exe.bin,0x22570,0x225c0,call qword ptr [rip + 0x5c29a],ff159ac20500,original_IAT_indirect,,RtlPcToFileHeader,0x7e860
+17_loader.exe.bin,0x22570,0x22603,call qword ptr [rip + 0x5c23f],ff153fc20500,original_IAT_indirect,,RaiseException,0x7e848
+17_loader.exe.bin,0x228d0,0x229a3,call qword ptr [rip + 0x5bcef],ff15efbc0500,original_IAT_indirect,,GetCPInfo,0x7e698
+17_loader.exe.bin,0x22c7c,0x22cb2,call qword ptr [rip + 0x5b958],ff1558b90500,original_IAT_indirect,,CreateFileW,0x7e610
+17_loader.exe.bin,0x22cd0,0x22d01,call qword ptr [rip + 0x5bbd1],ff15d1bb0500,original_IAT_indirect,,WriteConsoleW,0x7e8d8
+17_loader.exe.bin,0x22cd0,0x22d0d,call qword ptr [rip + 0x5ba1d],ff151dba0500,original_IAT_indirect,,GetLastError,0x7e730
+17_loader.exe.bin,0x22cd0,0x22d25,call qword ptr [rip + 0x5b8d5],ff15d5b80500,original_IAT_indirect,,CloseHandle,0x7e600
+17_loader.exe.bin,0x22cd0,0x22d50,call qword ptr [rip + 0x5b8ba],ff15bab80500,original_IAT_indirect,,CreateFileW,0x7e610
+17_loader.exe.bin,0x22cd0,0x22d6f,call qword ptr [rip + 0x5bb63],ff1563bb0500,original_IAT_indirect,,WriteConsoleW,0x7e8d8
+17_loader.exe.bin,0x22d90,0x22da1,call qword ptr [rip + 0x5b859],ff1559b80500,original_IAT_indirect,,CloseHandle,0x7e600
+17_loader.exe.bin,0x22dac,0x22e1a,call qword ptr [rip + 0x5b7e0],ff15e0b70500,original_IAT_indirect,,CloseHandle,0x7e600
+17_loader.exe.bin,0x22dac,0x22e24,call qword ptr [rip + 0x5b906],ff1506b90500,original_IAT_indirect,,GetLastError,0x7e730
+17_loader.exe.bin,0x23eef,0x23f70,call qword ptr [rip + 0x5a7fa],ff15faa70500,original_IAT_indirect,,GetProcessHeap,0x7e770
+17_loader.exe.bin,0x23eef,0x23f81,call qword ptr [rip + 0x5a859],ff1559a80500,original_IAT_indirect,,HeapReAlloc,0x7e7e0
+17_loader.exe.bin,0x23fbe,0x2401a,call qword ptr [rip + 0x5a8f0],ff15f0a80500,original_IAT_indirect,,WaitOnAddress,0x7e910
+17_loader.exe.bin,0x23fbe,0x2403c,call qword ptr [rip + 0x5a6ee],ff15eea60500,original_IAT_indirect,,GetLastError,0x7e730
+17_loader.exe.bin,0x23fbe,0x2409e,call qword ptr [rdi + 0x20],ff5720,computed_CALL,,,
+17_loader.exe.bin,0x23fbe,0x240ad,call qword ptr [rip + 0x5a865],ff1565a80500,original_IAT_indirect,,WakeByAddressAll,0x7e918
+17_payload.dll.bin,0x1005,0x11c8,call r14,41ffd6,computed_CALL,,,
+17_payload.dll.bin,0x1005,0x11ce,call rdi,ffd7,computed_CALL,,,
+17_payload.dll.bin,0x1005,0x137b,call rdi,ffd7,computed_CALL,,,
+17_payload.dll.bin,0x1568,0x1ac2,call qword ptr [r13 + 7],41ff5507,computed_CALL,,,
+17_payload.dll.bin,0x1568,0x1d6f,call qword ptr [r14 + 7],41ff5607,computed_CALL,,,
+17_payload.dll.bin,0x2bf2,0x2ced,call qword ptr [rsi + 0x18],ff5618,computed_CALL,,,
+17_payload.dll.bin,0x2bf2,0x2d17,call qword ptr [rsi + 0x20],ff5620,computed_CALL,,,
+17_payload.dll.bin,0x2bf2,0x2d91,call qword ptr [r13 + 0x18],41ff5518,computed_CALL,,,
+17_payload.dll.bin,0x2bf2,0x2da5,call qword ptr [r13 + 0x20],41ff5520,computed_CALL,,,
+17_payload.dll.bin,0x2e29,0x2e65,call r14,41ffd6,computed_CALL,,,
+17_payload.dll.bin,0x2e85,0x2f7c,call qword ptr [rip + 0x9217e],ff157e210900,original_IAT_indirect,,GetLastError,0x95100
+17_payload.dll.bin,0x2e85,0x2fdd,call qword ptr [rip + 0x91ffd],ff15fd1f0900,original_IAT_indirect,,CreateFileW,0x94fe0
+17_payload.dll.bin,0x2e85,0x300e,call qword ptr [rip + 0x9225c],ff155c220900,original_IAT_indirect,,SetFileTime,0x95270
+17_payload.dll.bin,0x2e85,0x3031,call qword ptr [rip + 0x920c9],ff15c9200900,original_IAT_indirect,,GetLastError,0x95100
+17_payload.dll.bin,0x2e85,0x30a0,call qword ptr [rip + 0x9205a],ff155a200900,original_IAT_indirect,,GetLastError,0x95100
+17_payload.dll.bin,0x2e85,0x30c6,call qword ptr [rip + 0x91f0c],ff150c1f0900,original_IAT_indirect,,CloseHandle,0x94fd8
+17_payload.dll.bin,0x3182,0x3186,call qword ptr [rip + 0x91f74],ff15741f0900,original_IAT_indirect,,GetLastError,0x95100
+17_payload.dll.bin,0x3a93,0x3a9f,call qword ptr [rip + 0x91533],ff1533150900,original_IAT_indirect,,CloseHandle,0x94fd8
+17_payload.dll.bin,0x3acd,0x3aea,call qword ptr [rsi],ff16,computed_CALL,,,
+17_payload.dll.bin,0x3b02,0x3b36,call qword ptr [rip + 0x9160c],ff150c160900,original_IAT_indirect,,GetProcessHeap,0x95148
+17_payload.dll.bin,0x3c5a,0x3e36,call rbx,ffd3,computed_CALL,,,
+17_payload.dll.bin,0x4112,0x4158,call qword ptr [rip + 0x90fba],ff15ba0f0900,original_IAT_indirect,,GetModuleHandleW,0x95118
+17_payload.dll.bin,0x4112,0x4178,call qword ptr [rip + 0x90f82],ff15820f0900,original_IAT_indirect,,GetLastError,0x95100
+17_payload.dll.bin,0x4112,0x41dc,call qword ptr [rip + 0x90e76],ff15760e0900,original_IAT_indirect,,FormatMessageW,0x95058
+17_payload.dll.bin,0x4112,0x4257,call qword ptr [rax + 0x18],ff5018,computed_CALL,,,
+17_payload.dll.bin,0x4324,0x4a5d,call qword ptr [rip + 0x906d5],ff15d5060900,original_IAT_indirect,,GetProcAddress,0x95138
+17_payload.dll.bin,0x5ac0,0x5ad1,call qword ptr [rip + 0x8f541],ff1541f50800,original_IAT_indirect,,FindClose,0x95018
+17_payload.dll.bin,0x5af4,0x5b5a,call qword ptr [rdx + 7],ff5207,computed_CALL,,,
+17_payload.dll.bin,0x5b61,0x5bee,call qword ptr [rax + 0x28],ff5028,computed_CALL,,,
+17_payload.dll.bin,0x5b61,0x5c61,call qword ptr [rax + 0x28],ff5028,computed_CALL,,,
+17_payload.dll.bin,0x5e3d,0x5e8c,call r13,41ffd5,computed_CALL,,,
+17_payload.dll.bin,0x5e3d,0x5f58,call qword ptr [rsi + rax],ff1406,computed_CALL,,,
+17_payload.dll.bin,0x5e3d,0x5f83,call r13,41ffd5,computed_CALL,,,
+17_payload.dll.bin,0x60db,0x626d,call rdi,ffd7,computed_CALL,,,
+17_payload.dll.bin,0x627c,0x632b,call rdi,ffd7,computed_CALL,,,
+17_payload.dll.bin,0x627c,0x63e9,call rdi,ffd7,computed_CALL,,,
+17_payload.dll.bin,0x63ff,0x642f,call rdi,ffd7,computed_CALL,,,
+17_payload.dll.bin,0x63ff,0x6607,call r15,41ffd7,computed_CALL,,,
+17_payload.dll.bin,0x63ff,0x6625,call qword ptr [rsp + 0x60],ff542460,computed_CALL,,,
+17_payload.dll.bin,0x63ff,0x692e,call r15,41ffd7,computed_CALL,,,
+17_payload.dll.bin,0x63ff,0x696e,call qword ptr [rax + 0x18],ff5018,computed_CALL,,,
+17_payload.dll.bin,0x63ff,0x697d,call rdi,ffd7,computed_CALL,,,
+17_payload.dll.bin,0x6c21,0x6c93,call qword ptr [r12 + 0x18],41ff542418,computed_CALL,,,
+17_payload.dll.bin,0x6c21,0x6cf1,call rax,ffd0,computed_CALL,,,
+17_payload.dll.bin,0x6d35,0x6d57,call qword ptr [rsi],ff16,computed_CALL,,,
+17_payload.dll.bin,0x6d79,0x6e0e,call qword ptr [rax + 7],ff5007,computed_CALL,,,
+17_payload.dll.bin,0x73b4,0x73d1,call qword ptr [rip + 0x8de49],ff1549de0800,original_IAT_indirect,,QueryPerformanceCounter,0x95220
+17_payload.dll.bin,0x73b4,0x743d,call qword ptr [rip + 0x8dcbd],ff15bddc0800,original_IAT_indirect,,GetLastError,0x95100
+17_payload.dll.bin,0x7b0a,0x7c4e,call rsi,ffd6,computed_CALL,,,
+17_payload.dll.bin,0x7b0a,0x7c71,call qword ptr [rip + 0x8d6c1],ff15c1d60800,original_IAT_indirect,,WakeByAddressSingle,0x95338
+17_payload.dll.bin,0x7b0a,0x7da3,call rbx,ffd3,computed_CALL,,,
+17_payload.dll.bin,0x7b0a,0x7ef0,call qword ptr [rip + 0x8d442],ff1542d40800,original_IAT_indirect,,WakeByAddressSingle,0x95338
+17_payload.dll.bin,0x7b0a,0x8032,call qword ptr [rip + 0x8d300],ff1500d30800,original_IAT_indirect,,WakeByAddressSingle,0x95338
+17_payload.dll.bin,0x821d,0x823c,call rax,ffd0,computed_CALL,,,
+17_payload.dll.bin,0x821d,0x8278,call qword ptr [rip + 0x8ceca],ff15cace0800,original_IAT_indirect,,GetProcessHeap,0x95148
+17_payload.dll.bin,0xa0c4,0xa716,call qword ptr [rsp + 0x100],ff942400010000,computed_CALL,,,
+17_payload.dll.bin,0xa0c4,0xa728,call qword ptr [rsp + 0x90],ff942490000000,computed_CALL,,,
+17_payload.dll.bin,0xa0c4,0xaa2d,call qword ptr [rsp + 0x130],ff942430010000,computed_CALL,,,
+17_payload.dll.bin,0xa0c4,0xaa7c,call qword ptr [rsp + 0x100],ff942400010000,computed_CALL,,,
+17_payload.dll.bin,0xa0c4,0xaaaf,call rdx,ffd2,computed_CALL,,,
+17_payload.dll.bin,0xa0c4,0xae70,call qword ptr [rsp + 0x118],ff942418010000,computed_CALL,,,
+17_payload.dll.bin,0xa0c4,0xaf16,call qword ptr [rsp + 0xf8],ff9424f8000000,computed_CALL,,,
+17_payload.dll.bin,0xa0c4,0xb046,call qword ptr [rsp + 0x138],ff942438010000,computed_CALL,,,
+17_payload.dll.bin,0xa0c4,0xb24b,call qword ptr [rsp + 0xc0],ff9424c0000000,computed_CALL,,,
+17_payload.dll.bin,0xa0c4,0xb44f,call qword ptr [rsp + 0x118],ff942418010000,computed_CALL,,,
+17_payload.dll.bin,0xa0c4,0xb549,call qword ptr [rsp + 0x128],ff942428010000,computed_CALL,,,
+17_payload.dll.bin,0xa0c4,0xb947,call qword ptr [rsp + 0x140],ff942440010000,computed_CALL,,,
+17_payload.dll.bin,0xa0c4,0xba5d,call qword ptr [rsp + 0x148],ff942448010000,computed_CALL,,,
+17_payload.dll.bin,0xbd0f,0xbd26,call rax,ffd0,computed_CALL,,,
+17_payload.dll.bin,0xbd48,0xc1f8,call r14,41ffd6,computed_CALL,,,
+17_payload.dll.bin,0xbd48,0xc276,call r14,41ffd6,computed_CALL,,,
+17_payload.dll.bin,0xbd48,0x11498,call qword ptr [rip + 0x83e02],ff15023e0800,original_IAT_indirect,,SwitchToThread,0x952a0
+17_payload.dll.bin,0xbd48,0x117bb,call qword ptr [rip + 0x83987],ff1587390800,original_IAT_indirect,,GetProcessHeap,0x95148
+17_payload.dll.bin,0xbd48,0x117c9,call qword ptr [rip + 0x839d9],ff15d9390800,original_IAT_indirect,,HeapFree,0x951a8
+17_payload.dll.bin,0xbd48,0x11be6,call qword ptr [rip + 0x836b4],ff15b4360800,original_IAT_indirect,,SwitchToThread,0x952a0
+17_payload.dll.bin,0xbd48,0x11c7e,call qword ptr [rip + 0x8361c],ff151c360800,original_IAT_indirect,,SwitchToThread,0x952a0
+17_payload.dll.bin,0xbd48,0x11cca,call qword ptr [rip + 0x83478],ff1578340800,original_IAT_indirect,,GetProcessHeap,0x95148
+17_payload.dll.bin,0xbd48,0x11cd8,call qword ptr [rip + 0x834ca],ff15ca340800,original_IAT_indirect,,HeapFree,0x951a8
+17_payload.dll.bin,0xbd48,0x11d16,call qword ptr [rip + 0x8342c],ff152c340800,original_IAT_indirect,,GetProcessHeap,0x95148
+17_payload.dll.bin,0xbd48,0x11d24,call qword ptr [rip + 0x8347e],ff157e340800,original_IAT_indirect,,HeapFree,0x951a8
+17_payload.dll.bin,0xbd48,0x11d98,call qword ptr [rip + 0x833aa],ff15aa330800,original_IAT_indirect,,GetProcessHeap,0x95148
+17_payload.dll.bin,0xbd48,0x11da6,call qword ptr [rip + 0x833fc],ff15fc330800,original_IAT_indirect,,HeapFree,0x951a8
+17_payload.dll.bin,0xbd48,0x11e03,call qword ptr [rip + 0x8333f],ff153f330800,original_IAT_indirect,,GetProcessHeap,0x95148
+17_payload.dll.bin,0xbd48,0x11e11,call qword ptr [rip + 0x83391],ff1591330800,original_IAT_indirect,,HeapFree,0x951a8
+17_payload.dll.bin,0xbd48,0x11e28,call qword ptr [rip + 0x8331a],ff151a330800,original_IAT_indirect,,GetProcessHeap,0x95148
+17_payload.dll.bin,0xbd48,0x11e36,call qword ptr [rip + 0x8336c],ff156c330800,original_IAT_indirect,,HeapFree,0x951a8
+17_payload.dll.bin,0x14076,0x14170,call qword ptr [rax + 7],ff5007,computed_CALL,,,
+17_payload.dll.bin,0x15661,0x1584f,call qword ptr [rip + 0x7f853],ff1553f80700,original_IAT_indirect,,GetCurrentDirectoryW,0x950a8
+17_payload.dll.bin,0x15661,0x1586b,call qword ptr [rip + 0x7f85f],ff155ff80700,original_IAT_indirect,,GetFileAttributesW,0x950d0
+17_payload.dll.bin,0x15661,0x15879,call qword ptr [rip + 0x7f911],ff1511f90700,original_IAT_indirect,,GetWindowsDirectoryW,0x95190
+17_payload.dll.bin,0x15661,0x15898,call qword ptr [rip + 0x7f852],ff1552f80700,original_IAT_indirect,,GetFullPathNameW,0x950f0
+17_payload.dll.bin,0x15661,0x158af,call qword ptr [rip + 0x7f8b3],ff15b3f80700,original_IAT_indirect,,GetSystemDirectoryW,0x95168
+17_payload.dll.bin,0x1593b,0x15c43,call rbx,ffd3,computed_CALL,,,
+17_payload.dll.bin,0x1593b,0x15f5a,call rbx,ffd3,computed_CALL,,,
+17_payload.dll.bin,0x1593b,0x1643b,call rbx,ffd3,computed_CALL,,,
+17_payload.dll.bin,0x1593b,0x1669b,call rsi,ffd6,computed_CALL,,,
+17_payload.dll.bin,0x1593b,0x16b65,call rsi,ffd6,computed_CALL,,,
+17_payload.dll.bin,0x1593b,0x17cbe,call r14,41ffd6,computed_CALL,,,
+17_payload.dll.bin,0x1593b,0x181c2,call r14,41ffd6,computed_CALL,,,
+17_payload.dll.bin,0x1593b,0x184e2,call rbx,ffd3,computed_CALL,,,
+17_payload.dll.bin,0x1593b,0x18868,call qword ptr [rsp + 0x68],ff542468,computed_CALL,,,
+17_payload.dll.bin,0x1593b,0x18f57,call rbx,ffd3,computed_CALL,,,
+17_payload.dll.bin,0x1593b,0x1922c,call r14,41ffd6,computed_CALL,,,
+17_payload.dll.bin,0x1593b,0x19239,call rsi,ffd6,computed_CALL,,,
+17_payload.dll.bin,0x1593b,0x19244,call rsi,ffd6,computed_CALL,,,
+17_payload.dll.bin,0x1593b,0x19817,call rsi,ffd6,computed_CALL,,,
+17_payload.dll.bin,0x1593b,0x1ab21,call qword ptr [rsp + 0xa0],ff9424a0000000,computed_CALL,,,
+17_payload.dll.bin,0x1593b,0x1adfc,call rdi,ffd7,computed_CALL,,,
+17_payload.dll.bin,0x1593b,0x1ae37,call qword ptr [rsp + 0x130],ff942430010000,computed_CALL,,,
+17_payload.dll.bin,0x1593b,0x1ae8b,call r14,41ffd6,computed_CALL,,,
+17_payload.dll.bin,0x1593b,0x1af07,call qword ptr [rsp + 0x1f0],ff9424f0010000,computed_CALL,,,
+17_payload.dll.bin,0x1593b,0x1af17,call qword ptr [rsp + 0x130],ff942430010000,computed_CALL,,,
+17_payload.dll.bin,0x1593b,0x1af26,call qword ptr [rsp + 0x1c8],ff9424c8010000,computed_CALL,,,
+17_payload.dll.bin,0x1593b,0x1aff5,call qword ptr [rsp + 0x1c8],ff9424c8010000,computed_CALL,,,
+17_payload.dll.bin,0x1593b,0x1b003,call qword ptr [rsp + 0x130],ff942430010000,computed_CALL,,,
+17_payload.dll.bin,0x1b929,0x1b96d,call qword ptr [rip + 0x799d5],ff15d5990700,original_IAT_indirect,,NtReadFile,0x95348
+17_payload.dll.bin,0x1b929,0x1b982,call qword ptr [rip + 0x79938],ff1538990700,original_IAT_indirect,,WaitForSingleObject,0x952c0
+17_payload.dll.bin,0x1b9ee,0x1baa9,call qword ptr [rip + 0x795f1],ff15f1950700,original_IAT_indirect,,GetConsoleTitleW,0x950a0
+17_payload.dll.bin,0x1b9ee,0x1bab8,call qword ptr [rip + 0x7969a],ff159a960700,original_IAT_indirect,,GetStdHandle,0x95158
+17_payload.dll.bin,0x1b9ee,0x1bad8,call qword ptr [rip + 0x795b2],ff15b2950700,original_IAT_indirect,,GetConsoleMode,0x95090
+17_payload.dll.bin,0x1b9ee,0x1bae1,call qword ptr [rip + 0x79601],ff1501960700,original_IAT_indirect,,GetFileType,0x950e8
+17_payload.dll.bin,0x1b9ee,0x1baed,call qword ptr [rip + 0x7962d],ff152d960700,original_IAT_indirect,,GetNumberOfConsoleInputEvents,0x95120
+17_payload.dll.bin,0x1b9ee,0x1baf3,call qword ptr [rip + 0x7959f],ff159f950700,original_IAT_indirect,,GetConsoleOutputCP,0x95098
+17_payload.dll.bin,0x1b9ee,0x1bb00,call qword ptr [rip + 0x79572],ff1572950700,original_IAT_indirect,,GetCPInfo,0x95078
+17_payload.dll.bin,0x1b9ee,0x1bb08,call qword ptr [rip + 0x796e2],ff15e2960700,original_IAT_indirect,,IsValidCodePage,0x951f0
+17_payload.dll.bin,0x1bd55,0x1bd7d,call rax,ffd0,computed_CALL,,,
+17_payload.dll.bin,0x1bd55,0x1bdd9,call qword ptr [rip + 0x79559],ff1559950700,original_IAT_indirect,,WakeByAddressSingle,0x95338
+17_payload.dll.bin,0x1bd55,0x1be17,call rax,ffd0,computed_CALL,,,
+17_payload.dll.bin,0x1bd55,0x1be39,call qword ptr [rip + 0x79309],ff1509930700,original_IAT_indirect,,GetProcessHeap,0x95148
+17_payload.dll.bin,0x1be5d,0x1d2f2,call rsi,ffd6,computed_CALL,,,
+17_payload.dll.bin,0x1be5d,0x1d2f6,call r14,41ffd6,computed_CALL,,,
+17_payload.dll.bin,0x1be5d,0x1d30a,call rbx,ffd3,computed_CALL,,,
+17_payload.dll.bin,0x1be5d,0x1d313,call rbx,ffd3,computed_CALL,,,
+17_payload.dll.bin,0x1be5d,0x1d31d,call rbx,ffd3,computed_CALL,,,
+17_payload.dll.bin,0x1be5d,0x1d327,call rbx,ffd3,computed_CALL,,,
+17_payload.dll.bin,0x1be5d,0x1d341,call r13,41ffd5,computed_CALL,,,
+17_payload.dll.bin,0x1be5d,0x1d34e,call r13,41ffd5,computed_CALL,,,
+17_payload.dll.bin,0x1be5d,0x1d366,call qword ptr [rsp + 0x90],ff942490000000,computed_CALL,,,
+17_payload.dll.bin,0x1be5d,0x1d382,call qword ptr [rsp + 0x68],ff542468,computed_CALL,,,
+17_payload.dll.bin,0x1be5d,0x1d3a5,call rsi,ffd6,computed_CALL,,,
+17_payload.dll.bin,0x1be5d,0x1d3d2,call qword ptr [rsp + 0x98],ff942498000000,computed_CALL,,,
+17_payload.dll.bin,0x1be5d,0x1d3e4,call rsi,ffd6,computed_CALL,,,
+17_payload.dll.bin,0x1be5d,0x1d4cd,call rsi,ffd6,computed_CALL,,,
+17_payload.dll.bin,0x1be5d,0x1d511,call rsi,ffd6,computed_CALL,,,
+17_payload.dll.bin,0x1be5d,0x1d51a,call qword ptr [rsp + 0x80],ff942480000000,computed_CALL,,,
+17_payload.dll.bin,0x1be5d,0x1d524,call qword ptr [rsp + 0x200],ff942400020000,computed_CALL,,,
+17_payload.dll.bin,0x1be5d,0x1d52e,call qword ptr [rsp + 0xa0],ff9424a0000000,computed_CALL,,,
+17_payload.dll.bin,0x1be5d,0x1d7b2,call qword ptr [rsp + 0x200],ff942400020000,computed_CALL,,,
+17_payload.dll.bin,0x1be5d,0x1d7bc,call qword ptr [rsp + 0xa0],ff9424a0000000,computed_CALL,,,
+17_payload.dll.bin,0x1be5d,0x1d7c8,call qword ptr [rsp + 0x80],ff942480000000,computed_CALL,,,
+17_payload.dll.bin,0x1be5d,0x1d8b6,call qword ptr [rsp + 0x80],ff942480000000,computed_CALL,,,
+17_payload.dll.bin,0x1dc19,0x1dcb3,call r13,41ffd5,computed_CALL,,,
+17_payload.dll.bin,0x1dc19,0x1dd13,call r12,41ffd4,computed_CALL,,,
+17_payload.dll.bin,0x1dc19,0x1dda7,call r13,41ffd5,computed_CALL,,,
+17_payload.dll.bin,0x1dc19,0x1de07,call r12,41ffd4,computed_CALL,,,
+17_payload.dll.bin,0x1dc19,0x1de2a,call qword ptr [rip + 0x77508],ff1508750700,original_IAT_indirect,,WakeByAddressSingle,0x95338
+17_payload.dll.bin,0x1dc19,0x1de73,call qword ptr [rip + 0x772cf],ff15cf720700,original_IAT_indirect,,GetProcessHeap,0x95148
+17_payload.dll.bin,0x1dc19,0x1df3a,call qword ptr [rip + 0x77208],ff1508720700,original_IAT_indirect,,GetProcessHeap,0x95148
+17_payload.dll.bin,0x1dc19,0x1df48,call qword ptr [rip + 0x7725a],ff155a720700,original_IAT_indirect,,HeapFree,0x951a8
+17_payload.dll.bin,0x1dc19,0x1df5a,call r15,41ffd7,computed_CALL,,,
+17_payload.dll.bin,0x1dc19,0x1df65,call r12,41ffd4,computed_CALL,,,
+17_payload.dll.bin,0x1dc19,0x1dfbe,call qword ptr [rip + 0x77184],ff1584710700,original_IAT_indirect,,GetProcessHeap,0x95148
+17_payload.dll.bin,0x1dc19,0x1dfcc,call qword ptr [rip + 0x771d6],ff15d6710700,original_IAT_indirect,,HeapFree,0x951a8
+17_payload.dll.bin,0x1dff3,0x1e019,call qword ptr [rdi],ff17,computed_CALL,,,
+17_payload.dll.bin,0x1e1c2,0x1ede8,call rbx,ffd3,computed_CALL,,,
+17_payload.dll.bin,0x1e1c2,0x1ee30,call r12,41ffd4,computed_CALL,,,
+17_payload.dll.bin,0x1e1c2,0x1eeb7,call r14,41ffd6,computed_CALL,,,
+17_payload.dll.bin,0x1e1c2,0x1ef14,call r14,41ffd6,computed_CALL,,,
+17_payload.dll.bin,0x1e1c2,0x1f1d3,call qword ptr [rax + 0xf8],ff90f8000000,computed_CALL,,,
+17_payload.dll.bin,0x1e1c2,0x1f226,call r14,41ffd6,computed_CALL,,,
+17_payload.dll.bin,0x1e1c2,0x1f246,call r14,41ffd6,computed_CALL,,,
+17_payload.dll.bin,0x1e1c2,0x1f29e,call qword ptr [rax + 0x10],ff5010,computed_CALL,,,
+17_payload.dll.bin,0x1e1c2,0x1f2a5,call qword ptr [rsp + 0x1e0],ff9424e0010000,computed_CALL,,,
+17_payload.dll.bin,0x1e1c2,0x1f404,call qword ptr [rsp + 0x208],ff942408020000,computed_CALL,,,
+17_payload.dll.bin,0x1e1c2,0x1f75c,call rdi,ffd7,computed_CALL,,,
+17_payload.dll.bin,0x1e1c2,0x1f768,call r12,41ffd4,computed_CALL,,,
+17_payload.dll.bin,0x20600,0x20608,call qword ptr [rip + 0x74ab2],ff15b24a0700,original_IAT_indirect,,GetCurrentThreadId,0x950c0
+17_payload.dll.bin,0x20c61,0x20d13,call qword ptr [rdi + 0x18],ff5718,computed_CALL,,,
+17_payload.dll.bin,0x20c61,0x20d31,call qword ptr [rdi + 0x20],ff5720,computed_CALL,,,
+17_payload.dll.bin,0x20ff5,0x21052,call qword ptr [rip + 0x73fd8],ff15d83f0700,original_IAT_indirect,,FlsAlloc,0x95030
+17_payload.dll.bin,0x20ff5,0x2108a,call qword ptr [rip + 0x74080],ff1580400700,original_IAT_indirect,,GetModuleHandleExW,0x95110
+17_payload.dll.bin,0x20ff5,0x210a0,call qword ptr [rip + 0x74072],ff1572400700,original_IAT_indirect,,GetModuleHandleW,0x95118
+17_payload.dll.bin,0x20ff5,0x210c8,call qword ptr [rip + 0x73f6a],ff156a3f0700,original_IAT_indirect,,FlsFree,0x95038
+17_payload.dll.bin,0x20ff5,0x210d0,call qword ptr [rip + 0x74112],ff1512410700,original_IAT_indirect,,IsThreadAFiber,0x951e8
+17_payload.dll.bin,0x20ff5,0x210e2,call qword ptr [rip + 0x73f60],ff15603f0700,original_IAT_indirect,,FlsSetValue,0x95048
+17_payload.dll.bin,0x21621,0x2163e,call qword ptr [rip + 0x73b04],ff15043b0700,original_IAT_indirect,,GetProcessHeap,0x95148
+17_payload.dll.bin,0x21621,0x2164c,call qword ptr [rip + 0x73b56],ff15563b0700,original_IAT_indirect,,HeapFree,0x951a8
+17_payload.dll.bin,0x21621,0x2166f,call qword ptr [rip + 0x73ad3],ff15d33a0700,original_IAT_indirect,,GetProcessHeap,0x95148
+17_payload.dll.bin,0x227e8,0x22dec,call qword ptr [rsp + 0x80],ff942480000000,computed_CALL,,,
+17_payload.dll.bin,0x227e8,0x22e14,call r15,41ffd7,computed_CALL,,,
+17_payload.dll.bin,0x227e8,0x22e3b,call r15,41ffd7,computed_CALL,,,
+17_payload.dll.bin,0x227e8,0x233bd,call qword ptr [rsp + 0x150],ff942450010000,computed_CALL,,,
+17_payload.dll.bin,0x227e8,0x23537,call qword ptr [rip + 0x71c0b],ff150b1c0700,original_IAT_indirect,,GetProcessHeap,0x95148
+17_payload.dll.bin,0x227e8,0x23545,call r15,41ffd7,computed_CALL,,,
+17_payload.dll.bin,0x227e8,0x23696,call qword ptr [rsp + 0x188],ff942488010000,computed_CALL,,,
+17_payload.dll.bin,0x227e8,0x236a3,call qword ptr [rsp + 0x1b0],ff9424b0010000,computed_CALL,,,
+17_payload.dll.bin,0x227e8,0x23f61,call qword ptr [rsp + 0x170],ff942470010000,computed_CALL,,,
+17_payload.dll.bin,0x227e8,0x23f78,call qword ptr [rsp + 0x160],ff942460010000,computed_CALL,,,
+17_payload.dll.bin,0x227e8,0x2425e,call qword ptr [rsp + 0x90],ff942490000000,computed_CALL,,,
+17_payload.dll.bin,0x227e8,0x24725,call qword ptr [rsp + 0x50],ff542450,computed_CALL,,,
+17_payload.dll.bin,0x227e8,0x24739,call qword ptr [rsp + 0x90],ff942490000000,computed_CALL,,,
+17_payload.dll.bin,0x227e8,0x24b36,call qword ptr [rip + 0x7060c],ff150c060700,original_IAT_indirect,,GetProcessHeap,0x95148
+17_payload.dll.bin,0x227e8,0x24b44,call qword ptr [rip + 0x7065e],ff155e060700,original_IAT_indirect,,HeapFree,0x951a8
+17_payload.dll.bin,0x227e8,0x2514e,call rbx,ffd3,computed_CALL,,,
+17_payload.dll.bin,0x227e8,0x25158,call r15,41ffd7,computed_CALL,,,
+17_payload.dll.bin,0x227e8,0x2537a,call qword ptr [rsp + 0x1c0],ff9424c0010000,computed_CALL,,,
+17_payload.dll.bin,0x227e8,0x2548a,call qword ptr [rip + 0x6fcb8],ff15b8fc0600,original_IAT_indirect,,GetProcessHeap,0x95148
+17_payload.dll.bin,0x227e8,0x25498,call r15,41ffd7,computed_CALL,,,
+17_payload.dll.bin,0x227e8,0x25919,call qword ptr [rsp + 0x158],ff942458010000,computed_CALL,,,
+17_payload.dll.bin,0x227e8,0x25952,call qword ptr [rsp + 0x80],ff942480000000,computed_CALL,,,
+17_payload.dll.bin,0x227e8,0x25ebb,call rsi,ffd6,computed_CALL,,,
+17_payload.dll.bin,0x227e8,0x26115,call r12,41ffd4,computed_CALL,,,
+17_payload.dll.bin,0x227e8,0x26236,call qword ptr [rsp + 0x160],ff942460010000,computed_CALL,,,
+17_payload.dll.bin,0x227e8,0x2683f,call rbx,ffd3,computed_CALL,,,
+17_payload.dll.bin,0x227e8,0x26849,call r15,41ffd7,computed_CALL,,,
+17_payload.dll.bin,0x227e8,0x26ecc,call r14,41ffd6,computed_CALL,,,
+17_payload.dll.bin,0x227e8,0x26ed9,call r15,41ffd7,computed_CALL,,,
+17_payload.dll.bin,0x227e8,0x270fe,call qword ptr [rsp + 0x160],ff942460010000,computed_CALL,,,
+17_payload.dll.bin,0x227e8,0x27d43,call qword ptr [rip + 0x6d3ff],ff15ffd30600,original_IAT_indirect,,GetProcessHeap,0x95148
+17_payload.dll.bin,0x227e8,0x27d58,call r15,41ffd7,computed_CALL,,,
+17_payload.dll.bin,0x227e8,0x27fba,call qword ptr [rip + 0x6d188],ff1588d10600,original_IAT_indirect,,GetProcessHeap,0x95148
+17_payload.dll.bin,0x227e8,0x27fc8,call qword ptr [rip + 0x6d1da],ff15dad10600,original_IAT_indirect,,HeapFree,0x951a8
+17_payload.dll.bin,0x227e8,0x284fd,call qword ptr [rip + 0x6cc45],ff1545cc0600,original_IAT_indirect,,GetProcessHeap,0x95148
+17_payload.dll.bin,0x227e8,0x2850b,call qword ptr [rip + 0x6cc97],ff1597cc0600,original_IAT_indirect,,HeapFree,0x951a8
+17_payload.dll.bin,0x227e8,0x28f15,call qword ptr [rsp + 0x80],ff942480000000,computed_CALL,,,
+17_payload.dll.bin,0x227e8,0x2930f,call qword ptr [rsp + 0xa0],ff9424a0000000,computed_CALL,,,
+17_payload.dll.bin,0x227e8,0x29410,call r14,41ffd6,computed_CALL,,,
+17_payload.dll.bin,0x295fe,0x29626,call qword ptr [rip + 0x6bb1c],ff151cbb0600,original_IAT_indirect,,GetProcessHeap,0x95148
+17_payload.dll.bin,0x2a4fb,0x2a582,call qword ptr [rip + 0x6adb0],ff15b0ad0600,original_IAT_indirect,,WakeByAddressSingle,0x95338
+17_payload.dll.bin,0x2a4fb,0x2a5d6,call qword ptr [rip + 0x6ad5c],ff155cad0600,original_IAT_indirect,,WakeByAddressSingle,0x95338
+17_payload.dll.bin,0x2a97b,0x2ab3e,call rdi,ffd7,computed_CALL,,,
+17_payload.dll.bin,0x2ab94,0x2acc2,call rsi,ffd6,computed_CALL,,,
+17_payload.dll.bin,0x2ab94,0x2adc0,call rbx,ffd3,computed_CALL,,,
+17_payload.dll.bin,0x2b0b9,0x2b11a,call qword ptr [r15 + 0x20],41ff5720,computed_CALL,,,
+17_payload.dll.bin,0x2b13d,0x2b2e5,call r15,41ffd7,computed_CALL,,,
+17_payload.dll.bin,0x2b13d,0x2b36a,call r15,41ffd7,computed_CALL,,,
+17_payload.dll.bin,0x2b51a,0x2b581,call qword ptr [rip + 0x69da1],ff15a19d0600,original_IAT_indirect,,WaitOnAddress,0x95328
+17_payload.dll.bin,0x2b51a,0x2b58c,call qword ptr [rip + 0x69b6e],ff156e9b0600,original_IAT_indirect,,GetLastError,0x95100
+17_payload.dll.bin,0x2bdcd,0x2bdf3,call qword ptr [r11 + 0x20],41ff5320,computed_CALL,,,
+17_payload.dll.bin,0x2becc,0x2bfdb,call qword ptr [rip + 0x6903f],ff153f900600,original_IAT_indirect,,FindFirstFileExW,0x95020
+17_payload.dll.bin,0x2becc,0x2bfea,call qword ptr [rip + 0x69028],ff1528900600,original_IAT_indirect,,FindClose,0x95018
+17_payload.dll.bin,0x2becc,0x2c0b1,call qword ptr [rdi + 7],ff5707,computed_CALL,,,
+17_payload.dll.bin,0x2c138,0x2c2d2,call rdi,ffd7,computed_CALL,,,
+17_payload.dll.bin,0x2d2f8,0x2d4f7,call r15,41ffd7,computed_CALL,,,
+17_payload.dll.bin,0x2ddde,0x2de2e,call rbx,ffd3,computed_CALL,,,
+17_payload.dll.bin,0x2ddde,0x2de38,call r14,41ffd6,computed_CALL,,,
+17_payload.dll.bin,0x2ddde,0x2de94,call rbx,ffd3,computed_CALL,,,
+17_payload.dll.bin,0x2ddde,0x2de9e,call r14,41ffd6,computed_CALL,,,
+17_payload.dll.bin,0x2ddde,0x2deb2,call qword ptr [rip + 0x67290],ff1590720600,original_IAT_indirect,,GetProcessHeap,0x95148
+17_payload.dll.bin,0x2ddde,0x2df09,call rbx,ffd3,computed_CALL,,,
+17_payload.dll.bin,0x2ddde,0x2df13,call r14,41ffd6,computed_CALL,,,
+17_payload.dll.bin,0x2df8f,0x2e0da,call qword ptr [rsi + rax],ff1406,computed_CALL,,,
+17_payload.dll.bin,0x2df8f,0x2e34c,call qword ptr [rip + 0x66df6],ff15f66d0600,original_IAT_indirect,,GetProcessHeap,0x95148
+17_payload.dll.bin,0x2df8f,0x2e35c,call qword ptr [rip + 0x66e46],ff15466e0600,original_IAT_indirect,,HeapFree,0x951a8
+17_payload.dll.bin,0x2eeac,0x2eeda,call qword ptr [rip + 0x66268],ff1568620600,original_IAT_indirect,,GetProcessHeap,0x95148
+17_payload.dll.bin,0x2f0ab,0x2f2c3,call r12,41ffd4,computed_CALL,,,
+17_payload.dll.bin,0x2f306,0x2f370,call qword ptr [rip + 0x65f7a],ff157a5f0600,original_IAT_indirect,,GetFocus,0x952f0
+17_payload.dll.bin,0x2f306,0x2f381,call qword ptr [rip + 0x65f81],ff15815f0600,original_IAT_indirect,,IsWindowEnabled,0x95308
+17_payload.dll.bin,0x2f306,0x2f38a,call qword ptr [rip + 0x65f88],ff15885f0600,original_IAT_indirect,,IsZoomed,0x95318
+17_payload.dll.bin,0x2f306,0x2f398,call qword ptr [rip + 0x65f62],ff15625f0600,original_IAT_indirect,,GetWindowThreadProcessId,0x95300
+17_payload.dll.bin,0x2f306,0x2f39e,call qword ptr [rip + 0x65f44],ff15445f0600,original_IAT_indirect,,GetActiveWindow,0x952e8
+17_payload.dll.bin,0x2f306,0x2f3af,call qword ptr [rip + 0x65f5b],ff155b5f0600,original_IAT_indirect,,IsWindowVisible,0x95310
+17_payload.dll.bin,0x2f306,0x2f3bd,call qword ptr [rip + 0x65f35],ff15355f0600,original_IAT_indirect,,GetWindowLongPtrW,0x952f8
+17_payload.dll.bin,0x2f497,0x2fc97,call r14,41ffd6,computed_CALL,,,
+17_payload.dll.bin,0x2f497,0x3003e,call qword ptr [rsp + 0x58],ff542458,computed_CALL,,,
+17_payload.dll.bin,0x2f497,0x30799,call rsi,ffd6,computed_CALL,,,
+17_payload.dll.bin,0x2f497,0x30889,call rax,ffd0,computed_CALL,,,
+17_payload.dll.bin,0x2f497,0x30f15,call r15,41ffd7,computed_CALL,,,
+17_payload.dll.bin,0x2f497,0x310f2,call qword ptr [rsp + 0x40],ff542440,computed_CALL,,,
+17_payload.dll.bin,0x2f497,0x31254,call qword ptr [rsp + 0x38],ff542438,computed_CALL,,,
+17_payload.dll.bin,0x2f497,0x3125b,call rsi,ffd6,computed_CALL,,,
+17_payload.dll.bin,0x2f497,0x317d4,call rdi,ffd7,computed_CALL,,,
+17_payload.dll.bin,0x2f497,0x31f93,call r14,41ffd6,computed_CALL,,,
+17_payload.dll.bin,0x2f497,0x32189,call r14,41ffd6,computed_CALL,,,
+17_payload.dll.bin,0x2f497,0x32393,call r14,41ffd6,computed_CALL,,,
+17_payload.dll.bin,0x2f497,0x3247c,call rsi,ffd6,computed_CALL,,,
+17_payload.dll.bin,0x2f497,0x32db2,call qword ptr [rsp + 0x40],ff542440,computed_CALL,,,
+17_payload.dll.bin,0x2f497,0x340c7,call rsi,ffd6,computed_CALL,,,
+17_payload.dll.bin,0x2f497,0x34214,call rsi,ffd6,computed_CALL,,,
+17_payload.dll.bin,0x2f497,0x3429a,call qword ptr [rsp + 0x90],ff942490000000,computed_CALL,,,
+17_payload.dll.bin,0x2f497,0x3450c,call r12,41ffd4,computed_CALL,,,
+17_payload.dll.bin,0x2f497,0x34a6a,call rsi,ffd6,computed_CALL,,,
+17_payload.dll.bin,0x2f497,0x34adb,call qword ptr [rsp + 0x40],ff542440,computed_CALL,,,
+17_payload.dll.bin,0x2f497,0x34e93,call rsi,ffd6,computed_CALL,,,
+17_payload.dll.bin,0x2f497,0x35050,call qword ptr [rsp + 0x40],ff542440,computed_CALL,,,
+17_payload.dll.bin,0x2f497,0x35088,call qword ptr [rsp + 0x60],ff542460,computed_CALL,,,
+17_payload.dll.bin,0x2f497,0x3508f,call qword ptr [rsp + 0x38],ff542438,computed_CALL,,,
+17_payload.dll.bin,0x2f497,0x35096,call rsi,ffd6,computed_CALL,,,
+17_payload.dll.bin,0x2f497,0x35186,call qword ptr [rsp + 0x60],ff542460,computed_CALL,,,
+17_payload.dll.bin,0x2f497,0x3519f,call qword ptr [rsp + 0x38],ff542438,computed_CALL,,,
+17_payload.dll.bin,0x2f497,0x3543d,call qword ptr [rsp + 0x48],ff542448,computed_CALL,,,
+17_payload.dll.bin,0x2f497,0x358b6,call qword ptr [rsp + 0x188],ff942488010000,computed_CALL,,,
+17_payload.dll.bin,0x35915,0x35979,call qword ptr [rdx + 7],ff5207,computed_CALL,,,
+17_payload.dll.bin,0x35bf9,0x35c27,call qword ptr [rip + 0x5f3bb],ff15bbf30500,original_IAT_indirect,,CreateThread,0x94fe8
+17_payload.dll.bin,0x35bf9,0x35c5b,call rax,ffd0,computed_CALL,,,
+17_payload.dll.bin,0x35bf9,0x35c70,call qword ptr [rip + 0x5f4d2],ff15d2f40500,original_IAT_indirect,,GetProcessHeap,0x95148
+17_payload.dll.bin,0x35bf9,0x35c7e,call qword ptr [rip + 0x5f524],ff1524f50500,original_IAT_indirect,,HeapFree,0x951a8
+17_payload.dll.bin,0x35bf9,0x35c84,call qword ptr [rip + 0x5f476],ff1576f40500,original_IAT_indirect,,GetLastError,0x95100
+17_payload.dll.bin,0x35d8a,0x35e06,call r13,41ffd5,computed_CALL,,,
+17_payload.dll.bin,0x35d8a,0x35e11,call rbp,ffd5,computed_CALL,,,
+17_payload.dll.bin,0x35d8a,0x35e5c,call qword ptr [rip + 0x5f2e6],ff15e6f20500,original_IAT_indirect,,GetProcessHeap,0x95148
+17_payload.dll.bin,0x35d8a,0x35e6d,call qword ptr [rip + 0x5f335],ff1535f30500,original_IAT_indirect,,HeapFree,0x951a8
+17_payload.dll.bin,0x35d8a,0x35f2c,call r14,41ffd6,computed_CALL,,,
+17_payload.dll.bin,0x35d8a,0x35f37,call r15,41ffd7,computed_CALL,,,
+17_payload.dll.bin,0x35d8a,0x35f49,call qword ptr [rip + 0x5f1f9],ff15f9f10500,original_IAT_indirect,,GetProcessHeap,0x95148
+17_payload.dll.bin,0x35d8a,0x35f57,call qword ptr [rip + 0x5f24b],ff154bf20500,original_IAT_indirect,,HeapFree,0x951a8
+17_payload.dll.bin,0x36230,0x366d9,call r13,41ffd5,computed_CALL,,,
+17_payload.dll.bin,0x37d7b,0x380e3,call qword ptr [rsp + 0x58],ff542458,computed_CALL,,,
+17_payload.dll.bin,0x38103,0x38389,call rsi,ffd6,computed_CALL,,,
+17_payload.dll.bin,0x38103,0x3839b,call qword ptr [rip + 0x5cda7],ff15a7cd0500,original_IAT_indirect,,GetProcessHeap,0x95148
+17_payload.dll.bin,0x38103,0x383a9,call qword ptr [rip + 0x5cdf9],ff15f9cd0500,original_IAT_indirect,,HeapFree,0x951a8
+17_payload.dll.bin,0x38103,0x38648,call qword ptr [rip + 0x5cd02],ff1502cd0500,original_IAT_indirect,,NtWriteFile,0x95350
+17_payload.dll.bin,0x38103,0x3865d,call qword ptr [rip + 0x5cc5d],ff155dcc0500,original_IAT_indirect,,WaitForSingleObject,0x952c0
+17_payload.dll.bin,0x38103,0x386cc,call qword ptr [rax + 8],ff5008,computed_CALL,,,
+17_payload.dll.bin,0x38103,0x38701,call qword ptr [rdi + 7],ff5707,computed_CALL,,,
+17_payload.dll.bin,0x38103,0x3871b,call qword ptr [rip + 0x5c8b7],ff15b7c80500,original_IAT_indirect,,CloseHandle,0x94fd8
+17_payload.dll.bin,0x38103,0x38762,call qword ptr [r12 + 7],41ff542407,computed_CALL,,,
+17_payload.dll.bin,0x38103,0x3910d,call qword ptr [rip + 0x5c035],ff1535c00500,original_IAT_indirect,,GetProcessHeap,0x95148
+17_payload.dll.bin,0x38103,0x3911b,call qword ptr [rip + 0x5c087],ff1587c00500,original_IAT_indirect,,HeapFree,0x951a8
+17_payload.dll.bin,0x38103,0x39133,call qword ptr [rip + 0x5c00f],ff150fc00500,original_IAT_indirect,,GetProcessHeap,0x95148
+17_payload.dll.bin,0x38103,0x39144,call qword ptr [rip + 0x5c066],ff1566c00500,original_IAT_indirect,,HeapReAlloc,0x951b0
+17_payload.dll.bin,0x38103,0x39479,call qword ptr [rsi + 7],ff5607,computed_CALL,,,
+17_payload.dll.bin,0x38103,0x396bb,call qword ptr [rax],ff10,computed_CALL,,,
+17_payload.dll.bin,0x38103,0x3970e,call qword ptr [rax + 8],ff5008,computed_CALL,,,
+17_payload.dll.bin,0x38103,0x39759,call qword ptr [r12 + 7],41ff542407,computed_CALL,,,
+17_payload.dll.bin,0x38103,0x39838,call qword ptr [r12 + 7],41ff542407,computed_CALL,,,
+17_payload.dll.bin,0x38103,0x398be,call qword ptr [rip + 0x5b714],ff1514b70500,original_IAT_indirect,,CloseHandle,0x94fd8
+17_payload.dll.bin,0x38103,0x398df,call qword ptr [r13 + 7],41ff5507,computed_CALL,,,
+17_payload.dll.bin,0x38103,0x3990f,call qword ptr [rip + 0x5b6c3],ff15c3b60500,original_IAT_indirect,,CloseHandle,0x94fd8
+17_payload.dll.bin,0x38103,0x3995d,call r15,41ffd7,computed_CALL,,,
+17_payload.dll.bin,0x39ba0,0x39ee5,call r12,41ffd4,computed_CALL,,,
+17_payload.dll.bin,0x39ba0,0x3a906,call r12,41ffd4,computed_CALL,,,
+17_payload.dll.bin,0x3bafb,0x3bb0b,call qword ptr [rsi + 0x20],ff5620,computed_CALL,,,
+17_payload.dll.bin,0x3bafb,0x3bb0e,call qword ptr [rip + 0x59634],ff1534960500,original_IAT_indirect,,GetProcessHeap,0x95148
+17_payload.dll.bin,0x3bb28,0x3bb2f,call qword ptr [rip + 0x596b3],ff15b3960500,original_IAT_indirect,,IsThreadAFiber,0x951e8
+17_payload.dll.bin,0x3bb28,0x3bb95,call rax,ffd0,computed_CALL,,,
+17_payload.dll.bin,0x3bb28,0x3bbe9,call qword ptr [rip + 0x59559],ff1559950500,original_IAT_indirect,,GetProcessHeap,0x95148
+17_payload.dll.bin,0x3bb28,0x3bbf7,call qword ptr [rip + 0x595ab],ff15ab950500,original_IAT_indirect,,HeapFree,0x951a8
+17_payload.dll.bin,0x3bc94,0x3bd1f,call r14,41ffd6,computed_CALL,,,
+17_payload.dll.bin,0x3bc94,0x3bd2a,call r15,41ffd7,computed_CALL,,,
+17_payload.dll.bin,0x3bc94,0x3bd6e,call r14,41ffd6,computed_CALL,,,
+17_payload.dll.bin,0x3bc94,0x3bd79,call r15,41ffd7,computed_CALL,,,
+17_payload.dll.bin,0x3bc94,0x3be28,call rbx,ffd3,computed_CALL,,,
+17_payload.dll.bin,0x3bc94,0x3be32,call r14,41ffd6,computed_CALL,,,
+17_payload.dll.bin,0x3bc94,0x3be44,call qword ptr [rip + 0x592fe],ff15fe920500,original_IAT_indirect,,GetProcessHeap,0x95148
+17_payload.dll.bin,0x3c026,0x3c387,call qword ptr [rsp + 0x158],ff942458010000,computed_CALL,,,
+17_payload.dll.bin,0x3c026,0x3cfff,call qword ptr [rsp + 0x3b0],ff9424b0030000,computed_CALL,,,
+17_payload.dll.bin,0x3c026,0x3d013,call qword ptr [rsp + 0xf8],ff9424f8000000,computed_CALL,,,
+17_payload.dll.bin,0x3c026,0x3d022,call qword ptr [rsp + 0x3a8],ff9424a8030000,computed_CALL,,,
+17_payload.dll.bin,0x3c026,0x3d213,call qword ptr [rsp + 0xf8],ff9424f8000000,computed_CALL,,,
+17_payload.dll.bin,0x3c026,0x3dc37,call qword ptr [rdi + 7],ff5707,computed_CALL,,,
+17_payload.dll.bin,0x3c026,0x40666,call qword ptr [r15 + 7],41ff5707,computed_CALL,,,
+17_payload.dll.bin,0x3c026,0x41d4c,call qword ptr [rsp + 0xf8],ff9424f8000000,computed_CALL,,,
+17_payload.dll.bin,0x3c026,0x43b87,call qword ptr [rsp + 0x160],ff942460010000,computed_CALL,,,
+17_payload.dll.bin,0x3c026,0x450d6,call qword ptr [rsp + 0xa0],ff9424a0000000,computed_CALL,,,
+17_payload.dll.bin,0x45f29,0x4612f,call qword ptr [rip + 0x4f203],ff1503f20400,original_IAT_indirect,,WakeByAddressSingle,0x95338
+17_payload.dll.bin,0x45f29,0x4620b,call qword ptr [rip + 0x4ef37],ff1537ef0400,original_IAT_indirect,,GetProcessHeap,0x95148
+17_payload.dll.bin,0x45f29,0x46219,call qword ptr [rip + 0x4ef89],ff1589ef0400,original_IAT_indirect,,HeapFree,0x951a8
+17_payload.dll.bin,0x45f29,0x46285,call qword ptr [rip + 0x4f0ad],ff15adf00400,original_IAT_indirect,,WakeByAddressSingle,0x95338
+17_payload.dll.bin,0x45f29,0x46300,call qword ptr [rip + 0x4f032],ff1532f00400,original_IAT_indirect,,WakeByAddressSingle,0x95338
+17_payload.dll.bin,0x45f29,0x463c4,call qword ptr [rip + 0x4ef6e],ff156eef0400,original_IAT_indirect,,WakeByAddressSingle,0x95338
+17_payload.dll.bin,0x45f29,0x4663c,call qword ptr [rip + 0x4ec5e],ff155eec0400,original_IAT_indirect,,SwitchToThread,0x952a0
+17_payload.dll.bin,0x45f29,0x46666,call qword ptr [rip + 0x4ec34],ff1534ec0400,original_IAT_indirect,,SwitchToThread,0x952a0
+17_payload.dll.bin,0x45f29,0x466ee,call qword ptr [rip + 0x4ea54],ff1554ea0400,original_IAT_indirect,,GetProcessHeap,0x95148
+17_payload.dll.bin,0x45f29,0x466fc,call qword ptr [rip + 0x4eaa6],ff15a6ea0400,original_IAT_indirect,,HeapFree,0x951a8
+17_payload.dll.bin,0x48d79,0x490eb,call qword ptr [rip + 0x4c057],ff1557c00400,original_IAT_indirect,,GetProcessHeap,0x95148
+17_payload.dll.bin,0x48d79,0x490f9,call qword ptr [rip + 0x4c0a9],ff15a9c00400,original_IAT_indirect,,HeapFree,0x951a8
+17_payload.dll.bin,0x4a05b,0x4a066,call qword ptr [rip + 0x4b1f4],ff15f4b10400,original_IAT_indirect,,SetFileInformationByHandle,0x95260
+17_payload.dll.bin,0x4a05b,0x4a07a,call qword ptr [rip + 0x4b080],ff1580b00400,original_IAT_indirect,,GetLastError,0x95100
+17_payload.dll.bin,0x4a0d2,0x4a13a,call r15,41ffd7,computed_CALL,,,
+17_payload.dll.bin,0x4a0d2,0x4a2c3,call qword ptr [rip + 0x4ad4f],ff154fad0400,original_IAT_indirect,,FindClose,0x95018
+17_payload.dll.bin,0x4a0d2,0x4a2d0,call qword ptr [rip + 0x4ae2a],ff152aae0400,original_IAT_indirect,,GetLastError,0x95100
+17_payload.dll.bin,0x4a78d,0x4a7de,call rax,ffd0,computed_CALL,,,
+17_payload.dll.bin,0x4d020,0x4d036,call qword ptr [rip + 0x48284],ff1584820400,original_IAT_indirect,,WaitForSingleObject,0x952c0
+17_payload.dll.bin,0x4d020,0x4d044,call qword ptr [rip + 0x47f8e],ff158e7f0400,original_IAT_indirect,,CloseHandle,0x94fd8
+17_payload.dll.bin,0x4da35,0x4dad8,call qword ptr [rip + 0x47622],ff1522760400,original_IAT_indirect,,GetLastError,0x95100
+17_payload.dll.bin,0x4da35,0x4e006,call qword ptr [rip + 0x4726c],ff156c720400,original_IAT_indirect,,SetLastError,0x95278
+17_payload.dll.bin,0x4da35,0x4e017,call rdi,ffd7,computed_CALL,,,
+17_payload.dll.bin,0x4da35,0x4e021,call qword ptr [rip + 0x470d9],ff15d9700400,original_IAT_indirect,,GetLastError,0x95100
+17_payload.dll.bin,0x4da35,0x4e038,call qword ptr [rip + 0x470c2],ff15c2700400,original_IAT_indirect,,GetLastError,0x95100
+17_payload.dll.bin,0x4e059,0x4e072,call qword ptr [rip + 0x46f78],ff15786f0400,original_IAT_indirect,,CreateWaitableTimerExW,0x94ff0
+17_payload.dll.bin,0x4e059,0x4e0b4,call qword ptr [rip + 0x471d6],ff15d6710400,original_IAT_indirect,,SetWaitableTimer,0x95290
+17_payload.dll.bin,0x4e059,0x4e0c6,call qword ptr [rip + 0x471f4],ff15f4710400,original_IAT_indirect,,WaitForSingleObject,0x952c0
+17_payload.dll.bin,0x4e059,0x4e0d1,call qword ptr [rip + 0x46f01],ff15016f0400,original_IAT_indirect,,CloseHandle,0x94fd8
+17_payload.dll.bin,0x4e059,0x4e0e1,call qword ptr [rip + 0x46ef1],ff15f16e0400,original_IAT_indirect,,CloseHandle,0x94fd8
+17_payload.dll.bin,0x4e059,0x4e102,call qword ptr [rip + 0x47190],ff1590710400,original_IAT_indirect,,Sleep,0x95298
+17_payload.dll.bin,0x4e059,0x4e140,call qword ptr [rip + 0x47152],ff1552710400,original_IAT_indirect,,Sleep,0x95298
+17_payload.dll.bin,0x506ee,0x507aa,call qword ptr [rip + 0x44870],ff1570480400,original_IAT_indirect,,FindFirstFileExW,0x95020
+17_payload.dll.bin,0x506ee,0x50855,call qword ptr [rip + 0x448a5],ff15a5480400,original_IAT_indirect,,GetLastError,0x95100
+17_payload.dll.bin,0x50b2c,0x50d50,call r14,41ffd6,computed_CALL,,,
+17_payload.dll.bin,0x542ab,0x54ddb,call rbx,ffd3,computed_CALL,,,
+17_payload.dll.bin,0x542ab,0x54de5,call rdi,ffd7,computed_CALL,,,
+17_payload.dll.bin,0x542ab,0x54de7,call rbx,ffd3,computed_CALL,,,
+17_payload.dll.bin,0x542ab,0x54df3,call rbp,ffd5,computed_CALL,,,
+17_payload.dll.bin,0x542ab,0x54e02,call rsi,ffd6,computed_CALL,,,
+17_payload.dll.bin,0x542ab,0x54e0f,call qword ptr [rsp + 0x100],ff942400010000,computed_CALL,,,
+17_payload.dll.bin,0x542ab,0x54e22,call r12,41ffd4,computed_CALL,,,
+17_payload.dll.bin,0x542ab,0x54e25,call r15,41ffd7,computed_CALL,,,
+17_payload.dll.bin,0x542ab,0x54e77,call r15,41ffd7,computed_CALL,,,
+17_payload.dll.bin,0x542ab,0x54ed1,call qword ptr [rsp + 0xd0],ff9424d0000000,computed_CALL,,,
+17_payload.dll.bin,0x542ab,0x55f98,call r12,41ffd4,computed_CALL,,,
+17_payload.dll.bin,0x542ab,0x55f9b,call r15,41ffd7,computed_CALL,,,
+17_payload.dll.bin,0x542ab,0x5626e,call qword ptr [rsp + 0x118],ff942418010000,computed_CALL,,,
+17_payload.dll.bin,0x542ab,0x56284,call qword ptr [rsp + 0x100],ff942400010000,computed_CALL,,,
+17_payload.dll.bin,0x542ab,0x562ac,call r12,41ffd4,computed_CALL,,,
+17_payload.dll.bin,0x542ab,0x562b1,call qword ptr [rsp + 0xb0],ff9424b0000000,computed_CALL,,,
+17_payload.dll.bin,0x542ab,0x562bd,call qword ptr [rsp + 0x110],ff942410010000,computed_CALL,,,
+17_payload.dll.bin,0x542ab,0x562cc,call qword ptr [rsp + 0x108],ff942408010000,computed_CALL,,,
+17_payload.dll.bin,0x542ab,0x562db,call r15,41ffd7,computed_CALL,,,
+17_payload.dll.bin,0x542ab,0x562de,call rbx,ffd3,computed_CALL,,,
+17_payload.dll.bin,0x542ab,0x562f4,call qword ptr [rsp + 0xd0],ff9424d0000000,computed_CALL,,,
+17_payload.dll.bin,0x5683e,0x5685a,call rax,ffd0,computed_CALL,,,
+17_payload.dll.bin,0x5693d,0x56948,call qword ptr [rip + 0x3e7fa],ff15fae70300,original_IAT_indirect,,GetProcessHeap,0x95148
+17_payload.dll.bin,0x56ab1,0x572e7,call qword ptr [rsp + 0x78],ff542478,computed_CALL,,,
+17_payload.dll.bin,0x56ab1,0x57729,call r14,41ffd6,computed_CALL,,,
+17_payload.dll.bin,0x56ab1,0x57dfe,call rbp,ffd5,computed_CALL,,,
+17_payload.dll.bin,0x56ab1,0x581f5,call qword ptr [rsp + 0xb8],ff9424b8000000,computed_CALL,,,
+17_payload.dll.bin,0x56ab1,0x5843e,call qword ptr [rsp + 0x1c8],ff9424c8010000,computed_CALL,,,
+17_payload.dll.bin,0x56ab1,0x58457,call qword ptr [rsp + 0x2a0],ff9424a0020000,computed_CALL,,,
+17_payload.dll.bin,0x56ab1,0x586c4,call rbp,ffd5,computed_CALL,,,
+17_payload.dll.bin,0x56ab1,0x58b8b,call rdx,ffd2,computed_CALL,,,
+17_payload.dll.bin,0x56ab1,0x59375,call rdi,ffd7,computed_CALL,,,
+17_payload.dll.bin,0x56ab1,0x594a1,call qword ptr [rsp + 0x78],ff542478,computed_CALL,,,
+17_payload.dll.bin,0x56ab1,0x594ef,call rdi,ffd7,computed_CALL,,,
+17_payload.dll.bin,0x56ab1,0x59642,call qword ptr [rsp + 0x240],ff942440020000,computed_CALL,,,
+17_payload.dll.bin,0x56ab1,0x59769,call qword ptr [rsp + 0x120],ff942420010000,computed_CALL,,,
+17_payload.dll.bin,0x56ab1,0x59775,call qword ptr [rsp + 0xf8],ff9424f8000000,computed_CALL,,,
+17_payload.dll.bin,0x56ab1,0x5982a,call rbx,ffd3,computed_CALL,,,
+17_payload.dll.bin,0x56ab1,0x59897,call rdi,ffd7,computed_CALL,,,
+17_payload.dll.bin,0x56ab1,0x59985,call rsi,ffd6,computed_CALL,,,
+17_payload.dll.bin,0x56ab1,0x59b20,call rbx,ffd3,computed_CALL,,,
+17_payload.dll.bin,0x56ab1,0x5a178,call rdi,ffd7,computed_CALL,,,
+17_payload.dll.bin,0x56ab1,0x5a49b,call rax,ffd0,computed_CALL,,,
+17_payload.dll.bin,0x56ab1,0x5a801,call rdi,ffd7,computed_CALL,,,
+17_payload.dll.bin,0x56ab1,0x5ab08,call qword ptr [rsp + 0xb0],ff9424b0000000,computed_CALL,,,
+17_payload.dll.bin,0x5b6b0,0x5b75e,call qword ptr [rip + 0x39bd4],ff15d49b0300,original_IAT_indirect,,WakeByAddressSingle,0x95338
+17_payload.dll.bin,0x5b6b0,0x5b8b5,call qword ptr [rip + 0x39a7d],ff157d9a0300,original_IAT_indirect,,WakeByAddressSingle,0x95338
+17_payload.dll.bin,0x5d746,0x5d996,call qword ptr [rip + 0x377ac],ff15ac770300,original_IAT_indirect,,GetProcessHeap,0x95148
+17_payload.dll.bin,0x5d746,0x5d9a4,call qword ptr [rip + 0x377fe],ff15fe770300,original_IAT_indirect,,HeapFree,0x951a8
+17_payload.dll.bin,0x5d746,0x5dedf,call qword ptr [rip + 0x372a3],ff15a3720300,original_IAT_indirect,,GetSystemTimes,0x95188
+17_payload.dll.bin,0x5d746,0x5deef,call qword ptr [rip + 0x372a3],ff15a3720300,original_IAT_indirect,,GlobalMemoryStatusEx,0x95198
+17_payload.dll.bin,0x5d746,0x5def8,call qword ptr [rip + 0x3727a],ff157a720300,original_IAT_indirect,,GetSystemPowerStatus,0x95178
+17_payload.dll.bin,0x5d746,0x5defe,call qword ptr [rip + 0x371ac],ff15ac710300,original_IAT_indirect,,GetCurrentProcess,0x950b0
+17_payload.dll.bin,0x5d746,0x5df07,call qword ptr [rip + 0x371eb],ff15eb710300,original_IAT_indirect,,GetLargePageMinimum,0x950f8
+17_payload.dll.bin,0x5d746,0x5df13,call qword ptr [rip + 0x37227],ff1527720300,original_IAT_indirect,,GetProcessHandleCount,0x95140
+17_payload.dll.bin,0x5d746,0x5df1c,call qword ptr [rip + 0x3720e],ff150e720300,original_IAT_indirect,,GetPhysicallyInstalledSystemMemory,0x95130
+17_payload.dll.bin,0x5d746,0x5df25,call qword ptr [rip + 0x37245],ff1545720300,original_IAT_indirect,,GetSystemInfo,0x95170
+17_payload.dll.bin,0x5d746,0x5ecee,call qword ptr [rip + 0x36454],ff1554640300,original_IAT_indirect,,GetProcessHeap,0x95148
+17_payload.dll.bin,0x5d746,0x5ecfe,call qword ptr [rip + 0x364a4],ff15a4640300,original_IAT_indirect,,HeapFree,0x951a8
+17_payload.dll.bin,0x5d746,0x5f051,call qword ptr [rip + 0x360f1],ff15f1600300,original_IAT_indirect,,GetProcessHeap,0x95148
+17_payload.dll.bin,0x5d746,0x5f05f,call qword ptr [rip + 0x36143],ff1543610300,original_IAT_indirect,,HeapFree,0x951a8
+17_payload.dll.bin,0x5d746,0x5fb3f,call qword ptr [rip + 0x35603],ff1503560300,original_IAT_indirect,,GetProcessHeap,0x95148
+17_payload.dll.bin,0x5d746,0x5fb4d,call qword ptr [rip + 0x35655],ff1555560300,original_IAT_indirect,,HeapFree,0x951a8
+17_payload.dll.bin,0x5d746,0x60d1e,call qword ptr [rax + rdx],ff1410,computed_CALL,,,
+17_payload.dll.bin,0x61ff6,0x6205c,call r12,41ffd4,computed_CALL,,,
+17_payload.dll.bin,0x61ff6,0x620bd,call r15,41ffd7,computed_CALL,,,
+17_payload.dll.bin,0x62965,0x629a9,call qword ptr [rip + 0x32799],ff1599270300,original_IAT_indirect,,GetProcessHeap,0x95148
+17_payload.dll.bin,0x62965,0x629b7,call qword ptr [rip + 0x327eb],ff15eb270300,original_IAT_indirect,,HeapFree,0x951a8
+17_payload.dll.bin,0x62965,0x629ce,call qword ptr [rip + 0x32774],ff1574270300,original_IAT_indirect,,GetProcessHeap,0x95148
+17_payload.dll.bin,0x62ae8,0x63932,call qword ptr [rip + 0x318d0],ff15d0180300,original_IAT_indirect,,LoadLibraryA,0x95208
+17_payload.dll.bin,0x63a05,0x63b4c,call r14,41ffd6,computed_CALL,,,
+17_payload.dll.bin,0x63a05,0x63d7e,call r14,41ffd6,computed_CALL,,,
+17_payload.dll.bin,0x63f30,0x64182,call qword ptr [rsp + 0x98],ff942498000000,computed_CALL,,,
+17_payload.dll.bin,0x63f30,0x642b7,call r14,41ffd6,computed_CALL,,,
+17_payload.dll.bin,0x64e46,0x64e63,call qword ptr [rsi],ff16,computed_CALL,,,
+17_payload.dll.bin,0x653d7,0x65410,call r14,41ffd6,computed_CALL,,,
+17_payload.dll.bin,0x65893,0x6594c,call qword ptr [rip + 0x2f9e6],ff15e6f90200,original_IAT_indirect,,WakeByAddressSingle,0x95338
+17_payload.dll.bin,0x65893,0x659f6,call r15,41ffd7,computed_CALL,,,
+17_payload.dll.bin,0x65b01,0x65b2d,call qword ptr [rip + 0x2f5a5],ff15a5f50200,original_IAT_indirect,,GetFileInformationByHandle,0x950d8
+17_payload.dll.bin,0x65b01,0x65b62,call qword ptr [rip + 0x2f578],ff1578f50200,original_IAT_indirect,,GetFileInformationByHandleEx,0x950e0
+17_payload.dll.bin,0x65b01,0x65c01,call qword ptr [rip + 0x2f4f9],ff15f9f40200,original_IAT_indirect,,GetLastError,0x95100
+17_payload.dll.bin,0x65d15,0x65d83,call qword ptr [rax],ff10,computed_CALL,,,
+17_payload.dll.bin,0x65d15,0x65de4,call qword ptr [rbx + 7],ff5307,computed_CALL,,,
+17_payload.dll.bin,0x65d15,0x65e4e,call qword ptr [rbx + 7],ff5307,computed_CALL,,,
+17_payload.dll.bin,0x65d15,0x65e64,call qword ptr [rax + 8],ff5008,computed_CALL,,,
+17_payload.dll.bin,0x65f1d,0x65f66,call rbx,ffd3,computed_CALL,,,
+17_payload.dll.bin,0x65f1d,0x65f70,call r14,41ffd6,computed_CALL,,,
+17_payload.dll.bin,0x65f1d,0x65f84,call rax,ffd0,computed_CALL,,,
+17_payload.dll.bin,0x65fb1,0x66053,call qword ptr [rip + 0x2f0ef],ff15eff00200,original_IAT_indirect,,GetProcessHeap,0x95148
+17_payload.dll.bin,0x65fb1,0x66061,call qword ptr [rip + 0x2f141],ff1541f10200,original_IAT_indirect,,HeapFree,0x951a8
+17_payload.dll.bin,0x65fb1,0x6606a,call qword ptr [r14 + 0x18],41ff5618,computed_CALL,,,
+17_payload.dll.bin,0x673f3,0x6861e,call qword ptr [rsi + 7],ff5607,computed_CALL,,,
+17_payload.dll.bin,0x68eeb,0x68f93,call r13,41ffd5,computed_CALL,,,
+17_payload.dll.bin,0x68eeb,0x68f9e,call rbp,ffd5,computed_CALL,,,
+17_payload.dll.bin,0x68eeb,0x68fe3,call qword ptr [rip + 0x2c15f],ff155fc10200,original_IAT_indirect,,GetProcessHeap,0x95148
+17_payload.dll.bin,0x68eeb,0x68ff4,call qword ptr [rip + 0x2c1ae],ff15aec10200,original_IAT_indirect,,HeapFree,0x951a8
+17_payload.dll.bin,0x68eeb,0x6907f,call r14,41ffd6,computed_CALL,,,
+17_payload.dll.bin,0x68eeb,0x6908a,call r15,41ffd7,computed_CALL,,,
+17_payload.dll.bin,0x68eeb,0x690a1,call qword ptr [rip + 0x2c0a1],ff15a1c00200,original_IAT_indirect,,GetProcessHeap,0x95148
+17_payload.dll.bin,0x68eeb,0x690af,call qword ptr [rip + 0x2c0f3],ff15f3c00200,original_IAT_indirect,,HeapFree,0x951a8
+17_payload.dll.bin,0x690fd,0x6910f,call qword ptr [rip + 0x2c033],ff1533c00200,original_IAT_indirect,,GetProcessHeap,0x95148
+17_payload.dll.bin,0x6b869,0x6dbdd,call qword ptr [r12 + 7],41ff542407,computed_CALL,,,
+17_payload.dll.bin,0x72930,0x7295d,call qword ptr [rip + 0x221cd],ff15cd210200,computed_CALL,,,0x94b30
+17_payload.dll.bin,0x72d34,0x72d59,call qword ptr [rip + 0x223b1],ff15b1230200,original_IAT_indirect,,GetModuleHandleExW,0x95110
+17_payload.dll.bin,0x72d34,0x72d6f,call qword ptr [rip + 0x223c3],ff15c3230200,original_IAT_indirect,,GetProcAddress,0x95138
+17_payload.dll.bin,0x72d34,0x72d8b,call qword ptr [rip + 0x222d7],ff15d7220200,original_IAT_indirect,,FreeLibrary,0x95068
+17_payload.dll.bin,0x72d98,0x72da4,call qword ptr [rip + 0x22306],ff1506230200,original_IAT_indirect,,GetCurrentProcess,0x950b0
+17_payload.dll.bin,0x72d98,0x72daf,call qword ptr [rip + 0x224f3],ff15f3240200,original_IAT_indirect,,TerminateProcess,0x952a8
+17_payload.dll.bin,0x72d98,0x72dbe,call qword ptr [rip + 0x2224c],ff154c220200,original_IAT_indirect,,ExitProcess,0x95010
+17_payload.dll.bin,0x72dc8,0x72def,call qword ptr [rip + 0x22323],ff1523230200,original_IAT_indirect,,GetModuleHandleW,0x95118
+17_payload.dll.bin,0x73b80,0x73c1e,call rax,ffd0,computed_CALL,,,
+17_payload.dll.bin,0x73b80,0x73c55,call qword ptr [rip + 0x195b5],ff15b5950100,computed_CALL,,,0x8d210
+17_payload.dll.bin,0x73b80,0x73c90,call qword ptr [rip + 0x215ba],ff15ba150200,original_IAT_indirect,,RtlUnwindEx,0x95250
+17_payload.dll.bin,0x73b80,0x73d73,call r8,41ffd0,computed_CALL,,,
+17_payload.dll.bin,0x73da0,0x73dab,call qword ptr [rip + 0x2127f],ff157f120200,original_IAT_indirect,,FlsAlloc,0x95030
+17_payload.dll.bin,0x73da0,0x73dc5,call qword ptr [rip + 0x2127d],ff157d120200,original_IAT_indirect,,FlsSetValue,0x95048
+17_payload.dll.bin,0x73da0,0x73deb,call qword ptr [rip + 0x21247],ff1547120200,original_IAT_indirect,,FlsFree,0x95038
+17_payload.dll.bin,0x73e10,0x73e1f,call qword ptr [rip + 0x21213],ff1513120200,original_IAT_indirect,,FlsFree,0x95038
+17_payload.dll.bin,0x73e40,0x73e57,call qword ptr [rip + 0x212a3],ff15a3120200,original_IAT_indirect,,GetLastError,0x95100
+17_payload.dll.bin,0x73e40,0x73e65,call qword ptr [rip + 0x211d5],ff15d5110200,original_IAT_indirect,,FlsGetValue,0x95040
+17_payload.dll.bin,0x73e40,0x73e8a,call qword ptr [rip + 0x211b8],ff15b8110200,original_IAT_indirect,,FlsSetValue,0x95048
+17_payload.dll.bin,0x73e40,0x73eb3,call qword ptr [rip + 0x2118f],ff158f110200,original_IAT_indirect,,FlsSetValue,0x95048
+17_payload.dll.bin,0x73e40,0x73ec0,call qword ptr [rip + 0x21182],ff1582110200,original_IAT_indirect,,FlsSetValue,0x95048
+17_payload.dll.bin,0x73e40,0x73eda,call qword ptr [rip + 0x21398],ff1598130200,original_IAT_indirect,,SetLastError,0x95278
+17_payload.dll.bin,0x73e40,0x73ef6,call qword ptr [rip + 0x2114c],ff154c110200,original_IAT_indirect,,FlsSetValue,0x95048
+17_payload.dll.bin,0x73e40,0x73f06,call qword ptr [rip + 0x2136c],ff156c130200,original_IAT_indirect,,SetLastError,0x95278
+17_payload.dll.bin,0x73f20,0x73f3e,call qword ptr [rip + 0x211bc],ff15bc110200,original_IAT_indirect,,GetLastError,0x95100
+17_payload.dll.bin,0x73f20,0x73f4c,call qword ptr [rip + 0x210ee],ff15ee100200,original_IAT_indirect,,FlsGetValue,0x95040
+17_payload.dll.bin,0x73f20,0x73f6d,call qword ptr [rip + 0x210d5],ff15d5100200,original_IAT_indirect,,FlsSetValue,0x95048
+17_payload.dll.bin,0x73f80,0x73fa0,call qword ptr [rip + 0x210a2],ff15a2100200,original_IAT_indirect,,FlsSetValue,0x95048
+17_payload.dll.bin,0x73f80,0x73fc2,call qword ptr [rip + 0x21080],ff1580100200,original_IAT_indirect,,FlsSetValue,0x95048
+17_payload.dll.bin,0x73fd7,0x73fd9,call qword ptr [rip + 0x21299],ff1599120200,original_IAT_indirect,,SetLastError,0x95278
+17_payload.dll.bin,0x7400f,0x74014,call qword ptr [rip + 0x21026],ff1526100200,original_IAT_indirect,,FlsGetValue,0x95040
+17_payload.dll.bin,0x7400f,0x74025,call qword ptr [rip + 0x2101d],ff151d100200,original_IAT_indirect,,FlsSetValue,0x95048
+17_payload.dll.bin,0x74080,0x740b0,call qword ptr [rip + 0x2110a],ff150a110200,original_IAT_indirect,,InitializeCriticalSectionEx,0x951c0
+17_payload.dll.bin,0x74080,0x740ea,call qword ptr [rip + 0x20f08],ff15080f0200,original_IAT_indirect,,DeleteCriticalSection,0x94ff8
+17_payload.dll.bin,0x74120,0x7413a,call qword ptr [rip + 0x20eb8],ff15b80e0200,original_IAT_indirect,,DeleteCriticalSection,0x94ff8
+17_payload.dll.bin,0x74220,0x74269,call qword ptr [rip + 0x20e91],ff15910e0200,original_IAT_indirect,,GetLastError,0x95100
+17_payload.dll.bin,0x74220,0x7429c,call qword ptr [rip + 0x20fd6],ff15d60f0200,original_IAT_indirect,,SetLastError,0x95278
+17_payload.dll.bin,0x745ac,0x745bb,call qword ptr [rip + 0x20b3f],ff153f0b0200,original_IAT_indirect,,GetLastError,0x95100
+17_payload.dll.bin,0x745ac,0x745da,call qword ptr [rip + 0x20c98],ff15980c0200,original_IAT_indirect,,SetLastError,0x95278
+17_payload.dll.bin,0x745ac,0x74648,call qword ptr [rip + 0x20c2a],ff152a0c0200,original_IAT_indirect,,SetLastError,0x95278
+17_payload.dll.bin,0x74790,0x747f2,call qword ptr [rip + 0x20338],ff1538030200,computed_CALL,,,0x94b30
+17_payload.dll.bin,0x749d4,0x749f3,call qword ptr [rip + 0x205ff],ff15ff050200,original_IAT_indirect,,DeleteCriticalSection,0x94ff8
+17_payload.dll.bin,0x74b20,0x74b87,call qword ptr [rip + 0x206b3],ff15b3060200,original_IAT_indirect,,RtlLookupFunctionEntry,0x95240
+17_payload.dll.bin,0x74c8a,0x74cb7,call qword ptr [rip + 0x20583],ff1583050200,original_IAT_indirect,,RtlLookupFunctionEntry,0x95240
+17_payload.dll.bin,0x74d50,0x74e60,call qword ptr [rip + 0x203ea],ff15ea030200,original_IAT_indirect,,RtlUnwindEx,0x95250
+17_payload.dll.bin,0x75150,0x75189,call qword ptr [rip + 0x1f9a1],ff15a1f90100,computed_CALL,,,0x94b30
+17_payload.dll.bin,0x751c0,0x751c9,call qword ptr [rip + 0x20011],ff1511000200,original_IAT_indirect,,IsProcessorFeaturePresent,0x951e0
+17_payload.dll.bin,0x751c0,0x751ee,call qword ptr [rip + 0x1febc],ff15bcfe0100,original_IAT_indirect,,GetCurrentProcess,0x950b0
+17_payload.dll.bin,0x75208,0x75293,call qword ptr [rip + 0x1ff9f],ff159fff0100,original_IAT_indirect,,RtlCaptureContext,0x95238
+17_payload.dll.bin,0x75208,0x752ab,call qword ptr [rip + 0x1ff8f],ff158fff0100,original_IAT_indirect,,RtlLookupFunctionEntry,0x95240
+17_payload.dll.bin,0x75208,0x752e6,call qword ptr [rip + 0x1ff6c],ff156cff0100,original_IAT_indirect,,RtlVirtualUnwind,0x95258
+17_payload.dll.bin,0x75208,0x7531f,call qword ptr [rip + 0x1feb3],ff15b3fe0100,original_IAT_indirect,,IsDebuggerPresent,0x951d8
+17_payload.dll.bin,0x75208,0x75329,call qword ptr [rip + 0x1ff59],ff1559ff0100,original_IAT_indirect,,SetUnhandledExceptionFilter,0x95288
+17_payload.dll.bin,0x75208,0x75334,call qword ptr [rip + 0x1ff76],ff1576ff0100,original_IAT_indirect,,UnhandledExceptionFilter,0x952b0
+17_payload.dll.bin,0x75438,0x7544b,call qword ptr [rip + 0x1fcaf],ff15affc0100,original_IAT_indirect,,GetLastError,0x95100
+17_payload.dll.bin,0x75438,0x75480,call qword ptr [rip + 0x1fdf2],ff15f2fd0100,original_IAT_indirect,,SetLastError,0x95278
+17_payload.dll.bin,0x754a0,0x754bc,call qword ptr [rip + 0x1fc3e],ff153efc0100,original_IAT_indirect,,GetLastError,0x95100
+17_payload.dll.bin,0x754a0,0x754f1,call qword ptr [rip + 0x1fd81],ff1581fd0100,original_IAT_indirect,,SetLastError,0x95278
+17_payload.dll.bin,0x7550c,0x75528,call qword ptr [rip + 0x1fbd2],ff15d2fb0100,original_IAT_indirect,,GetLastError,0x95100
+17_payload.dll.bin,0x7550c,0x75538,call qword ptr [rip + 0x1fd3a],ff153afd0100,original_IAT_indirect,,SetLastError,0x95278
+17_payload.dll.bin,0x75760,0x757b5,call qword ptr [rip + 0x1f9e5],ff15e5f90100,original_IAT_indirect,,HeapAlloc,0x951a0
+17_payload.dll.bin,0x757e0,0x757f6,call qword ptr [rip + 0x1f9ac],ff15acf90100,original_IAT_indirect,,HeapFree,0x951a8
+17_payload.dll.bin,0x757e0,0x75800,call qword ptr [rip + 0x1f8fa],ff15faf80100,original_IAT_indirect,,GetLastError,0x95100
+17_payload.dll.bin,0x75b18,0x75bee,call qword ptr [rip + 0x1f50c],ff150cf50100,original_IAT_indirect,,GetLastError,0x95100
+17_payload.dll.bin,0x75cb8,0x75d96,call qword ptr [rip + 0x1f364],ff1564f30100,original_IAT_indirect,,GetLastError,0x95100
+17_payload.dll.bin,0x75fe8,0x76169,call qword ptr [rip + 0x1eeb1],ff15b1ee0100,original_IAT_indirect,,FindFirstFileExW,0x95020
+17_payload.dll.bin,0x75fe8,0x7629f,call qword ptr [rip + 0x1ed83],ff1583ed0100,original_IAT_indirect,,FindNextFileW,0x95028
+17_payload.dll.bin,0x75fe8,0x762df,call qword ptr [rip + 0x1ed33],ff1533ed0100,original_IAT_indirect,,FindClose,0x95018
+17_payload.dll.bin,0x75fe8,0x7630b,call qword ptr [rip + 0x1ed07],ff1507ed0100,original_IAT_indirect,,FindClose,0x95018
+17_payload.dll.bin,0x7635c,0x76397,call qword ptr [rip + 0x1ed6b],ff156bed0100,original_IAT_indirect,,GetModuleFileNameW,0x95108
+17_payload.dll.bin,0x7635c,0x763a1,call qword ptr [rip + 0x1ed59],ff1559ed0100,original_IAT_indirect,,GetLastError,0x95100
+17_payload.dll.bin,0x76480,0x76522,call qword ptr [rip + 0x1ebd8],ff15d8eb0100,original_IAT_indirect,,GetLastError,0x95100
+17_payload.dll.bin,0x76618,0x76693,call qword ptr [rip + 0x1eb57],ff1557eb0100,original_IAT_indirect,,IsValidCodePage,0x951f0
+17_payload.dll.bin,0x76618,0x766d7,call qword ptr [rip + 0x1e99b],ff159be90100,original_IAT_indirect,,GetCPInfo,0x95078
+17_payload.dll.bin,0x768e0,0x7690a,call qword ptr [rip + 0x1e818],ff1518e80100,original_IAT_indirect,,GetOEMCP,0x95128
+17_payload.dll.bin,0x768e0,0x76921,call qword ptr [rip + 0x1e749],ff1549e70100,original_IAT_indirect,,GetACP,0x95070
+17_payload.dll.bin,0x76d20,0x76d70,call qword ptr [rip + 0x1e302],ff1502e30100,original_IAT_indirect,,GetCPInfo,0x95078
+17_payload.dll.bin,0x77170,0x77174,call qword ptr [rip + 0x1df06],ff1506df0100,original_IAT_indirect,,GetCommandLineA,0x95080
+17_payload.dll.bin,0x77170,0x77181,call qword ptr [rip + 0x1df01],ff1501df0100,original_IAT_indirect,,GetCommandLineW,0x95088
+17_payload.dll.bin,0x77390,0x773a9,call qword ptr [rip + 0x1dd19],ff1519dd0100,original_IAT_indirect,,GetEnvironmentStringsW,0x950c8
+17_payload.dll.bin,0x77390,0x7741e,call qword ptr [rip + 0x1dc3c],ff153cdc0100,original_IAT_indirect,,FreeEnvironmentStringsW,0x95060
+17_payload.dll.bin,0x77390,0x7747a,call qword ptr [rip + 0x1dbe0],ff15e0db0100,original_IAT_indirect,,FreeEnvironmentStringsW,0x95060
+17_payload.dll.bin,0x77548,0x77568,call qword ptr [rip + 0x1dd4a],ff154add0100,original_IAT_indirect,,VirtualProtect,0x952b8
+17_payload.dll.bin,0x77578,0x77597,call qword ptr [rip + 0x1dacb],ff15cbda0100,original_IAT_indirect,,FreeLibrary,0x95068
+17_payload.dll.bin,0x7763c,0x77713,call qword ptr [rip + 0x1dadf],ff15dfda0100,original_IAT_indirect,,LCMapStringW,0x951f8
+17_payload.dll.bin,0x77834,0x778a1,call qword ptr [rip + 0x1d969],ff1569d90100,original_IAT_indirect,,LoadLibraryExW,0x95210
+17_payload.dll.bin,0x77834,0x778b3,call qword ptr [rip + 0x1d847],ff1547d80100,original_IAT_indirect,,GetLastError,0x95100
+17_payload.dll.bin,0x77834,0x778f5,call qword ptr [rip + 0x1d915],ff1515d90100,original_IAT_indirect,,LoadLibraryExW,0x95210
+17_payload.dll.bin,0x77834,0x77951,call qword ptr [rip + 0x1d961],ff1561d90100,original_IAT_indirect,,VirtualProtect,0x952b8
+17_payload.dll.bin,0x77834,0x77982,call qword ptr [rip + 0x1d930],ff1530d90100,original_IAT_indirect,,VirtualProtect,0x952b8
+17_payload.dll.bin,0x77834,0x779c6,call qword ptr [rip + 0x1d69c],ff159cd60100,original_IAT_indirect,,FreeLibrary,0x95068
+17_payload.dll.bin,0x77834,0x779d2,call qword ptr [rip + 0x1d760],ff1560d70100,original_IAT_indirect,,GetProcAddress,0x95138
+17_payload.dll.bin,0x77a00,0x77a04,call qword ptr [rip + 0x1d73e],ff153ed70100,original_IAT_indirect,,GetProcessHeap,0x95148
+17_payload.dll.bin,0x77ad4,0x77b04,call qword ptr [rip + 0x1d646],ff1546d60100,original_IAT_indirect,,GetStartupInfoW,0x95150
+17_payload.dll.bin,0x77ad4,0x77b6f,call qword ptr [rip + 0x1d573],ff1573d50100,original_IAT_indirect,,GetFileType,0x950e8
+17_payload.dll.bin,0x77bd4,0x77c4d,call qword ptr [rip + 0x1d505],ff1505d50100,original_IAT_indirect,,GetStdHandle,0x95158
+17_payload.dll.bin,0x77bd4,0x77c63,call qword ptr [rip + 0x1d47f],ff157fd40100,original_IAT_indirect,,GetFileType,0x950e8
+17_payload.dll.bin,0x78618,0x78649,call qword ptr [rip + 0x1c9a9],ff15a9c90100,original_IAT_indirect,,DeleteCriticalSection,0x94ff8
+17_payload.dll.bin,0x78810,0x78836,call qword ptr [rip + 0x1c9a4],ff15a4c90100,original_IAT_indirect,,IsProcessorFeaturePresent,0x951e0
+17_payload.dll.bin,0x790c0,0x79218,call qword ptr [rip + 0x1c012],ff1512c00100,original_IAT_indirect,,RaiseException,0x95230
+17_payload.dll.bin,0x797a0,0x79826,call qword ptr [rip + 0x1b304],ff1504b30100,computed_CALL,,,0x94b30
+17_payload.dll.bin,0x79a40,0x79c04,call qword ptr [rip + 0x1af26],ff1526af0100,computed_CALL,,,0x94b30
+17_payload.dll.bin,0x7a255,0x7a292,call qword ptr [rip + 0x1ad68],ff1568ad0100,original_IAT_indirect,,EncodePointer,0x95000
+17_payload.dll.bin,0x7a7b0,0x7a7ee,call qword ptr [rip + 0x1a9ac],ff15aca90100,original_IAT_indirect,,HeapAlloc,0x951a0
+17_payload.dll.bin,0x7a8a2,0x7a906,call r12,41ffd4,computed_CALL,,,
+17_payload.dll.bin,0x7a8a2,0x7a985,call r12,41ffd4,computed_CALL,,,
+17_payload.dll.bin,0x7a8a2,0x7a9c1,call r12,41ffd4,computed_CALL,,,
+17_payload.dll.bin,0x7a8a2,0x7a9fe,call r12,41ffd4,computed_CALL,,,
+17_payload.dll.bin,0x7a8a2,0x7aa53,call r12,41ffd4,computed_CALL,,,
+17_payload.dll.bin,0x7a8a2,0x7aa6e,call r12,41ffd4,computed_CALL,,,
+17_payload.dll.bin,0x7a8a2,0x7aa86,call r12,41ffd4,computed_CALL,,,
+17_payload.dll.bin,0x7a8a2,0x7aade,call r12,41ffd4,computed_CALL,,,
+17_payload.dll.bin,0x7a8a2,0x7aaf5,call r12,41ffd4,computed_CALL,,,
+17_payload.dll.bin,0x7b2b0,0x7b3e2,call qword ptr [rip + 0x19d78],ff15789d0100,original_IAT_indirect,,GetStringTypeW,0x95160
+17_payload.dll.bin,0x7b870,0x7b8dd,call qword ptr [rip + 0x198cd],ff15cd980100,original_IAT_indirect,,HeapReAlloc,0x951b0
+17_payload.dll.bin,0x7ba44,0x7babe,call qword ptr [rip + 0x197bc],ff15bc970100,original_IAT_indirect,,SetStdHandle,0x95280
+17_payload.dll.bin,0x7bba8,0x7bbd1,call qword ptr [rip + 0x19421],ff1521940100,original_IAT_indirect,,DeleteCriticalSection,0x94ff8
+17_payload.dll.bin,0x7bd84,0x7bdd2,call qword ptr [rip + 0x19278],ff1578920100,original_IAT_indirect,,FlushFileBuffers,0x95050
+17_payload.dll.bin,0x7bd84,0x7bdde,call qword ptr [rip + 0x1931c],ff151c930100,original_IAT_indirect,,GetLastError,0x95100
+17_payload.dll.bin,0x7be38,0x7bf56,call qword ptr [rip + 0x19134],ff1534910100,original_IAT_indirect,,GetConsoleMode,0x95090
+17_payload.dll.bin,0x7be38,0x7bfe8,call qword ptr [rip + 0x19112],ff1512910100,original_IAT_indirect,,GetLastError,0x95100
+17_payload.dll.bin,0x7be38,0x7c0ae,call qword ptr [rip + 0x19224],ff1524920100,original_IAT_indirect,,WriteFile,0x952d8
+17_payload.dll.bin,0x7be38,0x7c0b8,call qword ptr [rip + 0x19042],ff1542900100,original_IAT_indirect,,GetLastError,0x95100
+17_payload.dll.bin,0x7c300,0x7c37f,call qword ptr [rip + 0x18d13],ff15138d0100,original_IAT_indirect,,GetConsoleOutputCP,0x95098
+17_payload.dll.bin,0x7c300,0x7c65c,call qword ptr [rip + 0x18c76],ff15768c0100,original_IAT_indirect,,WriteFile,0x952d8
+17_payload.dll.bin,0x7c300,0x7c6a2,call qword ptr [rip + 0x18c30],ff15308c0100,original_IAT_indirect,,WriteFile,0x952d8
+17_payload.dll.bin,0x7c300,0x7c761,call qword ptr [rip + 0x18999],ff1599890100,original_IAT_indirect,,GetLastError,0x95100
+17_payload.dll.bin,0x7c794,0x7c84c,call qword ptr [rip + 0x18a86],ff15868a0100,original_IAT_indirect,,WriteFile,0x952d8
+17_payload.dll.bin,0x7c794,0x7c868,call qword ptr [rip + 0x18892],ff1592880100,original_IAT_indirect,,GetLastError,0x95100
+17_payload.dll.bin,0x7c89c,0x7c968,call qword ptr [rip + 0x1896a],ff156a890100,original_IAT_indirect,,WriteFile,0x952d8
+17_payload.dll.bin,0x7c89c,0x7c984,call qword ptr [rip + 0x18776],ff1576870100,original_IAT_indirect,,GetLastError,0x95100
+17_payload.dll.bin,0x7c9b8,0x7cad0,call qword ptr [rip + 0x18802],ff1502880100,original_IAT_indirect,,WriteFile,0x952d8
+17_payload.dll.bin,0x7c9b8,0x7caf5,call qword ptr [rip + 0x18605],ff1505860100,original_IAT_indirect,,GetLastError,0x95100
+17_payload.dll.bin,0x7cb2c,0x7cb9f,call qword ptr [rip + 0x18453],ff1553840100,original_IAT_indirect,,DeleteCriticalSection,0x94ff8
+17_payload.dll.bin,0x7cf38,0x7cf43,call rax,ffd0,computed_CALL,,,
+17_payload.dll.bin,0x7cfa0,0x7cfbe,call rax,ffd0,computed_CALL,,,
+17_payload.dll.bin,0x7d0c0,0x7d0c4,call qword ptr [rip + 0x18106],ff1506810100,original_IAT_indirect,,InterlockedFlushSList,0x951d0
+17_payload.dll.bin,0x7d130,0x7d166,call qword ptr [rip + 0x179c4],ff15c4790100,computed_CALL,,,0x94b30
+17_payload.dll.bin,0x7d130,0x7d180,call qword ptr [rip + 0x180c2],ff15c2800100,original_IAT_indirect,,RtlPcToFileHeader,0x95248
+17_payload.dll.bin,0x7d130,0x7d1c3,call qword ptr [rip + 0x18067],ff1567800100,original_IAT_indirect,,RaiseException,0x95230
+17_payload.dll.bin,0x7d278,0x7d2ca,call qword ptr [rip + 0x17f98],ff15987f0100,original_IAT_indirect,,SetFilePointerEx,0x95268
+17_payload.dll.bin,0x7d278,0x7d2d4,call qword ptr [rip + 0x17e26],ff15267e0100,original_IAT_indirect,,GetLastError,0x95100
+17_payload.dll.bin,0x7db30,0x7db66,call qword ptr [rip + 0x17474],ff1574740100,original_IAT_indirect,,CreateFileW,0x94fe0
+17_payload.dll.bin,0x7db84,0x7dbb5,call qword ptr [rip + 0x17715],ff1515770100,original_IAT_indirect,,WriteConsoleW,0x952d0
+17_payload.dll.bin,0x7db84,0x7dbc1,call qword ptr [rip + 0x17539],ff1539750100,original_IAT_indirect,,GetLastError,0x95100
+17_payload.dll.bin,0x7db84,0x7dbd9,call qword ptr [rip + 0x173f9],ff15f9730100,original_IAT_indirect,,CloseHandle,0x94fd8
+17_payload.dll.bin,0x7db84,0x7dc04,call qword ptr [rip + 0x173d6],ff15d6730100,original_IAT_indirect,,CreateFileW,0x94fe0
+17_payload.dll.bin,0x7db84,0x7dc23,call qword ptr [rip + 0x176a7],ff15a7760100,original_IAT_indirect,,WriteConsoleW,0x952d0
+17_payload.dll.bin,0x7dc44,0x7dc55,call qword ptr [rip + 0x1737d],ff157d730100,original_IAT_indirect,,CloseHandle,0x94fd8
+17_payload.dll.bin,0x7dc60,0x7dcce,call qword ptr [rip + 0x17304],ff1504730100,original_IAT_indirect,,CloseHandle,0x94fd8
+17_payload.dll.bin,0x7dc60,0x7dcd8,call qword ptr [rip + 0x17422],ff1522740100,original_IAT_indirect,,GetLastError,0x95100
+17_payload.dll.bin,0x7df70,0x7e042,call qword ptr [rip + 0x16ae8],ff15e86a0100,computed_CALL,,,0x94b30
+17_payload.dll.bin,0x7e180,0x7e1da,call qword ptr [rip + 0x16950],ff1550690100,computed_CALL,,,0x94b30
+17_payload.dll.bin,0x7e180,0x7e251,call qword ptr [rip + 0x168d9],ff15d9680100,computed_CALL,,,0x94b30
+17_payload.dll.bin,0x7e180,0x7e292,call qword ptr [rip + 0x16898],ff1598680100,computed_CALL,,,0x94b30
+17_payload.dll.bin,0x7e300,0x7e33a,call qword ptr [rip + 0x16e40],ff15406e0100,original_IAT_indirect,,GetSystemTimeAsFileTime,0x95180
+17_payload.dll.bin,0x7e300,0x7e34a,call qword ptr [rip + 0x16d70],ff15706d0100,original_IAT_indirect,,GetCurrentThreadId,0x950c0
+17_payload.dll.bin,0x7e300,0x7e357,call qword ptr [rip + 0x16d5b],ff155b6d0100,original_IAT_indirect,,GetCurrentProcessId,0x950b8
+17_payload.dll.bin,0x7e300,0x7e369,call qword ptr [rip + 0x16eb1],ff15b16e0100,original_IAT_indirect,,QueryPerformanceCounter,0x95220
+17_payload.dll.bin,0x7e420,0x7e448,call qword ptr [rip + 0x166e2],ff15e2660100,computed_CALL,,,0x94b30
+17_payload.dll.bin,0x7e470,0x7e498,call qword ptr [rip + 0x16692],ff1592660100,computed_CALL,,,0x94b30
+17_payload.dll.bin,0x7f33d,0x7f3bb,call r15,41ffd7,computed_CALL,,,
+17_payload.dll.bin,0x7f33d,0x7f3c3,call r12,41ffd4,computed_CALL,,,
+17_payload.dll.bin,0x7f33d,0x7f3e4,call qword ptr [rdi + 0x20],ff5720,computed_CALL,,,
+17_payload.dll.bin,0x7f33d,0x7f3f3,call qword ptr [rip + 0x15f37],ff15375f0100,original_IAT_indirect,,WakeByAddressAll,0x95330
+17_payload.dll.bin,0x7f5f2,0x7f602,call qword ptr [rip + 0x15c20],ff15205c0100,original_IAT_indirect,,QueryPerformanceFrequency,0x95228
+17_payload.dll.bin,0x7f5f2,0x7f61d,call qword ptr [rip + 0x15add],ff15dd5a0100,original_IAT_indirect,,GetLastError,0x95100
+17_payload.dll.bin,0x7fad7,0x7fb4b,call qword ptr [rip + 0x155f7],ff15f7550100,original_IAT_indirect,,GetProcessHeap,0x95148
+17_payload.dll.bin,0x7fad7,0x7fb5c,call qword ptr [rip + 0x1564e],ff154e560100,original_IAT_indirect,,HeapReAlloc,0x951b0
+19_loader.exe.bin,0x130d,0x165f,call qword ptr [rip + 0x9216b],ff156b210900,original_IAT_indirect,,LoadLibraryA,0x937d0
+19_loader.exe.bin,0x243f,0x244a,call qword ptr [rip + 0x913d8],ff15d8130900,original_IAT_indirect,,SetFileInformationByHandle,0x93828
+19_loader.exe.bin,0x243f,0x245e,call qword ptr [rip + 0x91294],ff1594120900,original_IAT_indirect,,GetLastError,0x936f8
+19_loader.exe.bin,0x2474,0x248d,call qword ptr [rip + 0x913ed],ff15ed130900,original_IAT_indirect,,WriteConsoleW,0x93880
+19_loader.exe.bin,0x2474,0x24a0,call qword ptr [rip + 0x91252],ff1552120900,original_IAT_indirect,,GetLastError,0x936f8
+19_loader.exe.bin,0x260b,0x261d,call qword ptr [rip + 0x9110d],ff150d110900,original_IAT_indirect,,GetProcessHeap,0x93730
+19_loader.exe.bin,0x263a,0x3cc7,call qword ptr [rip + 0x8faa3],ff15a3fa0800,original_IAT_indirect,,GetWindowsDirectoryW,0x93770
+19_loader.exe.bin,0x263a,0x3ce3,call qword ptr [rip + 0x8fa7f],ff157ffa0800,original_IAT_indirect,,GetTempPathW,0x93768
+19_loader.exe.bin,0x263a,0x3d37,call qword ptr [rip + 0x8fa1b],ff151bfa0800,original_IAT_indirect,,GetSystemDirectoryW,0x93758
+19_loader.exe.bin,0x263a,0x3d53,call qword ptr [rip + 0x8f94f],ff154ff90800,original_IAT_indirect,,GetCurrentDirectoryW,0x936a8
+19_loader.exe.bin,0x263a,0x3d69,call qword ptr [rip + 0x8f9a1],ff15a1f90800,original_IAT_indirect,,GetModuleHandleW,0x93710
+19_loader.exe.bin,0x3e81,0x3ed0,call qword ptr [rip + 0x8f83a],ff153af80800,original_IAT_indirect,,GetModuleHandleW,0x93710
+19_loader.exe.bin,0x3e81,0x3f14,call qword ptr [rip + 0x8f746],ff1546f70800,original_IAT_indirect,,FormatMessageW,0x93660
+19_loader.exe.bin,0x3e81,0x3f9a,call qword ptr [rip + 0x8f758],ff1558f70800,original_IAT_indirect,,GetLastError,0x936f8
+19_loader.exe.bin,0x3e81,0x41d1,call qword ptr [rax + 0x18],ff5018,computed_CALL,,,
+19_loader.exe.bin,0x4251,0x4609,call qword ptr [rip + 0x8f111],ff1511f10800,original_IAT_indirect,,GetProcAddress,0x93720
+19_loader.exe.bin,0x4251,0x51e6,call qword ptr [rip + 0x8e6ac],ff15ace60800,original_IAT_indirect,,GetDesktopWindow,0x93898
+19_loader.exe.bin,0x4251,0x51f9,call qword ptr [rip + 0x8e6b9],ff15b9e60800,original_IAT_indirect,,GetSystemMetrics,0x938b8
+19_loader.exe.bin,0x4251,0x5202,call qword ptr [rip + 0x8e6a0],ff15a0e60800,original_IAT_indirect,,GetDpiForWindow,0x938a8
+19_loader.exe.bin,0x4251,0x5210,call qword ptr [rip + 0x8e6aa],ff15aae60800,original_IAT_indirect,,MonitorFromWindow,0x938c0
+19_loader.exe.bin,0x4251,0x5231,call qword ptr [rip + 0x8e679],ff1579e60800,original_IAT_indirect,,GetMonitorInfoW,0x938b0
+19_loader.exe.bin,0x4251,0x5237,call qword ptr [rip + 0x8e663],ff1563e60800,original_IAT_indirect,,GetDpiForSystem,0x938a0
+19_loader.exe.bin,0x5286,0x5476,call rsi,ffd6,computed_CALL,,,
+19_loader.exe.bin,0x5286,0x5528,call qword ptr [rsp + 0x70],ff542470,computed_CALL,,,
+19_loader.exe.bin,0x5286,0x59c9,call r14,41ffd6,computed_CALL,,,
+19_loader.exe.bin,0x5286,0x59d3,call r14,41ffd6,computed_CALL,,,
+19_loader.exe.bin,0x5286,0x5aca,call rsi,ffd6,computed_CALL,,,
+19_loader.exe.bin,0x5286,0x5ba0,call rdi,ffd7,computed_CALL,,,
+19_loader.exe.bin,0x5286,0x5ba5,call rbx,ffd3,computed_CALL,,,
+19_loader.exe.bin,0x5286,0x5bb5,call qword ptr [rsp + 0x70],ff542470,computed_CALL,,,
+19_loader.exe.bin,0x5286,0x5cb2,call rsi,ffd6,computed_CALL,,,
+19_loader.exe.bin,0x5286,0x5cff,call rbx,ffd3,computed_CALL,,,
+19_loader.exe.bin,0x5286,0x5e19,call rsi,ffd6,computed_CALL,,,
+19_loader.exe.bin,0x5286,0x5fe8,call qword ptr [rsp + 0x80],ff942480000000,computed_CALL,,,
+19_loader.exe.bin,0x5286,0x5ffa,call rbx,ffd3,computed_CALL,,,
+19_loader.exe.bin,0x5286,0x63f6,call rdi,ffd7,computed_CALL,,,
+19_loader.exe.bin,0x5286,0x63fd,call r12,41ffd4,computed_CALL,,,
+19_loader.exe.bin,0x5286,0x64a2,call qword ptr [rsp + 0x70],ff542470,computed_CALL,,,
+19_loader.exe.bin,0x5286,0x65be,call qword ptr [rax + 7],ff5007,computed_CALL,,,
+19_loader.exe.bin,0x5286,0x6865,call qword ptr [rsp + 0x80],ff942480000000,computed_CALL,,,
+19_loader.exe.bin,0x5286,0x6c3e,call r14,41ffd6,computed_CALL,,,
+19_loader.exe.bin,0x5286,0x7581,call r14,41ffd6,computed_CALL,,,
+19_loader.exe.bin,0x5286,0x79d0,call qword ptr [rsp + 0x70],ff542470,computed_CALL,,,
+19_loader.exe.bin,0x5286,0x79d7,call rdi,ffd7,computed_CALL,,,
+19_loader.exe.bin,0x5286,0x79db,call rbx,ffd3,computed_CALL,,,
+19_loader.exe.bin,0x5286,0x7bb8,call qword ptr [rsp + 0x70],ff542470,computed_CALL,,,
+19_loader.exe.bin,0x5286,0x7bc7,call qword ptr [rsp + 0x80],ff942480000000,computed_CALL,,,
+19_loader.exe.bin,0x5286,0x7bf1,call qword ptr [rsp + 0x2b8],ff9424b8020000,computed_CALL,,,
+19_loader.exe.bin,0x5286,0x7ef8,call rsi,ffd6,computed_CALL,,,
+19_loader.exe.bin,0x5286,0x7f36,call r14,41ffd6,computed_CALL,,,
+19_loader.exe.bin,0x5286,0x7f3e,call r15,41ffd7,computed_CALL,,,
+19_loader.exe.bin,0x5286,0x82bf,call rdi,ffd7,computed_CALL,,,
+19_loader.exe.bin,0x5286,0x854f,call rsi,ffd6,computed_CALL,,,
+19_loader.exe.bin,0x5286,0x8559,call rbx,ffd3,computed_CALL,,,
+19_loader.exe.bin,0x5286,0x87ba,call rdi,ffd7,computed_CALL,,,
+19_loader.exe.bin,0x5286,0x8926,call r13,41ffd5,computed_CALL,,,
+19_loader.exe.bin,0x8e0f,0x8e94,call qword ptr [rip + 0x8a946],ff1546a90800,original_IAT_indirect,,MultiByteToWideChar,0x937e0
+19_loader.exe.bin,0x8e0f,0x8f1f,call qword ptr [rdx + 7],ff5207,computed_CALL,,,
+19_loader.exe.bin,0x9338,0x9f7c,call qword ptr [r12 + 7],41ff542407,computed_CALL,,,
+19_loader.exe.bin,0x9338,0xa003,call qword ptr [rdi + 7],ff5707,computed_CALL,,,
+19_loader.exe.bin,0x9338,0xa04e,call qword ptr [rip + 0x89594],ff1594950800,original_IAT_indirect,,CloseHandle,0x935e8
+19_loader.exe.bin,0x9338,0xa3bb,call qword ptr [rsp + 0x68],ff542468,computed_CALL,,,
+19_loader.exe.bin,0x9338,0xbbb2,call qword ptr [rsp + 0x78],ff542478,computed_CALL,,,
+19_loader.exe.bin,0x9338,0xbfdd,call rsi,ffd6,computed_CALL,,,
+19_loader.exe.bin,0x9338,0xc60d,call rdi,ffd7,computed_CALL,,,
+19_loader.exe.bin,0x9338,0xc841,call rbx,ffd3,computed_CALL,,,
+19_loader.exe.bin,0x9338,0xcc43,call qword ptr [rsp + 0x88],ff942488000000,computed_CALL,,,
+19_loader.exe.bin,0x9338,0xce1b,call rbx,ffd3,computed_CALL,,,
+19_loader.exe.bin,0x9338,0xcefe,call rsi,ffd6,computed_CALL,,,
+19_loader.exe.bin,0x9338,0xcf08,call rdi,ffd7,computed_CALL,,,
+19_loader.exe.bin,0x9338,0xcf99,call qword ptr [rax + rdx],ff1410,computed_CALL,,,
+19_loader.exe.bin,0x9338,0xda65,call rsi,ffd6,computed_CALL,,,
+19_loader.exe.bin,0x9338,0xdda5,call qword ptr [rsp + 0x110],ff942410010000,computed_CALL,,,
+19_loader.exe.bin,0xfc7a,0xfc85,call qword ptr [rip + 0x83aa5],ff15a53a0800,original_IAT_indirect,,GetProcessHeap,0x93730
+19_loader.exe.bin,0xfcae,0xfe55,call qword ptr [rsi + 0x18],ff5618,computed_CALL,,,
+19_loader.exe.bin,0xfcae,0xfe7b,call qword ptr [rsi + 0x20],ff5620,computed_CALL,,,
+19_loader.exe.bin,0xfcae,0xfef8,call qword ptr [r15 + 0x18],41ff5718,computed_CALL,,,
+19_loader.exe.bin,0xfcae,0xff0c,call qword ptr [r15 + 0x20],41ff5720,computed_CALL,,,
+19_loader.exe.bin,0xfcae,0xff68,call qword ptr [rsi + 0x18],ff5618,computed_CALL,,,
+19_loader.exe.bin,0xffb7,0x10023,call qword ptr [rbx + 7],ff5307,computed_CALL,,,
+19_loader.exe.bin,0xffb7,0x10053,call qword ptr [rax + 8],ff5008,computed_CALL,,,
+19_loader.exe.bin,0xffb7,0x10097,call qword ptr [rax],ff10,computed_CALL,,,
+19_loader.exe.bin,0xffb7,0x100d1,call qword ptr [rbx + 7],ff5307,computed_CALL,,,
+19_loader.exe.bin,0x10243,0x10287,call qword ptr [rip + 0x83663],ff1563360800,original_IAT_indirect,,NtReadFile,0x938f0
+19_loader.exe.bin,0x10243,0x1029c,call qword ptr [rip + 0x835ce],ff15ce350800,original_IAT_indirect,,WaitForSingleObject,0x93870
+19_loader.exe.bin,0x10332,0x10481,call rdi,ffd7,computed_CALL,,,
+19_loader.exe.bin,0x10332,0x105d7,call qword ptr [rip + 0x8311b],ff151b310800,original_IAT_indirect,,GetLastError,0x936f8
+19_loader.exe.bin,0x10332,0x1064f,call qword ptr [rax + 8],ff5008,computed_CALL,,,
+19_loader.exe.bin,0x10332,0x10669,call qword ptr [r12 + 7],41ff542407,computed_CALL,,,
+19_loader.exe.bin,0x10332,0x106cd,call qword ptr [r12 + 7],41ff542407,computed_CALL,,,
+19_loader.exe.bin,0x10332,0x10768,call qword ptr [rip + 0x82f2a],ff152a2f0800,original_IAT_indirect,,GetConsoleMode,0x93698
+19_loader.exe.bin,0x10332,0x10772,call qword ptr [rip + 0x82f28],ff15282f0800,original_IAT_indirect,,GetConsoleOutputCP,0x936a0
+19_loader.exe.bin,0x10332,0x1079a,call qword ptr [rip + 0x83140],ff1540310800,original_IAT_indirect,,WakeByAddressSingle,0x938e0
+19_loader.exe.bin,0x10a2f,0x10a7a,call r13,41ffd5,computed_CALL,,,
+19_loader.exe.bin,0x10a2f,0x10af8,call r13,41ffd5,computed_CALL,,,
+19_loader.exe.bin,0x10a2f,0x10b96,call qword ptr [rsi + rax],ff1406,computed_CALL,,,
+19_loader.exe.bin,0x10cb1,0x10efe,call qword ptr [rip + 0x8293c],ff153c290800,original_IAT_indirect,,SetLastError,0x93840
+19_loader.exe.bin,0x10cb1,0x10f10,call qword ptr [rip + 0x827da],ff15da270800,original_IAT_indirect,,GetFullPathNameW,0x936f0
+19_loader.exe.bin,0x10cb1,0x10f1e,call qword ptr [rip + 0x827d4],ff15d4270800,original_IAT_indirect,,GetLastError,0x936f8
+19_loader.exe.bin,0x10cb1,0x10f34,call qword ptr [rip + 0x827be],ff15be270800,original_IAT_indirect,,GetLastError,0x936f8
+19_loader.exe.bin,0x10cb1,0x11235,call qword ptr [rip + 0x825fd],ff15fd250800,original_IAT_indirect,,SetFileTime,0x93838
+19_loader.exe.bin,0x10cb1,0x1125b,call qword ptr [rip + 0x82497],ff1597240800,original_IAT_indirect,,GetLastError,0x936f8
+19_loader.exe.bin,0x10cb1,0x112b6,call qword ptr [rip + 0x8243c],ff153c240800,original_IAT_indirect,,GetLastError,0x936f8
+19_loader.exe.bin,0x10cb1,0x113fb,call qword ptr [rip + 0x822f7],ff15f7220800,original_IAT_indirect,,GetLastError,0x936f8
+19_loader.exe.bin,0x10cb1,0x11537,call qword ptr [rip + 0x821bb],ff15bb210800,original_IAT_indirect,,GetLastError,0x936f8
+19_loader.exe.bin,0x10cb1,0x1155d,call qword ptr [rip + 0x82085],ff1585200800,original_IAT_indirect,,CloseHandle,0x935e8
+19_loader.exe.bin,0x10cb1,0x115a9,call qword ptr [rip + 0x82049],ff1549200800,original_IAT_indirect,,CreateFileW,0x935f8
+19_loader.exe.bin,0x11f41,0x11f86,call qword ptr [rip + 0x8196c],ff156c190800,original_IAT_indirect,,NtWriteFile,0x938f8
+19_loader.exe.bin,0x11f41,0x11f9b,call qword ptr [rip + 0x818cf],ff15cf180800,original_IAT_indirect,,WaitForSingleObject,0x93870
+19_loader.exe.bin,0x11fe8,0x12007,call qword ptr [r9 + 0x20],41ff5120,computed_CALL,,,
+19_loader.exe.bin,0x12055,0x12065,call qword ptr [rsi + 0x20],ff5620,computed_CALL,,,
+19_loader.exe.bin,0x12055,0x12068,call qword ptr [rip + 0x816c2],ff15c2160800,original_IAT_indirect,,GetProcessHeap,0x93730
+19_loader.exe.bin,0x12082,0x1209a,call rax,ffd0,computed_CALL,,,
+19_loader.exe.bin,0x120bc,0x1213e,call qword ptr [r14 + 7],41ff5607,computed_CALL,,,
+19_loader.exe.bin,0x120bc,0x1217c,call qword ptr [rip + 0x81466],ff1566140800,original_IAT_indirect,,CloseHandle,0x935e8
+19_loader.exe.bin,0x120bc,0x121bd,call qword ptr [rip + 0x81515],ff1515150800,original_IAT_indirect,,GetFileInformationByHandle,0x936d8
+19_loader.exe.bin,0x120bc,0x121e8,call qword ptr [rip + 0x814f2],ff15f2140800,original_IAT_indirect,,GetFileInformationByHandleEx,0x936e0
+19_loader.exe.bin,0x120bc,0x1221f,call qword ptr [rip + 0x814d3],ff15d3140800,original_IAT_indirect,,GetLastError,0x936f8
+19_loader.exe.bin,0x120bc,0x122ab,call qword ptr [rax + 8],ff5008,computed_CALL,,,
+19_loader.exe.bin,0x120bc,0x12565,call qword ptr [rax],ff10,computed_CALL,,,
+19_loader.exe.bin,0x120bc,0x125ab,call qword ptr [r14 + 7],41ff5607,computed_CALL,,,
+19_loader.exe.bin,0x1277b,0x127ab,call rdi,ffd7,computed_CALL,,,
+19_loader.exe.bin,0x1277b,0x129c1,call qword ptr [rax + 0x18],ff5018,computed_CALL,,,
+19_loader.exe.bin,0x1277b,0x129d0,call rdi,ffd7,computed_CALL,,,
+19_loader.exe.bin,0x1277b,0x12c6d,call r15,41ffd7,computed_CALL,,,
+19_loader.exe.bin,0x1277b,0x12c8a,call qword ptr [rsp + 0x50],ff542450,computed_CALL,,,
+19_loader.exe.bin,0x1277b,0x12d30,call r15,41ffd7,computed_CALL,,,
+19_loader.exe.bin,0x1309d,0x13101,call qword ptr [r15 + 0x20],41ff5720,computed_CALL,,,
+19_loader.exe.bin,0x1322d,0x13394,call qword ptr [rdi + 0x18],ff5718,computed_CALL,,,
+19_loader.exe.bin,0x1322d,0x133b2,call qword ptr [rdi + 0x20],ff5720,computed_CALL,,,
+19_loader.exe.bin,0x13d40,0x13e05,call qword ptr [rip + 0x7f285],ff1585f20700,computed_CALL,,,0x93090
+19_loader.exe.bin,0x14150,0x1418a,call qword ptr [rip + 0x7f5d0],ff15d0f50700,original_IAT_indirect,,GetSystemTimeAsFileTime,0x93760
+19_loader.exe.bin,0x14150,0x1419a,call qword ptr [rip + 0x7f528],ff1528f50700,original_IAT_indirect,,GetCurrentThreadId,0x936c8
+19_loader.exe.bin,0x14150,0x141a7,call qword ptr [rip + 0x7f50b],ff150bf50700,original_IAT_indirect,,GetCurrentProcessId,0x936b8
+19_loader.exe.bin,0x14150,0x141b9,call qword ptr [rip + 0x7f629],ff1529f60700,original_IAT_indirect,,QueryPerformanceCounter,0x937e8
+19_loader.exe.bin,0x142f0,0x142f6,call qword ptr [rip + 0x7f414],ff1514f40700,original_IAT_indirect,,GetModuleHandleW,0x93710
+19_loader.exe.bin,0x143e0,0x14408,call qword ptr [rip + 0x7ec82],ff1582ec0700,computed_CALL,,,0x93090
+19_loader.exe.bin,0x14430,0x14458,call qword ptr [rip + 0x7ec32],ff1532ec0700,computed_CALL,,,0x93090
+19_loader.exe.bin,0x14740,0x147de,call rax,ffd0,computed_CALL,,,
+19_loader.exe.bin,0x14740,0x14815,call qword ptr [rip + 0x76d95],ff15956d0700,computed_CALL,,,0x8b5b0
+19_loader.exe.bin,0x14740,0x14850,call qword ptr [rip + 0x7efba],ff15baef0700,original_IAT_indirect,,RtlUnwindEx,0x93810
+19_loader.exe.bin,0x14740,0x14933,call r8,41ffd0,computed_CALL,,,
+19_loader.exe.bin,0x14960,0x149c2,call qword ptr [rip + 0x7e6c8],ff15c8e60700,computed_CALL,,,0x93090
+19_loader.exe.bin,0x14d18,0x14d1c,call qword ptr [rip + 0x7e966],ff1566e90700,original_IAT_indirect,,GetCommandLineA,0x93688
+19_loader.exe.bin,0x14d18,0x14d29,call qword ptr [rip + 0x7e961],ff1561e90700,original_IAT_indirect,,GetCommandLineW,0x93690
+19_loader.exe.bin,0x14e04,0x14e29,call qword ptr [rip + 0x7e8d9],ff15d9e80700,original_IAT_indirect,,GetModuleHandleExW,0x93708
+19_loader.exe.bin,0x14e04,0x14e3f,call qword ptr [rip + 0x7e8db],ff15dbe80700,original_IAT_indirect,,GetProcAddress,0x93720
+19_loader.exe.bin,0x14e04,0x14e5b,call qword ptr [rip + 0x7e80f],ff150fe80700,original_IAT_indirect,,FreeLibrary,0x93670
+19_loader.exe.bin,0x14e68,0x14e74,call qword ptr [rip + 0x7e836],ff1536e80700,original_IAT_indirect,,GetCurrentProcess,0x936b0
+19_loader.exe.bin,0x14e68,0x14e7f,call qword ptr [rip + 0x7e9d3],ff15d3e90700,original_IAT_indirect,,TerminateProcess,0x93858
+19_loader.exe.bin,0x14e68,0x14e8e,call qword ptr [rip + 0x7e784],ff1584e70700,original_IAT_indirect,,ExitProcess,0x93618
+19_loader.exe.bin,0x14e98,0x14ebf,call qword ptr [rip + 0x7e84b],ff154be80700,original_IAT_indirect,,GetModuleHandleW,0x93710
+19_loader.exe.bin,0x160f8,0x1611e,call qword ptr [rip + 0x7d68c],ff158cd60700,original_IAT_indirect,,IsProcessorFeaturePresent,0x937b0
+19_loader.exe.bin,0x16150,0x1615b,call qword ptr [rip + 0x7d4d7],ff15d7d40700,original_IAT_indirect,,FlsAlloc,0x93638
+19_loader.exe.bin,0x16150,0x16175,call qword ptr [rip + 0x7d4d5],ff15d5d40700,original_IAT_indirect,,FlsSetValue,0x93650
+19_loader.exe.bin,0x16150,0x1619b,call qword ptr [rip + 0x7d49f],ff159fd40700,original_IAT_indirect,,FlsFree,0x93640
+19_loader.exe.bin,0x161c0,0x161cf,call qword ptr [rip + 0x7d46b],ff156bd40700,original_IAT_indirect,,FlsFree,0x93640
+19_loader.exe.bin,0x161f0,0x16207,call qword ptr [rip + 0x7d4eb],ff15ebd40700,original_IAT_indirect,,GetLastError,0x936f8
+19_loader.exe.bin,0x161f0,0x16215,call qword ptr [rip + 0x7d42d],ff152dd40700,original_IAT_indirect,,FlsGetValue,0x93648
+19_loader.exe.bin,0x161f0,0x1623a,call qword ptr [rip + 0x7d410],ff1510d40700,original_IAT_indirect,,FlsSetValue,0x93650
+19_loader.exe.bin,0x161f0,0x16263,call qword ptr [rip + 0x7d3e7],ff15e7d30700,original_IAT_indirect,,FlsSetValue,0x93650
+19_loader.exe.bin,0x161f0,0x16270,call qword ptr [rip + 0x7d3da],ff15dad30700,original_IAT_indirect,,FlsSetValue,0x93650
+19_loader.exe.bin,0x161f0,0x1628a,call qword ptr [rip + 0x7d5b0],ff15b0d50700,original_IAT_indirect,,SetLastError,0x93840
+19_loader.exe.bin,0x161f0,0x162a6,call qword ptr [rip + 0x7d3a4],ff15a4d30700,original_IAT_indirect,,FlsSetValue,0x93650
+19_loader.exe.bin,0x161f0,0x162b6,call qword ptr [rip + 0x7d584],ff1584d50700,original_IAT_indirect,,SetLastError,0x93840
+19_loader.exe.bin,0x163c0,0x163f0,call qword ptr [rip + 0x7d3a2],ff15a2d30700,original_IAT_indirect,,InitializeCriticalSectionEx,0x93798
+19_loader.exe.bin,0x163c0,0x1642a,call qword ptr [rip + 0x7d1d0],ff15d0d10700,original_IAT_indirect,,DeleteCriticalSection,0x93600
+19_loader.exe.bin,0x16460,0x1647a,call qword ptr [rip + 0x7d180],ff1580d10700,original_IAT_indirect,,DeleteCriticalSection,0x93600
+19_loader.exe.bin,0x16498,0x164b8,call qword ptr [rip + 0x7d3aa],ff15aad30700,original_IAT_indirect,,VirtualProtect,0x93868
+19_loader.exe.bin,0x164c8,0x164e7,call qword ptr [rip + 0x7d183],ff1583d10700,original_IAT_indirect,,FreeLibrary,0x93670
+19_loader.exe.bin,0x16558,0x165fe,call qword ptr [rip + 0x7cfec],ff15eccf0700,original_IAT_indirect,,CompareStringW,0x935f0
+19_loader.exe.bin,0x16650,0x16727,call qword ptr [rip + 0x7d093],ff1593d00700,original_IAT_indirect,,LCMapStringW,0x937c0
+19_loader.exe.bin,0x16848,0x168b5,call qword ptr [rip + 0x7cf1d],ff151dcf0700,original_IAT_indirect,,LoadLibraryExW,0x937d8
+19_loader.exe.bin,0x16848,0x168c7,call qword ptr [rip + 0x7ce2b],ff152bce0700,original_IAT_indirect,,GetLastError,0x936f8
+19_loader.exe.bin,0x16848,0x16909,call qword ptr [rip + 0x7cec9],ff15c9ce0700,original_IAT_indirect,,LoadLibraryExW,0x937d8
+19_loader.exe.bin,0x16848,0x16965,call qword ptr [rip + 0x7cefd],ff15fdce0700,original_IAT_indirect,,VirtualProtect,0x93868
+19_loader.exe.bin,0x16848,0x16996,call qword ptr [rip + 0x7cecc],ff15ccce0700,original_IAT_indirect,,VirtualProtect,0x93868
+19_loader.exe.bin,0x16848,0x169da,call qword ptr [rip + 0x7cc90],ff1590cc0700,original_IAT_indirect,,FreeLibrary,0x93670
+19_loader.exe.bin,0x16848,0x169e6,call qword ptr [rip + 0x7cd34],ff1534cd0700,original_IAT_indirect,,GetProcAddress,0x93720
+19_loader.exe.bin,0x16a7c,0x16a9b,call qword ptr [rip + 0x7cb5f],ff155fcb0700,original_IAT_indirect,,DeleteCriticalSection,0x93600
+19_loader.exe.bin,0x16b00,0x16b04,call qword ptr [rip + 0x7cc26],ff1526cc0700,original_IAT_indirect,,GetProcessHeap,0x93730
+19_loader.exe.bin,0x16c20,0x16c69,call qword ptr [rip + 0x7ca89],ff1589ca0700,original_IAT_indirect,,GetLastError,0x936f8
+19_loader.exe.bin,0x16c20,0x16c9c,call qword ptr [rip + 0x7cb9e],ff159ecb0700,original_IAT_indirect,,SetLastError,0x93840
+19_loader.exe.bin,0x16f5c,0x16f6b,call qword ptr [rip + 0x7c787],ff1587c70700,original_IAT_indirect,,GetLastError,0x936f8
+19_loader.exe.bin,0x16f5c,0x16f8a,call qword ptr [rip + 0x7c8b0],ff15b0c80700,original_IAT_indirect,,SetLastError,0x93840
+19_loader.exe.bin,0x16f5c,0x16ff8,call qword ptr [rip + 0x7c842],ff1542c80700,original_IAT_indirect,,SetLastError,0x93840
+19_loader.exe.bin,0x171b8,0x171e8,call qword ptr [rip + 0x7c552],ff1552c50700,original_IAT_indirect,,GetStartupInfoW,0x93740
+19_loader.exe.bin,0x171b8,0x17253,call qword ptr [rip + 0x7c48f],ff158fc40700,original_IAT_indirect,,GetFileType,0x936e8
+19_loader.exe.bin,0x172b8,0x17331,call qword ptr [rip + 0x7c411],ff1511c40700,original_IAT_indirect,,GetStdHandle,0x93748
+19_loader.exe.bin,0x172b8,0x17347,call qword ptr [rip + 0x7c39b],ff159bc30700,original_IAT_indirect,,GetFileType,0x936e8
+19_loader.exe.bin,0x174d8,0x17553,call qword ptr [rip + 0x7c25f],ff155fc20700,original_IAT_indirect,,IsValidCodePage,0x937b8
+19_loader.exe.bin,0x174d8,0x17597,call qword ptr [rip + 0x7c0e3],ff15e3c00700,original_IAT_indirect,,GetCPInfo,0x93680
+19_loader.exe.bin,0x177a0,0x177ca,call qword ptr [rip + 0x7bf48],ff1548bf0700,original_IAT_indirect,,GetOEMCP,0x93718
+19_loader.exe.bin,0x177a0,0x177e1,call qword ptr [rip + 0x7be91],ff1591be0700,original_IAT_indirect,,GetACP,0x93678
+19_loader.exe.bin,0x17be0,0x17c30,call qword ptr [rip + 0x7ba4a],ff154aba0700,original_IAT_indirect,,GetCPInfo,0x93680
+19_loader.exe.bin,0x17fb0,0x17fc6,call qword ptr [rip + 0x7b7b4],ff15b4b70700,original_IAT_indirect,,HeapFree,0x93780
+19_loader.exe.bin,0x17fb0,0x17fd0,call qword ptr [rip + 0x7b722],ff1522b70700,original_IAT_indirect,,GetLastError,0x936f8
+19_loader.exe.bin,0x180e4,0x180ed,call qword ptr [rip + 0x7b6bd],ff15bdb60700,original_IAT_indirect,,IsProcessorFeaturePresent,0x937b0
+19_loader.exe.bin,0x180e4,0x18112,call qword ptr [rip + 0x7b598],ff1598b50700,original_IAT_indirect,,GetCurrentProcess,0x936b0
+19_loader.exe.bin,0x1812c,0x181b7,call qword ptr [rip + 0x7b63b],ff153bb60700,original_IAT_indirect,,RtlCaptureContext,0x937f8
+19_loader.exe.bin,0x1812c,0x181cf,call qword ptr [rip + 0x7b62b],ff152bb60700,original_IAT_indirect,,RtlLookupFunctionEntry,0x93800
+19_loader.exe.bin,0x1812c,0x1820a,call qword ptr [rip + 0x7b608],ff1508b60700,original_IAT_indirect,,RtlVirtualUnwind,0x93818
+19_loader.exe.bin,0x1812c,0x18243,call qword ptr [rip + 0x7b55f],ff155fb50700,original_IAT_indirect,,IsDebuggerPresent,0x937a8
+19_loader.exe.bin,0x1812c,0x1824d,call qword ptr [rip + 0x7b5fd],ff15fdb50700,original_IAT_indirect,,SetUnhandledExceptionFilter,0x93850
+19_loader.exe.bin,0x1812c,0x18258,call qword ptr [rip + 0x7b602],ff1502b60700,original_IAT_indirect,,UnhandledExceptionFilter,0x93860
+19_loader.exe.bin,0x1835c,0x1836f,call qword ptr [rip + 0x7b383],ff1583b30700,original_IAT_indirect,,GetLastError,0x936f8
+19_loader.exe.bin,0x1835c,0x183a4,call qword ptr [rip + 0x7b496],ff1596b40700,original_IAT_indirect,,SetLastError,0x93840
+19_loader.exe.bin,0x183c4,0x183e0,call qword ptr [rip + 0x7b312],ff1512b30700,original_IAT_indirect,,GetLastError,0x936f8
+19_loader.exe.bin,0x183c4,0x18415,call qword ptr [rip + 0x7b425],ff1525b40700,original_IAT_indirect,,SetLastError,0x93840
+19_loader.exe.bin,0x18430,0x1844c,call qword ptr [rip + 0x7b2a6],ff15a6b20700,original_IAT_indirect,,GetLastError,0x936f8
+19_loader.exe.bin,0x18430,0x1845c,call qword ptr [rip + 0x7b3de],ff15deb30700,original_IAT_indirect,,SetLastError,0x93840
+19_loader.exe.bin,0x18d90,0x18dc1,call qword ptr [rip + 0x7a839],ff1539a80700,original_IAT_indirect,,DeleteCriticalSection,0x93600
+19_loader.exe.bin,0x19030,0x19097,call qword ptr [rip + 0x7a763],ff1563a70700,original_IAT_indirect,,RtlLookupFunctionEntry,0x93800
+19_loader.exe.bin,0x1919a,0x191c7,call qword ptr [rip + 0x7a633],ff1533a60700,original_IAT_indirect,,RtlLookupFunctionEntry,0x93800
+19_loader.exe.bin,0x19260,0x19370,call qword ptr [rip + 0x7a49a],ff159aa40700,original_IAT_indirect,,RtlUnwindEx,0x93810
+19_loader.exe.bin,0x19660,0x19699,call qword ptr [rip + 0x799f1],ff15f1990700,computed_CALL,,,0x93090
+19_loader.exe.bin,0x19980,0x199d5,call qword ptr [rip + 0x79d9d],ff159d9d0700,original_IAT_indirect,,HeapAlloc,0x93778
+19_loader.exe.bin,0x19a00,0x19a3e,call qword ptr [rip + 0x79d34],ff15349d0700,original_IAT_indirect,,HeapAlloc,0x93778
+19_loader.exe.bin,0x19a94,0x19bc6,call qword ptr [rip + 0x79b84],ff15849b0700,original_IAT_indirect,,GetStringTypeW,0x93750
+19_loader.exe.bin,0x1a534,0x1a60a,call qword ptr [rip + 0x790e8],ff15e8900700,original_IAT_indirect,,GetLastError,0x936f8
+19_loader.exe.bin,0x1a6d4,0x1a7b2,call qword ptr [rip + 0x78f40],ff15408f0700,original_IAT_indirect,,GetLastError,0x936f8
+19_loader.exe.bin,0x1aa04,0x1ab85,call qword ptr [rip + 0x78a9d],ff159d8a0700,original_IAT_indirect,,FindFirstFileExW,0x93628
+19_loader.exe.bin,0x1aa04,0x1acbb,call qword ptr [rip + 0x7896f],ff156f890700,original_IAT_indirect,,FindNextFileW,0x93630
+19_loader.exe.bin,0x1aa04,0x1acfb,call qword ptr [rip + 0x7891f],ff151f890700,original_IAT_indirect,,FindClose,0x93620
+19_loader.exe.bin,0x1aa04,0x1ad27,call qword ptr [rip + 0x788f3],ff15f3880700,original_IAT_indirect,,FindClose,0x93620
+19_loader.exe.bin,0x1ad78,0x1adb3,call qword ptr [rip + 0x78947],ff1547890700,original_IAT_indirect,,GetModuleFileNameW,0x93700
+19_loader.exe.bin,0x1ad78,0x1adbd,call qword ptr [rip + 0x78935],ff1535890700,original_IAT_indirect,,GetLastError,0x936f8
+19_loader.exe.bin,0x1ae9c,0x1af3e,call qword ptr [rip + 0x787b4],ff15b4870700,original_IAT_indirect,,GetLastError,0x936f8
+19_loader.exe.bin,0x1b1c8,0x1b1e1,call qword ptr [rip + 0x784e9],ff15e9840700,original_IAT_indirect,,GetEnvironmentStringsW,0x936d0
+19_loader.exe.bin,0x1b1c8,0x1b256,call qword ptr [rip + 0x7840c],ff150c840700,original_IAT_indirect,,FreeEnvironmentStringsW,0x93668
+19_loader.exe.bin,0x1b1c8,0x1b2b2,call qword ptr [rip + 0x783b0],ff15b0830700,original_IAT_indirect,,FreeEnvironmentStringsW,0x93668
+19_loader.exe.bin,0x1b798,0x1b812,call qword ptr [rip + 0x78030],ff1530800700,original_IAT_indirect,,SetStdHandle,0x93848
+19_loader.exe.bin,0x1b8fc,0x1b925,call qword ptr [rip + 0x77cd5],ff15d57c0700,original_IAT_indirect,,DeleteCriticalSection,0x93600
+19_loader.exe.bin,0x1d224,0x1d272,call qword ptr [rip + 0x763e0],ff15e0630700,original_IAT_indirect,,FlushFileBuffers,0x93658
+19_loader.exe.bin,0x1d224,0x1d27e,call qword ptr [rip + 0x76474],ff1574640700,original_IAT_indirect,,GetLastError,0x936f8
+19_loader.exe.bin,0x1d2d8,0x1d3f6,call qword ptr [rip + 0x7629c],ff159c620700,original_IAT_indirect,,GetConsoleMode,0x93698
+19_loader.exe.bin,0x1d2d8,0x1d488,call qword ptr [rip + 0x7626a],ff156a620700,original_IAT_indirect,,GetLastError,0x936f8
+19_loader.exe.bin,0x1d2d8,0x1d54e,call qword ptr [rip + 0x76334],ff1534630700,original_IAT_indirect,,WriteFile,0x93888
+19_loader.exe.bin,0x1d2d8,0x1d558,call qword ptr [rip + 0x7619a],ff159a610700,original_IAT_indirect,,GetLastError,0x936f8
+19_loader.exe.bin,0x1d728,0x1d7a7,call qword ptr [rip + 0x75ef3],ff15f35e0700,original_IAT_indirect,,GetConsoleOutputCP,0x936a0
+19_loader.exe.bin,0x1d728,0x1da84,call qword ptr [rip + 0x75dfe],ff15fe5d0700,original_IAT_indirect,,WriteFile,0x93888
+19_loader.exe.bin,0x1d728,0x1daca,call qword ptr [rip + 0x75db8],ff15b85d0700,original_IAT_indirect,,WriteFile,0x93888
+19_loader.exe.bin,0x1d728,0x1db89,call qword ptr [rip + 0x75b69],ff15695b0700,original_IAT_indirect,,GetLastError,0x936f8
+19_loader.exe.bin,0x1dbbc,0x1dc74,call qword ptr [rip + 0x75c0e],ff150e5c0700,original_IAT_indirect,,WriteFile,0x93888
+19_loader.exe.bin,0x1dbbc,0x1dc90,call qword ptr [rip + 0x75a62],ff15625a0700,original_IAT_indirect,,GetLastError,0x936f8
+19_loader.exe.bin,0x1dcc4,0x1dd90,call qword ptr [rip + 0x75af2],ff15f25a0700,original_IAT_indirect,,WriteFile,0x93888
+19_loader.exe.bin,0x1dcc4,0x1ddac,call qword ptr [rip + 0x75946],ff1546590700,original_IAT_indirect,,GetLastError,0x936f8
+19_loader.exe.bin,0x1dde0,0x1def8,call qword ptr [rip + 0x7598a],ff158a590700,original_IAT_indirect,,WriteFile,0x93888
+19_loader.exe.bin,0x1dde0,0x1df1d,call qword ptr [rip + 0x757d5],ff15d5570700,original_IAT_indirect,,GetLastError,0x936f8
+19_loader.exe.bin,0x1df54,0x1dfc7,call qword ptr [rip + 0x75633],ff1533560700,original_IAT_indirect,,DeleteCriticalSection,0x93600
+19_loader.exe.bin,0x1e450,0x1e5a8,call qword ptr [rip + 0x75242],ff1542520700,original_IAT_indirect,,RaiseException,0x937f0
+19_loader.exe.bin,0x1eb30,0x1ebb6,call qword ptr [rip + 0x744d4],ff15d4440700,computed_CALL,,,0x93090
+19_loader.exe.bin,0x1edd0,0x1ef94,call qword ptr [rip + 0x740f6],ff15f6400700,computed_CALL,,,0x93090
+19_loader.exe.bin,0x1f5e5,0x1f622,call qword ptr [rip + 0x73fe0],ff15e03f0700,original_IAT_indirect,,EncodePointer,0x93608
+19_loader.exe.bin,0x1f912,0x1f976,call r12,41ffd4,computed_CALL,,,
+19_loader.exe.bin,0x1f912,0x1f9f5,call r12,41ffd4,computed_CALL,,,
+19_loader.exe.bin,0x1f912,0x1fa31,call r12,41ffd4,computed_CALL,,,
+19_loader.exe.bin,0x1f912,0x1fa6e,call r12,41ffd4,computed_CALL,,,
+19_loader.exe.bin,0x1f912,0x1fac3,call r12,41ffd4,computed_CALL,,,
+19_loader.exe.bin,0x1f912,0x1fade,call r12,41ffd4,computed_CALL,,,
+19_loader.exe.bin,0x1f912,0x1faf6,call r12,41ffd4,computed_CALL,,,
+19_loader.exe.bin,0x1f912,0x1fb4e,call r12,41ffd4,computed_CALL,,,
+19_loader.exe.bin,0x1f912,0x1fb65,call r12,41ffd4,computed_CALL,,,
+19_loader.exe.bin,0x202a0,0x2030d,call qword ptr [rip + 0x73475],ff1575340700,original_IAT_indirect,,HeapReAlloc,0x93788
+19_loader.exe.bin,0x20554,0x206aa,call qword ptr [rip + 0x73170],ff1570310700,original_IAT_indirect,,SetEnvironmentVariableW,0x93820
+19_loader.exe.bin,0x20f50,0x20fa2,call qword ptr [rip + 0x72888],ff1588280700,original_IAT_indirect,,SetFilePointerEx,0x93830
+19_loader.exe.bin,0x20f50,0x20fac,call qword ptr [rip + 0x72746],ff1546270700,original_IAT_indirect,,GetLastError,0x936f8
+19_loader.exe.bin,0x21250,0x2126e,call rax,ffd0,computed_CALL,,,
+19_loader.exe.bin,0x21370,0x213a6,call qword ptr [rip + 0x71ce4],ff15e41c0700,computed_CALL,,,0x93090
+19_loader.exe.bin,0x21370,0x213c0,call qword ptr [rip + 0x72442],ff1542240700,original_IAT_indirect,,RtlPcToFileHeader,0x93808
+19_loader.exe.bin,0x21370,0x21403,call qword ptr [rip + 0x723e7],ff15e7230700,original_IAT_indirect,,RaiseException,0x937f0
+19_loader.exe.bin,0x216d0,0x217a3,call qword ptr [rip + 0x71ed7],ff15d71e0700,original_IAT_indirect,,GetCPInfo,0x93680
+19_loader.exe.bin,0x21a7c,0x21ab2,call qword ptr [rip + 0x71b40],ff15401b0700,original_IAT_indirect,,CreateFileW,0x935f8
+19_loader.exe.bin,0x21ad0,0x21b01,call qword ptr [rip + 0x71d79],ff15791d0700,original_IAT_indirect,,WriteConsoleW,0x93880
+19_loader.exe.bin,0x21ad0,0x21b0d,call qword ptr [rip + 0x71be5],ff15e51b0700,original_IAT_indirect,,GetLastError,0x936f8
+19_loader.exe.bin,0x21ad0,0x21b25,call qword ptr [rip + 0x71abd],ff15bd1a0700,original_IAT_indirect,,CloseHandle,0x935e8
+19_loader.exe.bin,0x21ad0,0x21b50,call qword ptr [rip + 0x71aa2],ff15a21a0700,original_IAT_indirect,,CreateFileW,0x935f8
+19_loader.exe.bin,0x21ad0,0x21b6f,call qword ptr [rip + 0x71d0b],ff150b1d0700,original_IAT_indirect,,WriteConsoleW,0x93880
+19_loader.exe.bin,0x21b90,0x21ba1,call qword ptr [rip + 0x71a41],ff15411a0700,original_IAT_indirect,,CloseHandle,0x935e8
+19_loader.exe.bin,0x21bac,0x21c1a,call qword ptr [rip + 0x719c8],ff15c8190700,original_IAT_indirect,,CloseHandle,0x935e8
+19_loader.exe.bin,0x21bac,0x21c24,call qword ptr [rip + 0x71ace],ff15ce1a0700,original_IAT_indirect,,GetLastError,0x936f8
+19_loader.exe.bin,0x22cf8,0x22d6b,call qword ptr [rip + 0x709bf],ff15bf090700,original_IAT_indirect,,GetProcessHeap,0x93730
+19_loader.exe.bin,0x22cf8,0x22d7c,call qword ptr [rip + 0x70a06],ff15060a0700,original_IAT_indirect,,HeapReAlloc,0x93788
+19_loader.exe.bin,0x22dc8,0x22e23,call qword ptr [rip + 0x70aa7],ff15a70a0700,original_IAT_indirect,,WaitOnAddress,0x938d0
+19_loader.exe.bin,0x22dc8,0x22e45,call qword ptr [rip + 0x708ad],ff15ad080700,original_IAT_indirect,,GetLastError,0x936f8
+19_loader.exe.bin,0x22dc8,0x22ea5,call qword ptr [rdi + 0x20],ff5720,computed_CALL,,,
+19_loader.exe.bin,0x22dc8,0x22eb4,call qword ptr [rip + 0x70a1e],ff151e0a0700,original_IAT_indirect,,WakeByAddressAll,0x938d8
+19_payload.dll.bin,0x2093,0x20b1,call qword ptr [rsi],ff16,computed_CALL,,,
+19_payload.dll.bin,0x24c7,0x2ff7,call r15,41ffd7,computed_CALL,,,
+19_payload.dll.bin,0x24c7,0x300a,call rbx,ffd3,computed_CALL,,,
+19_payload.dll.bin,0x24c7,0x300c,call r15,41ffd7,computed_CALL,,,
+19_payload.dll.bin,0x24c7,0x3019,call rdi,ffd7,computed_CALL,,,
+19_payload.dll.bin,0x24c7,0x3027,call r12,41ffd4,computed_CALL,,,
+19_payload.dll.bin,0x24c7,0x3035,call qword ptr [rsp + 0xe8],ff9424e8000000,computed_CALL,,,
+19_payload.dll.bin,0x24c7,0x3048,call qword ptr [rsp + 0xc0],ff9424c0000000,computed_CALL,,,
+19_payload.dll.bin,0x24c7,0x304f,call rsi,ffd6,computed_CALL,,,
+19_payload.dll.bin,0x24c7,0x311b,call qword ptr [rsp + 0xc0],ff9424c0000000,computed_CALL,,,
+19_payload.dll.bin,0x24c7,0x3122,call rsi,ffd6,computed_CALL,,,
+19_payload.dll.bin,0x24c7,0x3a3c,call qword ptr [rsp + 0x100],ff942400010000,computed_CALL,,,
+19_payload.dll.bin,0x24c7,0x3a5a,call qword ptr [rsp + 0xe8],ff9424e8000000,computed_CALL,,,
+19_payload.dll.bin,0x24c7,0x3a83,call qword ptr [rsp + 0xc0],ff9424c0000000,computed_CALL,,,
+19_payload.dll.bin,0x24c7,0x3a8c,call rdi,ffd7,computed_CALL,,,
+19_payload.dll.bin,0x24c7,0x3a93,call qword ptr [rsp + 0xf0],ff9424f0000000,computed_CALL,,,
+19_payload.dll.bin,0x24c7,0x3aa2,call qword ptr [rsp + 0xf8],ff9424f8000000,computed_CALL,,,
+19_payload.dll.bin,0x24c7,0x3aac,call rsi,ffd6,computed_CALL,,,
+19_payload.dll.bin,0x24c7,0x3aae,call r15,41ffd7,computed_CALL,,,
+19_payload.dll.bin,0x24c7,0x3abc,call qword ptr [rsp + 0xc8],ff9424c8000000,computed_CALL,,,
+19_payload.dll.bin,0x24c7,0x3aef,call qword ptr [rsp + 0xc8],ff9424c8000000,computed_CALL,,,
+19_payload.dll.bin,0x44cd,0x44f6,call rax,ffd0,computed_CALL,,,
+19_payload.dll.bin,0x44cd,0x4552,call qword ptr [rip + 0x8f1f8],ff15f8f10800,original_IAT_indirect,,WakeByAddressSingle,0x93750
+19_payload.dll.bin,0x44cd,0x4590,call rax,ffd0,computed_CALL,,,
+19_payload.dll.bin,0x44cd,0x45ba,call qword ptr [rip + 0x8efc8],ff15c8ef0800,original_IAT_indirect,,GetProcessHeap,0x93588
+19_payload.dll.bin,0x4665,0x4798,call qword ptr [rsp + 0x110],ff942410010000,computed_CALL,,,
+19_payload.dll.bin,0x4665,0x4880,call qword ptr [rsp + 0x118],ff942418010000,computed_CALL,,,
+19_payload.dll.bin,0x4665,0x48ee,call qword ptr [rsp + 0x110],ff942410010000,computed_CALL,,,
+19_payload.dll.bin,0x4665,0x4a68,call qword ptr [rsp + 0xe8],ff9424e8000000,computed_CALL,,,
+19_payload.dll.bin,0x4665,0x4c6b,call qword ptr [rsp + 0xf8],ff9424f8000000,computed_CALL,,,
+19_payload.dll.bin,0x4665,0x4dbe,call qword ptr [rsp + 0x120],ff942420010000,computed_CALL,,,
+19_payload.dll.bin,0x4665,0x5248,call rax,ffd0,computed_CALL,,,
+19_payload.dll.bin,0x4665,0x5250,call rbx,ffd3,computed_CALL,,,
+19_payload.dll.bin,0x4665,0x553c,call qword ptr [rsp + 0xb0],ff9424b0000000,computed_CALL,,,
+19_payload.dll.bin,0x4665,0x554b,call qword ptr [rsp + 0x88],ff942488000000,computed_CALL,,,
+19_payload.dll.bin,0x4665,0x5af6,call qword ptr [rsp + 0xf0],ff9424f0000000,computed_CALL,,,
+19_payload.dll.bin,0x4665,0x5b60,call qword ptr [rsp + 0xe0],ff9424e0000000,computed_CALL,,,
+19_payload.dll.bin,0x4665,0x5e8a,call qword ptr [rsp + 0x78],ff542478,computed_CALL,,,
+19_payload.dll.bin,0x6142,0x616a,call qword ptr [rip + 0x8d418],ff1518d40800,original_IAT_indirect,,GetProcessHeap,0x93588
+19_payload.dll.bin,0x6309,0x63dc,call r14,41ffd6,computed_CALL,,,
+19_payload.dll.bin,0x6309,0x63e7,call r15,41ffd7,computed_CALL,,,
+19_payload.dll.bin,0x6309,0x63fe,call qword ptr [rip + 0x8d184],ff1584d10800,original_IAT_indirect,,GetProcessHeap,0x93588
+19_payload.dll.bin,0x6309,0x640c,call qword ptr [rip + 0x8d1c6],ff15c6d10800,original_IAT_indirect,,HeapFree,0x935d8
+19_payload.dll.bin,0x6309,0x642b,call qword ptr [rip + 0x8d157],ff1557d10800,original_IAT_indirect,,GetProcessHeap,0x93588
+19_payload.dll.bin,0x6309,0x643c,call qword ptr [rip + 0x8d196],ff1596d10800,original_IAT_indirect,,HeapFree,0x935d8
+19_payload.dll.bin,0x6309,0x64b3,call r13,41ffd5,computed_CALL,,,
+19_payload.dll.bin,0x6309,0x64be,call rbp,ffd5,computed_CALL,,,
+19_payload.dll.bin,0x64ef,0x6511,call qword ptr [rsi],ff16,computed_CALL,,,
+19_payload.dll.bin,0x6888,0x68b6,call qword ptr [rip + 0x8cccc],ff15cccc0800,original_IAT_indirect,,GetProcessHeap,0x93588
+19_payload.dll.bin,0x6fab,0x70e4,call qword ptr [r13 + 0x18],41ff5518,computed_CALL,,,
+19_payload.dll.bin,0x6fab,0x70f8,call qword ptr [r13 + 0x20],41ff5520,computed_CALL,,,
+19_payload.dll.bin,0x6fab,0x717a,call qword ptr [rsi + 0x18],ff5618,computed_CALL,,,
+19_payload.dll.bin,0x6fab,0x719c,call qword ptr [rsi + 0x20],ff5620,computed_CALL,,,
+19_payload.dll.bin,0x8203,0x8260,call qword ptr [rip + 0x8b222],ff1522b20800,original_IAT_indirect,,FlsAlloc,0x93488
+19_payload.dll.bin,0x8203,0x8298,call qword ptr [rip + 0x8b2c2],ff15c2b20800,original_IAT_indirect,,GetModuleHandleExW,0x93560
+19_payload.dll.bin,0x8203,0x82ae,call qword ptr [rip + 0x8b2b4],ff15b4b20800,original_IAT_indirect,,GetModuleHandleW,0x93568
+19_payload.dll.bin,0x8203,0x82d6,call qword ptr [rip + 0x8b1b4],ff15b4b10800,original_IAT_indirect,,FlsFree,0x93490
+19_payload.dll.bin,0x8203,0x82de,call qword ptr [rip + 0x8b334],ff1534b30800,original_IAT_indirect,,IsThreadAFiber,0x93618
+19_payload.dll.bin,0x8203,0x82f0,call qword ptr [rip + 0x8b1aa],ff15aab10800,original_IAT_indirect,,FlsSetValue,0x934a0
+19_payload.dll.bin,0x83f1,0x8407,call qword ptr [rip + 0x8b2e3],ff15e3b20800,original_IAT_indirect,,WaitForSingleObject,0x936f0
+19_payload.dll.bin,0x83f1,0x8415,call qword ptr [rip + 0x8b015],ff1515b00800,original_IAT_indirect,,CloseHandle,0x93430
+19_payload.dll.bin,0x871d,0x8e53,call r15,41ffd7,computed_CALL,,,
+19_payload.dll.bin,0x9285,0x92a2,call rax,ffd0,computed_CALL,,,
+19_payload.dll.bin,0x943b,0x948b,call rax,ffd0,computed_CALL,,,
+19_payload.dll.bin,0xa06f,0xa0b8,call rbx,ffd3,computed_CALL,,,
+19_payload.dll.bin,0xa06f,0xa0c2,call r14,41ffd6,computed_CALL,,,
+19_payload.dll.bin,0xa06f,0xa0d6,call rax,ffd0,computed_CALL,,,
+19_payload.dll.bin,0xa4e0,0xa597,call qword ptr [rip + 0x88edb],ff15db8e0800,original_IAT_indirect,,FindFirstFileExW,0x93478
+19_payload.dll.bin,0xa4e0,0xa70b,call qword ptr [rip + 0x88e3f],ff153f8e0800,original_IAT_indirect,,GetLastError,0x93550
+19_payload.dll.bin,0xdda5,0xdefe,call r15,41ffd7,computed_CALL,,,
+19_payload.dll.bin,0xdda5,0xdf7f,call qword ptr [rip + 0x854eb],ff15eb540800,original_IAT_indirect,,FindClose,0x93470
+19_payload.dll.bin,0xdda5,0xdf8c,call qword ptr [rip + 0x855be],ff15be550800,original_IAT_indirect,,GetLastError,0x93550
+19_payload.dll.bin,0xe090,0xe0d5,call qword ptr [rip + 0x85685],ff1585560800,original_IAT_indirect,,NtReadFile,0x93760
+19_payload.dll.bin,0xe090,0xe0ea,call qword ptr [rip + 0x85600],ff1500560800,original_IAT_indirect,,WaitForSingleObject,0x936f0
+19_payload.dll.bin,0xe44e,0xe695,call qword ptr [rip + 0x850b5],ff15b5500800,original_IAT_indirect,,WakeByAddressSingle,0x93750
+19_payload.dll.bin,0xe44e,0xe6b8,call qword ptr [rip + 0x85092],ff1592500800,original_IAT_indirect,,WakeByAddressSingle,0x93750
+19_payload.dll.bin,0xe745,0xe7fb,call qword ptr [rip + 0x84f4f],ff154f4f0800,original_IAT_indirect,,WakeByAddressSingle,0x93750
+19_payload.dll.bin,0xe745,0xe8a4,call r15,41ffd7,computed_CALL,,,
+19_payload.dll.bin,0xeee8,0xef71,call qword ptr [rbx + 7],ff5307,computed_CALL,,,
+19_payload.dll.bin,0xeee8,0xef84,call qword ptr [rax + 8],ff5008,computed_CALL,,,
+19_payload.dll.bin,0xeee8,0xefe9,call qword ptr [rax],ff10,computed_CALL,,,
+19_payload.dll.bin,0xeee8,0xf003,call qword ptr [rbx + 7],ff5307,computed_CALL,,,
+19_payload.dll.bin,0xf03b,0xf1b4,call qword ptr [rsp + 0x40],ff542440,computed_CALL,,,
+19_payload.dll.bin,0xf830,0xf8a2,call qword ptr [r12 + 0x18],41ff542418,computed_CALL,,,
+19_payload.dll.bin,0xf830,0xf900,call rax,ffd0,computed_CALL,,,
+19_payload.dll.bin,0xf944,0xfa87,call rdi,ffd7,computed_CALL,,,
+19_payload.dll.bin,0xff2e,0x10002,call r14,41ffd6,computed_CALL,,,
+19_payload.dll.bin,0xff2e,0x1000d,call r15,41ffd7,computed_CALL,,,
+19_payload.dll.bin,0xff2e,0x10024,call qword ptr [rip + 0x8355e],ff155e350800,original_IAT_indirect,,GetProcessHeap,0x93588
+19_payload.dll.bin,0xff2e,0x10032,call qword ptr [rip + 0x835a0],ff15a0350800,original_IAT_indirect,,HeapFree,0x935d8
+19_payload.dll.bin,0xff2e,0x10051,call qword ptr [rip + 0x83531],ff1531350800,original_IAT_indirect,,GetProcessHeap,0x93588
+19_payload.dll.bin,0xff2e,0x10062,call qword ptr [rip + 0x83570],ff1570350800,original_IAT_indirect,,HeapFree,0x935d8
+19_payload.dll.bin,0xff2e,0x100d7,call r13,41ffd5,computed_CALL,,,
+19_payload.dll.bin,0xff2e,0x100e2,call rbp,ffd5,computed_CALL,,,
+19_payload.dll.bin,0x10191,0x10531,call qword ptr [rdi + 7],ff5707,computed_CALL,,,
+19_payload.dll.bin,0x10191,0x10869,call qword ptr [rdi + 7],ff5707,computed_CALL,,,
+19_payload.dll.bin,0x11a41,0x11acd,call qword ptr [rax + 7],ff5007,computed_CALL,,,
+19_payload.dll.bin,0x11b15,0x11b31,call qword ptr [rip + 0x81a51],ff15511a0800,original_IAT_indirect,,GetProcessHeap,0x93588
+19_payload.dll.bin,0x11b15,0x11b3f,call qword ptr [rip + 0x81a93],ff15931a0800,original_IAT_indirect,,HeapFree,0x935d8
+19_payload.dll.bin,0x11b15,0x11b6a,call qword ptr [rip + 0x81a18],ff15181a0800,original_IAT_indirect,,GetProcessHeap,0x93588
+19_payload.dll.bin,0x12631,0x12693,call qword ptr [r15 + 0x20],41ff5720,computed_CALL,,,
+19_payload.dll.bin,0x134e0,0x134e7,call qword ptr [rip + 0x8012b],ff152b010800,original_IAT_indirect,,IsThreadAFiber,0x93618
+19_payload.dll.bin,0x134e0,0x13551,call rax,ffd0,computed_CALL,,,
+19_payload.dll.bin,0x134e0,0x135a2,call qword ptr [rip + 0x7ffe0],ff15e0ff0700,original_IAT_indirect,,GetProcessHeap,0x93588
+19_payload.dll.bin,0x134e0,0x135b0,call qword ptr [rip + 0x80022],ff1522000800,original_IAT_indirect,,HeapFree,0x935d8
+19_payload.dll.bin,0x1361e,0x13898,call qword ptr [rip + 0x7feb2],ff15b2fe0700,original_IAT_indirect,,WakeByAddressSingle,0x93750
+19_payload.dll.bin,0x1361e,0x138ae,call qword ptr [rip + 0x7fe9c],ff159cfe0700,original_IAT_indirect,,WakeByAddressSingle,0x93750
+19_payload.dll.bin,0x153a9,0x153c6,call qword ptr [rip + 0x7e284],ff1584e20700,original_IAT_indirect,,QueryPerformanceCounter,0x93650
+19_payload.dll.bin,0x153a9,0x15438,call qword ptr [rip + 0x7e112],ff1512e10700,original_IAT_indirect,,GetLastError,0x93550
+19_payload.dll.bin,0x15522,0x15548,call qword ptr [r9 + 0x20],41ff5120,computed_CALL,,,
+19_payload.dll.bin,0x16c65,0x16f01,call rbx,ffd3,computed_CALL,,,
+19_payload.dll.bin,0x16c65,0x16f32,call qword ptr [rip + 0x7c650],ff1550c60700,original_IAT_indirect,,GetProcessHeap,0x93588
+19_payload.dll.bin,0x16c65,0x16f40,call qword ptr [rip + 0x7c692],ff1592c60700,original_IAT_indirect,,HeapFree,0x935d8
+19_payload.dll.bin,0x16c65,0x17008,call qword ptr [rsi + 7],ff5607,computed_CALL,,,
+19_payload.dll.bin,0x16c65,0x17a8c,call qword ptr [rip + 0x7baf6],ff15f6ba0700,original_IAT_indirect,,GetProcessHeap,0x93588
+19_payload.dll.bin,0x16c65,0x17a9a,call qword ptr [rip + 0x7bb38],ff1538bb0700,original_IAT_indirect,,HeapFree,0x935d8
+19_payload.dll.bin,0x16c65,0x17ac7,call qword ptr [rip + 0x7babb],ff15bbba0700,original_IAT_indirect,,GetProcessHeap,0x93588
+19_payload.dll.bin,0x16c65,0x17ad8,call qword ptr [rip + 0x7bb02],ff1502bb0700,original_IAT_indirect,,HeapReAlloc,0x935e0
+19_payload.dll.bin,0x16c65,0x17d9f,call rsi,ffd6,computed_CALL,,,
+19_payload.dll.bin,0x182c5,0x185a5,call qword ptr [rsp + 0x60],ff542460,computed_CALL,,,
+19_payload.dll.bin,0x182c5,0x186f4,call qword ptr [rsp + 0x68],ff542468,computed_CALL,,,
+19_payload.dll.bin,0x19031,0x19061,call rdi,ffd7,computed_CALL,,,
+19_payload.dll.bin,0x19031,0x19152,call qword ptr [rsp + 0x50],ff542450,computed_CALL,,,
+19_payload.dll.bin,0x19031,0x1950e,call r15,41ffd7,computed_CALL,,,
+19_payload.dll.bin,0x19031,0x19537,call r15,41ffd7,computed_CALL,,,
+19_payload.dll.bin,0x19031,0x19595,call qword ptr [rax + 0x18],ff5018,computed_CALL,,,
+19_payload.dll.bin,0x19031,0x195a4,call rdi,ffd7,computed_CALL,,,
+19_payload.dll.bin,0x195c8,0x195ea,call qword ptr [rsi],ff16,computed_CALL,,,
+19_payload.dll.bin,0x197f2,0x198e1,call qword ptr [rax + 7],ff5007,computed_CALL,,,
+19_payload.dll.bin,0x19a77,0x19d6a,call qword ptr [rip + 0x797e0],ff15e0970700,original_IAT_indirect,,GetLastError,0x93550
+19_payload.dll.bin,0x19a77,0x19e67,call qword ptr [rip + 0x7983b],ff153b980700,original_IAT_indirect,,SetLastError,0x936a8
+19_payload.dll.bin,0x19a77,0x19e78,call rdi,ffd7,computed_CALL,,,
+19_payload.dll.bin,0x19a77,0x19e81,call qword ptr [rip + 0x796c9],ff15c9960700,original_IAT_indirect,,GetLastError,0x93550
+19_payload.dll.bin,0x19a77,0x19ec9,call qword ptr [rip + 0x79681],ff1581960700,original_IAT_indirect,,GetLastError,0x93550
+19_payload.dll.bin,0x1a61c,0x1a85c,call r14,41ffd6,computed_CALL,,,
+19_payload.dll.bin,0x1a61c,0x1a965,call r14,41ffd6,computed_CALL,,,
+19_payload.dll.bin,0x1aab1,0x1ad97,call qword ptr [rsp + 0x48],ff542448,computed_CALL,,,
+19_payload.dll.bin,0x1aab1,0x1af43,call qword ptr [rsp + 0x130],ff942430010000,computed_CALL,,,
+19_payload.dll.bin,0x1aab1,0x1af57,call qword ptr [rsp + 0x48],ff542448,computed_CALL,,,
+19_payload.dll.bin,0x1aab1,0x1afbe,call qword ptr [rsp + 0x50],ff542450,computed_CALL,,,
+19_payload.dll.bin,0x1aab1,0x1b047,call qword ptr [rsp + 0x30],ff542430,computed_CALL,,,
+19_payload.dll.bin,0x1aab1,0x1b339,call qword ptr [rsp + 0x130],ff942430010000,computed_CALL,,,
+19_payload.dll.bin,0x1aab1,0x1b343,call qword ptr [rsp + 0x48],ff542448,computed_CALL,,,
+19_payload.dll.bin,0x1aab1,0x1b421,call qword ptr [rsp + 0x110],ff942410010000,computed_CALL,,,
+19_payload.dll.bin,0x1aab1,0x1c00b,call qword ptr [rip + 0x77587],ff1587750700,original_IAT_indirect,,GetStdHandle,0x93598
+19_payload.dll.bin,0x1aab1,0x1c023,call qword ptr [rip + 0x77517],ff1517750700,original_IAT_indirect,,GetFileType,0x93540
+19_payload.dll.bin,0x1aab1,0x1c037,call qword ptr [rip + 0x774ab],ff15ab740700,original_IAT_indirect,,GetConsoleMode,0x934e8
+19_payload.dll.bin,0x1aab1,0x1c048,call qword ptr [rip + 0x77522],ff1522750700,original_IAT_indirect,,GetNumberOfConsoleInputEvents,0x93570
+19_payload.dll.bin,0x1aab1,0x1c26e,call r12,41ffd4,computed_CALL,,,
+19_payload.dll.bin,0x1aab1,0x1c94c,call qword ptr [rsp + 0x68],ff542468,computed_CALL,,,
+19_payload.dll.bin,0x1aab1,0x1d005,call qword ptr [rsp + 0x38],ff542438,computed_CALL,,,
+19_payload.dll.bin,0x1aab1,0x1d075,call qword ptr [rsp + 0x48],ff542448,computed_CALL,,,
+19_payload.dll.bin,0x1aab1,0x1d177,call rdi,ffd7,computed_CALL,,,
+19_payload.dll.bin,0x1aab1,0x1d53e,call qword ptr [rsp + 0x38],ff542438,computed_CALL,,,
+19_payload.dll.bin,0x1aab1,0x1d918,call qword ptr [rsp + 0x38],ff542438,computed_CALL,,,
+19_payload.dll.bin,0x1aab1,0x1d9bf,call rbx,ffd3,computed_CALL,,,
+19_payload.dll.bin,0x1aab1,0x1dbbc,call qword ptr [rsp + 0x38],ff542438,computed_CALL,,,
+19_payload.dll.bin,0x1aab1,0x1e34b,call r12,41ffd4,computed_CALL,,,
+19_payload.dll.bin,0x1aab1,0x1e441,call qword ptr [rsp + 0x68],ff542468,computed_CALL,,,
+19_payload.dll.bin,0x1aab1,0x1e6af,call rbx,ffd3,computed_CALL,,,
+19_payload.dll.bin,0x1aab1,0x1e835,call rax,ffd0,computed_CALL,,,
+19_payload.dll.bin,0x1aab1,0x1ec9b,call r13,41ffd5,computed_CALL,,,
+19_payload.dll.bin,0x1aab1,0x1f019,call qword ptr [rsp + 0xe8],ff9424e8000000,computed_CALL,,,
+19_payload.dll.bin,0x1aab1,0x1f54f,call rdi,ffd7,computed_CALL,,,
+19_payload.dll.bin,0x1aab1,0x1f57e,call qword ptr [rsp + 0x50],ff542450,computed_CALL,,,
+19_payload.dll.bin,0x1aab1,0x2061b,call qword ptr [rsp + 0x50],ff542450,computed_CALL,,,
+19_payload.dll.bin,0x1aab1,0x21276,call rsi,ffd6,computed_CALL,,,
+19_payload.dll.bin,0x223c4,0x22740,call qword ptr [rip + 0x70e42],ff15420e0700,original_IAT_indirect,,GetProcessHeap,0x93588
+19_payload.dll.bin,0x223c4,0x2274e,call qword ptr [rip + 0x70e84],ff15840e0700,original_IAT_indirect,,HeapFree,0x935d8
+19_payload.dll.bin,0x227c7,0x227d7,call qword ptr [rsi + 0x20],ff5620,computed_CALL,,,
+19_payload.dll.bin,0x227c7,0x227da,call qword ptr [rip + 0x70da8],ff15a80d0700,original_IAT_indirect,,GetProcessHeap,0x93588
+19_payload.dll.bin,0x227f4,0x22822,call qword ptr [rip + 0x70d60],ff15600d0700,original_IAT_indirect,,GetProcessHeap,0x93588
+19_payload.dll.bin,0x230ed,0x2317f,call qword ptr [rip + 0x703cb],ff15cb030700,original_IAT_indirect,,GetLastError,0x93550
+19_payload.dll.bin,0x230ed,0x231a5,call qword ptr [rip + 0x70285],ff1585020700,original_IAT_indirect,,CloseHandle,0x93430
+19_payload.dll.bin,0x230ed,0x231eb,call qword ptr [rip + 0x70247],ff1547020700,original_IAT_indirect,,CreateFileW,0x93438
+19_payload.dll.bin,0x230ed,0x2323b,call qword ptr [rip + 0x7045f],ff155f040700,original_IAT_indirect,,SetFileTime,0x936a0
+19_payload.dll.bin,0x230ed,0x2325e,call qword ptr [rip + 0x702ec],ff15ec020700,original_IAT_indirect,,GetLastError,0x93550
+19_payload.dll.bin,0x230ed,0x2332f,call qword ptr [rip + 0x7021b],ff151b020700,original_IAT_indirect,,GetLastError,0x93550
+19_payload.dll.bin,0x23393,0x234ca,call rsi,ffd6,computed_CALL,,,
+19_payload.dll.bin,0x23393,0x23715,call qword ptr [rip + 0x70035],ff1535000700,original_IAT_indirect,,WakeByAddressSingle,0x93750
+19_payload.dll.bin,0x23393,0x2381a,call qword ptr [rip + 0x6ff30],ff1530ff0600,original_IAT_indirect,,WakeByAddressSingle,0x93750
+19_payload.dll.bin,0x23393,0x23832,call qword ptr [rip + 0x6ff18],ff1518ff0600,original_IAT_indirect,,WakeByAddressSingle,0x93750
+19_payload.dll.bin,0x23393,0x23868,call rbx,ffd3,computed_CALL,,,
+19_payload.dll.bin,0x238fc,0x2397a,call rbx,ffd3,computed_CALL,,,
+19_payload.dll.bin,0x238fc,0x23984,call r14,41ffd6,computed_CALL,,,
+19_payload.dll.bin,0x238fc,0x239bf,call rbx,ffd3,computed_CALL,,,
+19_payload.dll.bin,0x238fc,0x239c9,call r14,41ffd6,computed_CALL,,,
+19_payload.dll.bin,0x238fc,0x23a2b,call rbx,ffd3,computed_CALL,,,
+19_payload.dll.bin,0x238fc,0x23a35,call r14,41ffd6,computed_CALL,,,
+19_payload.dll.bin,0x238fc,0x23a41,call qword ptr [rip + 0x6fb41],ff1541fb0600,original_IAT_indirect,,GetProcessHeap,0x93588
+19_payload.dll.bin,0x23ce8,0x23d33,call r13,41ffd5,computed_CALL,,,
+19_payload.dll.bin,0x23ce8,0x23e1f,call qword ptr [rsi + rax],ff1406,computed_CALL,,,
+19_payload.dll.bin,0x23ce8,0x23e4a,call r13,41ffd5,computed_CALL,,,
+19_payload.dll.bin,0x23e6d,0x2405d,call r14,41ffd6,computed_CALL,,,
+19_payload.dll.bin,0x240de,0x24849,call r15,41ffd7,computed_CALL,,,
+19_payload.dll.bin,0x240de,0x24962,call qword ptr [rsp + 0x1e8],ff9424e8010000,computed_CALL,,,
+19_payload.dll.bin,0x240de,0x24992,call qword ptr [rsp + 0x188],ff942488010000,computed_CALL,,,
+19_payload.dll.bin,0x240de,0x24d4d,call qword ptr [rsp + 0xb8],ff9424b8000000,computed_CALL,,,
+19_payload.dll.bin,0x240de,0x24ec6,call qword ptr [rsp + 0x350],ff942450030000,computed_CALL,,,
+19_payload.dll.bin,0x240de,0x2500c,call qword ptr [rsp + 0xc8],ff9424c8000000,computed_CALL,,,
+19_payload.dll.bin,0x240de,0x250f1,call qword ptr [rsp + 0x1c0],ff9424c0010000,computed_CALL,,,
+19_payload.dll.bin,0x240de,0x25681,call qword ptr [rsp + 0xb8],ff9424b8000000,computed_CALL,,,
+19_payload.dll.bin,0x240de,0x25a59,call rsi,ffd6,computed_CALL,,,
+19_payload.dll.bin,0x240de,0x25f58,call r15,41ffd7,computed_CALL,,,
+19_payload.dll.bin,0x240de,0x26416,call qword ptr [rsp + 0xc0],ff9424c0000000,computed_CALL,,,
+19_payload.dll.bin,0x240de,0x2655a,call rsi,ffd6,computed_CALL,,,
+19_payload.dll.bin,0x240de,0x265fb,call qword ptr [rsp + 0x1e8],ff9424e8010000,computed_CALL,,,
+19_payload.dll.bin,0x240de,0x26c76,call qword ptr [rsp + 0xe0],ff9424e0000000,computed_CALL,,,
+19_payload.dll.bin,0x240de,0x270fe,call qword ptr [rsp + 0x138],ff942438010000,computed_CALL,,,
+19_payload.dll.bin,0x240de,0x271d6,call qword ptr [rsp + 0xd8],ff9424d8000000,computed_CALL,,,
+19_payload.dll.bin,0x240de,0x2760f,call qword ptr [rsp + 0xb8],ff9424b8000000,computed_CALL,,,
+19_payload.dll.bin,0x240de,0x2770e,call rsi,ffd6,computed_CALL,,,
+19_payload.dll.bin,0x240de,0x282be,call rbp,ffd5,computed_CALL,,,
+19_payload.dll.bin,0x240de,0x282c6,call qword ptr [rsp + 0xd8],ff9424d8000000,computed_CALL,,,
+19_payload.dll.bin,0x240de,0x2847e,call r13,41ffd5,computed_CALL,,,
+19_payload.dll.bin,0x240de,0x285af,call r15,41ffd7,computed_CALL,,,
+19_payload.dll.bin,0x296a4,0x29762,call r12,41ffd4,computed_CALL,,,
+19_payload.dll.bin,0x296a4,0x29774,call qword ptr [rip + 0x69f76],ff15769f0600,original_IAT_indirect,,WaitForSingleObject,0x936f0
+19_payload.dll.bin,0x296a4,0x297d5,call qword ptr [rax + 8],ff5008,computed_CALL,,,
+19_payload.dll.bin,0x296a4,0x2980a,call qword ptr [rbp + 7],ff5507,computed_CALL,,,
+19_payload.dll.bin,0x296a4,0x29824,call qword ptr [rip + 0x69c06],ff15069c0600,original_IAT_indirect,,CloseHandle,0x93430
+19_payload.dll.bin,0x29ab8,0x29aca,call qword ptr [rip + 0x69ab8],ff15b89a0600,original_IAT_indirect,,GetProcessHeap,0x93588
+19_payload.dll.bin,0x2a0f8,0x2a203,call rdi,ffd7,computed_CALL,,,
+19_payload.dll.bin,0x2acab,0x2af66,call r12,41ffd4,computed_CALL,,,
+19_payload.dll.bin,0x2b1e8,0x2b1fa,call qword ptr [rip + 0x68270],ff1570820600,original_IAT_indirect,,FindClose,0x93470
+19_payload.dll.bin,0x2bc6c,0x2bcac,call qword ptr [rdx + 7],ff5207,computed_CALL,,,
+19_payload.dll.bin,0x2c008,0x2c027,call rax,ffd0,computed_CALL,,,
+19_payload.dll.bin,0x2c008,0x2c06d,call qword ptr [rip + 0x67515],ff1515750600,original_IAT_indirect,,GetProcessHeap,0x93588
+19_payload.dll.bin,0x2c131,0x2c139,call qword ptr [rip + 0x673d9],ff15d9730600,original_IAT_indirect,,GetCurrentThreadId,0x93518
+19_payload.dll.bin,0x2c6f3,0x2c6f7,call qword ptr [rip + 0x66e53],ff15536e0600,original_IAT_indirect,,GetLastError,0x93550
+19_payload.dll.bin,0x2cd37,0x2cd9d,call r12,41ffd4,computed_CALL,,,
+19_payload.dll.bin,0x2cd37,0x2cdfe,call r15,41ffd7,computed_CALL,,,
+19_payload.dll.bin,0x2e35f,0x2e68a,call qword ptr [rip + 0x64ef8],ff15f84e0600,original_IAT_indirect,,GetProcessHeap,0x93588
+19_payload.dll.bin,0x2e35f,0x2e698,call qword ptr [rip + 0x64f3a],ff153a4f0600,original_IAT_indirect,,HeapFree,0x935d8
+19_payload.dll.bin,0x2e35f,0x2e94a,call qword ptr [rip + 0x64c38],ff15384c0600,original_IAT_indirect,,GetProcessHeap,0x93588
+19_payload.dll.bin,0x2e35f,0x2e958,call qword ptr [rip + 0x64c7a],ff157a4c0600,original_IAT_indirect,,HeapFree,0x935d8
+19_payload.dll.bin,0x2e35f,0x2f799,call qword ptr [rip + 0x63de9],ff15e93d0600,original_IAT_indirect,,GetProcessHeap,0x93588
+19_payload.dll.bin,0x2e35f,0x2f7a9,call qword ptr [rip + 0x63e29],ff15293e0600,original_IAT_indirect,,HeapFree,0x935d8
+19_payload.dll.bin,0x2e35f,0x30b45,call qword ptr [rax + 7],ff5007,computed_CALL,,,
+19_payload.dll.bin,0x2e35f,0x3109e,call qword ptr [rip + 0x624e4],ff15e4240600,original_IAT_indirect,,GetProcessHeap,0x93588
+19_payload.dll.bin,0x2e35f,0x310ac,call qword ptr [rip + 0x62526],ff1526250600,original_IAT_indirect,,HeapFree,0x935d8
+19_payload.dll.bin,0x3246f,0x32533,call qword ptr [rip + 0x60f3f],ff153f0f0600,original_IAT_indirect,,FindFirstFileExW,0x93478
+19_payload.dll.bin,0x3246f,0x32546,call qword ptr [rip + 0x60f24],ff15240f0600,original_IAT_indirect,,FindClose,0x93470
+19_payload.dll.bin,0x3246f,0x325ed,call qword ptr [rdi + 7],ff5707,computed_CALL,,,
+19_payload.dll.bin,0x32ccd,0x32efa,call rdi,ffd7,computed_CALL,,,
+19_payload.dll.bin,0x32ccd,0x32eff,call rbx,ffd3,computed_CALL,,,
+19_payload.dll.bin,0x32ccd,0x32f13,call rbx,ffd3,computed_CALL,,,
+19_payload.dll.bin,0x33152,0x354f5,call qword ptr [rsp + 0x180],ff942480010000,computed_CALL,,,
+19_payload.dll.bin,0x33152,0x37409,call qword ptr [rsp + 0x128],ff942428010000,computed_CALL,,,
+19_payload.dll.bin,0x33152,0x37bdc,call qword ptr [rsp + 0xa8],ff9424a8000000,computed_CALL,,,
+19_payload.dll.bin,0x33152,0x37bed,call qword ptr [rsp + 0x248],ff942448020000,computed_CALL,,,
+19_payload.dll.bin,0x33152,0x37bfe,call qword ptr [rsp + 0x188],ff942488010000,computed_CALL,,,
+19_payload.dll.bin,0x33152,0x38036,call qword ptr [rsp + 0x188],ff942488010000,computed_CALL,,,
+19_payload.dll.bin,0x33152,0x384b7,call qword ptr [rsp + 0xa8],ff9424a8000000,computed_CALL,,,
+19_payload.dll.bin,0x33152,0x3888a,call qword ptr [rsp + 0x188],ff942488010000,computed_CALL,,,
+19_payload.dll.bin,0x33152,0x3b08e,call qword ptr [rdi + 7],ff5707,computed_CALL,,,
+19_payload.dll.bin,0x33152,0x3b10c,call qword ptr [rbx + 7],ff5307,computed_CALL,,,
+19_payload.dll.bin,0x3d057,0x3d32d,call qword ptr [rsp + 0x98],ff942498000000,computed_CALL,,,
+19_payload.dll.bin,0x3d057,0x3d33f,call r15,41ffd7,computed_CALL,,,
+19_payload.dll.bin,0x3d057,0x3d361,call r15,41ffd7,computed_CALL,,,
+19_payload.dll.bin,0x3d057,0x3d381,call r15,41ffd7,computed_CALL,,,
+19_payload.dll.bin,0x3d057,0x3d38c,call r12,41ffd4,computed_CALL,,,
+19_payload.dll.bin,0x3d057,0x3d5ea,call qword ptr [rsp + 0x108],ff942408010000,computed_CALL,,,
+19_payload.dll.bin,0x3d057,0x3dee5,call r15,41ffd7,computed_CALL,,,
+19_payload.dll.bin,0x3d057,0x3def0,call r12,41ffd4,computed_CALL,,,
+19_payload.dll.bin,0x3d057,0x3e7c7,call rbx,ffd3,computed_CALL,,,
+19_payload.dll.bin,0x3d057,0x3e7d1,call qword ptr [rip + 0x54e01],ff15014e0500,original_IAT_indirect,,HeapFree,0x935d8
+19_payload.dll.bin,0x3d057,0x3e802,call qword ptr [rsp + 0x1e8],ff9424e8010000,computed_CALL,,,
+19_payload.dll.bin,0x3d057,0x3ed72,call qword ptr [rsp + 0x68],ff542468,computed_CALL,,,
+19_payload.dll.bin,0x3d057,0x3ee14,call qword ptr [rsp + 0x118],ff942418010000,computed_CALL,,,
+19_payload.dll.bin,0x3d057,0x3ee20,call qword ptr [rsp + 0x1c8],ff9424c8010000,computed_CALL,,,
+19_payload.dll.bin,0x3d057,0x3efe9,call qword ptr [rsp + 0x60],ff542460,computed_CALL,,,
+19_payload.dll.bin,0x3d057,0x3eff7,call r13,41ffd5,computed_CALL,,,
+19_payload.dll.bin,0x3d057,0x3f21c,call qword ptr [rsp + 0x108],ff942408010000,computed_CALL,,,
+19_payload.dll.bin,0x3d057,0x3f5fe,call qword ptr [rdi + 7],ff5707,computed_CALL,,,
+19_payload.dll.bin,0x3d057,0x3fc49,call qword ptr [rsp + 0x1f0],ff9424f0010000,computed_CALL,,,
+19_payload.dll.bin,0x3d057,0x3fcbf,call qword ptr [rsp + 0x1b8],ff9424b8010000,computed_CALL,,,
+19_payload.dll.bin,0x3d057,0x400d9,call qword ptr [rip + 0x534a9],ff15a9340500,original_IAT_indirect,,GetProcessHeap,0x93588
+19_payload.dll.bin,0x3d057,0x400e7,call qword ptr [rip + 0x534eb],ff15eb340500,original_IAT_indirect,,HeapFree,0x935d8
+19_payload.dll.bin,0x3d057,0x40a8f,call qword ptr [rsp + 0x50],ff542450,computed_CALL,,,
+19_payload.dll.bin,0x3d057,0x40aa3,call rsi,ffd6,computed_CALL,,,
+19_payload.dll.bin,0x3d057,0x40bb7,call r15,41ffd7,computed_CALL,,,
+19_payload.dll.bin,0x3d057,0x40bc2,call r12,41ffd4,computed_CALL,,,
+19_payload.dll.bin,0x3d057,0x40fec,call r15,41ffd7,computed_CALL,,,
+19_payload.dll.bin,0x3d057,0x41270,call qword ptr [rsp + 0x58],ff542458,computed_CALL,,,
+19_payload.dll.bin,0x3d057,0x41367,call qword ptr [rsp + 0x108],ff942408010000,computed_CALL,,,
+19_payload.dll.bin,0x3d057,0x4137f,call qword ptr [rsp + 0x110],ff942410010000,computed_CALL,,,
+19_payload.dll.bin,0x3d057,0x41c79,call qword ptr [rsp + 0x1f0],ff9424f0010000,computed_CALL,,,
+19_payload.dll.bin,0x3d057,0x41cac,call rbx,ffd3,computed_CALL,,,
+19_payload.dll.bin,0x3d057,0x41cbd,call rax,ffd0,computed_CALL,,,
+19_payload.dll.bin,0x3d057,0x425ce,call qword ptr [rsp + 0x128],ff942428010000,computed_CALL,,,
+19_payload.dll.bin,0x3d057,0x425e4,call rsi,ffd6,computed_CALL,,,
+19_payload.dll.bin,0x3d057,0x438f3,call qword ptr [rsp + 0x140],ff942440010000,computed_CALL,,,
+19_payload.dll.bin,0x3d057,0x43a5b,call r15,41ffd7,computed_CALL,,,
+19_payload.dll.bin,0x3d057,0x43a66,call r12,41ffd4,computed_CALL,,,
+19_payload.dll.bin,0x3d057,0x44335,call qword ptr [rip + 0x4f24d],ff154df20400,original_IAT_indirect,,GetProcessHeap,0x93588
+19_payload.dll.bin,0x3d057,0x44343,call qword ptr [rip + 0x4f28f],ff158ff20400,original_IAT_indirect,,HeapFree,0x935d8
+19_payload.dll.bin,0x4499d,0x449a8,call qword ptr [rip + 0x4ece2],ff15e2ec0400,original_IAT_indirect,,SetFileInformationByHandle,0x93690
+19_payload.dll.bin,0x4499d,0x449bc,call qword ptr [rip + 0x4eb8e],ff158eeb0400,original_IAT_indirect,,GetLastError,0x93550
+19_payload.dll.bin,0x44e24,0x45509,call rdi,ffd7,computed_CALL,,,
+19_payload.dll.bin,0x44e24,0x4577b,call rdi,ffd7,computed_CALL,,,
+19_payload.dll.bin,0x45ed9,0x45f1f,call qword ptr [rip + 0x4d643],ff1543d60400,original_IAT_indirect,,GetModuleHandleW,0x93568
+19_payload.dll.bin,0x45ed9,0x45f41,call qword ptr [rip + 0x4d609],ff1509d60400,original_IAT_indirect,,GetLastError,0x93550
+19_payload.dll.bin,0x45ed9,0x45fa4,call qword ptr [rip + 0x4d506],ff1506d50400,original_IAT_indirect,,FormatMessageW,0x934b0
+19_payload.dll.bin,0x45ed9,0x46028,call qword ptr [rax + 0x18],ff5018,computed_CALL,,,
+19_payload.dll.bin,0x46522,0x465d7,call qword ptr [rip + 0x4cfab],ff15abcf0400,original_IAT_indirect,,GetProcessHeap,0x93588
+19_payload.dll.bin,0x46522,0x465e5,call qword ptr [rip + 0x4cfed],ff15edcf0400,original_IAT_indirect,,HeapFree,0x935d8
+19_payload.dll.bin,0x46522,0x465f7,call r15,41ffd7,computed_CALL,,,
+19_payload.dll.bin,0x46522,0x46602,call r12,41ffd4,computed_CALL,,,
+19_payload.dll.bin,0x46522,0x4666e,call qword ptr [rip + 0x4cf14],ff1514cf0400,original_IAT_indirect,,GetProcessHeap,0x93588
+19_payload.dll.bin,0x46522,0x4667c,call qword ptr [rip + 0x4cf56],ff1556cf0400,original_IAT_indirect,,HeapFree,0x935d8
+19_payload.dll.bin,0x46522,0x466a6,call qword ptr [rip + 0x4d0a4],ff15a4d00400,original_IAT_indirect,,WakeByAddressSingle,0x93750
+19_payload.dll.bin,0x46522,0x4672b,call r13,41ffd5,computed_CALL,,,
+19_payload.dll.bin,0x46522,0x4678b,call r12,41ffd4,computed_CALL,,,
+19_payload.dll.bin,0x46522,0x46813,call r13,41ffd5,computed_CALL,,,
+19_payload.dll.bin,0x46522,0x46874,call r12,41ffd4,computed_CALL,,,
+19_payload.dll.bin,0x46522,0x468dd,call qword ptr [rip + 0x4cca5],ff15a5cc0400,original_IAT_indirect,,GetProcessHeap,0x93588
+19_payload.dll.bin,0x47338,0x473c4,call qword ptr [rax + 0x28],ff5028,computed_CALL,,,
+19_payload.dll.bin,0x47338,0x47435,call qword ptr [rax + 0x28],ff5028,computed_CALL,,,
+19_payload.dll.bin,0x4786e,0x48cc3,call rsi,ffd6,computed_CALL,,,
+19_payload.dll.bin,0x4786e,0x48cc7,call rdi,ffd7,computed_CALL,,,
+19_payload.dll.bin,0x4786e,0x48cdf,call rbx,ffd3,computed_CALL,,,
+19_payload.dll.bin,0x4786e,0x48ce9,call rbx,ffd3,computed_CALL,,,
+19_payload.dll.bin,0x4786e,0x48cf2,call rbx,ffd3,computed_CALL,,,
+19_payload.dll.bin,0x4786e,0x48cfb,call rbx,ffd3,computed_CALL,,,
+19_payload.dll.bin,0x4786e,0x48d1f,call rbx,ffd3,computed_CALL,,,
+19_payload.dll.bin,0x4786e,0x48d2b,call rbx,ffd3,computed_CALL,,,
+19_payload.dll.bin,0x4786e,0x48d44,call qword ptr [rsp + 0xa0],ff9424a0000000,computed_CALL,,,
+19_payload.dll.bin,0x4786e,0x48d61,call qword ptr [rsp + 0x90],ff942490000000,computed_CALL,,,
+19_payload.dll.bin,0x4786e,0x48d87,call r14,41ffd6,computed_CALL,,,
+19_payload.dll.bin,0x4786e,0x48de5,call qword ptr [rsp + 0xa8],ff9424a8000000,computed_CALL,,,
+19_payload.dll.bin,0x4786e,0x48df4,call r14,41ffd6,computed_CALL,,,
+19_payload.dll.bin,0x4786e,0x48ee7,call r12,41ffd4,computed_CALL,,,
+19_payload.dll.bin,0x4786e,0x48f2b,call r12,41ffd4,computed_CALL,,,
+19_payload.dll.bin,0x4786e,0x48f33,call qword ptr [rsp + 0x210],ff942410020000,computed_CALL,,,
+19_payload.dll.bin,0x4786e,0x48f3f,call qword ptr [rsp + 0x80],ff942480000000,computed_CALL,,,
+19_payload.dll.bin,0x4786e,0x48f49,call qword ptr [rsp + 0xb0],ff9424b0000000,computed_CALL,,,
+19_payload.dll.bin,0x4786e,0x49214,call qword ptr [rsp + 0xb0],ff9424b0000000,computed_CALL,,,
+19_payload.dll.bin,0x4786e,0x49220,call qword ptr [rsp + 0x80],ff942480000000,computed_CALL,,,
+19_payload.dll.bin,0x4786e,0x4952c,call qword ptr [rsp + 0x210],ff942410020000,computed_CALL,,,
+19_payload.dll.bin,0x4786e,0x49536,call qword ptr [rsp + 0xb0],ff9424b0000000,computed_CALL,,,
+19_payload.dll.bin,0x4786e,0x49542,call qword ptr [rsp + 0x80],ff942480000000,computed_CALL,,,
+19_payload.dll.bin,0x495ec,0x49619,call r14,41ffd6,computed_CALL,,,
+19_payload.dll.bin,0x49648,0x4a33e,call qword ptr [rip + 0x492f4],ff15f4920400,original_IAT_indirect,,LoadLibraryA,0x93638
+19_payload.dll.bin,0x4a55a,0x4baa0,call qword ptr [rdi + 7],ff5707,computed_CALL,,,
+19_payload.dll.bin,0x4d63a,0x4d657,call qword ptr [rsi],ff16,computed_CALL,,,
+19_payload.dll.bin,0x4fdba,0x4fde6,call qword ptr [rip + 0x43744],ff1544370400,original_IAT_indirect,,GetFileInformationByHandle,0x93530
+19_payload.dll.bin,0x4fdba,0x4fe1c,call qword ptr [rip + 0x43716],ff1516370400,original_IAT_indirect,,GetFileInformationByHandleEx,0x93538
+19_payload.dll.bin,0x4fdba,0x4febb,call qword ptr [rip + 0x4368f],ff158f360400,original_IAT_indirect,,GetLastError,0x93550
+19_payload.dll.bin,0x4fef1,0x503c9,call r15,41ffd7,computed_CALL,,,
+19_payload.dll.bin,0x4fef1,0x50433,call r15,41ffd7,computed_CALL,,,
+19_payload.dll.bin,0x4fef1,0x55235,call qword ptr [rip + 0x3e495],ff1595e40300,original_IAT_indirect,,SwitchToThread,0x936d0
+19_payload.dll.bin,0x4fef1,0x55556,call qword ptr [rip + 0x3e02c],ff152ce00300,original_IAT_indirect,,GetProcessHeap,0x93588
+19_payload.dll.bin,0x4fef1,0x55564,call qword ptr [rip + 0x3e06e],ff156ee00300,original_IAT_indirect,,HeapFree,0x935d8
+19_payload.dll.bin,0x4fef1,0x55973,call qword ptr [rip + 0x3dd57],ff1557dd0300,original_IAT_indirect,,SwitchToThread,0x936d0
+19_payload.dll.bin,0x4fef1,0x559ff,call qword ptr [rip + 0x3dccb],ff15cbdc0300,original_IAT_indirect,,SwitchToThread,0x936d0
+19_payload.dll.bin,0x4fef1,0x55a54,call qword ptr [rip + 0x3db2e],ff152edb0300,original_IAT_indirect,,GetProcessHeap,0x93588
+19_payload.dll.bin,0x4fef1,0x55a62,call qword ptr [rip + 0x3db70],ff1570db0300,original_IAT_indirect,,HeapFree,0x935d8
+19_payload.dll.bin,0x4fef1,0x55aab,call qword ptr [rip + 0x3dad7],ff15d7da0300,original_IAT_indirect,,GetProcessHeap,0x93588
+19_payload.dll.bin,0x4fef1,0x55ab9,call qword ptr [rip + 0x3db19],ff1519db0300,original_IAT_indirect,,HeapFree,0x935d8
+19_payload.dll.bin,0x4fef1,0x55b30,call qword ptr [rip + 0x3da52],ff1552da0300,original_IAT_indirect,,GetProcessHeap,0x93588
+19_payload.dll.bin,0x4fef1,0x55b3e,call qword ptr [rip + 0x3da94],ff1594da0300,original_IAT_indirect,,HeapFree,0x935d8
+19_payload.dll.bin,0x4fef1,0x55baa,call qword ptr [rip + 0x3d9d8],ff15d8d90300,original_IAT_indirect,,GetProcessHeap,0x93588
+19_payload.dll.bin,0x4fef1,0x55bb8,call qword ptr [rip + 0x3da1a],ff151ada0300,original_IAT_indirect,,HeapFree,0x935d8
+19_payload.dll.bin,0x4fef1,0x55bcf,call qword ptr [rip + 0x3d9b3],ff15b3d90300,original_IAT_indirect,,GetProcessHeap,0x93588
+19_payload.dll.bin,0x4fef1,0x55bdd,call qword ptr [rip + 0x3d9f5],ff15f5d90300,original_IAT_indirect,,HeapFree,0x935d8
+19_payload.dll.bin,0x567dc,0x572bc,call qword ptr [rip + 0x3c2be],ff15bec20300,original_IAT_indirect,,GetProcAddress,0x93580
+19_payload.dll.bin,0x567dc,0x57457,call qword ptr [rip + 0x3c0b3],ff15b3c00300,original_IAT_indirect,,GetCurrentThread,0x93510
+19_payload.dll.bin,0x567dc,0x5747b,call qword ptr [rip + 0x3c13f],ff153fc10300,original_IAT_indirect,,GetThreadTimes,0x935c0
+19_payload.dll.bin,0x567dc,0x57485,call qword ptr [rip + 0x3c08d],ff158dc00300,original_IAT_indirect,,GetCurrentThreadId,0x93518
+19_payload.dll.bin,0x57876,0x578dd,call qword ptr [rip + 0x3be5d],ff155dbe0300,original_IAT_indirect,,WaitOnAddress,0x93740
+19_payload.dll.bin,0x57876,0x578e8,call qword ptr [rip + 0x3bc62],ff1562bc0300,original_IAT_indirect,,GetLastError,0x93550
+19_payload.dll.bin,0x578f4,0x57922,call qword ptr [rip + 0x3bb18],ff1518bb0300,original_IAT_indirect,,CreateThread,0x93440
+19_payload.dll.bin,0x578f4,0x57954,call rax,ffd0,computed_CALL,,,
+19_payload.dll.bin,0x578f4,0x57969,call qword ptr [rip + 0x3bc19],ff1519bc0300,original_IAT_indirect,,GetProcessHeap,0x93588
+19_payload.dll.bin,0x578f4,0x57977,call qword ptr [rip + 0x3bc5b],ff155bbc0300,original_IAT_indirect,,HeapFree,0x935d8
+19_payload.dll.bin,0x578f4,0x5797d,call qword ptr [rip + 0x3bbcd],ff15cdbb0300,original_IAT_indirect,,GetLastError,0x93550
+19_payload.dll.bin,0x57ab8,0x57ce8,call qword ptr [rbp + 7],ff5507,computed_CALL,,,
+19_payload.dll.bin,0x57ab8,0x57de0,call qword ptr [rbp + 7],ff5507,computed_CALL,,,
+19_payload.dll.bin,0x57ab8,0x57df6,call qword ptr [rax + 8],ff5008,computed_CALL,,,
+19_payload.dll.bin,0x57ab8,0x57e2f,call qword ptr [rax],ff10,computed_CALL,,,
+19_payload.dll.bin,0x57ab8,0x57e76,call qword ptr [rsi + 7],ff5607,computed_CALL,,,
+19_payload.dll.bin,0x57f4f,0x582a8,call r14,41ffd6,computed_CALL,,,
+19_payload.dll.bin,0x57f4f,0x58579,call rsi,ffd6,computed_CALL,,,
+19_payload.dll.bin,0x57f4f,0x58cc8,call rsi,ffd6,computed_CALL,,,
+19_payload.dll.bin,0x57f4f,0x59e55,call rbx,ffd3,computed_CALL,,,
+19_payload.dll.bin,0x57f4f,0x5a0c7,call rbx,ffd3,computed_CALL,,,
+19_payload.dll.bin,0x57f4f,0x5a86e,call r15,41ffd7,computed_CALL,,,
+19_payload.dll.bin,0x57f4f,0x5aedb,call rsi,ffd6,computed_CALL,,,
+19_payload.dll.bin,0x57f4f,0x5b2f1,call qword ptr [rsp + 0x98],ff942498000000,computed_CALL,,,
+19_payload.dll.bin,0x57f4f,0x5c10a,call qword ptr [rsp + 0x98],ff942498000000,computed_CALL,,,
+19_payload.dll.bin,0x57f4f,0x5c1b9,call qword ptr [rsp + 0x318],ff942418030000,computed_CALL,,,
+19_payload.dll.bin,0x57f4f,0x5c1f0,call qword ptr [rsp + 0x210],ff942410020000,computed_CALL,,,
+19_payload.dll.bin,0x57f4f,0x5c5ad,call rbp,ffd5,computed_CALL,,,
+19_payload.dll.bin,0x57f4f,0x5c638,call qword ptr [rsp + 0x308],ff942408030000,computed_CALL,,,
+19_payload.dll.bin,0x57f4f,0x5c64b,call qword ptr [rsp + 0x210],ff942410020000,computed_CALL,,,
+19_payload.dll.bin,0x57f4f,0x5c65a,call qword ptr [rsp + 0x270],ff942470020000,computed_CALL,,,
+19_payload.dll.bin,0x57f4f,0x5c701,call qword ptr [rsp + 0x270],ff942470020000,computed_CALL,,,
+19_payload.dll.bin,0x57f4f,0x5c712,call qword ptr [rsp + 0x210],ff942410020000,computed_CALL,,,
+19_payload.dll.bin,0x57f4f,0x5d00f,call qword ptr [rsp + 0x90],ff942490000000,computed_CALL,,,
+19_payload.dll.bin,0x57f4f,0x5d125,call qword ptr [rsp + 0xe0],ff9424e0000000,computed_CALL,,,
+19_payload.dll.bin,0x57f4f,0x5d4bf,call r14,41ffd6,computed_CALL,,,
+19_payload.dll.bin,0x57f4f,0x5dbbc,call rsi,ffd6,computed_CALL,,,
+19_payload.dll.bin,0x57f4f,0x5dbc0,call r15,41ffd7,computed_CALL,,,
+19_payload.dll.bin,0x57f4f,0x5dbce,call r15,41ffd7,computed_CALL,,,
+19_payload.dll.bin,0x5f29a,0x5f923,call qword ptr [rbp + 7],ff5507,computed_CALL,,,
+19_payload.dll.bin,0x5f29a,0x5fecf,call qword ptr [rip + 0x336b3],ff15b3360300,original_IAT_indirect,,GetProcessHeap,0x93588
+19_payload.dll.bin,0x60ed7,0x60ef0,call qword ptr [rip + 0x32552],ff1552250300,original_IAT_indirect,,CreateWaitableTimerExW,0x93448
+19_payload.dll.bin,0x60ed7,0x60f30,call qword ptr [rip + 0x3278a],ff158a270300,original_IAT_indirect,,SetWaitableTimer,0x936c0
+19_payload.dll.bin,0x60ed7,0x60f43,call qword ptr [rip + 0x327a7],ff15a7270300,original_IAT_indirect,,WaitForSingleObject,0x936f0
+19_payload.dll.bin,0x60ed7,0x60f4e,call qword ptr [rip + 0x324dc],ff15dc240300,original_IAT_indirect,,CloseHandle,0x93430
+19_payload.dll.bin,0x60ed7,0x60f5e,call qword ptr [rip + 0x324cc],ff15cc240300,original_IAT_indirect,,CloseHandle,0x93430
+19_payload.dll.bin,0x60ed7,0x60f7f,call qword ptr [rip + 0x32743],ff1543270300,original_IAT_indirect,,Sleep,0x936c8
+19_payload.dll.bin,0x60ed7,0x60fbf,call qword ptr [rip + 0x32703],ff1503270300,original_IAT_indirect,,Sleep,0x936c8
+19_payload.dll.bin,0x60fce,0x611d1,call r12,41ffd4,computed_CALL,,,
+19_payload.dll.bin,0x61222,0x6123a,call rax,ffd0,computed_CALL,,,
+19_payload.dll.bin,0x618c8,0x62397,call qword ptr [rsp + 0x230],ff942430020000,computed_CALL,,,
+19_payload.dll.bin,0x618c8,0x62703,call rdi,ffd7,computed_CALL,,,
+19_payload.dll.bin,0x618c8,0x6270f,call r15,41ffd7,computed_CALL,,,
+19_payload.dll.bin,0x618c8,0x63614,call r14,41ffd6,computed_CALL,,,
+19_payload.dll.bin,0x618c8,0x6365f,call rsi,ffd6,computed_CALL,,,
+19_payload.dll.bin,0x618c8,0x636ec,call r15,41ffd7,computed_CALL,,,
+19_payload.dll.bin,0x618c8,0x63754,call r15,41ffd7,computed_CALL,,,
+19_payload.dll.bin,0x618c8,0x6399e,call qword ptr [r15 + 0xf8],41ff97f8000000,computed_CALL,,,
+19_payload.dll.bin,0x618c8,0x639b0,call rsi,ffd6,computed_CALL,,,
+19_payload.dll.bin,0x618c8,0x639c8,call rsi,ffd6,computed_CALL,,,
+19_payload.dll.bin,0x618c8,0x63a0f,call qword ptr [r15 + 0x10],41ff5710,computed_CALL,,,
+19_payload.dll.bin,0x618c8,0x63a18,call qword ptr [rsp + 0x200],ff942400020000,computed_CALL,,,
+19_payload.dll.bin,0x63bfe,0x64abd,call qword ptr [rbx + 7],ff5307,computed_CALL,,,
+19_payload.dll.bin,0x65a45,0x65a7d,call r14,41ffd6,computed_CALL,,,
+19_payload.dll.bin,0x65f3f,0x65f82,call qword ptr [rip + 0x2d640],ff1540d60200,original_IAT_indirect,,GetWindowsDirectoryW,0x935c8
+19_payload.dll.bin,0x65f3f,0x65fa9,call qword ptr [rip + 0x2d599],ff1599d50200,original_IAT_indirect,,GetFullPathNameW,0x93548
+19_payload.dll.bin,0x65f3f,0x65fc0,call qword ptr [rip + 0x2d532],ff1532d50200,original_IAT_indirect,,GetCurrentDirectoryW,0x934f8
+19_payload.dll.bin,0x65f3f,0x65fda,call qword ptr [rip + 0x2d5c8],ff15c8d50200,original_IAT_indirect,,GetSystemDirectoryW,0x935a8
+19_payload.dll.bin,0x65f3f,0x65fec,call qword ptr [rip + 0x2d536],ff1536d50200,original_IAT_indirect,,GetFileAttributesW,0x93528
+19_payload.dll.bin,0x65f3f,0x65ffc,call qword ptr [rip + 0x2d5b6],ff15b6d50200,original_IAT_indirect,,GetTempPathW,0x935b8
+19_payload.dll.bin,0x66a0d,0x66a22,call qword ptr [rip + 0x2cb60],ff1560cb0200,original_IAT_indirect,,GetProcessHeap,0x93588
+19_payload.dll.bin,0x66a0d,0x66a73,call qword ptr [rip + 0x2cb0f],ff150fcb0200,original_IAT_indirect,,GetProcessHeap,0x93588
+19_payload.dll.bin,0x66a0d,0x66a81,call qword ptr [rip + 0x2cb51],ff1551cb0200,original_IAT_indirect,,HeapFree,0x935d8
+19_payload.dll.bin,0x66a98,0x66b3b,call qword ptr [rip + 0x2ca47],ff1547ca0200,original_IAT_indirect,,GetProcessHeap,0x93588
+19_payload.dll.bin,0x66a98,0x66b49,call qword ptr [rip + 0x2ca89],ff1589ca0200,original_IAT_indirect,,HeapFree,0x935d8
+19_payload.dll.bin,0x66a98,0x66b52,call qword ptr [r14 + 0x18],41ff5618,computed_CALL,,,
+19_payload.dll.bin,0x66ee9,0x6715b,call rdi,ffd7,computed_CALL,,,
+19_payload.dll.bin,0x66ee9,0x671bd,call rbx,ffd3,computed_CALL,,,
+19_payload.dll.bin,0x67b85,0x67c28,call rbx,ffd3,computed_CALL,,,
+19_payload.dll.bin,0x67b85,0x67cda,call rbx,ffd3,computed_CALL,,,
+19_payload.dll.bin,0x67d10,0x67f7c,call qword ptr [rdi + 0x18],ff5718,computed_CALL,,,
+19_payload.dll.bin,0x67d10,0x67f9a,call qword ptr [rdi + 0x20],ff5720,computed_CALL,,,
+19_payload.dll.bin,0x68018,0x680e4,call qword ptr [rsp + 0x90],ff942490000000,computed_CALL,,,
+19_payload.dll.bin,0x68018,0x68201,call r13,41ffd5,computed_CALL,,,
+19_payload.dll.bin,0x68018,0x6825b,call qword ptr [rip + 0x2b4b7],ff15b7b40200,original_IAT_indirect,,GetKeyboardLayout,0x93718
+19_payload.dll.bin,0x68018,0x68263,call qword ptr [rip + 0x2b4b7],ff15b7b40200,original_IAT_indirect,,GetKeyboardType,0x93720
+19_payload.dll.bin,0x68018,0x6827b,call qword ptr [rip + 0x2b4af],ff15afb40200,original_IAT_indirect,,SystemParametersInfoW,0x93730
+19_payload.dll.bin,0x68018,0x68283,call qword ptr [rip + 0x2b49f],ff159fb40200,original_IAT_indirect,,GetSystemMetrics,0x93728
+19_payload.dll.bin,0x68746,0x68959,call r12,41ffd4,computed_CALL,,,
+19_payload.dll.bin,0x68d44,0x68dcf,call r15,41ffd7,computed_CALL,,,
+19_payload.dll.bin,0x68d44,0x68dda,call r12,41ffd4,computed_CALL,,,
+19_payload.dll.bin,0x68d44,0x68e1e,call r15,41ffd7,computed_CALL,,,
+19_payload.dll.bin,0x68d44,0x68e29,call r12,41ffd4,computed_CALL,,,
+19_payload.dll.bin,0x68d44,0x68edc,call rbx,ffd3,computed_CALL,,,
+19_payload.dll.bin,0x68d44,0x68ee6,call r14,41ffd6,computed_CALL,,,
+19_payload.dll.bin,0x68d44,0x68efd,call qword ptr [rip + 0x2a685],ff1585a60200,original_IAT_indirect,,GetProcessHeap,0x93588
+19_payload.dll.bin,0x69abe,0x69ac9,call qword ptr [rip + 0x29ab9],ff15b99a0200,original_IAT_indirect,,GetProcessHeap,0x93588
+19_payload.dll.bin,0x6cdaa,0x6cf29,call rdi,ffd7,computed_CALL,,,
+19_payload.dll.bin,0x6cf38,0x6d05a,call qword ptr [rip + 0x266f0],ff15f0660200,original_IAT_indirect,,WakeByAddressSingle,0x93750
+19_payload.dll.bin,0x6cf38,0x6d212,call qword ptr [rip + 0x26538],ff1538650200,original_IAT_indirect,,WakeByAddressSingle,0x93750
+19_payload.dll.bin,0x6cf38,0x6d21d,call qword ptr [rip + 0x2652d],ff152d650200,original_IAT_indirect,,WakeByAddressSingle,0x93750
+19_payload.dll.bin,0x6cf38,0x6d22d,call qword ptr [rip + 0x26355],ff1555630200,original_IAT_indirect,,GetProcessHeap,0x93588
+19_payload.dll.bin,0x6cf38,0x6d23b,call qword ptr [rip + 0x26397],ff1597630200,original_IAT_indirect,,HeapFree,0x935d8
+19_payload.dll.bin,0x6cf38,0x6d271,call rsi,ffd6,computed_CALL,,,
+19_payload.dll.bin,0x6cf38,0x6d321,call qword ptr [rip + 0x26261],ff1561620200,original_IAT_indirect,,GetProcessHeap,0x93588
+19_payload.dll.bin,0x6cf38,0x6d32f,call qword ptr [rip + 0x262a3],ff15a3620200,original_IAT_indirect,,HeapFree,0x935d8
+19_payload.dll.bin,0x6cf38,0x6d4cc,call qword ptr [rip + 0x2627e],ff157e620200,original_IAT_indirect,,WakeByAddressSingle,0x93750
+19_payload.dll.bin,0x6cf38,0x6d78f,call qword ptr [rip + 0x25f3b],ff153b5f0200,original_IAT_indirect,,SwitchToThread,0x936d0
+19_payload.dll.bin,0x6d9a7,0x6d9b3,call qword ptr [rip + 0x25a77],ff15775a0200,original_IAT_indirect,,CloseHandle,0x93430
+19_payload.dll.bin,0x6e885,0x6e8c5,call qword ptr [rdx + 7],ff5207,computed_CALL,,,
+19_payload.dll.bin,0x712d0,0x712fd,call qword ptr [rip + 0x21cc5],ff15c51c0200,computed_CALL,,,0x92fc8
+19_payload.dll.bin,0x716d4,0x716f9,call qword ptr [rip + 0x21e61],ff15611e0200,original_IAT_indirect,,GetModuleHandleExW,0x93560
+19_payload.dll.bin,0x716d4,0x7170f,call qword ptr [rip + 0x21e6b],ff156b1e0200,original_IAT_indirect,,GetProcAddress,0x93580
+19_payload.dll.bin,0x716d4,0x7172b,call qword ptr [rip + 0x21d8f],ff158f1d0200,original_IAT_indirect,,FreeLibrary,0x934c0
+19_payload.dll.bin,0x71738,0x71744,call qword ptr [rip + 0x21db6],ff15b61d0200,original_IAT_indirect,,GetCurrentProcess,0x93500
+19_payload.dll.bin,0x71738,0x7174f,call qword ptr [rip + 0x21f83],ff15831f0200,original_IAT_indirect,,TerminateProcess,0x936d8
+19_payload.dll.bin,0x71738,0x7175e,call qword ptr [rip + 0x21d04],ff15041d0200,original_IAT_indirect,,ExitProcess,0x93468
+19_payload.dll.bin,0x71768,0x7178f,call qword ptr [rip + 0x21dd3],ff15d31d0200,original_IAT_indirect,,GetModuleHandleW,0x93568
+19_payload.dll.bin,0x72520,0x725be,call rax,ffd0,computed_CALL,,,
+19_payload.dll.bin,0x72520,0x725f5,call qword ptr [rip + 0x190b5],ff15b5900100,computed_CALL,,,0x8b6b0
+19_payload.dll.bin,0x72520,0x72630,call qword ptr [rip + 0x2104a],ff154a100200,original_IAT_indirect,,RtlUnwindEx,0x93680
+19_payload.dll.bin,0x72520,0x72713,call r8,41ffd0,computed_CALL,,,
+19_payload.dll.bin,0x72740,0x7274b,call qword ptr [rip + 0x20d37],ff15370d0200,original_IAT_indirect,,FlsAlloc,0x93488
+19_payload.dll.bin,0x72740,0x72765,call qword ptr [rip + 0x20d35],ff15350d0200,original_IAT_indirect,,FlsSetValue,0x934a0
+19_payload.dll.bin,0x72740,0x7278b,call qword ptr [rip + 0x20cff],ff15ff0c0200,original_IAT_indirect,,FlsFree,0x93490
+19_payload.dll.bin,0x727b0,0x727bf,call qword ptr [rip + 0x20ccb],ff15cb0c0200,original_IAT_indirect,,FlsFree,0x93490
+19_payload.dll.bin,0x727e0,0x727f7,call qword ptr [rip + 0x20d53],ff15530d0200,original_IAT_indirect,,GetLastError,0x93550
+19_payload.dll.bin,0x727e0,0x72805,call qword ptr [rip + 0x20c8d],ff158d0c0200,original_IAT_indirect,,FlsGetValue,0x93498
+19_payload.dll.bin,0x727e0,0x7282a,call qword ptr [rip + 0x20c70],ff15700c0200,original_IAT_indirect,,FlsSetValue,0x934a0
+19_payload.dll.bin,0x727e0,0x72853,call qword ptr [rip + 0x20c47],ff15470c0200,original_IAT_indirect,,FlsSetValue,0x934a0
+19_payload.dll.bin,0x727e0,0x72860,call qword ptr [rip + 0x20c3a],ff153a0c0200,original_IAT_indirect,,FlsSetValue,0x934a0
+19_payload.dll.bin,0x727e0,0x7287a,call qword ptr [rip + 0x20e28],ff15280e0200,original_IAT_indirect,,SetLastError,0x936a8
+19_payload.dll.bin,0x727e0,0x72896,call qword ptr [rip + 0x20c04],ff15040c0200,original_IAT_indirect,,FlsSetValue,0x934a0
+19_payload.dll.bin,0x727e0,0x728a6,call qword ptr [rip + 0x20dfc],ff15fc0d0200,original_IAT_indirect,,SetLastError,0x936a8
+19_payload.dll.bin,0x728c0,0x728de,call qword ptr [rip + 0x20c6c],ff156c0c0200,original_IAT_indirect,,GetLastError,0x93550
+19_payload.dll.bin,0x728c0,0x728ec,call qword ptr [rip + 0x20ba6],ff15a60b0200,original_IAT_indirect,,FlsGetValue,0x93498
+19_payload.dll.bin,0x728c0,0x7290d,call qword ptr [rip + 0x20b8d],ff158d0b0200,original_IAT_indirect,,FlsSetValue,0x934a0
+19_payload.dll.bin,0x72920,0x72940,call qword ptr [rip + 0x20b5a],ff155a0b0200,original_IAT_indirect,,FlsSetValue,0x934a0
+19_payload.dll.bin,0x72920,0x72962,call qword ptr [rip + 0x20b38],ff15380b0200,original_IAT_indirect,,FlsSetValue,0x934a0
+19_payload.dll.bin,0x72977,0x72979,call qword ptr [rip + 0x20d29],ff15290d0200,original_IAT_indirect,,SetLastError,0x936a8
+19_payload.dll.bin,0x729af,0x729b4,call qword ptr [rip + 0x20ade],ff15de0a0200,original_IAT_indirect,,FlsGetValue,0x93498
+19_payload.dll.bin,0x729af,0x729c5,call qword ptr [rip + 0x20ad5],ff15d50a0200,original_IAT_indirect,,FlsSetValue,0x934a0
+19_payload.dll.bin,0x72a20,0x72a50,call qword ptr [rip + 0x20b9a],ff159a0b0200,original_IAT_indirect,,InitializeCriticalSectionEx,0x935f0
+19_payload.dll.bin,0x72a20,0x72a8a,call qword ptr [rip + 0x209c0],ff15c0090200,original_IAT_indirect,,DeleteCriticalSection,0x93450
+19_payload.dll.bin,0x72ac0,0x72ada,call qword ptr [rip + 0x20970],ff1570090200,original_IAT_indirect,,DeleteCriticalSection,0x93450
+19_payload.dll.bin,0x72bc0,0x72c09,call qword ptr [rip + 0x20941],ff1541090200,original_IAT_indirect,,GetLastError,0x93550
+19_payload.dll.bin,0x72bc0,0x72c3c,call qword ptr [rip + 0x20a66],ff15660a0200,original_IAT_indirect,,SetLastError,0x936a8
+19_payload.dll.bin,0x72f4c,0x72f5b,call qword ptr [rip + 0x205ef],ff15ef050200,original_IAT_indirect,,GetLastError,0x93550
+19_payload.dll.bin,0x72f4c,0x72f7a,call qword ptr [rip + 0x20728],ff1528070200,original_IAT_indirect,,SetLastError,0x936a8
+19_payload.dll.bin,0x72f4c,0x72fe8,call qword ptr [rip + 0x206ba],ff15ba060200,original_IAT_indirect,,SetLastError,0x936a8
+19_payload.dll.bin,0x73130,0x73192,call qword ptr [rip + 0x1fe30],ff1530fe0100,computed_CALL,,,0x92fc8
+19_payload.dll.bin,0x73374,0x73393,call qword ptr [rip + 0x200b7],ff15b7000200,original_IAT_indirect,,DeleteCriticalSection,0x93450
+19_payload.dll.bin,0x734c0,0x73527,call qword ptr [rip + 0x20143],ff1543010200,original_IAT_indirect,,RtlLookupFunctionEntry,0x93670
+19_payload.dll.bin,0x7362a,0x73657,call qword ptr [rip + 0x20013],ff1513000200,original_IAT_indirect,,RtlLookupFunctionEntry,0x93670
+19_payload.dll.bin,0x736f0,0x73800,call qword ptr [rip + 0x1fe7a],ff157afe0100,original_IAT_indirect,,RtlUnwindEx,0x93680
+19_payload.dll.bin,0x73af0,0x73b29,call qword ptr [rip + 0x1f499],ff1599f40100,computed_CALL,,,0x92fc8
+19_payload.dll.bin,0x73b60,0x73b69,call qword ptr [rip + 0x1faa1],ff15a1fa0100,original_IAT_indirect,,IsProcessorFeaturePresent,0x93610
+19_payload.dll.bin,0x73b60,0x73b8e,call qword ptr [rip + 0x1f96c],ff156cf90100,original_IAT_indirect,,GetCurrentProcess,0x93500
+19_payload.dll.bin,0x73ba8,0x73c33,call qword ptr [rip + 0x1fa2f],ff152ffa0100,original_IAT_indirect,,RtlCaptureContext,0x93668
+19_payload.dll.bin,0x73ba8,0x73c4b,call qword ptr [rip + 0x1fa1f],ff151ffa0100,original_IAT_indirect,,RtlLookupFunctionEntry,0x93670
+19_payload.dll.bin,0x73ba8,0x73c86,call qword ptr [rip + 0x1f9fc],ff15fcf90100,original_IAT_indirect,,RtlVirtualUnwind,0x93688
+19_payload.dll.bin,0x73ba8,0x73cbf,call qword ptr [rip + 0x1f943],ff1543f90100,original_IAT_indirect,,IsDebuggerPresent,0x93608
+19_payload.dll.bin,0x73ba8,0x73cc9,call qword ptr [rip + 0x1f9e9],ff15e9f90100,original_IAT_indirect,,SetUnhandledExceptionFilter,0x936b8
+19_payload.dll.bin,0x73ba8,0x73cd4,call qword ptr [rip + 0x1fa06],ff1506fa0100,original_IAT_indirect,,UnhandledExceptionFilter,0x936e0
+19_payload.dll.bin,0x73dd8,0x73deb,call qword ptr [rip + 0x1f75f],ff155ff70100,original_IAT_indirect,,GetLastError,0x93550
+19_payload.dll.bin,0x73dd8,0x73e20,call qword ptr [rip + 0x1f882],ff1582f80100,original_IAT_indirect,,SetLastError,0x936a8
+19_payload.dll.bin,0x73e40,0x73e5c,call qword ptr [rip + 0x1f6ee],ff15eef60100,original_IAT_indirect,,GetLastError,0x93550
+19_payload.dll.bin,0x73e40,0x73e91,call qword ptr [rip + 0x1f811],ff1511f80100,original_IAT_indirect,,SetLastError,0x936a8
+19_payload.dll.bin,0x73eac,0x73ec8,call qword ptr [rip + 0x1f682],ff1582f60100,original_IAT_indirect,,GetLastError,0x93550
+19_payload.dll.bin,0x73eac,0x73ed8,call qword ptr [rip + 0x1f7ca],ff15caf70100,original_IAT_indirect,,SetLastError,0x936a8
+19_payload.dll.bin,0x74100,0x74155,call qword ptr [rip + 0x1f475],ff1575f40100,original_IAT_indirect,,HeapAlloc,0x935d0
+19_payload.dll.bin,0x74180,0x74196,call qword ptr [rip + 0x1f43c],ff153cf40100,original_IAT_indirect,,HeapFree,0x935d8
+19_payload.dll.bin,0x74180,0x741a0,call qword ptr [rip + 0x1f3aa],ff15aaf30100,original_IAT_indirect,,GetLastError,0x93550
+19_payload.dll.bin,0x744b8,0x7458e,call qword ptr [rip + 0x1efbc],ff15bcef0100,original_IAT_indirect,,GetLastError,0x93550
+19_payload.dll.bin,0x74658,0x74736,call qword ptr [rip + 0x1ee14],ff1514ee0100,original_IAT_indirect,,GetLastError,0x93550
+19_payload.dll.bin,0x74988,0x74b09,call qword ptr [rip + 0x1e969],ff1569e90100,original_IAT_indirect,,FindFirstFileExW,0x93478
+19_payload.dll.bin,0x74988,0x74c3f,call qword ptr [rip + 0x1e83b],ff153be80100,original_IAT_indirect,,FindNextFileW,0x93480
+19_payload.dll.bin,0x74988,0x74c7f,call qword ptr [rip + 0x1e7eb],ff15ebe70100,original_IAT_indirect,,FindClose,0x93470
+19_payload.dll.bin,0x74988,0x74cab,call qword ptr [rip + 0x1e7bf],ff15bfe70100,original_IAT_indirect,,FindClose,0x93470
+19_payload.dll.bin,0x74cfc,0x74d37,call qword ptr [rip + 0x1e81b],ff151be80100,original_IAT_indirect,,GetModuleFileNameW,0x93558
+19_payload.dll.bin,0x74cfc,0x74d41,call qword ptr [rip + 0x1e809],ff1509e80100,original_IAT_indirect,,GetLastError,0x93550
+19_payload.dll.bin,0x74e20,0x74ec2,call qword ptr [rip + 0x1e688],ff1588e60100,original_IAT_indirect,,GetLastError,0x93550
+19_payload.dll.bin,0x74fb8,0x75033,call qword ptr [rip + 0x1e5e7],ff15e7e50100,original_IAT_indirect,,IsValidCodePage,0x93620
+19_payload.dll.bin,0x74fb8,0x75077,call qword ptr [rip + 0x1e453],ff1553e40100,original_IAT_indirect,,GetCPInfo,0x934d0
+19_payload.dll.bin,0x75280,0x752aa,call qword ptr [rip + 0x1e2c8],ff15c8e20100,original_IAT_indirect,,GetOEMCP,0x93578
+19_payload.dll.bin,0x75280,0x752c1,call qword ptr [rip + 0x1e201],ff1501e20100,original_IAT_indirect,,GetACP,0x934c8
+19_payload.dll.bin,0x756c0,0x75710,call qword ptr [rip + 0x1ddba],ff15badd0100,original_IAT_indirect,,GetCPInfo,0x934d0
+19_payload.dll.bin,0x75b10,0x75b14,call qword ptr [rip + 0x1d9be],ff15bed90100,original_IAT_indirect,,GetCommandLineA,0x934d8
+19_payload.dll.bin,0x75b10,0x75b21,call qword ptr [rip + 0x1d9b9],ff15b9d90100,original_IAT_indirect,,GetCommandLineW,0x934e0
+19_payload.dll.bin,0x75d30,0x75d49,call qword ptr [rip + 0x1d7d1],ff15d1d70100,original_IAT_indirect,,GetEnvironmentStringsW,0x93520
+19_payload.dll.bin,0x75d30,0x75dbe,call qword ptr [rip + 0x1d6f4],ff15f4d60100,original_IAT_indirect,,FreeEnvironmentStringsW,0x934b8
+19_payload.dll.bin,0x75d30,0x75e1a,call qword ptr [rip + 0x1d698],ff1598d60100,original_IAT_indirect,,FreeEnvironmentStringsW,0x934b8
+19_payload.dll.bin,0x75ee8,0x75f08,call qword ptr [rip + 0x1d7da],ff15dad70100,original_IAT_indirect,,VirtualProtect,0x936e8
+19_payload.dll.bin,0x75f18,0x75f37,call qword ptr [rip + 0x1d583],ff1583d50100,original_IAT_indirect,,FreeLibrary,0x934c0
+19_payload.dll.bin,0x75fdc,0x760b3,call qword ptr [rip + 0x1d56f],ff156fd50100,original_IAT_indirect,,LCMapStringW,0x93628
+19_payload.dll.bin,0x761d4,0x76241,call qword ptr [rip + 0x1d3f9],ff15f9d30100,original_IAT_indirect,,LoadLibraryExW,0x93640
+19_payload.dll.bin,0x761d4,0x76253,call qword ptr [rip + 0x1d2f7],ff15f7d20100,original_IAT_indirect,,GetLastError,0x93550
+19_payload.dll.bin,0x761d4,0x76295,call qword ptr [rip + 0x1d3a5],ff15a5d30100,original_IAT_indirect,,LoadLibraryExW,0x93640
+19_payload.dll.bin,0x761d4,0x762f1,call qword ptr [rip + 0x1d3f1],ff15f1d30100,original_IAT_indirect,,VirtualProtect,0x936e8
+19_payload.dll.bin,0x761d4,0x76322,call qword ptr [rip + 0x1d3c0],ff15c0d30100,original_IAT_indirect,,VirtualProtect,0x936e8
+19_payload.dll.bin,0x761d4,0x76366,call qword ptr [rip + 0x1d154],ff1554d10100,original_IAT_indirect,,FreeLibrary,0x934c0
+19_payload.dll.bin,0x761d4,0x76372,call qword ptr [rip + 0x1d208],ff1508d20100,original_IAT_indirect,,GetProcAddress,0x93580
+19_payload.dll.bin,0x763a0,0x763a4,call qword ptr [rip + 0x1d1de],ff15ded10100,original_IAT_indirect,,GetProcessHeap,0x93588
+19_payload.dll.bin,0x76474,0x764a4,call qword ptr [rip + 0x1d0e6],ff15e6d00100,original_IAT_indirect,,GetStartupInfoW,0x93590
+19_payload.dll.bin,0x76474,0x7650f,call qword ptr [rip + 0x1d02b],ff152bd00100,original_IAT_indirect,,GetFileType,0x93540
+19_payload.dll.bin,0x76574,0x765ed,call qword ptr [rip + 0x1cfa5],ff15a5cf0100,original_IAT_indirect,,GetStdHandle,0x93598
+19_payload.dll.bin,0x76574,0x76603,call qword ptr [rip + 0x1cf37],ff1537cf0100,original_IAT_indirect,,GetFileType,0x93540
+19_payload.dll.bin,0x76fb8,0x76fe9,call qword ptr [rip + 0x1c461],ff1561c40100,original_IAT_indirect,,DeleteCriticalSection,0x93450
+19_payload.dll.bin,0x771b0,0x771d6,call qword ptr [rip + 0x1c434],ff1534c40100,original_IAT_indirect,,IsProcessorFeaturePresent,0x93610
+19_payload.dll.bin,0x77a60,0x77bb8,call qword ptr [rip + 0x1baa2],ff15a2ba0100,original_IAT_indirect,,RaiseException,0x93660
+19_payload.dll.bin,0x78140,0x781c6,call qword ptr [rip + 0x1adfc],ff15fcad0100,computed_CALL,,,0x92fc8
+19_payload.dll.bin,0x783e0,0x785a4,call qword ptr [rip + 0x1aa1e],ff151eaa0100,computed_CALL,,,0x92fc8
+19_payload.dll.bin,0x78bf5,0x78c32,call qword ptr [rip + 0x1a820],ff1520a80100,original_IAT_indirect,,EncodePointer,0x93458
+19_payload.dll.bin,0x79150,0x7918e,call qword ptr [rip + 0x1a43c],ff153ca40100,original_IAT_indirect,,HeapAlloc,0x935d0
+19_payload.dll.bin,0x79242,0x792a6,call r12,41ffd4,computed_CALL,,,
+19_payload.dll.bin,0x79242,0x79325,call r12,41ffd4,computed_CALL,,,
+19_payload.dll.bin,0x79242,0x79361,call r12,41ffd4,computed_CALL,,,
+19_payload.dll.bin,0x79242,0x7939e,call r12,41ffd4,computed_CALL,,,
+19_payload.dll.bin,0x79242,0x793f3,call r12,41ffd4,computed_CALL,,,
+19_payload.dll.bin,0x79242,0x7940e,call r12,41ffd4,computed_CALL,,,
+19_payload.dll.bin,0x79242,0x79426,call r12,41ffd4,computed_CALL,,,
+19_payload.dll.bin,0x79242,0x7947e,call r12,41ffd4,computed_CALL,,,
+19_payload.dll.bin,0x79242,0x79495,call r12,41ffd4,computed_CALL,,,
+19_payload.dll.bin,0x79c50,0x79d82,call qword ptr [rip + 0x19818],ff1518980100,original_IAT_indirect,,GetStringTypeW,0x935a0
+19_payload.dll.bin,0x7a210,0x7a27d,call qword ptr [rip + 0x1935d],ff155d930100,original_IAT_indirect,,HeapReAlloc,0x935e0
+19_payload.dll.bin,0x7a3e4,0x7a45e,call qword ptr [rip + 0x1924c],ff154c920100,original_IAT_indirect,,SetStdHandle,0x936b0
+19_payload.dll.bin,0x7a548,0x7a571,call qword ptr [rip + 0x18ed9],ff15d98e0100,original_IAT_indirect,,DeleteCriticalSection,0x93450
+19_payload.dll.bin,0x7a724,0x7a772,call qword ptr [rip + 0x18d30],ff15308d0100,original_IAT_indirect,,FlushFileBuffers,0x934a8
+19_payload.dll.bin,0x7a724,0x7a77e,call qword ptr [rip + 0x18dcc],ff15cc8d0100,original_IAT_indirect,,GetLastError,0x93550
+19_payload.dll.bin,0x7a7d8,0x7a8f6,call qword ptr [rip + 0x18bec],ff15ec8b0100,original_IAT_indirect,,GetConsoleMode,0x934e8
+19_payload.dll.bin,0x7a7d8,0x7a988,call qword ptr [rip + 0x18bc2],ff15c28b0100,original_IAT_indirect,,GetLastError,0x93550
+19_payload.dll.bin,0x7a7d8,0x7aa4e,call qword ptr [rip + 0x18cb4],ff15b48c0100,original_IAT_indirect,,WriteFile,0x93708
+19_payload.dll.bin,0x7a7d8,0x7aa58,call qword ptr [rip + 0x18af2],ff15f28a0100,original_IAT_indirect,,GetLastError,0x93550
+19_payload.dll.bin,0x7aca0,0x7ad1f,call qword ptr [rip + 0x187cb],ff15cb870100,original_IAT_indirect,,GetConsoleOutputCP,0x934f0
+19_payload.dll.bin,0x7aca0,0x7affc,call qword ptr [rip + 0x18706],ff1506870100,original_IAT_indirect,,WriteFile,0x93708
+19_payload.dll.bin,0x7aca0,0x7b042,call qword ptr [rip + 0x186c0],ff15c0860100,original_IAT_indirect,,WriteFile,0x93708
+19_payload.dll.bin,0x7aca0,0x7b101,call qword ptr [rip + 0x18449],ff1549840100,original_IAT_indirect,,GetLastError,0x93550
+19_payload.dll.bin,0x7b134,0x7b1ec,call qword ptr [rip + 0x18516],ff1516850100,original_IAT_indirect,,WriteFile,0x93708
+19_payload.dll.bin,0x7b134,0x7b208,call qword ptr [rip + 0x18342],ff1542830100,original_IAT_indirect,,GetLastError,0x93550
+19_payload.dll.bin,0x7b23c,0x7b308,call qword ptr [rip + 0x183fa],ff15fa830100,original_IAT_indirect,,WriteFile,0x93708
+19_payload.dll.bin,0x7b23c,0x7b324,call qword ptr [rip + 0x18226],ff1526820100,original_IAT_indirect,,GetLastError,0x93550
+19_payload.dll.bin,0x7b358,0x7b470,call qword ptr [rip + 0x18292],ff1592820100,original_IAT_indirect,,WriteFile,0x93708
+19_payload.dll.bin,0x7b358,0x7b495,call qword ptr [rip + 0x180b5],ff15b5800100,original_IAT_indirect,,GetLastError,0x93550
+19_payload.dll.bin,0x7b4cc,0x7b53f,call qword ptr [rip + 0x17f0b],ff150b7f0100,original_IAT_indirect,,DeleteCriticalSection,0x93450
+19_payload.dll.bin,0x7b8d8,0x7b8e3,call rax,ffd0,computed_CALL,,,
+19_payload.dll.bin,0x7b940,0x7b95e,call rax,ffd0,computed_CALL,,,
+19_payload.dll.bin,0x7ba60,0x7ba64,call qword ptr [rip + 0x17b96],ff15967b0100,original_IAT_indirect,,InterlockedFlushSList,0x93600
+19_payload.dll.bin,0x7bad0,0x7bb06,call qword ptr [rip + 0x174bc],ff15bc740100,computed_CALL,,,0x92fc8
+19_payload.dll.bin,0x7bad0,0x7bb20,call qword ptr [rip + 0x17b52],ff15527b0100,original_IAT_indirect,,RtlPcToFileHeader,0x93678
+19_payload.dll.bin,0x7bad0,0x7bb63,call qword ptr [rip + 0x17af7],ff15f77a0100,original_IAT_indirect,,RaiseException,0x93660
+19_payload.dll.bin,0x7bc18,0x7bc6a,call qword ptr [rip + 0x17a28],ff15287a0100,original_IAT_indirect,,SetFilePointerEx,0x93698
+19_payload.dll.bin,0x7bc18,0x7bc74,call qword ptr [rip + 0x178d6],ff15d6780100,original_IAT_indirect,,GetLastError,0x93550
+19_payload.dll.bin,0x7c4d0,0x7c506,call qword ptr [rip + 0x16f2c],ff152c6f0100,original_IAT_indirect,,CreateFileW,0x93438
+19_payload.dll.bin,0x7c524,0x7c555,call qword ptr [rip + 0x171a5],ff15a5710100,original_IAT_indirect,,WriteConsoleW,0x93700
+19_payload.dll.bin,0x7c524,0x7c561,call qword ptr [rip + 0x16fe9],ff15e96f0100,original_IAT_indirect,,GetLastError,0x93550
+19_payload.dll.bin,0x7c524,0x7c579,call qword ptr [rip + 0x16eb1],ff15b16e0100,original_IAT_indirect,,CloseHandle,0x93430
+19_payload.dll.bin,0x7c524,0x7c5a4,call qword ptr [rip + 0x16e8e],ff158e6e0100,original_IAT_indirect,,CreateFileW,0x93438
+19_payload.dll.bin,0x7c524,0x7c5c3,call qword ptr [rip + 0x17137],ff1537710100,original_IAT_indirect,,WriteConsoleW,0x93700
+19_payload.dll.bin,0x7c5e4,0x7c5f5,call qword ptr [rip + 0x16e35],ff15356e0100,original_IAT_indirect,,CloseHandle,0x93430
+19_payload.dll.bin,0x7c600,0x7c66e,call qword ptr [rip + 0x16dbc],ff15bc6d0100,original_IAT_indirect,,CloseHandle,0x93430
+19_payload.dll.bin,0x7c600,0x7c678,call qword ptr [rip + 0x16ed2],ff15d26e0100,original_IAT_indirect,,GetLastError,0x93550
+19_payload.dll.bin,0x7c910,0x7c9e2,call qword ptr [rip + 0x165e0],ff15e0650100,computed_CALL,,,0x92fc8
+19_payload.dll.bin,0x7cb20,0x7cb7a,call qword ptr [rip + 0x16448],ff1548640100,computed_CALL,,,0x92fc8
+19_payload.dll.bin,0x7cb20,0x7cbf1,call qword ptr [rip + 0x163d1],ff15d1630100,computed_CALL,,,0x92fc8
+19_payload.dll.bin,0x7cb20,0x7cc32,call qword ptr [rip + 0x16390],ff1590630100,computed_CALL,,,0x92fc8
+19_payload.dll.bin,0x7cca0,0x7ccda,call qword ptr [rip + 0x168d0],ff15d0680100,original_IAT_indirect,,GetSystemTimeAsFileTime,0x935b0
+19_payload.dll.bin,0x7cca0,0x7ccea,call qword ptr [rip + 0x16828],ff1528680100,original_IAT_indirect,,GetCurrentThreadId,0x93518
+19_payload.dll.bin,0x7cca0,0x7ccf7,call qword ptr [rip + 0x1680b],ff150b680100,original_IAT_indirect,,GetCurrentProcessId,0x93508
+19_payload.dll.bin,0x7cca0,0x7cd09,call qword ptr [rip + 0x16941],ff1541690100,original_IAT_indirect,,QueryPerformanceCounter,0x93650
+19_payload.dll.bin,0x7cdc0,0x7cde8,call qword ptr [rip + 0x161da],ff15da610100,computed_CALL,,,0x92fc8
+19_payload.dll.bin,0x7ce10,0x7ce38,call qword ptr [rip + 0x1618a],ff158a610100,computed_CALL,,,0x92fc8
+19_payload.dll.bin,0x7dcdd,0x7dced,call qword ptr [rip + 0x15965],ff1565590100,original_IAT_indirect,,QueryPerformanceFrequency,0x93658
+19_payload.dll.bin,0x7dcdd,0x7dd08,call qword ptr [rip + 0x15842],ff1542580100,original_IAT_indirect,,GetLastError,0x93550
+19_payload.dll.bin,0x7dd2c,0x7dda3,call qword ptr [rip + 0x157df],ff15df570100,original_IAT_indirect,,GetProcessHeap,0x93588
+19_payload.dll.bin,0x7dd2c,0x7ddb4,call qword ptr [rip + 0x15826],ff1526580100,original_IAT_indirect,,HeapReAlloc,0x935e0
+19_payload.dll.bin,0x7e072,0x7e0ef,call r15,41ffd7,computed_CALL,,,
+19_payload.dll.bin,0x7e072,0x7e0f7,call r12,41ffd4,computed_CALL,,,
+19_payload.dll.bin,0x7e072,0x7e118,call qword ptr [rdi + 0x20],ff5720,computed_CALL,,,
+19_payload.dll.bin,0x7e072,0x7e127,call qword ptr [rip + 0x1561b],ff151b560100,original_IAT_indirect,,WakeByAddressAll,0x93748

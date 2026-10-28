@@ -1,0 +1,1177 @@
+{
+  "generated_utc": "2026-10-28T07:53:42.015224+00:00",
+  "scope": "Original-byte static analysis and existing fictional fixture reconciliation; no native specimen or original-instruction execution, actual browser/process/key access, or C2 requests in round3.",
+  "report_baseline_partition": "v2.1 has28 complete C,11 unresolved,1 thunk,1 encoded-data false function; report has not yet incorporated this new static round.",
+  "41_function_status_counts": {
+    "c_export_completed": 28,
+    "tail_thunk_identity_proved": 1,
+    "c_export_normal_initialized_context": 11,
+    "encoded_data_misidentified_as_function_corrected": 1
+  },
+  "41_function_roles": [
+    {
+      "sample": "17_loader.exe.bin",
+      "rva": "0xbd8e",
+      "status": "c_export_completed",
+      "known_use": "主loader/内嵌载荷处理与加载链",
+      "remaining_work": "已取得整函数自动C；仍需区分真实输入分支与混淆分支，检查类型和未知调用；C成功不等于语义闭合。",
+      "remaining_branch_domain": "具体原指令与数据布局见entry_data_layout和branch_producer_chains；不把此处未知静态selector等同云控opcode。"
+    },
+    {
+      "sample": "17_loader.exe.bin",
+      "rva": "0x13086",
+      "status": "c_export_completed",
+      "known_use": "解码远程bootstrap模板、填上下文指针并返回395B blob；原main虚构OS截获remote write尾395B交叉匹配",
+      "remaining_work": "已取得整函数自动C；仍需区分真实输入分支与混淆分支，检查类型和未知调用；C成功不等于语义闭合。",
+      "remaining_branch_domain": "具体原指令与数据布局见entry_data_layout和branch_producer_chains；不把此处未知静态selector等同云控opcode。"
+    },
+    {
+      "sample": "17_payload.dll.bin",
+      "rva": "0x1000",
+      "status": "tail_thunk_identity_proved",
+      "known_use": "5字节直接tail jump到RVA6608f，无独立算法",
+      "remaining_work": "此条的结构身份已说明；不将其计作独立未识别恶意算法。",
+      "remaining_branch_domain": "具体原指令与数据布局见entry_data_layout和branch_producer_chains；不把此处未知静态selector等同云控opcode。"
+    },
+    {
+      "sample": "17_payload.dll.bin",
+      "rva": "0x3b8d",
+      "status": "c_export_completed",
+      "known_use": "带type tag的组件/值比较；tag<=5分支及memcmp",
+      "remaining_work": "已取得整函数自动C；仍需区分真实输入分支与混淆分支，检查类型和未知调用；C成功不等于语义闭合。",
+      "remaining_branch_domain": "具体原指令与数据布局见entry_data_layout和branch_producer_chains；不把此处未知静态selector等同云控opcode。"
+    },
+    {
+      "sample": "17_payload.dll.bin",
+      "rva": "0x8e81",
+      "status": "c_export_normal_initialized_context",
+      "known_use": "文本tokenizer及字符串vector：空白、引号、反斜杠escape、slash/comment分支，UTF8-lossy替换，filewalk以ptr+len调用",
+      "remaining_work": "已取得整函数自动C；仍需区分真实输入分支与混淆分支，检查类型和未知调用；C成功不等于语义闭合。",
+      "remaining_branch_domain": "具体原指令与数据布局见entry_data_layout和branch_producer_chains；不把此处未知静态selector等同云控opcode。",
+      "C_path": "<ANALYSIS_WORKSPACE>\\work\\alpme_analysis\\semantic_closure_20261027\\round5_tokenizers\\normal_exports\\17_payload.dll.bin_0x8e81.c",
+      "C_sha256": "62828e2a429a715d437f98aebf2ec97684958463464d3a76dd8f8cc419ff16bc",
+      "C_bytes": 22689,
+      "normal_initialized_context": true,
+      "native_instructions": 641,
+      "computed_sites": 48,
+      "quality_proof_sha256": "5d556c40378fbbf279b918644c543883502bd74250af9acd8cf3255a5d4a2958"
+    },
+    {
+      "sample": "17_payload.dll.bin",
+      "rva": "0xa0c4",
+      "status": "c_export_completed",
+      "known_use": "HTTP传输封装",
+      "remaining_work": "已取得整函数自动C；仍需区分真实输入分支与混淆分支，检查类型和未知调用；C成功不等于语义闭合。",
+      "remaining_branch_domain": "具体原指令与数据布局见entry_data_layout和branch_producer_chains；不把此处未知静态selector等同云控opcode。"
+    },
+    {
+      "sample": "17_payload.dll.bin",
+      "rva": "0x12d20",
+      "status": "c_export_completed",
+      "known_use": "路径组件/合并辅助：末字符与/和\\比较、解析组件tag<=5",
+      "remaining_work": "Whole C now exported; original source identity, semantic equivalence and any remaining C quality warnings are separate questions.",
+      "remaining_branch_domain": "路径component tag、前缀/分隔符及Result分支",
+      "baseline_status": "c_decompilation_unresolved",
+      "latest_analysis_output": {
+        "sample": "17_payload.dll.bin",
+        "rva": "0x12d20",
+        "path": "<ANALYSIS_WORKSPACE>\\work\\alpme_analysis\\semantic_closure_20261027\\ghidra_repair\\helper_boundary_scratch\\17_payload.dll.bin_12d20.analysis.c",
+        "bytes": 18469,
+        "sha256": "3dca14e91d38097e7da3c7aa7c0d31ec50ecaf60f4a5b0141cfcaf0e01812af4",
+        "status": "c_export_completed",
+        "original_source_recovered": false,
+        "whole_semantic_equivalence_proved": false
+      }
+    },
+    {
+      "sample": "17_payload.dll.bin",
+      "rva": "0x20680",
+      "status": "c_export_completed",
+      "known_use": "树形集合迭代到byte buffer序列化：iterator next加tag/大端u32写入",
+      "remaining_work": "用途按上述API、调用链和数据布局证据定性；整函数C仍失败，具体剩余branch/RVA/producer及错误保留，需继续恢复精确选择条件、类型和错误处理。",
+      "remaining_branch_domain": "树形集合迭代终止、容器长度与typed scalar编码结果",
+      "C_path": "<ANALYSIS_WORKSPACE>\\work\\alpme_analysis\\semantic_closure_20261027\\round3_serializers\\exact_exports\\17_payload.dll.bin_0x20680.c",
+      "C_sha256": "fd676313fbaeaf08f13738d49fa758ee7160ef7e05bfd2a363dc3367749246dc",
+      "C_bytes": 3426,
+      "manual_switch_notes": 5,
+      "warning_comments": 5,
+      "normal_initialized_context": false
+    },
+    {
+      "sample": "17_payload.dll.bin",
+      "rva": "0x227e8",
+      "status": "c_export_normal_initialized_context",
+      "known_use": "浏览器数据处理辅助",
+      "remaining_work": "已取得整函数自动C；仍需区分真实输入分支与混淆分支，检查类型和未知调用；C成功不等于语义闭合。",
+      "remaining_branch_domain": "具体原指令与数据布局见entry_data_layout和branch_producer_chains；不把此处未知静态selector等同云控opcode。",
+      "C_path": "<ANALYSIS_WORKSPACE>\\work\\alpme_analysis\\semantic_closure_20261027\\round4_network_core\\prep17_227e8_gate\\17_payload.dll.bin_0x227e8_normal_context.c",
+      "C_sha256": "d53d2b4466ed495c1f585662e4b66dde9a4c97b1eeadc90aaa3b20c2b28bce41",
+      "C_bytes": 183844,
+      "normal_initialized_context": true,
+      "native_instructions": 5841,
+      "computed_sites": 274,
+      "quality_proof_sha256": "5ea4b2cd91e47542af8a872572b6b4d5196270325151fc978a485f799685b7c8"
+    },
+    {
+      "sample": "17_payload.dll.bin",
+      "rva": "0x2df8f",
+      "status": "c_export_normal_initialized_context",
+      "known_use": "目录枚举/collect：FindFirstFileExW、FindNextFileW、过滤点目录、Result/目录项vector与引用计数清理",
+      "remaining_work": "用途按上述API、调用链和数据布局证据定性；整函数C仍失败，具体剩余branch/RVA/producer及错误保留，需继续恢复精确选择条件、类型和错误处理。",
+      "remaining_branch_domain": "目录枚举Result、目录项vector容量/长度和清理状态",
+      "C_path": "<ANALYSIS_WORKSPACE>\\work\\alpme_analysis\\semantic_closure_20261027\\round3_dirfinish\\17_payload.dll.bin_0x2df8f.c",
+      "C_sha256": "d089fad780f8eae33bd329b80737309221d22fd692a9a1d52f1e820d422adbd6",
+      "C_bytes": 17240,
+      "manual_switch_notes": 35,
+      "warning_comments": 38,
+      "normal_initialized_context": true
+    },
+    {
+      "sample": "17_payload.dll.bin",
+      "rva": "0x2f497",
+      "status": "c_export_normal_initialized_context",
+      "known_use": "内存数据处理辅助",
+      "remaining_work": "已取得整函数自动C；仍需区分真实输入分支与混淆分支，检查类型和未知调用；C成功不等于语义闭合。",
+      "remaining_branch_domain": "具体原指令与数据布局见entry_data_layout和branch_producer_chains；不把此处未知静态selector等同云控opcode。",
+      "C_path": "<ANALYSIS_WORKSPACE>\\work\\alpme_analysis\\semantic_closure_20261027\\round4_browser_17_2f497_gate\\verified_exports\\17_payload.dll.bin_0x2f497.c",
+      "C_sha256": "937816b1c224fab042df4f7ad1ebbf52c82af2b913ee3f9ea2cb3dd579c7b958",
+      "C_bytes": 172474,
+      "normal_initialized_context": true,
+      "native_instructions": 5212,
+      "computed_sites": 230,
+      "quality_proof_sha256": "e9cfdb4efb7af3bab94179e5b2147e70d76051c3186a4278207925a1bbcb7064"
+    },
+    {
+      "sample": "17_payload.dll.bin",
+      "rva": "0x35fa2",
+      "status": "c_export_completed",
+      "known_use": "message-frame字节Vec构造：可选前缀、selector及body；main以type0/无prefix调用后交给packet_crypto",
+      "remaining_work": "用途按上述API、调用链和数据布局证据定性；整函数C仍失败，具体剩余branch/RVA/producer及错误保留，需继续恢复精确选择条件、类型和错误处理。",
+      "remaining_branch_domain": "分配Result、可选prefix/body长度和frame selector字节",
+      "C_path": "<ANALYSIS_WORKSPACE>\\work\\alpme_analysis\\semantic_closure_20261027\\round3_serializers\\exact_exports\\17_payload.dll.bin_0x35fa2.c",
+      "C_sha256": "494f8581ec6e8784202ba591d1e2d2e7b319dffdd07c73f06f5b49b921706c8f",
+      "C_bytes": 3390,
+      "manual_switch_notes": 6,
+      "warning_comments": 7,
+      "normal_initialized_context": false
+    },
+    {
+      "sample": "17_payload.dll.bin",
+      "rva": "0x39ba0",
+      "status": "c_export_completed",
+      "known_use": "RegQueryValueExW值查询封装，UTF16路径/类型和错误分支",
+      "remaining_work": "用途按上述API、调用链和数据布局证据定性；整函数C仍失败，具体剩余branch/RVA/producer及错误保留，需继续恢复精确选择条件、类型和错误处理。",
+      "remaining_branch_domain": "RegQueryValueExW返回状态、REG值类型/长度与UTF16缓冲处理",
+      "C_path": "<ANALYSIS_WORKSPACE>\\work\\alpme_analysis\\semantic_closure_20261027\\round3_registry_files\\17_payload.dll.bin_0x39ba0.c",
+      "C_sha256": "56070e1d04cdad15636640d2f5c6071a675020144449bda25a67b73c50d6231c",
+      "C_bytes": 21193,
+      "manual_switch_notes": 44,
+      "warning_comments": 46,
+      "normal_initialized_context": false
+    },
+    {
+      "sample": "17_payload.dll.bin",
+      "rva": "0x3c026",
+      "status": "c_export_normal_initialized_context",
+      "known_use": "文件遍历匹配，调度Discord/Steam/Roblox专用采集，56ab1提供共享锁读取fallback",
+      "remaining_work": "用途按上述API、调用链和数据布局证据定性；整函数C仍失败，具体剩余branch/RVA/producer及错误保留，需继续恢复精确选择条件、类型和错误处理。",
+      "remaining_branch_domain": "遍历/过滤selector、应用专用格式和解密结果；各功能由独立网络/文件fixture证据说明",
+      "C_path": "<ANALYSIS_WORKSPACE>\\work\\alpme_analysis\\semantic_closure_20261027\\round3_file_dispatch\\17_payload.dll.bin_0x3c026_normal_context.c",
+      "C_sha256": "f11bb58965322399c699fea3bc2ea7fa8e021254b0cabdd3d344061c630a892e",
+      "C_bytes": 274632,
+      "manual_switch_notes": 365,
+      "warning_comments": 431,
+      "normal_initialized_context": true
+    },
+    {
+      "sample": "17_payload.dll.bin",
+      "rva": "0x467ce",
+      "status": "c_export_normal_initialized_context",
+      "known_use": "网络packet加解密封装",
+      "remaining_work": "已取得整函数自动C；仍需区分真实输入分支与混淆分支，检查类型和未知调用；C成功不等于语义闭合。",
+      "remaining_branch_domain": "具体原指令与数据布局见entry_data_layout和branch_producer_chains；不把此处未知静态selector等同云控opcode。",
+      "C_path": "<ANALYSIS_WORKSPACE>\\work\\alpme_analysis\\semantic_closure_20261027\\round4_network_core\\17_payload.dll.bin_0x467ce_normal_context.c",
+      "C_sha256": "d908756f8f3ade257438f87513053b0d62834a718830134028887f7d2d072e93",
+      "C_bytes": 36208,
+      "normal_initialized_context": true,
+      "native_instructions": 1209,
+      "computed_sites": 57,
+      "finite_AI_naturally_complete": true,
+      "quality_proof_sha256": "ede867fc40cab30d1fde885517cc3f137c5f9ecb20ba68319654088a8f22b0c2"
+    },
+    {
+      "sample": "17_payload.dll.bin",
+      "rva": "0x49538",
+      "status": "c_export_completed",
+      "known_use": "JSON内容提取：调用解析器，验证尾部仅含JSON空白；成功移动解析值，失败返回sentinel并释放临时对象。",
+      "remaining_work": "用途按上述API、调用链和数据布局证据定性；整函数C仍失败，具体剩余branch/RVA/producer及错误保留，需继续恢复精确选择条件、类型和错误处理。",
+      "remaining_branch_domain": "字符串searcher游标/end边界及匹配结果tag",
+      "C_path": "<ANALYSIS_WORKSPACE>\\work\\alpme_analysis\\semantic_closure_20261027\\round3_strings\\17_payload.dll.bin_0x49538.c",
+      "C_sha256": "aa876640196c84d0a859a725cd84d37290f75072a977b7cb3943031d406be1ad",
+      "C_bytes": 3009,
+      "manual_switch_notes": 7,
+      "warning_comments": 7,
+      "normal_initialized_context": false
+    },
+    {
+      "sample": "17_payload.dll.bin",
+      "rva": "0x4f1f9",
+      "status": "c_export_completed",
+      "known_use": "解析CookiesData并提取.ROBLOSECURITY；DPAPI虚构token到tokens.txt通道交叉验证",
+      "remaining_work": "用途按上述API、调用链和数据布局证据定性；整函数C仍失败，具体剩余branch/RVA/producer及错误保留，需继续恢复精确选择条件、类型和错误处理。",
+      "remaining_branch_domain": "CookiesData文本/DPAPI结果及.ROBLOSECURITY分隔符匹配",
+      "C_path": "<ANALYSIS_WORKSPACE>\\work\\alpme_analysis\\semantic_closure_20261027\\round3_roblox\\17_payload.dll.bin_0x4f1f9.c",
+      "C_sha256": "84a76e2f068545aafca184ef16909467f02763a488660d9b5c3a82b56ae513b3",
+      "C_bytes": 18913,
+      "manual_switch_notes": 31,
+      "warning_comments": 34,
+      "normal_initialized_context": false
+    },
+    {
+      "sample": "17_payload.dll.bin",
+      "rva": "0x501fd",
+      "status": "c_export_completed",
+      "known_use": "main使用的多字段typed record序列化helper，显式字段ID及可选字段分支",
+      "remaining_work": "已取得整函数自动C；仍需区分真实输入分支与混淆分支，检查类型和未知调用；C成功不等于语义闭合。",
+      "remaining_branch_domain": "具体原指令与数据布局见entry_data_layout和branch_producer_chains；不把此处未知静态selector等同云控opcode。"
+    },
+    {
+      "sample": "17_payload.dll.bin",
+      "rva": "0x56ab1",
+      "status": "c_export_normal_initialized_context",
+      "known_use": "共享锁/既有句柄借用读取：NtQuerySystemInformation/NtQueryObject/DuplicateHandle及FileMapping/MapView/ReadFile",
+      "remaining_work": "已取得整函数自动C；仍需区分真实输入分支与混淆分支，检查类型和未知调用；C成功不等于语义闭合。",
+      "remaining_branch_domain": "文件读取/共享锁状态、句柄对象类型、mapping及设备路径匹配",
+      "C_path": "<ANALYSIS_WORKSPACE>\\work\\alpme_analysis\\semantic_closure_20261027\\round5_locked_reader\\17_56ab1_normal_context.c",
+      "C_sha256": "052115dc32b71eab674dcbed9aa2d5f4ca788ba358d94988eb58b5435e2e41ac",
+      "C_bytes": 109943,
+      "normal_initialized_context": true,
+      "native_instructions": 3677,
+      "computed_sites": 157,
+      "quality_proof_sha256": "386730f51c971ecbf4a491f66b6178ccc4dfd2a0ea1424272c0c17e44a5d8206"
+    },
+    {
+      "sample": "17_payload.dll.bin",
+      "rva": "0x6214c",
+      "status": "c_export_completed",
+      "known_use": "固定276项扩展名称/ID substring veto：ASCII小写后匹配，manifest/name/__MSG_本地化调用链；与文件basename glob独立",
+      "remaining_work": "用途按上述API、调用链和数据布局证据定性；整函数C仍失败，具体剩余branch/RVA/producer及错误保留，需继续恢复精确选择条件、类型和错误处理。",
+      "remaining_branch_domain": "lazy初始化Once状态、Vec长度、ASCII小写substring比较bool",
+      "C_path": "<ANALYSIS_WORKSPACE>\\work\\alpme_analysis\\semantic_closure_20261027\\round3_strings\\17_payload.dll.bin_0x6214c.c",
+      "C_sha256": "7b1362718d72f4fc887ab06c3dcb8edd7b7b136d3386036ff3c636e7204c870a",
+      "C_bytes": 1706,
+      "manual_switch_notes": 4,
+      "warning_comments": 4,
+      "normal_initialized_context": false
+    },
+    {
+      "sample": "17_payload.dll.bin",
+      "rva": "0x62ae8",
+      "status": "c_export_completed",
+      "known_use": "LoadLibraryA封装及错误处理",
+      "remaining_work": "已取得整函数自动C；仍需区分真实输入分支与混淆分支，检查类型和未知调用；C成功不等于语义闭合。",
+      "remaining_branch_domain": "具体原指令与数据布局见entry_data_layout和branch_producer_chains；不把此处未知静态selector等同云控opcode。"
+    },
+    {
+      "sample": "17_payload.dll.bin",
+      "rva": "0x6608f",
+      "status": "c_export_completed",
+      "known_use": "DLL user callback经1000 thunk由CRT dispatcher调用；构造closure/vtable并经35bf9 CreateThread启动worker，含失败drop/引用计数清理",
+      "remaining_work": "已取得整函数自动C；仍需区分真实输入分支与混淆分支，检查类型和未知调用；C成功不等于语义闭合。",
+      "remaining_branch_domain": "具体原指令与数据布局见entry_data_layout和branch_producer_chains；不把此处未知静态selector等同云控opcode。"
+    },
+    {
+      "sample": "17_payload.dll.bin",
+      "rva": "0x6943f",
+      "status": "c_export_completed",
+      "known_use": "反虚拟化vendor比较，KVM/Xen/Apple VZ/HAXM/bhyve/ACRN等，main调用3次",
+      "remaining_work": "已取得整函数自动C；仍需区分真实输入分支与混淆分支，检查类型和未知调用；C成功不等于语义闭合。",
+      "remaining_branch_domain": "具体原指令与数据布局见entry_data_layout和branch_producer_chains；不把此处未知静态selector等同云控opcode。"
+    },
+    {
+      "sample": "17_payload.dll.bin",
+      "rva": "0x6b09a",
+      "status": "c_export_completed",
+      "known_use": "带状态tag与区间游标的组件/迭代器辅助",
+      "remaining_work": "Whole C now exported; original source identity, semantic equivalence and any remaining C quality warnings are separate questions.",
+      "remaining_branch_domain": "路径/组件迭代state tag、字节游标、区间剩余长度",
+      "baseline_status": "c_decompilation_unresolved",
+      "latest_analysis_output": {
+        "sample": "17_payload.dll.bin",
+        "rva": "0x6b09a",
+        "path": "<ANALYSIS_WORKSPACE>\\work\\alpme_analysis\\semantic_closure_20261027\\round2_review\\local_frontier_retry\\exports\\17_payload.dll.bin_0x6b09a.c",
+        "bytes": 5616,
+        "sha256": "8ebbc47eb39e549b3d1952e813f236331269c7814a9d815c73bdc3815d7d8536",
+        "status": "c_export_completed",
+        "original_source_recovered": false,
+        "whole_semantic_equivalence_proved": false
+      }
+    },
+    {
+      "sample": "19_loader.exe.bin",
+      "rva": "0x130d",
+      "status": "c_export_completed",
+      "known_use": "LoadLibraryA封装及错误处理",
+      "remaining_work": "已取得整函数自动C；仍需区分真实输入分支与混淆分支，检查类型和未知调用；C成功不等于语义闭合。",
+      "remaining_branch_domain": "具体原指令与数据布局见entry_data_layout和branch_producer_chains；不把此处未知静态selector等同云控opcode。"
+    },
+    {
+      "sample": "19_payload.dll.bin",
+      "rva": "0x9dab",
+      "status": "c_export_completed",
+      "known_use": "初始系统指纹record的typed field序列化；main返回51558截获outVec、随后frame和crypto；2d092也复用",
+      "remaining_work": "用途按上述API、调用链和数据布局证据定性；整函数C仍失败，具体剩余branch/RVA/producer及错误保留，需继续恢复精确选择条件、类型和错误处理。",
+      "remaining_branch_domain": "输入record字段及可选presence、typed writer结果",
+      "C_path": "<ANALYSIS_WORKSPACE>\\work\\alpme_analysis\\semantic_closure_20261027\\round3_serializers\\exact_exports\\19_payload.dll.bin_0x9dab.c",
+      "C_sha256": "dbc60f71ed1fcf5d29253fc4c2bc8d05bc644dac0678929745e5c31b27bbbc59",
+      "C_bytes": 2669,
+      "manual_switch_notes": 2,
+      "warning_comments": 2,
+      "normal_initialized_context": false
+    },
+    {
+      "sample": "19_payload.dll.bin",
+      "rva": "0x126b7",
+      "status": "c_export_normal_initialized_context",
+      "known_use": "结构化文本/token解析辅助：引号、冒号、逗号、数字扫描和输入cursor更新，JSON-like",
+      "remaining_work": "已取得整函数自动C；仍需区分真实输入分支与混淆分支，检查类型和未知调用；C成功不等于语义闭合。",
+      "remaining_branch_domain": "具体原指令与数据布局见entry_data_layout和branch_producer_chains；不把此处未知静态selector等同云控opcode。",
+      "C_path": "<ANALYSIS_WORKSPACE>\\work\\alpme_analysis\\semantic_closure_20261027\\round5_tokenizers\\normal_exports\\19_payload.dll.bin_0x126b7.c",
+      "C_sha256": "c3168e01ea3c6b1802583329905259b3c94efb20b7148619f7ebae6abb7787ba",
+      "C_bytes": 32361,
+      "normal_initialized_context": true,
+      "native_instructions": 971,
+      "computed_sites": 79,
+      "quality_proof_sha256": "5d556c40378fbbf279b918644c543883502bd74250af9acd8cf3255a5d4a2958"
+    },
+    {
+      "sample": "19_payload.dll.bin",
+      "rva": "0x141a1",
+      "status": "c_export_completed",
+      "known_use": "registry root字符串到HKEY映射，HKU/HKCR/HKCU解码及memcmp/负HKEY常量",
+      "remaining_work": "已取得整函数自动C；仍需区分真实输入分支与混淆分支，检查类型和未知调用；C成功不等于语义闭合。",
+      "remaining_branch_domain": "具体原指令与数据布局见entry_data_layout和branch_producer_chains；不把此处未知静态selector等同云控opcode。"
+    },
+    {
+      "sample": "19_payload.dll.bin",
+      "rva": "0x1a385",
+      "status": "c_export_completed",
+      "known_use": "与17DLL6b09a相同形态的状态tag/区间游标组件辅助",
+      "remaining_work": "用途按上述API、调用链和数据布局证据定性；整函数C仍失败，具体剩余branch/RVA/producer及错误保留，需继续恢复精确选择条件、类型和错误处理。",
+      "remaining_branch_domain": "路径/组件迭代state tag、字节游标、区间剩余长度",
+      "C_path": "<ANALYSIS_WORKSPACE>\\work\\alpme_analysis\\semantic_closure_20261027\\report_revision_v2\\19_payload.dll.bin_0x1a385.c",
+      "C_sha256": "3523aaec5b56f3aaace7fc2ac777bbb6b88e4b590b95ee1fc9250f2c06085061",
+      "C_bytes": 5516,
+      "manual_switch_notes": 3,
+      "warning_comments": 4,
+      "normal_initialized_context": false
+    },
+    {
+      "sample": "19_payload.dll.bin",
+      "rva": "0x1aab1",
+      "status": "c_export_normal_initialized_context",
+      "known_use": "内存数据处理辅助",
+      "remaining_work": "已取得整函数自动C；仍需区分真实输入分支与混淆分支，检查类型和未知调用；C成功不等于语义闭合。",
+      "remaining_branch_domain": "具体原指令与数据布局见entry_data_layout和branch_producer_chains；不把此处未知静态selector等同云控opcode。",
+      "C_path": "<ANALYSIS_WORKSPACE>\\work\\alpme_analysis\\semantic_closure_20261027\\round4_browser_core\\normal_exports\\19_payload.dll.bin_0x1aab1.c",
+      "C_sha256": "5cbd882bdd418bff8fd30ed1ac6939a2a2508194f3f95d1e6a9004fdd09ee0a2",
+      "C_bytes": 191599,
+      "normal_initialized_context": true,
+      "native_instructions": 5392,
+      "computed_sites": 231,
+      "quality_proof_sha256": "3a1499d41665a07fcf2ac287b7606976d35c2ac925a18be79a98c45717445762"
+    },
+    {
+      "sample": "19_payload.dll.bin",
+      "rva": "0x212fc",
+      "status": "c_export_completed",
+      "known_use": "路径组件/合并辅助：/和\\、tag<6分支",
+      "remaining_work": "用途按上述API、调用链和数据布局证据定性；整函数C仍失败，具体剩余branch/RVA/producer及错误保留，需继续恢复精确选择条件、类型和错误处理。",
+      "remaining_branch_domain": "路径component tag、前缀/分隔符及Result分支",
+      "C_path": "<ANALYSIS_WORKSPACE>\\work\\alpme_analysis\\semantic_closure_20261027\\report_revision_v2\\19_payload.dll.bin_0x212fc.c",
+      "C_sha256": "9a307b3f30dfe2d67349c7915ea7a288dc34108f5aafdc1674c5f15cd2fbb04c",
+      "C_bytes": 19208,
+      "manual_switch_notes": 6,
+      "warning_comments": 7,
+      "normal_initialized_context": false
+    },
+    {
+      "sample": "19_payload.dll.bin",
+      "rva": "0x240de",
+      "status": "c_export_normal_initialized_context",
+      "known_use": "共享锁/既有句柄读取fallback：NtQueryObject/DuplicateHandle/FileMapping/MapView/QueryDosDeviceW",
+      "remaining_work": "用途按上述API、调用链和数据布局证据定性；整函数C仍失败，具体剩余branch/RVA/producer及错误保留，需继续恢复精确选择条件、类型和错误处理。",
+      "remaining_branch_domain": "文件读取/共享锁状态、句柄对象类型、mapping及设备路径匹配",
+      "C_path": "<ANALYSIS_WORKSPACE>\\work\\alpme_analysis\\semantic_closure_20261027\\round3_lockfinish\\19_payload.dll.bin_0x240de.c",
+      "C_sha256": "76124dba809f34beb0886b2afc3c0b8170389d2b0db6f778ce54c7d2083bd87e",
+      "C_bytes": 113276,
+      "manual_switch_notes": 149,
+      "warning_comments": 166,
+      "normal_initialized_context": true
+    },
+    {
+      "sample": "19_payload.dll.bin",
+      "rva": "0x2c4b5",
+      "status": "c_export_completed",
+      "known_use": "16位代码单元/字符串转换辅助",
+      "remaining_work": "已取得整函数自动C；仍需区分真实输入分支与混淆分支，检查类型和未知调用；C成功不等于语义闭合。",
+      "remaining_branch_domain": "具体原指令与数据布局见entry_data_layout和branch_producer_chains；不把此处未知静态selector等同云控opcode。"
+    },
+    {
+      "sample": "19_payload.dll.bin",
+      "rva": "0x2ce8d",
+      "status": "c_export_completed",
+      "known_use": "带type tag组件/值比较；6项switch及memcmp",
+      "remaining_work": "已取得整函数自动C；仍需区分真实输入分支与混淆分支，检查类型和未知调用；C成功不等于语义闭合。",
+      "remaining_branch_domain": "具体原指令与数据布局见entry_data_layout和branch_producer_chains；不把此处未知静态selector等同云控opcode。"
+    },
+    {
+      "sample": "19_payload.dll.bin",
+      "rva": "0x3d057",
+      "status": "c_export_normal_initialized_context",
+      "known_use": "浏览器数据处理辅助",
+      "remaining_work": "已取得整函数自动C；仍需区分真实输入分支与混淆分支，检查类型和未知调用；C成功不等于语义闭合。",
+      "remaining_branch_domain": "具体原指令与数据布局见entry_data_layout和branch_producer_chains；不把此处未知静态selector等同云控opcode。",
+      "C_path": "<ANALYSIS_WORKSPACE>\\work\\alpme_analysis\\semantic_closure_20261027\\round4_browser_core\\normal_exports\\19_payload.dll.bin_0x3d057.c",
+      "C_sha256": "421887fd11d0f712399d1ac388c6e7eeb479d9f2acc088d5da3510c01f0e1e82",
+      "C_bytes": 204422,
+      "normal_initialized_context": true,
+      "native_instructions": 6325,
+      "computed_sites": 280,
+      "quality_proof_sha256": "f79a5484cd19128ffad63c0c60e219292e56c9db69687f5fae5073f1695fac4f"
+    },
+    {
+      "sample": "19_payload.dll.bin",
+      "rva": "0x44e24",
+      "status": "c_export_completed",
+      "known_use": "RegQueryValueExW查询、类型及错误分支；UTF16转换2c4b5，由223c4调用",
+      "remaining_work": "用途按上述API、调用链和数据布局证据定性；整函数C仍失败，具体剩余branch/RVA/producer及错误保留，需继续恢复精确选择条件、类型和错误处理。",
+      "remaining_branch_domain": "RegQueryValueExW返回状态、REG值类型/长度与UTF16缓冲处理",
+      "C_path": "<ANALYSIS_WORKSPACE>\\work\\alpme_analysis\\semantic_closure_20261027\\round3_registry_files\\19_payload.dll.bin_0x44e24.c",
+      "C_sha256": "7c98f2552d5ae08c4274039c62080e3bb10fc55dd224d320bae69123301a5d5e",
+      "C_bytes": 22404,
+      "manual_switch_notes": 44,
+      "warning_comments": 48,
+      "normal_initialized_context": false
+    },
+    {
+      "sample": "19_payload.dll.bin",
+      "rva": "0x4d66f",
+      "status": "c_export_completed",
+      "known_use": "反虚拟化vendor比较，VMware/VBox/Xen/TCG/IntelTDX/ACRN等，main调用3次",
+      "remaining_work": "已取得整函数自动C；仍需区分真实输入分支与混淆分支，检查类型和未知调用；C成功不等于语义闭合。",
+      "remaining_branch_domain": "具体原指令与数据布局见entry_data_layout和branch_producer_chains；不把此处未知静态selector等同云控opcode。"
+    },
+    {
+      "sample": "19_payload.dll.bin",
+      "rva": "0x567dc",
+      "status": "c_export_completed",
+      "known_use": "GetProcAddress封装；另有线程时间/ID分支保留",
+      "remaining_work": "已取得整函数自动C；仍需区分真实输入分支与混淆分支，检查类型和未知调用；C成功不等于语义闭合。",
+      "remaining_branch_domain": "具体原指令与数据布局见entry_data_layout和branch_producer_chains；不把此处未知静态selector等同云控opcode。"
+    },
+    {
+      "sample": "19_payload.dll.bin",
+      "rva": "0x5dff1",
+      "status": "c_export_completed",
+      "known_use": "Steam config/config.vdf中Valve/Accounts/Software/InstallConfigStore相关提取",
+      "remaining_work": "已取得整函数自动C；仍需区分真实输入分支与混淆分支，检查类型和未知调用；C成功不等于语义闭合。",
+      "remaining_branch_domain": "具体原指令与数据布局见entry_data_layout和branch_producer_chains；不把此处未知静态selector等同云控opcode。"
+    },
+    {
+      "sample": "19_payload.dll.bin",
+      "rva": "0x68018",
+      "status": "c_export_completed",
+      "known_use": "CryptStringToBinaryA转换封装（既有虚构fixture核对调用返回点）",
+      "remaining_work": "Whole C now exported; original source identity, semantic equivalence and any remaining C quality warnings are separate questions.",
+      "remaining_branch_domain": "CryptStringToBinaryA/分配/错误处理结果",
+      "baseline_status": "c_decompilation_unresolved",
+      "latest_analysis_output": {
+        "sample": "19_payload.dll.bin",
+        "rva": "0x68018",
+        "path": "<ANALYSIS_WORKSPACE>\\work\\alpme_analysis\\semantic_closure_20261027\\round2_review\\local_frontier_retry\\exports\\19_payload.dll.bin_0x68018.c",
+        "bytes": 9740,
+        "sha256": "ff425ff6833d113446a9d8a842f0f961f25c68211a10aefde27950bbcda53792",
+        "status": "c_export_completed",
+        "original_source_recovered": false,
+        "whole_semantic_equivalence_proved": false
+      }
+    },
+    {
+      "sample": "19_payload.dll.bin",
+      "rva": "0x81c8d",
+      "status": "encoded_data_misidentified_as_function_corrected",
+      "known_use": "编码字符串CryptUnprotectData，被错误标为函数；独立静态解码已验证",
+      "remaining_work": "此条的结构身份已说明；不将其计作独立未识别恶意算法。",
+      "remaining_branch_domain": "具体原指令与数据布局见entry_data_layout和branch_producer_chains；不把此处未知静态selector等同云控opcode。"
+    }
+  ],
+  "freshly_verified_overlays_including_two_v2_functions": [
+    {
+      "sample": "19_payload.dll.bin",
+      "rva": "0x1a385",
+      "status": "c_export_completed",
+      "C_path": "<ANALYSIS_WORKSPACE>\\work\\alpme_analysis\\semantic_closure_20261027\\report_revision_v2\\19_payload.dll.bin_0x1a385.c",
+      "C_sha256": "3523aaec5b56f3aaace7fc2ac777bbb6b88e4b590b95ee1fc9250f2c06085061",
+      "C_bytes": 5516,
+      "manual_switch_notes": 3,
+      "warning_comments": 4,
+      "normal_initialized_context": false
+    },
+    {
+      "sample": "19_payload.dll.bin",
+      "rva": "0x212fc",
+      "status": "c_export_completed",
+      "C_path": "<ANALYSIS_WORKSPACE>\\work\\alpme_analysis\\semantic_closure_20261027\\report_revision_v2\\19_payload.dll.bin_0x212fc.c",
+      "C_sha256": "9a307b3f30dfe2d67349c7915ea7a288dc34108f5aafdc1674c5f15cd2fbb04c",
+      "C_bytes": 19208,
+      "manual_switch_notes": 6,
+      "warning_comments": 7,
+      "normal_initialized_context": false
+    },
+    {
+      "sample": "17_payload.dll.bin",
+      "rva": "0x20680",
+      "status": "c_export_completed",
+      "C_path": "<ANALYSIS_WORKSPACE>\\work\\alpme_analysis\\semantic_closure_20261027\\round3_serializers\\exact_exports\\17_payload.dll.bin_0x20680.c",
+      "C_sha256": "fd676313fbaeaf08f13738d49fa758ee7160ef7e05bfd2a363dc3367749246dc",
+      "C_bytes": 3426,
+      "manual_switch_notes": 5,
+      "warning_comments": 5,
+      "normal_initialized_context": false
+    },
+    {
+      "sample": "17_payload.dll.bin",
+      "rva": "0x35fa2",
+      "status": "c_export_completed",
+      "C_path": "<ANALYSIS_WORKSPACE>\\work\\alpme_analysis\\semantic_closure_20261027\\round3_serializers\\exact_exports\\17_payload.dll.bin_0x35fa2.c",
+      "C_sha256": "494f8581ec6e8784202ba591d1e2d2e7b319dffdd07c73f06f5b49b921706c8f",
+      "C_bytes": 3390,
+      "manual_switch_notes": 6,
+      "warning_comments": 7,
+      "normal_initialized_context": false
+    },
+    {
+      "sample": "19_payload.dll.bin",
+      "rva": "0x9dab",
+      "status": "c_export_completed",
+      "C_path": "<ANALYSIS_WORKSPACE>\\work\\alpme_analysis\\semantic_closure_20261027\\round3_serializers\\exact_exports\\19_payload.dll.bin_0x9dab.c",
+      "C_sha256": "dbc60f71ed1fcf5d29253fc4c2bc8d05bc644dac0678929745e5c31b27bbbc59",
+      "C_bytes": 2669,
+      "manual_switch_notes": 2,
+      "warning_comments": 2,
+      "normal_initialized_context": false
+    },
+    {
+      "sample": "17_payload.dll.bin",
+      "rva": "0x39ba0",
+      "status": "c_export_completed",
+      "C_path": "<ANALYSIS_WORKSPACE>\\work\\alpme_analysis\\semantic_closure_20261027\\round3_registry_files\\17_payload.dll.bin_0x39ba0.c",
+      "C_sha256": "56070e1d04cdad15636640d2f5c6071a675020144449bda25a67b73c50d6231c",
+      "C_bytes": 21193,
+      "manual_switch_notes": 44,
+      "warning_comments": 46,
+      "normal_initialized_context": false
+    },
+    {
+      "sample": "19_payload.dll.bin",
+      "rva": "0x44e24",
+      "status": "c_export_completed",
+      "C_path": "<ANALYSIS_WORKSPACE>\\work\\alpme_analysis\\semantic_closure_20261027\\round3_registry_files\\19_payload.dll.bin_0x44e24.c",
+      "C_sha256": "7c98f2552d5ae08c4274039c62080e3bb10fc55dd224d320bae69123301a5d5e",
+      "C_bytes": 22404,
+      "manual_switch_notes": 44,
+      "warning_comments": 48,
+      "normal_initialized_context": false
+    },
+    {
+      "sample": "17_payload.dll.bin",
+      "rva": "0x6214c",
+      "status": "c_export_completed",
+      "C_path": "<ANALYSIS_WORKSPACE>\\work\\alpme_analysis\\semantic_closure_20261027\\round3_strings\\17_payload.dll.bin_0x6214c.c",
+      "C_sha256": "7b1362718d72f4fc887ab06c3dcb8edd7b7b136d3386036ff3c636e7204c870a",
+      "C_bytes": 1706,
+      "manual_switch_notes": 4,
+      "warning_comments": 4,
+      "normal_initialized_context": false
+    },
+    {
+      "sample": "17_payload.dll.bin",
+      "rva": "0x49538",
+      "status": "c_export_completed",
+      "C_path": "<ANALYSIS_WORKSPACE>\\work\\alpme_analysis\\semantic_closure_20261027\\round3_strings\\17_payload.dll.bin_0x49538.c",
+      "C_sha256": "aa876640196c84d0a859a725cd84d37290f75072a977b7cb3943031d406be1ad",
+      "C_bytes": 3009,
+      "manual_switch_notes": 7,
+      "warning_comments": 7,
+      "normal_initialized_context": false
+    },
+    {
+      "sample": "17_payload.dll.bin",
+      "rva": "0x4f1f9",
+      "status": "c_export_completed",
+      "C_path": "<ANALYSIS_WORKSPACE>\\work\\alpme_analysis\\semantic_closure_20261027\\round3_roblox\\17_payload.dll.bin_0x4f1f9.c",
+      "C_sha256": "84a76e2f068545aafca184ef16909467f02763a488660d9b5c3a82b56ae513b3",
+      "C_bytes": 18913,
+      "manual_switch_notes": 31,
+      "warning_comments": 34,
+      "normal_initialized_context": false
+    },
+    {
+      "sample": "17_payload.dll.bin",
+      "rva": "0x2df8f",
+      "status": "c_export_normal_initialized_context",
+      "C_path": "<ANALYSIS_WORKSPACE>\\work\\alpme_analysis\\semantic_closure_20261027\\round3_dirfinish\\17_payload.dll.bin_0x2df8f.c",
+      "C_sha256": "d089fad780f8eae33bd329b80737309221d22fd692a9a1d52f1e820d422adbd6",
+      "C_bytes": 17240,
+      "manual_switch_notes": 35,
+      "warning_comments": 38,
+      "normal_initialized_context": true
+    },
+    {
+      "sample": "19_payload.dll.bin",
+      "rva": "0x240de",
+      "status": "c_export_normal_initialized_context",
+      "C_path": "<ANALYSIS_WORKSPACE>\\work\\alpme_analysis\\semantic_closure_20261027\\round3_lockfinish\\19_payload.dll.bin_0x240de.c",
+      "C_sha256": "76124dba809f34beb0886b2afc3c0b8170389d2b0db6f778ce54c7d2083bd87e",
+      "C_bytes": 113276,
+      "manual_switch_notes": 149,
+      "warning_comments": 166,
+      "normal_initialized_context": true
+    },
+    {
+      "sample": "17_payload.dll.bin",
+      "rva": "0x3c026",
+      "status": "c_export_normal_initialized_context",
+      "C_path": "<ANALYSIS_WORKSPACE>\\work\\alpme_analysis\\semantic_closure_20261027\\round3_file_dispatch\\17_payload.dll.bin_0x3c026_normal_context.c",
+      "C_sha256": "f11bb58965322399c699fea3bc2ea7fa8e021254b0cabdd3d344061c630a892e",
+      "C_bytes": 274632,
+      "manual_switch_notes": 365,
+      "warning_comments": 431,
+      "normal_initialized_context": true
+    }
+  ],
+  "round4_network_overlays": [
+    {
+      "sample": "19_payload.dll.bin",
+      "rva": "0x4665",
+      "status": "c_export_normal_initialized_context",
+      "C_path": "<ANALYSIS_WORKSPACE>\\work\\alpme_analysis\\semantic_closure_20261027\\round4_network_core\\19_payload.dll.bin_0x4665_normal_context.c",
+      "C_sha256": "3922481f021adf7c52a0d79e73c80f327d0ddd487a47e8274441e0e0b71329a9",
+      "C_bytes": 36747,
+      "normal_initialized_context": true,
+      "native_instructions": 1454,
+      "computed_sites": 52,
+      "finite_AI_naturally_complete": true,
+      "quality_proof_sha256": "ede867fc40cab30d1fde885517cc3f137c5f9ecb20ba68319654088a8f22b0c2"
+    },
+    {
+      "sample": "19_payload.dll.bin",
+      "rva": "0x1557e",
+      "status": "c_export_normal_initialized_context",
+      "C_path": "<ANALYSIS_WORKSPACE>\\work\\alpme_analysis\\semantic_closure_20261027\\round4_network_core\\19_payload.dll.bin_0x1557e_normal_context.c",
+      "C_sha256": "825e69af2d33f0aa5604ed9337a6cfa62c3b481fe40b7cfccc4056df120e101d",
+      "C_bytes": 39507,
+      "normal_initialized_context": true,
+      "native_instructions": 1289,
+      "computed_sites": 58,
+      "finite_AI_naturally_complete": true,
+      "quality_proof_sha256": "ede867fc40cab30d1fde885517cc3f137c5f9ecb20ba68319654088a8f22b0c2"
+    },
+    {
+      "sample": "17_payload.dll.bin",
+      "rva": "0x467ce",
+      "status": "c_export_normal_initialized_context",
+      "C_path": "<ANALYSIS_WORKSPACE>\\work\\alpme_analysis\\semantic_closure_20261027\\round4_network_core\\17_payload.dll.bin_0x467ce_normal_context.c",
+      "C_sha256": "d908756f8f3ade257438f87513053b0d62834a718830134028887f7d2d072e93",
+      "C_bytes": 36208,
+      "normal_initialized_context": true,
+      "native_instructions": 1209,
+      "computed_sites": 57,
+      "finite_AI_naturally_complete": true,
+      "quality_proof_sha256": "ede867fc40cab30d1fde885517cc3f137c5f9ecb20ba68319654088a8f22b0c2"
+    }
+  ],
+  "round4_browser_memory_overlays": [
+    {
+      "sample": "19_payload.dll.bin",
+      "rva": "0x1aab1",
+      "status": "c_export_normal_initialized_context",
+      "C_path": "<ANALYSIS_WORKSPACE>\\work\\alpme_analysis\\semantic_closure_20261027\\round4_browser_core\\normal_exports\\19_payload.dll.bin_0x1aab1.c",
+      "C_sha256": "5cbd882bdd418bff8fd30ed1ac6939a2a2508194f3f95d1e6a9004fdd09ee0a2",
+      "C_bytes": 191599,
+      "normal_initialized_context": true,
+      "native_instructions": 5392,
+      "computed_sites": 231,
+      "quality_proof_sha256": "3a1499d41665a07fcf2ac287b7606976d35c2ac925a18be79a98c45717445762"
+    },
+    {
+      "sample": "17_payload.dll.bin",
+      "rva": "0x2f497",
+      "status": "c_export_normal_initialized_context",
+      "C_path": "<ANALYSIS_WORKSPACE>\\work\\alpme_analysis\\semantic_closure_20261027\\round4_browser_17_2f497_gate\\verified_exports\\17_payload.dll.bin_0x2f497.c",
+      "C_sha256": "937816b1c224fab042df4f7ad1ebbf52c82af2b913ee3f9ea2cb3dd579c7b958",
+      "C_bytes": 172474,
+      "normal_initialized_context": true,
+      "native_instructions": 5212,
+      "computed_sites": 230,
+      "quality_proof_sha256": "e9cfdb4efb7af3bab94179e5b2147e70d76051c3186a4278207925a1bbcb7064"
+    },
+    {
+      "sample": "19_payload.dll.bin",
+      "rva": "0x3d057",
+      "status": "c_export_normal_initialized_context",
+      "C_path": "<ANALYSIS_WORKSPACE>\\work\\alpme_analysis\\semantic_closure_20261027\\round4_browser_core\\normal_exports\\19_payload.dll.bin_0x3d057.c",
+      "C_sha256": "421887fd11d0f712399d1ac388c6e7eeb479d9f2acc088d5da3510c01f0e1e82",
+      "C_bytes": 204422,
+      "normal_initialized_context": true,
+      "native_instructions": 6325,
+      "computed_sites": 280,
+      "quality_proof_sha256": "f79a5484cd19128ffad63c0c60e219292e56c9db69687f5fae5073f1695fac4f"
+    },
+    {
+      "sample": "17_payload.dll.bin",
+      "rva": "0x227e8",
+      "status": "c_export_normal_initialized_context",
+      "C_path": "<ANALYSIS_WORKSPACE>\\work\\alpme_analysis\\semantic_closure_20261027\\round4_network_core\\prep17_227e8_gate\\17_payload.dll.bin_0x227e8_normal_context.c",
+      "C_sha256": "d53d2b4466ed495c1f585662e4b66dde9a4c97b1eeadc90aaa3b20c2b28bce41",
+      "C_bytes": 183844,
+      "normal_initialized_context": true,
+      "native_instructions": 5841,
+      "computed_sites": 274,
+      "quality_proof_sha256": "5ea4b2cd91e47542af8a872572b6b4d5196270325151fc978a485f799685b7c8"
+    }
+  ],
+  "round5_tokenizer_overlays": [
+    {
+      "sample": "17_payload.dll.bin",
+      "rva": "0x8e81",
+      "status": "c_export_normal_initialized_context",
+      "C_path": "<ANALYSIS_WORKSPACE>\\work\\alpme_analysis\\semantic_closure_20261027\\round5_tokenizers\\normal_exports\\17_payload.dll.bin_0x8e81.c",
+      "C_sha256": "62828e2a429a715d437f98aebf2ec97684958463464d3a76dd8f8cc419ff16bc",
+      "C_bytes": 22689,
+      "normal_initialized_context": true,
+      "native_instructions": 641,
+      "computed_sites": 48,
+      "quality_proof_sha256": "5d556c40378fbbf279b918644c543883502bd74250af9acd8cf3255a5d4a2958"
+    },
+    {
+      "sample": "19_payload.dll.bin",
+      "rva": "0x126b7",
+      "status": "c_export_normal_initialized_context",
+      "C_path": "<ANALYSIS_WORKSPACE>\\work\\alpme_analysis\\semantic_closure_20261027\\round5_tokenizers\\normal_exports\\19_payload.dll.bin_0x126b7.c",
+      "C_sha256": "c3168e01ea3c6b1802583329905259b3c94efb20b7148619f7ebae6abb7787ba",
+      "C_bytes": 32361,
+      "normal_initialized_context": true,
+      "native_instructions": 971,
+      "computed_sites": 79,
+      "quality_proof_sha256": "5d556c40378fbbf279b918644c543883502bd74250af9acd8cf3255a5d4a2958"
+    }
+  ],
+  "round5_locked_reader_overlay": {
+    "sample": "17_payload.dll.bin",
+    "rva": "0x56ab1",
+    "status": "c_export_normal_initialized_context",
+    "C_path": "<ANALYSIS_WORKSPACE>\\work\\alpme_analysis\\semantic_closure_20261027\\round5_locked_reader\\17_56ab1_normal_context.c",
+    "C_sha256": "052115dc32b71eab674dcbed9aa2d5f4ca788ba358d94988eb58b5435e2e41ac",
+    "C_bytes": 109943,
+    "normal_initialized_context": true,
+    "native_instructions": 3677,
+    "computed_sites": 157,
+    "quality_proof_sha256": "386730f51c971ecbf4a491f66b6178ccc4dfd2a0ea1424272c0c17e44a5d8206"
+  },
+  "round5_profile_collectors": {
+    "path": "<ANALYSIS_WORKSPACE>\\work\\alpme_analysis\\semantic_closure_20261027\\round5_profile_collectors\\profile_collectors_final_receipt.json",
+    "sha256": "02a62f7ddaac6a5ffef1f4a9613c7c049face272a07a53cb68d92b3024de8d68",
+    "rows": [
+      {
+        "version": "17",
+        "entry": "0x50d72",
+        "native_end": "0x5423b",
+        "source_sha256": "24f7eed14b69c561bd2dde6aa61759cabc8588293e9a0099dde8e381f96f228a",
+        "native_sha256": "ff1e8de27b1f4f118cb7d3beb321adc3ce96be2fa57cd6bad4efcb63eddb0a21",
+        "native_instructions": 2628,
+        "reached": 2628,
+        "computed_sites": 111,
+        "unresolved_computed": 0,
+        "out_of_extent": 0,
+        "direct_calls": 136,
+        "unique_direct_callees": 39,
+        "indirect_calls": 0,
+        "source_bound_literals": 22,
+        "C_path": "work\\alpme_analysis\\semantic_closure_20261027\\round5_profile_collectors\\normal_exports\\17_payload.dll.bin_0x50d72.c",
+        "C_sha256": "e8d63d4a5075ca88d5fd1527df2b4e63ddb82a95027ee4309205467426dc5f9e",
+        "C_partial_markers": {
+          "Could not recover jumptable": 0,
+          "Treating indirect jump as call": 0,
+          "halt_baddata": 0,
+          "Bad instruction data": 0,
+          "UnimplementedPcode": 0
+        },
+        "text_bytes_unchanged": true
+      },
+      {
+        "version": "19",
+        "entry": "0xa7a1",
+        "native_end": "0xdd6e",
+        "source_sha256": "4e4636d2c9d57eb609b7d18ee3dc01713fbcda39c5eee52bd4a66f222f67bb31",
+        "native_sha256": "22e7a0b77f21cf7edc7d5afef66b27c31448d1e7b442352a4c96bd94019cf6f2",
+        "native_instructions": 2648,
+        "reached": 2648,
+        "computed_sites": 108,
+        "unresolved_computed": 0,
+        "out_of_extent": 0,
+        "direct_calls": 135,
+        "unique_direct_callees": 39,
+        "indirect_calls": 0,
+        "source_bound_literals": 22,
+        "C_path": "work\\alpme_analysis\\semantic_closure_20261027\\round5_profile_collectors\\normal_exports\\19_payload.dll.bin_0xa7a1.c",
+        "C_sha256": "5e278c04b28ec22ea5040149587e55c7ae50005f832f150bcf5028d950ed605f",
+        "C_partial_markers": {
+          "Could not recover jumptable": 0,
+          "Treating indirect jump as call": 0,
+          "halt_baddata": 0,
+          "Bad instruction data": 0,
+          "UnimplementedPcode": 0
+        },
+        "text_bytes_unchanged": true
+      }
+    ]
+  },
+  "round5_initializer19": {
+    "path": "<ANALYSIS_WORKSPACE>\\work\\alpme_analysis\\semantic_closure_20261027\\round5_browser_initializers\\joint_gate\\19_final_receipt.json",
+    "sha256": "3333e156f374bc63262f9eb6b122fa68ab34b6fa6430f0c92cb0f60fb2ef1b9d",
+    "C": {
+      "path": "work\\alpme_analysis\\semantic_closure_20261027\\round5_browser_initializers\\joint_gate\\normal_exports\\19_payload.dll.bin_0x2e35f.c",
+      "sha256": "180b33c6a7b73963760cb89be2d068267520571baddc3c4579d2ea5576451df1",
+      "lines": 2465,
+      "partial_markers": {
+        "Could not recover jumptable": 0,
+        "Treating indirect jump as call": 0,
+        "halt_baddata": 0,
+        "Bad instruction data": 0,
+        "UnimplementedPcode": 0
+      },
+      "original_text_bytes_unchanged": true,
+      "text_sha256": "58ed088899886b5cc99a09fba69af079f2c4d53f12059c1443a1113e38c899f3"
+    },
+    "instructions": 3224,
+    "computed": 156
+  },
+  "round5_initializer17": {
+    "path": "<ANALYSIS_WORKSPACE>\\work\\alpme_analysis\\semantic_closure_20261027\\round5_browser_initializers\\joint_gate\\17_final_receipt.json",
+    "sha256": "107c7e37acd3158231022e347c2ddd6f4740c1a895736495f5dc920d39f6f965",
+    "C": {
+      "path": "work\\alpme_analysis\\semantic_closure_20261027\\round5_browser_initializers\\joint_gate\\normal_exports\\17_payload.dll.bin_0x5d746.c",
+      "sha256": "2673c594eb455d7e39e31d10abd0c27acf06197a7c205bbd5e6f2bed57d30596",
+      "lines": 2692,
+      "partial_markers": {
+        "Could not recover jumptable": 0,
+        "Treating indirect jump as call": 0,
+        "halt_baddata": 0,
+        "Bad instruction data": 0,
+        "UnimplementedPcode": 0
+      },
+      "original_text_bytes_unchanged": true,
+      "text_sha256": "9719f0233f0af40eab63a0548511aa13e6ba06863e1aef96376fc12ef95f3ea4"
+    },
+    "instructions": 3367,
+    "computed": 161
+  },
+  "round5_baseline_exports": {
+    "path": "<ANALYSIS_WORKSPACE>\\work\\alpme_analysis\\semantic_closure_20261027\\round5_whole_native\\baseline_export_verification.json",
+    "sha256": "7e4b1980726453efa232709b1ca028322402627d03ddf5594909bbb5b21c57a8",
+    "jobs": 97,
+    "C_completed": 95,
+    "scope": "Conservative local CFG only; separately named imports and indirect CALL roles, no whole-program semantic promotion."
+  },
+  "round5_gecko": {
+    "path": "<ANALYSIS_WORKSPACE>\\work\\alpme_analysis\\semantic_closure_20261027\\round5_gecko\\Gecko_final_receipt.json",
+    "sha256": "b90cff359a8654d293ca67070772bc6ba8fa41c95bd9bda598240d27e6587221",
+    "functions": [
+      {
+        "version": "17",
+        "entry": "0x6b869",
+        "native_instructions": 4809,
+        "reached_instructions": 4809,
+        "computed_dispatch_sites": 271,
+        "unresolved_computed_dispatch_sites": 0,
+        "out_of_extent_targets": 0,
+        "worklist_exhausted": true,
+        "indirect_CALLs": [
+          {
+            "rva": "0x6dbdd",
+            "bytes": "41ff542407",
+            "asm": "call qword ptr [r12 + 7]"
+          }
+        ],
+        "native_extent_sha256": "1deb198bc57aca0e853297c7bbfa1f367ec9bb4c4f820ed78f4e6a9ef9547d9d",
+        "plan": {
+          "path": "work/alpme_analysis/semantic_closure_20261027/round5_gecko/17_6b869_strict.json",
+          "size": 158885,
+          "sha256": "350c59bd816096ecdfb0229637fce4fefade9fca9246a4221167f0fc26d6ae5a"
+        },
+        "C_export": {
+          "path": "work/alpme_analysis/semantic_closure_20261027/round5_gecko/strict_exports/17_payload.dll.bin_0x6b869.c",
+          "size": 159100,
+          "sha256": "8670f026801a3ed98b5223c8c37009f8958112010f335d47f38e3cdbf99100a1"
+        },
+        "decompiler_warning_count": 290,
+        "original_text_identity": "raw section plus page-alignment zero padding equals Ghidra before/after digest"
+      },
+      {
+        "version": "19",
+        "entry": "0x4a55a",
+        "native_instructions": 2181,
+        "reached_instructions": 2181,
+        "computed_dispatch_sites": 0,
+        "unresolved_computed_dispatch_sites": 0,
+        "out_of_extent_targets": 0,
+        "worklist_exhausted": true,
+        "indirect_CALLs": [
+          {
+            "rva": "0x4baa0",
+            "bytes": "ff5707",
+            "asm": "call qword ptr [rdi + 7]"
+          }
+        ],
+        "native_extent_sha256": "87f31baa3a0e1ea2427a3bfa08e951f4067b1b40e785e9164c9f23f4b2faa662",
+        "plan": {
+          "path": "work/alpme_analysis/semantic_closure_20261027/round5_gecko/19_4a55a_strict.json",
+          "size": 40901,
+          "sha256": "7b8357eff21e30c17d8791f193ddc69477ab7f667ebbbcb4e0f678beeffaf09d"
+        },
+        "C_export": {
+          "path": "work/alpme_analysis/semantic_closure_20261027/round5_gecko/strict_exports/19_payload.dll.bin_0x4a55a.c",
+          "size": 60799,
+          "sha256": "1fba663aae80fe22b6553b495685ed5fcbf46105e8774df78b81a8e49127976e"
+        },
+        "decompiler_warning_count": 3,
+        "original_text_identity": "raw section plus page-alignment zero padding equals Ghidra before/after digest"
+      },
+      {
+        "version": "19",
+        "entry": "0x11453",
+        "native_instructions": 155,
+        "reached_instructions": 155,
+        "computed_dispatch_sites": 7,
+        "unresolved_computed_dispatch_sites": 0,
+        "out_of_extent_targets": 0,
+        "worklist_exhausted": true,
+        "indirect_CALLs": [],
+        "native_extent_sha256": "fee74a827a976dce13afab3de5abd42905a5e2e32f1cc5ff421bbafcf4277fb4",
+        "plan": {
+          "path": "work/alpme_analysis/semantic_closure_20261027/round5_gecko/19_11453_normal.json",
+          "size": 5044,
+          "sha256": "2aeaaa124250ca98e2d411637d8f4543ac825f499773f0eada3594816eb8df30"
+        },
+        "C_export": {
+          "path": "work/alpme_analysis/semantic_closure_20261027/round5_gecko/strict_exports/19_payload.dll.bin_0x11453.c",
+          "size": 3667,
+          "sha256": "56d74b99e66bd4ce2f46e7aea360b21fac46526b8130fd12c81dc9aca476d171"
+        },
+        "decompiler_warning_count": 10,
+        "original_text_identity": "raw section plus page-alignment zero padding equals Ghidra before/after digest"
+      }
+    ],
+    "scope": "Two original-byte Gecko function CFGs, selected semantic facts and bounded independent helper contracts; no universal transitive semantic-closure claim."
+  },
+  "round5_outer_loader_exports": {
+    "path": "<ANALYSIS_WORKSPACE>\\work\\alpme_analysis\\semantic_closure_20261027\\round5_outer_loaders\\export_receipt.json",
+    "sha256": "18382c0d3da8af168e07e91c07d9fe860527c15e51c79407e4d03c72bb39bdc6",
+    "C_completed": 27,
+    "scope": "Normal loader TLS derived from native initializer integer algebra. Unknown calls/stores havoc; no phase-slot retention. Guard-dispatch leaf is an external tail transfer, not a finite intended-callee claim. Local CFG and C quality do not imply transitive behavior completion."
+  },
+  "round5_extension_dispatch": {
+    "path": "<ANALYSIS_WORKSPACE>\\work\\alpme_analysis\\semantic_closure_20261027\\round5_extensions\\path_dispatch_proof.json",
+    "sha256": "e9d32b3495bea8c1a39f294e14784a0d8e2fb22a3faca595971dd45e1767c798",
+    "qualification": "Local path-component jump resolved and analysis C restored; all transitive extension storage/locale semantics are separately reviewed.",
+    "rows": [
+      {
+        "version": "17",
+        "entry": "0x4a94a",
+        "native_instructions": 1504,
+        "computed_JMP_sites": 1,
+        "native_indirect_CALL_sites": 0
+      },
+      {
+        "version": "19",
+        "entry": "0x6ac84",
+        "native_instructions": 1497,
+        "computed_JMP_sites": 1,
+        "native_indirect_CALL_sites": 0
+      }
+    ]
+  },
+  "legacy41_scope": "Historic decompiler-failure list. Three reopened entries independently resolved in round5;39 entries have nontruncated C,2 are special identities. This is not whole-program semantic completion.",
+  "whole_native_export_audit": {
+    "path": "<ANALYSIS_WORKSPACE>\\work\\alpme_analysis\\semantic_closure_20261027\\all_native_export_flow_diagnostic.json",
+    "sha256": "2b75c08f458559f22eaaa6db9fdcabc364cb94b2ad0f0706d78729c26c9532dc",
+    "legacy_C_quality_reopened": [],
+    "sample_counts": [
+      {
+        "sample": "17_loader.exe.bin",
+        "pdata_entries": 403,
+        "native_entry_C_diagnostic_counts": {
+          "no_partial_markers_not_a_CFG_proof": 391,
+          "partial_markers_remain": 12
+        }
+      },
+      {
+        "sample": "17_payload.dll.bin",
+        "pdata_entries": 718,
+        "native_entry_C_diagnostic_counts": {
+          "no_partial_markers_not_a_CFG_proof": 688,
+          "partial_markers_remain": 30
+        }
+      },
+      {
+        "sample": "19_loader.exe.bin",
+        "pdata_entries": 406,
+        "native_entry_C_diagnostic_counts": {
+          "no_partial_markers_not_a_CFG_proof": 394,
+          "partial_markers_remain": 12
+        }
+      },
+      {
+        "sample": "19_payload.dll.bin",
+        "pdata_entries": 727,
+        "native_entry_C_diagnostic_counts": {
+          "no_partial_markers_not_a_CFG_proof": 694,
+          "partial_markers_remain": 33
+        }
+      }
+    ],
+    "marker_bearing_entries": 87,
+    "meaning": "C-text diagnostic; separately proved native helper paths require reconciliation. Marker-bearing entry count is not a count of wholly unknown functions."
+  },
+  "core_coverage_correction": {
+    "audit_path": "<ANALYSIS_WORKSPACE>\\work\\alpme_analysis\\semantic_closure_20261027\\round3_file_dispatch\\core_coverage_audit\\named_core_overlay_audit.json",
+    "audit_sha256": "a56ddcbc631699f1171137c7c378cae302285a9eabe422dfb35a4bd50c91f603",
+    "remaining_core_functions": [],
+    "remaining_inside_legacy41": 0,
+    "remaining_outside_legacy41": 0,
+    "initial_corrected_gaps": 8,
+    "closed_network_cores": 3,
+    "closed_additional_file_main": 1,
+    "closed_browser_memory_cores": 2,
+    "closed_browser_preparation_cores": 2,
+    "explanation": "11 new round3 exports,3 network-core overlays,19 filemain,2 browser-memory cores and2 browser preparation cores pass explicit CFG and caller-effect gates. All8 named cores reopened in this correction are closed. Historic41 counts are not whole-program coverage."
+  },
+  "new_round3_original41_function_exports": 11,
+  "new_round4_network_function_exports": 3,
+  "additional_support_function_exports": [
+    "17:4e14f",
+    "17:2a142",
+    "17:64c89"
+  ],
+  "text_identity_checks": [
+    {
+      "sample": "17",
+      "original_file_sha256": "24f7eed14b69c561bd2dde6aa61759cabc8588293e9a0099dde8e381f96f228a",
+      "original_and_frozen_text_equal": true,
+      "text_raw_bytes": 520704,
+      "text_raw_sha256": "a04d78467e8f42fbafe8e56644bfc742dd2b35e4f3d9f92211c9bfa112aef429"
+    },
+    {
+      "sample": "19",
+      "original_file_sha256": "4e4636d2c9d57eb609b7d18ee3dc01713fbcda39c5eee52bd4a66f222f67bb31",
+      "original_and_frozen_text_equal": true,
+      "text_raw_bytes": 514560,
+      "text_raw_sha256": "0b01f35da9c000cc8671b27a020c93741a32c22a18328df43095e8883db2ce61"
+    }
+  ],
+  "exact_version_primary_source_files_checked": 12,
+  "evidence_snapshots": {
+    "round3_serializers/quality_summary.json": {
+      "sha256": "23ca385c38f36ae7a506e7f8957106c8ab610455d383055cebb9013639e6e9f6",
+      "bytes": 4948
+    },
+    "round3_registry_files/registry_file_closure.json": {
+      "sha256": "f0fceec9e24331b87d9686c8de51fd5b5d076943a4d4680e1690e8c38d61b301",
+      "bytes": 19037
+    },
+    "round3_strings/quality_summary.json": {
+      "sha256": "9d530e083f19560f3db345a7519621444f97a31f2c5d68c3824559975d5a96b4",
+      "bytes": 4536
+    },
+    "round3_roblox/quality_summary.json": {
+      "sha256": "e60c22c1eefba3a7c261fc5b52ae66c8bff32097a29ada73f2f0865284d09912",
+      "bytes": 5007
+    },
+    "round3_dirfinish/conditional_directory_record_closure.json": {
+      "sha256": "d0792ef3fcf5e92b3b0d9b0a8b16b2a271838b66b7c9d3ce1706f3d71f3964cd",
+      "bytes": 6153
+    },
+    "round3_lockfinish/quality_summary.json": {
+      "sha256": "d492feb31186d616cde03521cd5c74f21cafc3d489544276a6fe713e04ebe451",
+      "bytes": 13515
+    },
+    "round3_r14proof/normal_context_quality_summary.json": {
+      "sha256": "8343e36c7ba8c3af2951512db46dd800260028e7ce0083df3eb4b83cc300da98",
+      "bytes": 3742
+    },
+    "round3_fifthfield/verification.json": {
+      "sha256": "2f24df9d490ca169a88e7e5b1e291b593d88c72b503609b7f5f5eaa39806fe9c",
+      "bytes": 932
+    },
+    "round3_chrome_sources/chrome_source_comparison.json": {
+      "sha256": "e2d686586c0bef5d4f27d83309908d7cb07dffd7686f48d58b54946bd0f6acaf",
+      "bytes": 9526
+    },
+    "round3_strings/utf_output_span_proof.json": {
+      "sha256": "899f78bcdbb11c63e1039503fbbd7f74f1cfe9ab860f41b98e72158017d38e63",
+      "bytes": 18123
+    }
+  },
+  "latest_semantic_closures_20261028": {
+    "round4_browser_core/19_browser_semantic_digest_20261028.json": {
+      "sha256": "5368706023b939e4a3690ab39f84025fccce6ecde9dfe18c2136393f7a533c56",
+      "bytes": 14130
+    },
+    "round4_network_core/cloud_lifecycle_review/cloud_lifecycle_findings.json": {
+      "sha256": "c5f832a0f79c340d64bdfc27f281675deff8cacc79dbc0633a9d721aa1668c60",
+      "bytes": 9164
+    },
+    "round4_network_core/browser_profile_name_predicate/profile_name_predicate_closure.json": {
+      "sha256": "fdcda7ffe808badc4d0beb8c6e9ed5a4b606d504226db390d9bea2b575dd5dae",
+      "bytes": 38831
+    }
+  },
+  "completed_main17": {
+    "code": "17:3c026",
+    "state": "365 computed sites /7729 original instructions, independent normal-context C export completed; three saved-index live phases proved. Full-frame alias/type/source equivalence is not claimed.",
+    "first_decompile_attempt": "120s timeout retained; second300s configuration completed.",
+    "C_sha256": "f11bb58965322399c699fea3bc2ea7fa8e021254b0cabdd3d344061c630a892e"
+  },
+  "completed_main19": {
+    "code": "19:33152",
+    "state": "358 computed sites /7720 original instructions; independent155-read805-writer alias gate; no forced cache-index projections; complete C export.",
+    "C_path": "<ANALYSIS_WORKSPACE>\\work\\alpme_analysis\\semantic_closure_20261027\\round3_file_dispatch19\\19_payload.dll.bin_0x33152_normal_context.c",
+    "C_sha256": "be9513adca4acbdb2ac5c865118df1a2b88a684f7612bd83644c7fb250b5dbfd",
+    "quality_proof_sha256": "e6745f5f462542ea8f81392ae46346fe700ef1f025595ba6afbe1bc4ec86177b"
+  },
+  "four_cleanup_sites": {
+    "state": "All four specified normal directory/result callback callsites have empty invoked target sets. Surrounding file/process effects are outside this narrow statement.",
+    "proof_sha256": "da162bc2a56af6f4533e1f27043a7bc8f6f8c526cbb7f354b7ef135516854cbd"
+  },
+  "remaining_work": [
+    {
+      "code": "historic41",
+      "state": "Three reopened functions now pass original-byte CFG and caller-effect checks.39 nontruncatedC+2special identities; no remaining truncation in this historic list."
+    },
+    {
+      "code": "whole native entry semantics",
+      "state": "87 current marker-bearing C entrypoints require proof reconciliation and further analysis; other large functions and outer loaders remain. Both Chromium profile collectors, both root initializers and both Gecko collectors have explicit normal CFG/source gates; 95 additional conservative baseline C exports are separately verified for local flow only."
+    },
+    {
+      "code": "Chrome156 actual success validation",
+      "state": "Official156.0.8078.48 protection and key lifetime implementation compared; actual optimized-binary key-object match/authenticated-record decryption not tested."
+    }
+  ],
+  "claims_excluded": [
+    "Recovered original source names/types or byte-identical malware rebuild.",
+    "Local CFG completion as a guarantee that every indirect CALL has identified semantics.",
+    "Fictional API/key tests as evidence of actual host key acquisition or historical upload."
+  ]
+}

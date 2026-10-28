@@ -1,0 +1,2194 @@
+{
+  "status": "ALL77_ROLE_CLASSIFIED_WITH_EXACT_REMAINING_BOUNDARIES",
+  "scope": "98 full-local-CFG subset only. Native identities/roles do not imply enclosing functions or other70 baselinepartial entries are semantically complete.",
+  "total_calls": 77,
+  "counts": {
+    "OWNED_ERASED_OUTER_DROP_CALLBACK": 2,
+    "OWNED_REFCOUNTED_VTABLE_DROP_CALLBACK": 6,
+    "EXACT_NATIVE_CODEC_API_WITH_SOURCE_GATE": 17,
+    "CALLER_CONTEXT_NTQUERY_API": 4,
+    "EXACT_PE_IMPORT_IDENTITY": 42,
+    "CONTEXT_EXCLUDED_CUSTOM_ERROR_CALLBACK": 5,
+    "CUSTOM_TAGGED_ERROR_DROP_CALLBACK": 1
+  },
+  "exact_API_identities": 59,
+  "context_bound_NtQuerySystemInformation_sites": 4,
+  "context_excluded_FileReadAll_custom_callbacks": 5,
+  "generic_cleanup_target_sets_still_open": 9,
+  "remaining_general_entry_target_boundaries": [
+    {
+      "version": "17",
+      "function": "0x3bafb",
+      "site": "0x3bb0b",
+      "category": "OWNED_ERASED_OUTER_DROP_CALLBACK",
+      "remaining_gaps": [
+        "Callback is exact generic erased drop only for matched50670/10112 constructor family. All possible incoming outerbox constructor families/targets are not enumerated; do not assume arbitrary callback purity."
+      ]
+    },
+    {
+      "version": "19",
+      "function": "0x227c7",
+      "site": "0x227d7",
+      "category": "OWNED_ERASED_OUTER_DROP_CALLBACK",
+      "remaining_gaps": [
+        "Callback is exact generic erased drop only for matched50670/10112 constructor family. All possible incoming outerbox constructor families/targets are not enumerated; do not assume arbitrary callback purity."
+      ]
+    },
+    {
+      "version": "17",
+      "function": "0x821d",
+      "site": "0x823c",
+      "category": "OWNED_REFCOUNTED_VTABLE_DROP_CALLBACK",
+      "remaining_gaps": [
+        "Concrete vtable producers and complete method[0] target sets/write contracts remain unenumerated at these generic entrypoints. No blanket no-host-side-effect claim for arbitrary drop target."
+      ]
+    },
+    {
+      "version": "19",
+      "function": "0x2c008",
+      "site": "0x2c027",
+      "category": "OWNED_REFCOUNTED_VTABLE_DROP_CALLBACK",
+      "remaining_gaps": [
+        "Concrete vtable producers and complete method[0] target sets/write contracts remain unenumerated at these generic entrypoints. No blanket no-host-side-effect claim for arbitrary drop target."
+      ]
+    },
+    {
+      "version": "17",
+      "function": "0x1bd55",
+      "site": "0x1bd7d",
+      "category": "OWNED_REFCOUNTED_VTABLE_DROP_CALLBACK",
+      "remaining_gaps": [
+        "Concrete vtable producers and complete method[0] target sets/write contracts remain unenumerated at these generic entrypoints. No blanket no-host-side-effect claim for arbitrary drop target."
+      ]
+    },
+    {
+      "version": "17",
+      "function": "0x1bd55",
+      "site": "0x1be17",
+      "category": "OWNED_REFCOUNTED_VTABLE_DROP_CALLBACK",
+      "remaining_gaps": [
+        "Concrete vtable producers and complete method[0] target sets/write contracts remain unenumerated at these generic entrypoints. No blanket no-host-side-effect claim for arbitrary drop target."
+      ]
+    },
+    {
+      "version": "19",
+      "function": "0x44cd",
+      "site": "0x44f6",
+      "category": "OWNED_REFCOUNTED_VTABLE_DROP_CALLBACK",
+      "remaining_gaps": [
+        "Concrete vtable producers and complete method[0] target sets/write contracts remain unenumerated at these generic entrypoints. No blanket no-host-side-effect claim for arbitrary drop target."
+      ]
+    },
+    {
+      "version": "19",
+      "function": "0x44cd",
+      "site": "0x4590",
+      "category": "OWNED_REFCOUNTED_VTABLE_DROP_CALLBACK",
+      "remaining_gaps": [
+        "Concrete vtable producers and complete method[0] target sets/write contracts remain unenumerated at these generic entrypoints. No blanket no-host-side-effect claim for arbitrary drop target."
+      ]
+    },
+    {
+      "version": "17",
+      "function": "0x627c",
+      "site": "0x632b",
+      "category": "CALLER_CONTEXT_NTQUERY_API",
+      "remaining_gaps": [
+        "Generic function entry still receives callback inRDX; singleton NtQuerySystemInformation is proven in named2d687/4699e process-enumerator caller contexts, not arbitrary new callers."
+      ]
+    },
+    {
+      "version": "17",
+      "function": "0x627c",
+      "site": "0x63e9",
+      "category": "CALLER_CONTEXT_NTQUERY_API",
+      "remaining_gaps": [
+        "Generic function entry still receives callback inRDX; singleton NtQuerySystemInformation is proven in named2d687/4699e process-enumerator caller contexts, not arbitrary new callers."
+      ]
+    },
+    {
+      "version": "19",
+      "function": "0x67b85",
+      "site": "0x67c28",
+      "category": "CALLER_CONTEXT_NTQUERY_API",
+      "remaining_gaps": [
+        "Generic function entry still receives callback inRDX; singleton NtQuerySystemInformation is proven in named2d687/4699e process-enumerator caller contexts, not arbitrary new callers."
+      ]
+    },
+    {
+      "version": "19",
+      "function": "0x67b85",
+      "site": "0x67cda",
+      "category": "CALLER_CONTEXT_NTQUERY_API",
+      "remaining_gaps": [
+        "Generic function entry still receives callback inRDX; singleton NtQuerySystemInformation is proven in named2d687/4699e process-enumerator caller contexts, not arbitrary new callers."
+      ]
+    },
+    {
+      "version": "19",
+      "function": "0x57ab8",
+      "site": "0x57ce8",
+      "category": "CONTEXT_EXCLUDED_CUSTOM_ERROR_CALLBACK",
+      "remaining_gaps": [
+        "Generic entry with arbitrary custom error may still call caller/object-selected target; no universal target identity is claimed."
+      ]
+    },
+    {
+      "version": "19",
+      "function": "0x57ab8",
+      "site": "0x57de0",
+      "category": "CONTEXT_EXCLUDED_CUSTOM_ERROR_CALLBACK",
+      "remaining_gaps": [
+        "Generic entry with arbitrary custom error may still call caller/object-selected target; no universal target identity is claimed."
+      ]
+    },
+    {
+      "version": "19",
+      "function": "0x57ab8",
+      "site": "0x57df6",
+      "category": "CONTEXT_EXCLUDED_CUSTOM_ERROR_CALLBACK",
+      "remaining_gaps": [
+        "Generic entry with arbitrary custom error may still call caller/object-selected target; no universal target identity is claimed."
+      ]
+    },
+    {
+      "version": "19",
+      "function": "0x57ab8",
+      "site": "0x57e2f",
+      "category": "CONTEXT_EXCLUDED_CUSTOM_ERROR_CALLBACK",
+      "remaining_gaps": [
+        "Generic entry with arbitrary custom error may still call caller/object-selected target; no universal target identity is claimed."
+      ]
+    },
+    {
+      "version": "19",
+      "function": "0x57ab8",
+      "site": "0x57e76",
+      "category": "CONTEXT_EXCLUDED_CUSTOM_ERROR_CALLBACK",
+      "remaining_gaps": [
+        "Generic entry with arbitrary custom error may still call caller/object-selected target; no universal target identity is claimed."
+      ]
+    },
+    {
+      "version": "19",
+      "function": "0x5f29a",
+      "site": "0x5f923",
+      "category": "CUSTOM_TAGGED_ERROR_DROP_CALLBACK",
+      "remaining_gaps": [
+        "Need exact error/constructor producer and tag domain at5f5c8 to enumerate/exclude custom cleanup callback; generic target and effect contract remain open."
+      ]
+    }
+  ],
+  "generic_unresolved_target_sites": [
+    {
+      "version": "17",
+      "function": "0x3bafb",
+      "site": "0x3bb0b",
+      "category": "OWNED_ERASED_OUTER_DROP_CALLBACK",
+      "remaining_gaps": [
+        "Callback is exact generic erased drop only for matched50670/10112 constructor family. All possible incoming outerbox constructor families/targets are not enumerated; do not assume arbitrary callback purity."
+      ]
+    },
+    {
+      "version": "19",
+      "function": "0x227c7",
+      "site": "0x227d7",
+      "category": "OWNED_ERASED_OUTER_DROP_CALLBACK",
+      "remaining_gaps": [
+        "Callback is exact generic erased drop only for matched50670/10112 constructor family. All possible incoming outerbox constructor families/targets are not enumerated; do not assume arbitrary callback purity."
+      ]
+    },
+    {
+      "version": "17",
+      "function": "0x821d",
+      "site": "0x823c",
+      "category": "OWNED_REFCOUNTED_VTABLE_DROP_CALLBACK",
+      "remaining_gaps": [
+        "Concrete vtable producers and complete method[0] target sets/write contracts remain unenumerated at these generic entrypoints. No blanket no-host-side-effect claim for arbitrary drop target."
+      ]
+    },
+    {
+      "version": "19",
+      "function": "0x2c008",
+      "site": "0x2c027",
+      "category": "OWNED_REFCOUNTED_VTABLE_DROP_CALLBACK",
+      "remaining_gaps": [
+        "Concrete vtable producers and complete method[0] target sets/write contracts remain unenumerated at these generic entrypoints. No blanket no-host-side-effect claim for arbitrary drop target."
+      ]
+    },
+    {
+      "version": "17",
+      "function": "0x1bd55",
+      "site": "0x1bd7d",
+      "category": "OWNED_REFCOUNTED_VTABLE_DROP_CALLBACK",
+      "remaining_gaps": [
+        "Concrete vtable producers and complete method[0] target sets/write contracts remain unenumerated at these generic entrypoints. No blanket no-host-side-effect claim for arbitrary drop target."
+      ]
+    },
+    {
+      "version": "17",
+      "function": "0x1bd55",
+      "site": "0x1be17",
+      "category": "OWNED_REFCOUNTED_VTABLE_DROP_CALLBACK",
+      "remaining_gaps": [
+        "Concrete vtable producers and complete method[0] target sets/write contracts remain unenumerated at these generic entrypoints. No blanket no-host-side-effect claim for arbitrary drop target."
+      ]
+    },
+    {
+      "version": "19",
+      "function": "0x44cd",
+      "site": "0x44f6",
+      "category": "OWNED_REFCOUNTED_VTABLE_DROP_CALLBACK",
+      "remaining_gaps": [
+        "Concrete vtable producers and complete method[0] target sets/write contracts remain unenumerated at these generic entrypoints. No blanket no-host-side-effect claim for arbitrary drop target."
+      ]
+    },
+    {
+      "version": "19",
+      "function": "0x44cd",
+      "site": "0x4590",
+      "category": "OWNED_REFCOUNTED_VTABLE_DROP_CALLBACK",
+      "remaining_gaps": [
+        "Concrete vtable producers and complete method[0] target sets/write contracts remain unenumerated at these generic entrypoints. No blanket no-host-side-effect claim for arbitrary drop target."
+      ]
+    },
+    {
+      "version": "19",
+      "function": "0x5f29a",
+      "site": "0x5f923",
+      "category": "CUSTOM_TAGGED_ERROR_DROP_CALLBACK",
+      "remaining_gaps": [
+        "Need exact error/constructor producer and tag domain at5f5c8 to enumerate/exclude custom cleanup callback; generic target and effect contract remain open."
+      ]
+    }
+  ],
+  "rows": [
+    {
+      "version": "17",
+      "function": "0x3bafb",
+      "site": "0x3bb0b",
+      "asm": "call qword ptr [rsi + 0x20]",
+      "category": "OWNED_ERASED_OUTER_DROP_CALLBACK",
+      "API_names": null,
+      "native_origins": [
+        [
+          "DYNAMIC_MEMORY",
+          "rsi+0x20",
+          "entry=False defs=['0x3bb00:mov rsi, rcx']"
+        ]
+      ],
+      "proof": [
+        "work\\alpme_analysis\\semantic_closure_20261027\\ghidra_repair\\callback_closure.json",
+        "work\\alpme_analysis\\semantic_closure_20261027\\ghidra_repair\\callback_producer_closure.json"
+      ],
+      "remaining_gaps": [
+        "Callback is exact generic erased drop only for matched50670/10112 constructor family. All possible incoming outerbox constructor families/targets are not enumerated; do not assume arbitrary callback purity."
+      ],
+      "native_function_sha256": "d84c7aa91bbb26db9fe84e8f6f4d320704c099e7fb473d28732835be273dec8f",
+      "function_semantics_complete_claimed": false,
+      "role": "Call owned custom-error outerbox field20 with(data10,metadata18), then GetProcessHeap/HeapFree outer allocation.",
+      "conditional_target": "0xbd0f"
+    },
+    {
+      "version": "19",
+      "function": "0x227c7",
+      "site": "0x227d7",
+      "asm": "call qword ptr [rsi + 0x20]",
+      "category": "OWNED_ERASED_OUTER_DROP_CALLBACK",
+      "API_names": null,
+      "native_origins": [
+        [
+          "DYNAMIC_MEMORY",
+          "rsi+0x20",
+          "entry=False defs=['0x227cc:mov rsi, rcx']"
+        ]
+      ],
+      "proof": [
+        "work\\alpme_analysis\\semantic_closure_20261027\\ghidra_repair\\callback_closure.json",
+        "work\\alpme_analysis\\semantic_closure_20261027\\ghidra_repair\\callback_producer_closure.json"
+      ],
+      "remaining_gaps": [
+        "Callback is exact generic erased drop only for matched50670/10112 constructor family. All possible incoming outerbox constructor families/targets are not enumerated; do not assume arbitrary callback purity."
+      ],
+      "native_function_sha256": "85bb4c13305254884603185a44583c8e6f2fb1e540a1d4f31cfd03c1d893bf4f",
+      "function_semantics_complete_claimed": false,
+      "role": "Call owned custom-error outerbox field20 with(data10,metadata18), then GetProcessHeap/HeapFree outer allocation.",
+      "conditional_target": "0x61222"
+    },
+    {
+      "version": "17",
+      "function": "0x821d",
+      "site": "0x823c",
+      "asm": "call rax",
+      "category": "OWNED_REFCOUNTED_VTABLE_DROP_CALLBACK",
+      "API_names": null,
+      "native_origins": [
+        [
+          "DYNAMIC_MEMORY",
+          "r14+0x0",
+          "entry=False defs=['0x822d:mov r14, qword ptr [rsi + 0x20]']"
+        ]
+      ],
+      "proof": [
+        "Fresh original native producer chains in77_callsite_classification.json; OR RAX,RAX treated as value-preserving flag setter."
+      ],
+      "remaining_gaps": [
+        "Concrete vtable producers and complete method[0] target sets/write contracts remain unenumerated at these generic entrypoints. No blanket no-host-side-effect claim for arbitrary drop target."
+      ],
+      "native_function_sha256": "7e6c536644a78a7bf6e043e83b21d463144772a2310e8592b1ff8f62807185b3",
+      "function_semantics_complete_claimed": false,
+      "role": "Conditional call metadata/vtable[0] on owned data pointer, followed by size/alignment driven deallocation and reference-count/HeapFree cleanup. Exact original source type is not claimed."
+    },
+    {
+      "version": "19",
+      "function": "0x2c008",
+      "site": "0x2c027",
+      "asm": "call rax",
+      "category": "OWNED_REFCOUNTED_VTABLE_DROP_CALLBACK",
+      "API_names": null,
+      "native_origins": [
+        [
+          "DYNAMIC_MEMORY",
+          "r14+0x0",
+          "entry=False defs=['0x2c018:mov r14, qword ptr [rsi + 0x20]']"
+        ]
+      ],
+      "proof": [
+        "Fresh original native producer chains in77_callsite_classification.json; OR RAX,RAX treated as value-preserving flag setter."
+      ],
+      "remaining_gaps": [
+        "Concrete vtable producers and complete method[0] target sets/write contracts remain unenumerated at these generic entrypoints. No blanket no-host-side-effect claim for arbitrary drop target."
+      ],
+      "native_function_sha256": "105eaffc73baa5977aff1acbcb3c779ece01de4128185c5ea5e6813e18e32138",
+      "function_semantics_complete_claimed": false,
+      "role": "Conditional call metadata/vtable[0] on owned data pointer, followed by size/alignment driven deallocation and reference-count/HeapFree cleanup. Exact original source type is not claimed."
+    },
+    {
+      "version": "17",
+      "function": "0x1bd55",
+      "site": "0x1bd7d",
+      "asm": "call rax",
+      "category": "OWNED_REFCOUNTED_VTABLE_DROP_CALLBACK",
+      "API_names": null,
+      "native_origins": [
+        [
+          "DYNAMIC_MEMORY",
+          "rbx+0x0",
+          "entry=False defs=['0x1bd6e:mov rbx, qword ptr [rsi + 0x28]']"
+        ]
+      ],
+      "proof": [
+        "Fresh original native producer chains in77_callsite_classification.json; OR RAX,RAX treated as value-preserving flag setter."
+      ],
+      "remaining_gaps": [
+        "Concrete vtable producers and complete method[0] target sets/write contracts remain unenumerated at these generic entrypoints. No blanket no-host-side-effect claim for arbitrary drop target."
+      ],
+      "native_function_sha256": "c83e41cb1f0f12750928444ff900b6736e0bb2e82a94f4875bc8267423f2c74b",
+      "function_semantics_complete_claimed": false,
+      "role": "Conditional call metadata/vtable[0] on owned data pointer, followed by size/alignment driven deallocation and reference-count/HeapFree cleanup. Exact original source type is not claimed."
+    },
+    {
+      "version": "17",
+      "function": "0x1bd55",
+      "site": "0x1be17",
+      "asm": "call rax",
+      "category": "OWNED_REFCOUNTED_VTABLE_DROP_CALLBACK",
+      "API_names": null,
+      "native_origins": [
+        [
+          "DYNAMIC_MEMORY",
+          "rbx+0x0",
+          "entry=False defs=['0x1be08:mov rbx, qword ptr [rsi + 0x28]']"
+        ]
+      ],
+      "proof": [
+        "Fresh original native producer chains in77_callsite_classification.json; OR RAX,RAX treated as value-preserving flag setter."
+      ],
+      "remaining_gaps": [
+        "Concrete vtable producers and complete method[0] target sets/write contracts remain unenumerated at these generic entrypoints. No blanket no-host-side-effect claim for arbitrary drop target."
+      ],
+      "native_function_sha256": "c83e41cb1f0f12750928444ff900b6736e0bb2e82a94f4875bc8267423f2c74b",
+      "function_semantics_complete_claimed": false,
+      "role": "Conditional call metadata/vtable[0] on owned data pointer, followed by size/alignment driven deallocation and reference-count/HeapFree cleanup. Exact original source type is not claimed."
+    },
+    {
+      "version": "19",
+      "function": "0x44cd",
+      "site": "0x44f6",
+      "asm": "call rax",
+      "category": "OWNED_REFCOUNTED_VTABLE_DROP_CALLBACK",
+      "API_names": null,
+      "native_origins": [
+        [
+          "DYNAMIC_MEMORY",
+          "rbx+0x0",
+          "entry=False defs=['0x44e7:mov rbx, qword ptr [rsi + 0x28]']"
+        ]
+      ],
+      "proof": [
+        "Fresh original native producer chains in77_callsite_classification.json; OR RAX,RAX treated as value-preserving flag setter."
+      ],
+      "remaining_gaps": [
+        "Concrete vtable producers and complete method[0] target sets/write contracts remain unenumerated at these generic entrypoints. No blanket no-host-side-effect claim for arbitrary drop target."
+      ],
+      "native_function_sha256": "6fc33fee43f17ee609eacbbe1fd76d8577172d1c679e64d30462baed7f1b4c31",
+      "function_semantics_complete_claimed": false,
+      "role": "Conditional call metadata/vtable[0] on owned data pointer, followed by size/alignment driven deallocation and reference-count/HeapFree cleanup. Exact original source type is not claimed."
+    },
+    {
+      "version": "19",
+      "function": "0x44cd",
+      "site": "0x4590",
+      "asm": "call rax",
+      "category": "OWNED_REFCOUNTED_VTABLE_DROP_CALLBACK",
+      "API_names": null,
+      "native_origins": [
+        [
+          "DYNAMIC_MEMORY",
+          "rbx+0x0",
+          "entry=False defs=['0x4581:mov rbx, qword ptr [rsi + 0x28]']"
+        ]
+      ],
+      "proof": [
+        "Fresh original native producer chains in77_callsite_classification.json; OR RAX,RAX treated as value-preserving flag setter."
+      ],
+      "remaining_gaps": [
+        "Concrete vtable producers and complete method[0] target sets/write contracts remain unenumerated at these generic entrypoints. No blanket no-host-side-effect claim for arbitrary drop target."
+      ],
+      "native_function_sha256": "6fc33fee43f17ee609eacbbe1fd76d8577172d1c679e64d30462baed7f1b4c31",
+      "function_semantics_complete_claimed": false,
+      "role": "Conditional call metadata/vtable[0] on owned data pointer, followed by size/alignment driven deallocation and reference-count/HeapFree cleanup. Exact original source type is not claimed."
+    },
+    {
+      "version": "17",
+      "function": "0x60db",
+      "site": "0x626d",
+      "asm": "call rdi",
+      "category": "EXACT_NATIVE_CODEC_API_WITH_SOURCE_GATE",
+      "API_names": [
+        "kernel32.dll!CloseHandle"
+      ],
+      "native_origins": [
+        [
+          "RESOLVER_RETURN",
+          "0x6225",
+          "0x2c44b"
+        ]
+      ],
+      "proof": [
+        "work\\alpme_analysis\\semantic_closure_20261027\\round5_whole_native\\call_resolution\\resolver_native_names.json",
+        "work\\alpme_analysis\\semantic_closure_20261027\\round5_whole_native\\call_resolution\\resolver_name_lifetime_gates.json",
+        "Original native seed -> full original codec -> cache/clone/resolver source; independent source-byte gate; actual CALL pointer producer chain. No expected API/seed override."
+      ],
+      "remaining_gaps": [],
+      "native_function_sha256": "4463088332a309c49d5daeb7e6ce0a336756dd872c93458bdeda1708a857f832",
+      "function_semantics_complete_claimed": false,
+      "identity_scope": "Normal original PE/TLS, valid Once/owned String/UTF16 contracts; exact identity, not a complete API argument/effect proof for the whole enclosing function."
+    },
+    {
+      "version": "17",
+      "function": "0x2c138",
+      "site": "0x2c2d2",
+      "asm": "call rdi",
+      "category": "EXACT_NATIVE_CODEC_API_WITH_SOURCE_GATE",
+      "API_names": [
+        "kernel32.dll!VirtualFreeEx"
+      ],
+      "native_origins": [
+        [
+          "RESOLVER_RETURN",
+          "0x2c27c",
+          "0x2c44b"
+        ]
+      ],
+      "proof": [
+        "work\\alpme_analysis\\semantic_closure_20261027\\round5_whole_native\\call_resolution\\resolver_native_names.json",
+        "work\\alpme_analysis\\semantic_closure_20261027\\round5_whole_native\\call_resolution\\resolver_name_lifetime_gates.json",
+        "Original native seed -> full original codec -> cache/clone/resolver source; independent source-byte gate; actual CALL pointer producer chain. No expected API/seed override."
+      ],
+      "remaining_gaps": [],
+      "native_function_sha256": "438ad19c7f9f436861083e57207102a45444693a93148ad3c8f14f8b9f4f8624",
+      "function_semantics_complete_claimed": false,
+      "identity_scope": "Normal original PE/TLS, valid Once/owned String/UTF16 contracts; exact identity, not a complete API argument/effect proof for the whole enclosing function."
+    },
+    {
+      "version": "17",
+      "function": "0x627c",
+      "site": "0x632b",
+      "asm": "call rdi",
+      "category": "CALLER_CONTEXT_NTQUERY_API",
+      "API_names": [
+        "ntdll.dll!NtQuerySystemInformation"
+      ],
+      "native_origins": [
+        [
+          "ENTRY_REGISTER",
+          "rdx",
+          "0x628c"
+        ]
+      ],
+      "proof": [
+        "work\\alpme_analysis\\semantic_closure_20261027\\round3_strings\\17_prep_input_helper_effects.json",
+        "a268ef94fd11093d903bebac98be66994f5dbf03e22b2843954b228951f92e24",
+        "work\\alpme_analysis\\semantic_closure_20261027\\round4_network_core\\browser_prep_spans\\three_callee_frame_span_proof.json"
+      ],
+      "remaining_gaps": [
+        "Generic function entry still receives callback inRDX; singleton NtQuerySystemInformation is proven in named2d687/4699e process-enumerator caller contexts, not arbitrary new callers."
+      ],
+      "native_function_sha256": "aed85d69277835d91c17528e6fcf96d1c63212a3c82e2f7fe858a937fd2829d4",
+      "function_semantics_complete_claimed": false,
+      "role": "SystemProcessInformation class5 query to owned buffer, ULONG ReturnLength at ownSP24; RDX input is callback address saved nonvolatile.",
+      "normal_caller_context": "17:2d687 ->2db0a ->627c RDX captured2d755 resolver;19:4699e ->46e10 ->67b85 RDX captured46da8 resolver."
+    },
+    {
+      "version": "17",
+      "function": "0x627c",
+      "site": "0x63e9",
+      "asm": "call rdi",
+      "category": "CALLER_CONTEXT_NTQUERY_API",
+      "API_names": [
+        "ntdll.dll!NtQuerySystemInformation"
+      ],
+      "native_origins": [
+        [
+          "ENTRY_REGISTER",
+          "rdx",
+          "0x628c"
+        ]
+      ],
+      "proof": [
+        "work\\alpme_analysis\\semantic_closure_20261027\\round3_strings\\17_prep_input_helper_effects.json",
+        "a268ef94fd11093d903bebac98be66994f5dbf03e22b2843954b228951f92e24",
+        "work\\alpme_analysis\\semantic_closure_20261027\\round4_network_core\\browser_prep_spans\\three_callee_frame_span_proof.json"
+      ],
+      "remaining_gaps": [
+        "Generic function entry still receives callback inRDX; singleton NtQuerySystemInformation is proven in named2d687/4699e process-enumerator caller contexts, not arbitrary new callers."
+      ],
+      "native_function_sha256": "aed85d69277835d91c17528e6fcf96d1c63212a3c82e2f7fe858a937fd2829d4",
+      "function_semantics_complete_claimed": false,
+      "role": "SystemProcessInformation class5 query to owned buffer, ULONG ReturnLength at ownSP24; RDX input is callback address saved nonvolatile.",
+      "normal_caller_context": "17:2d687 ->2db0a ->627c RDX captured2d755 resolver;19:4699e ->46e10 ->67b85 RDX captured46da8 resolver."
+    },
+    {
+      "version": "17",
+      "function": "0x2a97b",
+      "site": "0x2ab3e",
+      "asm": "call rdi",
+      "category": "EXACT_NATIVE_CODEC_API_WITH_SOURCE_GATE",
+      "API_names": [
+        "advapi32.dll!RegCloseKey"
+      ],
+      "native_origins": [
+        [
+          "RESOLVER_RETURN",
+          "0x2ab00",
+          "0x2c44b"
+        ]
+      ],
+      "proof": [
+        "work\\alpme_analysis\\semantic_closure_20261027\\round5_whole_native\\call_resolution\\resolver_native_names.json",
+        "work\\alpme_analysis\\semantic_closure_20261027\\round5_whole_native\\call_resolution\\resolver_name_lifetime_gates.json",
+        "Original native seed -> full original codec -> cache/clone/resolver source; independent source-byte gate; actual CALL pointer producer chain. No expected API/seed override."
+      ],
+      "remaining_gaps": [],
+      "native_function_sha256": "4276d33b4ef99211c90c7a1a7b6ad7f07ae24f43e6c5f26a6b4039fa28465f9e",
+      "function_semantics_complete_claimed": false,
+      "identity_scope": "Normal original PE/TLS, valid Once/owned String/UTF16 contracts; exact identity, not a complete API argument/effect proof for the whole enclosing function."
+    },
+    {
+      "version": "19",
+      "function": "0x67b85",
+      "site": "0x67c28",
+      "asm": "call rbx",
+      "category": "CALLER_CONTEXT_NTQUERY_API",
+      "API_names": [
+        "ntdll.dll!NtQuerySystemInformation"
+      ],
+      "native_origins": [
+        [
+          "ENTRY_REGISTER",
+          "rdx",
+          "0x67b95"
+        ]
+      ],
+      "proof": [
+        "work\\alpme_analysis\\semantic_closure_20261027\\round3_strings\\19_prep_process_list_effects.json",
+        "5edff3035d6f1ec02347fa04d8fa813f22851b09a94edd5f9c92d1ac0f32dca3",
+        "work\\alpme_analysis\\semantic_closure_20261027\\round4_network_core\\browser_prep_spans\\three_callee_frame_span_proof.json"
+      ],
+      "remaining_gaps": [
+        "Generic function entry still receives callback inRDX; singleton NtQuerySystemInformation is proven in named2d687/4699e process-enumerator caller contexts, not arbitrary new callers."
+      ],
+      "native_function_sha256": "acf5fd97dd863f069d33294114fb5d46b080f0f0259df2fda96b8687db92627a",
+      "function_semantics_complete_claimed": false,
+      "role": "SystemProcessInformation class5 query to owned buffer, ULONG ReturnLength at ownSP24; RDX input is callback address saved nonvolatile.",
+      "normal_caller_context": "17:2d687 ->2db0a ->627c RDX captured2d755 resolver;19:4699e ->46e10 ->67b85 RDX captured46da8 resolver."
+    },
+    {
+      "version": "19",
+      "function": "0x67b85",
+      "site": "0x67cda",
+      "asm": "call rbx",
+      "category": "CALLER_CONTEXT_NTQUERY_API",
+      "API_names": [
+        "ntdll.dll!NtQuerySystemInformation"
+      ],
+      "native_origins": [
+        [
+          "ENTRY_REGISTER",
+          "rdx",
+          "0x67b95"
+        ]
+      ],
+      "proof": [
+        "work\\alpme_analysis\\semantic_closure_20261027\\round3_strings\\19_prep_process_list_effects.json",
+        "5edff3035d6f1ec02347fa04d8fa813f22851b09a94edd5f9c92d1ac0f32dca3",
+        "work\\alpme_analysis\\semantic_closure_20261027\\round4_network_core\\browser_prep_spans\\three_callee_frame_span_proof.json"
+      ],
+      "remaining_gaps": [
+        "Generic function entry still receives callback inRDX; singleton NtQuerySystemInformation is proven in named2d687/4699e process-enumerator caller contexts, not arbitrary new callers."
+      ],
+      "native_function_sha256": "acf5fd97dd863f069d33294114fb5d46b080f0f0259df2fda96b8687db92627a",
+      "function_semantics_complete_claimed": false,
+      "role": "SystemProcessInformation class5 query to owned buffer, ULONG ReturnLength at ownSP24; RDX input is callback address saved nonvolatile.",
+      "normal_caller_context": "17:2d687 ->2db0a ->627c RDX captured2d755 resolver;19:4699e ->46e10 ->67b85 RDX captured46da8 resolver."
+    },
+    {
+      "version": "17",
+      "function": "0x61ff6",
+      "site": "0x6205c",
+      "asm": "call r12",
+      "category": "EXACT_PE_IMPORT_IDENTITY",
+      "API_names": [
+        "api-ms-win-core-synch-l1-2-0.dll!WakeByAddressSingle"
+      ],
+      "native_origins": [
+        [
+          "IMPORT_API",
+          "api-ms-win-core-synch-l1-2-0.dll!WakeByAddressSingle",
+          "0x95338"
+        ]
+      ],
+      "proof": [
+        "Original instruction register producer chain, x64 ABI nonvolatile preservation, original PE import metadata. No IAT numeric value read."
+      ],
+      "remaining_gaps": [],
+      "native_function_sha256": "720781e878b696beebff745418f7fb3dbdea0925b6d4832daaede92185a2222c",
+      "function_semantics_complete_claimed": false
+    },
+    {
+      "version": "17",
+      "function": "0x61ff6",
+      "site": "0x620bd",
+      "asm": "call r15",
+      "category": "EXACT_PE_IMPORT_IDENTITY",
+      "API_names": [
+        "api-ms-win-core-synch-l1-2-0.dll!WakeByAddressSingle"
+      ],
+      "native_origins": [
+        [
+          "IMPORT_API",
+          "api-ms-win-core-synch-l1-2-0.dll!WakeByAddressSingle",
+          "0x95338"
+        ]
+      ],
+      "proof": [
+        "Original instruction register producer chain, x64 ABI nonvolatile preservation, original PE import metadata. No IAT numeric value read."
+      ],
+      "remaining_gaps": [],
+      "native_function_sha256": "720781e878b696beebff745418f7fb3dbdea0925b6d4832daaede92185a2222c",
+      "function_semantics_complete_claimed": false
+    },
+    {
+      "version": "19",
+      "function": "0x2cd37",
+      "site": "0x2cd9d",
+      "asm": "call r12",
+      "category": "EXACT_PE_IMPORT_IDENTITY",
+      "API_names": [
+        "api-ms-win-core-synch-l1-2-0.dll!WakeByAddressSingle"
+      ],
+      "native_origins": [
+        [
+          "IMPORT_API",
+          "api-ms-win-core-synch-l1-2-0.dll!WakeByAddressSingle",
+          "0x93750"
+        ]
+      ],
+      "proof": [
+        "Original instruction register producer chain, x64 ABI nonvolatile preservation, original PE import metadata. No IAT numeric value read."
+      ],
+      "remaining_gaps": [],
+      "native_function_sha256": "52f2f6cea33a9f4e59cc32896adad0698b0ab845d4e43d71c609f62ef75d2ead",
+      "function_semantics_complete_claimed": false
+    },
+    {
+      "version": "19",
+      "function": "0x2cd37",
+      "site": "0x2cdfe",
+      "asm": "call r15",
+      "category": "EXACT_PE_IMPORT_IDENTITY",
+      "API_names": [
+        "api-ms-win-core-synch-l1-2-0.dll!WakeByAddressSingle"
+      ],
+      "native_origins": [
+        [
+          "IMPORT_API",
+          "api-ms-win-core-synch-l1-2-0.dll!WakeByAddressSingle",
+          "0x93750"
+        ]
+      ],
+      "proof": [
+        "Original instruction register producer chain, x64 ABI nonvolatile preservation, original PE import metadata. No IAT numeric value read."
+      ],
+      "remaining_gaps": [],
+      "native_function_sha256": "52f2f6cea33a9f4e59cc32896adad0698b0ab845d4e43d71c609f62ef75d2ead",
+      "function_semantics_complete_claimed": false
+    },
+    {
+      "version": "19",
+      "function": "0x238fc",
+      "site": "0x2397a",
+      "asm": "call rbx",
+      "category": "EXACT_PE_IMPORT_IDENTITY",
+      "API_names": [
+        "kernel32.dll!GetProcessHeap"
+      ],
+      "native_origins": [
+        [
+          "IMPORT_API",
+          "kernel32.dll!GetProcessHeap",
+          "0x93588"
+        ]
+      ],
+      "proof": [
+        "Original instruction register producer chain, x64 ABI nonvolatile preservation, original PE import metadata. No IAT numeric value read."
+      ],
+      "remaining_gaps": [],
+      "native_function_sha256": "265ab75e18cb54522f4854e7d393b1b7659d0b05b6d0881e8578391fd7674fe6",
+      "function_semantics_complete_claimed": false
+    },
+    {
+      "version": "19",
+      "function": "0x238fc",
+      "site": "0x23984",
+      "asm": "call r14",
+      "category": "EXACT_PE_IMPORT_IDENTITY",
+      "API_names": [
+        "kernel32.dll!HeapFree"
+      ],
+      "native_origins": [
+        [
+          "IMPORT_API",
+          "kernel32.dll!HeapFree",
+          "0x935d8"
+        ]
+      ],
+      "proof": [
+        "Original instruction register producer chain, x64 ABI nonvolatile preservation, original PE import metadata. No IAT numeric value read."
+      ],
+      "remaining_gaps": [],
+      "native_function_sha256": "265ab75e18cb54522f4854e7d393b1b7659d0b05b6d0881e8578391fd7674fe6",
+      "function_semantics_complete_claimed": false
+    },
+    {
+      "version": "19",
+      "function": "0x238fc",
+      "site": "0x239bf",
+      "asm": "call rbx",
+      "category": "EXACT_PE_IMPORT_IDENTITY",
+      "API_names": [
+        "kernel32.dll!GetProcessHeap"
+      ],
+      "native_origins": [
+        [
+          "IMPORT_API",
+          "kernel32.dll!GetProcessHeap",
+          "0x93588"
+        ]
+      ],
+      "proof": [
+        "Original instruction register producer chain, x64 ABI nonvolatile preservation, original PE import metadata. No IAT numeric value read."
+      ],
+      "remaining_gaps": [],
+      "native_function_sha256": "265ab75e18cb54522f4854e7d393b1b7659d0b05b6d0881e8578391fd7674fe6",
+      "function_semantics_complete_claimed": false
+    },
+    {
+      "version": "19",
+      "function": "0x238fc",
+      "site": "0x239c9",
+      "asm": "call r14",
+      "category": "EXACT_PE_IMPORT_IDENTITY",
+      "API_names": [
+        "kernel32.dll!HeapFree"
+      ],
+      "native_origins": [
+        [
+          "IMPORT_API",
+          "kernel32.dll!HeapFree",
+          "0x935d8"
+        ]
+      ],
+      "proof": [
+        "Original instruction register producer chain, x64 ABI nonvolatile preservation, original PE import metadata. No IAT numeric value read."
+      ],
+      "remaining_gaps": [],
+      "native_function_sha256": "265ab75e18cb54522f4854e7d393b1b7659d0b05b6d0881e8578391fd7674fe6",
+      "function_semantics_complete_claimed": false
+    },
+    {
+      "version": "19",
+      "function": "0x238fc",
+      "site": "0x23a2b",
+      "asm": "call rbx",
+      "category": "EXACT_PE_IMPORT_IDENTITY",
+      "API_names": [
+        "kernel32.dll!GetProcessHeap"
+      ],
+      "native_origins": [
+        [
+          "IMPORT_API",
+          "kernel32.dll!GetProcessHeap",
+          "0x93588"
+        ]
+      ],
+      "proof": [
+        "Original instruction register producer chain, x64 ABI nonvolatile preservation, original PE import metadata. No IAT numeric value read."
+      ],
+      "remaining_gaps": [],
+      "native_function_sha256": "265ab75e18cb54522f4854e7d393b1b7659d0b05b6d0881e8578391fd7674fe6",
+      "function_semantics_complete_claimed": false
+    },
+    {
+      "version": "19",
+      "function": "0x238fc",
+      "site": "0x23a35",
+      "asm": "call r14",
+      "category": "EXACT_PE_IMPORT_IDENTITY",
+      "API_names": [
+        "kernel32.dll!HeapFree"
+      ],
+      "native_origins": [
+        [
+          "IMPORT_API",
+          "kernel32.dll!HeapFree",
+          "0x935d8"
+        ]
+      ],
+      "proof": [
+        "Original instruction register producer chain, x64 ABI nonvolatile preservation, original PE import metadata. No IAT numeric value read."
+      ],
+      "remaining_gaps": [],
+      "native_function_sha256": "265ab75e18cb54522f4854e7d393b1b7659d0b05b6d0881e8578391fd7674fe6",
+      "function_semantics_complete_claimed": false
+    },
+    {
+      "version": "17",
+      "function": "0x2ddde",
+      "site": "0x2de2e",
+      "asm": "call rbx",
+      "category": "EXACT_PE_IMPORT_IDENTITY",
+      "API_names": [
+        "kernel32.dll!GetProcessHeap"
+      ],
+      "native_origins": [
+        [
+          "IMPORT_API",
+          "kernel32.dll!GetProcessHeap",
+          "0x95148"
+        ]
+      ],
+      "proof": [
+        "Original instruction register producer chain, x64 ABI nonvolatile preservation, original PE import metadata. No IAT numeric value read."
+      ],
+      "remaining_gaps": [],
+      "native_function_sha256": "9a7d5f8b351a58cf719d7471ad93e0a1a706ddd159b11ce8c932acc020d6cad7",
+      "function_semantics_complete_claimed": false
+    },
+    {
+      "version": "17",
+      "function": "0x2ddde",
+      "site": "0x2de38",
+      "asm": "call r14",
+      "category": "EXACT_PE_IMPORT_IDENTITY",
+      "API_names": [
+        "kernel32.dll!HeapFree"
+      ],
+      "native_origins": [
+        [
+          "IMPORT_API",
+          "kernel32.dll!HeapFree",
+          "0x951a8"
+        ]
+      ],
+      "proof": [
+        "Original instruction register producer chain, x64 ABI nonvolatile preservation, original PE import metadata. No IAT numeric value read."
+      ],
+      "remaining_gaps": [],
+      "native_function_sha256": "9a7d5f8b351a58cf719d7471ad93e0a1a706ddd159b11ce8c932acc020d6cad7",
+      "function_semantics_complete_claimed": false
+    },
+    {
+      "version": "17",
+      "function": "0x2ddde",
+      "site": "0x2de94",
+      "asm": "call rbx",
+      "category": "EXACT_PE_IMPORT_IDENTITY",
+      "API_names": [
+        "kernel32.dll!GetProcessHeap"
+      ],
+      "native_origins": [
+        [
+          "IMPORT_API",
+          "kernel32.dll!GetProcessHeap",
+          "0x95148"
+        ]
+      ],
+      "proof": [
+        "Original instruction register producer chain, x64 ABI nonvolatile preservation, original PE import metadata. No IAT numeric value read."
+      ],
+      "remaining_gaps": [],
+      "native_function_sha256": "9a7d5f8b351a58cf719d7471ad93e0a1a706ddd159b11ce8c932acc020d6cad7",
+      "function_semantics_complete_claimed": false
+    },
+    {
+      "version": "17",
+      "function": "0x2ddde",
+      "site": "0x2de9e",
+      "asm": "call r14",
+      "category": "EXACT_PE_IMPORT_IDENTITY",
+      "API_names": [
+        "kernel32.dll!HeapFree"
+      ],
+      "native_origins": [
+        [
+          "IMPORT_API",
+          "kernel32.dll!HeapFree",
+          "0x951a8"
+        ]
+      ],
+      "proof": [
+        "Original instruction register producer chain, x64 ABI nonvolatile preservation, original PE import metadata. No IAT numeric value read."
+      ],
+      "remaining_gaps": [],
+      "native_function_sha256": "9a7d5f8b351a58cf719d7471ad93e0a1a706ddd159b11ce8c932acc020d6cad7",
+      "function_semantics_complete_claimed": false
+    },
+    {
+      "version": "17",
+      "function": "0x2ddde",
+      "site": "0x2df09",
+      "asm": "call rbx",
+      "category": "EXACT_PE_IMPORT_IDENTITY",
+      "API_names": [
+        "kernel32.dll!GetProcessHeap"
+      ],
+      "native_origins": [
+        [
+          "IMPORT_API",
+          "kernel32.dll!GetProcessHeap",
+          "0x95148"
+        ]
+      ],
+      "proof": [
+        "Original instruction register producer chain, x64 ABI nonvolatile preservation, original PE import metadata. No IAT numeric value read."
+      ],
+      "remaining_gaps": [],
+      "native_function_sha256": "9a7d5f8b351a58cf719d7471ad93e0a1a706ddd159b11ce8c932acc020d6cad7",
+      "function_semantics_complete_claimed": false
+    },
+    {
+      "version": "17",
+      "function": "0x2ddde",
+      "site": "0x2df13",
+      "asm": "call r14",
+      "category": "EXACT_PE_IMPORT_IDENTITY",
+      "API_names": [
+        "kernel32.dll!HeapFree"
+      ],
+      "native_origins": [
+        [
+          "IMPORT_API",
+          "kernel32.dll!HeapFree",
+          "0x951a8"
+        ]
+      ],
+      "proof": [
+        "Original instruction register producer chain, x64 ABI nonvolatile preservation, original PE import metadata. No IAT numeric value read."
+      ],
+      "remaining_gaps": [],
+      "native_function_sha256": "9a7d5f8b351a58cf719d7471ad93e0a1a706ddd159b11ce8c932acc020d6cad7",
+      "function_semantics_complete_claimed": false
+    },
+    {
+      "version": "17",
+      "function": "0x3bc94",
+      "site": "0x3bd1f",
+      "asm": "call r14",
+      "category": "EXACT_PE_IMPORT_IDENTITY",
+      "API_names": [
+        "kernel32.dll!GetProcessHeap"
+      ],
+      "native_origins": [
+        [
+          "IMPORT_API",
+          "kernel32.dll!GetProcessHeap",
+          "0x95148"
+        ]
+      ],
+      "proof": [
+        "Original instruction register producer chain, x64 ABI nonvolatile preservation, original PE import metadata. No IAT numeric value read."
+      ],
+      "remaining_gaps": [],
+      "native_function_sha256": "b27c66c57894354a7a83fff8ed60fd410346b4d323789f9a2f64ad4994cba6bf",
+      "function_semantics_complete_claimed": false
+    },
+    {
+      "version": "17",
+      "function": "0x3bc94",
+      "site": "0x3bd2a",
+      "asm": "call r15",
+      "category": "EXACT_PE_IMPORT_IDENTITY",
+      "API_names": [
+        "kernel32.dll!HeapFree"
+      ],
+      "native_origins": [
+        [
+          "IMPORT_API",
+          "kernel32.dll!HeapFree",
+          "0x951a8"
+        ]
+      ],
+      "proof": [
+        "Original instruction register producer chain, x64 ABI nonvolatile preservation, original PE import metadata. No IAT numeric value read."
+      ],
+      "remaining_gaps": [],
+      "native_function_sha256": "b27c66c57894354a7a83fff8ed60fd410346b4d323789f9a2f64ad4994cba6bf",
+      "function_semantics_complete_claimed": false
+    },
+    {
+      "version": "17",
+      "function": "0x3bc94",
+      "site": "0x3bd6e",
+      "asm": "call r14",
+      "category": "EXACT_PE_IMPORT_IDENTITY",
+      "API_names": [
+        "kernel32.dll!GetProcessHeap"
+      ],
+      "native_origins": [
+        [
+          "IMPORT_API",
+          "kernel32.dll!GetProcessHeap",
+          "0x95148"
+        ]
+      ],
+      "proof": [
+        "Original instruction register producer chain, x64 ABI nonvolatile preservation, original PE import metadata. No IAT numeric value read."
+      ],
+      "remaining_gaps": [],
+      "native_function_sha256": "b27c66c57894354a7a83fff8ed60fd410346b4d323789f9a2f64ad4994cba6bf",
+      "function_semantics_complete_claimed": false
+    },
+    {
+      "version": "17",
+      "function": "0x3bc94",
+      "site": "0x3bd79",
+      "asm": "call r15",
+      "category": "EXACT_PE_IMPORT_IDENTITY",
+      "API_names": [
+        "kernel32.dll!HeapFree"
+      ],
+      "native_origins": [
+        [
+          "IMPORT_API",
+          "kernel32.dll!HeapFree",
+          "0x951a8"
+        ]
+      ],
+      "proof": [
+        "Original instruction register producer chain, x64 ABI nonvolatile preservation, original PE import metadata. No IAT numeric value read."
+      ],
+      "remaining_gaps": [],
+      "native_function_sha256": "b27c66c57894354a7a83fff8ed60fd410346b4d323789f9a2f64ad4994cba6bf",
+      "function_semantics_complete_claimed": false
+    },
+    {
+      "version": "17",
+      "function": "0x3bc94",
+      "site": "0x3be28",
+      "asm": "call rbx",
+      "category": "EXACT_PE_IMPORT_IDENTITY",
+      "API_names": [
+        "kernel32.dll!GetProcessHeap"
+      ],
+      "native_origins": [
+        [
+          "IMPORT_API",
+          "kernel32.dll!GetProcessHeap",
+          "0x95148"
+        ]
+      ],
+      "proof": [
+        "Original instruction register producer chain, x64 ABI nonvolatile preservation, original PE import metadata. No IAT numeric value read."
+      ],
+      "remaining_gaps": [],
+      "native_function_sha256": "b27c66c57894354a7a83fff8ed60fd410346b4d323789f9a2f64ad4994cba6bf",
+      "function_semantics_complete_claimed": false
+    },
+    {
+      "version": "17",
+      "function": "0x3bc94",
+      "site": "0x3be32",
+      "asm": "call r14",
+      "category": "EXACT_PE_IMPORT_IDENTITY",
+      "API_names": [
+        "kernel32.dll!HeapFree"
+      ],
+      "native_origins": [
+        [
+          "IMPORT_API",
+          "kernel32.dll!HeapFree",
+          "0x951a8"
+        ]
+      ],
+      "proof": [
+        "Original instruction register producer chain, x64 ABI nonvolatile preservation, original PE import metadata. No IAT numeric value read."
+      ],
+      "remaining_gaps": [],
+      "native_function_sha256": "b27c66c57894354a7a83fff8ed60fd410346b4d323789f9a2f64ad4994cba6bf",
+      "function_semantics_complete_claimed": false
+    },
+    {
+      "version": "19",
+      "function": "0x68d44",
+      "site": "0x68dcf",
+      "asm": "call r15",
+      "category": "EXACT_PE_IMPORT_IDENTITY",
+      "API_names": [
+        "kernel32.dll!GetProcessHeap"
+      ],
+      "native_origins": [
+        [
+          "IMPORT_API",
+          "kernel32.dll!GetProcessHeap",
+          "0x93588"
+        ]
+      ],
+      "proof": [
+        "Original instruction register producer chain, x64 ABI nonvolatile preservation, original PE import metadata. No IAT numeric value read."
+      ],
+      "remaining_gaps": [],
+      "native_function_sha256": "699c6c26a561f83f6deb7ef7cd16d6f66228fa9efff8488d5d9f5835ae481dc5",
+      "function_semantics_complete_claimed": false
+    },
+    {
+      "version": "19",
+      "function": "0x68d44",
+      "site": "0x68dda",
+      "asm": "call r12",
+      "category": "EXACT_PE_IMPORT_IDENTITY",
+      "API_names": [
+        "kernel32.dll!HeapFree"
+      ],
+      "native_origins": [
+        [
+          "IMPORT_API",
+          "kernel32.dll!HeapFree",
+          "0x935d8"
+        ]
+      ],
+      "proof": [
+        "Original instruction register producer chain, x64 ABI nonvolatile preservation, original PE import metadata. No IAT numeric value read."
+      ],
+      "remaining_gaps": [],
+      "native_function_sha256": "699c6c26a561f83f6deb7ef7cd16d6f66228fa9efff8488d5d9f5835ae481dc5",
+      "function_semantics_complete_claimed": false
+    },
+    {
+      "version": "19",
+      "function": "0x68d44",
+      "site": "0x68e1e",
+      "asm": "call r15",
+      "category": "EXACT_PE_IMPORT_IDENTITY",
+      "API_names": [
+        "kernel32.dll!GetProcessHeap"
+      ],
+      "native_origins": [
+        [
+          "IMPORT_API",
+          "kernel32.dll!GetProcessHeap",
+          "0x93588"
+        ]
+      ],
+      "proof": [
+        "Original instruction register producer chain, x64 ABI nonvolatile preservation, original PE import metadata. No IAT numeric value read."
+      ],
+      "remaining_gaps": [],
+      "native_function_sha256": "699c6c26a561f83f6deb7ef7cd16d6f66228fa9efff8488d5d9f5835ae481dc5",
+      "function_semantics_complete_claimed": false
+    },
+    {
+      "version": "19",
+      "function": "0x68d44",
+      "site": "0x68e29",
+      "asm": "call r12",
+      "category": "EXACT_PE_IMPORT_IDENTITY",
+      "API_names": [
+        "kernel32.dll!HeapFree"
+      ],
+      "native_origins": [
+        [
+          "IMPORT_API",
+          "kernel32.dll!HeapFree",
+          "0x935d8"
+        ]
+      ],
+      "proof": [
+        "Original instruction register producer chain, x64 ABI nonvolatile preservation, original PE import metadata. No IAT numeric value read."
+      ],
+      "remaining_gaps": [],
+      "native_function_sha256": "699c6c26a561f83f6deb7ef7cd16d6f66228fa9efff8488d5d9f5835ae481dc5",
+      "function_semantics_complete_claimed": false
+    },
+    {
+      "version": "19",
+      "function": "0x68d44",
+      "site": "0x68edc",
+      "asm": "call rbx",
+      "category": "EXACT_PE_IMPORT_IDENTITY",
+      "API_names": [
+        "kernel32.dll!GetProcessHeap"
+      ],
+      "native_origins": [
+        [
+          "IMPORT_API",
+          "kernel32.dll!GetProcessHeap",
+          "0x93588"
+        ]
+      ],
+      "proof": [
+        "Original instruction register producer chain, x64 ABI nonvolatile preservation, original PE import metadata. No IAT numeric value read."
+      ],
+      "remaining_gaps": [],
+      "native_function_sha256": "699c6c26a561f83f6deb7ef7cd16d6f66228fa9efff8488d5d9f5835ae481dc5",
+      "function_semantics_complete_claimed": false
+    },
+    {
+      "version": "19",
+      "function": "0x68d44",
+      "site": "0x68ee6",
+      "asm": "call r14",
+      "category": "EXACT_PE_IMPORT_IDENTITY",
+      "API_names": [
+        "kernel32.dll!HeapFree"
+      ],
+      "native_origins": [
+        [
+          "IMPORT_API",
+          "kernel32.dll!HeapFree",
+          "0x935d8"
+        ]
+      ],
+      "proof": [
+        "Original instruction register producer chain, x64 ABI nonvolatile preservation, original PE import metadata. No IAT numeric value read."
+      ],
+      "remaining_gaps": [],
+      "native_function_sha256": "699c6c26a561f83f6deb7ef7cd16d6f66228fa9efff8488d5d9f5835ae481dc5",
+      "function_semantics_complete_claimed": false
+    },
+    {
+      "version": "19",
+      "function": "0x23e6d",
+      "site": "0x2405d",
+      "asm": "call r14",
+      "category": "EXACT_NATIVE_CODEC_API_WITH_SOURCE_GATE",
+      "API_names": [
+        "advapi32.dll!RegOpenKeyExW"
+      ],
+      "native_origins": [
+        [
+          "RESOLVER_RETURN",
+          "0x24002",
+          "0x249d"
+        ]
+      ],
+      "proof": [
+        "work\\alpme_analysis\\semantic_closure_20261027\\round5_whole_native\\call_resolution\\resolver_native_names.json",
+        "work\\alpme_analysis\\semantic_closure_20261027\\round5_whole_native\\call_resolution\\resolver_name_lifetime_gates.json",
+        "Original native seed -> full original codec -> cache/clone/resolver source; independent source-byte gate; actual CALL pointer producer chain. No expected API/seed override."
+      ],
+      "remaining_gaps": [],
+      "native_function_sha256": "840c04f0b21b96112e9f3cdf50cd68426ee714addbd2212d3a5c409d19326757",
+      "function_semantics_complete_claimed": false,
+      "identity_scope": "Normal original PE/TLS, valid Once/owned String/UTF16 contracts; exact identity, not a complete API argument/effect proof for the whole enclosing function."
+    },
+    {
+      "version": "17",
+      "function": "0x65893",
+      "site": "0x659f6",
+      "asm": "call r15",
+      "category": "EXACT_PE_IMPORT_IDENTITY",
+      "API_names": [
+        "api-ms-win-core-synch-l1-2-0.dll!WakeByAddressSingle"
+      ],
+      "native_origins": [
+        [
+          "IMPORT_API",
+          "api-ms-win-core-synch-l1-2-0.dll!WakeByAddressSingle",
+          "0x95338"
+        ]
+      ],
+      "proof": [
+        "Original instruction register producer chain, x64 ABI nonvolatile preservation, original PE import metadata. No IAT numeric value read."
+      ],
+      "remaining_gaps": [],
+      "native_function_sha256": "567bed5b8930da1424589ceeae9a07294e07bbaf6102c405964174e8ccfe590c",
+      "function_semantics_complete_claimed": false
+    },
+    {
+      "version": "19",
+      "function": "0xe745",
+      "site": "0xe8a4",
+      "asm": "call r15",
+      "category": "EXACT_PE_IMPORT_IDENTITY",
+      "API_names": [
+        "api-ms-win-core-synch-l1-2-0.dll!WakeByAddressSingle"
+      ],
+      "native_origins": [
+        [
+          "IMPORT_API",
+          "api-ms-win-core-synch-l1-2-0.dll!WakeByAddressSingle",
+          "0x93750"
+        ]
+      ],
+      "proof": [
+        "Original instruction register producer chain, x64 ABI nonvolatile preservation, original PE import metadata. No IAT numeric value read."
+      ],
+      "remaining_gaps": [],
+      "native_function_sha256": "2404abb74b951be55b23bf2be6b50c97560f3d8db2aa82df32f66f47e4c5d2d0",
+      "function_semantics_complete_claimed": false
+    },
+    {
+      "version": "17",
+      "function": "0x3c5a",
+      "site": "0x3e36",
+      "asm": "call rbx",
+      "category": "EXACT_NATIVE_CODEC_API_WITH_SOURCE_GATE",
+      "API_names": [
+        "user32.dll!MessageBoxW"
+      ],
+      "native_origins": [
+        [
+          "RESOLVER_RETURN",
+          "0x3ebc",
+          "0x2c44b"
+        ]
+      ],
+      "proof": [
+        "work\\alpme_analysis\\semantic_closure_20261027\\round5_whole_native\\call_resolution\\resolver_native_names.json",
+        "work\\alpme_analysis\\semantic_closure_20261027\\round5_whole_native\\call_resolution\\resolver_name_lifetime_gates.json",
+        "Original native seed -> full original codec -> cache/clone/resolver source; independent source-byte gate; actual CALL pointer producer chain. No expected API/seed override."
+      ],
+      "remaining_gaps": [],
+      "native_function_sha256": "2e971a19fb7293bd48f16df38f04b0c14534131c96993cecd49bd9b3c2796243",
+      "function_semantics_complete_claimed": false,
+      "identity_scope": "Normal original PE/TLS, valid Once/owned String/UTF16 contracts; exact identity, not a complete API argument/effect proof for the whole enclosing function."
+    },
+    {
+      "version": "17",
+      "function": "0x37d7b",
+      "site": "0x380e3",
+      "asm": "call qword ptr [rsp + 0x58]",
+      "category": "EXACT_NATIVE_CODEC_API_WITH_SOURCE_GATE",
+      "API_names": [
+        "kernel32.dll!CreateProcessW"
+      ],
+      "native_origins": [
+        [
+          "RESOLVER_RETURN",
+          "0x37f50",
+          "0x2c44b"
+        ]
+      ],
+      "proof": [
+        "work\\alpme_analysis\\semantic_closure_20261027\\round5_whole_native\\call_resolution\\resolver_native_names.json",
+        "work\\alpme_analysis\\semantic_closure_20261027\\round5_whole_native\\call_resolution\\resolver_name_lifetime_gates.json",
+        "Original native seed -> full original codec -> cache/clone/resolver source; independent source-byte gate; actual CALL pointer producer chain. No expected API/seed override."
+      ],
+      "remaining_gaps": [],
+      "native_function_sha256": "8f0b1bf217578c1ded6a6da89da95f25f0d39a8488796449685f6b95481cc70e",
+      "function_semantics_complete_claimed": false,
+      "identity_scope": "Normal original PE/TLS, valid Once/owned String/UTF16 contracts; exact identity, not a complete API argument/effect proof for the whole enclosing function."
+    },
+    {
+      "version": "19",
+      "function": "0xf03b",
+      "site": "0xf1b4",
+      "asm": "call qword ptr [rsp + 0x40]",
+      "category": "EXACT_NATIVE_CODEC_API_WITH_SOURCE_GATE",
+      "API_names": [
+        "user32.dll!MessageBoxW"
+      ],
+      "native_origins": [
+        [
+          "RESOLVER_RETURN",
+          "0xf2d2",
+          "0x249d"
+        ]
+      ],
+      "proof": [
+        "work\\alpme_analysis\\semantic_closure_20261027\\round5_whole_native\\call_resolution\\resolver_native_names.json",
+        "work\\alpme_analysis\\semantic_closure_20261027\\round5_whole_native\\call_resolution\\resolver_name_lifetime_gates.json",
+        "Original native seed -> full original codec -> cache/clone/resolver source; independent source-byte gate; actual CALL pointer producer chain. No expected API/seed override."
+      ],
+      "remaining_gaps": [],
+      "native_function_sha256": "f19c82ddb3c51dcce1ad8241fdfa44ad446f903654f7f4b0567f69a6c09176bf",
+      "function_semantics_complete_claimed": false,
+      "identity_scope": "Normal original PE/TLS, valid Once/owned String/UTF16 contracts; exact identity, not a complete API argument/effect proof for the whole enclosing function."
+    },
+    {
+      "version": "19",
+      "function": "0x2acab",
+      "site": "0x2af66",
+      "asm": "call r12",
+      "category": "EXACT_NATIVE_CODEC_API_WITH_SOURCE_GATE",
+      "API_names": [
+        "kernel32.dll!CreateProcessW"
+      ],
+      "native_origins": [
+        [
+          "RESOLVER_RETURN",
+          "0x2ad8e",
+          "0x249d"
+        ]
+      ],
+      "proof": [
+        "work\\alpme_analysis\\semantic_closure_20261027\\round5_whole_native\\call_resolution\\resolver_native_names.json",
+        "work\\alpme_analysis\\semantic_closure_20261027\\round5_whole_native\\call_resolution\\resolver_name_lifetime_gates.json",
+        "Original native seed -> full original codec -> cache/clone/resolver source; independent source-byte gate; actual CALL pointer producer chain. No expected API/seed override."
+      ],
+      "remaining_gaps": [],
+      "native_function_sha256": "2a42cb261fa6d73aad71fff1a5084727127f2d37b451f930cff92bede80a0cbc",
+      "function_semantics_complete_claimed": false,
+      "identity_scope": "Normal original PE/TLS, valid Once/owned String/UTF16 contracts; exact identity, not a complete API argument/effect proof for the whole enclosing function."
+    },
+    {
+      "version": "19",
+      "function": "0x1a61c",
+      "site": "0x1a85c",
+      "asm": "call r14",
+      "category": "EXACT_NATIVE_CODEC_API_WITH_SOURCE_GATE",
+      "API_names": [
+        "kernel32.dll!GetEnvironmentVariableW"
+      ],
+      "native_origins": [
+        [
+          "RESOLVER_RETURN",
+          "0x1a7cd",
+          "0x249d"
+        ]
+      ],
+      "proof": [
+        "work\\alpme_analysis\\semantic_closure_20261027\\round5_whole_native\\call_resolution\\resolver_native_names.json",
+        "work\\alpme_analysis\\semantic_closure_20261027\\round5_whole_native\\call_resolution\\resolver_name_lifetime_gates.json",
+        "Original native seed -> full original codec -> cache/clone/resolver source; independent source-byte gate; actual CALL pointer producer chain. No expected API/seed override."
+      ],
+      "remaining_gaps": [],
+      "native_function_sha256": "25752c0e775648a96a4337336d42db9c581beca83bdc3882948c15b701d004c1",
+      "function_semantics_complete_claimed": false,
+      "identity_scope": "Normal original PE/TLS, valid Once/owned String/UTF16 contracts; exact identity, not a complete API argument/effect proof for the whole enclosing function."
+    },
+    {
+      "version": "19",
+      "function": "0x1a61c",
+      "site": "0x1a965",
+      "asm": "call r14",
+      "category": "EXACT_NATIVE_CODEC_API_WITH_SOURCE_GATE",
+      "API_names": [
+        "kernel32.dll!GetEnvironmentVariableW"
+      ],
+      "native_origins": [
+        [
+          "RESOLVER_RETURN",
+          "0x1a7cd",
+          "0x249d"
+        ]
+      ],
+      "proof": [
+        "work\\alpme_analysis\\semantic_closure_20261027\\round5_whole_native\\call_resolution\\resolver_native_names.json",
+        "work\\alpme_analysis\\semantic_closure_20261027\\round5_whole_native\\call_resolution\\resolver_name_lifetime_gates.json",
+        "Original native seed -> full original codec -> cache/clone/resolver source; independent source-byte gate; actual CALL pointer producer chain. No expected API/seed override."
+      ],
+      "remaining_gaps": [],
+      "native_function_sha256": "25752c0e775648a96a4337336d42db9c581beca83bdc3882948c15b701d004c1",
+      "function_semantics_complete_claimed": false,
+      "identity_scope": "Normal original PE/TLS, valid Once/owned String/UTF16 contracts; exact identity, not a complete API argument/effect proof for the whole enclosing function."
+    },
+    {
+      "version": "17",
+      "function": "0x2b13d",
+      "site": "0x2b2e5",
+      "asm": "call r15",
+      "category": "EXACT_NATIVE_CODEC_API_WITH_SOURCE_GATE",
+      "API_names": [
+        "kernel32.dll!GetEnvironmentVariableW"
+      ],
+      "native_origins": [
+        [
+          "RESOLVER_RETURN",
+          "0x2b295",
+          "0x2c44b"
+        ]
+      ],
+      "proof": [
+        "work\\alpme_analysis\\semantic_closure_20261027\\round5_whole_native\\call_resolution\\resolver_native_names.json",
+        "work\\alpme_analysis\\semantic_closure_20261027\\round5_whole_native\\call_resolution\\resolver_name_lifetime_gates.json",
+        "Original native seed -> full original codec -> cache/clone/resolver source; independent source-byte gate; actual CALL pointer producer chain. No expected API/seed override."
+      ],
+      "remaining_gaps": [],
+      "native_function_sha256": "609ce08c6f71ad74a825bb5b34c787b1a15083c3f8902a69c905fa00dd45d46c",
+      "function_semantics_complete_claimed": false,
+      "identity_scope": "Normal original PE/TLS, valid Once/owned String/UTF16 contracts; exact identity, not a complete API argument/effect proof for the whole enclosing function."
+    },
+    {
+      "version": "17",
+      "function": "0x2b13d",
+      "site": "0x2b36a",
+      "asm": "call r15",
+      "category": "EXACT_NATIVE_CODEC_API_WITH_SOURCE_GATE",
+      "API_names": [
+        "kernel32.dll!GetEnvironmentVariableW"
+      ],
+      "native_origins": [
+        [
+          "RESOLVER_RETURN",
+          "0x2b295",
+          "0x2c44b"
+        ]
+      ],
+      "proof": [
+        "work\\alpme_analysis\\semantic_closure_20261027\\round5_whole_native\\call_resolution\\resolver_native_names.json",
+        "work\\alpme_analysis\\semantic_closure_20261027\\round5_whole_native\\call_resolution\\resolver_name_lifetime_gates.json",
+        "Original native seed -> full original codec -> cache/clone/resolver source; independent source-byte gate; actual CALL pointer producer chain. No expected API/seed override."
+      ],
+      "remaining_gaps": [],
+      "native_function_sha256": "609ce08c6f71ad74a825bb5b34c787b1a15083c3f8902a69c905fa00dd45d46c",
+      "function_semantics_complete_claimed": false,
+      "identity_scope": "Normal original PE/TLS, valid Once/owned String/UTF16 contracts; exact identity, not a complete API argument/effect proof for the whole enclosing function."
+    },
+    {
+      "version": "17",
+      "function": "0x1dc19",
+      "site": "0x1dcb3",
+      "asm": "call r13",
+      "category": "EXACT_PE_IMPORT_IDENTITY",
+      "API_names": [
+        "api-ms-win-core-synch-l1-2-0.dll!WakeByAddressSingle"
+      ],
+      "native_origins": [
+        [
+          "IMPORT_API",
+          "api-ms-win-core-synch-l1-2-0.dll!WakeByAddressSingle",
+          "0x95338"
+        ]
+      ],
+      "proof": [
+        "Original instruction register producer chain, x64 ABI nonvolatile preservation, original PE import metadata. No IAT numeric value read."
+      ],
+      "remaining_gaps": [],
+      "native_function_sha256": "acde92cb33be5b4a494a7f2bc37225b465766167134b59ac0b4aaaf37b6e3c4a",
+      "function_semantics_complete_claimed": false
+    },
+    {
+      "version": "17",
+      "function": "0x1dc19",
+      "site": "0x1dd13",
+      "asm": "call r12",
+      "category": "EXACT_PE_IMPORT_IDENTITY",
+      "API_names": [
+        "api-ms-win-core-synch-l1-2-0.dll!WakeByAddressSingle"
+      ],
+      "native_origins": [
+        [
+          "IMPORT_API",
+          "api-ms-win-core-synch-l1-2-0.dll!WakeByAddressSingle",
+          "0x95338"
+        ]
+      ],
+      "proof": [
+        "Original instruction register producer chain, x64 ABI nonvolatile preservation, original PE import metadata. No IAT numeric value read."
+      ],
+      "remaining_gaps": [],
+      "native_function_sha256": "acde92cb33be5b4a494a7f2bc37225b465766167134b59ac0b4aaaf37b6e3c4a",
+      "function_semantics_complete_claimed": false
+    },
+    {
+      "version": "17",
+      "function": "0x1dc19",
+      "site": "0x1dda7",
+      "asm": "call r13",
+      "category": "EXACT_PE_IMPORT_IDENTITY",
+      "API_names": [
+        "api-ms-win-core-synch-l1-2-0.dll!WakeByAddressSingle"
+      ],
+      "native_origins": [
+        [
+          "IMPORT_API",
+          "api-ms-win-core-synch-l1-2-0.dll!WakeByAddressSingle",
+          "0x95338"
+        ]
+      ],
+      "proof": [
+        "Original instruction register producer chain, x64 ABI nonvolatile preservation, original PE import metadata. No IAT numeric value read."
+      ],
+      "remaining_gaps": [],
+      "native_function_sha256": "acde92cb33be5b4a494a7f2bc37225b465766167134b59ac0b4aaaf37b6e3c4a",
+      "function_semantics_complete_claimed": false
+    },
+    {
+      "version": "17",
+      "function": "0x1dc19",
+      "site": "0x1de07",
+      "asm": "call r12",
+      "category": "EXACT_PE_IMPORT_IDENTITY",
+      "API_names": [
+        "api-ms-win-core-synch-l1-2-0.dll!WakeByAddressSingle"
+      ],
+      "native_origins": [
+        [
+          "IMPORT_API",
+          "api-ms-win-core-synch-l1-2-0.dll!WakeByAddressSingle",
+          "0x95338"
+        ]
+      ],
+      "proof": [
+        "Original instruction register producer chain, x64 ABI nonvolatile preservation, original PE import metadata. No IAT numeric value read."
+      ],
+      "remaining_gaps": [],
+      "native_function_sha256": "acde92cb33be5b4a494a7f2bc37225b465766167134b59ac0b4aaaf37b6e3c4a",
+      "function_semantics_complete_claimed": false
+    },
+    {
+      "version": "17",
+      "function": "0x1dc19",
+      "site": "0x1df5a",
+      "asm": "call r15",
+      "category": "EXACT_PE_IMPORT_IDENTITY",
+      "API_names": [
+        "kernel32.dll!GetProcessHeap"
+      ],
+      "native_origins": [
+        [
+          "IMPORT_API",
+          "kernel32.dll!GetProcessHeap",
+          "0x95148"
+        ]
+      ],
+      "proof": [
+        "Original instruction register producer chain, x64 ABI nonvolatile preservation, original PE import metadata. No IAT numeric value read."
+      ],
+      "remaining_gaps": [],
+      "native_function_sha256": "acde92cb33be5b4a494a7f2bc37225b465766167134b59ac0b4aaaf37b6e3c4a",
+      "function_semantics_complete_claimed": false
+    },
+    {
+      "version": "17",
+      "function": "0x1dc19",
+      "site": "0x1df65",
+      "asm": "call r12",
+      "category": "EXACT_PE_IMPORT_IDENTITY",
+      "API_names": [
+        "kernel32.dll!HeapFree"
+      ],
+      "native_origins": [
+        [
+          "IMPORT_API",
+          "kernel32.dll!HeapFree",
+          "0x951a8"
+        ]
+      ],
+      "proof": [
+        "Original instruction register producer chain, x64 ABI nonvolatile preservation, original PE import metadata. No IAT numeric value read."
+      ],
+      "remaining_gaps": [],
+      "native_function_sha256": "acde92cb33be5b4a494a7f2bc37225b465766167134b59ac0b4aaaf37b6e3c4a",
+      "function_semantics_complete_claimed": false
+    },
+    {
+      "version": "19",
+      "function": "0x46522",
+      "site": "0x465f7",
+      "asm": "call r15",
+      "category": "EXACT_PE_IMPORT_IDENTITY",
+      "API_names": [
+        "kernel32.dll!GetProcessHeap"
+      ],
+      "native_origins": [
+        [
+          "IMPORT_API",
+          "kernel32.dll!GetProcessHeap",
+          "0x93588"
+        ]
+      ],
+      "proof": [
+        "Original instruction register producer chain, x64 ABI nonvolatile preservation, original PE import metadata. No IAT numeric value read."
+      ],
+      "remaining_gaps": [],
+      "native_function_sha256": "62eb2e904a079d33aebe580ccb7ee5205c8f1b38294bc7d966e5ffb23d6c1721",
+      "function_semantics_complete_claimed": false
+    },
+    {
+      "version": "19",
+      "function": "0x46522",
+      "site": "0x46602",
+      "asm": "call r12",
+      "category": "EXACT_PE_IMPORT_IDENTITY",
+      "API_names": [
+        "kernel32.dll!HeapFree"
+      ],
+      "native_origins": [
+        [
+          "IMPORT_API",
+          "kernel32.dll!HeapFree",
+          "0x935d8"
+        ]
+      ],
+      "proof": [
+        "Original instruction register producer chain, x64 ABI nonvolatile preservation, original PE import metadata. No IAT numeric value read."
+      ],
+      "remaining_gaps": [],
+      "native_function_sha256": "62eb2e904a079d33aebe580ccb7ee5205c8f1b38294bc7d966e5ffb23d6c1721",
+      "function_semantics_complete_claimed": false
+    },
+    {
+      "version": "19",
+      "function": "0x46522",
+      "site": "0x4672b",
+      "asm": "call r13",
+      "category": "EXACT_PE_IMPORT_IDENTITY",
+      "API_names": [
+        "api-ms-win-core-synch-l1-2-0.dll!WakeByAddressSingle"
+      ],
+      "native_origins": [
+        [
+          "IMPORT_API",
+          "api-ms-win-core-synch-l1-2-0.dll!WakeByAddressSingle",
+          "0x93750"
+        ]
+      ],
+      "proof": [
+        "Original instruction register producer chain, x64 ABI nonvolatile preservation, original PE import metadata. No IAT numeric value read."
+      ],
+      "remaining_gaps": [],
+      "native_function_sha256": "62eb2e904a079d33aebe580ccb7ee5205c8f1b38294bc7d966e5ffb23d6c1721",
+      "function_semantics_complete_claimed": false
+    },
+    {
+      "version": "19",
+      "function": "0x46522",
+      "site": "0x4678b",
+      "asm": "call r12",
+      "category": "EXACT_PE_IMPORT_IDENTITY",
+      "API_names": [
+        "api-ms-win-core-synch-l1-2-0.dll!WakeByAddressSingle"
+      ],
+      "native_origins": [
+        [
+          "IMPORT_API",
+          "api-ms-win-core-synch-l1-2-0.dll!WakeByAddressSingle",
+          "0x93750"
+        ]
+      ],
+      "proof": [
+        "Original instruction register producer chain, x64 ABI nonvolatile preservation, original PE import metadata. No IAT numeric value read."
+      ],
+      "remaining_gaps": [],
+      "native_function_sha256": "62eb2e904a079d33aebe580ccb7ee5205c8f1b38294bc7d966e5ffb23d6c1721",
+      "function_semantics_complete_claimed": false
+    },
+    {
+      "version": "19",
+      "function": "0x46522",
+      "site": "0x46813",
+      "asm": "call r13",
+      "category": "EXACT_PE_IMPORT_IDENTITY",
+      "API_names": [
+        "api-ms-win-core-synch-l1-2-0.dll!WakeByAddressSingle"
+      ],
+      "native_origins": [
+        [
+          "IMPORT_API",
+          "api-ms-win-core-synch-l1-2-0.dll!WakeByAddressSingle",
+          "0x93750"
+        ]
+      ],
+      "proof": [
+        "Original instruction register producer chain, x64 ABI nonvolatile preservation, original PE import metadata. No IAT numeric value read."
+      ],
+      "remaining_gaps": [],
+      "native_function_sha256": "62eb2e904a079d33aebe580ccb7ee5205c8f1b38294bc7d966e5ffb23d6c1721",
+      "function_semantics_complete_claimed": false
+    },
+    {
+      "version": "19",
+      "function": "0x46522",
+      "site": "0x46874",
+      "asm": "call r12",
+      "category": "EXACT_PE_IMPORT_IDENTITY",
+      "API_names": [
+        "api-ms-win-core-synch-l1-2-0.dll!WakeByAddressSingle"
+      ],
+      "native_origins": [
+        [
+          "IMPORT_API",
+          "api-ms-win-core-synch-l1-2-0.dll!WakeByAddressSingle",
+          "0x93750"
+        ]
+      ],
+      "proof": [
+        "Original instruction register producer chain, x64 ABI nonvolatile preservation, original PE import metadata. No IAT numeric value read."
+      ],
+      "remaining_gaps": [],
+      "native_function_sha256": "62eb2e904a079d33aebe580ccb7ee5205c8f1b38294bc7d966e5ffb23d6c1721",
+      "function_semantics_complete_claimed": false
+    },
+    {
+      "version": "17",
+      "function": "0x63a05",
+      "site": "0x63b4c",
+      "asm": "call r14",
+      "category": "EXACT_NATIVE_CODEC_API_WITH_SOURCE_GATE",
+      "API_names": [
+        "crypt32.dll!CryptStringToBinaryA"
+      ],
+      "native_origins": [
+        [
+          "RESOLVER_RETURN",
+          "0x63d09",
+          "0x2c44b"
+        ]
+      ],
+      "proof": [
+        "work\\alpme_analysis\\semantic_closure_20261027\\round5_whole_native\\call_resolution\\resolver_native_names.json",
+        "work\\alpme_analysis\\semantic_closure_20261027\\round5_whole_native\\call_resolution\\resolver_name_lifetime_gates.json",
+        "Original native seed -> full original codec -> cache/clone/resolver source; independent source-byte gate; actual CALL pointer producer chain. No expected API/seed override."
+      ],
+      "remaining_gaps": [],
+      "native_function_sha256": "adfca99c24b8bd760530417cc53e5666f83572ba07126d42f1e9b0cae2ec5f96",
+      "function_semantics_complete_claimed": false,
+      "identity_scope": "Normal original PE/TLS, valid Once/owned String/UTF16 contracts; exact identity, not a complete API argument/effect proof for the whole enclosing function."
+    },
+    {
+      "version": "17",
+      "function": "0x63a05",
+      "site": "0x63d7e",
+      "asm": "call r14",
+      "category": "EXACT_NATIVE_CODEC_API_WITH_SOURCE_GATE",
+      "API_names": [
+        "crypt32.dll!CryptStringToBinaryA"
+      ],
+      "native_origins": [
+        [
+          "RESOLVER_RETURN",
+          "0x63d09",
+          "0x2c44b"
+        ]
+      ],
+      "proof": [
+        "work\\alpme_analysis\\semantic_closure_20261027\\round5_whole_native\\call_resolution\\resolver_native_names.json",
+        "work\\alpme_analysis\\semantic_closure_20261027\\round5_whole_native\\call_resolution\\resolver_name_lifetime_gates.json",
+        "Original native seed -> full original codec -> cache/clone/resolver source; independent source-byte gate; actual CALL pointer producer chain. No expected API/seed override."
+      ],
+      "remaining_gaps": [],
+      "native_function_sha256": "adfca99c24b8bd760530417cc53e5666f83572ba07126d42f1e9b0cae2ec5f96",
+      "function_semantics_complete_claimed": false,
+      "identity_scope": "Normal original PE/TLS, valid Once/owned String/UTF16 contracts; exact identity, not a complete API argument/effect proof for the whole enclosing function."
+    },
+    {
+      "version": "17",
+      "function": "0x63f30",
+      "site": "0x64182",
+      "asm": "call qword ptr [rsp + 0x98]",
+      "category": "EXACT_NATIVE_CODEC_API_WITH_SOURCE_GATE",
+      "API_names": [
+        "crypt32.dll!CryptUnprotectData"
+      ],
+      "native_origins": [
+        [
+          "RESOLVER_RETURN",
+          "0x64061",
+          "0x2c44b"
+        ]
+      ],
+      "proof": [
+        "work\\alpme_analysis\\semantic_closure_20261027\\round5_whole_native\\call_resolution\\resolver_native_names.json",
+        "work\\alpme_analysis\\semantic_closure_20261027\\round5_whole_native\\call_resolution\\resolver_name_lifetime_gates.json",
+        "Original native seed -> full original codec -> cache/clone/resolver source; independent source-byte gate; actual CALL pointer producer chain. No expected API/seed override."
+      ],
+      "remaining_gaps": [],
+      "native_function_sha256": "60db2571ea29fd2076d06a52bd7e2ac58aeb0747f05b26f8c4d7b5b2b03bf111",
+      "function_semantics_complete_claimed": false,
+      "identity_scope": "Normal original PE/TLS, valid Once/owned String/UTF16 contracts; exact identity, not a complete API argument/effect proof for the whole enclosing function."
+    },
+    {
+      "version": "17",
+      "function": "0x63f30",
+      "site": "0x642b7",
+      "asm": "call r14",
+      "category": "EXACT_NATIVE_CODEC_API_WITH_SOURCE_GATE",
+      "API_names": [
+        "kernel32.dll!LocalFree"
+      ],
+      "native_origins": [
+        [
+          "RESOLVER_RETURN",
+          "0x643bc",
+          "0x2c44b"
+        ]
+      ],
+      "proof": [
+        "work\\alpme_analysis\\semantic_closure_20261027\\round5_whole_native\\call_resolution\\resolver_native_names.json",
+        "work\\alpme_analysis\\semantic_closure_20261027\\round5_whole_native\\call_resolution\\resolver_name_lifetime_gates.json",
+        "Original native seed -> full original codec -> cache/clone/resolver source; independent source-byte gate; actual CALL pointer producer chain. No expected API/seed override."
+      ],
+      "remaining_gaps": [],
+      "native_function_sha256": "60db2571ea29fd2076d06a52bd7e2ac58aeb0747f05b26f8c4d7b5b2b03bf111",
+      "function_semantics_complete_claimed": false,
+      "identity_scope": "Normal original PE/TLS, valid Once/owned String/UTF16 contracts; exact identity, not a complete API argument/effect proof for the whole enclosing function."
+    },
+    {
+      "version": "19",
+      "function": "0x57ab8",
+      "site": "0x57ce8",
+      "asm": "call qword ptr [rbp + 7]",
+      "category": "CONTEXT_EXCLUDED_CUSTOM_ERROR_CALLBACK",
+      "API_names": null,
+      "native_origins": [
+        [
+          "DYNAMIC_MEMORY",
+          "rbp+0x7",
+          "entry=False defs=['0x57c86:mov rbp, rdx']"
+        ]
+      ],
+      "proof": [
+        "work\\alpme_analysis\\semantic_closure_20261027\\round4_network_core\\19_57ab8_filereadall\\19_57ab8_component_receipt.json",
+        "c4e5df6c516a52b83577c3dd2845eafc9329b03b0acc23908dbb87e1f9b4e078",
+        "Readonly FileReadAll options yield error lowtags0/2/3; these sites need custom tag1."
+      ],
+      "remaining_gaps": [
+        "Generic entry with arbitrary custom error may still call caller/object-selected target; no universal target identity is claimed."
+      ],
+      "native_function_sha256": "a3f52aeddd5c329e061904f03fa195b4f2d91d71fd5d5cd8d6f683a9e8618c6f",
+      "function_semantics_complete_claimed": false,
+      "role": "Owned custom-error destructor/error-mapper callback, contextually unreachable for readonly FileReadAll lowtags0/2/3; tag1 generic-input boundary retained."
+    },
+    {
+      "version": "19",
+      "function": "0x57ab8",
+      "site": "0x57de0",
+      "asm": "call qword ptr [rbp + 7]",
+      "category": "CONTEXT_EXCLUDED_CUSTOM_ERROR_CALLBACK",
+      "API_names": null,
+      "native_origins": [
+        [
+          "DYNAMIC_MEMORY",
+          "rbp+0x7",
+          "entry=False defs=['0x57c86:mov rbp, rdx']"
+        ]
+      ],
+      "proof": [
+        "work\\alpme_analysis\\semantic_closure_20261027\\round4_network_core\\19_57ab8_filereadall\\19_57ab8_component_receipt.json",
+        "c4e5df6c516a52b83577c3dd2845eafc9329b03b0acc23908dbb87e1f9b4e078",
+        "Readonly FileReadAll options yield error lowtags0/2/3; these sites need custom tag1."
+      ],
+      "remaining_gaps": [
+        "Generic entry with arbitrary custom error may still call caller/object-selected target; no universal target identity is claimed."
+      ],
+      "native_function_sha256": "a3f52aeddd5c329e061904f03fa195b4f2d91d71fd5d5cd8d6f683a9e8618c6f",
+      "function_semantics_complete_claimed": false,
+      "role": "Owned custom-error destructor/error-mapper callback, contextually unreachable for readonly FileReadAll lowtags0/2/3; tag1 generic-input boundary retained."
+    },
+    {
+      "version": "19",
+      "function": "0x57ab8",
+      "site": "0x57df6",
+      "asm": "call qword ptr [rax + 8]",
+      "category": "CONTEXT_EXCLUDED_CUSTOM_ERROR_CALLBACK",
+      "API_names": null,
+      "native_origins": [
+        [
+          "DYNAMIC_MEMORY",
+          "rax+0x8",
+          "entry=False defs=['0x57def:mov rax, qword ptr [rip + 0x4093a]']"
+        ]
+      ],
+      "proof": [
+        "work\\alpme_analysis\\semantic_closure_20261027\\round4_network_core\\19_57ab8_filereadall\\19_57ab8_component_receipt.json",
+        "c4e5df6c516a52b83577c3dd2845eafc9329b03b0acc23908dbb87e1f9b4e078",
+        "Readonly FileReadAll options yield error lowtags0/2/3; these sites need custom tag1."
+      ],
+      "remaining_gaps": [
+        "Generic entry with arbitrary custom error may still call caller/object-selected target; no universal target identity is claimed."
+      ],
+      "native_function_sha256": "a3f52aeddd5c329e061904f03fa195b4f2d91d71fd5d5cd8d6f683a9e8618c6f",
+      "function_semantics_complete_claimed": false,
+      "role": "Owned custom-error destructor/error-mapper callback, contextually unreachable for readonly FileReadAll lowtags0/2/3; tag1 generic-input boundary retained."
+    },
+    {
+      "version": "19",
+      "function": "0x57ab8",
+      "site": "0x57e2f",
+      "asm": "call qword ptr [rax]",
+      "category": "CONTEXT_EXCLUDED_CUSTOM_ERROR_CALLBACK",
+      "API_names": null,
+      "native_origins": [
+        [
+          "DYNAMIC_MEMORY",
+          "rax+0x0",
+          "entry=False defs=['0x57e28:mov rax, qword ptr [rip + 0x40901]']"
+        ]
+      ],
+      "proof": [
+        "work\\alpme_analysis\\semantic_closure_20261027\\round4_network_core\\19_57ab8_filereadall\\19_57ab8_component_receipt.json",
+        "c4e5df6c516a52b83577c3dd2845eafc9329b03b0acc23908dbb87e1f9b4e078",
+        "Readonly FileReadAll options yield error lowtags0/2/3; these sites need custom tag1."
+      ],
+      "remaining_gaps": [
+        "Generic entry with arbitrary custom error may still call caller/object-selected target; no universal target identity is claimed."
+      ],
+      "native_function_sha256": "a3f52aeddd5c329e061904f03fa195b4f2d91d71fd5d5cd8d6f683a9e8618c6f",
+      "function_semantics_complete_claimed": false,
+      "role": "Owned custom-error destructor/error-mapper callback, contextually unreachable for readonly FileReadAll lowtags0/2/3; tag1 generic-input boundary retained."
+    },
+    {
+      "version": "19",
+      "function": "0x57ab8",
+      "site": "0x57e76",
+      "asm": "call qword ptr [rsi + 7]",
+      "category": "CONTEXT_EXCLUDED_CUSTOM_ERROR_CALLBACK",
+      "API_names": null,
+      "native_origins": [
+        [
+          "DYNAMIC_MEMORY",
+          "rsi+0x7",
+          "entry=False defs=['0x57e4e:mov rsi, rdx', '0x57e57:mov rsi, qword ptr [rsp + 0x70]']"
+        ]
+      ],
+      "proof": [
+        "work\\alpme_analysis\\semantic_closure_20261027\\round4_network_core\\19_57ab8_filereadall\\19_57ab8_component_receipt.json",
+        "c4e5df6c516a52b83577c3dd2845eafc9329b03b0acc23908dbb87e1f9b4e078",
+        "Readonly FileReadAll options yield error lowtags0/2/3; these sites need custom tag1."
+      ],
+      "remaining_gaps": [
+        "Generic entry with arbitrary custom error may still call caller/object-selected target; no universal target identity is claimed."
+      ],
+      "native_function_sha256": "a3f52aeddd5c329e061904f03fa195b4f2d91d71fd5d5cd8d6f683a9e8618c6f",
+      "function_semantics_complete_claimed": false,
+      "role": "Owned custom-error destructor/error-mapper callback, contextually unreachable for readonly FileReadAll lowtags0/2/3; tag1 generic-input boundary retained."
+    },
+    {
+      "version": "17",
+      "function": "0x36230",
+      "site": "0x366d9",
+      "asm": "call r13",
+      "category": "EXACT_NATIVE_CODEC_API_WITH_SOURCE_GATE",
+      "API_names": [
+        "kernel32.dll!ReadProcessMemory"
+      ],
+      "native_origins": [
+        [
+          "RESOLVER_RETURN",
+          "0x3665c",
+          "0x2c44b"
+        ]
+      ],
+      "proof": [
+        "work\\alpme_analysis\\semantic_closure_20261027\\round5_whole_native\\call_resolution\\resolver_native_names.json",
+        "work\\alpme_analysis\\semantic_closure_20261027\\round5_whole_native\\call_resolution\\resolver_name_lifetime_gates.json",
+        "Original native seed -> full original codec -> cache/clone/resolver source; independent source-byte gate; actual CALL pointer producer chain. No expected API/seed override."
+      ],
+      "remaining_gaps": [],
+      "native_function_sha256": "0aa1ed054160bd28defa58d605437dfd94e870d0cb4a04cfad945f9cbdf2e879",
+      "function_semantics_complete_claimed": false,
+      "identity_scope": "Normal original PE/TLS, valid Once/owned String/UTF16 contracts; exact identity, not a complete API argument/effect proof for the whole enclosing function."
+    },
+    {
+      "version": "19",
+      "function": "0x5f29a",
+      "site": "0x5f923",
+      "asm": "call qword ptr [rbp + 7]",
+      "category": "CUSTOM_TAGGED_ERROR_DROP_CALLBACK",
+      "API_names": null,
+      "native_origins": [
+        [
+          "DYNAMIC_MEMORY",
+          "rbp+0x7",
+          "entry=False defs=['0x5f5c8:mov rbp, qword ptr [rsp + rax + 0x3c0]']"
+        ]
+      ],
+      "proof": [],
+      "remaining_gaps": [
+        "Need exact error/constructor producer and tag domain at5f5c8 to enumerate/exclude custom cleanup callback; generic target and effect contract remain open."
+      ],
+      "native_function_sha256": "8c13d87e3d1d72fcf5f3cee121cd45b208167ed5a776ee8c7d8b540a433f8077",
+      "function_semantics_complete_claimed": false,
+      "role": "Drop function loaded from tagged owned custom-error box+7, not a recovered Win32 API slot."
+    }
+  ],
+  "constructor_native_callback_proofs": [
+    {
+      "version": "17",
+      "constructor": "0x50670",
+      "native_sha256": "fe4a18c7ccfa7cff6b3970d3db0ac2262a719ea8a05627345abd3227851e42fb",
+      "stored_callback_fields": {
+        "0x8": {
+          "target_rva": "0x3bafb",
+          "LEA_site": "0x506be",
+          "store_site": "0x506c5",
+          "native_bytes": "488d0d36b4feff48894808"
+        },
+        "0x20": {
+          "target_rva": "0xbd0f",
+          "LEA_site": "0x506d8",
+          "store_site": "0x506df",
+          "native_bytes": "488d0d30b6fbff48894820"
+        }
+      },
+      "boundary": "Only objects made by this exact constructor family; not a universal target set for generic outercleanup input."
+    },
+    {
+      "version": "19",
+      "constructor": "0x10112",
+      "native_sha256": "c8e5abae4b58e956ebf1762c3a4904fb269e1aff42c3afff569ab876f5959e45",
+      "stored_callback_fields": {
+        "0x8": {
+          "target_rva": "0x227c7",
+          "LEA_site": "0x10161",
+          "store_site": "0x10168",
+          "native_bytes": "488d0d5f26010048894808"
+        },
+        "0x20": {
+          "target_rva": "0x61222",
+          "LEA_site": "0x1017b",
+          "store_site": "0x10182",
+          "native_bytes": "488d0da010050048894820"
+        }
+      },
+      "boundary": "Only objects made by this exact constructor family; not a universal target set for generic outercleanup input."
+    }
+  ],
+  "normal_context": "Original PE imports/readonly tables and named normal data/TLS; valid owned object/cache/ABI. Dynamic callbacks retain caller/producer qualifications.",
+  "no_raw_IAT_numeric_attribution": true,
+  "no_forced_expected_seed_or_API": true,
+  "no_sample_or_API_or_C2_execution": true,
+  "source_sha256": {
+    "77_callsite_classification.json": "8fd0201c4956bbefdef8e58933481e79c92905822300199455cf396afa7a5802",
+    "resolver_native_names.json": "a655f8f9bc634181ca5d4dcd2592b9d81c0435f23e2ae71fda03e95227b35f89",
+    "resolver_name_lifetime_gates.json": "94abe117a12fea496b93da699b450e1fc3ff4d97fd145251816da801064ffcc6",
+    "resolve_calls.py": "d1e9588c5232ac2be9c65e480d224b838781e3fe829f703c6110a349a8ccf33d",
+    "decode_resolver_names.py": "2a7533ce9ffd3caa9fa7d1cbae1f600795d3b919fcbd803dd1a197b8c62df715",
+    "gate_native_names.py": "cd5064586c8a7f370e6b2351ed39d2e83bf1decd68656a606b6796f70d393521",
+    "finalize_resolution.py": "314efd70faa9035e7469b6b96b6960ef23551f5bb7b2421e2543d96a446670a4"
+  }
+}

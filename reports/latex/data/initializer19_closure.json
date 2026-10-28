@@ -1,0 +1,142 @@
+{
+  "status": "PASS_CONDITIONAL_NORMAL_NATIVE_CFG_AND_SOURCE_LIFETIMES",
+  "version": "19",
+  "entry": "0x2e35f",
+  "end": "0x31fca",
+  "source_sha256": "4e4636d2c9d57eb609b7d18ee3dc01713fbcda39c5eee52bd4a66f222f67bb31",
+  "native_sha256": "1b34b084bb9d9c3044a3bb19d4f13610b55c1a2a18c8dd25ba0d222c2808408a",
+  "native_bytes": 15467,
+  "instructions": 3224,
+  "computed_jumps": 156,
+  "unresolved_computed_jumps": [],
+  "out_of_extent_targets": [],
+  "no_forced_branch_edges": true,
+  "no_Probe_protected_restoration": true,
+  "natural_effects": 119,
+  "typed_owned_store_sites": 63,
+  "ordinary_frame_store_sites": 259,
+  "independent_source_reads": 37,
+  "independent_source_bytes": 145,
+  "independent_source_failures": [],
+  "qualified_data_premises": [
+    "Actual PE/TLS initializer algebra and one specifically named normal-initialized scalar97250=81; no mutable Once/cache flag frozen."
+  ],
+  "qualified_object_ABI": [
+    "Windows x64 ABI; valid owned Rust BTree/Vec/ReadDir/DirEntry Arc objects; allocator-owned heap and original caller output disjoint from private compiler frame.",
+    "Every native CALL/explicit store has a bounded frame effect or typed owned-heap effect. BTree child/parent/source cuts and constructor ownership receipts apply; no corrupt-pointer theorem.",
+    "1829d ReadDirResult drop accepts only normal constructor variants/OS error lowtag2 in this context; no generic custom-tag1 destructor purity claim."
+  ],
+  "indirect_CALLs": {
+    "static_IAT": [
+      {
+        "site": "0x2e68a",
+        "API": "GetProcessHeap"
+      },
+      {
+        "site": "0x2e698",
+        "API": "HeapFree"
+      },
+      {
+        "site": "0x2e94a",
+        "API": "GetProcessHeap"
+      },
+      {
+        "site": "0x2e958",
+        "API": "HeapFree"
+      },
+      {
+        "site": "0x2f799",
+        "API": "GetProcessHeap"
+      },
+      {
+        "site": "0x2f7a9",
+        "API": "HeapFree"
+      },
+      {
+        "site": "0x3109e",
+        "API": "GetProcessHeap"
+      },
+      {
+        "site": "0x310ac",
+        "API": "HeapFree"
+      }
+    ],
+    "contextual_empty": [
+      {
+        "site": "0x30b45",
+        "actual_invoked_target_set": [],
+        "proof": "empty_cleanup_targets.json"
+      }
+    ]
+  },
+  "formal_helper_proofs": [
+    {
+      "path": "work\\alpme_analysis\\semantic_closure_20261027\\round5_browser_initializers\\joint_gate\\19_natural_joint_gate.json",
+      "sha256": "dc62b7986967844b3b2cddf109bbc32933a7246b58a660ed87609dcc3d1d9450"
+    },
+    {
+      "path": "work\\alpme_analysis\\semantic_closure_20261027\\round5_browser_initializers\\joint_gate\\19_global97250_xrefs.json",
+      "sha256": "41b1bd3eb188fd876792c8ba5b493f2c12a262e8919bf6cc85c1f60ea889bdf8"
+    },
+    {
+      "path": "work\\alpme_analysis\\semantic_closure_20261027\\round5_browser_initializers\\joint_gate\\misc19_helper_contracts.json",
+      "sha256": "412c61c64d5052f70ae3672036f1caa4aa8d524fd36b6ce967153ce383c975d3"
+    },
+    {
+      "path": "work\\alpme_analysis\\semantic_closure_20261027\\round5_browser_initializers\\joint_gate\\arc_producer_contracts.json",
+      "sha256": "b547c0809dd2d653fdc0b903e00de00fd4c68e9529f57bdbff6d7af871b88397"
+    },
+    {
+      "path": "work\\alpme_analysis\\semantic_closure_20261027\\round5_browser_initializers\\joint_gate\\empty_cleanup_targets.json",
+      "sha256": "94d9bba01034c24378d8c363a46fe85cf89657841210a7bcbe7abf85d0b65430"
+    },
+    {
+      "path": "work\\alpme_analysis\\semantic_closure_20261027\\round5_browser_initializers\\joint_gate\\owner_source_cuts.json",
+      "sha256": "b1bd17bc7d63deb9a3ee15ca95f24bf17de5e6280416cfb05effc5bd7c8f2383"
+    },
+    {
+      "path": "work\\alpme_analysis\\semantic_closure_20261027\\round5_browser_initializers\\validator19_proof.json",
+      "sha256": "ed363005de6e48d04cacc8b1185b806ef463524c191092730cc7c0c5282b63c7"
+    },
+    {
+      "path": "work\\alpme_analysis\\semantic_closure_20261027\\round3_file_dispatch19\\parser_and_directory_drop_spans.json",
+      "sha256": "da5c6978832ccfc40a78a74fdd9d4abd83503f97aeca6baeee2bca3dc407cfe4"
+    },
+    {
+      "path": "work\\alpme_analysis\\semantic_closure_20261027\\report_revision_v2\\path19_bounds_proof.json",
+      "sha256": "3a30c0b78a86dbd02154cd50e82200feac3db8c57dcc4e2a44c6d2397733d856"
+    },
+    {
+      "path": "work\\alpme_analysis\\semantic_closure_20261027\\round5_whole_native\\call_resolution\\19_470b3_btree_effects.json",
+      "sha256": "44ea1336a07f789cf0e907abb7609310700b885f172b0652e781fa8818797cd5"
+    },
+    {
+      "path": "work\\alpme_analysis\\semantic_closure_20261027\\round5_whole_native\\call_resolution\\remaining9\\19_1a61c_env_output_effect.json",
+      "sha256": "b3b8c490ef8a574c7bca83747706a742ddc2494a25bd7e7b4b6a07f2487ada59"
+    }
+  ],
+  "natural_graph": {
+    "path": "work\\alpme_analysis\\semantic_closure_20261027\\round5_browser_initializers\\joint_gate\\19_natural_progress.json",
+    "sha256": "de5c6224ee353b88173139dfcf86f41884b5a707cf472c7d16baaa9a601ccf2e"
+  },
+  "C_export": {
+    "path": "work\\alpme_analysis\\semantic_closure_20261027\\round5_browser_initializers\\joint_gate\\normal_exports\\19_payload.dll.bin_0x2e35f.c",
+    "sha256": "180b33c6a7b73963760cb89be2d068267520571baddc3c4579d2ea5576451df1",
+    "lines": 2465,
+    "partial_markers": {
+      "Could not recover jumptable": 0,
+      "Treating indirect jump as call": 0,
+      "halt_baddata": 0,
+      "Bad instruction data": 0,
+      "UnimplementedPcode": 0
+    },
+    "original_text_bytes_unchanged": true,
+    "text_sha256": "58ed088899886b5cc99a09fba69af079f2c4d53f12059c1443a1113e38c899f3"
+  },
+  "semantic_note": "Root initializer discovers profile roots from borrowed LOCALAPPDATA/APPDATA environment values, performs filesystem search/profile collection, builds owned BTree/Vec results and returns original RCX output24. ENV wrapper is1a61c;470b3 is BTree insert, not ENV.",
+  "sample_execution": false,
+  "network": false,
+  "secret_reads": false,
+  "whole_program_complete_claim": false,
+  "original_source_claim": false
+}

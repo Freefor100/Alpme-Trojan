@@ -1,0 +1,5689 @@
+{
+  "status": "静态职责/源解码/终端字段与未闭义务清单；不是完整CFG或全程序语义PASS",
+  "fields": [
+    {
+      "offset": "0x0",
+      "bytes": 24,
+      "meaning": "CPU 品牌字符串",
+      "evidence": "CPUID 扩展叶0x80000002..04的48字节→UTF8校验/Cow→去两端空白→owned String；19:5b36a/5b3dc→5889e/588b1→589cd/589dd→5c32f/5c33a/5c346。17:18a03/18a7e后对应分支。",
+      "source": "19:SP220,118,1f8；17:SP1f8,160,200",
+      "remaining": "CPU源与终端存储已定位；通用UTF8/Cow/clone与所有owned别名生命周期未全闭"
+    },
+    {
+      "offset": "0x18",
+      "bytes": 24,
+      "meaning": "C:\\ 卷序列号格式化字符串",
+      "evidence": "GetVolumeInformationW只请求lpVolumeSerialNumber；19:5b2f1→5b32f目标5b44b→5b469→SP190/1c8/150→5c39c/5c3cf/5c3e0；17:18868后对应格式化。",
+      "source": "19:SP190,1c8,150；17:SP198,168,158",
+      "remaining": "参数与源链已定位；格式器字节码的最终表现形式及owned寿命未全闭"
+    },
+    {
+      "offset": "0x30",
+      "bytes": 24,
+      "meaning": "SHA-256摘要的64字符小写十六进制字符串",
+      "evidence": "19:5c638写32字节digest；5c770..5c803按0123456789abcdef编码；5c263给长度0x40；最终5c2e9/5c2ed/5c2f1。17:1af07→1b0b1..1b13b→1b1a0→1ac04/08/0c。",
+      "source": "19:RBX,R14,R12；17:R14,RBX,RDI",
+      "remaining": "见hash_input；失败路径返回空字符串形态，非AES/传输加密"
+    },
+    {
+      "offset": "0x48",
+      "bytes": 24,
+      "meaning": "键盘布局/语言列表",
+      "evidence": "HKCU\\Keyboard Layout\\Preload值名按序号生成，值按十六进制解析为LCID，经LCIDToLocaleName转字符串并去重/插入Vec。19:5a246/5a3b0/5a86e→5acd5/5ace5/5acf5→5c419/5c439/5c445。17:193cc..19d68后对应Vec。",
+      "source": "19:SP160,168,128；17:SPa8,118,128",
+      "remaining": "明确纠正：此处是键盘语言Vec；软件清单在+0x90。所有错误/去重对象分支待独立gate"
+    },
+    {
+      "offset": "0x60",
+      "bytes": 24,
+      "meaning": "CPUID叶1寄存器数据的格式化字符串",
+      "evidence": "19:5af67 CPUID EAX=1，寄存器保存→5afdd格式化→SP90/1d0/e0→5c30b/5c317/5c323；17有对应CPUID与格式器分支。",
+      "source": "19:SP90,1d0,e0；17:SP170,208,1e8",
+      "remaining": "已明确数据来自CPUID leaf1；不把格式化结果武断命名为CPU序列号"
+    },
+    {
+      "offset": "0x78",
+      "bytes": 24,
+      "meaning": "Windows版本描述字符串",
+      "evidence": "RtlGetVersion结构字段/版本分支→格式器；19:5d4bf→5d500/508/516→5d869(outSP420)→5c470/5c47d；17:15f5a→SP6e8/6f8→1ad56/1ad47。",
+      "source": "19:SP420..430；17:SP6e8..6f8",
+      "remaining": "精确版本分支包括常量文本10/8.1等，但完整格式器/字符串寿命仍待闭"
+    },
+    {
+      "offset": "0x90",
+      "bytes": 24,
+      "meaning": "已安装软件清单",
+      "evidence": "同时遍历HKLM/HKCU下两个Uninstall根，枚举子键并读取SystemComponent、UninstallString、DisplayName、DisplayVersion；19:59b06..59c43的Vec→SP298..2a8→5c460/5c451；17:178..17a对应Vec。",
+      "source": "19:SP298,2a0,2a8；17:SP6a0,6a8,6b0",
+      "remaining": "明确纠正：软件清单为+0x90；+0x48是键盘布局。字段存在过滤/错误跳过；所有类型与错误组合未全闭"
+    },
+    {
+      "offset": "0xa8",
+      "bytes": 24,
+      "meaning": "用户默认locale字符串",
+      "evidence": "GetUserDefaultLocaleName(buffer,85)→UTF16→UTF8；19:5a0c7→5a159(outSPf0)→5a161/16d/182→5c3ec/3fb/40a；17:15c43→15ceb→SP610/280/608→1acd8/ace7/acf6。",
+      "source": "19:SP200,208,228；17:SP610,280,608",
+      "remaining": "API和最终字段已定位；失败值包含-1 sentinel"
+    },
+    {
+      "offset": "0xc0",
+      "bytes": 24,
+      "meaning": "显示设备描述字符串列表",
+      "evidence": "EnumDisplayDevicesW(NULL,index,&DISPLAY_DEVICEW,0)，过滤StateFlags&8，读取DeviceString(+0x44)并收集UTF16字符串；19:58579/5d125→5d1ce..5d2c6→SP1f0/320/218→5c372/37e/38d。",
+      "source": "19:SP1f0,320,218；17:SP120,1e0,110",
+      "remaining": "设备索引循环与字符串Vec构造已定位；全部owned写/增容寿命未全闭"
+    },
+    {
+      "offset": "0xd8",
+      "bytes": 24,
+      "meaning": "屏幕宽高格式化字符串",
+      "evidence": "SetProcessDPIAware()后GetSystemMetrics(0)、GetSystemMetrics(1)；19:5dbbc/5dbc0/5dbce→5dcac(outSP408)→5c4a9/49c；17:1922c/19239(1)/19244(0)→format outSP260→1ad80/73。",
+      "source": "19:SP408..418；17:SP260..270",
+      "remaining": "SetProcessDPIAware有进程DPI状态副作用；未发现截图API"
+    },
+    {
+      "offset": "0xf0",
+      "bytes": 24,
+      "meaning": "计算机名",
+      "evidence": "GetComputerNameW(buffer,&size)，初始size=16；19:582a8→5834c(outSP438)→5c4e8/4d9；17:1643b→164a4(out对应SP6b8)→1adb6/ada7。",
+      "source": "19:SP438..448；17:SP6b8..6c8",
+      "remaining": "API和终端字段对应明确；每字节成功/失败输出生命周期仍条件"
+    },
+    {
+      "offset": "0x108",
+      "bytes": 24,
+      "meaning": "用户名",
+      "evidence": "GetUserNameW(buffer,&size)，初始容量257 WCHAR；19:59e55→59f00(outSP280)→5c4cc/4bf；17:184e2→18573→SP70..80→1ad89/98。",
+      "source": "19:SP280..290；17:SP70..80",
+      "remaining": "API和终端字段对应明确"
+    },
+    {
+      "offset": "0x120",
+      "bytes": 8,
+      "meaning": "物理内存MiB",
+      "evidence": "GlobalMemoryStatusEx(sizeof64)的ullTotalPhys字段(+8)，成功时>>20，失败为0；19:5aedb→5aee4保存SP120→5c27b..293→5c484；17:1669b后SP618→1abbd/abc5/abd3→1ad5a。",
+      "source": "19:SP120经RDI；17:SP618经RSI",
+      "remaining": "数据字段/移位/终端写明确"
+    },
+    {
+      "offset": "0x128",
+      "bytes": 4,
+      "meaning": "逻辑处理器个数",
+      "evidence": "GetSystemInfo的x64 SYSTEM_INFO+0x20 dwNumberOfProcessors；19:5d00f→5d03e有效地址SP4a0(bufferSP480)→SP230→5c35c；17:18f57→18f59 [r15+20]→SP1d8→1ac64。",
+      "source": "19:SP230；17:SP1d8",
+      "remaining": "明确不是处理器架构字段。终端已写最大偏移0x12b"
+    }
+  ],
+  "hash_input": {
+    "algorithm": "SHA256",
+    "digest_bytes": 32,
+    "output_hex_chars": 64,
+    "alphabet": "0123456789abcdef",
+    "order": [
+      "CPUID叶1寄存器格式化字符串的数据span",
+      "显示设备列表中每个String的数据span，按枚举/收集顺序",
+      "C:\\卷序列号的格式化字符串span（成功时附加）"
+    ],
+    "native19": [
+      "5b509..5b51f把SP90字符串指针和SPe0长度写入第一个(ptr,len)条目",
+      "5b599..5b604从显示Vec的24字节String取+0指针和+0x10长度，追加16字节span",
+      "5b6a8..5b6d7追加SP190和SP150形成卷serial span",
+      "5c55a..5c5ad遍历16字节span，BCryptHashData(hash,ptr,len,0)",
+      "5c638 BCryptFinishHash(hash,allocated32,32,0)",
+      "5c770..5c803逐字节小写hex"
+    ],
+    "native17": [
+      "1a045等构建16字节borrowed spans",
+      "1ae79..1ae8b循环BCryptHashData(hash,[rbx],[rbx+8],0)，RBX+=16",
+      "1af07 BCryptFinishHash(...,32,0)",
+      "1b0b1..1b13b逐字节hex"
+    ],
+    "remaining": "输入成员和原始写链已定位，但Vec/borrowed span全域所有权和所有分支的独立byte-lifetime gate尚未通过；不把它提升为全程序标识符生成定理。"
+  },
+  "registry": {
+    "root_table": {
+      "17": "RVA81990",
+      "19": "RVA7f030"
+    },
+    "roots": [
+      "HKEY_LOCAL_MACHINE (0xffffffff80000002)",
+      "HKEY_CURRENT_USER (0xffffffff80000001)"
+    ],
+    "uninstall_subkeys": [
+      "SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Uninstall",
+      "SOFTWARE\\WOW6432Node\\Microsoft\\Windows\\CurrentVersion\\Uninstall"
+    ],
+    "open_parameters": {
+      "options": 0,
+      "samDesired": "0x20019 KEY_READ",
+      "WOW64_view_bits": "0x100 KEY_WOW64_64KEY和0x200 KEY_WOW64_32KEY均未设置；两个PE均x64，使用默认64位view，显式WOW6432Node文本补充另一路",
+      "native_sites": [
+        "17:2f2c3",
+        "19:2405d"
+      ]
+    },
+    "enum_parameters": {
+      "name_capacity_WCHAR": 256,
+      "buffer_bytes": 512,
+      "index": "从0递增",
+      "reserved": "NULL",
+      "class_buffer": "NULL",
+      "class_length": "NULL",
+      "last_write": "NULL",
+      "native_sites": [
+        "17:16b65",
+        "19:58cc8"
+      ]
+    },
+    "values": [
+      "SystemComponent",
+      "UninstallString",
+      "DisplayName",
+      "DisplayVersion"
+    ],
+    "keyboard": {
+      "root": "HKCU",
+      "subkey": "Keyboard Layout\\Preload",
+      "native_sites": [
+        "17:193c5→193cc",
+        "19:5a23c→5a246"
+      ],
+      "operation": "按序号查询布局值，十六进制解析，LCIDToLocaleName(LCID,buffer85,85,0)并收集/去重"
+    },
+    "risk_boundary": "UninstallString在此作为注册表值读取，不构成执行该命令的证据。"
+  },
+  "API_parameters": {
+    "GetComputerNameW": "WCHAR buffer，&DWORD size；初始size16；API返回非零且size合法时UTF16转换。",
+    "GetUserNameW": "WCHAR buffer，&DWORD size；容量257；转换时排除终止NUL。",
+    "GetUserDefaultLocaleName": "WCHAR buffer，cchLocaleName85。",
+    "LCIDToLocaleName": "LCID来自Keyboard Layout\\Preload十六进制值，WCHAR buffer，85，flags0。",
+    "RtlGetVersion": "单个OS版本结构指针；读取major/minor/build并选择描述。",
+    "GlobalMemoryStatusEx": "64字节MEMORYSTATUSEX，dwLength64；读取+8 ullTotalPhys。",
+    "GetSystemInfo": "48字节x64 SYSTEM_INFO；读取+0x20 DWORD。",
+    "EnumDisplayDevicesW": "NULL、deviceIndex、DISPLAY_DEVICEW(cb840)、flags0；StateFlags+0x144过滤bit8；DeviceString+0x44。",
+    "GetVolumeInformationW": "root=C:\\，volumeName=NULL，volumeNameSize0，serialNumber=&DWORD，其余maxComponentLength/fsFlags/fsName=NULL、fsNameSize0。",
+    "SetProcessDPIAware": "无参数；会请求修改当前进程DPI感知状态。",
+    "GetSystemMetrics": "分别nIndex0(SM_CXSCREEN)、1(SM_CYSCREEN)。",
+    "RegEnumKeyExW": "详见registry，名称256 WCHAR，其他输出可选参数NULL。",
+    "BCryptOpenAlgorithmProvider": "&hAlg，UTF16 SHA256，implementation=NULL，flags0。",
+    "BCryptCreateHash": "hAlg，&hHash，pbHashObject=NULL，cbHashObject0，pbSecret=NULL，cbSecret0，flags0。",
+    "BCryptHashData": "hHash，borrowed ptr，DWORD len，flags0；逐span调用。",
+    "BCryptFinishHash": "hHash，32字节已分配buffer，cbOutput32，flags0。",
+    "BCryptDestroyHash": "hHash；成功/失败清理路径均存在。",
+    "BCryptCloseAlgorithmProvider": "hAlg，flags0。"
+  },
+  "functions": [
+    {
+      "version": "17",
+      "entry": "0x1593b",
+      "API_calls": [
+        {
+          "site": "0x15c43",
+          "asm": "call rbx",
+          "resolver": "0x15bda",
+          "module": "kernel32.dll",
+          "API": "GetUserDefaultLocaleName",
+          "native_hash_scalars": {
+            "rcx": [
+              "0x239e6708"
+            ],
+            "r8": [
+              "0x77422023"
+            ]
+          },
+          "status": "原生源/长度/种子完整正向解码与生产者绑定；私有字段生命周期尚未全部封闭"
+        },
+        {
+          "site": "0x15f5a",
+          "asm": "call rbx",
+          "resolver": "0x15e86",
+          "module": "ntdll.dll",
+          "API": "RtlGetVersion",
+          "native_hash_scalars": {
+            "rcx": [
+              "0x4a015902"
+            ],
+            "r8": [
+              "0x8c35d8b4"
+            ]
+          },
+          "status": "原生源/长度/种子完整正向解码与生产者绑定；私有字段生命周期尚未全部封闭"
+        },
+        {
+          "site": "0x1643b",
+          "asm": "call rbx",
+          "resolver": "0x163c2",
+          "module": "kernel32.dll",
+          "API": "GetComputerNameW",
+          "native_hash_scalars": {
+            "rcx": [
+              "0x239e6708"
+            ],
+            "r8": [
+              "0x1fc822d1"
+            ]
+          },
+          "status": "原生源/长度/种子完整正向解码与生产者绑定；私有字段生命周期尚未全部封闭"
+        },
+        {
+          "site": "0x1669b",
+          "asm": "call rsi",
+          "resolver": "0x165e3",
+          "module": "kernel32.dll",
+          "API": "GlobalMemoryStatusEx",
+          "native_hash_scalars": {
+            "rcx": [
+              "0x239e6708"
+            ],
+            "r8": [
+              "0x41619231"
+            ]
+          },
+          "status": "原生源/长度/种子完整正向解码与生产者绑定；私有字段生命周期尚未全部封闭"
+        },
+        {
+          "site": "0x16b65",
+          "asm": "call rsi",
+          "resolver": "0x16aea",
+          "module": "advapi32.dll",
+          "API": "RegEnumKeyExW",
+          "native_hash_scalars": {
+            "rcx": [
+              "0x7e06f57a"
+            ],
+            "r8": [
+              "0x71fbecae"
+            ]
+          },
+          "status": "原生源/长度/种子完整正向解码与生产者绑定；私有字段生命周期尚未全部封闭"
+        },
+        {
+          "site": "0x17cbe",
+          "asm": "call r14",
+          "resolver": "0x17bf0",
+          "module": "user32.dll",
+          "API": "EnumDisplayDevicesW",
+          "native_hash_scalars": {
+            "rcx": [
+              "0x992dd8de"
+            ],
+            "r8": [
+              "0x65010d3f"
+            ]
+          },
+          "status": "原生源/长度/种子完整正向解码与生产者绑定；私有字段生命周期尚未全部封闭"
+        },
+        {
+          "site": "0x181c2",
+          "asm": "call r14",
+          "resolver": "0x17bf0",
+          "module": "user32.dll",
+          "API": "EnumDisplayDevicesW",
+          "native_hash_scalars": {
+            "rcx": [
+              "0x992dd8de"
+            ],
+            "r8": [
+              "0x65010d3f"
+            ]
+          },
+          "status": "原生源/长度/种子完整正向解码与生产者绑定；私有字段生命周期尚未全部封闭"
+        },
+        {
+          "site": "0x184e2",
+          "asm": "call rbx",
+          "resolver": "0x18417",
+          "module": "advapi32.dll",
+          "API": "GetUserNameW",
+          "native_hash_scalars": {
+            "rcx": [
+              "0x7e06f57a"
+            ],
+            "r8": [
+              "0x30a723a3"
+            ]
+          },
+          "status": "原生源/长度/种子完整正向解码与生产者绑定；私有字段生命周期尚未全部封闭"
+        },
+        {
+          "site": "0x18868",
+          "asm": "call qword ptr [rsp + 0x68]",
+          "resolver": "0x18715",
+          "module": "kernel32.dll",
+          "API": "GetVolumeInformationW",
+          "native_hash_scalars": {
+            "rcx": [
+              "0x239e6708"
+            ],
+            "r8": [
+              "0xa01b141f"
+            ]
+          },
+          "status": "原生源/长度/种子完整正向解码与生产者绑定；私有字段生命周期尚未全部封闭"
+        },
+        {
+          "site": "0x18f57",
+          "asm": "call rbx",
+          "resolver": "0x18f03",
+          "module": "kernel32.dll",
+          "API": "GetSystemInfo",
+          "native_hash_scalars": {
+            "rcx": [
+              "0x239e6708"
+            ],
+            "r8": [
+              "0xfc00d98f"
+            ]
+          },
+          "status": "原生源/长度/种子完整正向解码与生产者绑定；私有字段生命周期尚未全部封闭"
+        },
+        {
+          "site": "0x1922c",
+          "asm": "call r14",
+          "resolver": "0x191eb",
+          "module": "user32.dll",
+          "API": "SetProcessDPIAware",
+          "native_hash_scalars": {
+            "rcx": [
+              "0x992dd8de"
+            ],
+            "r8": [
+              "0xb6568d54"
+            ]
+          },
+          "status": "原生源/长度/种子完整正向解码与生产者绑定；私有字段生命周期尚未全部封闭"
+        },
+        {
+          "site": "0x19239",
+          "asm": "call rsi",
+          "resolver": "0x19064",
+          "module": "user32.dll",
+          "API": "GetSystemMetrics",
+          "native_hash_scalars": {
+            "rcx": [
+              "0x992dd8de"
+            ],
+            "r8": [
+              "0x3e25d86c"
+            ]
+          },
+          "status": "原生源/长度/种子完整正向解码与生产者绑定；私有字段生命周期尚未全部封闭"
+        },
+        {
+          "site": "0x19244",
+          "asm": "call rsi",
+          "resolver": "0x19064",
+          "module": "user32.dll",
+          "API": "GetSystemMetrics",
+          "native_hash_scalars": {
+            "rcx": [
+              "0x992dd8de"
+            ],
+            "r8": [
+              "0x3e25d86c"
+            ]
+          },
+          "status": "原生源/长度/种子完整正向解码与生产者绑定；私有字段生命周期尚未全部封闭"
+        },
+        {
+          "site": "0x19817",
+          "asm": "call rsi",
+          "resolver": "0x19746",
+          "module": "kernel32",
+          "API": "LCIDToLocaleName",
+          "native_hash_scalars": {
+            "rcx": [
+              "0x1698baf2"
+            ],
+            "r8": [
+              "0xa5b0e48a"
+            ]
+          },
+          "status": "原生源/长度/种子完整正向解码与生产者绑定；私有字段生命周期尚未全部封闭"
+        },
+        {
+          "site": "0x1ab21",
+          "asm": "call qword ptr [rsp + 0xa0]",
+          "resolver": "0x1a43d",
+          "module": "bcrypt.dll",
+          "API": "BCryptOpenAlgorithmProvider",
+          "native_hash_scalars": {
+            "rcx": [
+              "0x9d2d1a3a"
+            ],
+            "r8": [
+              "0xd8b1407c"
+            ]
+          },
+          "status": "原生源/长度/种子完整正向解码与生产者绑定；私有字段生命周期尚未全部封闭"
+        },
+        {
+          "site": "0x1adfc",
+          "asm": "call rdi",
+          "resolver": "0x1aa5f",
+          "module": "bcrypt.dll",
+          "API": "BCryptCreateHash",
+          "native_hash_scalars": {
+            "rcx": [
+              "0x9d2d1a3a"
+            ],
+            "r8": [
+              "0xb7b2e864"
+            ]
+          },
+          "status": "原生源/长度/种子完整正向解码与生产者绑定；私有字段生命周期尚未全部封闭"
+        },
+        {
+          "site": "0x1ae37",
+          "asm": "call qword ptr [rsp + 0x130]",
+          "resolver": "0x1a8d0",
+          "module": "bcrypt.dll",
+          "API": "BCryptCloseAlgorithmProvider",
+          "native_hash_scalars": {
+            "rcx": [
+              "0x9d2d1a3a"
+            ],
+            "r8": [
+              "0xa4c98fb8"
+            ]
+          },
+          "status": "原生源/长度/种子完整正向解码与生产者绑定；私有字段生命周期尚未全部封闭"
+        },
+        {
+          "site": "0x1ae8b",
+          "asm": "call r14",
+          "resolver": "0x1a711",
+          "module": "bcrypt.dll",
+          "API": "BCryptHashData",
+          "native_hash_scalars": {
+            "rcx": [
+              "0x9d2d1a3a"
+            ],
+            "r8": [
+              "0x7b309c78"
+            ]
+          },
+          "status": "原生源/长度/种子完整正向解码与生产者绑定；私有字段生命周期尚未全部封闭"
+        },
+        {
+          "site": "0x1af07",
+          "asm": "call qword ptr [rsp + 0x1f0]",
+          "resolver": "0x1a208",
+          "module": "bcrypt.dll",
+          "API": "BCryptFinishHash",
+          "native_hash_scalars": {
+            "rcx": [
+              "0x9d2d1a3a"
+            ],
+            "r8": [
+              "0x610bd8bf"
+            ]
+          },
+          "status": "原生源/长度/种子完整正向解码与生产者绑定；私有字段生命周期尚未全部封闭"
+        },
+        {
+          "site": "0x1af17",
+          "asm": "call qword ptr [rsp + 0x130]",
+          "resolver": "0x1a8d0",
+          "module": "bcrypt.dll",
+          "API": "BCryptCloseAlgorithmProvider",
+          "native_hash_scalars": {
+            "rcx": [
+              "0x9d2d1a3a"
+            ],
+            "r8": [
+              "0xa4c98fb8"
+            ]
+          },
+          "status": "原生源/长度/种子完整正向解码与生产者绑定；私有字段生命周期尚未全部封闭"
+        },
+        {
+          "site": "0x1af26",
+          "asm": "call qword ptr [rsp + 0x1c8]",
+          "resolver": "0x1a5ad",
+          "module": "bcrypt.dll",
+          "API": "BCryptDestroyHash",
+          "native_hash_scalars": {
+            "rcx": [
+              "0x9d2d1a3a"
+            ],
+            "r8": [
+              "0xffe39d6e"
+            ]
+          },
+          "status": "原生源/长度/种子完整正向解码与生产者绑定；私有字段生命周期尚未全部封闭"
+        },
+        {
+          "site": "0x1aff5",
+          "asm": "call qword ptr [rsp + 0x1c8]",
+          "resolver": "0x1a5ad",
+          "module": "bcrypt.dll",
+          "API": "BCryptDestroyHash",
+          "native_hash_scalars": {
+            "rcx": [
+              "0x9d2d1a3a"
+            ],
+            "r8": [
+              "0xffe39d6e"
+            ]
+          },
+          "status": "原生源/长度/种子完整正向解码与生产者绑定；私有字段生命周期尚未全部封闭"
+        },
+        {
+          "site": "0x1b003",
+          "asm": "call qword ptr [rsp + 0x130]",
+          "resolver": "0x1a8d0",
+          "module": "bcrypt.dll",
+          "API": "BCryptCloseAlgorithmProvider",
+          "native_hash_scalars": {
+            "rcx": [
+              "0x9d2d1a3a"
+            ],
+            "r8": [
+              "0xa4c98fb8"
+            ]
+          },
+          "status": "原生源/长度/种子完整正向解码与生产者绑定；私有字段生命周期尚未全部封闭"
+        }
+      ],
+      "strings": [
+        {
+          "call": "0x160e9",
+          "cache_RVAs": [
+            "0x99af0"
+          ],
+          "descriptor_frame_offset": "0x2c0",
+          "source": {
+            "source_RVA": "0x83e23",
+            "length": 20,
+            "seed": "0x86b6f9f6fbba9b29",
+            "plaintext": "kernel32.dll\u0000",
+            "hex": "6b65726e656c33322e646c6c00"
+          },
+          "private_source_reads": [
+            {
+              "site": "0x160e9",
+              "offset": "0x178",
+              "bytes": 8
+            },
+            {
+              "site": "0x160e9",
+              "offset": "0x2c0",
+              "bytes": 8
+            },
+            {
+              "site": "0x160e9",
+              "offset": "0x2c8",
+              "bytes": 8
+            },
+            {
+              "site": "0x160e9",
+              "offset": "0x2d0",
+              "bytes": 8
+            }
+          ],
+          "mutable_PE_source_reads": [
+            {
+              "site": "0x15a82",
+              "RVA": "0x9b6b8",
+              "bytes": 8,
+              "value": "0x871c766dd0cf3b57"
+            },
+            {
+              "site": "0x15ab0",
+              "RVA": "0x9c3b8",
+              "bytes": 1,
+              "value": "0xd7"
+            }
+          ]
+        },
+        {
+          "call": "0x16102",
+          "cache_RVAs": [
+            "0x9aef0"
+          ],
+          "descriptor_frame_offset": "0x2c0",
+          "source": {
+            "source_RVA": "0x8497f",
+            "length": 36,
+            "seed": "0x5f408286d6be4afa",
+            "plaintext": "GetUserDefaultLocaleName\u0000",
+            "hex": "4765745573657244656661756c744c6f63616c654e616d6500"
+          },
+          "private_source_reads": [
+            {
+              "site": "0x16102",
+              "offset": "0x178",
+              "bytes": 8
+            },
+            {
+              "site": "0x16102",
+              "offset": "0x2c0",
+              "bytes": 8
+            },
+            {
+              "site": "0x16102",
+              "offset": "0x2c8",
+              "bytes": 8
+            },
+            {
+              "site": "0x16102",
+              "offset": "0x2d0",
+              "bytes": 8
+            }
+          ],
+          "mutable_PE_source_reads": [
+            {
+              "site": "0x15a82",
+              "RVA": "0x9b6b8",
+              "bytes": 8,
+              "value": "0x871c766dd0cf3b57"
+            }
+          ]
+        },
+        {
+          "call": "0x16113",
+          "cache_RVAs": [
+            "0x98a20"
+          ],
+          "descriptor_frame_offset": "0x2c0",
+          "source": {
+            "source_RVA": "0x86015",
+            "length": 16,
+            "seed": "0x1ff472669646a2c",
+            "plaintext": "ntdll.dll\u0000",
+            "hex": "6e74646c6c2e646c6c00"
+          },
+          "private_source_reads": [
+            {
+              "site": "0x15ccc",
+              "offset": "0x60",
+              "bytes": 8
+            },
+            {
+              "site": "0x15d2e",
+              "offset": "0x60",
+              "bytes": 8
+            },
+            {
+              "site": "0x16113",
+              "offset": "0x178",
+              "bytes": 8
+            },
+            {
+              "site": "0x16113",
+              "offset": "0x2c0",
+              "bytes": 8
+            },
+            {
+              "site": "0x16113",
+              "offset": "0x2c8",
+              "bytes": 8
+            },
+            {
+              "site": "0x16113",
+              "offset": "0x2d0",
+              "bytes": 8
+            }
+          ],
+          "mutable_PE_source_reads": [
+            {
+              "site": "0x15a82",
+              "RVA": "0x9b6b8",
+              "bytes": 8,
+              "value": "0x871c766dd0cf3b57"
+            }
+          ]
+        },
+        {
+          "call": "0x16124",
+          "cache_RVAs": [
+            "0x98b88"
+          ],
+          "descriptor_frame_offset": "0x2c0",
+          "source": {
+            "source_RVA": "0x8700d",
+            "length": 22,
+            "seed": "0x5b3c5b83d424350e",
+            "plaintext": "RtlGetVersion\u0000",
+            "hex": "52746c47657456657273696f6e00"
+          },
+          "private_source_reads": [
+            {
+              "site": "0x15ccc",
+              "offset": "0x60",
+              "bytes": 8
+            },
+            {
+              "site": "0x15d2e",
+              "offset": "0x60",
+              "bytes": 8
+            },
+            {
+              "site": "0x16124",
+              "offset": "0x178",
+              "bytes": 8
+            },
+            {
+              "site": "0x16124",
+              "offset": "0x2c0",
+              "bytes": 8
+            },
+            {
+              "site": "0x16124",
+              "offset": "0x2c8",
+              "bytes": 8
+            },
+            {
+              "site": "0x16124",
+              "offset": "0x2d0",
+              "bytes": 8
+            }
+          ],
+          "mutable_PE_source_reads": [
+            {
+              "site": "0x15a82",
+              "RVA": "0x9b6b8",
+              "bytes": 8,
+              "value": "0x871c766dd0cf3b57"
+            },
+            {
+              "site": "0x15e0a",
+              "RVA": "0x9b700",
+              "bytes": 8,
+              "value": "0xd040245488e3ea0f"
+            }
+          ]
+        },
+        {
+          "call": "0x170b2",
+          "cache_RVAs": [
+            "0x983b0"
+          ],
+          "descriptor_frame_offset": "0x2c0",
+          "source": {
+            "source_RVA": "0x867d3",
+            "length": 20,
+            "seed": "0x222395020ed62d6a",
+            "plaintext": "advapi32.dll\u0000",
+            "hex": "61647661706933322e646c6c00"
+          },
+          "private_source_reads": [
+            {
+              "site": "0x15ccc",
+              "offset": "0x60",
+              "bytes": 8
+            },
+            {
+              "site": "0x15d2e",
+              "offset": "0x60",
+              "bytes": 8
+            },
+            {
+              "site": "0x169e4",
+              "offset": "0x118",
+              "bytes": 8
+            },
+            {
+              "site": "0x170b2",
+              "offset": "0x40",
+              "bytes": 8
+            },
+            {
+              "site": "0x170b2",
+              "offset": "0x2c0",
+              "bytes": 8
+            },
+            {
+              "site": "0x170b2",
+              "offset": "0x2c8",
+              "bytes": 8
+            },
+            {
+              "site": "0x170b2",
+              "offset": "0x2d0",
+              "bytes": 8
+            }
+          ],
+          "mutable_PE_source_reads": [
+            {
+              "site": "0x15a82",
+              "RVA": "0x9b6b8",
+              "bytes": 8,
+              "value": "0x871c766dd0cf3b57"
+            }
+          ]
+        },
+        {
+          "call": "0x170c6",
+          "cache_RVAs": [
+            "0x9b968"
+          ],
+          "descriptor_frame_offset": "0x2c0",
+          "source": {
+            "source_RVA": "0x854d2",
+            "length": 22,
+            "seed": "0x88eb8aa8a64b2912",
+            "plaintext": "RegEnumKeyExW\u0000",
+            "hex": "526567456e756d4b657945785700"
+          },
+          "private_source_reads": [
+            {
+              "site": "0x15ccc",
+              "offset": "0x60",
+              "bytes": 8
+            },
+            {
+              "site": "0x15d2e",
+              "offset": "0x60",
+              "bytes": 8
+            },
+            {
+              "site": "0x16a57",
+              "offset": "0x9f",
+              "bytes": 1
+            },
+            {
+              "site": "0x170c6",
+              "offset": "0x40",
+              "bytes": 8
+            },
+            {
+              "site": "0x170c6",
+              "offset": "0x2c0",
+              "bytes": 8
+            },
+            {
+              "site": "0x170c6",
+              "offset": "0x2c8",
+              "bytes": 8
+            },
+            {
+              "site": "0x170c6",
+              "offset": "0x2d0",
+              "bytes": 8
+            },
+            {
+              "site": "0x1727d",
+              "offset": "0x60",
+              "bytes": 8
+            },
+            {
+              "site": "0x172df",
+              "offset": "0x60",
+              "bytes": 8
+            },
+            {
+              "site": "0x17394",
+              "offset": "0x60",
+              "bytes": 8
+            },
+            {
+              "site": "0x1746d",
+              "offset": "0x60",
+              "bytes": 8
+            }
+          ],
+          "mutable_PE_source_reads": [
+            {
+              "site": "0x15a82",
+              "RVA": "0x9b6b8",
+              "bytes": 8,
+              "value": "0x871c766dd0cf3b57"
+            }
+          ]
+        },
+        {
+          "call": "0x171eb",
+          "cache_RVAs": [
+            "0x99950"
+          ],
+          "descriptor_frame_offset": "0x6d0",
+          "source": {
+            "source_RVA": "0x87048",
+            "length": 22,
+            "seed": "0x8831a7b8edae635",
+            "plaintext": "DisplayVersion",
+            "hex": "446973706c617956657273696f6e"
+          },
+          "private_source_reads": [
+            {
+              "site": "0x15ccc",
+              "offset": "0x60",
+              "bytes": 8
+            },
+            {
+              "site": "0x15d2e",
+              "offset": "0x60",
+              "bytes": 8
+            },
+            {
+              "site": "0x171a6",
+              "offset": "0x60",
+              "bytes": 8
+            },
+            {
+              "site": "0x171b2",
+              "offset": "0x198",
+              "bytes": 8
+            },
+            {
+              "site": "0x171eb",
+              "offset": "0x640",
+              "bytes": 8
+            },
+            {
+              "site": "0x171eb",
+              "offset": "0x6d0",
+              "bytes": 8
+            },
+            {
+              "site": "0x171eb",
+              "offset": "0x6d8",
+              "bytes": 8
+            },
+            {
+              "site": "0x171eb",
+              "offset": "0x6e0",
+              "bytes": 8
+            }
+          ],
+          "mutable_PE_source_reads": [
+            {
+              "site": "0x15a82",
+              "RVA": "0x9b6b8",
+              "bytes": 8,
+              "value": "0x871c766dd0cf3b57"
+            }
+          ]
+        },
+        {
+          "call": "0x172ba",
+          "cache_RVAs": [
+            "0x994c8"
+          ],
+          "descriptor_frame_offset": "0x70",
+          "source": {
+            "source_RVA": "0x85152",
+            "length": 23,
+            "seed": "0x28606bf5243e6960",
+            "plaintext": "SystemComponent",
+            "hex": "53797374656d436f6d706f6e656e74"
+          },
+          "private_source_reads": [
+            {
+              "site": "0x15ccc",
+              "offset": "0x60",
+              "bytes": 8
+            },
+            {
+              "site": "0x15d2e",
+              "offset": "0x60",
+              "bytes": 8
+            },
+            {
+              "site": "0x16d30",
+              "offset": "0x638",
+              "bytes": 8
+            },
+            {
+              "site": "0x16d5a",
+              "offset": "0x170",
+              "bytes": 8
+            },
+            {
+              "site": "0x172ba",
+              "offset": "0x70",
+              "bytes": 8
+            },
+            {
+              "site": "0x172ba",
+              "offset": "0x78",
+              "bytes": 8
+            },
+            {
+              "site": "0x172ba",
+              "offset": "0x80",
+              "bytes": 8
+            },
+            {
+              "site": "0x172ba",
+              "offset": "0x1c0",
+              "bytes": 8
+            }
+          ],
+          "mutable_PE_source_reads": [
+            {
+              "site": "0x15a82",
+              "RVA": "0x9b6b8",
+              "bytes": 8,
+              "value": "0x871c766dd0cf3b57"
+            }
+          ]
+        },
+        {
+          "call": "0x17409",
+          "cache_RVAs": [
+            "0x9beb8"
+          ],
+          "descriptor_frame_offset": "0x70",
+          "source": {
+            "source_RVA": "0x82f7a",
+            "length": 23,
+            "seed": "0x9ae55dbaf7505195",
+            "plaintext": "UninstallString",
+            "hex": "556e696e7374616c6c537472696e67"
+          },
+          "private_source_reads": [
+            {
+              "site": "0x15ccc",
+              "offset": "0x60",
+              "bytes": 8
+            },
+            {
+              "site": "0x15d2e",
+              "offset": "0x60",
+              "bytes": 8
+            },
+            {
+              "site": "0x16e78",
+              "offset": "0x1a0",
+              "bytes": 8
+            },
+            {
+              "site": "0x17409",
+              "offset": "0x70",
+              "bytes": 8
+            },
+            {
+              "site": "0x17409",
+              "offset": "0x78",
+              "bytes": 8
+            },
+            {
+              "site": "0x17409",
+              "offset": "0x80",
+              "bytes": 8
+            },
+            {
+              "site": "0x17409",
+              "offset": "0x1c0",
+              "bytes": 8
+            }
+          ],
+          "mutable_PE_source_reads": [
+            {
+              "site": "0x15a82",
+              "RVA": "0x9b6b8",
+              "bytes": 8,
+              "value": "0x871c766dd0cf3b57"
+            }
+          ]
+        },
+        {
+          "call": "0x174be",
+          "cache_RVAs": [
+            "0x99720"
+          ],
+          "descriptor_frame_offset": "0x2c0",
+          "source": {
+            "source_RVA": "0x85389",
+            "length": 18,
+            "seed": "0xf2be49bdd3045b17",
+            "plaintext": "DisplayName",
+            "hex": "446973706c61794e616d65"
+          },
+          "private_source_reads": [
+            {
+              "site": "0x15ccc",
+              "offset": "0x60",
+              "bytes": 8
+            },
+            {
+              "site": "0x15d2e",
+              "offset": "0x60",
+              "bytes": 8
+            },
+            {
+              "site": "0x1727d",
+              "offset": "0x60",
+              "bytes": 8
+            },
+            {
+              "site": "0x172df",
+              "offset": "0x60",
+              "bytes": 8
+            },
+            {
+              "site": "0x17394",
+              "offset": "0x60",
+              "bytes": 8
+            },
+            {
+              "site": "0x1746d",
+              "offset": "0x60",
+              "bytes": 8
+            },
+            {
+              "site": "0x174be",
+              "offset": "0x40",
+              "bytes": 8
+            },
+            {
+              "site": "0x174be",
+              "offset": "0x2c0",
+              "bytes": 8
+            },
+            {
+              "site": "0x174be",
+              "offset": "0x2c8",
+              "bytes": 8
+            },
+            {
+              "site": "0x174be",
+              "offset": "0x2d0",
+              "bytes": 8
+            }
+          ],
+          "mutable_PE_source_reads": [
+            {
+              "site": "0x15a82",
+              "RVA": "0x9b6b8",
+              "bytes": 8,
+              "value": "0x871c766dd0cf3b57"
+            }
+          ]
+        },
+        {
+          "call": "0x19d8b",
+          "cache_RVAs": [
+            "0x9ac18"
+          ],
+          "descriptor_frame_offset": "0x2c0",
+          "source": {
+            "source_RVA": "0x8313c",
+            "length": 15,
+            "seed": "0x889e7fbe9b91b487",
+            "plaintext": "kernel32\u0000",
+            "hex": "6b65726e656c333200"
+          },
+          "private_source_reads": [
+            {
+              "site": "0x189b5",
+              "offset": "0x60",
+              "bytes": 8
+            },
+            {
+              "site": "0x189f2",
+              "offset": "0x60",
+              "bytes": 8
+            },
+            {
+              "site": "0x1963a",
+              "offset": "0x118",
+              "bytes": 8
+            },
+            {
+              "site": "0x19d8b",
+              "offset": "0xb0",
+              "bytes": 8
+            },
+            {
+              "site": "0x19d8b",
+              "offset": "0x2c0",
+              "bytes": 8
+            },
+            {
+              "site": "0x19d8b",
+              "offset": "0x2c8",
+              "bytes": 8
+            },
+            {
+              "site": "0x19d8b",
+              "offset": "0x2d0",
+              "bytes": 8
+            }
+          ],
+          "mutable_PE_source_reads": [
+            {
+              "site": "0x15a82",
+              "RVA": "0x9b6b8",
+              "bytes": 8,
+              "value": "0x871c766dd0cf3b57"
+            }
+          ]
+        },
+        {
+          "call": "0x19da4",
+          "cache_RVAs": [
+            "0x9b150"
+          ],
+          "descriptor_frame_offset": "0xb0",
+          "source": {
+            "source_RVA": "0x88a01",
+            "length": 26,
+            "seed": "0x2b77009bb95400a",
+            "plaintext": "LCIDToLocaleName\u0000",
+            "hex": "4c434944546f4c6f63616c654e616d6500"
+          },
+          "private_source_reads": [
+            {
+              "site": "0x19da4",
+              "offset": "0xb0",
+              "bytes": 8
+            },
+            {
+              "site": "0x19da4",
+              "offset": "0xb8",
+              "bytes": 8
+            },
+            {
+              "site": "0x19da4",
+              "offset": "0xc0",
+              "bytes": 8
+            },
+            {
+              "site": "0x19da4",
+              "offset": "0x1c0",
+              "bytes": 8
+            }
+          ],
+          "mutable_PE_source_reads": []
+        },
+        {
+          "call": "0x1b1bf",
+          "cache_RVAs": [
+            "0x9ba28"
+          ],
+          "descriptor_frame_offset": "0x2c0",
+          "source": {
+            "source_RVA": "0x8505b",
+            "length": 20,
+            "seed": "0x71127a148c77b523",
+            "plaintext": "kernel32.dll\u0000",
+            "hex": "6b65726e656c33322e646c6c00"
+          },
+          "private_source_reads": [
+            {
+              "site": "0x15ccc",
+              "offset": "0x60",
+              "bytes": 8
+            },
+            {
+              "site": "0x15d2e",
+              "offset": "0x60",
+              "bytes": 8
+            },
+            {
+              "site": "0x16298",
+              "offset": "0x9b",
+              "bytes": 1
+            },
+            {
+              "site": "0x1b1bf",
+              "offset": "0xd0",
+              "bytes": 8
+            },
+            {
+              "site": "0x1b1bf",
+              "offset": "0x2c0",
+              "bytes": 8
+            },
+            {
+              "site": "0x1b1bf",
+              "offset": "0x2c8",
+              "bytes": 8
+            },
+            {
+              "site": "0x1b1bf",
+              "offset": "0x2d0",
+              "bytes": 8
+            }
+          ],
+          "mutable_PE_source_reads": [
+            {
+              "site": "0x15a82",
+              "RVA": "0x9b6b8",
+              "bytes": 8,
+              "value": "0x871c766dd0cf3b57"
+            }
+          ]
+        },
+        {
+          "call": "0x1b1d8",
+          "cache_RVAs": [
+            "0x9ba08"
+          ],
+          "descriptor_frame_offset": "0xd0",
+          "source": {
+            "source_RVA": "0x83503",
+            "length": 26,
+            "seed": "0x85ff19a47adb8aac",
+            "plaintext": "GetComputerNameW\u0000",
+            "hex": "476574436f6d70757465724e616d655700"
+          },
+          "private_source_reads": [
+            {
+              "site": "0x15ccc",
+              "offset": "0x60",
+              "bytes": 8
+            },
+            {
+              "site": "0x15d2e",
+              "offset": "0x60",
+              "bytes": 8
+            },
+            {
+              "site": "0x1b1d8",
+              "offset": "0xd0",
+              "bytes": 8
+            },
+            {
+              "site": "0x1b1d8",
+              "offset": "0xd8",
+              "bytes": 8
+            },
+            {
+              "site": "0x1b1d8",
+              "offset": "0xe0",
+              "bytes": 8
+            },
+            {
+              "site": "0x1b1d8",
+              "offset": "0x178",
+              "bytes": 8
+            }
+          ],
+          "mutable_PE_source_reads": [
+            {
+              "site": "0x15a82",
+              "RVA": "0x9b6b8",
+              "bytes": 8,
+              "value": "0x871c766dd0cf3b57"
+            }
+          ]
+        },
+        {
+          "call": "0x1b1f1",
+          "cache_RVAs": [
+            "0x9ae88"
+          ],
+          "descriptor_frame_offset": "0x2c0",
+          "source": {
+            "source_RVA": "0x88a5a",
+            "length": 20,
+            "seed": "0x5de5503283509594",
+            "plaintext": "kernel32.dll\u0000",
+            "hex": "6b65726e656c33322e646c6c00"
+          },
+          "private_source_reads": [
+            {
+              "site": "0x15ccc",
+              "offset": "0x60",
+              "bytes": 8
+            },
+            {
+              "site": "0x15d2e",
+              "offset": "0x60",
+              "bytes": 8
+            },
+            {
+              "site": "0x1b1f1",
+              "offset": "0x178",
+              "bytes": 8
+            },
+            {
+              "site": "0x1b1f1",
+              "offset": "0x2c0",
+              "bytes": 8
+            },
+            {
+              "site": "0x1b1f1",
+              "offset": "0x2c8",
+              "bytes": 8
+            },
+            {
+              "site": "0x1b1f1",
+              "offset": "0x2d0",
+              "bytes": 8
+            }
+          ],
+          "mutable_PE_source_reads": [
+            {
+              "site": "0x15a82",
+              "RVA": "0x9b6b8",
+              "bytes": 8,
+              "value": "0x871c766dd0cf3b57"
+            }
+          ]
+        },
+        {
+          "call": "0x1b202",
+          "cache_RVAs": [
+            "0x999d0"
+          ],
+          "descriptor_frame_offset": "0x2c0",
+          "source": {
+            "source_RVA": "0x85abb",
+            "length": 31,
+            "seed": "0xf8bdc3465e819547",
+            "plaintext": "GlobalMemoryStatusEx\u0000",
+            "hex": "476c6f62616c4d656d6f7279537461747573457800"
+          },
+          "private_source_reads": [
+            {
+              "site": "0x15ccc",
+              "offset": "0x60",
+              "bytes": 8
+            },
+            {
+              "site": "0x15d2e",
+              "offset": "0x60",
+              "bytes": 8
+            },
+            {
+              "site": "0x1b202",
+              "offset": "0x178",
+              "bytes": 8
+            },
+            {
+              "site": "0x1b202",
+              "offset": "0x2c0",
+              "bytes": 8
+            },
+            {
+              "site": "0x1b202",
+              "offset": "0x2c8",
+              "bytes": 8
+            },
+            {
+              "site": "0x1b202",
+              "offset": "0x2d0",
+              "bytes": 8
+            }
+          ],
+          "mutable_PE_source_reads": [
+            {
+              "site": "0x15a82",
+              "RVA": "0x9b6b8",
+              "bytes": 8,
+              "value": "0x871c766dd0cf3b57"
+            }
+          ]
+        },
+        {
+          "call": "0x1b213",
+          "cache_RVAs": [
+            "0x9a490"
+          ],
+          "descriptor_frame_offset": "0x2c0",
+          "source": {
+            "source_RVA": "0x864f2",
+            "length": 89,
+            "seed": "0x90ed8efa63fc821c",
+            "plaintext": "SOFTWARE\\WOW6432Node\\Microsoft\\Windows\\CurrentVersion\\Uninstall",
+            "hex": "534f4654574152455c574f57363433324e6f64655c4d6963726f736f66745c57696e646f77735c43757272656e7456657273696f6e5c556e696e7374616c6c"
+          },
+          "private_source_reads": [
+            {
+              "site": "0x15ccc",
+              "offset": "0x60",
+              "bytes": 8
+            },
+            {
+              "site": "0x15d2e",
+              "offset": "0x60",
+              "bytes": 8
+            },
+            {
+              "site": "0x1b213",
+              "offset": "0xd0",
+              "bytes": 8
+            },
+            {
+              "site": "0x1b213",
+              "offset": "0x2c0",
+              "bytes": 8
+            },
+            {
+              "site": "0x1b213",
+              "offset": "0x2c8",
+              "bytes": 8
+            },
+            {
+              "site": "0x1b213",
+              "offset": "0x2d0",
+              "bytes": 8
+            }
+          ],
+          "mutable_PE_source_reads": [
+            {
+              "site": "0x15a82",
+              "RVA": "0x9b6b8",
+              "bytes": 8,
+              "value": "0x871c766dd0cf3b57"
+            }
+          ]
+        },
+        {
+          "call": "0x1b22c",
+          "cache_RVAs": [
+            "0x9bff8"
+          ],
+          "descriptor_frame_offset": "0xd0",
+          "source": {
+            "source_RVA": "0x83209",
+            "length": 72,
+            "seed": "0x9785a1f057b579cf",
+            "plaintext": "SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Uninstall",
+            "hex": "534f4654574152455c4d6963726f736f66745c57696e646f77735c43757272656e7456657273696f6e5c556e696e7374616c6c"
+          },
+          "private_source_reads": [
+            {
+              "site": "0x15ccc",
+              "offset": "0x60",
+              "bytes": 8
+            },
+            {
+              "site": "0x15d2e",
+              "offset": "0x60",
+              "bytes": 8
+            },
+            {
+              "site": "0x1b22c",
+              "offset": "0xd0",
+              "bytes": 8
+            },
+            {
+              "site": "0x1b22c",
+              "offset": "0xd8",
+              "bytes": 8
+            },
+            {
+              "site": "0x1b22c",
+              "offset": "0xe0",
+              "bytes": 8
+            },
+            {
+              "site": "0x1b22c",
+              "offset": "0x288",
+              "bytes": 8
+            }
+          ],
+          "mutable_PE_source_reads": [
+            {
+              "site": "0x15a82",
+              "RVA": "0x9b6b8",
+              "bytes": 8,
+              "value": "0x871c766dd0cf3b57"
+            }
+          ]
+        },
+        {
+          "call": "0x1b245",
+          "cache_RVAs": [
+            "0x9b130"
+          ],
+          "descriptor_frame_offset": "0x2c0",
+          "source": {
+            "source_RVA": "0x84fed",
+            "length": 18,
+            "seed": "0xbde2aa6b77371afa",
+            "plaintext": "user32.dll\u0000",
+            "hex": "7573657233322e646c6c00"
+          },
+          "private_source_reads": [
+            {
+              "site": "0x17a19",
+              "offset": "0x60",
+              "bytes": 8
+            },
+            {
+              "site": "0x1b245",
+              "offset": "0x70",
+              "bytes": 8
+            },
+            {
+              "site": "0x1b245",
+              "offset": "0x2c0",
+              "bytes": 8
+            },
+            {
+              "site": "0x1b245",
+              "offset": "0x2c8",
+              "bytes": 8
+            },
+            {
+              "site": "0x1b245",
+              "offset": "0x2d0",
+              "bytes": 8
+            }
+          ],
+          "mutable_PE_source_reads": [
+            {
+              "site": "0x15a82",
+              "RVA": "0x9b6b8",
+              "bytes": 8,
+              "value": "0x871c766dd0cf3b57"
+            }
+          ]
+        },
+        {
+          "call": "0x1b25e",
+          "cache_RVAs": [
+            "0x9b190"
+          ],
+          "descriptor_frame_offset": "0x2c0",
+          "source": {
+            "source_RVA": "0x86ad1",
+            "length": 30,
+            "seed": "0x1bc5c1c621f324e8",
+            "plaintext": "EnumDisplayDevicesW\u0000",
+            "hex": "456e756d446973706c6179446576696365735700"
+          },
+          "private_source_reads": [
+            {
+              "site": "0x17a19",
+              "offset": "0x60",
+              "bytes": 8
+            },
+            {
+              "site": "0x1b25e",
+              "offset": "0x70",
+              "bytes": 8
+            },
+            {
+              "site": "0x1b25e",
+              "offset": "0x2c0",
+              "bytes": 8
+            },
+            {
+              "site": "0x1b25e",
+              "offset": "0x2c8",
+              "bytes": 8
+            },
+            {
+              "site": "0x1b25e",
+              "offset": "0x2d0",
+              "bytes": 8
+            }
+          ],
+          "mutable_PE_source_reads": [
+            {
+              "site": "0x15a82",
+              "RVA": "0x9b6b8",
+              "bytes": 8,
+              "value": "0x871c766dd0cf3b57"
+            }
+          ]
+        },
+        {
+          "call": "0x1b26f",
+          "cache_RVAs": [
+            "0x9c158"
+          ],
+          "descriptor_frame_offset": "0x2c0",
+          "source": {
+            "source_RVA": "0x85a9c",
+            "length": 20,
+            "seed": "0xe9f84f6deb5d05f",
+            "plaintext": "advapi32.dll\u0000",
+            "hex": "61647661706933322e646c6c00"
+          },
+          "private_source_reads": [
+            {
+              "site": "0x17a19",
+              "offset": "0x60",
+              "bytes": 8
+            },
+            {
+              "site": "0x1802c",
+              "offset": "0x60",
+              "bytes": 8
+            },
+            {
+              "site": "0x180f5",
+              "offset": "0x60",
+              "bytes": 8
+            },
+            {
+              "site": "0x1829a",
+              "offset": "0x60",
+              "bytes": 8
+            },
+            {
+              "site": "0x1b26f",
+              "offset": "0x70",
+              "bytes": 8
+            },
+            {
+              "site": "0x1b26f",
+              "offset": "0x2c0",
+              "bytes": 8
+            },
+            {
+              "site": "0x1b26f",
+              "offset": "0x2c8",
+              "bytes": 8
+            },
+            {
+              "site": "0x1b26f",
+              "offset": "0x2d0",
+              "bytes": 8
+            }
+          ],
+          "mutable_PE_source_reads": [
+            {
+              "site": "0x15a82",
+              "RVA": "0x9b6b8",
+              "bytes": 8,
+              "value": "0x871c766dd0cf3b57"
+            }
+          ]
+        },
+        {
+          "call": "0x1b288",
+          "cache_RVAs": [
+            "0x98060"
+          ],
+          "descriptor_frame_offset": "0x2c0",
+          "source": {
+            "source_RVA": "0x85e8e",
+            "length": 20,
+            "seed": "0x1311ec011d5d78a9",
+            "plaintext": "GetUserNameW\u0000",
+            "hex": "476574557365724e616d655700"
+          },
+          "private_source_reads": [
+            {
+              "site": "0x17a19",
+              "offset": "0x60",
+              "bytes": 8
+            },
+            {
+              "site": "0x1802c",
+              "offset": "0x60",
+              "bytes": 8
+            },
+            {
+              "site": "0x180f5",
+              "offset": "0x60",
+              "bytes": 8
+            },
+            {
+              "site": "0x1829a",
+              "offset": "0x60",
+              "bytes": 8
+            },
+            {
+              "site": "0x1b288",
+              "offset": "0x70",
+              "bytes": 8
+            },
+            {
+              "site": "0x1b288",
+              "offset": "0x2c0",
+              "bytes": 8
+            },
+            {
+              "site": "0x1b288",
+              "offset": "0x2c8",
+              "bytes": 8
+            },
+            {
+              "site": "0x1b288",
+              "offset": "0x2d0",
+              "bytes": 8
+            }
+          ],
+          "mutable_PE_source_reads": [
+            {
+              "site": "0x15a82",
+              "RVA": "0x9b6b8",
+              "bytes": 8,
+              "value": "0x871c766dd0cf3b57"
+            }
+          ]
+        },
+        {
+          "call": "0x1b2a1",
+          "cache_RVAs": [
+            "0x99700"
+          ],
+          "descriptor_frame_offset": "0x2c0",
+          "source": {
+            "source_RVA": "0x86891",
+            "length": 20,
+            "seed": "0x53b8e23bec545ff4",
+            "plaintext": "kernel32.dll\u0000",
+            "hex": "6b65726e656c33322e646c6c00"
+          },
+          "private_source_reads": [
+            {
+              "site": "0x17a19",
+              "offset": "0x60",
+              "bytes": 8
+            },
+            {
+              "site": "0x1802c",
+              "offset": "0x60",
+              "bytes": 8
+            },
+            {
+              "site": "0x180f5",
+              "offset": "0x60",
+              "bytes": 8
+            },
+            {
+              "site": "0x1829a",
+              "offset": "0x60",
+              "bytes": 8
+            },
+            {
+              "site": "0x1b2a1",
+              "offset": "0xd0",
+              "bytes": 8
+            },
+            {
+              "site": "0x1b2a1",
+              "offset": "0x2c0",
+              "bytes": 8
+            },
+            {
+              "site": "0x1b2a1",
+              "offset": "0x2c8",
+              "bytes": 8
+            },
+            {
+              "site": "0x1b2a1",
+              "offset": "0x2d0",
+              "bytes": 8
+            }
+          ],
+          "mutable_PE_source_reads": [
+            {
+              "site": "0x15a82",
+              "RVA": "0x9b6b8",
+              "bytes": 8,
+              "value": "0x871c766dd0cf3b57"
+            }
+          ]
+        },
+        {
+          "call": "0x1b2b2",
+          "cache_RVAs": [
+            "0x9bcf8"
+          ],
+          "descriptor_frame_offset": "0xd0",
+          "source": {
+            "source_RVA": "0x841fb",
+            "length": 32,
+            "seed": "0x22933d5b074f4d73",
+            "plaintext": "GetVolumeInformationW\u0000",
+            "hex": "476574566f6c756d65496e666f726d6174696f6e5700"
+          },
+          "private_source_reads": [
+            {
+              "site": "0x17a19",
+              "offset": "0x60",
+              "bytes": 8
+            },
+            {
+              "site": "0x1802c",
+              "offset": "0x60",
+              "bytes": 8
+            },
+            {
+              "site": "0x180f5",
+              "offset": "0x60",
+              "bytes": 8
+            },
+            {
+              "site": "0x1829a",
+              "offset": "0x60",
+              "bytes": 8
+            },
+            {
+              "site": "0x1b2b2",
+              "offset": "0x40",
+              "bytes": 8
+            },
+            {
+              "site": "0x1b2b2",
+              "offset": "0xd0",
+              "bytes": 8
+            },
+            {
+              "site": "0x1b2b2",
+              "offset": "0xd8",
+              "bytes": 8
+            },
+            {
+              "site": "0x1b2b2",
+              "offset": "0xe0",
+              "bytes": 8
+            }
+          ],
+          "mutable_PE_source_reads": [
+            {
+              "site": "0x15a82",
+              "RVA": "0x9b6b8",
+              "bytes": 8,
+              "value": "0x871c766dd0cf3b57"
+            }
+          ]
+        },
+        {
+          "call": "0x1b2c6",
+          "cache_RVAs": [
+            "0x9b040"
+          ],
+          "descriptor_frame_offset": "0x2c0",
+          "source": {
+            "source_RVA": "0x82e31",
+            "length": 7,
+            "seed": "0x4763854b7b03c440",
+            "plaintext": "C:\\",
+            "hex": "433a5c"
+          },
+          "private_source_reads": [
+            {
+              "site": "0x17a19",
+              "offset": "0x60",
+              "bytes": 8
+            },
+            {
+              "site": "0x1802c",
+              "offset": "0x60",
+              "bytes": 8
+            },
+            {
+              "site": "0x180f5",
+              "offset": "0x60",
+              "bytes": 8
+            },
+            {
+              "site": "0x1829a",
+              "offset": "0x60",
+              "bytes": 8
+            },
+            {
+              "site": "0x1b2c6",
+              "offset": "0xd0",
+              "bytes": 8
+            },
+            {
+              "site": "0x1b2c6",
+              "offset": "0x2c0",
+              "bytes": 8
+            },
+            {
+              "site": "0x1b2c6",
+              "offset": "0x2c8",
+              "bytes": 8
+            },
+            {
+              "site": "0x1b2c6",
+              "offset": "0x2d0",
+              "bytes": 8
+            }
+          ],
+          "mutable_PE_source_reads": [
+            {
+              "site": "0x15a82",
+              "RVA": "0x9b6b8",
+              "bytes": 8,
+              "value": "0x871c766dd0cf3b57"
+            }
+          ]
+        },
+        {
+          "call": "0x1b2d7",
+          "cache_RVAs": [
+            "0x98ba8"
+          ],
+          "descriptor_frame_offset": "0x2c0",
+          "source": {
+            "source_RVA": "0x88788",
+            "length": 20,
+            "seed": "0x5773a30f14d51394",
+            "plaintext": "kernel32.dll\u0000",
+            "hex": "6b65726e656c33322e646c6c00"
+          },
+          "private_source_reads": [
+            {
+              "site": "0x189b5",
+              "offset": "0x60",
+              "bytes": 8
+            },
+            {
+              "site": "0x189f2",
+              "offset": "0x60",
+              "bytes": 8
+            },
+            {
+              "site": "0x1b2d7",
+              "offset": "0xd0",
+              "bytes": 8
+            },
+            {
+              "site": "0x1b2d7",
+              "offset": "0x2c0",
+              "bytes": 8
+            },
+            {
+              "site": "0x1b2d7",
+              "offset": "0x2c8",
+              "bytes": 8
+            },
+            {
+              "site": "0x1b2d7",
+              "offset": "0x2d0",
+              "bytes": 8
+            }
+          ],
+          "mutable_PE_source_reads": [
+            {
+              "site": "0x15a82",
+              "RVA": "0x9b6b8",
+              "bytes": 8,
+              "value": "0x871c766dd0cf3b57"
+            }
+          ]
+        },
+        {
+          "call": "0x1b2e8",
+          "cache_RVAs": [
+            "0x9be18"
+          ],
+          "descriptor_frame_offset": "0xd0",
+          "source": {
+            "source_RVA": "0x8453b",
+            "length": 22,
+            "seed": "0x8f74e8ea21ea808c",
+            "plaintext": "GetSystemInfo\u0000",
+            "hex": "47657453797374656d496e666f00"
+          },
+          "private_source_reads": [
+            {
+              "site": "0x189b5",
+              "offset": "0x60",
+              "bytes": 8
+            },
+            {
+              "site": "0x189f2",
+              "offset": "0x60",
+              "bytes": 8
+            },
+            {
+              "site": "0x1b2e8",
+              "offset": "0x40",
+              "bytes": 8
+            },
+            {
+              "site": "0x1b2e8",
+              "offset": "0xd0",
+              "bytes": 8
+            },
+            {
+              "site": "0x1b2e8",
+              "offset": "0xd8",
+              "bytes": 8
+            },
+            {
+              "site": "0x1b2e8",
+              "offset": "0xe0",
+              "bytes": 8
+            }
+          ],
+          "mutable_PE_source_reads": [
+            {
+              "site": "0x15a82",
+              "RVA": "0x9b6b8",
+              "bytes": 8,
+              "value": "0x871c766dd0cf3b57"
+            }
+          ]
+        },
+        {
+          "call": "0x1b301",
+          "cache_RVAs": [
+            "0x9ba48"
+          ],
+          "descriptor_frame_offset": "0x2c0",
+          "source": {
+            "source_RVA": "0x85a4b",
+            "length": 18,
+            "seed": "0xcc61f177fbd14c4",
+            "plaintext": "user32.dll\u0000",
+            "hex": "7573657233322e646c6c00"
+          },
+          "private_source_reads": [
+            {
+              "site": "0x1b301",
+              "offset": "0xd0",
+              "bytes": 8
+            },
+            {
+              "site": "0x1b301",
+              "offset": "0x2c0",
+              "bytes": 8
+            },
+            {
+              "site": "0x1b301",
+              "offset": "0x2c8",
+              "bytes": 8
+            },
+            {
+              "site": "0x1b301",
+              "offset": "0x2d0",
+              "bytes": 8
+            }
+          ],
+          "mutable_PE_source_reads": []
+        },
+        {
+          "call": "0x1b312",
+          "cache_RVAs": [
+            "0x9ad00"
+          ],
+          "descriptor_frame_offset": "0xd0",
+          "source": {
+            "source_RVA": "0x863b0",
+            "length": 26,
+            "seed": "0xdbac444988d58328",
+            "plaintext": "GetSystemMetrics\u0000",
+            "hex": "47657453797374656d4d65747269637300"
+          },
+          "private_source_reads": [
+            {
+              "site": "0x1b312",
+              "offset": "0x40",
+              "bytes": 8
+            },
+            {
+              "site": "0x1b312",
+              "offset": "0xd0",
+              "bytes": 8
+            },
+            {
+              "site": "0x1b312",
+              "offset": "0xd8",
+              "bytes": 8
+            },
+            {
+              "site": "0x1b312",
+              "offset": "0xe0",
+              "bytes": 8
+            }
+          ],
+          "mutable_PE_source_reads": []
+        },
+        {
+          "call": "0x1b32b",
+          "cache_RVAs": [
+            "0x98d28"
+          ],
+          "descriptor_frame_offset": "0x2c0",
+          "source": {
+            "source_RVA": "0x86fe4",
+            "length": 18,
+            "seed": "0x167c242f6cd5ba02",
+            "plaintext": "user32.dll\u0000",
+            "hex": "7573657233322e646c6c00"
+          },
+          "private_source_reads": [
+            {
+              "site": "0x189b5",
+              "offset": "0x60",
+              "bytes": 8
+            },
+            {
+              "site": "0x189f2",
+              "offset": "0x60",
+              "bytes": 8
+            },
+            {
+              "site": "0x1b32b",
+              "offset": "0x40",
+              "bytes": 8
+            },
+            {
+              "site": "0x1b32b",
+              "offset": "0x2c0",
+              "bytes": 8
+            },
+            {
+              "site": "0x1b32b",
+              "offset": "0x2c8",
+              "bytes": 8
+            },
+            {
+              "site": "0x1b32b",
+              "offset": "0x2d0",
+              "bytes": 8
+            }
+          ],
+          "mutable_PE_source_reads": [
+            {
+              "site": "0x15a82",
+              "RVA": "0x9b6b8",
+              "bytes": 8,
+              "value": "0x871c766dd0cf3b57"
+            }
+          ]
+        },
+        {
+          "call": "0x1b344",
+          "cache_RVAs": [
+            "0x9b1d0"
+          ],
+          "descriptor_frame_offset": "0x2c0",
+          "source": {
+            "source_RVA": "0x85b02",
+            "length": 28,
+            "seed": "0xbcb13097a6fef8c1",
+            "plaintext": "SetProcessDPIAware\u0000",
+            "hex": "53657450726f63657373445049417761726500"
+          },
+          "private_source_reads": [
+            {
+              "site": "0x189b5",
+              "offset": "0x60",
+              "bytes": 8
+            },
+            {
+              "site": "0x189f2",
+              "offset": "0x60",
+              "bytes": 8
+            },
+            {
+              "site": "0x1b344",
+              "offset": "0x40",
+              "bytes": 8
+            },
+            {
+              "site": "0x1b344",
+              "offset": "0x2c0",
+              "bytes": 8
+            },
+            {
+              "site": "0x1b344",
+              "offset": "0x2c8",
+              "bytes": 8
+            },
+            {
+              "site": "0x1b344",
+              "offset": "0x2d0",
+              "bytes": 8
+            }
+          ],
+          "mutable_PE_source_reads": [
+            {
+              "site": "0x15a82",
+              "RVA": "0x9b6b8",
+              "bytes": 8,
+              "value": "0x871c766dd0cf3b57"
+            }
+          ]
+        },
+        {
+          "call": "0x1b35d",
+          "cache_RVAs": [
+            "0x9b820"
+          ],
+          "descriptor_frame_offset": "0x2c0",
+          "source": {
+            "source_RVA": "0x84fff",
+            "length": 34,
+            "seed": "0xde2ba222bc98ea4b",
+            "plaintext": "Keyboard Layout\\Preload",
+            "hex": "4b6579626f617264204c61796f75745c5072656c6f6164"
+          },
+          "private_source_reads": [
+            {
+              "site": "0x189b5",
+              "offset": "0x60",
+              "bytes": 8
+            },
+            {
+              "site": "0x189f2",
+              "offset": "0x60",
+              "bytes": 8
+            },
+            {
+              "site": "0x1b35d",
+              "offset": "0x40",
+              "bytes": 8
+            },
+            {
+              "site": "0x1b35d",
+              "offset": "0x2c0",
+              "bytes": 8
+            },
+            {
+              "site": "0x1b35d",
+              "offset": "0x2c8",
+              "bytes": 8
+            },
+            {
+              "site": "0x1b35d",
+              "offset": "0x2d0",
+              "bytes": 8
+            }
+          ],
+          "mutable_PE_source_reads": [
+            {
+              "site": "0x15a82",
+              "RVA": "0x9b6b8",
+              "bytes": 8,
+              "value": "0x871c766dd0cf3b57"
+            },
+            {
+              "site": "0x19332",
+              "RVA": "0x9c200",
+              "bytes": 8,
+              "value": "0x21d45ddd436715a5"
+            }
+          ]
+        },
+        {
+          "call": "0x1b376",
+          "cache_RVAs": [
+            "0x995f0"
+          ],
+          "descriptor_frame_offset": "0x2c0",
+          "source": {
+            "source_RVA": "0x88b26",
+            "length": 18,
+            "seed": "0xf10e38ec8dd0a7d5",
+            "plaintext": "bcrypt.dll\u0000",
+            "hex": "6263727970742e646c6c00"
+          },
+          "private_source_reads": [
+            {
+              "site": "0x189b5",
+              "offset": "0x60",
+              "bytes": 8
+            },
+            {
+              "site": "0x189f2",
+              "offset": "0x60",
+              "bytes": 8
+            },
+            {
+              "site": "0x19a11",
+              "offset": "0x60",
+              "bytes": 8
+            },
+            {
+              "site": "0x19d5c",
+              "offset": "0x60",
+              "bytes": 8
+            },
+            {
+              "site": "0x1a0f9",
+              "offset": "0x68",
+              "bytes": 4
+            },
+            {
+              "site": "0x1b376",
+              "offset": "0x140",
+              "bytes": 8
+            },
+            {
+              "site": "0x1b376",
+              "offset": "0x2c0",
+              "bytes": 8
+            },
+            {
+              "site": "0x1b376",
+              "offset": "0x2c8",
+              "bytes": 8
+            },
+            {
+              "site": "0x1b376",
+              "offset": "0x2d0",
+              "bytes": 8
+            }
+          ],
+          "mutable_PE_source_reads": [
+            {
+              "site": "0x15a82",
+              "RVA": "0x9b6b8",
+              "bytes": 8,
+              "value": "0x871c766dd0cf3b57"
+            }
+          ]
+        },
+        {
+          "call": "0x1b387",
+          "cache_RVAs": [
+            "0x98080"
+          ],
+          "descriptor_frame_offset": "0x2c0",
+          "source": {
+            "source_RVA": "0x84f59",
+            "length": 26,
+            "seed": "0x59cbd59989bf8ed4",
+            "plaintext": "BCryptFinishHash\u0000",
+            "hex": "42437279707446696e6973684861736800"
+          },
+          "private_source_reads": [
+            {
+              "site": "0x189b5",
+              "offset": "0x60",
+              "bytes": 8
+            },
+            {
+              "site": "0x189f2",
+              "offset": "0x60",
+              "bytes": 8
+            },
+            {
+              "site": "0x19a11",
+              "offset": "0x60",
+              "bytes": 8
+            },
+            {
+              "site": "0x19d5c",
+              "offset": "0x60",
+              "bytes": 8
+            },
+            {
+              "site": "0x19fd4",
+              "offset": "0x60",
+              "bytes": 8
+            },
+            {
+              "site": "0x1a06d",
+              "offset": "0x60",
+              "bytes": 8
+            },
+            {
+              "site": "0x1a0f9",
+              "offset": "0x68",
+              "bytes": 4
+            },
+            {
+              "site": "0x1a19b",
+              "offset": "0x9c",
+              "bytes": 1
+            },
+            {
+              "site": "0x1b387",
+              "offset": "0x140",
+              "bytes": 8
+            },
+            {
+              "site": "0x1b387",
+              "offset": "0x2c0",
+              "bytes": 8
+            },
+            {
+              "site": "0x1b387",
+              "offset": "0x2c8",
+              "bytes": 8
+            },
+            {
+              "site": "0x1b387",
+              "offset": "0x2d0",
+              "bytes": 8
+            }
+          ],
+          "mutable_PE_source_reads": [
+            {
+              "site": "0x15a82",
+              "RVA": "0x9b6b8",
+              "bytes": 8,
+              "value": "0x871c766dd0cf3b57"
+            }
+          ]
+        },
+        {
+          "call": "0x1b3a0",
+          "cache_RVAs": [
+            "0x9ad40"
+          ],
+          "descriptor_frame_offset": "0x2c0",
+          "source": {
+            "source_RVA": "0x85f9f",
+            "length": 12,
+            "seed": "0x7e84350fe40f21b4",
+            "plaintext": "SHA256\u0000",
+            "hex": "53484132353600"
+          },
+          "private_source_reads": [
+            {
+              "site": "0x1b3a0",
+              "offset": "0x90",
+              "bytes": 8
+            },
+            {
+              "site": "0x1b3a0",
+              "offset": "0x2c0",
+              "bytes": 8
+            },
+            {
+              "site": "0x1b3a0",
+              "offset": "0x2c8",
+              "bytes": 8
+            },
+            {
+              "site": "0x1b3a0",
+              "offset": "0x2d0",
+              "bytes": 8
+            }
+          ],
+          "mutable_PE_source_reads": []
+        },
+        {
+          "call": "0x1b3b1",
+          "cache_RVAs": [
+            "0x9a130"
+          ],
+          "descriptor_frame_offset": "0x2c0",
+          "source": {
+            "source_RVA": "0x85130",
+            "length": 18,
+            "seed": "0x19dade165f2d4d30",
+            "plaintext": "bcrypt.dll\u0000",
+            "hex": "6263727970742e646c6c00"
+          },
+          "private_source_reads": [
+            {
+              "site": "0x189b5",
+              "offset": "0x60",
+              "bytes": 8
+            },
+            {
+              "site": "0x189f2",
+              "offset": "0x60",
+              "bytes": 8
+            },
+            {
+              "site": "0x19a11",
+              "offset": "0x60",
+              "bytes": 8
+            },
+            {
+              "site": "0x19d5c",
+              "offset": "0x60",
+              "bytes": 8
+            },
+            {
+              "site": "0x19fd4",
+              "offset": "0x60",
+              "bytes": 8
+            },
+            {
+              "site": "0x1a06d",
+              "offset": "0x60",
+              "bytes": 8
+            },
+            {
+              "site": "0x1b3b1",
+              "offset": "0x90",
+              "bytes": 8
+            },
+            {
+              "site": "0x1b3b1",
+              "offset": "0x2c0",
+              "bytes": 8
+            },
+            {
+              "site": "0x1b3b1",
+              "offset": "0x2c8",
+              "bytes": 8
+            },
+            {
+              "site": "0x1b3b1",
+              "offset": "0x2d0",
+              "bytes": 8
+            }
+          ],
+          "mutable_PE_source_reads": [
+            {
+              "site": "0x15a82",
+              "RVA": "0x9b6b8",
+              "bytes": 8,
+              "value": "0x871c766dd0cf3b57"
+            }
+          ]
+        },
+        {
+          "call": "0x1b3ca",
+          "cache_RVAs": [
+            "0x98288"
+          ],
+          "descriptor_frame_offset": "0x2c0",
+          "source": {
+            "source_RVA": "0x8426a",
+            "length": 40,
+            "seed": "0xc72309104220b685",
+            "plaintext": "BCryptOpenAlgorithmProvider\u0000",
+            "hex": "4243727970744f70656e416c676f726974686d50726f766964657200"
+          },
+          "private_source_reads": [
+            {
+              "site": "0x189b5",
+              "offset": "0x60",
+              "bytes": 8
+            },
+            {
+              "site": "0x189f2",
+              "offset": "0x60",
+              "bytes": 8
+            },
+            {
+              "site": "0x19a11",
+              "offset": "0x60",
+              "bytes": 8
+            },
+            {
+              "site": "0x19d5c",
+              "offset": "0x60",
+              "bytes": 8
+            },
+            {
+              "site": "0x19fd4",
+              "offset": "0x60",
+              "bytes": 8
+            },
+            {
+              "site": "0x1a06d",
+              "offset": "0x60",
+              "bytes": 8
+            },
+            {
+              "site": "0x1b3ca",
+              "offset": "0x90",
+              "bytes": 8
+            },
+            {
+              "site": "0x1b3ca",
+              "offset": "0x2c0",
+              "bytes": 8
+            },
+            {
+              "site": "0x1b3ca",
+              "offset": "0x2c8",
+              "bytes": 8
+            },
+            {
+              "site": "0x1b3ca",
+              "offset": "0x2d0",
+              "bytes": 8
+            }
+          ],
+          "mutable_PE_source_reads": [
+            {
+              "site": "0x15a82",
+              "RVA": "0x9b6b8",
+              "bytes": 8,
+              "value": "0x871c766dd0cf3b57"
+            }
+          ]
+        },
+        {
+          "call": "0x1b3db",
+          "cache_RVAs": [
+            "0x9c0b8"
+          ],
+          "descriptor_frame_offset": "0x2c0",
+          "source": {
+            "source_RVA": "0x88851",
+            "length": 18,
+            "seed": "0xc254bcaf8895f4a2",
+            "plaintext": "bcrypt.dll\u0000",
+            "hex": "6263727970742e646c6c00"
+          },
+          "private_source_reads": [
+            {
+              "site": "0x189b5",
+              "offset": "0x60",
+              "bytes": 8
+            },
+            {
+              "site": "0x189f2",
+              "offset": "0x60",
+              "bytes": 8
+            },
+            {
+              "site": "0x19a11",
+              "offset": "0x60",
+              "bytes": 8
+            },
+            {
+              "site": "0x19d5c",
+              "offset": "0x60",
+              "bytes": 8
+            },
+            {
+              "site": "0x19fd4",
+              "offset": "0x60",
+              "bytes": 8
+            },
+            {
+              "site": "0x1a06d",
+              "offset": "0x60",
+              "bytes": 8
+            },
+            {
+              "site": "0x1b3db",
+              "offset": "0x90",
+              "bytes": 8
+            },
+            {
+              "site": "0x1b3db",
+              "offset": "0x2c0",
+              "bytes": 8
+            },
+            {
+              "site": "0x1b3db",
+              "offset": "0x2c8",
+              "bytes": 8
+            },
+            {
+              "site": "0x1b3db",
+              "offset": "0x2d0",
+              "bytes": 8
+            }
+          ],
+          "mutable_PE_source_reads": [
+            {
+              "site": "0x15a82",
+              "RVA": "0x9b6b8",
+              "bytes": 8,
+              "value": "0x871c766dd0cf3b57"
+            }
+          ]
+        },
+        {
+          "call": "0x1b3ec",
+          "cache_RVAs": [
+            "0x9a300"
+          ],
+          "descriptor_frame_offset": "0x2c0",
+          "source": {
+            "source_RVA": "0x8659f",
+            "length": 27,
+            "seed": "0x6b4339cf40235ba8",
+            "plaintext": "BCryptDestroyHash\u0000",
+            "hex": "42437279707444657374726f794861736800"
+          },
+          "private_source_reads": [
+            {
+              "site": "0x189b5",
+              "offset": "0x60",
+              "bytes": 8
+            },
+            {
+              "site": "0x189f2",
+              "offset": "0x60",
+              "bytes": 8
+            },
+            {
+              "site": "0x19a11",
+              "offset": "0x60",
+              "bytes": 8
+            },
+            {
+              "site": "0x19d5c",
+              "offset": "0x60",
+              "bytes": 8
+            },
+            {
+              "site": "0x19fd4",
+              "offset": "0x60",
+              "bytes": 8
+            },
+            {
+              "site": "0x1a06d",
+              "offset": "0x60",
+              "bytes": 8
+            },
+            {
+              "site": "0x1b3ec",
+              "offset": "0x90",
+              "bytes": 8
+            },
+            {
+              "site": "0x1b3ec",
+              "offset": "0x2c0",
+              "bytes": 8
+            },
+            {
+              "site": "0x1b3ec",
+              "offset": "0x2c8",
+              "bytes": 8
+            },
+            {
+              "site": "0x1b3ec",
+              "offset": "0x2d0",
+              "bytes": 8
+            }
+          ],
+          "mutable_PE_source_reads": [
+            {
+              "site": "0x15a82",
+              "RVA": "0x9b6b8",
+              "bytes": 8,
+              "value": "0x871c766dd0cf3b57"
+            },
+            {
+              "site": "0x1a51e",
+              "RVA": "0x9c3a2",
+              "bytes": 2,
+              "value": "0xafcf"
+            }
+          ]
+        },
+        {
+          "call": "0x1b3fd",
+          "cache_RVAs": [
+            "0x9a4f0"
+          ],
+          "descriptor_frame_offset": "0x2c0",
+          "source": {
+            "source_RVA": "0x860f1",
+            "length": 18,
+            "seed": "0x49d88e204ecb24ea",
+            "plaintext": "bcrypt.dll\u0000",
+            "hex": "6263727970742e646c6c00"
+          },
+          "private_source_reads": [
+            {
+              "site": "0x189b5",
+              "offset": "0x60",
+              "bytes": 8
+            },
+            {
+              "site": "0x189f2",
+              "offset": "0x60",
+              "bytes": 8
+            },
+            {
+              "site": "0x19a11",
+              "offset": "0x60",
+              "bytes": 8
+            },
+            {
+              "site": "0x19d5c",
+              "offset": "0x60",
+              "bytes": 8
+            },
+            {
+              "site": "0x19fd4",
+              "offset": "0x60",
+              "bytes": 8
+            },
+            {
+              "site": "0x1a06d",
+              "offset": "0x60",
+              "bytes": 8
+            },
+            {
+              "site": "0x1b3fd",
+              "offset": "0x90",
+              "bytes": 8
+            },
+            {
+              "site": "0x1b3fd",
+              "offset": "0x2c0",
+              "bytes": 8
+            },
+            {
+              "site": "0x1b3fd",
+              "offset": "0x2c8",
+              "bytes": 8
+            },
+            {
+              "site": "0x1b3fd",
+              "offset": "0x2d0",
+              "bytes": 8
+            }
+          ],
+          "mutable_PE_source_reads": [
+            {
+              "site": "0x15a82",
+              "RVA": "0x9b6b8",
+              "bytes": 8,
+              "value": "0x871c766dd0cf3b57"
+            }
+          ]
+        },
+        {
+          "call": "0x1b40e",
+          "cache_RVAs": [
+            "0x99740"
+          ],
+          "descriptor_frame_offset": "0x2c0",
+          "source": {
+            "source_RVA": "0x832c6",
+            "length": 23,
+            "seed": "0x6c92190ae18141c2",
+            "plaintext": "BCryptHashData\u0000",
+            "hex": "424372797074486173684461746100"
+          },
+          "private_source_reads": [
+            {
+              "site": "0x189b5",
+              "offset": "0x60",
+              "bytes": 8
+            },
+            {
+              "site": "0x189f2",
+              "offset": "0x60",
+              "bytes": 8
+            },
+            {
+              "site": "0x19a11",
+              "offset": "0x60",
+              "bytes": 8
+            },
+            {
+              "site": "0x19d5c",
+              "offset": "0x60",
+              "bytes": 8
+            },
+            {
+              "site": "0x19fd4",
+              "offset": "0x60",
+              "bytes": 8
+            },
+            {
+              "site": "0x1a06d",
+              "offset": "0x60",
+              "bytes": 8
+            },
+            {
+              "site": "0x1b40e",
+              "offset": "0x90",
+              "bytes": 8
+            },
+            {
+              "site": "0x1b40e",
+              "offset": "0x2c0",
+              "bytes": 8
+            },
+            {
+              "site": "0x1b40e",
+              "offset": "0x2c8",
+              "bytes": 8
+            },
+            {
+              "site": "0x1b40e",
+              "offset": "0x2d0",
+              "bytes": 8
+            }
+          ],
+          "mutable_PE_source_reads": [
+            {
+              "site": "0x15a82",
+              "RVA": "0x9b6b8",
+              "bytes": 8,
+              "value": "0x871c766dd0cf3b57"
+            }
+          ]
+        },
+        {
+          "call": "0x1b41f",
+          "cache_RVAs": [
+            "0x9b7b8"
+          ],
+          "descriptor_frame_offset": "0x2c0",
+          "source": {
+            "source_RVA": "0x84309",
+            "length": 18,
+            "seed": "0x7a60527d9fab5075",
+            "plaintext": "bcrypt.dll\u0000",
+            "hex": "6263727970742e646c6c00"
+          },
+          "private_source_reads": [
+            {
+              "site": "0x189b5",
+              "offset": "0x60",
+              "bytes": 8
+            },
+            {
+              "site": "0x189f2",
+              "offset": "0x60",
+              "bytes": 8
+            },
+            {
+              "site": "0x19a11",
+              "offset": "0x60",
+              "bytes": 8
+            },
+            {
+              "site": "0x19d5c",
+              "offset": "0x60",
+              "bytes": 8
+            },
+            {
+              "site": "0x19fd4",
+              "offset": "0x60",
+              "bytes": 8
+            },
+            {
+              "site": "0x1a06d",
+              "offset": "0x60",
+              "bytes": 8
+            },
+            {
+              "site": "0x1b41f",
+              "offset": "0x90",
+              "bytes": 8
+            },
+            {
+              "site": "0x1b41f",
+              "offset": "0x2c0",
+              "bytes": 8
+            },
+            {
+              "site": "0x1b41f",
+              "offset": "0x2c8",
+              "bytes": 8
+            },
+            {
+              "site": "0x1b41f",
+              "offset": "0x2d0",
+              "bytes": 8
+            }
+          ],
+          "mutable_PE_source_reads": [
+            {
+              "site": "0x15a82",
+              "RVA": "0x9b6b8",
+              "bytes": 8,
+              "value": "0x871c766dd0cf3b57"
+            }
+          ]
+        },
+        {
+          "call": "0x1b438",
+          "cache_RVAs": [
+            "0x98d88"
+          ],
+          "descriptor_frame_offset": "0x2c0",
+          "source": {
+            "source_RVA": "0x84f13",
+            "length": 42,
+            "seed": "0x1a947aa1f94aef8",
+            "plaintext": "BCryptCloseAlgorithmProvider\u0000",
+            "hex": "424372797074436c6f7365416c676f726974686d50726f766964657200"
+          },
+          "private_source_reads": [
+            {
+              "site": "0x1a80b",
+              "offset": "0x9e",
+              "bytes": 1
+            },
+            {
+              "site": "0x1b438",
+              "offset": "0x90",
+              "bytes": 8
+            },
+            {
+              "site": "0x1b438",
+              "offset": "0x2c0",
+              "bytes": 8
+            },
+            {
+              "site": "0x1b438",
+              "offset": "0x2c8",
+              "bytes": 8
+            },
+            {
+              "site": "0x1b438",
+              "offset": "0x2d0",
+              "bytes": 8
+            }
+          ],
+          "mutable_PE_source_reads": []
+        },
+        {
+          "call": "0x1b449",
+          "cache_RVAs": [
+            "0x9b710"
+          ],
+          "descriptor_frame_offset": "0x2c0",
+          "source": {
+            "source_RVA": "0x841c1",
+            "length": 18,
+            "seed": "0xee8b866234aae93b",
+            "plaintext": "bcrypt.dll\u0000",
+            "hex": "6263727970742e646c6c00"
+          },
+          "private_source_reads": [
+            {
+              "site": "0x1a80b",
+              "offset": "0x9e",
+              "bytes": 1
+            },
+            {
+              "site": "0x1a964",
+              "offset": "0x650",
+              "bytes": 8
+            },
+            {
+              "site": "0x1b449",
+              "offset": "0x90",
+              "bytes": 8
+            },
+            {
+              "site": "0x1b449",
+              "offset": "0x2c0",
+              "bytes": 8
+            },
+            {
+              "site": "0x1b449",
+              "offset": "0x2c8",
+              "bytes": 8
+            },
+            {
+              "site": "0x1b449",
+              "offset": "0x2d0",
+              "bytes": 8
+            }
+          ],
+          "mutable_PE_source_reads": []
+        },
+        {
+          "call": "0x1b45a",
+          "cache_RVAs": [
+            "0x99e18"
+          ],
+          "descriptor_frame_offset": "0x2c0",
+          "source": {
+            "source_RVA": "0x8300e",
+            "length": 26,
+            "seed": "0x77d02c7c00a7361",
+            "plaintext": "BCryptCreateHash\u0000",
+            "hex": "4243727970744372656174654861736800"
+          },
+          "private_source_reads": [
+            {
+              "site": "0x1b45a",
+              "offset": "0x90",
+              "bytes": 8
+            },
+            {
+              "site": "0x1b45a",
+              "offset": "0x2c0",
+              "bytes": 8
+            },
+            {
+              "site": "0x1b45a",
+              "offset": "0x2c8",
+              "bytes": 8
+            },
+            {
+              "site": "0x1b45a",
+              "offset": "0x2d0",
+              "bytes": 8
+            }
+          ],
+          "mutable_PE_source_reads": []
+        }
+      ],
+      "source_binding": {
+        "original_sha256": "24f7eed14b69c561bd2dde6aa61759cabc8588293e9a0099dde8e381f96f228a",
+        "frozen_path": "work\\alpme_analysis\\full_static_project_20261027\\inputs\\17_payload.dll.bin",
+        "frozen_sha256": "1dfb1ef139176bdbbf88858d47f22e042eadd4658fff7603b50f1b87bfd7675c",
+        "original_imagebase": "0x180000000",
+        "frozen_imagebase": "0x8f70000",
+        "normalized_function_identical": true,
+        "normalized_relocations": [],
+        "native_function_sha256": "24f86b729f0c32176aa5394ce3c7f3e9858960e150413b58ecb5dd228a48a907"
+      },
+      "independent_source_gate": {
+        "status": "PENDING_SOURCE_LIFETIME",
+        "reads": 269,
+        "bytes": 316,
+        "issues": 50,
+        "failed_queries": []
+      },
+      "candidate_computed_sites": 168,
+      "added_target_sets": 28
+    },
+    {
+      "version": "19",
+      "entry": "0x57f4f",
+      "API_calls": [
+        {
+          "site": "0x582a8",
+          "asm": "call r14",
+          "resolver": "0x5824a",
+          "module": "kernel32.dll",
+          "API": "GetComputerNameW",
+          "native_hash_scalars": {
+            "rcx": [
+              "0x57abb6db"
+            ],
+            "r8": [
+              "0x1fe9439a"
+            ]
+          },
+          "status": "原生源/长度/种子完整正向解码与生产者绑定；私有字段生命周期尚未全部封闭"
+        },
+        {
+          "site": "0x58579",
+          "asm": "call rsi",
+          "resolver": "0x584ab",
+          "module": "user32.dll",
+          "API": "EnumDisplayDevicesW",
+          "native_hash_scalars": {
+            "rcx": [
+              "0xcabe5c71"
+            ],
+            "r8": [
+              "0xa26244ae"
+            ]
+          },
+          "status": "原生源/长度/种子完整正向解码与生产者绑定；私有字段生命周期尚未全部封闭"
+        },
+        {
+          "site": "0x58cc8",
+          "asm": "call rsi",
+          "resolver": "0x58be1",
+          "module": "advapi32.dll",
+          "API": "RegEnumKeyExW",
+          "native_hash_scalars": {
+            "rcx": [
+              "0xe3048c13"
+            ],
+            "r8": [
+              "0xb52597d"
+            ]
+          },
+          "status": "原生源/长度/种子完整正向解码与生产者绑定；私有字段生命周期尚未全部封闭"
+        },
+        {
+          "site": "0x59e55",
+          "asm": "call rbx",
+          "resolver": "0x59ded",
+          "module": "advapi32.dll",
+          "API": "GetUserNameW",
+          "native_hash_scalars": {
+            "rcx": [
+              "0xe3048c13"
+            ],
+            "r8": [
+              "0x5a6deddc"
+            ]
+          },
+          "status": "原生源/长度/种子完整正向解码与生产者绑定；私有字段生命周期尚未全部封闭"
+        },
+        {
+          "site": "0x5a0c7",
+          "asm": "call rbx",
+          "resolver": "0x5a06c",
+          "module": "kernel32.dll",
+          "API": "GetUserDefaultLocaleName",
+          "native_hash_scalars": {
+            "rcx": [
+              "0x57abb6db"
+            ],
+            "r8": [
+              "0xed87a438"
+            ]
+          },
+          "status": "原生源/长度/种子完整正向解码与生产者绑定；私有字段生命周期尚未全部封闭"
+        },
+        {
+          "site": "0x5a86e",
+          "asm": "call r15",
+          "resolver": "0x5a806",
+          "module": "kernel32",
+          "API": "LCIDToLocaleName",
+          "native_hash_scalars": {
+            "rcx": [
+              "0x8e225041"
+            ],
+            "r8": [
+              "0xb5dde5bd"
+            ]
+          },
+          "status": "原生源/长度/种子完整正向解码与生产者绑定；私有字段生命周期尚未全部封闭"
+        },
+        {
+          "site": "0x5aedb",
+          "asm": "call rsi",
+          "resolver": "0x5ae67",
+          "module": "kernel32.dll",
+          "API": "GlobalMemoryStatusEx",
+          "native_hash_scalars": {
+            "rcx": [
+              "0x57abb6db"
+            ],
+            "r8": [
+              "0x450903b0"
+            ]
+          },
+          "status": "原生源/长度/种子完整正向解码与生产者绑定；私有字段生命周期尚未全部封闭"
+        },
+        {
+          "site": "0x5b2f1",
+          "asm": "call qword ptr [rsp + 0x98]",
+          "resolver": "0x5b133",
+          "module": "kernel32.dll",
+          "API": "GetVolumeInformationW",
+          "native_hash_scalars": {
+            "rcx": [
+              "0x57abb6db"
+            ],
+            "r8": [
+              "0xa25c825e"
+            ]
+          },
+          "status": "原生源/长度/种子完整正向解码与生产者绑定；私有字段生命周期尚未全部封闭"
+        },
+        {
+          "site": "0x5c10a",
+          "asm": "call qword ptr [rsp + 0x98]",
+          "resolver": "0x5bf10",
+          "module": "bcrypt.dll",
+          "API": "BCryptOpenAlgorithmProvider",
+          "native_hash_scalars": {
+            "rcx": [
+              "0xf970eb47"
+            ],
+            "r8": [
+              "0x284ce17"
+            ]
+          },
+          "status": "原生源/长度/种子完整正向解码与生产者绑定；私有字段生命周期尚未全部封闭"
+        },
+        {
+          "site": "0x5c1b9",
+          "asm": "call qword ptr [rsp + 0x318]",
+          "resolver": "0x5bd9a",
+          "module": "bcrypt.dll",
+          "API": "BCryptCreateHash",
+          "native_hash_scalars": {
+            "rcx": [
+              "0xf970eb47"
+            ],
+            "r8": [
+              "0x2e716a23"
+            ]
+          },
+          "status": "原生源/长度/种子完整正向解码与生产者绑定；私有字段生命周期尚未全部封闭"
+        },
+        {
+          "site": "0x5c1f0",
+          "asm": "call qword ptr [rsp + 0x210]",
+          "resolver": "0x5b99f",
+          "module": "bcrypt.dll",
+          "API": "BCryptCloseAlgorithmProvider",
+          "native_hash_scalars": {
+            "rcx": [
+              "0xf970eb47"
+            ],
+            "r8": [
+              "0x15f08025"
+            ]
+          },
+          "status": "原生源/长度/种子完整正向解码与生产者绑定；私有字段生命周期尚未全部封闭"
+        },
+        {
+          "site": "0x5c5ad",
+          "asm": "call rbp",
+          "resolver": "0x5b846",
+          "module": "bcrypt.dll",
+          "API": "BCryptHashData",
+          "native_hash_scalars": {
+            "rcx": [
+              "0xf970eb47"
+            ],
+            "r8": [
+              "0xca83e3e7"
+            ]
+          },
+          "status": "原生源/长度/种子完整正向解码与生产者绑定；私有字段生命周期尚未全部封闭"
+        },
+        {
+          "site": "0x5c638",
+          "asm": "call qword ptr [rsp + 0x308]",
+          "resolver": "0x5c099",
+          "module": "bcrypt.dll",
+          "API": "BCryptFinishHash",
+          "native_hash_scalars": {
+            "rcx": [
+              "0xf970eb47"
+            ],
+            "r8": [
+              "0x4c4c5294"
+            ]
+          },
+          "status": "原生源/长度/种子完整正向解码与生产者绑定；私有字段生命周期尚未全部封闭"
+        },
+        {
+          "site": "0x5c64b",
+          "asm": "call qword ptr [rsp + 0x210]",
+          "resolver": "0x5b99f",
+          "module": "bcrypt.dll",
+          "API": "BCryptCloseAlgorithmProvider",
+          "native_hash_scalars": {
+            "rcx": [
+              "0xf970eb47"
+            ],
+            "r8": [
+              "0x15f08025"
+            ]
+          },
+          "status": "原生源/长度/种子完整正向解码与生产者绑定；私有字段生命周期尚未全部封闭"
+        },
+        {
+          "site": "0x5c65a",
+          "asm": "call qword ptr [rsp + 0x270]",
+          "resolver": "0x5bb3a",
+          "module": "bcrypt.dll",
+          "API": "BCryptDestroyHash",
+          "native_hash_scalars": {
+            "rcx": [
+              "0xf970eb47"
+            ],
+            "r8": [
+              "0x51ac7f8d"
+            ]
+          },
+          "status": "原生源/长度/种子完整正向解码与生产者绑定；私有字段生命周期尚未全部封闭"
+        },
+        {
+          "site": "0x5c701",
+          "asm": "call qword ptr [rsp + 0x270]",
+          "resolver": "0x5bb3a",
+          "module": "bcrypt.dll",
+          "API": "BCryptDestroyHash",
+          "native_hash_scalars": {
+            "rcx": [
+              "0xf970eb47"
+            ],
+            "r8": [
+              "0x51ac7f8d"
+            ]
+          },
+          "status": "原生源/长度/种子完整正向解码与生产者绑定；私有字段生命周期尚未全部封闭"
+        },
+        {
+          "site": "0x5c712",
+          "asm": "call qword ptr [rsp + 0x210]",
+          "resolver": "0x5b99f",
+          "module": "bcrypt.dll",
+          "API": "BCryptCloseAlgorithmProvider",
+          "native_hash_scalars": {
+            "rcx": [
+              "0xf970eb47"
+            ],
+            "r8": [
+              "0x15f08025"
+            ]
+          },
+          "status": "原生源/长度/种子完整正向解码与生产者绑定；私有字段生命周期尚未全部封闭"
+        },
+        {
+          "site": "0x5d00f",
+          "asm": "call qword ptr [rsp + 0x90]",
+          "resolver": "0x5cedf",
+          "module": "kernel32.dll",
+          "API": "GetSystemInfo",
+          "native_hash_scalars": {
+            "rcx": [
+              "0x57abb6db"
+            ],
+            "r8": [
+              "0xdb52fd86"
+            ]
+          },
+          "status": "原生源/长度/种子完整正向解码与生产者绑定；私有字段生命周期尚未全部封闭"
+        },
+        {
+          "site": "0x5d125",
+          "asm": "call qword ptr [rsp + 0xe0]",
+          "resolver": "0x584ab",
+          "module": "user32.dll",
+          "API": "EnumDisplayDevicesW",
+          "native_hash_scalars": {
+            "rcx": [
+              "0xcabe5c71"
+            ],
+            "r8": [
+              "0xa26244ae"
+            ]
+          },
+          "status": "原生源/长度/种子完整正向解码与生产者绑定；私有字段生命周期尚未全部封闭"
+        },
+        {
+          "site": "0x5d4bf",
+          "asm": "call r14",
+          "resolver": "0x5d408",
+          "module": "ntdll.dll",
+          "API": "RtlGetVersion",
+          "native_hash_scalars": {
+            "rcx": [
+              "0x16ced25f"
+            ],
+            "r8": [
+              "0x98ea2ead"
+            ]
+          },
+          "status": "原生源/长度/种子完整正向解码与生产者绑定；私有字段生命周期尚未全部封闭"
+        },
+        {
+          "site": "0x5dbbc",
+          "asm": "call rsi",
+          "resolver": "0x5da13",
+          "module": "user32.dll",
+          "API": "SetProcessDPIAware",
+          "native_hash_scalars": {
+            "rcx": [
+              "0xcabe5c71"
+            ],
+            "r8": [
+              "0x50d502ef"
+            ]
+          },
+          "status": "原生源/长度/种子完整正向解码与生产者绑定；私有字段生命周期尚未全部封闭"
+        },
+        {
+          "site": "0x5dbc0",
+          "asm": "call r15",
+          "resolver": "0x5db61",
+          "module": "user32.dll",
+          "API": "GetSystemMetrics",
+          "native_hash_scalars": {
+            "rcx": [
+              "0xcabe5c71"
+            ],
+            "r8": [
+              "0x7951074f"
+            ]
+          },
+          "status": "原生源/长度/种子完整正向解码与生产者绑定；私有字段生命周期尚未全部封闭"
+        },
+        {
+          "site": "0x5dbce",
+          "asm": "call r15",
+          "resolver": "0x5db61",
+          "module": "user32.dll",
+          "API": "GetSystemMetrics",
+          "native_hash_scalars": {
+            "rcx": [
+              "0xcabe5c71"
+            ],
+            "r8": [
+              "0x7951074f"
+            ]
+          },
+          "status": "原生源/长度/种子完整正向解码与生产者绑定；私有字段生命周期尚未全部封闭"
+        }
+      ],
+      "strings": [
+        {
+          "call": "0x585ed",
+          "cache_RVAs": [
+            "0x98ca0"
+          ],
+          "descriptor_frame_offset": "0x480",
+          "source": {
+            "source_RVA": "0x81eb9",
+            "length": 24,
+            "seed": "0xd8da23072fafba62",
+            "plaintext": "kernel32.dll\u0000",
+            "hex": "6b65726e656c33322e646c6c00"
+          },
+          "private_source_reads": [
+            {
+              "site": "0x585ed",
+              "offset": "0x50",
+              "bytes": 8
+            },
+            {
+              "site": "0x585ed",
+              "offset": "0x480",
+              "bytes": 8
+            },
+            {
+              "site": "0x585ed",
+              "offset": "0x488",
+              "bytes": 8
+            },
+            {
+              "site": "0x585ed",
+              "offset": "0x490",
+              "bytes": 8
+            }
+          ],
+          "mutable_PE_source_reads": []
+        },
+        {
+          "call": "0x585fe",
+          "cache_RVAs": [
+            "0x97670"
+          ],
+          "descriptor_frame_offset": "0x50",
+          "source": {
+            "source_RVA": "0x82450",
+            "length": 31,
+            "seed": "0x99ea36974a1b1b58",
+            "plaintext": "GetComputerNameW\u0000",
+            "hex": "476574436f6d70757465724e616d655700"
+          },
+          "private_source_reads": [
+            {
+              "site": "0x585fe",
+              "offset": "0x50",
+              "bytes": 8
+            },
+            {
+              "site": "0x585fe",
+              "offset": "0x58",
+              "bytes": 8
+            },
+            {
+              "site": "0x585fe",
+              "offset": "0x60",
+              "bytes": 8
+            },
+            {
+              "site": "0x585fe",
+              "offset": "0x130",
+              "bytes": 8
+            }
+          ],
+          "mutable_PE_source_reads": []
+        },
+        {
+          "call": "0x58617",
+          "cache_RVAs": [
+            "0x997d0"
+          ],
+          "descriptor_frame_offset": "0x480",
+          "source": {
+            "source_RVA": "0x81f14",
+            "length": 21,
+            "seed": "0x7b083b2346d5be36",
+            "plaintext": "user32.dll\u0000",
+            "hex": "7573657233322e646c6c00"
+          },
+          "private_source_reads": [
+            {
+              "site": "0x5836f",
+              "offset": "0x234",
+              "bytes": 4
+            },
+            {
+              "site": "0x58617",
+              "offset": "0x50",
+              "bytes": 8
+            },
+            {
+              "site": "0x58617",
+              "offset": "0x480",
+              "bytes": 8
+            },
+            {
+              "site": "0x58617",
+              "offset": "0x488",
+              "bytes": 8
+            },
+            {
+              "site": "0x58617",
+              "offset": "0x490",
+              "bytes": 8
+            }
+          ],
+          "mutable_PE_source_reads": []
+        },
+        {
+          "call": "0x5862d",
+          "cache_RVAs": [
+            "0x97740"
+          ],
+          "descriptor_frame_offset": "0x50",
+          "source": {
+            "source_RVA": "0x81b55",
+            "length": 36,
+            "seed": "0xcddd72e0d78db7c3",
+            "plaintext": "EnumDisplayDevicesW\u0000",
+            "hex": "456e756d446973706c6179446576696365735700"
+          },
+          "private_source_reads": [
+            {
+              "site": "0x58411",
+              "offset": "0x17a",
+              "bytes": 2
+            },
+            {
+              "site": "0x5862d",
+              "offset": "0x50",
+              "bytes": 8
+            },
+            {
+              "site": "0x5862d",
+              "offset": "0x58",
+              "bytes": 8
+            },
+            {
+              "site": "0x5862d",
+              "offset": "0x60",
+              "bytes": 8
+            },
+            {
+              "site": "0x5862d",
+              "offset": "0x130",
+              "bytes": 8
+            }
+          ],
+          "mutable_PE_source_reads": []
+        },
+        {
+          "call": "0x592c1",
+          "cache_RVAs": [
+            "0x99b58"
+          ],
+          "descriptor_frame_offset": "0x480",
+          "source": {
+            "source_RVA": "0x820a8",
+            "length": 24,
+            "seed": "0x63f00e21dfb2f921",
+            "plaintext": "advapi32.dll\u0000",
+            "hex": "61647661706933322e646c6c00"
+          },
+          "private_source_reads": [
+            {
+              "site": "0x58ae3",
+              "offset": "0xe0",
+              "bytes": 4
+            },
+            {
+              "site": "0x592c1",
+              "offset": "0xf0",
+              "bytes": 8
+            },
+            {
+              "site": "0x592c1",
+              "offset": "0x480",
+              "bytes": 8
+            },
+            {
+              "site": "0x592c1",
+              "offset": "0x488",
+              "bytes": 8
+            },
+            {
+              "site": "0x592c1",
+              "offset": "0x490",
+              "bytes": 8
+            },
+            {
+              "site": "0x5991f",
+              "offset": "0x48",
+              "bytes": 8
+            },
+            {
+              "site": "0x5dc36",
+              "offset": "0x48",
+              "bytes": 8
+            },
+            {
+              "site": "0x5dcb1",
+              "offset": "0x48",
+              "bytes": 8
+            }
+          ],
+          "mutable_PE_source_reads": []
+        },
+        {
+          "call": "0x592d5",
+          "cache_RVAs": [
+            "0x98e68"
+          ],
+          "descriptor_frame_offset": "0xf0",
+          "source": {
+            "source_RVA": "0x83d11",
+            "length": 26,
+            "seed": "0x42267fb114107717",
+            "plaintext": "RegEnumKeyExW\u0000",
+            "hex": "526567456e756d4b657945785700"
+          },
+          "private_source_reads": [
+            {
+              "site": "0x592d5",
+              "offset": "0xa0",
+              "bytes": 8
+            },
+            {
+              "site": "0x592d5",
+              "offset": "0xf0",
+              "bytes": 8
+            },
+            {
+              "site": "0x592d5",
+              "offset": "0xf8",
+              "bytes": 8
+            },
+            {
+              "site": "0x592d5",
+              "offset": "0x100",
+              "bytes": 8
+            }
+          ],
+          "mutable_PE_source_reads": []
+        },
+        {
+          "call": "0x594c7",
+          "cache_RVAs": [
+            "0x971f0"
+          ],
+          "descriptor_frame_offset": "0x480",
+          "source": {
+            "source_RVA": "0x87260",
+            "length": 28,
+            "seed": "0xf0b5527bc39677a1",
+            "plaintext": "SystemComponent",
+            "hex": "53797374656d436f6d706f6e656e74"
+          },
+          "private_source_reads": [
+            {
+              "site": "0x58e77",
+              "offset": "0x370",
+              "bytes": 8
+            },
+            {
+              "site": "0x58eb4",
+              "offset": "0x198",
+              "bytes": 8
+            },
+            {
+              "site": "0x594c7",
+              "offset": "0xf0",
+              "bytes": 8
+            },
+            {
+              "site": "0x594c7",
+              "offset": "0x480",
+              "bytes": 8
+            },
+            {
+              "site": "0x594c7",
+              "offset": "0x488",
+              "bytes": 8
+            },
+            {
+              "site": "0x594c7",
+              "offset": "0x490",
+              "bytes": 8
+            },
+            {
+              "site": "0x5dc36",
+              "offset": "0x48",
+              "bytes": 8
+            },
+            {
+              "site": "0x5dcb1",
+              "offset": "0x48",
+              "bytes": 8
+            }
+          ],
+          "mutable_PE_source_reads": []
+        },
+        {
+          "call": "0x594e0",
+          "cache_RVAs": [
+            "0x962f0"
+          ],
+          "descriptor_frame_offset": "0xf0",
+          "source": {
+            "source_RVA": "0x83900",
+            "length": 28,
+            "seed": "0x34dd84693dd31ea5",
+            "plaintext": "UninstallString",
+            "hex": "556e696e7374616c6c537472696e67"
+          },
+          "private_source_reads": [
+            {
+              "site": "0x594e0",
+              "offset": "0xf0",
+              "bytes": 8
+            },
+            {
+              "site": "0x594e0",
+              "offset": "0xf8",
+              "bytes": 8
+            },
+            {
+              "site": "0x594e0",
+              "offset": "0x100",
+              "bytes": 8
+            },
+            {
+              "site": "0x594e0",
+              "offset": "0x2f0",
+              "bytes": 8
+            }
+          ],
+          "mutable_PE_source_reads": []
+        },
+        {
+          "call": "0x5967a",
+          "cache_RVAs": [
+            "0x98fc8"
+          ],
+          "descriptor_frame_offset": "0x450",
+          "source": {
+            "source_RVA": "0x8388c",
+            "length": 21,
+            "seed": "0xb6f9970e0c3081f9",
+            "plaintext": "DisplayName",
+            "hex": "446973706c61794e616d65"
+          },
+          "private_source_reads": [
+            {
+              "site": "0x5918d",
+              "offset": "0x118",
+              "bytes": 8
+            },
+            {
+              "site": "0x591a1",
+              "offset": "0x1d0",
+              "bytes": 8
+            },
+            {
+              "site": "0x5967a",
+              "offset": "0x3d0",
+              "bytes": 8
+            },
+            {
+              "site": "0x5967a",
+              "offset": "0x450",
+              "bytes": 8
+            },
+            {
+              "site": "0x5967a",
+              "offset": "0x458",
+              "bytes": 8
+            },
+            {
+              "site": "0x5967a",
+              "offset": "0x460",
+              "bytes": 8
+            },
+            {
+              "site": "0x5dc36",
+              "offset": "0x48",
+              "bytes": 8
+            },
+            {
+              "site": "0x5dcb1",
+              "offset": "0x48",
+              "bytes": 8
+            }
+          ],
+          "mutable_PE_source_reads": []
+        },
+        {
+          "call": "0x5998d",
+          "cache_RVAs": [
+            "0x973c8"
+          ],
+          "descriptor_frame_offset": "0x468",
+          "source": {
+            "source_RVA": "0x82b70",
+            "length": 26,
+            "seed": "0xc7c9dd7efbc464a6",
+            "plaintext": "DisplayVersion",
+            "hex": "446973706c617956657273696f6e"
+          },
+          "private_source_reads": [
+            {
+              "site": "0x5998d",
+              "offset": "0x390",
+              "bytes": 8
+            },
+            {
+              "site": "0x5998d",
+              "offset": "0x468",
+              "bytes": 8
+            },
+            {
+              "site": "0x5998d",
+              "offset": "0x470",
+              "bytes": 8
+            },
+            {
+              "site": "0x5998d",
+              "offset": "0x478",
+              "bytes": 8
+            }
+          ],
+          "mutable_PE_source_reads": []
+        },
+        {
+          "call": "0x5ac6f",
+          "cache_RVAs": [
+            "0x96f00"
+          ],
+          "descriptor_frame_offset": "0x50",
+          "source": {
+            "source_RVA": "0x8252d",
+            "length": 18,
+            "seed": "0x61f89ebf831f7f1f",
+            "plaintext": "kernel32\u0000",
+            "hex": "6b65726e656c333200"
+          },
+          "private_source_reads": [
+            {
+              "site": "0x5a6d8",
+              "offset": "0x48",
+              "bytes": 4
+            },
+            {
+              "site": "0x5ac6f",
+              "offset": "0x50",
+              "bytes": 8
+            },
+            {
+              "site": "0x5ac6f",
+              "offset": "0x58",
+              "bytes": 8
+            },
+            {
+              "site": "0x5ac6f",
+              "offset": "0x60",
+              "bytes": 8
+            },
+            {
+              "site": "0x5ac6f",
+              "offset": "0x1d8",
+              "bytes": 8
+            }
+          ],
+          "mutable_PE_source_reads": []
+        },
+        {
+          "call": "0x5ac83",
+          "cache_RVAs": [
+            "0x96a28"
+          ],
+          "descriptor_frame_offset": "0x50",
+          "source": {
+            "source_RVA": "0x867e5",
+            "length": 31,
+            "seed": "0x4316b798fbf23b89",
+            "plaintext": "LCIDToLocaleName\u0000",
+            "hex": "4c434944546f4c6f63616c654e616d6500"
+          },
+          "private_source_reads": [
+            {
+              "site": "0x59cfc",
+              "offset": "0x48",
+              "bytes": 8
+            },
+            {
+              "site": "0x5a6d8",
+              "offset": "0x48",
+              "bytes": 4
+            },
+            {
+              "site": "0x5a75c",
+              "offset": "0x190",
+              "bytes": 8
+            },
+            {
+              "site": "0x5a78f",
+              "offset": "0x1c8",
+              "bytes": 8
+            },
+            {
+              "site": "0x5ac83",
+              "offset": "0x50",
+              "bytes": 8
+            },
+            {
+              "site": "0x5ac83",
+              "offset": "0x58",
+              "bytes": 8
+            },
+            {
+              "site": "0x5ac83",
+              "offset": "0x60",
+              "bytes": 8
+            },
+            {
+              "site": "0x5ac83",
+              "offset": "0x1d8",
+              "bytes": 8
+            }
+          ],
+          "mutable_PE_source_reads": [
+            {
+              "site": "0x5a778",
+              "RVA": "0x9a3e0",
+              "bytes": 1,
+              "value": "0xbb"
+            }
+          ]
+        },
+        {
+          "call": "0x5c823",
+          "cache_RVAs": [
+            "0x96c90"
+          ],
+          "descriptor_frame_offset": "0x480",
+          "source": {
+            "source_RVA": "0x812f0",
+            "length": 24,
+            "seed": "0x22d794acd7bdceb7",
+            "plaintext": "advapi32.dll\u0000",
+            "hex": "61647661706933322e646c6c00"
+          },
+          "private_source_reads": [
+            {
+              "site": "0x5c823",
+              "offset": "0x50",
+              "bytes": 8
+            },
+            {
+              "site": "0x5c823",
+              "offset": "0x480",
+              "bytes": 8
+            },
+            {
+              "site": "0x5c823",
+              "offset": "0x488",
+              "bytes": 8
+            },
+            {
+              "site": "0x5c823",
+              "offset": "0x490",
+              "bytes": 8
+            }
+          ],
+          "mutable_PE_source_reads": []
+        },
+        {
+          "call": "0x5c834",
+          "cache_RVAs": [
+            "0x97428"
+          ],
+          "descriptor_frame_offset": "0x50",
+          "source": {
+            "source_RVA": "0x8305c",
+            "length": 24,
+            "seed": "0xe1345cce0be78eb7",
+            "plaintext": "GetUserNameW\u0000",
+            "hex": "476574557365724e616d655700"
+          },
+          "private_source_reads": [
+            {
+              "site": "0x59cfc",
+              "offset": "0x48",
+              "bytes": 8
+            },
+            {
+              "site": "0x5c834",
+              "offset": "0x50",
+              "bytes": 8
+            },
+            {
+              "site": "0x5c834",
+              "offset": "0x58",
+              "bytes": 8
+            },
+            {
+              "site": "0x5c834",
+              "offset": "0x60",
+              "bytes": 8
+            },
+            {
+              "site": "0x5c834",
+              "offset": "0xf0",
+              "bytes": 8
+            }
+          ],
+          "mutable_PE_source_reads": []
+        },
+        {
+          "call": "0x5c845",
+          "cache_RVAs": [
+            "0x99a18"
+          ],
+          "descriptor_frame_offset": "0x480",
+          "source": {
+            "source_RVA": "0x83279",
+            "length": 24,
+            "seed": "0x20b39d62cdebd571",
+            "plaintext": "kernel32.dll\u0000",
+            "hex": "6b65726e656c33322e646c6c00"
+          },
+          "private_source_reads": [
+            {
+              "site": "0x59cfc",
+              "offset": "0x48",
+              "bytes": 8
+            },
+            {
+              "site": "0x5c845",
+              "offset": "0xf0",
+              "bytes": 8
+            },
+            {
+              "site": "0x5c845",
+              "offset": "0x480",
+              "bytes": 8
+            },
+            {
+              "site": "0x5c845",
+              "offset": "0x488",
+              "bytes": 8
+            },
+            {
+              "site": "0x5c845",
+              "offset": "0x490",
+              "bytes": 8
+            }
+          ],
+          "mutable_PE_source_reads": []
+        },
+        {
+          "call": "0x5c85e",
+          "cache_RVAs": [
+            "0x964d8"
+          ],
+          "descriptor_frame_offset": "0x480",
+          "source": {
+            "source_RVA": "0x834a2",
+            "length": 44,
+            "seed": "0xc65aa6a3ca502ff3",
+            "plaintext": "GetUserDefaultLocaleName\u0000",
+            "hex": "4765745573657244656661756c744c6f63616c654e616d6500"
+          },
+          "private_source_reads": [
+            {
+              "site": "0x59cfc",
+              "offset": "0x48",
+              "bytes": 8
+            },
+            {
+              "site": "0x5c85e",
+              "offset": "0xf0",
+              "bytes": 8
+            },
+            {
+              "site": "0x5c85e",
+              "offset": "0x480",
+              "bytes": 8
+            },
+            {
+              "site": "0x5c85e",
+              "offset": "0x488",
+              "bytes": 8
+            },
+            {
+              "site": "0x5c85e",
+              "offset": "0x490",
+              "bytes": 8
+            }
+          ],
+          "mutable_PE_source_reads": []
+        },
+        {
+          "call": "0x5c86f",
+          "cache_RVAs": [
+            "0x97c98"
+          ],
+          "descriptor_frame_offset": "0x480",
+          "source": {
+            "source_RVA": "0x81458",
+            "length": 40,
+            "seed": "0x24d717d1608ca9c0",
+            "plaintext": "Keyboard Layout\\Preload",
+            "hex": "4b6579626f617264204c61796f75745c5072656c6f6164"
+          },
+          "private_source_reads": [
+            {
+              "site": "0x59cfc",
+              "offset": "0x48",
+              "bytes": 8
+            },
+            {
+              "site": "0x5c86f",
+              "offset": "0xf0",
+              "bytes": 8
+            },
+            {
+              "site": "0x5c86f",
+              "offset": "0x480",
+              "bytes": 8
+            },
+            {
+              "site": "0x5c86f",
+              "offset": "0x488",
+              "bytes": 8
+            },
+            {
+              "site": "0x5c86f",
+              "offset": "0x490",
+              "bytes": 8
+            }
+          ],
+          "mutable_PE_source_reads": []
+        },
+        {
+          "call": "0x5c880",
+          "cache_RVAs": [
+            "0x97570"
+          ],
+          "descriptor_frame_offset": "0x50",
+          "source": {
+            "source_RVA": "0x86280",
+            "length": 24,
+            "seed": "0x493a8fd11851ae0a",
+            "plaintext": "kernel32.dll\u0000",
+            "hex": "6b65726e656c33322e646c6c00"
+          },
+          "private_source_reads": [
+            {
+              "site": "0x59cfc",
+              "offset": "0x48",
+              "bytes": 8
+            },
+            {
+              "site": "0x5ad0a",
+              "offset": "0x48",
+              "bytes": 8
+            },
+            {
+              "site": "0x5c880",
+              "offset": "0x50",
+              "bytes": 8
+            },
+            {
+              "site": "0x5c880",
+              "offset": "0x58",
+              "bytes": 8
+            },
+            {
+              "site": "0x5c880",
+              "offset": "0x60",
+              "bytes": 8
+            },
+            {
+              "site": "0x5c880",
+              "offset": "0xc0",
+              "bytes": 8
+            }
+          ],
+          "mutable_PE_source_reads": []
+        },
+        {
+          "call": "0x5c896",
+          "cache_RVAs": [
+            "0x98ea8"
+          ],
+          "descriptor_frame_offset": "0x50",
+          "source": {
+            "source_RVA": "0x81618",
+            "length": 37,
+            "seed": "0x7f767986174ce87f",
+            "plaintext": "GlobalMemoryStatusEx\u0000",
+            "hex": "476c6f62616c4d656d6f7279537461747573457800"
+          },
+          "private_source_reads": [
+            {
+              "site": "0x59cfc",
+              "offset": "0x48",
+              "bytes": 8
+            },
+            {
+              "site": "0x5ad0a",
+              "offset": "0x48",
+              "bytes": 8
+            },
+            {
+              "site": "0x5c896",
+              "offset": "0x50",
+              "bytes": 8
+            },
+            {
+              "site": "0x5c896",
+              "offset": "0x58",
+              "bytes": 8
+            },
+            {
+              "site": "0x5c896",
+              "offset": "0x60",
+              "bytes": 8
+            },
+            {
+              "site": "0x5c896",
+              "offset": "0xc0",
+              "bytes": 8
+            }
+          ],
+          "mutable_PE_source_reads": []
+        },
+        {
+          "call": "0x5c8ac",
+          "cache_RVAs": [
+            "0x98838"
+          ],
+          "descriptor_frame_offset": "0x50",
+          "source": {
+            "source_RVA": "0x818e1",
+            "length": 24,
+            "seed": "0xc2439b6e17d9e8ea",
+            "plaintext": "kernel32.dll\u0000",
+            "hex": "6b65726e656c33322e646c6c00"
+          },
+          "private_source_reads": [
+            {
+              "site": "0x5af6c",
+              "offset": "0x330",
+              "bytes": 8
+            },
+            {
+              "site": "0x5c8ac",
+              "offset": "0x50",
+              "bytes": 8
+            },
+            {
+              "site": "0x5c8ac",
+              "offset": "0x58",
+              "bytes": 8
+            },
+            {
+              "site": "0x5c8ac",
+              "offset": "0x60",
+              "bytes": 8
+            },
+            {
+              "site": "0x5c8ac",
+              "offset": "0xc0",
+              "bytes": 8
+            }
+          ],
+          "mutable_PE_source_reads": []
+        },
+        {
+          "call": "0x5c8c2",
+          "cache_RVAs": [
+            "0x98b38"
+          ],
+          "descriptor_frame_offset": "0x50",
+          "source": {
+            "source_RVA": "0x81b02",
+            "length": 39,
+            "seed": "0xc8d156db4a56ffb3",
+            "plaintext": "GetVolumeInformationW\u0000",
+            "hex": "476574566f6c756d65496e666f726d6174696f6e5700"
+          },
+          "private_source_reads": [
+            {
+              "site": "0x5af6c",
+              "offset": "0x330",
+              "bytes": 8
+            },
+            {
+              "site": "0x5b08b",
+              "offset": "0x3b8",
+              "bytes": 8
+            },
+            {
+              "site": "0x5c8c2",
+              "offset": "0x50",
+              "bytes": 8
+            },
+            {
+              "site": "0x5c8c2",
+              "offset": "0x58",
+              "bytes": 8
+            },
+            {
+              "site": "0x5c8c2",
+              "offset": "0x60",
+              "bytes": 8
+            },
+            {
+              "site": "0x5c8c2",
+              "offset": "0xc0",
+              "bytes": 8
+            }
+          ],
+          "mutable_PE_source_reads": []
+        },
+        {
+          "call": "0x5c8d8",
+          "cache_RVAs": [
+            "0x98d00"
+          ],
+          "descriptor_frame_offset": "0x50",
+          "source": {
+            "source_RVA": "0x80d78",
+            "length": 8,
+            "seed": "0x1c3b4d01a5a71c77",
+            "plaintext": "C:\\",
+            "hex": "433a5c"
+          },
+          "private_source_reads": [
+            {
+              "site": "0x5b121",
+              "offset": "0x48",
+              "bytes": 4
+            },
+            {
+              "site": "0x5c8d8",
+              "offset": "0x50",
+              "bytes": 8
+            },
+            {
+              "site": "0x5c8d8",
+              "offset": "0x58",
+              "bytes": 8
+            },
+            {
+              "site": "0x5c8d8",
+              "offset": "0x60",
+              "bytes": 8
+            },
+            {
+              "site": "0x5c8d8",
+              "offset": "0xa0",
+              "bytes": 8
+            }
+          ],
+          "mutable_PE_source_reads": []
+        },
+        {
+          "call": "0x5c8ee",
+          "cache_RVAs": [
+            "0x96110"
+          ],
+          "descriptor_frame_offset": "0x50",
+          "source": {
+            "source_RVA": "0x82e6e",
+            "length": 21,
+            "seed": "0x43599cff5674a866",
+            "plaintext": "bcrypt.dll\u0000",
+            "hex": "6263727970742e646c6c00"
+          },
+          "private_source_reads": [
+            {
+              "site": "0x5b566",
+              "offset": "0x48",
+              "bytes": 8
+            },
+            {
+              "site": "0x5b6f2",
+              "offset": "0x48",
+              "bytes": 8
+            },
+            {
+              "site": "0x5c8ee",
+              "offset": "0x50",
+              "bytes": 8
+            },
+            {
+              "site": "0x5c8ee",
+              "offset": "0x58",
+              "bytes": 8
+            },
+            {
+              "site": "0x5c8ee",
+              "offset": "0x60",
+              "bytes": 8
+            },
+            {
+              "site": "0x5c8ee",
+              "offset": "0x1b0",
+              "bytes": 8
+            }
+          ],
+          "mutable_PE_source_reads": []
+        },
+        {
+          "call": "0x5c8ff",
+          "cache_RVAs": [
+            "0x96a00"
+          ],
+          "descriptor_frame_offset": "0x50",
+          "source": {
+            "source_RVA": "0x816e8",
+            "length": 28,
+            "seed": "0xf0242142213c6720",
+            "plaintext": "BCryptHashData\u0000",
+            "hex": "424372797074486173684461746100"
+          },
+          "private_source_reads": [
+            {
+              "site": "0x5b566",
+              "offset": "0x48",
+              "bytes": 8
+            },
+            {
+              "site": "0x5b6f2",
+              "offset": "0x48",
+              "bytes": 8
+            },
+            {
+              "site": "0x5c8ff",
+              "offset": "0x50",
+              "bytes": 8
+            },
+            {
+              "site": "0x5c8ff",
+              "offset": "0x58",
+              "bytes": 8
+            },
+            {
+              "site": "0x5c8ff",
+              "offset": "0x60",
+              "bytes": 8
+            },
+            {
+              "site": "0x5c8ff",
+              "offset": "0x1b0",
+              "bytes": 8
+            }
+          ],
+          "mutable_PE_source_reads": []
+        },
+        {
+          "call": "0x5c915",
+          "cache_RVAs": [
+            "0x98350"
+          ],
+          "descriptor_frame_offset": "0x50",
+          "source": {
+            "source_RVA": "0x80d9d",
+            "length": 21,
+            "seed": "0x3524c8093615dcb",
+            "plaintext": "bcrypt.dll\u0000",
+            "hex": "6263727970742e646c6c00"
+          },
+          "private_source_reads": [
+            {
+              "site": "0x5c915",
+              "offset": "0x50",
+              "bytes": 8
+            },
+            {
+              "site": "0x5c915",
+              "offset": "0x58",
+              "bytes": 8
+            },
+            {
+              "site": "0x5c915",
+              "offset": "0x60",
+              "bytes": 8
+            },
+            {
+              "site": "0x5c915",
+              "offset": "0x1b0",
+              "bytes": 8
+            }
+          ],
+          "mutable_PE_source_reads": []
+        },
+        {
+          "call": "0x5c926",
+          "cache_RVAs": [
+            "0x96b70"
+          ],
+          "descriptor_frame_offset": "0x50",
+          "source": {
+            "source_RVA": "0x85b68",
+            "length": 51,
+            "seed": "0xd66e63fd450da891",
+            "plaintext": "BCryptCloseAlgorithmProvider\u0000",
+            "hex": "424372797074436c6f7365416c676f726974686d50726f766964657200"
+          },
+          "private_source_reads": [
+            {
+              "site": "0x5b566",
+              "offset": "0x48",
+              "bytes": 8
+            },
+            {
+              "site": "0x5b6f2",
+              "offset": "0x48",
+              "bytes": 8
+            },
+            {
+              "site": "0x5c926",
+              "offset": "0x50",
+              "bytes": 8
+            },
+            {
+              "site": "0x5c926",
+              "offset": "0x58",
+              "bytes": 8
+            },
+            {
+              "site": "0x5c926",
+              "offset": "0x60",
+              "bytes": 8
+            },
+            {
+              "site": "0x5c926",
+              "offset": "0x1b0",
+              "bytes": 8
+            }
+          ],
+          "mutable_PE_source_reads": []
+        },
+        {
+          "call": "0x5c93c",
+          "cache_RVAs": [
+            "0x97508"
+          ],
+          "descriptor_frame_offset": "0x50",
+          "source": {
+            "source_RVA": "0x82de3",
+            "length": 21,
+            "seed": "0x4671d4f23cd4b90a",
+            "plaintext": "bcrypt.dll\u0000",
+            "hex": "6263727970742e646c6c00"
+          },
+          "private_source_reads": [
+            {
+              "site": "0x5b566",
+              "offset": "0x48",
+              "bytes": 8
+            },
+            {
+              "site": "0x5b6f2",
+              "offset": "0x48",
+              "bytes": 8
+            },
+            {
+              "site": "0x5c93c",
+              "offset": "0x50",
+              "bytes": 8
+            },
+            {
+              "site": "0x5c93c",
+              "offset": "0x58",
+              "bytes": 8
+            },
+            {
+              "site": "0x5c93c",
+              "offset": "0x60",
+              "bytes": 8
+            },
+            {
+              "site": "0x5c93c",
+              "offset": "0x1b0",
+              "bytes": 8
+            }
+          ],
+          "mutable_PE_source_reads": []
+        },
+        {
+          "call": "0x5c94d",
+          "cache_RVAs": [
+            "0x97048"
+          ],
+          "descriptor_frame_offset": "0x50",
+          "source": {
+            "source_RVA": "0x83259",
+            "length": 32,
+            "seed": "0xe5c0d01d2813246a",
+            "plaintext": "BCryptDestroyHash\u0000",
+            "hex": "42437279707444657374726f794861736800"
+          },
+          "private_source_reads": [
+            {
+              "site": "0x5b566",
+              "offset": "0x48",
+              "bytes": 8
+            },
+            {
+              "site": "0x5b6f2",
+              "offset": "0x48",
+              "bytes": 8
+            },
+            {
+              "site": "0x5bab8",
+              "offset": "0x48",
+              "bytes": 4
+            },
+            {
+              "site": "0x5bac2",
+              "offset": "0x3c8",
+              "bytes": 8
+            },
+            {
+              "site": "0x5c94d",
+              "offset": "0x50",
+              "bytes": 8
+            },
+            {
+              "site": "0x5c94d",
+              "offset": "0x58",
+              "bytes": 8
+            },
+            {
+              "site": "0x5c94d",
+              "offset": "0x60",
+              "bytes": 8
+            },
+            {
+              "site": "0x5c94d",
+              "offset": "0x1b0",
+              "bytes": 8
+            }
+          ],
+          "mutable_PE_source_reads": []
+        },
+        {
+          "call": "0x5c963",
+          "cache_RVAs": [
+            "0x997f0"
+          ],
+          "descriptor_frame_offset": "0x50",
+          "source": {
+            "source_RVA": "0x86232",
+            "length": 15,
+            "seed": "0x930b42b7100ccecf",
+            "plaintext": "SHA256\u0000",
+            "hex": "53484132353600"
+          },
+          "private_source_reads": [
+            {
+              "site": "0x5b566",
+              "offset": "0x48",
+              "bytes": 8
+            },
+            {
+              "site": "0x5b6f2",
+              "offset": "0x48",
+              "bytes": 8
+            },
+            {
+              "site": "0x5c963",
+              "offset": "0x50",
+              "bytes": 8
+            },
+            {
+              "site": "0x5c963",
+              "offset": "0x58",
+              "bytes": 8
+            },
+            {
+              "site": "0x5c963",
+              "offset": "0x60",
+              "bytes": 8
+            },
+            {
+              "site": "0x5c963",
+              "offset": "0xa0",
+              "bytes": 8
+            }
+          ],
+          "mutable_PE_source_reads": [
+            {
+              "site": "0x5bbc5",
+              "RVA": "0x96a20",
+              "bytes": 8,
+              "value": "0xb98e2b0dc32b46f1"
+            }
+          ]
+        },
+        {
+          "call": "0x5c979",
+          "cache_RVAs": [
+            "0x98858"
+          ],
+          "descriptor_frame_offset": "0x50",
+          "source": {
+            "source_RVA": "0x826be",
+            "length": 21,
+            "seed": "0x39ad299a2bdf12ad",
+            "plaintext": "bcrypt.dll\u0000",
+            "hex": "6263727970742e646c6c00"
+          },
+          "private_source_reads": [
+            {
+              "site": "0x5bb4c",
+              "offset": "0x48",
+              "bytes": 8
+            },
+            {
+              "site": "0x5c979",
+              "offset": "0x50",
+              "bytes": 8
+            },
+            {
+              "site": "0x5c979",
+              "offset": "0x58",
+              "bytes": 8
+            },
+            {
+              "site": "0x5c979",
+              "offset": "0x60",
+              "bytes": 8
+            },
+            {
+              "site": "0x5c979",
+              "offset": "0xa0",
+              "bytes": 8
+            }
+          ],
+          "mutable_PE_source_reads": []
+        },
+        {
+          "call": "0x5c98a",
+          "cache_RVAs": [
+            "0x99460"
+          ],
+          "descriptor_frame_offset": "0xa0",
+          "source": {
+            "source_RVA": "0x81163",
+            "length": 31,
+            "seed": "0x8a2059269606fd1",
+            "plaintext": "BCryptCreateHash\u0000",
+            "hex": "4243727970744372656174654861736800"
+          },
+          "private_source_reads": [
+            {
+              "site": "0x5bb4c",
+              "offset": "0x48",
+              "bytes": 8
+            },
+            {
+              "site": "0x5c98a",
+              "offset": "0xa0",
+              "bytes": 8
+            },
+            {
+              "site": "0x5c98a",
+              "offset": "0xa8",
+              "bytes": 8
+            },
+            {
+              "site": "0x5c98a",
+              "offset": "0xb0",
+              "bytes": 8
+            },
+            {
+              "site": "0x5c98a",
+              "offset": "0xe8",
+              "bytes": 8
+            }
+          ],
+          "mutable_PE_source_reads": []
+        },
+        {
+          "call": "0x5c9a0",
+          "cache_RVAs": [
+            "0x96d58"
+          ],
+          "descriptor_frame_offset": "0x50",
+          "source": {
+            "source_RVA": "0x82045",
+            "length": 21,
+            "seed": "0x70c2a2ec64b7694",
+            "plaintext": "bcrypt.dll\u0000",
+            "hex": "6263727970742e646c6c00"
+          },
+          "private_source_reads": [
+            {
+              "site": "0x5bb4c",
+              "offset": "0x48",
+              "bytes": 8
+            },
+            {
+              "site": "0x5c9a0",
+              "offset": "0x50",
+              "bytes": 8
+            },
+            {
+              "site": "0x5c9a0",
+              "offset": "0x58",
+              "bytes": 8
+            },
+            {
+              "site": "0x5c9a0",
+              "offset": "0x60",
+              "bytes": 8
+            },
+            {
+              "site": "0x5c9a0",
+              "offset": "0xe8",
+              "bytes": 8
+            }
+          ],
+          "mutable_PE_source_reads": []
+        },
+        {
+          "call": "0x5c9b6",
+          "cache_RVAs": [
+            "0x98e00"
+          ],
+          "descriptor_frame_offset": "0x50",
+          "source": {
+            "source_RVA": "0x86241",
+            "length": 49,
+            "seed": "0x962ceb5ecef3dcd4",
+            "plaintext": "BCryptOpenAlgorithmProvider\u0000",
+            "hex": "4243727970744f70656e416c676f726974686d50726f766964657200"
+          },
+          "private_source_reads": [
+            {
+              "site": "0x5bb4c",
+              "offset": "0x48",
+              "bytes": 8
+            },
+            {
+              "site": "0x5c9b6",
+              "offset": "0x50",
+              "bytes": 8
+            },
+            {
+              "site": "0x5c9b6",
+              "offset": "0x58",
+              "bytes": 8
+            },
+            {
+              "site": "0x5c9b6",
+              "offset": "0x60",
+              "bytes": 8
+            },
+            {
+              "site": "0x5c9b6",
+              "offset": "0xe8",
+              "bytes": 8
+            }
+          ],
+          "mutable_PE_source_reads": []
+        },
+        {
+          "call": "0x5c9c7",
+          "cache_RVAs": [
+            "0x97760"
+          ],
+          "descriptor_frame_offset": "0x50",
+          "source": {
+            "source_RVA": "0x826d3",
+            "length": 21,
+            "seed": "0x4a97b6fba8dfc8cf",
+            "plaintext": "bcrypt.dll\u0000",
+            "hex": "6263727970742e646c6c00"
+          },
+          "private_source_reads": [
+            {
+              "site": "0x5bb4c",
+              "offset": "0x48",
+              "bytes": 8
+            },
+            {
+              "site": "0x5bf7e",
+              "offset": "0x170",
+              "bytes": 2
+            },
+            {
+              "site": "0x5c9c7",
+              "offset": "0x50",
+              "bytes": 8
+            },
+            {
+              "site": "0x5c9c7",
+              "offset": "0x58",
+              "bytes": 8
+            },
+            {
+              "site": "0x5c9c7",
+              "offset": "0x60",
+              "bytes": 8
+            },
+            {
+              "site": "0x5c9c7",
+              "offset": "0xa0",
+              "bytes": 8
+            }
+          ],
+          "mutable_PE_source_reads": []
+        },
+        {
+          "call": "0x5c9d8",
+          "cache_RVAs": [
+            "0x988d8"
+          ],
+          "descriptor_frame_offset": "0xa0",
+          "source": {
+            "source_RVA": "0x83c2e",
+            "length": 31,
+            "seed": "0x73258aadaa962894",
+            "plaintext": "BCryptFinishHash\u0000",
+            "hex": "42437279707446696e6973684861736800"
+          },
+          "private_source_reads": [
+            {
+              "site": "0x5c001",
+              "offset": "0x48",
+              "bytes": 8
+            },
+            {
+              "site": "0x5c9d8",
+              "offset": "0xa0",
+              "bytes": 8
+            },
+            {
+              "site": "0x5c9d8",
+              "offset": "0xa8",
+              "bytes": 8
+            },
+            {
+              "site": "0x5c9d8",
+              "offset": "0xb0",
+              "bytes": 8
+            },
+            {
+              "site": "0x5c9d8",
+              "offset": "0xe8",
+              "bytes": 8
+            }
+          ],
+          "mutable_PE_source_reads": []
+        },
+        {
+          "call": "0x5cbf7",
+          "cache_RVAs": [
+            "0x96ab0"
+          ],
+          "descriptor_frame_offset": "0x480",
+          "source": {
+            "source_RVA": "0x8235b",
+            "length": 86,
+            "seed": "0x40b15e8d78cbbe62",
+            "plaintext": "SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Uninstall",
+            "hex": "534f4654574152455c4d6963726f736f66745c57696e646f77735c43757272656e7456657273696f6e5c556e696e7374616c6c"
+          },
+          "private_source_reads": [
+            {
+              "site": "0x5cbf7",
+              "offset": "0x50",
+              "bytes": 8
+            },
+            {
+              "site": "0x5cbf7",
+              "offset": "0x480",
+              "bytes": 8
+            },
+            {
+              "site": "0x5cbf7",
+              "offset": "0x488",
+              "bytes": 8
+            },
+            {
+              "site": "0x5cbf7",
+              "offset": "0x490",
+              "bytes": 8
+            },
+            {
+              "site": "0x5d068",
+              "offset": "0xe0",
+              "bytes": 8
+            },
+            {
+              "site": "0x5dc36",
+              "offset": "0x48",
+              "bytes": 8
+            },
+            {
+              "site": "0x5dcb1",
+              "offset": "0x48",
+              "bytes": 8
+            }
+          ],
+          "mutable_PE_source_reads": []
+        },
+        {
+          "call": "0x5cdd5",
+          "cache_RVAs": [
+            "0x96290"
+          ],
+          "descriptor_frame_offset": "0x480",
+          "source": {
+            "source_RVA": "0x80e4f",
+            "length": 106,
+            "seed": "0x9141cbe21b7afc04",
+            "plaintext": "SOFTWARE\\WOW6432Node\\Microsoft\\Windows\\CurrentVersion\\Uninstall",
+            "hex": "534f4654574152455c574f57363433324e6f64655c4d6963726f736f66745c57696e646f77735c43757272656e7456657273696f6e5c556e696e7374616c6c"
+          },
+          "private_source_reads": [
+            {
+              "site": "0x5cc17",
+              "offset": "0x368",
+              "bytes": 8
+            },
+            {
+              "site": "0x5cdd5",
+              "offset": "0x50",
+              "bytes": 8
+            },
+            {
+              "site": "0x5cdd5",
+              "offset": "0x480",
+              "bytes": 8
+            },
+            {
+              "site": "0x5cdd5",
+              "offset": "0x488",
+              "bytes": 8
+            },
+            {
+              "site": "0x5cdd5",
+              "offset": "0x490",
+              "bytes": 8
+            },
+            {
+              "site": "0x5d068",
+              "offset": "0xe0",
+              "bytes": 8
+            },
+            {
+              "site": "0x5dc36",
+              "offset": "0x48",
+              "bytes": 8
+            },
+            {
+              "site": "0x5dcb1",
+              "offset": "0x48",
+              "bytes": 8
+            }
+          ],
+          "mutable_PE_source_reads": []
+        },
+        {
+          "call": "0x5ce04",
+          "cache_RVAs": [
+            "0x99350"
+          ],
+          "descriptor_frame_offset": "0x480",
+          "source": {
+            "source_RVA": "0x8212b",
+            "length": 24,
+            "seed": "0x19582cde3a22cf8",
+            "plaintext": "kernel32.dll\u0000",
+            "hex": "6b65726e656c33322e646c6c00"
+          },
+          "private_source_reads": [
+            {
+              "site": "0x5ce04",
+              "offset": "0x130",
+              "bytes": 8
+            },
+            {
+              "site": "0x5ce04",
+              "offset": "0x480",
+              "bytes": 8
+            },
+            {
+              "site": "0x5ce04",
+              "offset": "0x488",
+              "bytes": 8
+            },
+            {
+              "site": "0x5ce04",
+              "offset": "0x490",
+              "bytes": 8
+            },
+            {
+              "site": "0x5dc36",
+              "offset": "0x48",
+              "bytes": 8
+            },
+            {
+              "site": "0x5dcb1",
+              "offset": "0x48",
+              "bytes": 8
+            },
+            {
+              "site": "0x5dce4",
+              "offset": "0x174",
+              "bytes": 2
+            }
+          ],
+          "mutable_PE_source_reads": []
+        },
+        {
+          "call": "0x5d0bc",
+          "cache_RVAs": [
+            "0x99028"
+          ],
+          "descriptor_frame_offset": "0x480",
+          "source": {
+            "source_RVA": "0x85fc5",
+            "length": 26,
+            "seed": "0xc357e6939f03dbad",
+            "plaintext": "GetSystemInfo\u0000",
+            "hex": "47657453797374656d496e666f00"
+          },
+          "private_source_reads": [
+            {
+              "site": "0x5ce41",
+              "offset": "0x3c0",
+              "bytes": 8
+            },
+            {
+              "site": "0x5d0bc",
+              "offset": "0x130",
+              "bytes": 8
+            },
+            {
+              "site": "0x5d0bc",
+              "offset": "0x480",
+              "bytes": 8
+            },
+            {
+              "site": "0x5d0bc",
+              "offset": "0x488",
+              "bytes": 8
+            },
+            {
+              "site": "0x5d0bc",
+              "offset": "0x490",
+              "bytes": 8
+            }
+          ],
+          "mutable_PE_source_reads": []
+        },
+        {
+          "call": "0x5d6db",
+          "cache_RVAs": [
+            "0x98330"
+          ],
+          "descriptor_frame_offset": "0x480",
+          "source": {
+            "source_RVA": "0x85d61",
+            "length": 18,
+            "seed": "0xb087f2b257727713",
+            "plaintext": "ntdll.dll\u0000",
+            "hex": "6e74646c6c2e646c6c00"
+          },
+          "private_source_reads": [
+            {
+              "site": "0x5d6db",
+              "offset": "0x130",
+              "bytes": 8
+            },
+            {
+              "site": "0x5d6db",
+              "offset": "0x480",
+              "bytes": 8
+            },
+            {
+              "site": "0x5d6db",
+              "offset": "0x488",
+              "bytes": 8
+            },
+            {
+              "site": "0x5d6db",
+              "offset": "0x490",
+              "bytes": 8
+            }
+          ],
+          "mutable_PE_source_reads": []
+        },
+        {
+          "call": "0x5d6f4",
+          "cache_RVAs": [
+            "0x97150"
+          ],
+          "descriptor_frame_offset": "0x480",
+          "source": {
+            "source_RVA": "0x81407",
+            "length": 26,
+            "seed": "0xccf4efaee1315de0",
+            "plaintext": "RtlGetVersion\u0000",
+            "hex": "52746c47657456657273696f6e00"
+          },
+          "private_source_reads": [
+            {
+              "site": "0x5d6f4",
+              "offset": "0x130",
+              "bytes": 8
+            },
+            {
+              "site": "0x5d6f4",
+              "offset": "0x480",
+              "bytes": 8
+            },
+            {
+              "site": "0x5d6f4",
+              "offset": "0x488",
+              "bytes": 8
+            },
+            {
+              "site": "0x5d6f4",
+              "offset": "0x490",
+              "bytes": 8
+            }
+          ],
+          "mutable_PE_source_reads": []
+        },
+        {
+          "call": "0x5dd3a",
+          "cache_RVAs": [
+            "0x971d0"
+          ],
+          "descriptor_frame_offset": "0x480",
+          "source": {
+            "source_RVA": "0x8696c",
+            "length": 21,
+            "seed": "0xde92a4dd6e755ee5",
+            "plaintext": "user32.dll\u0000",
+            "hex": "7573657233322e646c6c00"
+          },
+          "private_source_reads": [
+            {
+              "site": "0x5d8d0",
+              "offset": "0xdc",
+              "bytes": 1
+            },
+            {
+              "site": "0x5dd3a",
+              "offset": "0x130",
+              "bytes": 8
+            },
+            {
+              "site": "0x5dd3a",
+              "offset": "0x480",
+              "bytes": 8
+            },
+            {
+              "site": "0x5dd3a",
+              "offset": "0x488",
+              "bytes": 8
+            },
+            {
+              "site": "0x5dd3a",
+              "offset": "0x490",
+              "bytes": 8
+            }
+          ],
+          "mutable_PE_source_reads": []
+        },
+        {
+          "call": "0x5dd53",
+          "cache_RVAs": [
+            "0x96230"
+          ],
+          "descriptor_frame_offset": "0x480",
+          "source": {
+            "source_RVA": "0x863f9",
+            "length": 34,
+            "seed": "0xeb88264b2d07b15",
+            "plaintext": "SetProcessDPIAware\u0000",
+            "hex": "53657450726f63657373445049417761726500"
+          },
+          "private_source_reads": [
+            {
+              "site": "0x5d8d0",
+              "offset": "0xdc",
+              "bytes": 1
+            },
+            {
+              "site": "0x5dd53",
+              "offset": "0x130",
+              "bytes": 8
+            },
+            {
+              "site": "0x5dd53",
+              "offset": "0x480",
+              "bytes": 8
+            },
+            {
+              "site": "0x5dd53",
+              "offset": "0x488",
+              "bytes": 8
+            },
+            {
+              "site": "0x5dd53",
+              "offset": "0x490",
+              "bytes": 8
+            }
+          ],
+          "mutable_PE_source_reads": [
+            {
+              "site": "0x5d964",
+              "RVA": "0x97340",
+              "bytes": 8,
+              "value": "0x3f2dee6ad8f359ab"
+            },
+            {
+              "site": "0x5d96b",
+              "RVA": "0x977e0",
+              "bytes": 8,
+              "value": "0xe3be7970580db652"
+            }
+          ]
+        },
+        {
+          "call": "0x5dd6c",
+          "cache_RVAs": [
+            "0x97bd8"
+          ],
+          "descriptor_frame_offset": "0x480",
+          "source": {
+            "source_RVA": "0x81b79",
+            "length": 21,
+            "seed": "0xe924ce21217e3b78",
+            "plaintext": "user32.dll\u0000",
+            "hex": "7573657233322e646c6c00"
+          },
+          "private_source_reads": [
+            {
+              "site": "0x5dd6c",
+              "offset": "0x130",
+              "bytes": 8
+            },
+            {
+              "site": "0x5dd6c",
+              "offset": "0x480",
+              "bytes": 8
+            },
+            {
+              "site": "0x5dd6c",
+              "offset": "0x488",
+              "bytes": 8
+            },
+            {
+              "site": "0x5dd6c",
+              "offset": "0x490",
+              "bytes": 8
+            }
+          ],
+          "mutable_PE_source_reads": []
+        },
+        {
+          "call": "0x5dd85",
+          "cache_RVAs": [
+            "0x9a260"
+          ],
+          "descriptor_frame_offset": "0x480",
+          "source": {
+            "source_RVA": "0x85d36",
+            "length": 31,
+            "seed": "0x5e88ea28ee29ec5d",
+            "plaintext": "GetSystemMetrics\u0000",
+            "hex": "47657453797374656d4d65747269637300"
+          },
+          "private_source_reads": [
+            {
+              "site": "0x5846e",
+              "offset": "0x48",
+              "bytes": 8
+            },
+            {
+              "site": "0x5dd85",
+              "offset": "0x130",
+              "bytes": 8
+            },
+            {
+              "site": "0x5dd85",
+              "offset": "0x480",
+              "bytes": 8
+            },
+            {
+              "site": "0x5dd85",
+              "offset": "0x488",
+              "bytes": 8
+            },
+            {
+              "site": "0x5dd85",
+              "offset": "0x490",
+              "bytes": 8
+            },
+            {
+              "site": "0x5de73",
+              "offset": "0x48",
+              "bytes": 8
+            },
+            {
+              "site": "0x5df07",
+              "offset": "0x48",
+              "bytes": 8
+            }
+          ],
+          "mutable_PE_source_reads": []
+        }
+      ],
+      "source_binding": {
+        "original_sha256": "4e4636d2c9d57eb609b7d18ee3dc01713fbcda39c5eee52bd4a66f222f67bb31",
+        "frozen_path": "work\\alpme_analysis\\full_static_project_20261027\\inputs\\19_payload.dll.bin",
+        "frozen_sha256": "62a0a9eda6d8a7f75619a0edde2f57649c174e19ff0d082ba347f4ec40d3faaf",
+        "original_imagebase": "0x180000000",
+        "frozen_imagebase": "0xec30000",
+        "normalized_function_identical": true,
+        "normalized_relocations": [],
+        "native_function_sha256": "02841ed459b8c3982485b1592f85127fa12d7471c758db5bc4925c40a940a0fa"
+      },
+      "independent_source_gate": {
+        "status": "PENDING_SOURCE_LIFETIME",
+        "reads": 271,
+        "bytes": 419,
+        "issues": 53,
+        "failed_queries": []
+      },
+      "candidate_computed_sites": 189,
+      "added_target_sets": 6
+    }
+  ],
+  "known_side_effects": [
+    "读取本机系统/用户/locale/显示设备/卷serial与安装软件注册表",
+    "SetProcessDPIAware改变当前进程DPI状态",
+    "创建/销毁BCrypt SHA256状态、分配/释放owned内存",
+    "构造原RCX处0x12c字节返回记录"
+  ],
+  "negative_scope": "已解90条constructor及两函数23+23个间接CALL中未出现URL/C2、网络、进程启动、命令执行或截图API；尚未对每个直接callee做新的传递语义闭包，因此这不是对全程序/任意间接别名的不存在证明。",
+  "sample_execution": false,
+  "network": false,
+  "secret_reads": false
+}

@@ -1,0 +1,162 @@
+{
+  "scope": "Defensive static path helper control flow; no native execution, network, process access, credentials or byte patches.",
+  "sample_sha256": "4e4636d2c9d57eb609b7d18ee3dc01713fbcda39c5eee52bd4a66f222f67bb31",
+  "function_rva": "0x1a385",
+  "index_proof": "1a3cc zero extends byte prefix tag to EBX; 1a40d saves it in stack+50. CMP EBX,5 at1a454 and JA1a457 reject values above5 before first computed jump1a46b. EBX and stack+50 have no intervening semantic writes. First computed jump dominates both later computed jumps in the conservative CFG; calls are treated as ABI-conforming returns, all ordinary conditional edges retained.",
+  "ebx_write_sites_including_epilogue": [
+    "0x1a517",
+    "0x1a3cc"
+  ],
+  "stack50_writes": [
+    "0x1a40d"
+  ],
+  "computed_jumps": [
+    {
+      "site": "0x1a46b",
+      "table": "0x8b164",
+      "indices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "targets": [
+        "0x1a48a",
+        "0x1a4c7",
+        "0x1a46d",
+        "0x1a48a",
+        "0x1a485",
+        "0x1a46d"
+      ]
+    },
+    {
+      "site": "0x1a483",
+      "table": "0x8b17c",
+      "indices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "targets": [
+        "0x1a5e5",
+        "0x1a5d4",
+        "0x1a5ec",
+        "0x1a5e5",
+        "0x1a5f3",
+        "0x1a5de"
+      ]
+    },
+    {
+      "site": "0x1a619",
+      "table": "0x8b194",
+      "indices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "targets": [
+        "0x1a573",
+        "0x1a58f",
+        "0x1a57a",
+        "0x1a573",
+        "0x1a58a",
+        "0x1a582"
+      ]
+    }
+  ],
+  "instruction_count": 189,
+  "overlapping_instruction_starts": [],
+  "later_table_reachable_without_first_table": {
+    "0x1a483": false,
+    "0x1a619": false
+  },
+  "ud2": "1a502 is an actual two-byte UD2 reached by buffer-length violations, not an unknown instruction.",
+  "semantic_summary": "Path component iterator advances prefix/root/body states, updates byte pointer and remaining length, emits tags6 or7, delegates ordinary components to321b3 and usesff as exhausted sentinel. No OS calls or network operations in this helper.",
+  "override_plan": {
+    "19_payload.dll.bin": {
+      "0x1a385": {
+        "0x1a46b": [
+          "0x1a48a",
+          "0x1a4c7",
+          "0x1a46d",
+          "0x1a48a",
+          "0x1a485",
+          "0x1a46d"
+        ],
+        "0x1a483": [
+          "0x1a5e5",
+          "0x1a5d4",
+          "0x1a5ec",
+          "0x1a5e5",
+          "0x1a5f3",
+          "0x1a5de"
+        ],
+        "0x1a619": [
+          "0x1a573",
+          "0x1a58f",
+          "0x1a57a",
+          "0x1a573",
+          "0x1a58a",
+          "0x1a582"
+        ]
+      }
+    }
+  },
+  "decompiler_retry_followup": {
+    "19_payload.dll.bin": {
+      "0x1a385": {
+        "changes": [
+          {
+            "site": "0x1a46b",
+            "targets": [
+              "0x1a48a",
+              "0x1a4c7",
+              "0x1a46d",
+              "0x1a48a",
+              "0x1a485",
+              "0x1a46d"
+            ],
+            "status": "reference_override_only_bytes_unchanged"
+          },
+          {
+            "site": "0x1a483",
+            "targets": [
+              "0x1a5e5",
+              "0x1a5d4",
+              "0x1a5ec",
+              "0x1a5e5",
+              "0x1a5f3",
+              "0x1a5de"
+            ],
+            "status": "reference_override_only_bytes_unchanged"
+          },
+          {
+            "site": "0x1a619",
+            "targets": [
+              "0x1a573",
+              "0x1a58f",
+              "0x1a57a",
+              "0x1a573",
+              "0x1a58a",
+              "0x1a582"
+            ],
+            "status": "reference_override_only_bytes_unchanged"
+          }
+        ],
+        "status": "completed",
+        "error": "",
+        "elapsed_ms": 85
+      },
+      "text_sha256_before": "58ed088899886b5cc99a09fba69af079f2c4d53f12059c1443a1113e38c899f3",
+      "text_sha256_after": "58ed088899886b5cc99a09fba69af079f2c4d53f12059c1443a1113e38c899f3"
+    }
+  }
+}

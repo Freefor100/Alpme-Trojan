@@ -1,0 +1,289 @@
+{
+  "status": "PASS_INDEPENDENT_STATUS_AND_87_TO_85_COVERAGE_RECONCILIATION",
+  "status_text_only_changes": 46,
+  "indirect_target_or_function_status_changes": 0,
+  "diagnostic_counts": {
+    "baseline_marker_bearing": 87,
+    "after_exact_two_C_overlays": 85,
+    "first_unfiltered_original_selector_observed": 85,
+    "controlled_selector_rerun": 85,
+    "standard_C_entry_delta": -2,
+    "loader_IR_entry_delta": 0
+  },
+  "sample_count_mapping": [
+    {
+      "sample": "17_loader.exe.bin",
+      "pdata_entries": 403,
+      "before": {
+        "no_partial_markers_not_a_CFG_proof": 391,
+        "partial_markers_remain": 12
+      },
+      "after": {
+        "no_partial_markers_not_a_CFG_proof": 391,
+        "partial_markers_remain": 12
+      }
+    },
+    {
+      "sample": "17_payload.dll.bin",
+      "pdata_entries": 718,
+      "before": {
+        "no_partial_markers_not_a_CFG_proof": 688,
+        "partial_markers_remain": 30
+      },
+      "after": {
+        "no_partial_markers_not_a_CFG_proof": 689,
+        "partial_markers_remain": 29
+      }
+    },
+    {
+      "sample": "19_loader.exe.bin",
+      "pdata_entries": 406,
+      "before": {
+        "no_partial_markers_not_a_CFG_proof": 394,
+        "partial_markers_remain": 12
+      },
+      "after": {
+        "no_partial_markers_not_a_CFG_proof": 394,
+        "partial_markers_remain": 12
+      }
+    },
+    {
+      "sample": "19_payload.dll.bin",
+      "pdata_entries": 727,
+      "before": {
+        "no_partial_markers_not_a_CFG_proof": 694,
+        "partial_markers_remain": 33
+      },
+      "after": {
+        "no_partial_markers_not_a_CFG_proof": 695,
+        "partial_markers_remain": 32
+      }
+    }
+  ],
+  "actual_saved_Ghidra_body_checks": [
+    {
+      "sample": "17_payload.dll.bin",
+      "entry": "0x1593b",
+      "body_class": "Exact complete original unwind extent",
+      "saved_instructions": 4730,
+      "native_instructions": 4730,
+      "computed_override_sites": 168,
+      "every_saved_instruction_matches_original_bytes": true,
+      "text_digest_matches_original_padded_mapping": true,
+      "body_ranges": [
+        {
+          "begin_rva": "0x1593b",
+          "end_rva_exclusive": "0x1b478"
+        }
+      ],
+      "source_project_bytes_unchanged": true
+    },
+    {
+      "sample": "19_payload.dll.bin",
+      "entry": "0x57f4f",
+      "body_class": "Exact complete original unwind extent",
+      "saved_instructions": 5013,
+      "native_instructions": 5013,
+      "computed_override_sites": 189,
+      "every_saved_instruction_matches_original_bytes": true,
+      "text_digest_matches_original_padded_mapping": true,
+      "body_ranges": [
+        {
+          "begin_rva": "0x57f4f",
+          "end_rva_exclusive": "0x5df18"
+        }
+      ],
+      "source_project_bytes_unchanged": true
+    },
+    {
+      "sample": "19_loader.exe.bin",
+      "entry": "0x9338",
+      "body_class": "Exact reached native body in5 address ranges;4 cold ranges excluded",
+      "saved_instructions": 5937,
+      "native_instructions": 6015,
+      "computed_override_sites": 299,
+      "every_saved_instruction_matches_original_bytes": true,
+      "text_digest_matches_original_padded_mapping": true,
+      "body_ranges": [
+        {
+          "begin_rva": "0x9338",
+          "end_rva_exclusive": "0xb024"
+        },
+        {
+          "begin_rva": "0xb096",
+          "end_rva_exclusive": "0xcdcb"
+        },
+        {
+          "begin_rva": "0xcde4",
+          "end_rva_exclusive": "0xce81"
+        },
+        {
+          "begin_rva": "0xcf00",
+          "end_rva_exclusive": "0xf224"
+        },
+        {
+          "begin_rva": "0xf2bc",
+          "end_rva_exclusive": "0xfc7a"
+        }
+      ],
+      "source_project_bytes_unchanged": true
+    }
+  ],
+  "loader_IR_boundary": {
+    "sample": "19_loader.exe.bin",
+    "rva": "0x9338",
+    "old_C": {
+      "path": "work\\alpme_analysis\\full_static_project_20261027\\exports\\19_loader.exe.bin\\functions\\140009338.c",
+      "bytes": 485,
+      "sha256": "622630dc9484f18a2993e2467da31c49c53d91a93435bc1da7b7ac00705e4ddc",
+      "candidate": false,
+      "counts": {
+        "Could not recover jumptable": 1,
+        "Treating indirect jump as call": 1,
+        "halt_baddata": 0,
+        "Bad instruction data": 0,
+        "UnimplementedPcode": 0
+      },
+      "partial_markers": 2,
+      "normal_context": false
+    },
+    "current_C": {
+      "path": "work\\alpme_analysis\\full_static_project_20261027\\exports\\19_loader.exe.bin\\functions\\140009338.c",
+      "bytes": 485,
+      "sha256": "622630dc9484f18a2993e2467da31c49c53d91a93435bc1da7b7ac00705e4ddc",
+      "candidate": false,
+      "counts": {
+        "Could not recover jumptable": 1,
+        "Treating indirect jump as call": 1,
+        "halt_baddata": 0,
+        "Bad instruction data": 0,
+        "UnimplementedPcode": 0
+      },
+      "partial_markers": 2,
+      "normal_context": false
+    },
+    "C_diagnostic_unchanged": true,
+    "marker_bearing_entry_delta": 0,
+    "standard_C_completed": false,
+    "analysis_IR_completed": true,
+    "normalized_basic_blocks": 983,
+    "normalized_pcode_operations": 89813,
+    "IR_source_addresses": 3734,
+    "IR_source_addresses_all_in_reached_native_body": true,
+    "native_instructions": 6015,
+    "reached_native_instructions": 5937,
+    "reached_computed_JMPs": 299,
+    "context_cold_instructions": 78,
+    "context_cold_computed_JMPs": 2,
+    "actual_unknown_frontier": 0,
+    "native_indirect_CALLs": 15,
+    "reached_indirect_CALLs": 14,
+    "identified_IAT_CALLs": 1,
+    "unresolved_native_CALL_targets": 14,
+    "native_sha256": "950dae2bd5965772d15ca3849a12f4997384cb8791b7257c03aff003c516379f",
+    "function_extent": {
+      "begin": "0x9338",
+      "end": "0xfc7a"
+    },
+    "text_unchanged": true,
+    "source_receipt": {
+      "path": "work\\alpme_analysis\\semantic_closure_20261027\\round5_outer_loaders\\continuation_19\\19_9338_continuation_receipt.json",
+      "sha256": "bf6f50e389750f1d6fdc96ecbaa662dee295c764ec342b25a2424c8b1b5b426e"
+    },
+    "qualification": "Normal-entry CFG and normalized high p-code only; two cold JMPs and14 dynamic CALL identities retain their boundaries. Standard structured C is unavailable; no C-marker decrement.",
+    "independent_fresh_loader_fixed_point_equal": true
+  },
+  "sealed_files_unchanged": [
+    {
+      "path": "work\\alpme_analysis\\semantic_closure_20261027\\round5_large_collectors\\continuation\\final_receipt.json",
+      "sha256": "93bd7e9df7c97791e390c2dc79f7b9383a344ff6cc33c75566f955abd3840d3e"
+    },
+    {
+      "path": "work\\alpme_analysis\\semantic_closure_20261027\\all_native_export_flow_diagnostic.json",
+      "sha256": "2b75c08f458559f22eaaa6db9fdcabc364cb94b2ad0f0706d78729c26c9532dc"
+    },
+    {
+      "path": "outputs\\alpme-round3-consolidated-evidence-20261027.json",
+      "sha256": "3cbcc266a65ba7cb387fb912d77e99235c6ea21257678969ae9d1cb06a48f775"
+    }
+  ],
+  "scope": "Exactly two host collector C overlays and19loader normal-entry CFG/IR. Root runtime-library CFG/C additions are a later ledger. C marker count is not a whole-program semantics count.",
+  "files": [
+    {
+      "path": "work\\alpme_analysis\\semantic_closure_20261027\\round5_large_collectors\\continuation\\receipt_cleanup\\cleanup_receipt.py",
+      "sha256": "e0457e4420d64ae1a078714c9543f56fc8c8e200d05031838a289e0f00af63e6"
+    },
+    {
+      "path": "work\\alpme_analysis\\semantic_closure_20261027\\round5_large_collectors\\continuation\\receipt_cleanup\\qualified_final_receipt.json",
+      "sha256": "fad42646eea156248dfe41712a71d29f95b228bca8d6fb5a5fa08367b5b5181a"
+    },
+    {
+      "path": "work\\alpme_analysis\\semantic_closure_20261027\\round5_large_collectors\\continuation\\receipt_cleanup\\indirect_CALL_status_overlay.json",
+      "sha256": "c146fc22ef408a767dadbd8e886447f5710909294fa1447dcbd7870a915e08c1"
+    },
+    {
+      "path": "work\\alpme_analysis\\semantic_closure_20261027\\round5_large_collectors\\continuation\\receipt_cleanup\\verify_receipt_cleanup.py",
+      "sha256": "2812c13e35cccee0dd295f5b04ad87cb43824bef49c1d4006d93a8381760574a"
+    },
+    {
+      "path": "work\\alpme_analysis\\semantic_closure_20261027\\round5_large_collectors\\continuation\\receipt_cleanup\\RESULT_zh.md",
+      "sha256": "3d421bf8280453ba4f89b2ddd810e1cfbd49e58e66e0854735101ae833b39817"
+    },
+    {
+      "path": "work\\alpme_analysis\\semantic_closure_20261027\\round5_large_collectors\\continuation\\receipt_cleanup\\coverage_overlay\\audit_overlay.py",
+      "sha256": "8c0a3e5a72c2a7818f27849dc75183be86c8b3ca117b9e1139a4965c54f5b837"
+    },
+    {
+      "path": "work\\alpme_analysis\\semantic_closure_20261027\\round5_large_collectors\\continuation\\receipt_cleanup\\coverage_overlay\\audit_saved_bodies.py",
+      "sha256": "222b1691d2dcb56a4160e6b45d9ec4bdc08e0ce8f4ed387f8b09baddbdac94f0"
+    },
+    {
+      "path": "work\\alpme_analysis\\semantic_closure_20261027\\round5_large_collectors\\continuation\\receipt_cleanup\\coverage_overlay\\AuditClosureBody.java",
+      "sha256": "78c8b121a4b6860751a11ce42f5af6df35ac9d5e3ab3194098cf21eda1c6a875"
+    },
+    {
+      "path": "work\\alpme_analysis\\semantic_closure_20261027\\round5_large_collectors\\continuation\\receipt_cleanup\\coverage_overlay\\coverage_overlay_receipt.json",
+      "sha256": "e34759d9e98fdd2420aea87291b8bbaf9fd2a2e4c3017db4f42703d7d58101c0"
+    },
+    {
+      "path": "work\\alpme_analysis\\semantic_closure_20261027\\round5_large_collectors\\continuation\\receipt_cleanup\\coverage_overlay\\saved_body_snapshot_receipt.json",
+      "sha256": "167a2cdbea17dca525f0fba0e45ae19c79d0bf06233b83ab017c78ebac9f0d90"
+    },
+    {
+      "path": "work\\alpme_analysis\\semantic_closure_20261027\\round5_large_collectors\\continuation\\receipt_cleanup\\coverage_overlay\\observed_85_original_selector_snapshot.json",
+      "sha256": "dd4c080163300ebc89fdc91a4118df05d0db2f2415e08239cdd8ae44c50e775a"
+    },
+    {
+      "path": "work\\alpme_analysis\\semantic_closure_20261027\\round5_large_collectors\\continuation\\receipt_cleanup\\coverage_overlay\\baseline_87_snapshot.json",
+      "sha256": "2b75c08f458559f22eaaa6db9fdcabc364cb94b2ad0f0706d78729c26c9532dc"
+    },
+    {
+      "path": "work\\alpme_analysis\\semantic_closure_20261027\\round5_large_collectors\\continuation\\receipt_cleanup\\coverage_overlay\\controlled_selector_rerun.json",
+      "sha256": "dd4c080163300ebc89fdc91a4118df05d0db2f2415e08239cdd8ae44c50e775a"
+    },
+    {
+      "path": "work\\alpme_analysis\\semantic_closure_20261027\\round5_large_collectors\\continuation\\receipt_cleanup\\runtime_review\\review_runtime.py",
+      "sha256": "e7c7cf05d4d9c56d5ab09bc1bdc789d9c17465b6e80f9ef6b76265ba887a1ec4"
+    },
+    {
+      "path": "work\\alpme_analysis\\semantic_closure_20261027\\round5_large_collectors\\continuation\\receipt_cleanup\\runtime_review\\runtime_review_receipt.json",
+      "sha256": "16077a8e68e3aecb7a1e9b1e4da1ae0c162c6b53ea99991a590b6102d8a8d90d"
+    },
+    {
+      "path": "work\\alpme_analysis\\semantic_closure_20261027\\round5_large_collectors\\continuation\\receipt_cleanup\\coverage_overlay\\17_payload.dll.bin_0x1593b_saved_body.json",
+      "sha256": "03a9638bb41ad2b4ba4f09797221d746aded81bbc876df99944bfc1f3aa98301"
+    },
+    {
+      "path": "work\\alpme_analysis\\semantic_closure_20261027\\round5_large_collectors\\continuation\\receipt_cleanup\\coverage_overlay\\19_payload.dll.bin_0x57f4f_saved_body.json",
+      "sha256": "79dc5f1cebb33c9c32f479768d0cf6ec5a2849062bdc265e09ad4313518d1bbe"
+    },
+    {
+      "path": "work\\alpme_analysis\\semantic_closure_20261027\\round5_large_collectors\\continuation\\receipt_cleanup\\coverage_overlay\\19_loader.exe.bin_0x9338_saved_body.json",
+      "sha256": "793ed24c160efa47898f855ce464f129a16b6970de073c12bf741934b3f30172"
+    }
+  ],
+  "sample_execution": false,
+  "API_execution": false,
+  "network": false,
+  "host_secret_access": false
+}

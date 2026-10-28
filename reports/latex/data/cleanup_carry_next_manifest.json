@@ -1,0 +1,35 @@
+{
+  "files": {
+    "bounded_helper_proof.json": "c32a4c0ffd4bcd3c916bf6597b594227599a0e1cce96c34b366afb89fb115aa6",
+    "continuation_receipt.json": "6c57f3fa4993feb4a5f5ace4f455cba6df213e131de1698e0992d49235493e4b",
+    "continuation_receipt.py": "51489b6daac47a0cf461674386678a89614b96cd31d6fbd27ad01fc0c9671c9b",
+    "creator_alias_inventory.json": "332af40634ddaa16f3992750bc8cb9d66831736329186ef700b2078e552d8c91",
+    "creator_helper_inventory.json": "7c9fb93c74c5c1dec3edc270fa15fbb8aeeb9d48b731e11fbb0e2f66eb30a41f",
+    "creator_helpers.asm.txt": "3fd44ae1715f37509e9fae8d9720af5e4fe3a314e19fc50853420534c1806b9d",
+    "fresh_store_proof.json": "d8d8ffcc5a48fc40c4a12c39b25a1d4f71d39cc36ca4505070b3fc53e086895c",
+    "inventory_helpers.py": "54006a052f7242f5130ffae25cf34a6253ee7a01d95e222a18a7915c4cc9b681",
+    "packet_body_alias_inventory.json": "90877b62b4eb0a81e9b085eeb87f9ec4e6dc6219ebd84ddc6ffdd62644fd1f92",
+    "packet_body_aliases.py": "181718834037bc2c156bd06b3f44a539fa6a15413c8c5e3b29c05523dad51984",
+    "prove_bounded_helpers.py": "618f9f016b9c374078c9a99a9ba83a1c057c511bd36d4597d57be1380c68cc54",
+    "prove_fresh_stores.py": "f76f85f3cc654b573c8c6d0a4a9f955ab551b40493fb7b749312463a3c9ef769",
+    "scan_creator_aliases.py": "9bac4cd69b41b87bb23023db4c2090870650e129473b08236d5ef147eb144c9e",
+    "verify_carry_next.py": "2c8cbb8b76d0be185a5e093495d4d5b4263a6278bb244957a67f3f82b1b369e9"
+  },
+  "input_dependencies": {
+    "work\\alpme_analysis\\dynamic\\17_plugin_payload.dll.bin": "24f7eed14b69c561bd2dde6aa61759cabc8588293e9a0099dde8e381f96f228a",
+    "work\\alpme_analysis\\dynamic\\19_plugin_payload.dll.bin": "4e4636d2c9d57eb609b7d18ee3dc01713fbcda39c5eee52bd4a66f222f67bb31",
+    "work\\alpme_analysis\\semantic_closure_20261027\\round3_cleanup_finish\\normal_tls_static.py": "16d7a4fa002f2d04b5c7d1c7eb9363ee63886cb1e02b2b12140703874ed71241",
+    "work\\alpme_analysis\\semantic_closure_20261027\\round3_fifthfield\\main_cfg_source_proof.json": "8a71db772d732df4975aee1d7e67de9874bf3f58d4276fe70d65aa2741ffd701",
+    "work\\alpme_analysis\\semantic_closure_20261027\\round3_strings\\browser_graph19.py": "5ce45d2809220444467a39fbeeccea951d19a1dfa7511186ca429774693f1e93",
+    "work\\alpme_analysis\\semantic_closure_20261027\\round3_strings\\constant_slices.py": "80c43b4665af4cb10d2f8e9b03dd6f968b0bd6fe9560b07749c758b8142312af",
+    "work\\alpme_analysis\\semantic_closure_20261027\\round5_whole_native\\call_resolution\\remaining9\\carry_frame_index_ranges.py": "a0c16acd46054ab6ce8a7a317923473791a1a08293385dac2b0218bedb3cc574",
+    "work\\alpme_analysis\\semantic_closure_20261027\\round5_whole_native\\call_resolution\\remaining9\\carry_progress_receipt.json": "9cc0a6c71ab1df3aaef4e03ddf3107346e125a14c3faef59e31d2a62ee3a6511",
+    "work\\alpme_analysis\\semantic_closure_20261027\\round5_whole_native\\call_resolution\\remaining9\\collect_thread_result_domains.py": "d3375fc0ddc27cc2ef059920d701ba058fd417c8b967948159f63c3a1281fee4",
+    "work\\alpme_analysis\\semantic_closure_20261027\\round5_whole_native\\call_resolution\\remaining9\\inspect_thread_producers.py": "da92192bf0ba5e51bd58f31810e6fa2f6ad175c9920ff18e47c7deef94caa620",
+    "work\\alpme_analysis\\semantic_closure_20261027\\round5_whole_native\\call_resolution\\remaining9\\query_channel_args.py": "0135b5300f250b94a2da32706ed012ddf6b3c5056f20e933c88a276ceb893cbc",
+    "work\\alpme_analysis\\semantic_closure_20261027\\round5_whole_native\\call_resolution\\resolve_calls.py": "d1e9588c5232ac2be9c65e480d224b838781e3fe829f703c6110a349a8ccf33d"
+  },
+  "no_specimen_execution": true,
+  "old_frozen_manifest_sha256": "cc5e9636d5546d5fb5196a5e7677e688760343eab52da1610cb8141eea179317",
+  "status": "CARRY_NEXT_FOUR_PACKET_CALLS_PENDING"
+}

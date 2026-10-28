@@ -1,0 +1,458 @@
+{
+  "status": "PASS_CONDITIONAL_NORMAL_NATIVE_CLOSURE",
+  "function": "17:0x56ab1",
+  "normal_context_only": true,
+  "input": {
+    "RCX": "caller-owned output Vec/result descriptor,24 bytes",
+    "RDX": "caller UTF8 path pointer",
+    "R8": "path byte length",
+    "observed_static_direct_caller": [
+      {
+        "caller": "0x48051",
+        "callsite": "0x480ec"
+      }
+    ],
+    "fixed_filename_in_this_function": null,
+    "path_provenance": "48051包装器在480ec调用；路径由其56971 formatter结果传入。本函数是通用读文件后端，具体文件名/浏览器库归调用层。"
+  },
+  "primary_read": {
+    "CreateFileW_site": "0x572e7",
+    "desired_access": "0x80000000 GENERIC_READ",
+    "share": "3 FILE_SHARE_READ|FILE_SHARE_WRITE",
+    "creation_disposition": "3 OPEN_EXISTING",
+    "flags": 0,
+    "GetFileSizeEx_site": "0x57729",
+    "ReadFile_site": "0x586c4",
+    "chunk_max": "0xffffffff",
+    "conditions": "UTF8有效后构造终止UTF16路径；非负文件长度；预留/resize输出Vec；逐块ReadFile，要求成功且1<=bytes_read<=request，累加至最初尺寸。零文件走empty result，失败走错误tag分派。"
+  },
+  "sharing_violation_fallback": {
+    "trigger": "CreateFileW失败后GetLastError==0x20进入tag8000000000000003",
+    "path": "fallback再校验UTF8/NUL，GetFullPathNameW输出最多0x8000 UTF16 codeunits，处理扩展路径前缀及盘符；QueryDosDeviceW把盘符转NT device路径，拼接路径后缀。",
+    "handle_source": "NtQuerySystemInformation class0x40 系统扩展句柄快照，初始owned buffer0x100000；按返回所需长度/增长策略扩容，保留ULONG大小检查。40B entry读取PID、handle、grantedaccess和objecttypeindex。先用当前PID/GetFileType==1识别磁盘文件类型，再遍历匹配type/access/PID条件的候选。",
+    "process": "OpenProcess desired_access0x40，inherit false，仅用于从对应PID复制handle。",
+    "duplicate": "DuplicateHandle source process/handle来自快照，target process -1，desired_access0，inherit false，options2 DUPLICATE_SAME_ACCESS；输出dup handle由本函数own。源句柄不会因该options被关闭。",
+    "name_query": "NtQueryObject class1，以0x400缓冲区起步，处理c0000004/c0000023/80000005等不足状态与扩容上限0x20000；校验UNICODE_STRING指针/偶数字节长度/边界/溢出。",
+    "matching": "取得名称复制到owned UTF16；65756执行长度保护后的ASCII大小写不敏感UTF16后缀匹配；匹配dup handles收集到owned集合。不是完整Unicode大小写折叠。"
+  },
+  "borrowed_handle_read": {
+    "GetFileSizeEx_site": "0x5a801",
+    "CreateFileMappingW_site": "0x594a1",
+    "mapping_protection": "2 PAGE_READONLY",
+    "MapViewOfFile_site": "0x581f5",
+    "view_access": "4 FILE_MAP_READ",
+    "view_chunk_max": "0x1000000",
+    "copy_site": "0x59769",
+    "copy_API": "ReadProcessMemory",
+    "copy_process": "-1 current process pseudo-handle",
+    "copy_source": "current-process mapped file view",
+    "copy_destination": "owned output Vec.ptr+offset",
+    "copy_size": "exact mapped chunk, SIZE_T count checked",
+    "UnmapViewOfFile_site": "0x59775",
+    "error": "mapping/copy/count/unmap failure releases temporary buffers, uses transient failure/retry path; successful chunks accumulate until file size. This site reads the local view, not an arbitrary external PID address."
+  },
+  "errors": {
+    "0x8000000000000000": "hard failure -> output+8=UINT64_MAX sentinel",
+    "0x8000000000000001": "empty result -> Vec [1,0,0]",
+    "0x8000000000000002": "transient read/map/size failure -> wait/retry",
+    "0x8000000000000003": "sharing violation -> existing-handle fallback",
+    "tag_guard": "signed RBP<0 excludes normal Vec length/capacity; (8000000000000002+tag-1) mod64 gives indices1..4. Source-specific RAX destination/init partition proves SP118 initialized.",
+    "retry": "ESI计数达到10后failure；三处CMP/SETE/table edge按真实表项过滤ESI，间隔50ms。"
+  },
+  "output_ownership": "成功返回caller-owned24B Vec(ptr,capacity,length)，file bytes移交caller。empty [1,0,0]。失败cap字段写UINT64_MAX。临时path/name/handle snapshot buffers与字符串被释放；local mappings unmap；owned mapping/process/duplicate handles经CloseHandle/drop释放。",
+  "effects": {
+    "disk_write": false,
+    "delete": false,
+    "persistence": false,
+    "network": false,
+    "scope": "此函数及列出的正常helper/API契约内：现有文件只读open、只读mapping、内存输出；没有磁盘写/删除/注册表/自启动/网络API。结论来自236个call全部分类和22个间接API唯一身份，不以字符串未出现作为证明。整个样本的其他函数另行审计。"
+  },
+  "helper_roles": {
+    "0x2af30": "原始normal TLS常量初始化；复用normal_tls_static.py来源字节代数",
+    "0x50046": "UTF8有效性检查，RCX24字节结果",
+    "0x6b415": "UTF8迭代器收集到UTF16 Vec，RCX24/RDX26，复用独立UTF16 span证明",
+    "0x37c6e": "String/byte Vec owned clone，RCX24",
+    "0x7f46f": "Once缓存构造，RCX全局cache32；源descriptor/seed只读",
+    "0x2c44b": "模块/导出解析器，native name/hash来源已独立审计",
+    "0x5693d": "按size/alignment分配私有owned heap",
+    "0x4a6b1": "owned heap deallocation",
+    "0x5b993": "checked allocation result，RCX24，normal return tag0/1",
+    "0x3b50": "Vec容量reserve，RCX header<=24",
+    "0x49278": "Vec resize/zero fill，RCX header24及其owned heap",
+    "0x8548": "Vec元素8 reserve，RCX header16",
+    "0x3aa80": "UTF16 slice append，RCX header24及其owned heap",
+    "0x566b4": "byte slice clone，RCX24",
+    "0x2b7f": "UTF16 slice clone，RCX24",
+    "0x6adb": "zero initialized byte Vec，RCX24",
+    "0x29649": "字符串/字符变换，RCX24 owned output",
+    "0x60db": "正常owned资源drop，输入对象不写caller frame",
+    "0x37d05": "owned资源集合drop并释放其缓冲区",
+    "0x6565a": "字节membership/NUL检测，只读source",
+    "0x65756": "UTF16后缀匹配；ASCII A..Z折为小写后比较，只读source",
+    "0x2c2e1": "UTF8结尾空白扫描/trim，只读source",
+    "0x7e530": "memcmp，只读source",
+    "0x7e630": "memcpy，目的范围按原始调用size限定",
+    "0x4e059": "相对时间等待；50,000,000纳秒输入对应50ms"
+  },
+  "indirect_calls": [
+    {
+      "site": "0x572e7",
+      "instruction": "call qword ptr [rsp + 0x78]",
+      "API_candidates": [
+        "CreateFileW"
+      ],
+      "origins": [
+        [
+          "resolver_API_candidate",
+          "CreateFileW",
+          "0x582fc"
+        ]
+      ],
+      "other_origins": [],
+      "identity_boundary": "Resolver names derive from original naturally sliced seeds and original encoded readonly sources; parent caller/store alias gate remains. No API-target override is installed."
+    },
+    {
+      "site": "0x57729",
+      "instruction": "call r14",
+      "API_candidates": [
+        "GetFileSizeEx"
+      ],
+      "origins": [
+        [
+          "resolver_API_candidate",
+          "GetFileSizeEx",
+          "0x57263"
+        ]
+      ],
+      "other_origins": [],
+      "identity_boundary": "Resolver names derive from original naturally sliced seeds and original encoded readonly sources; parent caller/store alias gate remains. No API-target override is installed."
+    },
+    {
+      "site": "0x57dfe",
+      "instruction": "call rbp",
+      "API_candidates": [
+        "DuplicateHandle"
+      ],
+      "origins": [
+        [
+          "resolver_API_candidate",
+          "DuplicateHandle",
+          "0x57d8d"
+        ]
+      ],
+      "other_origins": [],
+      "identity_boundary": "Resolver names derive from original naturally sliced seeds and original encoded readonly sources; parent caller/store alias gate remains. No API-target override is installed."
+    },
+    {
+      "site": "0x581f5",
+      "instruction": "call qword ptr [rsp + 0xb8]",
+      "API_candidates": [
+        "MapViewOfFile"
+      ],
+      "origins": [
+        [
+          "resolver_API_candidate",
+          "MapViewOfFile",
+          "0x5a320"
+        ]
+      ],
+      "other_origins": [],
+      "identity_boundary": "Resolver names derive from original naturally sliced seeds and original encoded readonly sources; parent caller/store alias gate remains. No API-target override is installed."
+    },
+    {
+      "site": "0x5843e",
+      "instruction": "call qword ptr [rsp + 0x1c8]",
+      "API_candidates": [
+        "CloseHandle"
+      ],
+      "origins": [
+        [
+          "resolver_API_candidate",
+          "CloseHandle",
+          "0x578bb"
+        ]
+      ],
+      "other_origins": [],
+      "identity_boundary": "Resolver names derive from original naturally sliced seeds and original encoded readonly sources; parent caller/store alias gate remains. No API-target override is installed."
+    },
+    {
+      "site": "0x58457",
+      "instruction": "call qword ptr [rsp + 0x2a0]",
+      "API_candidates": [
+        "OpenProcess"
+      ],
+      "origins": [
+        [
+          "resolver_API_candidate",
+          "OpenProcess",
+          "0x585c3"
+        ]
+      ],
+      "other_origins": [],
+      "identity_boundary": "Resolver names derive from original naturally sliced seeds and original encoded readonly sources; parent caller/store alias gate remains. No API-target override is installed."
+    },
+    {
+      "site": "0x586c4",
+      "instruction": "call rbp",
+      "API_candidates": [
+        "ReadFile"
+      ],
+      "origins": [
+        [
+          "resolver_API_candidate",
+          "ReadFile",
+          "0x5a117"
+        ]
+      ],
+      "other_origins": [],
+      "identity_boundary": "Resolver names derive from original naturally sliced seeds and original encoded readonly sources; parent caller/store alias gate remains. No API-target override is installed."
+    },
+    {
+      "site": "0x58b8b",
+      "instruction": "call rdx",
+      "API_candidates": [
+        "CloseHandle"
+      ],
+      "origins": [
+        [
+          "resolver_API_candidate",
+          "CloseHandle",
+          "0x578bb"
+        ]
+      ],
+      "other_origins": [],
+      "identity_boundary": "Resolver names derive from original naturally sliced seeds and original encoded readonly sources; parent caller/store alias gate remains. No API-target override is installed."
+    },
+    {
+      "site": "0x59375",
+      "instruction": "call rdi",
+      "API_candidates": [
+        "NtQuerySystemInformation"
+      ],
+      "origins": [
+        [
+          "resolver_API_candidate",
+          "NtQuerySystemInformation",
+          "0x5aa58"
+        ]
+      ],
+      "other_origins": [],
+      "identity_boundary": "Resolver names derive from original naturally sliced seeds and original encoded readonly sources; parent caller/store alias gate remains. No API-target override is installed."
+    },
+    {
+      "site": "0x594a1",
+      "instruction": "call qword ptr [rsp + 0x78]",
+      "API_candidates": [
+        "CreateFileMappingW"
+      ],
+      "origins": [
+        [
+          "resolver_API_candidate",
+          "CreateFileMappingW",
+          "0x59184"
+        ]
+      ],
+      "other_origins": [],
+      "identity_boundary": "Resolver names derive from original naturally sliced seeds and original encoded readonly sources; parent caller/store alias gate remains. No API-target override is installed."
+    },
+    {
+      "site": "0x594ef",
+      "instruction": "call rdi",
+      "API_candidates": [
+        "GetFullPathNameW"
+      ],
+      "origins": [
+        [
+          "resolver_API_candidate",
+          "GetFullPathNameW",
+          "0x58de2"
+        ]
+      ],
+      "other_origins": [],
+      "identity_boundary": "Resolver names derive from original naturally sliced seeds and original encoded readonly sources; parent caller/store alias gate remains. No API-target override is installed."
+    },
+    {
+      "site": "0x59642",
+      "instruction": "call qword ptr [rsp + 0x240]",
+      "API_candidates": [
+        "GetFileType"
+      ],
+      "origins": [
+        [
+          "resolver_API_candidate",
+          "GetFileType",
+          "0x5ad62"
+        ]
+      ],
+      "other_origins": [],
+      "identity_boundary": "Resolver names derive from original naturally sliced seeds and original encoded readonly sources; parent caller/store alias gate remains. No API-target override is installed."
+    },
+    {
+      "site": "0x59769",
+      "instruction": "call qword ptr [rsp + 0x120]",
+      "API_candidates": [
+        "ReadProcessMemory"
+      ],
+      "origins": [
+        [
+          "resolver_API_candidate",
+          "ReadProcessMemory",
+          "0x59699"
+        ]
+      ],
+      "other_origins": [],
+      "identity_boundary": "Resolver names derive from original naturally sliced seeds and original encoded readonly sources; parent caller/store alias gate remains. No API-target override is installed."
+    },
+    {
+      "site": "0x59775",
+      "instruction": "call qword ptr [rsp + 0xf8]",
+      "API_candidates": [
+        "UnmapViewOfFile"
+      ],
+      "origins": [
+        [
+          "resolver_API_candidate",
+          "UnmapViewOfFile",
+          "0x59bd4"
+        ]
+      ],
+      "other_origins": [],
+      "identity_boundary": "Resolver names derive from original naturally sliced seeds and original encoded readonly sources; parent caller/store alias gate remains. No API-target override is installed."
+    },
+    {
+      "site": "0x5982a",
+      "instruction": "call rbx",
+      "API_candidates": [
+        "QueryDosDeviceW"
+      ],
+      "origins": [
+        [
+          "resolver_API_candidate",
+          "QueryDosDeviceW",
+          "0x57a8c"
+        ]
+      ],
+      "other_origins": [],
+      "identity_boundary": "Resolver names derive from original naturally sliced seeds and original encoded readonly sources; parent caller/store alias gate remains. No API-target override is installed."
+    },
+    {
+      "site": "0x59897",
+      "instruction": "call rdi",
+      "API_candidates": [
+        "GetFileType"
+      ],
+      "origins": [
+        [
+          "resolver_API_candidate",
+          "GetFileType",
+          "0x5b05e"
+        ]
+      ],
+      "other_origins": [],
+      "identity_boundary": "Resolver names derive from original naturally sliced seeds and original encoded readonly sources; parent caller/store alias gate remains. No API-target override is installed."
+    },
+    {
+      "site": "0x59985",
+      "instruction": "call rsi",
+      "API_candidates": [
+        "GetCurrentProcessId"
+      ],
+      "origins": [
+        [
+          "resolver_API_candidate",
+          "GetCurrentProcessId",
+          "0x59941"
+        ]
+      ],
+      "other_origins": [],
+      "identity_boundary": "Resolver names derive from original naturally sliced seeds and original encoded readonly sources; parent caller/store alias gate remains. No API-target override is installed."
+    },
+    {
+      "site": "0x59b20",
+      "instruction": "call rbx",
+      "API_candidates": [
+        "NtQueryObject"
+      ],
+      "origins": [
+        [
+          "resolver_API_candidate",
+          "NtQueryObject",
+          "0x59a8a"
+        ]
+      ],
+      "other_origins": [],
+      "identity_boundary": "Resolver names derive from original naturally sliced seeds and original encoded readonly sources; parent caller/store alias gate remains. No API-target override is installed."
+    },
+    {
+      "site": "0x5a178",
+      "instruction": "call rdi",
+      "API_candidates": [
+        "GetFileSizeEx"
+      ],
+      "origins": [
+        [
+          "resolver_API_candidate",
+          "GetFileSizeEx",
+          "0x57790"
+        ]
+      ],
+      "other_origins": [],
+      "identity_boundary": "Resolver names derive from original naturally sliced seeds and original encoded readonly sources; parent caller/store alias gate remains. No API-target override is installed."
+    },
+    {
+      "site": "0x5a49b",
+      "instruction": "call rax",
+      "API_candidates": [
+        "CloseHandle"
+      ],
+      "origins": [
+        [
+          "resolver_API_candidate",
+          "CloseHandle",
+          "0x58f4d"
+        ]
+      ],
+      "other_origins": [],
+      "identity_boundary": "Resolver names derive from original naturally sliced seeds and original encoded readonly sources; parent caller/store alias gate remains. No API-target override is installed."
+    },
+    {
+      "site": "0x5a801",
+      "instruction": "call rdi",
+      "API_candidates": [
+        "GetFileSizeEx"
+      ],
+      "origins": [
+        [
+          "resolver_API_candidate",
+          "GetFileSizeEx",
+          "0x5a7a5"
+        ]
+      ],
+      "other_origins": [],
+      "identity_boundary": "Resolver names derive from original naturally sliced seeds and original encoded readonly sources; parent caller/store alias gate remains. No API-target override is installed."
+    },
+    {
+      "site": "0x5ab08",
+      "instruction": "call qword ptr [rsp + 0xb0]",
+      "API_candidates": [
+        "GetLastError"
+      ],
+      "origins": [
+        [
+          "resolver_API_candidate",
+          "GetLastError",
+          "0x575eb"
+        ]
+      ],
+      "other_origins": [],
+      "identity_boundary": "Resolver names derive from original naturally sliced seeds and original encoded readonly sources; parent caller/store alias gate remains. No API-target override is installed."
+    }
+  ],
+  "remaining_in_scope_gaps": [],
+  "boundaries": [
+    "No arbitrary malformed object/external TLS mutation proof.",
+    "Static call contracts describe possible behavior; no claim that a concrete host file/process/handle was present or successfully read.",
+    "Only this reader and its named normal helper contracts are scoped; upload/persistence of other functions belongs to their separate evidence."
+  ],
+  "no_original_execution": true
+}

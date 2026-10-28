@@ -1,0 +1,224 @@
+{
+  "status": "PASS_STATIC_LIFECYCLE_BOUNDARY_REVIEW",
+  "scope": "Each activation of the reviewed17/19 main entry and its dispatcher/result-uploader chain. Not a claim about externally reloading the module or newly downloaded code.",
+  "findings_zh": [
+    "每次主函数激活在前置检查、主机信息序列化和初始包加密成功后，只发起一次首次配置HTTP调用。它不在主函数回边环内；HTTP容量-1失败后清理并返回，不由样本自身定时重试。",
+    "首次请求返回后的所有主函数路径，以及配置发布后的路径，都不能回到首次HTTP调用。已审主函数/dispatcher/result消费链没有任务结束后重新获取配置的周期、间隔或触发器；一次新的外部模块激活不在此结论范围内。",
+    "HTTP封装中的短写补全和分块响应读取是同一HTTP事务的I/O循环，不是重新拉取配置。既存模型的SendRequest失败只调用一次后清理；本轮未执行模型或联网。",
+    "结果频道事件可反复触发新的结果上传线程。两个上传HTTP返回后只判容量-1，正常响应buffer仅传free，随后释放输入/结果并完成线程；没有解析该响应、更新配置或由响应派发新操作的调用。",
+    "截图开关在dispatcher的尝试循环外读一次。17最多4次、19最多3次capture尝试，首轮包含在计数中；常规失败后分别等待112ms/78ms再递减。成功构造BMP并调用结果频道后直接离开循环，故不是定期截图/配置轮询，也不是必定发送4/3张。"
+  ],
+  "versions": [
+    {
+      "version": "17",
+      "source_sha256": "24f7eed14b69c561bd2dde6aa61759cabc8588293e9a0099dde8e381f96f228a",
+      "main_thread_wrapper": {
+        "entry": "0x6a4d",
+        "native_instructions": 23,
+        "main_call": {
+          "rva": "0x6a5e",
+          "bytes": "e8e5520000",
+          "asm": "call 0x18000bd48"
+        },
+        "main_reentered_on_return": false
+      },
+      "main_entry": "0xbd48",
+      "native_main_instruction_count": 5593,
+      "initial_HTTP_call": {
+        "rva": "0xe762",
+        "bytes": "e85db9ffff",
+        "asm": "call 0x18000a0c4",
+        "target": "0xa0c4"
+      },
+      "initial_transport_failure_branch": {
+        "rva": "0xe777",
+        "bytes": "0f84610b0000",
+        "asm": "je 0x18000f2de"
+      },
+      "failure_target": "0xf2de",
+      "failure_return": [
+        "0xd9c0"
+      ],
+      "config_publication_call": "0x12a28",
+      "initial_HTTP_reentry_after_return_or_publication": false,
+      "thread_roles": [
+        {
+          "role": "dispatcher",
+          "target_rva": "0x1be5d",
+          "vtable_rva": "0x812a0",
+          "main_closure_vtable_LEA": {
+            "rva": "0x1128e",
+            "bytes": "488d150b000700",
+            "asm": "lea rdx, [rip + 0x7000b]"
+          },
+          "main_spawn_wrapper_call": {
+            "rva": "0x1129c",
+            "bytes": "e858490200",
+            "asm": "call 0x180035bf9"
+          }
+        },
+        {
+          "role": "uploader",
+          "target_rva": "0x3b298",
+          "vtable_rva": "0x81028",
+          "main_closure_vtable_LEA": {
+            "rva": "0x11af7",
+            "bytes": "488d152af50600",
+            "asm": "lea rdx, [rip + 0x6f52a]"
+          },
+          "main_spawn_wrapper_call": {
+            "rva": "0x11b05",
+            "bytes": "e8ef400200",
+            "asm": "call 0x180035bf9"
+          }
+        }
+      ],
+      "upload_HTTP_call": {
+        "rva": "0x3b7da",
+        "bytes": "e8e5e8fcff",
+        "asm": "call 0x18000a0c4"
+      },
+      "upload_return": "0x3b7df",
+      "upload_response_free_call": "0x3b7fd",
+      "upload_return_suffix_computed_jumps": 0,
+      "upload_response_command_parse_or_dispatch": false,
+      "screenshot": {
+        "flag_check_once_outside_loop": {
+          "rva": "0x1c550",
+          "bytes": "803d19cd070000",
+          "asm": "cmp byte ptr [rip + 0x7cd19], 0"
+        },
+        "maximum_attempts": 4,
+        "initial_attempt_included_in_limit": true,
+        "counter_initializer": {
+          "rva": "0x1c568",
+          "bytes": "b804000000",
+          "asm": "mov eax, 4"
+        },
+        "loop_header": {
+          "rva": "0x1c572",
+          "bytes": "4889842408020000",
+          "asm": "mov qword ptr [rsp + 0x208], rax"
+        },
+        "ordinary_failed_attempt_wait_ms": 112,
+        "timer_helper": "0x4e059",
+        "BMP_result_channel_call": {
+          "rva": "0x1db20",
+          "bytes": "e804840200",
+          "asm": "call 0x180045f29"
+        },
+        "after_channel_call_can_reach_retry_timer_or_loop_header": false,
+        "meaning": "At most4(17)/3(19) capture attempts, counting the first. A successfully built BMP enters the result channel and exits the attempt loop regardless of channel-send result; this is not a stream of4/3 successful screenshots. Ordinary failed attempts run the112/78ms wait then decrement, including the last failed attempt. Panic/UD2 paths can terminate sooner."
+      }
+    },
+    {
+      "version": "19",
+      "source_sha256": "4e4636d2c9d57eb609b7d18ee3dc01713fbcda39c5eee52bd4a66f222f67bb31",
+      "main_thread_wrapper": {
+        "entry": "0x203e",
+        "native_instructions": 23,
+        "main_call": {
+          "rva": "0x204f",
+          "bytes": "e89dde0400",
+          "asm": "call 0x18004fef1"
+        },
+        "main_reentered_on_return": false
+      },
+      "main_entry": "0x4fef1",
+      "native_main_instruction_count": 5317,
+      "initial_HTTP_call": {
+        "rva": "0x51c0f",
+        "bytes": "e8512afbff",
+        "asm": "call 0x180004665",
+        "target": "0x4665"
+      },
+      "initial_transport_failure_branch": {
+        "rva": "0x51c2c",
+        "bytes": "0f84a90b0000",
+        "asm": "je 0x1800527db"
+      },
+      "failure_target": "0x527db",
+      "failure_return": [
+        "0x5149f"
+      ],
+      "config_publication_call": "0x566c0",
+      "initial_HTTP_reentry_after_return_or_publication": false,
+      "thread_roles": [
+        {
+          "role": "dispatcher",
+          "target_rva": "0x4786e",
+          "vtable_rva": "0x7f218",
+          "main_closure_vtable_LEA": {
+            "rva": "0x55011",
+            "bytes": "488d0d00a20200",
+            "asm": "lea rcx, [rip + 0x2a200]"
+          },
+          "main_spawn_wrapper_call": {
+            "rva": "0x5501f",
+            "bytes": "e8d0280000",
+            "asm": "call 0x1800578f4"
+          }
+        },
+        {
+          "role": "uploader",
+          "target_rva": "0x2d092",
+          "vtable_rva": "0x7f698",
+          "main_closure_vtable_LEA": {
+            "rva": "0x55888",
+            "bytes": "488d15099e0200",
+            "asm": "lea rdx, [rip + 0x29e09]"
+          },
+          "main_spawn_wrapper_call": {
+            "rva": "0x55896",
+            "bytes": "e859200000",
+            "asm": "call 0x1800578f4"
+          }
+        }
+      ],
+      "upload_HTTP_call": {
+        "rva": "0x2d4ee",
+        "bytes": "e87271fdff",
+        "asm": "call 0x180004665"
+      },
+      "upload_return": "0x2d4f3",
+      "upload_response_free_call": "0x2d50e",
+      "upload_return_suffix_computed_jumps": 0,
+      "upload_response_command_parse_or_dispatch": false,
+      "screenshot": {
+        "flag_check_once_outside_loop": {
+          "rva": "0x47f8a",
+          "bytes": "803d17e7040000",
+          "asm": "cmp byte ptr [rip + 0x4e717], 0"
+        },
+        "maximum_attempts": 3,
+        "initial_attempt_included_in_limit": true,
+        "counter_initializer": {
+          "rva": "0x47f9a",
+          "bytes": "41bc03000000",
+          "asm": "mov r12d, 3"
+        },
+        "loop_header": {
+          "rva": "0x47fa0",
+          "bytes": "4c89642478",
+          "asm": "mov qword ptr [rsp + 0x78], r12"
+        },
+        "ordinary_failed_attempt_wait_ms": 78,
+        "timer_helper": "0x60ed7",
+        "BMP_result_channel_call": {
+          "rva": "0x492a4",
+          "bytes": "e88f3c0200",
+          "asm": "call 0x18006cf38"
+        },
+        "after_channel_call_can_reach_retry_timer_or_loop_header": false,
+        "meaning": "At most4(17)/3(19) capture attempts, counting the first. A successfully built BMP enters the result channel and exits the attempt loop regardless of channel-send result; this is not a stream of4/3 successful screenshots. Ordinary failed attempts run the112/78ms wait then decrement, including the last failed attempt. Panic/UD2 paths can terminate sooner."
+      }
+    }
+  ],
+  "full_evidence": {
+    "path": "<ANALYSIS_WORKSPACE>\\work\\alpme_analysis\\semantic_closure_20261027\\round4_network_core\\cloud_lifecycle_review\\cloud_lifecycle_static_review.json",
+    "sha256": "9eb7b4ca5e14d0cb7d8cb8a5f669c62729655ef7f61642fb0aea00b7b0a80f29"
+  },
+  "script_sha256": "a4f4a3baf96d35aed8d9780cb235cf5dee5fa013816055237a40e71239c5ae15",
+  "sample_execution": false,
+  "network_access": false
+}

@@ -1,0 +1,129 @@
+{
+  "scope": "读者语义摘要；仅原PE字节、已冻结正常上下文CFG/C及既有虚构轨迹。不是原样本或真实浏览器执行成功证明。旧receipt、CFG、C和proof均未修改。",
+  "sample": "19_plugin_payload.dll.bin",
+  "original_sha256": "4e4636d2c9d57eb609b7d18ee3dc01713fbcda39c5eee52bd4a66f222f67bb31",
+  "core_dependencies": [
+    "19_browser_cores_final_receipt.json",
+    "19_3d057_verified_normal_cfg.json",
+    "19_3d057_joint_alias_progress.json",
+    "19_3d057_final_quality_summary.json",
+    "19_1aab1_verified_normal_cfg.json",
+    "19_1aab1_strict_constant_source_addendum.json",
+    "19_1aab1_final_quality_summary.json"
+  ],
+  "caller_and_inputs": {
+    "worker": "当前.pdata函数19:3cd69；3ce03是CALL3d057的指令地址，不是另一个函数入口。",
+    "profile_call": "worker先在3ce03调用准备链，后在3cef2调用a7a1处理profile；准备链结果与legacy回退先被组装成profile输入。",
+    "prep_3d057": {
+      "RCX": "返回aggregate地址：三个24B向量描述符及进程guard。",
+      "RDX_R8": "LastBrowser来源的UTF8可执行文件路径指针与字节长度，不是profile路径，也不是APPB密文参数。",
+      "R9b": "Aster专用Local State字段的解码结果是否可用；不是967f4/LoginData全局布尔值。",
+      "stack_arg5": "可选UTF16桌面名；worker在其desktop描述符有效时传指针，否则NULL。"
+    },
+    "memory_1aab1": "RCX接收三个24B向量描述符，EDX是待访问PID（prep调用点3eccb/3ecd5）。此ABI没有传入Local State APPB blob。"
+  },
+  "local_state_fields_and_R9": {
+    "literal_names": [
+      {"key": "aster_app_bound_encrypted_key", "extract_call": "17216->22e4b", "encoded_source": "85da7", "native_seed": "593549a541dfac92", "bytes_skipped_after_base64": 4},
+      {"key": "encrypted_key", "extract_call": "172c7->22e4b", "bytes_skipped_after_base64": 5},
+      {"key": "app_bound_encrypted_key", "extract_call": "17384->22e4b", "encoded_source": "81c4e", "native_seed": "b5b760844b070a02", "bytes_skipped_after_base64": 4}
+    ],
+    "JSON_scope": "正常Chromium Local State中这些字段位于os_crypt下。这里原调用传整个JSON和裸字段名；本摘要不把os_crypt.写成已证明的强制路径/父对象校验。",
+    "availability": "指22e4b的字符串提取、Base64处理及长度剥除得到有效Vec（cap!=-1），不等于仅出现该JSON属性。未另声称验证了APPB/DPAPI字面前缀内容。",
+    "producer": "1744f/1745b得到app结果缺失标志；1746e处理app缺失而aster可用；17528 SETNE DIL处理app可用的情况；175d1存record+48，经closure+58在3cddb载入R9b。",
+    "normal_cases": [
+      "只有app_bound解码结果可用：进入此prep线程时R9=0。",
+      "aster解码结果可用（无论app是否也可用）：进入此prep线程时R9=1。",
+      "两种app-bound结果均不可用，或LastBrowser路径不可用/UTF8校验失败：外worker走其他profile/legacy路径，不据此产生该prep线程。"
+    ],
+    "required_memory_results": "R9=0要求memorycore slot1可用；R9=1要求slot1和slot2均可用。slot0不是这两个候选接受门的必需项。",
+    "acceptance_RVAs": "43f9d/43fa5捕获slot1 cap；43fda/43fe2捕获slot2 cap；3f0f6/40447选择普通门3dc95或Aster门40051。缺必需结果->41f22候选PID游标+4；满足->43171退出该PID扫描。"
+  },
+  "process_enumeration_and_selection": {
+    "enumeration": "42208和43aea调用4699e；该已闭helper使用NtQuerySystemInformation class5，构造含PID与ImageName的owned32B记录。",
+    "existing_path_gate": "已运行进程分支先以OpenProcess(0x1000,0,PID)取得查询句柄（3d5ea），QueryFullProcessImageNameW取得路径；3d80b->1134e对取得的UTF16路径和输入路径进行有长度检查的ASCII大小写不敏感比较。相等门3d831可达3f20d/3f21c OpenProcess(0x1fffff,0,PID)。",
+    "candidate_scan": "后续1aab1的PID来自候选DWORD数组，3eccb取[rdi]，3ecd5调用；41f22按4B推进到下一PID，达到相应必需结果门才接受。不能替所有可能运行状态命名一个固定PID。",
+    "window_role": "GetShellWindow->GetWindowThreadProcessId只给shell token链取PID。本链没有把GetForegroundWindow/FindWindow结果用于挑选前台Chrome窗口。",
+    "ordinary_Chrome_already_running": "同路径已有进程可通过上述打开/比较分支；存在多个候选时按候选列表和结果门继续。此摘要没有证明在所有API结果下总是优先复用已有进程或总是新建；不能把保守CFG中某条路径当作所有运行条件下的优先级证明。",
+    "profile_consequence": "创建CLI没有user-data-dir/profile-directory参数，因而不能从创建分支推断独立临时profile；也不能仅凭CreateProcess成功就认定后来读取的PID必为新创建PID。"
+  },
+  "token_branch": {
+    "query": "40a8f GetCurrentProcess；40aa3 OpenProcessToken(TOKEN_QUERY=8)；3efe9 GetTokenInformation class20(0x14,TokenElevation)，输出DWORD4B，ReturnLength另4B。",
+    "choice": "3effa读取TokenIsElevated；3f024比较0。查询失败或值为0，经3f035/3f046走普通CreateProcessW封装2acab；查询成功且值非0走GetShellWindow的shell token链。",
+    "shell_token_chain": [
+      "41270 GetShellWindow；425ce GetWindowThreadProcessId得到shell PID；PID为0进入失败分支。",
+      "425e4 OpenProcess(0x400=PROCESS_QUERY_INFORMATION,0,shellPID)。",
+      "3ed72 OpenProcessToken(access0xa=TOKEN_QUERY|TOKEN_DUPLICATE)。",
+      "3d32d DuplicateTokenEx(desired0xf01ff=TOKEN_ALL_ACCESS,attributesNULL,SecurityImpersonation2,TokenPrimary1)。",
+      "41367 CreateProcessWithTokenW使用复制出的primary token；源token和shell进程句柄随后关闭。"
+    ],
+    "security_meaning": "这是尝试使用调用者已经能够查询/复制的shell token来创建进程；API访问权、token权限及CreateProcessWithTokenW要求仍须满足。该链没有证明漏洞提权，也没有证明取得额外权限或API一定成功。",
+    "failure_scope": "各API成功与失败分支均已在native CFG闭合；不能把shell token任一失败统一写成成功降权创建或统一写成整个worker立即退出。普通与token创建的Result/guard状态仍由后续分支区分。"
+  },
+  "process_creation": {
+    "commandline": "两分支均把传入可执行文件路径的UTF8字节转换为UTF16，追加NUL，直接作为可变命令行；本函数不追加其他参数，也不为含空格路径补引号。这里不提供可运行命令或注入代码。",
+    "plain": {
+      "call": "4285d->2acab->CreateProcessW",
+      "flags": "0x08000000 CREATE_NO_WINDOW",
+      "other_args": "ApplicationName=NULL，process/thread security=NULL，inheritHandles=0，environment=NULL，currentDirectory=NULL；STARTUPINFO104B，PROCESS_INFORMATION24B。",
+      "desktop": "2acab的原R8是可选UTF16 desktop指针，写入STARTUPINFO.lpDesktop，不是无意义标量。"
+    },
+    "with_token": {
+      "call": "41367 CreateProcessWithTokenW（9参数）",
+      "flags": "LogonFlags=0，CreationFlags=0",
+      "other_args": "primary token来自上述DuplicateTokenEx；ApplicationName=NULL，environment=NULL，currentDirectory=NULL；可变commandLine，STARTUPINFO104B，PROCESS_INFORMATION24B。"
+    },
+    "fixed_desktop": "外层16c65在16f01调用CreateDesktopA，固定名yuirdsuiast（RVA838a1，11字符），desiredAccess=0x10000000 GENERIC_ALL；device/devmode/security=NULL，flags0。成功建立的名称被转成UTF16，作为可选desktop参数传给worker。",
+    "no_independent_profile_template": "这两创建路径没有--user-data-dir、--profile-directory、--headless或remote-debugging附加参数；profile输入来自原浏览器配置/profile枚举。"
+  },
+  "guards_and_cleanup": {
+    "existing": "3f21c成功OpenProcess返回句柄，3ea83..3ead3加入40B记录；其中ProcessGuard从record+8开始，killflag在3eab9被写0，thread handle为0。对应drop只关打开的句柄，不走TerminateProcess。",
+    "created": "token创建成功在413b6..413cd构造handle/PID/thread guard并置killflag1；普通2acab成功同样输出flag1，失败Result为flag2。413de是token创建失败后的局部guard清理，不是成功创建后立刻无条件终止。",
+    "handoff": "3d057返回的guard位于输出+48；worker3cd69在3cef2完成profile调用后检查flag（3cef7），非2则3cf09->32ccd。故实际返回的created guard若flag1且hProcess非0，会调用TerminateProcess(hProcess,0)，并关闭process/thread句柄；flag0的既有进程guard仅关闭句柄。",
+    "internal_collection": "41405逐个drop owned40B记录中的guard（element+8）；这是有类型、有来源的进程guard析构，不可归为任意callback无副作用。",
+    "memorycore_existing_guard": "1aab1自身20b20/2052e的SP360 guard明确来自1f54f OpenProcess，killflag1f86e=0；这些实际drop不终止已有目标浏览器。",
+    "proof": "../round4_network_core/32ccd_process_guard_span/32ccd_caller_effect_proof.json及parent_SP360_object_origin.json；prep/worker guard转交由原native上述RVA核对。"
+  },
+  "memory_key_flow_and_fallback": {
+    "real_capability": "1aab1打开候选PID，查询/读取进程内存并枚举线程；含VirtualAllocEx、WriteProcessMemory、SuspendThread/ResumeThread和Get/SetThreadContext。crypt32.dll!CryptUnprotectMemory的精确名称、解析地址及其进入准备缓冲区再用于进程写入的桥已闭合。仅证明该静态能力与数据流，不证明远程运行/解密成功。",
+    "three_core_results": [
+      {"core_slot": 0, "later_label": "dpapi_encryption_key"},
+      {"core_slot": 1, "later_label": "encryption_key"},
+      {"core_slot": 2, "later_label": "aster_encryption_key"}
+    ],
+    "routing_evidence": "标签路由由已有APPB_MOCK_KEY_RETURN19.json的三组虚构返回向量核对；其内容不是实际恢复的浏览器键。prep在返回给worker前重排描述符，不能把prep输出同偏移与core slot角色机械等同。",
+    "legacy_fallback": "worker在3ce08检查prep输出第三Vec.cap（+38）；缺失且legacy encrypted_key blob可用时，3ce58->66ee9调用CryptUnprotectData路线。已有对应结果则3ce0f..3ce24直接采用；legacy blob随后释放。两者均无则保留缺失描述符，随后仍到3cef2 profile函数。",
+    "separation": "Local State app-bound解码结果决定是否进入准备线程及R9要求，但1aab1本身的输入是PID；本摘要不把它误写成直接对调用参数中的APPB blob作DPAPI解密。",
+    "presence_vs_validity": "60fce/68746等read wrapper仅按bytesRead阈值判断返回内容是否存在，并非密钥正确性、数据库认证或版本兼容性证明。"
+  },
+  "ENE_read_consumer": {
+    "path": "C:\\ProgramData\\ENE\\aiantionk",
+    "call": "3f134->57ab8",
+    "actual_IO": "读到EOF的read-to-end，不是固定取文件前32B。eee8的32B栈缓冲是容量不足/小计划读取时的probe/追加策略；57主循环也可直接读入Vec剩余区域。4fdba metadata只作大小hint，失败使用0hint继续。",
+    "content": "成功40ed4..40ee2只装入Vec.len（SP160），40efb暂存SPa0；40f0a立即释放payload，未解引用内容。失败40ec8只drop具体lowtag0/2/3 error。",
+    "length": "从40efe起沿已验证完整CFG，到读/覆盖首前沿的检查只遇40c47->4473d对SPa0的mandatory24B输出覆盖；在此之前没有读取暂存len。",
+    "conclusion": "此prep消费者把文件内容及长度都丢弃；未见其作为键、指纹/hash比较、32B校验、token输入或控制值。用途不命名为缓存/标记/诱饵。",
+    "continuation": "读成功与失败清理后都经40f0f/40f23释放28B路径，继续准备链。",
+    "proof": "../round4_network_core/19_57ab8_filereadall/19_57ab8_component_receipt.json；本摘要增加父consumer的具体原指令切片结论。"
+  },
+  "ShareX_fixed_write_consumer": {
+    "path": "C:\\ProgramData\\ShareX\\swaontzuiests.cfg",
+    "length": 20,
+    "hex": "480e956bae3fbeec58a37b782146694ff4825f70",
+    "producer_and_IO": "44163..44249构造20B固定程序常量；44258分配39B路径，43b75/43b82复制文字，43bb7->296a4执行create-or-truncate/write-all。CreateFileW=GENERIC_WRITE/OPEN_ALWAYS/share7；已存在时先清allocation/EOF再NtWriteFile。",
+    "conditions": "不创建父目录。路径分配、API打开/截断/写入可失败；IOerror清理并与成功在后续准备链重合流。此代码能力不表示当前宿主机上文件存在或写入成功。",
+    "actual_path_lifetime": "此fresh39B路径只传43bb7写入helper，随后43bd3释放路径内存；未转交后续reader/delete消费者。HeapFree和CloseHandle不是文件删除。",
+    "whole_PE_direct_literal_audit": {
+      "scope": "所有原.pdata条目各自从entry顺序decode；不使用重叠候选邻域。",
+      "full_ASCII_occurrences": ["81260"],
+      "full_UTF16_occurrences": [],
+      "RIP_refs_to_81260_through_81286": ["43b75->81270", "43b82->81260"],
+      "preferred_or_capture_base_qword_literal_pointers": []
+    },
+    "conclusion": "没有找到本程序同路径reader或DeleteFile消费者RVA；已证明的这次实际path对象只有写入与内存释放。全PE文字直接引用也只有同一构造器。",
+    "bounded_gap": "没有把任意其他独立字符串重建或外部输入的运行时路径值相等性说成已穷尽；该边界不影响上述实际对象生命周期结论。",
+    "meaning": "无来源/校验消费者支撑SHA1、键缓存或控制标记标签；只称固定20B条件写入。"
+  },
+  "remaining_reader_semantic_boundary": "已有进程、创建分支和PID候选处理的所有正常CFG边均已闭合，但本摘要未额外证明所有API结果组合下的全局候选优先顺序，故不承诺必先复用/必新建或固定挑选某窗口/PID。",
+  "safety": {"original_execution": false, "real_browser_or_secret_access": false, "network_or_C2": false, "extractor_or_browser_layout_adapter": false}
+}

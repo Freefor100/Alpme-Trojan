@@ -3,14 +3,14 @@
   "files": [
     {
       "published_path": "reports/latex/report.tex",
-      "source_path": "output/pdf/alpme_report_v3_2/Alpme_17si_19si_Analysis_ZH_v3_2.tex",
-      "source_sha256": "8fb7f98b0af481761aee7515881d0a7f82b1e047d21321f1d54aaeba2724e3b7",
-      "published_sha256": "8fb7f98b0af481761aee7515881d0a7f82b1e047d21321f1d54aaeba2724e3b7",
+      "source_path": "output/pdf/alpme_report_v3_3/Alpme_17si_19si_Analysis_ZH_v3_3.tex",
+      "source_sha256": "b0adab5c7a7294404b95ef4eaf30a55c07cee61bdadccc903fdb99cb0e6562b9",
+      "published_sha256": "b0adab5c7a7294404b95ef4eaf30a55c07cee61bdadccc903fdb99cb0e6562b9",
       "text_redacted": false
     },
     {
       "published_path": "reports/latex/assets/sandbox_popup.png",
-      "source_path": "output/pdf/alpme_report_v3_1/assets/sandbox_popup.png",
+      "source_path": "output/pdf/alpme_report_v3_3/assets/sandbox_popup.png",
       "source_sha256": "c9230d1c203a1165e93820160db8f75375a8bc0c085fa45212ac72cd9e467a0a",
       "published_sha256": "c9230d1c203a1165e93820160db8f75375a8bc0c085fa45212ac72cd9e467a0a",
       "text_redacted": false
@@ -303,13 +303,6 @@
       "text_redacted": false
     },
     {
-      "published_path": "reports/Alpme_17si_19si_Analysis_ZH_v3.2.zh-CN.pdf",
-      "source_path": "output/pdf/alpme_report_v3_2/Alpme_17si_19si_Analysis_ZH_v3_2.pdf",
-      "source_sha256": "e607d766a921b6ba35c282d2f96639c96241542f23e12f571c6a2c63dcb8f16b",
-      "published_sha256": "e607d766a921b6ba35c282d2f96639c96241542f23e12f571c6a2c63dcb8f16b",
-      "text_redacted": false
-    },
-    {
       "published_path": "evidence/proofs/round5-tokenizers.json",
       "source_path": "work/alpme_analysis/semantic_closure_20261027/round5_tokenizers/proof_receipt.json",
       "source_sha256": "5d556c40378fbbf279b918644c543883502bd74250af9acd8cf3255a5d4a2958",
@@ -426,13 +419,6 @@
       "source_path": "work/alpme_analysis/semantic_closure_20261027/round5_large_collectors/behavior_record_map_zh.json",
       "source_sha256": "23a3e0fa56fc00c4aba04b846071c843b1559144bd1d53e6a6a30989f7cda813",
       "published_sha256": "23a3e0fa56fc00c4aba04b846071c843b1559144bd1d53e6a6a30989f7cda813",
-      "text_redacted": false
-    },
-    {
-      "published_path": "evidence/proofs/round5-host-information-source-gaps.json",
-      "source_path": "work/alpme_analysis/semantic_closure_20261027/round5_large_collectors/typed_API_source_lifetimes.json",
-      "source_sha256": "a4265ab8f57f00cd99b85cda98aa71bf9f341e5580802da779a6909fbe9a69b3",
-      "published_sha256": "a4265ab8f57f00cd99b85cda98aa71bf9f341e5580802da779a6909fbe9a69b3",
       "text_redacted": false
     },
     {
@@ -580,6 +566,433 @@
       "source_path": "work/alpme_analysis/semantic_closure_20261027/round5_extensions/normal_exports/19_payload.dll.bin_0x6ac84.c",
       "source_sha256": "d67e6aaa3cfdaeab8506defb5e76df85b0c77472f17594f0287ff1c90a3d87c5",
       "published_sha256": "d67e6aaa3cfdaeab8506defb5e76df85b0c77472f17594f0287ff1c90a3d87c5",
+      "text_redacted": false
+    },
+    {
+      "published_path": "reports/Alpme_17si_19si_Analysis_ZH_v3.3.zh-CN.pdf",
+      "source_path": "output/pdf/alpme_report_v3_3/Alpme_17si_19si_Analysis_ZH_v3_3.pdf",
+      "source_sha256": "405e5c92ccba9e2b97d50008bc153efccc32e454aa4bfd60a8443b83cbd7166b",
+      "published_sha256": "405e5c92ccba9e2b97d50008bc153efccc32e454aa4bfd60a8443b83cbd7166b",
+      "text_redacted": false
+    },
+    {
+      "published_path": "reports/latex/data/all_native_export_diagnostic.json",
+      "source_path": "output/pdf/alpme_report_v3_3/data/all_native_export_diagnostic.json",
+      "source_sha256": "2ea4adf913f331009eac247b0d7075db3e8d38e9ef4f74d7479546c0baa42e24",
+      "published_sha256": "2ea4adf913f331009eac247b0d7075db3e8d38e9ef4f74d7479546c0baa42e24",
+      "text_redacted": false
+    },
+    {
+      "published_path": "reports/latex/data/analysis_evidence_snapshot.json",
+      "source_path": "output/pdf/alpme_report_v3_3/data/analysis_evidence_snapshot.json",
+      "source_sha256": "30cb479a979ba558bb5ddd6c86c1a394367ef85bf23a11ded167b0a38b525f9c",
+      "published_sha256": "72f32362a8f5fd5e179c6cbac8838a2ac0680a6066b46a629038d123092b1339",
+      "text_redacted": true
+    },
+    {
+      "published_path": "reports/latex/data/baseline_export_verification.json",
+      "source_path": "output/pdf/alpme_report_v3_3/data/baseline_export_verification.json",
+      "source_sha256": "7e4b1980726453efa232709b1ca028322402627d03ddf5594909bbb5b21c57a8",
+      "published_sha256": "7e4b1980726453efa232709b1ca028322402627d03ddf5594909bbb5b21c57a8",
+      "text_redacted": false
+    },
+    {
+      "published_path": "reports/latex/data/browser19_semantic_digest.json",
+      "source_path": "output/pdf/alpme_report_v3_3/data/browser19_semantic_digest.json",
+      "source_sha256": "5368706023b939e4a3690ab39f84025fccce6ecde9dfe18c2136393f7a533c56",
+      "published_sha256": "5368706023b939e4a3690ab39f84025fccce6ecde9dfe18c2136393f7a533c56",
+      "text_redacted": false
+    },
+    {
+      "published_path": "reports/latex/data/cleanup_carry_checkpoint.json",
+      "source_path": "output/pdf/alpme_report_v3_3/data/cleanup_carry_checkpoint.json",
+      "source_sha256": "9cc0a6c71ab1df3aaef4e03ddf3107346e125a14c3faef59e31d2a62ee3a6511",
+      "published_sha256": "9cc0a6c71ab1df3aaef4e03ddf3107346e125a14c3faef59e31d2a62ee3a6511",
+      "text_redacted": false
+    },
+    {
+      "published_path": "reports/latex/data/cleanup_carry_next.json",
+      "source_path": "output/pdf/alpme_report_v3_3/data/cleanup_carry_next.json",
+      "source_sha256": "6c57f3fa4993feb4a5f5ace4f455cba6df213e131de1698e0992d49235493e4b",
+      "published_sha256": "6c57f3fa4993feb4a5f5ace4f455cba6df213e131de1698e0992d49235493e4b",
+      "text_redacted": false
+    },
+    {
+      "published_path": "reports/latex/data/cleanup_carry_next_manifest.json",
+      "source_path": "output/pdf/alpme_report_v3_3/data/cleanup_carry_next_manifest.json",
+      "source_sha256": "942affd1560eb2b77acdccd39b9f7f604bb71b01ae3d6818f12b7c1dd98400bc",
+      "published_sha256": "942affd1560eb2b77acdccd39b9f7f604bb71b01ae3d6818f12b7c1dd98400bc",
+      "text_redacted": false
+    },
+    {
+      "published_path": "reports/latex/data/cleanup_followup.json",
+      "source_path": "output/pdf/alpme_report_v3_3/data/cleanup_followup.json",
+      "source_sha256": "234ed129090bb9f732d3459d970b6bec7719942f15ea9c29a561b4548af55c72",
+      "published_sha256": "234ed129090bb9f732d3459d970b6bec7719942f15ea9c29a561b4548af55c72",
+      "text_redacted": false
+    },
+    {
+      "published_path": "reports/latex/data/cleanup_pointer_source_caveat.json",
+      "source_path": "output/pdf/alpme_report_v3_3/data/cleanup_pointer_source_caveat.json",
+      "source_sha256": "eb2b4e8a7765b635d2c59e28ff3cb0c7ea9f1643030fc9559b5dfe454ab44bac",
+      "published_sha256": "eb2b4e8a7765b635d2c59e28ff3cb0c7ea9f1643030fc9559b5dfe454ab44bac",
+      "text_redacted": false
+    },
+    {
+      "published_path": "reports/latex/data/cloud_lifecycle_findings.json",
+      "source_path": "output/pdf/alpme_report_v3_3/data/cloud_lifecycle_findings.json",
+      "source_sha256": "c5f832a0f79c340d64bdfc27f281675deff8cacc79dbc0633a9d721aa1668c60",
+      "published_sha256": "49ac3fc78e59fcf446133e55b4b8544ef7f15a81a35f9b545ec2b617931a48fe",
+      "text_redacted": true
+    },
+    {
+      "published_path": "reports/latex/data/core_closure_summary.json",
+      "source_path": "output/pdf/alpme_report_v3_3/data/core_closure_summary.json",
+      "source_sha256": "2e6518c77e5a48a24bdb8e52add72d52db5c9df43c7924d09c2a8b80d43285b7",
+      "published_sha256": "2e6518c77e5a48a24bdb8e52add72d52db5c9df43c7924d09c2a8b80d43285b7",
+      "text_redacted": false
+    },
+    {
+      "published_path": "reports/latex/data/coverage_reconciliation.json",
+      "source_path": "output/pdf/alpme_report_v3_3/data/coverage_reconciliation.json",
+      "source_sha256": "b9e6ee27b32f1cfa9b904be3ccd9ea159389c8c3b262eb1455ba47563387c13f",
+      "published_sha256": "b9e6ee27b32f1cfa9b904be3ccd9ea159389c8c3b262eb1455ba47563387c13f",
+      "text_redacted": false
+    },
+    {
+      "published_path": "reports/latex/data/extension17_literals.json",
+      "source_path": "output/pdf/alpme_report_v3_3/data/extension17_literals.json",
+      "source_sha256": "ec39ce7c23ba9637bf2b573076f7b9165e9fb1b441748a4ab651ee69eb47a205",
+      "published_sha256": "ec39ce7c23ba9637bf2b573076f7b9165e9fb1b441748a4ab651ee69eb47a205",
+      "text_redacted": false
+    },
+    {
+      "published_path": "reports/latex/data/extension19_literals.json",
+      "source_path": "output/pdf/alpme_report_v3_3/data/extension19_literals.json",
+      "source_sha256": "62232fbe0bd1169acf5d24681ae3e28f7fe771ff3a369a0a7f7d4b30f3aa3d69",
+      "published_sha256": "62232fbe0bd1169acf5d24681ae3e28f7fe771ff3a369a0a7f7d4b30f3aa3d69",
+      "text_redacted": false
+    },
+    {
+      "published_path": "reports/latex/data/extension_path_dispatch.json",
+      "source_path": "output/pdf/alpme_report_v3_3/data/extension_path_dispatch.json",
+      "source_sha256": "e9d32b3495bea8c1a39f294e14784a0d8e2fb22a3faca595971dd45e1767c798",
+      "published_sha256": "e9d32b3495bea8c1a39f294e14784a0d8e2fb22a3faca595971dd45e1767c798",
+      "text_redacted": false
+    },
+    {
+      "published_path": "reports/latex/data/gecko_final_closure.json",
+      "source_path": "output/pdf/alpme_report_v3_3/data/gecko_final_closure.json",
+      "source_sha256": "b90cff359a8654d293ca67070772bc6ba8fa41c95bd9bda598240d27e6587221",
+      "published_sha256": "b4324e9c9cb32fd6069a220cd0bd92db13683c4aa3a8112aad797e1f0b303f28",
+      "text_redacted": true
+    },
+    {
+      "published_path": "reports/latex/data/gecko_prefs_selected_inputs.json",
+      "source_path": "output/pdf/alpme_report_v3_3/data/gecko_prefs_selected_inputs.json",
+      "source_sha256": "faf455d1a1da1e09d15865ac5122a86c17fc1138014f8716f46d91637db68005",
+      "published_sha256": "faf455d1a1da1e09d15865ac5122a86c17fc1138014f8716f46d91637db68005",
+      "text_redacted": false
+    },
+    {
+      "published_path": "reports/latex/data/gecko_semantics.json",
+      "source_path": "output/pdf/alpme_report_v3_3/data/gecko_semantics.json",
+      "source_sha256": "9a77db4608a8cb373f1b151dff3c1f3b8976492e0d24d6f443c5b677fdf48a61",
+      "published_sha256": "9a77db4608a8cb373f1b151dff3c1f3b8976492e0d24d6f443c5b677fdf48a61",
+      "text_redacted": false
+    },
+    {
+      "published_path": "reports/latex/data/host_information_closure.json",
+      "source_path": "output/pdf/alpme_report_v3_3/data/host_information_closure.json",
+      "source_sha256": "fad42646eea156248dfe41712a71d29f95b228bca8d6fb5a5fa08367b5b5181a",
+      "published_sha256": "fad42646eea156248dfe41712a71d29f95b228bca8d6fb5a5fa08367b5b5181a",
+      "text_redacted": false
+    },
+    {
+      "published_path": "reports/latex/data/host_information_fields.json",
+      "source_path": "output/pdf/alpme_report_v3_3/data/host_information_fields.json",
+      "source_sha256": "23a3e0fa56fc00c4aba04b846071c843b1559144bd1d53e6a6a30989f7cda813",
+      "published_sha256": "23a3e0fa56fc00c4aba04b846071c843b1559144bd1d53e6a6a30989f7cda813",
+      "text_redacted": false
+    },
+    {
+      "published_path": "reports/latex/data/host_information_reconciliation.json",
+      "source_path": "output/pdf/alpme_report_v3_3/data/host_information_reconciliation.json",
+      "source_sha256": "c3127eb83e00d9d40ac91f91c6283b336fabd4a2973ce86b88b2695dd5cb3947",
+      "published_sha256": "c3127eb83e00d9d40ac91f91c6283b336fabd4a2973ce86b88b2695dd5cb3947",
+      "text_redacted": false
+    },
+    {
+      "published_path": "reports/latex/data/host_known_artifacts_20261028.json",
+      "source_path": "output/pdf/alpme_report_v3_3/data/host_known_artifacts_20261028.json",
+      "source_sha256": "da6c6c0ed975334f852b57587ba7f221f98228841076c41e88e0ff770ee4261f",
+      "published_sha256": "287c07186c9b71c94bddb436fb9760c0efe2ad9085bcd6ea36aa23088fcb5529",
+      "text_redacted": true
+    },
+    {
+      "published_path": "reports/latex/data/indirect_call_reconciliation.json",
+      "source_path": "output/pdf/alpme_report_v3_3/data/indirect_call_reconciliation.json",
+      "source_sha256": "bc54ee63c7477085ae30d7866bbdce9bad10bdc9487c10377bfbbf53432d1aee",
+      "published_sha256": "bc54ee63c7477085ae30d7866bbdce9bad10bdc9487c10377bfbbf53432d1aee",
+      "text_redacted": false
+    },
+    {
+      "published_path": "reports/latex/data/initializer17_closure.json",
+      "source_path": "output/pdf/alpme_report_v3_3/data/initializer17_closure.json",
+      "source_sha256": "107c7e37acd3158231022e347c2ddd6f4740c1a895736495f5dc920d39f6f965",
+      "published_sha256": "107c7e37acd3158231022e347c2ddd6f4740c1a895736495f5dc920d39f6f965",
+      "text_redacted": false
+    },
+    {
+      "published_path": "reports/latex/data/initializer19_closure.json",
+      "source_path": "output/pdf/alpme_report_v3_3/data/initializer19_closure.json",
+      "source_sha256": "3333e156f374bc63262f9eb6b122fa68ab34b6fa6430f0c92cb0f60fb2ef1b9d",
+      "published_sha256": "3333e156f374bc63262f9eb6b122fa68ab34b6fa6430f0c92cb0f60fb2ef1b9d",
+      "text_redacted": false
+    },
+    {
+      "published_path": "reports/latex/data/locked_reader_behavior.json",
+      "source_path": "output/pdf/alpme_report_v3_3/data/locked_reader_behavior.json",
+      "source_sha256": "6a832c1a1c23b577c56c29e521332a83ef987f300b68e9405424536a0fc4d3c1",
+      "published_sha256": "6a832c1a1c23b577c56c29e521332a83ef987f300b68e9405424536a0fc4d3c1",
+      "text_redacted": false
+    },
+    {
+      "published_path": "reports/latex/data/locked_reader_closure.json",
+      "source_path": "output/pdf/alpme_report_v3_3/data/locked_reader_closure.json",
+      "source_sha256": "386730f51c971ecbf4a491f66b6178ccc4dfd2a0ea1424272c0c17e44a5d8206",
+      "published_sha256": "aff7e0be09e27a64598e002494aed9bd2851b688a58ceeded14c00c8705356ed",
+      "text_redacted": true
+    },
+    {
+      "published_path": "reports/latex/data/outer19_entry_closure.json",
+      "source_path": "output/pdf/alpme_report_v3_3/data/outer19_entry_closure.json",
+      "source_sha256": "bf6f50e389750f1d6fdc96ecbaa662dee295c764ec342b25a2424c8b1b5b426e",
+      "published_sha256": "bf6f50e389750f1d6fdc96ecbaa662dee295c764ec342b25a2424c8b1b5b426e",
+      "text_redacted": false
+    },
+    {
+      "published_path": "reports/latex/data/outer_loader_exports.json",
+      "source_path": "output/pdf/alpme_report_v3_3/data/outer_loader_exports.json",
+      "source_sha256": "18382c0d3da8af168e07e91c07d9fe860527c15e51c79407e4d03c72bb39bdc6",
+      "published_sha256": "18382c0d3da8af168e07e91c07d9fe860527c15e51c79407e4d03c72bb39bdc6",
+      "text_redacted": false
+    },
+    {
+      "published_path": "reports/latex/data/path19_bounds_proof.json",
+      "source_path": "output/pdf/alpme_report_v3_3/data/path19_bounds_proof.json",
+      "source_sha256": "3a30c0b78a86dbd02154cd50e82200feac3db8c57dcc4e2a44c6d2397733d856",
+      "published_sha256": "3a30c0b78a86dbd02154cd50e82200feac3db8c57dcc4e2a44c6d2397733d856",
+      "text_redacted": false
+    },
+    {
+      "published_path": "reports/latex/data/path19_join_bounds_proof.json",
+      "source_path": "output/pdf/alpme_report_v3_3/data/path19_join_bounds_proof.json",
+      "source_sha256": "9c4d2f9541385be4120e31eb784c64b4aa6d40a293bb52976aeac715119db9af",
+      "published_sha256": "9c4d2f9541385be4120e31eb784c64b4aa6d40a293bb52976aeac715119db9af",
+      "text_redacted": false
+    },
+    {
+      "published_path": "reports/latex/data/profile_collectors_behavior.json",
+      "source_path": "output/pdf/alpme_report_v3_3/data/profile_collectors_behavior.json",
+      "source_sha256": "57035176a29c5bb9c8bfbc53570e5ac60f79b7c3e05b5f91638f3db2924e5a53",
+      "published_sha256": "57035176a29c5bb9c8bfbc53570e5ac60f79b7c3e05b5f91638f3db2924e5a53",
+      "text_redacted": false
+    },
+    {
+      "published_path": "reports/latex/data/profile_collectors_closure.json",
+      "source_path": "output/pdf/alpme_report_v3_3/data/profile_collectors_closure.json",
+      "source_sha256": "02a62f7ddaac6a5ffef1f4a9613c7c049face272a07a53cb68d92b3024de8d68",
+      "published_sha256": "02a62f7ddaac6a5ffef1f4a9613c7c049face272a07a53cb68d92b3024de8d68",
+      "text_redacted": false
+    },
+    {
+      "published_path": "reports/latex/data/profile_name_predicate_closure.json",
+      "source_path": "output/pdf/alpme_report_v3_3/data/profile_name_predicate_closure.json",
+      "source_sha256": "fdcda7ffe808badc4d0beb8c6e9ed5a4b606d504226db390d9bea2b575dd5dae",
+      "published_sha256": "fdcda7ffe808badc4d0beb8c6e9ed5a4b606d504226db390d9bea2b575dd5dae",
+      "text_redacted": false
+    },
+    {
+      "published_path": "reports/latex/data/round3_evidence_snapshot.json",
+      "source_path": "output/pdf/alpme_report_v3_3/data/round3_evidence_snapshot.json",
+      "source_sha256": "3cbcc266a65ba7cb387fb912d77e99235c6ea21257678969ae9d1cb06a48f775",
+      "published_sha256": "7016bbf89458b1937246537f3745c37aa97ae05b2f78f97cc1436436ac5f3d3b",
+      "text_redacted": true
+    },
+    {
+      "published_path": "reports/latex/data/runtime_C_exports.json",
+      "source_path": "output/pdf/alpme_report_v3_3/data/runtime_C_exports.json",
+      "source_sha256": "158621db427040f6cd408877d73c41f5581998bfb92b6f1d5a8620ee4f8f42c4",
+      "published_sha256": "158621db427040f6cd408877d73c41f5581998bfb92b6f1d5a8620ee4f8f42c4",
+      "text_redacted": false
+    },
+    {
+      "published_path": "reports/latex/data/runtime_native_closure.json",
+      "source_path": "output/pdf/alpme_report_v3_3/data/runtime_native_closure.json",
+      "source_sha256": "cbcced17719c296699b32c3300b08f0f7e1d41bd893469992650775b499a5d69",
+      "published_sha256": "cbcced17719c296699b32c3300b08f0f7e1d41bd893469992650775b499a5d69",
+      "text_redacted": false
+    },
+    {
+      "published_path": "reports/latex/data/saved_stub_optional_fields_verified.json",
+      "source_path": "output/pdf/alpme_report_v3_3/data/saved_stub_optional_fields_verified.json",
+      "source_sha256": "933a6901836a0261e4239efbf46a5fd21e7ae399aa1a7aec2e634c8162fdeba8",
+      "published_sha256": "933a6901836a0261e4239efbf46a5fd21e7ae399aa1a7aec2e634c8162fdeba8",
+      "text_redacted": false
+    },
+    {
+      "published_path": "reports/latex/data/selector_fallthrough.json",
+      "source_path": "output/pdf/alpme_report_v3_3/data/selector_fallthrough.json",
+      "source_sha256": "786388a0101def3a92bb54d91d6dcddd1371167d9806a117a52350091dfbd596",
+      "published_sha256": "786388a0101def3a92bb54d91d6dcddd1371167d9806a117a52350091dfbd596",
+      "text_redacted": false
+    },
+    {
+      "published_path": "reports/latex/data/tokenizer_closure.json",
+      "source_path": "output/pdf/alpme_report_v3_3/data/tokenizer_closure.json",
+      "source_sha256": "5d556c40378fbbf279b918644c543883502bd74250af9acd8cf3255a5d4a2958",
+      "published_sha256": "5d556c40378fbbf279b918644c543883502bd74250af9acd8cf3255a5d4a2958",
+      "text_redacted": false
+    },
+    {
+      "published_path": "reports/latex/data/whole_native_baseline.json",
+      "source_path": "output/pdf/alpme_report_v3_3/data/whole_native_baseline.json",
+      "source_sha256": "cf730938e72f5e77dec93d96dcaed2367ad5056bdffba423940864c046763615",
+      "published_sha256": "cf730938e72f5e77dec93d96dcaed2367ad5056bdffba423940864c046763615",
+      "text_redacted": false
+    },
+    {
+      "published_path": "reports/latex/data/函数恢复状态.csv",
+      "source_path": "output/pdf/alpme_report_v3_3/data/函数恢复状态.csv",
+      "source_sha256": "862d74ac64ecd459780be49b55a7306eaa345ac92812627e9b7110f1d54aa160",
+      "published_sha256": "1b9f68001c974fe0f0410d68ea68950cb34cc2878b5632d41aa6c6bcbe579668",
+      "text_redacted": true
+    },
+    {
+      "published_path": "reports/latex/data/原生间接CALL位置.csv",
+      "source_path": "output/pdf/alpme_report_v3_3/data/原生间接CALL位置.csv",
+      "source_sha256": "28a5a51ed0e268e7d51b034e741f83e22b16c7de0a71315bbe502dee4643d2c3",
+      "published_sha256": "28a5a51ed0e268e7d51b034e741f83e22b16c7de0a71315bbe502dee4643d2c3",
+      "text_redacted": false
+    },
+    {
+      "published_path": "reports/latex/data/完整采集任务.csv",
+      "source_path": "output/pdf/alpme_report_v3_3/data/完整采集任务.csv",
+      "source_sha256": "12d3f0ed8c06f028b8ecb889793b6c5d5c26ff3ca03884c087facb3d29bdbc87",
+      "published_sha256": "813359e9fd857ffaef621c73db1fe876c69941e3b92b4b699464417d72f21b18",
+      "text_redacted": true
+    },
+    {
+      "published_path": "reports/latex/data/扩展排除词表.csv",
+      "source_path": "output/pdf/alpme_report_v3_3/data/扩展排除词表.csv",
+      "source_sha256": "7a99b9e3321860f273cbfc8aa4abd49c133158f101f5ac7c366300c906dfe610",
+      "published_sha256": "a8f4118a687157a29d976c16c31c83bab6a5974a7bfddcb786887767d539f46d",
+      "text_redacted": true
+    },
+    {
+      "published_path": "reports/latex/data/数据说明.txt",
+      "source_path": "output/pdf/alpme_report_v3_3/data/数据说明.txt",
+      "source_sha256": "ae9c9063a2b4df0dc7045479c10539e0ab509a7559a7af8f22f98747b2e8d3ee",
+      "published_sha256": "ae9c9063a2b4df0dc7045479c10539e0ab509a7559a7af8f22f98747b2e8d3ee",
+      "text_redacted": false
+    },
+    {
+      "published_path": "reports/latex/data/资料说明.txt",
+      "source_path": "output/pdf/alpme_report_v3_3/data/资料说明.txt",
+      "source_sha256": "b05b85e1360fe38154be3f95919cf74d7605223ca9dbb9ac193c255861b85e5e",
+      "published_sha256": "b05b85e1360fe38154be3f95919cf74d7605223ca9dbb9ac193c255861b85e5e",
+      "text_redacted": false
+    },
+    {
+      "published_path": "reports/latex/data/载荷片段定位.csv",
+      "source_path": "output/pdf/alpme_report_v3_3/data/载荷片段定位.csv",
+      "source_sha256": "0e1ddbd1725d83837dad19458eb0bbfa74472094f62434772dbe01ab5275dfdf",
+      "published_sha256": "76acb2e535f625d2263f6af231591fe423c1cae97e6b18d362d6bb274533f1b6",
+      "text_redacted": true
+    },
+    {
+      "published_path": "evidence/proofs/current-host-information-closure.json",
+      "source_path": "work/alpme_analysis/semantic_closure_20261027/round5_large_collectors/continuation/receipt_cleanup/qualified_final_receipt.json",
+      "source_sha256": "fad42646eea156248dfe41712a71d29f95b228bca8d6fb5a5fa08367b5b5181a",
+      "published_sha256": "fad42646eea156248dfe41712a71d29f95b228bca8d6fb5a5fa08367b5b5181a",
+      "text_redacted": false
+    },
+    {
+      "published_path": "evidence/proofs/current-host-information-review.json",
+      "source_path": "work/alpme_analysis/semantic_closure_20261027/round5_large_collectors/continuation/receipt_cleanup/verification_receipt.json",
+      "source_sha256": "c3127eb83e00d9d40ac91f91c6283b336fabd4a2973ce86b88b2695dd5cb3947",
+      "published_sha256": "c3127eb83e00d9d40ac91f91c6283b336fabd4a2973ce86b88b2695dd5cb3947",
+      "text_redacted": false
+    },
+    {
+      "published_path": "evidence/proofs/current-19-outer-entry-cfg.json",
+      "source_path": "work/alpme_analysis/semantic_closure_20261027/round5_outer_loaders/continuation_19/19_9338_continuation_receipt.json",
+      "source_sha256": "bf6f50e389750f1d6fdc96ecbaa662dee295c764ec342b25a2424c8b1b5b426e",
+      "published_sha256": "bf6f50e389750f1d6fdc96ecbaa662dee295c764ec342b25a2424c8b1b5b426e",
+      "text_redacted": false
+    },
+    {
+      "published_path": "evidence/proofs/current-runtime-native-cfg.json",
+      "source_path": "work/alpme_analysis/semantic_closure_20261027/round6_runtime_primitives/verification_receipt.json",
+      "source_sha256": "cbcced17719c296699b32c3300b08f0f7e1d41bd893469992650775b499a5d69",
+      "published_sha256": "cbcced17719c296699b32c3300b08f0f7e1d41bd893469992650775b499a5d69",
+      "text_redacted": false
+    },
+    {
+      "published_path": "evidence/proofs/current-runtime-C-exports.json",
+      "source_path": "work/alpme_analysis/semantic_closure_20261027/round6_runtime_primitives/C_export_receipt.json",
+      "source_sha256": "158621db427040f6cd408877d73c41f5581998bfb92b6f1d5a8620ee4f8f42c4",
+      "published_sha256": "158621db427040f6cd408877d73c41f5581998bfb92b6f1d5a8620ee4f8f42c4",
+      "text_redacted": false
+    },
+    {
+      "published_path": "evidence/proofs/current-coverage-reconciliation.json",
+      "source_path": "work/alpme_analysis/semantic_closure_20261027/round6_runtime_primitives/coverage_reconciliation_receipt.json",
+      "source_sha256": "b9e6ee27b32f1cfa9b904be3ccd9ea159389c8c3b262eb1455ba47563387c13f",
+      "published_sha256": "b9e6ee27b32f1cfa9b904be3ccd9ea159389c8c3b262eb1455ba47563387c13f",
+      "text_redacted": false
+    },
+    {
+      "published_path": "evidence/proofs/current-runtime-independent-review.json",
+      "source_path": "work/alpme_analysis/semantic_closure_20261027/round5_large_collectors/continuation/receipt_cleanup/runtime_review/runtime_review_receipt.json",
+      "source_sha256": "16077a8e68e3aecb7a1e9b1e4da1ae0c162c6b53ea99991a590b6102d8a8d90d",
+      "published_sha256": "16077a8e68e3aecb7a1e9b1e4da1ae0c162c6b53ea99991a590b6102d8a8d90d",
+      "text_redacted": false
+    },
+    {
+      "published_path": "evidence/proofs/current-cleanup-carry.json",
+      "source_path": "work/alpme_analysis/semantic_closure_20261027/round5_whole_native/call_resolution/remaining9/carry_next/continuation_receipt.json",
+      "source_sha256": "6c57f3fa4993feb4a5f5ace4f455cba6df213e131de1698e0992d49235493e4b",
+      "published_sha256": "6c57f3fa4993feb4a5f5ace4f455cba6df213e131de1698e0992d49235493e4b",
+      "text_redacted": false
+    },
+    {
+      "published_path": "evidence/proofs/current-cleanup-carry-manifest.json",
+      "source_path": "work/alpme_analysis/semantic_closure_20261027/round5_whole_native/call_resolution/remaining9/carry_next/carry_next_manifest.json",
+      "source_sha256": "942affd1560eb2b77acdccd39b9f7f604bb71b01ae3d6818f12b7c1dd98400bc",
+      "published_sha256": "942affd1560eb2b77acdccd39b9f7f604bb71b01ae3d6818f12b7c1dd98400bc",
+      "text_redacted": false
+    },
+    {
+      "published_path": "evidence/proofs/current-cleanup-pointer-premises.json",
+      "source_path": "work/alpme_analysis/semantic_closure_20261027/round5_whole_native/call_resolution/remaining9/carry_next/postseal_source_binding_caveat.json",
+      "source_sha256": "eb2b4e8a7765b635d2c59e28ff3cb0c7ea9f1643030fc9559b5dfe454ab44bac",
+      "published_sha256": "eb2b4e8a7765b635d2c59e28ff3cb0c7ea9f1643030fc9559b5dfe454ab44bac",
+      "text_redacted": false
+    },
+    {
+      "published_path": "recovered/17si/payload/verified/0x1593b.c",
+      "source_path": "work/alpme_analysis/semantic_closure_20261027/round5_large_collectors/continuation/normal_exports/17_payload.dll.bin_0x1593b.c",
+      "source_sha256": "6f45a63b5522bd1641e7ecdc980ae2c7e7b216cdfb1c779b701dfc56e5c1c493",
+      "published_sha256": "6f45a63b5522bd1641e7ecdc980ae2c7e7b216cdfb1c779b701dfc56e5c1c493",
+      "text_redacted": false
+    },
+    {
+      "published_path": "recovered/19si/payload/verified/0x57f4f.c",
+      "source_path": "work/alpme_analysis/semantic_closure_20261027/round5_large_collectors/continuation/normal_exports/19_payload.dll.bin_0x57f4f.c",
+      "source_sha256": "43b28d4653b4433c517aced245d98963c82db2b86a75122402104ecb0e7ab706",
+      "published_sha256": "43b28d4653b4433c517aced245d98963c82db2b86a75122402104ecb0e7ab706",
       "text_redacted": false
     }
   ]

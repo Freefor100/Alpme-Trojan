@@ -1,0 +1,335 @@
+{
+  "status": "PASS_LOCAL_PATH_COMPONENT_DISPATCH",
+  "rows": [
+    {
+      "version": "17",
+      "entry": "0x4a94a",
+      "end": "0x4ca9e",
+      "native_instructions": 1504,
+      "native_sha256": "7cbd59803ef1eab56abf9b7e91b53ec721b40360227439b3b8eccb0dc1c4d3cc",
+      "computed_JMP_sites": 1,
+      "native_indirect_CALL_sites": 0,
+      "all_native_instructions_reached": true,
+      "external_direct_jumps": [],
+      "component_source": {
+        "helper_CALL": {
+          "rva": "0x4ac24",
+          "asm": "call 0x18006b09a",
+          "bytes": "e871040200"
+        },
+        "output_argument_RCX": "R14",
+        "all_R14_reaching_defs": [
+          {
+            "rva": "0x4a9e7",
+            "asm": "lea r14, [rsp + 0x310]",
+            "bytes": "4c8db42410030000"
+          }
+        ],
+        "caller_output": "SP310",
+        "tag_read": "SP320=output+16",
+        "tag_domain": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          255
+        ],
+        "domain_explanation": "Prefix subtag0..5 guarded by iterator; emitted RootDir6/CurDir7; body parser7/8/9 or exhaustedff. ff exits before this jump. ReadDir/Path components are valid owned compiler objects.",
+        "previous_native_proofs": [
+          {
+            "path": "work\\alpme_analysis\\semantic_closure_20261027\\ghidra_repair\\helper_boundary_scratch\\path_bounds17_proof.json",
+            "sha256": "2795476c1ad1cfc6722f75d32ce2161a7172e5186c4006ab33873b06e6abf476"
+          },
+          {
+            "path": "work\\alpme_analysis\\semantic_closure_20261027\\report_revision_v2\\path19_bounds_proof.json",
+            "sha256": "3a30c0b78a86dbd02154cd50e82200feac3db8c57dcc4e2a44c6d2397733d856"
+          },
+          {
+            "path": "work\\alpme_analysis\\semantic_closure_20261027\\report_revision_v2\\path19_join_bounds_proof.json",
+            "sha256": "9c4d2f9541385be4120e31eb784c64b4aa6d40a293bb52976aeac715119db9af"
+          }
+        ]
+      },
+      "local_table": {
+        "rva": "0x8cdf0",
+        "indices": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "targets": [
+          "0x4b4e8",
+          "0x4b46b",
+          "0x4b495",
+          "0x4bd37",
+          "0x4b4e8"
+        ],
+        "cells": [
+          "f8e6fbff",
+          "7be6fbff",
+          "a5e6fbff",
+          "47effbff",
+          "f8e6fbff"
+        ],
+        "formula": "index=tag<6?0:tag-5; ff was excluded by CMP/JE"
+      },
+      "window": [
+        {
+          "rva": "0x4ac1c",
+          "asm": "mov rdx, rbx",
+          "bytes": "4889da"
+        },
+        {
+          "rva": "0x4ac1f",
+          "asm": "mov rbx, qword ptr [rsp + 0x68]",
+          "bytes": "488b5c2468"
+        },
+        {
+          "rva": "0x4ac24",
+          "asm": "call 0x18006b09a",
+          "bytes": "e871040200"
+        },
+        {
+          "rva": "0x4ac29",
+          "asm": "movzx eax, byte ptr [rsp + 0x320]",
+          "bytes": "0fb6842420030000"
+        },
+        {
+          "rva": "0x4ac31",
+          "asm": "cmp rax, 0xff",
+          "bytes": "483dff000000"
+        },
+        {
+          "rva": "0x4ac37",
+          "asm": "je 0x18004b4b7",
+          "bytes": "0f847a080000"
+        },
+        {
+          "rva": "0x4ac3d",
+          "asm": "mov rdx, rax",
+          "bytes": "488bd0"
+        },
+        {
+          "rva": "0x4ac40",
+          "asm": "sub rdx, 5",
+          "bytes": "4883ea05"
+        },
+        {
+          "rva": "0x4ac44",
+          "asm": "cmp al, 6",
+          "bytes": "3c06"
+        },
+        {
+          "rva": "0x4ac46",
+          "asm": "mov eax, 0",
+          "bytes": "b800000000"
+        },
+        {
+          "rva": "0x4ac4b",
+          "asm": "cmovae rax, rdx",
+          "bytes": "480f43c2"
+        },
+        {
+          "rva": "0x4ac4f",
+          "asm": "mov r8d, 1",
+          "bytes": "41b801000000"
+        },
+        {
+          "rva": "0x4ac55",
+          "asm": "lea rdx, [rip + 0x42194]",
+          "bytes": "488d1594210400"
+        },
+        {
+          "rva": "0x4ac5c",
+          "asm": "movsxd rax, dword ptr [rdx + rax*4]",
+          "bytes": "48630482"
+        },
+        {
+          "rva": "0x4ac60",
+          "asm": "add rax, rdx",
+          "bytes": "4803c2"
+        },
+        {
+          "rva": "0x4ac63",
+          "asm": "jmp rax",
+          "bytes": "ffe0"
+        }
+      ],
+      "qualification": "This closes the workers native jump dispatch and identifies all CALL sites as direct. Transitive callee semantics, locale fallback and extension storage recursion still need their own review."
+    },
+    {
+      "version": "19",
+      "entry": "0x6ac84",
+      "end": "0x6cdaa",
+      "native_instructions": 1497,
+      "native_sha256": "486561b4d08c12f6d132dc8b05cc258232586ebb43cecc68ec7cb9ae4bb989d5",
+      "computed_JMP_sites": 1,
+      "native_indirect_CALL_sites": 0,
+      "all_native_instructions_reached": true,
+      "external_direct_jumps": [],
+      "component_source": {
+        "helper_CALL": {
+          "rva": "0x6af5e",
+          "asm": "call 0x18001a385",
+          "bytes": "e822f4faff"
+        },
+        "output_argument_RCX": "R14",
+        "all_R14_reaching_defs": [
+          {
+            "rva": "0x6ad27",
+            "asm": "lea r14, [rsp + 0x310]",
+            "bytes": "4c8db42410030000"
+          }
+        ],
+        "caller_output": "SP310",
+        "tag_read": "SP320=output+16",
+        "tag_domain": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          255
+        ],
+        "domain_explanation": "Prefix subtag0..5 guarded by iterator; emitted RootDir6/CurDir7; body parser7/8/9 or exhaustedff. ff exits before this jump. ReadDir/Path components are valid owned compiler objects.",
+        "previous_native_proofs": [
+          {
+            "path": "work\\alpme_analysis\\semantic_closure_20261027\\ghidra_repair\\helper_boundary_scratch\\path_bounds17_proof.json",
+            "sha256": "2795476c1ad1cfc6722f75d32ce2161a7172e5186c4006ab33873b06e6abf476"
+          },
+          {
+            "path": "work\\alpme_analysis\\semantic_closure_20261027\\report_revision_v2\\path19_bounds_proof.json",
+            "sha256": "3a30c0b78a86dbd02154cd50e82200feac3db8c57dcc4e2a44c6d2397733d856"
+          },
+          {
+            "path": "work\\alpme_analysis\\semantic_closure_20261027\\report_revision_v2\\path19_join_bounds_proof.json",
+            "sha256": "9c4d2f9541385be4120e31eb784c64b4aa6d40a293bb52976aeac715119db9af"
+          }
+        ]
+      },
+      "local_table": {
+        "rva": "0x8b320",
+        "indices": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "targets": [
+          "0x6afcc",
+          "0x6b075",
+          "0x6aff2",
+          "0x6b11c",
+          "0x6afcc"
+        ],
+        "cells": [
+          "acfcfdff",
+          "55fdfdff",
+          "d2fcfdff",
+          "fcfdfdff",
+          "acfcfdff"
+        ],
+        "formula": "index=tag<6?0:tag-5; ff was excluded by CMP/JE"
+      },
+      "window": [
+        {
+          "rva": "0x6af56",
+          "asm": "mov rdx, rsi",
+          "bytes": "488bd6"
+        },
+        {
+          "rva": "0x6af59",
+          "asm": "mov rsi, qword ptr [rsp + 0x50]",
+          "bytes": "488b742450"
+        },
+        {
+          "rva": "0x6af5e",
+          "asm": "call 0x18001a385",
+          "bytes": "e822f4faff"
+        },
+        {
+          "rva": "0x6af63",
+          "asm": "movzx eax, byte ptr [rsp + 0x320]",
+          "bytes": "0fb6842420030000"
+        },
+        {
+          "rva": "0x6af6b",
+          "asm": "cmp rax, 0xff",
+          "bytes": "483dff000000"
+        },
+        {
+          "rva": "0x6af71",
+          "asm": "je 0x18006af9b",
+          "bytes": "7428"
+        },
+        {
+          "rva": "0x6af73",
+          "asm": "mov rdx, rax",
+          "bytes": "4889c2"
+        },
+        {
+          "rva": "0x6af76",
+          "asm": "add rdx, -5",
+          "bytes": "4883c2fb"
+        },
+        {
+          "rva": "0x6af7a",
+          "asm": "cmp al, 6",
+          "bytes": "3c06"
+        },
+        {
+          "rva": "0x6af7c",
+          "asm": "mov eax, 0",
+          "bytes": "b800000000"
+        },
+        {
+          "rva": "0x6af81",
+          "asm": "cmovae rax, rdx",
+          "bytes": "480f43c2"
+        },
+        {
+          "rva": "0x6af85",
+          "asm": "mov r8d, 1",
+          "bytes": "41b801000000"
+        },
+        {
+          "rva": "0x6af8b",
+          "asm": "lea rdx, [rip + 0x2038e]",
+          "bytes": "488d158e030200"
+        },
+        {
+          "rva": "0x6af92",
+          "asm": "movsxd rax, dword ptr [rdx + rax*4]",
+          "bytes": "48630482"
+        },
+        {
+          "rva": "0x6af96",
+          "asm": "add rax, rdx",
+          "bytes": "4803c2"
+        },
+        {
+          "rva": "0x6af99",
+          "asm": "jmp rax",
+          "bytes": "ffe0"
+        }
+      ],
+      "qualification": "This closes the workers native jump dispatch and identifies all CALL sites as direct. Transitive callee semantics, locale fallback and extension storage recursion still need their own review."
+    }
+  ],
+  "native_execution": false,
+  "original_text_patches": 0
+}

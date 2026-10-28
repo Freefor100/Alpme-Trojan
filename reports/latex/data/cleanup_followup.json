@@ -1,0 +1,407 @@
+{
+  "status": "FIVE_LOCAL_OR_CONSTRUCTOR_CONTEXTS_CLOSED_FOUR_PACKET_SOURCE_GATES_REMAIN",
+  "native_execution": false,
+  "rows": [
+    {
+      "version": "17",
+      "site": "0x3bb0b",
+      "status": "EXACT_NATIVE_CONSTRUCTOR_CALLBACK",
+      "exact_native_target": "0xbd0f",
+      "receiver_producer": "0x50670",
+      "store": "506df mov qword ptr [rax + 0x20], rcx",
+      "address_definition": "506d8 lea rcx, [rip - 0x449d0]",
+      "forwarded_indirect_calls": [
+        {
+          "site": "0xbd26",
+          "status": "EXACT_CONSTRUCTED_24B_VEC_METADATA_DROP",
+          "vtable": "0x81548",
+          "captured_pointer_base": "0x8f70000",
+          "metadata_qwords_rva": [
+            "0x3bf90",
+            24,
+            8
+          ],
+          "vtable_address_definition": "506cd lea rcx, [rip + 0x30e74]",
+          "outer_vtable_field_store": "506d4 mov qword ptr [rax + 0x18], rcx",
+          "exact_native_target": "0x3bf90",
+          "native_leaf_bytes": "488b01488b51084889c141b80100000041b901000000e906e70000",
+          "native_leaf_sha256": "ec36979f2e52c3ca78e44dcb9aaa37a825260542647ac1382eb1d9b760d9aee5",
+          "native_leaf_instructions": [
+            "3bf90 mov rax, qword ptr [rcx]",
+            "3bf93 mov rdx, qword ptr [rcx + 8]",
+            "3bf97 mov rcx, rax",
+            "3bf9a mov r8d, 1",
+            "3bfa0 mov r9d, 1",
+            "3bfa6 jmp 0x18004a6b1"
+          ],
+          "leaf_indirect_calls": [],
+          "direct_tail_target": "0x4a6b1",
+          "effect_scope": "Leaf forwards the owned byte buffer pointer/capacity to the ordinary vector deallocation helper with element size/alignment1. Generic drop stub itself is not pure; this actual constructor selects this exact leaf. Allocator/import semantics remain their separate established contracts."
+        }
+      ],
+      "scope": "All identified native producer contexts for this address-taken outer-box destructor; valid original object fields remain as constructed. No claim about arbitrary fabricated entry objects or arbitrary pointer arithmetic outside the producer inventory."
+    },
+    {
+      "version": "17",
+      "site": "0x823c",
+      "status": "CONTEXT_EXCLUDED_POST_CLEAR_OWNED_ROOT",
+      "target_set": [],
+      "proof_helper": "0x65f1d",
+      "context_contract": "Root slot is the compiler-owned temporary/capture slot and is disjoint from separately owned Arc nodes and their data. Normal destructors/heap APIs do not write an unpassed private root slot. This is an ownership/disjointness contract, not callback purity.",
+      "universal_generic_entry_claim": false
+    },
+    {
+      "version": "19",
+      "site": "0x227d7",
+      "status": "EXACT_NATIVE_CONSTRUCTOR_CALLBACK",
+      "exact_native_target": "0x61222",
+      "receiver_producer": "0x10112",
+      "store": "10182 mov qword ptr [rax + 0x20], rcx",
+      "address_definition": "1017b lea rcx, [rip + 0x510a0]",
+      "forwarded_indirect_calls": [
+        {
+          "site": "0x6123a",
+          "status": "EXACT_CONSTRUCTED_24B_VEC_METADATA_DROP",
+          "vtable": "0x7f900",
+          "captured_pointer_base": "0x3ff0000",
+          "metadata_qwords_rva": [
+            "0x9d57",
+            24,
+            8
+          ],
+          "vtable_address_definition": "10170 lea rcx, [rip + 0x6f789]",
+          "outer_vtable_field_store": "10177 mov qword ptr [rax + 0x18], rcx",
+          "exact_native_target": "0x9d57",
+          "native_leaf_bytes": "488b01488b5108488bc841b80100000041b901000000e90ee20000",
+          "native_leaf_sha256": "5b7b2922d9e412635fb72f341b2c77ff3a4c2236bc8a67bd451f88c036daaabe",
+          "native_leaf_instructions": [
+            "9d57 mov rax, qword ptr [rcx]",
+            "9d5a mov rdx, qword ptr [rcx + 8]",
+            "9d5e mov rcx, rax",
+            "9d61 mov r8d, 1",
+            "9d67 mov r9d, 1",
+            "9d6d jmp 0x180017f80"
+          ],
+          "leaf_indirect_calls": [],
+          "direct_tail_target": "0x17f80",
+          "effect_scope": "Leaf forwards the owned byte buffer pointer/capacity to the ordinary vector deallocation helper with element size/alignment1. Generic drop stub itself is not pure; this actual constructor selects this exact leaf. Allocator/import semantics remain their separate established contracts."
+        }
+      ],
+      "scope": "All identified native producer contexts for this address-taken outer-box destructor; valid original object fields remain as constructed. No claim about arbitrary fabricated entry objects or arbitrary pointer arithmetic outside the producer inventory."
+    },
+    {
+      "version": "19",
+      "site": "0x2c027",
+      "status": "CONTEXT_EXCLUDED_POST_CLEAR_OWNED_ROOT",
+      "target_set": [],
+      "proof_helper": "0xa06f",
+      "context_contract": "Root slot is the compiler-owned temporary/capture slot and is disjoint from separately owned Arc nodes and their data. Normal destructors/heap APIs do not write an unpassed private root slot. This is an ownership/disjointness contract, not callback purity.",
+      "universal_generic_entry_claim": false
+    },
+    {
+      "version": "17",
+      "site": "0x1bd7d",
+      "status": "NORMAL_THREAD_PACKET_DOMAIN_SUPPORTED_FULL_SOURCE_LIFETIME_GATE_PENDING",
+      "normal_target_set_if_domain_obligations_hold": [],
+      "normal_reason": "14 concrete native thread producers have packet initialization-zero store evidence. Thirteen FnOnce bodies have a flag1/data0 publication tail; one FnOnce body has a complete direct CFG with no normal exit. Publication dominance is proved for24 of26 returning bodies across both modules;2 returning bodies retain unresolved niche-source domains. packet drop first requires flag!=0 and data!=0, and clears flag before the second site. Native wrappers and bodies have unwind flags0 and no local catch/Err publication branch. The final two body switches have typed native channel-source certificates with explicit scalar boundary conditions; the local table CFG and publication dominance already pass under those conditions.",
+      "remaining_in_scope_gaps": [
+        "Whole-creator carry of the original private scalar boundaries into the result receive/capture phase remains pending. The eight native SEND sources per module, typed niche union, linked queue130B transfer, actual private tag stores, closure+30 capture and body+68 mapping now have a separate local certificate under those named boundary values: channel_enum_provenance.json. No remaining server-opcode or registry-tag guess is used for this channel field.",
+        "Independent creator private scalar/call-effect lifetime proof, including the three indexed initialization writes and obfuscated outer-argument/capture field indexes.",
+        "Audit alias/non-escape of shared packet pointer from creation, thread closure, join-handle drop/extraction and all direct packet-drop callers. This receipt records actual source windows and finite type-domain evidence; it does not substitute candidate tables for this gate."
+      ],
+      "abnormal_scope": "No universal panic=abort claim. Rust wrapper has no local EH catch. CRT exception handlers elsewhere are inventoried; foreign/OS exceptions or arbitrary fabricated/corrupt objects are not assumed to populate a valid packet."
+    },
+    {
+      "version": "17",
+      "site": "0x1be17",
+      "status": "NORMAL_THREAD_PACKET_DOMAIN_SUPPORTED_FULL_SOURCE_LIFETIME_GATE_PENDING",
+      "normal_target_set_if_domain_obligations_hold": [],
+      "normal_reason": "14 concrete native thread producers have packet initialization-zero store evidence. Thirteen FnOnce bodies have a flag1/data0 publication tail; one FnOnce body has a complete direct CFG with no normal exit. Publication dominance is proved for24 of26 returning bodies across both modules;2 returning bodies retain unresolved niche-source domains. packet drop first requires flag!=0 and data!=0, and clears flag before the second site. Native wrappers and bodies have unwind flags0 and no local catch/Err publication branch. The final two body switches have typed native channel-source certificates with explicit scalar boundary conditions; the local table CFG and publication dominance already pass under those conditions.",
+      "remaining_in_scope_gaps": [
+        "Whole-creator carry of the original private scalar boundaries into the result receive/capture phase remains pending. The eight native SEND sources per module, typed niche union, linked queue130B transfer, actual private tag stores, closure+30 capture and body+68 mapping now have a separate local certificate under those named boundary values: channel_enum_provenance.json. No remaining server-opcode or registry-tag guess is used for this channel field.",
+        "Independent creator private scalar/call-effect lifetime proof, including the three indexed initialization writes and obfuscated outer-argument/capture field indexes.",
+        "Audit alias/non-escape of shared packet pointer from creation, thread closure, join-handle drop/extraction and all direct packet-drop callers. This receipt records actual source windows and finite type-domain evidence; it does not substitute candidate tables for this gate."
+      ],
+      "abnormal_scope": "No universal panic=abort claim. Rust wrapper has no local EH catch. CRT exception handlers elsewhere are inventoried; foreign/OS exceptions or arbitrary fabricated/corrupt objects are not assumed to populate a valid packet."
+    },
+    {
+      "version": "19",
+      "site": "0x44f6",
+      "status": "NORMAL_THREAD_PACKET_DOMAIN_SUPPORTED_FULL_SOURCE_LIFETIME_GATE_PENDING",
+      "normal_target_set_if_domain_obligations_hold": [],
+      "normal_reason": "14 concrete native thread producers have packet initialization-zero store evidence. Thirteen FnOnce bodies have a flag1/data0 publication tail; one FnOnce body has a complete direct CFG with no normal exit. Publication dominance is proved for24 of26 returning bodies across both modules;2 returning bodies retain unresolved niche-source domains. packet drop first requires flag!=0 and data!=0, and clears flag before the second site. Native wrappers and bodies have unwind flags0 and no local catch/Err publication branch. The final two body switches have typed native channel-source certificates with explicit scalar boundary conditions; the local table CFG and publication dominance already pass under those conditions.",
+      "remaining_in_scope_gaps": [
+        "Whole-creator carry of the original private scalar boundaries into the result receive/capture phase remains pending. The eight native SEND sources per module, typed niche union, linked queue130B transfer, actual private tag stores, closure+30 capture and body+68 mapping now have a separate local certificate under those named boundary values: channel_enum_provenance.json. No remaining server-opcode or registry-tag guess is used for this channel field.",
+        "Independent creator private scalar/call-effect lifetime proof, including the three indexed initialization writes and obfuscated outer-argument/capture field indexes.",
+        "Audit alias/non-escape of shared packet pointer from creation, thread closure, join-handle drop/extraction and all direct packet-drop callers. This receipt records actual source windows and finite type-domain evidence; it does not substitute candidate tables for this gate."
+      ],
+      "abnormal_scope": "No universal panic=abort claim. Rust wrapper has no local EH catch. CRT exception handlers elsewhere are inventoried; foreign/OS exceptions or arbitrary fabricated/corrupt objects are not assumed to populate a valid packet."
+    },
+    {
+      "version": "19",
+      "site": "0x4590",
+      "status": "NORMAL_THREAD_PACKET_DOMAIN_SUPPORTED_FULL_SOURCE_LIFETIME_GATE_PENDING",
+      "normal_target_set_if_domain_obligations_hold": [],
+      "normal_reason": "14 concrete native thread producers have packet initialization-zero store evidence. Thirteen FnOnce bodies have a flag1/data0 publication tail; one FnOnce body has a complete direct CFG with no normal exit. Publication dominance is proved for24 of26 returning bodies across both modules;2 returning bodies retain unresolved niche-source domains. packet drop first requires flag!=0 and data!=0, and clears flag before the second site. Native wrappers and bodies have unwind flags0 and no local catch/Err publication branch. The final two body switches have typed native channel-source certificates with explicit scalar boundary conditions; the local table CFG and publication dominance already pass under those conditions.",
+      "remaining_in_scope_gaps": [
+        "Whole-creator carry of the original private scalar boundaries into the result receive/capture phase remains pending. The eight native SEND sources per module, typed niche union, linked queue130B transfer, actual private tag stores, closure+30 capture and body+68 mapping now have a separate local certificate under those named boundary values: channel_enum_provenance.json. No remaining server-opcode or registry-tag guess is used for this channel field.",
+        "Independent creator private scalar/call-effect lifetime proof, including the three indexed initialization writes and obfuscated outer-argument/capture field indexes.",
+        "Audit alias/non-escape of shared packet pointer from creation, thread closure, join-handle drop/extraction and all direct packet-drop callers. This receipt records actual source windows and finite type-domain evidence; it does not substitute candidate tables for this gate."
+      ],
+      "abnormal_scope": "No universal panic=abort claim. Rust wrapper has no local EH catch. CRT exception handlers elsewhere are inventoried; foreign/OS exceptions or arbitrary fabricated/corrupt objects are not assumed to populate a valid packet."
+    },
+    {
+      "version": "19",
+      "site": "0x5f923",
+      "status": "CONTEXT_EXCLUDED_DDA5_ERROR_TAG2",
+      "target_set": [],
+      "proof": "19_5f923_error_exclusion.json",
+      "typed_phase_states": 944,
+      "source_lifetime_gate": "PASS"
+    }
+  ],
+  "post_clear_owned_root_proofs": [
+    {
+      "version": "17",
+      "root_clear_helper": "0x65f1d",
+      "root_zero_store": "65f2d mov qword ptr [rcx], 0",
+      "helper_instructions": [
+        "65f1d push r15",
+        "65f1f push r14",
+        "65f21 push r12",
+        "65f23 push rsi",
+        "65f24 push rdi",
+        "65f25 push rbx",
+        "65f26 sub rsp, 0x28",
+        "65f2a mov rdi, qword ptr [rcx]",
+        "65f2d mov qword ptr [rcx], 0",
+        "65f34 or rdi, rdi",
+        "65f37 je 0x180065fa3",
+        "65f39 mov rbx, qword ptr [rip + 0x2f208]",
+        "65f40 mov r14, qword ptr [rip + 0x2f261]",
+        "65f47 lock dec qword ptr [rdi]",
+        "65f4b jne 0x180065fa3",
+        "65f4d mov r15, qword ptr [rdi + 0x10]",
+        "65f51 mov rsi, qword ptr [rdi + 0x18]",
+        "65f55 mov r12, qword ptr [rdi + 0x20]",
+        "65f59 cmp rdi, -1",
+        "65f5d je 0x180065f73",
+        "65f5f lock dec qword ptr [rdi + 8]",
+        "65f64 jne 0x180065f73",
+        "65f66 call rbx",
+        "65f68 mov rcx, rax",
+        "65f6b xor edx, edx",
+        "65f6d mov r8, rdi",
+        "65f70 call r14",
+        "65f73 test rsi, rsi",
+        "65f76 je 0x180065fa3",
+        "65f78 mov rax, qword ptr [r12]",
+        "65f7c test rax, rax",
+        "65f7f je 0x180065f86",
+        "65f81 mov rcx, rsi",
+        "65f84 call rax",
+        "65f86 cmp qword ptr [r12 + 8], 0",
+        "65f8c je 0x180065f9b",
+        "65f8e mov rdx, qword ptr [r12 + 0x10]",
+        "65f93 mov rcx, rsi",
+        "65f96 call 0x1800690fd",
+        "65f9b mov rdi, r15",
+        "65f9e test r15, r15",
+        "65fa1 jne 0x180065f47",
+        "65fa3 add rsp, 0x28",
+        "65fa7 pop rbx",
+        "65fa8 pop rdi",
+        "65fa9 pop rsi",
+        "65faa pop r12",
+        "65fac pop r14",
+        "65fae pop r15",
+        "65fb0 ret "
+      ],
+      "post_clear_checks": [
+        {
+          "caller": "0x4a78d",
+          "clear_call": "0x4a79d",
+          "post_clear_load": "4a7a2 mov rax, qword ptr [rsi]",
+          "otherwise_drop_edge": "0x4a7b4"
+        },
+        {
+          "caller": "0x62937",
+          "clear_call": "0x6293f",
+          "post_clear_load": "62944 mov rax, qword ptr [rsi]",
+          "otherwise_drop_edge": "0x6295a"
+        }
+      ],
+      "semantics": "Moves input root to a private register and writes root slot=0 before its first callback. Traverses owned Arc links, updates refcounts, may invoke vtable[0], deallocates node/data, and returns. It never retains or passes the address of the input root slot to callbacks.",
+      "required_alias_contract": "Root slot is the compiler-owned temporary/capture slot and is disjoint from separately owned Arc nodes and their data. Normal destructors/heap APIs do not write an unpassed private root slot. This is an ownership/disjointness contract, not callback purity.",
+      "recursive_call_fence": "Only two external native direct callers, both after clear(root); recursive self-edge has no initial reachable seed in these producer contexts."
+    },
+    {
+      "version": "19",
+      "root_clear_helper": "0xa06f",
+      "root_zero_store": "a07f mov qword ptr [rcx], 0",
+      "helper_instructions": [
+        "a06f push r15",
+        "a071 push r14",
+        "a073 push r12",
+        "a075 push rsi",
+        "a076 push rdi",
+        "a077 push rbx",
+        "a078 sub rsp, 0x28",
+        "a07c mov rdi, qword ptr [rcx]",
+        "a07f mov qword ptr [rcx], 0",
+        "a086 test rdi, rdi",
+        "a089 je 0x18000a0f5",
+        "a08b mov rbx, qword ptr [rip + 0x894f6]",
+        "a092 mov r14, qword ptr [rip + 0x8953f]",
+        "a099 lock dec qword ptr [rdi]",
+        "a09d jne 0x18000a0f5",
+        "a09f mov r15, qword ptr [rdi + 0x10]",
+        "a0a3 mov rsi, qword ptr [rdi + 0x18]",
+        "a0a7 mov r12, qword ptr [rdi + 0x20]",
+        "a0ab cmp rdi, -1",
+        "a0af je 0x18000a0c5",
+        "a0b1 lock dec qword ptr [rdi + 8]",
+        "a0b6 jne 0x18000a0c5",
+        "a0b8 call rbx",
+        "a0ba mov r8, rdi",
+        "a0bd mov rcx, rax",
+        "a0c0 xor edx, edx",
+        "a0c2 call r14",
+        "a0c5 test rsi, rsi",
+        "a0c8 je 0x18000a0f5",
+        "a0ca mov rax, qword ptr [r12]",
+        "a0ce test rax, rax",
+        "a0d1 je 0x18000a0d8",
+        "a0d3 mov rcx, rsi",
+        "a0d6 call rax",
+        "a0d8 cmp qword ptr [r12 + 8], 0",
+        "a0de je 0x18000a0ed",
+        "a0e0 mov rdx, qword ptr [r12 + 0x10]",
+        "a0e5 mov rcx, rsi",
+        "a0e8 call 0x180029ab8",
+        "a0ed mov rdi, r15",
+        "a0f0 test r15, r15",
+        "a0f3 jne 0x18000a099",
+        "a0f5 add rsp, 0x28",
+        "a0f9 pop rbx",
+        "a0fa pop rdi",
+        "a0fb pop rsi",
+        "a0fc pop r12",
+        "a0fe pop r14",
+        "a100 pop r15",
+        "a102 ret "
+      ],
+      "post_clear_checks": [
+        {
+          "caller": "0x943b",
+          "clear_call": "0x944b",
+          "post_clear_load": "9450 mov rax, qword ptr [rsi]",
+          "otherwise_drop_edge": "0x9462"
+        },
+        {
+          "caller": "0x6d800",
+          "clear_call": "0x6d808",
+          "post_clear_load": "6d80d mov rax, qword ptr [rsi]",
+          "otherwise_drop_edge": "0x6d829"
+        }
+      ],
+      "semantics": "Moves input root to a private register and writes root slot=0 before its first callback. Traverses owned Arc links, updates refcounts, may invoke vtable[0], deallocates node/data, and returns. It never retains or passes the address of the input root slot to callbacks.",
+      "required_alias_contract": "Root slot is the compiler-owned temporary/capture slot and is disjoint from separately owned Arc nodes and their data. Normal destructors/heap APIs do not write an unpassed private root slot. This is an ownership/disjointness contract, not callback purity.",
+      "recursive_call_fence": "Only two external native direct callers, both after clear(root); recursive self-edge has no initial reachable seed in these producer contexts."
+    }
+  ],
+  "indexed_packet_source_arithmetic": [
+    {
+      "version": "17",
+      "site": "0x119ff",
+      "source": "original TLS template+0x2b8.low32, copied through creator SP48/R12",
+      "expression": "(0x91acbdae+0x6e534262) mod 2^32",
+      "offset": 16
+    },
+    {
+      "version": "17",
+      "site": "0x120af",
+      "source": "original TLS template+0x2b8.low32, copied through creator SP48/R12",
+      "expression": "0x91acbdae XOR 0x91acbdbe",
+      "offset": 16
+    },
+    {
+      "version": "19",
+      "site": "0x55eb7",
+      "source": "original PE RVA983e0.low32, copied through creator SP50/R13",
+      "expression": "(0x87b27ba2-0x87b27b92) mod 2^32",
+      "offset": 16
+    },
+    {
+      "version": "19",
+      "site": "0x54fdd",
+      "source": "same PE RVA983e0.low32",
+      "expression": "(0x87b27b92+0x784d849e) mod 2^32",
+      "offset": 48
+    }
+  ],
+  "indexed_arithmetic_scope": "Arithmetic replay from original scalar seeds only. Does not claim their source private-slot/callee-write lifetime audit is complete.",
+  "thread_result_summary": {
+    "instances_per_payload": 14,
+    "publication_tails_per_payload": 13,
+    "proved_publication_dominance_across_payloads": 24,
+    "pending_body_switches": [
+      {
+        "fn_once": "0x3b298",
+        "jumps": [
+          "0x3b382"
+        ]
+      },
+      {
+        "fn_once": "0x2d092",
+        "jumps": [
+          "0x2d175"
+        ]
+      }
+    ],
+    "no_normal_native_exit_per_payload": 1,
+    "five_drop_glue_shapes_per_payload": true,
+    "channel_source_status": "PASS_TYPED_NORMAL_CHANNEL_ENUM_CHAIN_WITH_EXPLICIT_SCALAR_BOUNDARIES; two conditional body switches are awaiting pre-phase boundary carry, not local table targets"
+  },
+  "evidence": {
+    "work\\alpme_analysis\\semantic_closure_20261027\\round5_whole_native\\call_resolution\\remaining9\\whole_payload_xrefs.json": "b5cd02622877b0e8a98fa51f581c13606ba58eb22e8d35abb4996c3f7b7a73e3",
+    "work\\alpme_analysis\\semantic_closure_20261027\\round5_whole_native\\call_resolution\\remaining9\\thread_producer_inventory.json": "41d44059a1782b6b368a1ac80c892f1a6b5f5e29c3cfd9ce2917efcb93f7a14e",
+    "work\\alpme_analysis\\semantic_closure_20261027\\round5_whole_native\\call_resolution\\remaining9\\thread_result_domains.json": "a4cdb1ff7d371389a920b42791f2d50b381e7a67c6db97661465a623535a5d31",
+    "work\\alpme_analysis\\semantic_closure_20261027\\round5_whole_native\\call_resolution\\remaining9\\exception_policy_inventory.json": "3cc333be64f547e7fadd2a727d1c29d9a4ca60743aa2c84f23f272f99eb5b2e9",
+    "work\\alpme_analysis\\semantic_closure_20261027\\round5_whole_native\\call_resolution\\remaining9\\19_5f923_error_exclusion.json": "fc45476f6a0355261e513c2f4932339c88e8595879eb5f7e8228c6b9990ad5d6",
+    "work\\alpme_analysis\\semantic_closure_20261027\\round5_whole_native\\call_resolution\\remaining9\\channel_enum_source_windows.json": "accda3053ecdefcd69275c46e818f3e46b09bc836d53779c5c5b1c34335a8a3d",
+    "work\\alpme_analysis\\semantic_closure_20261027\\round5_whole_native\\call_resolution\\remaining9\\channel_call_argument_origins.json": "ec6190e5352c14335bc7e5971de374657b3af600d868d2ad9a698278e06720f6",
+    "work\\alpme_analysis\\semantic_closure_20261027\\round5_whole_native\\call_resolution\\remaining9\\channel_capture_index_algebra.json": "be1cee357157985585eb76ae88b625593eb17a36e465bc8910b06287705c4c23",
+    "work\\alpme_analysis\\semantic_closure_20261027\\round5_whole_native\\call_resolution\\remaining9\\channel_enum_provenance.json": "3b35dd89365dcaec222d34c800d92c97d839f8cb8655a5c51e89ddc99383da7d"
+  },
+  "untouched_parent_receipt": "77_callsite_final_receipt.json not modified",
+  "remaining_callsite_count": 4,
+  "exact_remaining_creator_carry_gates": [
+    {
+      "version": "17",
+      "creator": "0xbd48",
+      "original_seed": "TLS template+2b8 qword fea7a89c91acbdae loadedbf93, spilledc1fd->SP48",
+      "other_original_slots": {
+        "SP3c8": "bda0 literal eb826f38",
+        "SP3cc": "bdb4 literal18724c68"
+      },
+      "phase_entry": "0x11086",
+      "phase_boundary_register": "R12=original seed",
+      "phase_local_gate": "channel_capture_index_algebra.json + channel_enum_provenance.json",
+      "remaining": "Audit every native indexed frame store, frame address escape and transitive caller-output span from original writers to phase entry; do not infer carry from unique literal writer alone."
+    },
+    {
+      "version": "19",
+      "creator": "0x4fef1",
+      "original_seed": "PE983e0 qword a632f6ba87b27b92 loaded500ee, spilled5084e->SP50",
+      "other_original_slots": {
+        "SP778": "4ff42 literal2f",
+        "SP186": "4ff90 word0018"
+      },
+      "phase_entry": "0x54ed3",
+      "phase_boundary_register": "R13=original seed",
+      "phase_local_gate": "channel_capture_index_algebra.json + channel_enum_provenance.json",
+      "remaining": "Same whole-creator private source carry/escape/output audit; current six exact phase index replays are conditional on these boundary facts."
+    }
+  ]
+}

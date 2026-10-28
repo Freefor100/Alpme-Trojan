@@ -1,0 +1,103 @@
+{
+  "status": "PASS_CONDITIONAL_NORMAL_STATIC_COLLECTORS",
+  "scope": "原始PE/TLS正常初始化及显式有效owned对象ABI；不是样本执行、原始源码、宿主浏览器访问或成功窃取证明。全原native collector CFG与computedCALL/branch均核对。",
+  "collectors": [
+    {
+      "version": "17",
+      "entry": "0x50d72",
+      "native_end": "0x5423b",
+      "source_sha256": "24f7eed14b69c561bd2dde6aa61759cabc8588293e9a0099dde8e381f96f228a",
+      "native_sha256": "ff1e8de27b1f4f118cb7d3beb321adc3ce96be2fa57cd6bad4efcb63eddb0a21",
+      "native_instructions": 2628,
+      "reached": 2628,
+      "computed_sites": 111,
+      "unresolved_computed": 0,
+      "out_of_extent": 0,
+      "direct_calls": 136,
+      "unique_direct_callees": 39,
+      "indirect_calls": 0,
+      "source_bound_literals": 22,
+      "C_path": "work\\alpme_analysis\\semantic_closure_20261027\\round5_profile_collectors\\normal_exports\\17_payload.dll.bin_0x50d72.c",
+      "C_sha256": "e8d63d4a5075ca88d5fd1527df2b4e63ddb82a95027ee4309205467426dc5f9e",
+      "C_partial_markers": {
+        "Could not recover jumptable": 0,
+        "Treating indirect jump as call": 0,
+        "halt_baddata": 0,
+        "Bad instruction data": 0,
+        "UnimplementedPcode": 0
+      },
+      "text_bytes_unchanged": true
+    },
+    {
+      "version": "19",
+      "entry": "0xa7a1",
+      "native_end": "0xdd6e",
+      "source_sha256": "4e4636d2c9d57eb609b7d18ee3dc01713fbcda39c5eee52bd4a66f222f67bb31",
+      "native_sha256": "22e7a0b77f21cf7edc7d5afef66b27c31448d1e7b442352a4c96bd94019cf6f2",
+      "native_instructions": 2648,
+      "reached": 2648,
+      "computed_sites": 108,
+      "unresolved_computed": 0,
+      "out_of_extent": 0,
+      "direct_calls": 135,
+      "unique_direct_callees": 39,
+      "indirect_calls": 0,
+      "source_bound_literals": 22,
+      "C_path": "work\\alpme_analysis\\semantic_closure_20261027\\round5_profile_collectors\\normal_exports\\19_payload.dll.bin_0xa7a1.c",
+      "C_sha256": "5e278c04b28ec22ea5040149587e55c7ae50005f832f150bcf5028d950ed605f",
+      "C_partial_markers": {
+        "Could not recover jumptable": 0,
+        "Treating indirect jump as call": 0,
+        "halt_baddata": 0,
+        "Bad instruction data": 0,
+        "UnimplementedPcode": 0
+      },
+      "text_bytes_unchanged": true
+    }
+  ],
+  "local_storage_binary_serializers": [
+    {
+      "version": "17",
+      "entry": "0x61c04",
+      "normal_reached": 251,
+      "computed": 11,
+      "source_cfg_closed": true,
+      "condition": "17 ordinary normalTLS conservative transfer"
+    },
+    {
+      "version": "19",
+      "entry": "0x2a295",
+      "normal_reached": 540,
+      "computed": 25,
+      "source_cfg_closed": true,
+      "condition": "19 bounded normal helper spans, valid ownedVec/nonaliasoutput, native128B REP MOVSQ, readonly initialized seed9a3e4"
+    }
+  ],
+  "serializer19_seed_direct_native_refs": [
+    {
+      "function": "0x2a295",
+      "rva": "0x2a8ab",
+      "bytes": "8a0533fb0600",
+      "asm": "mov al, byte ptr [rip + 0x6fb33]",
+      "access": 1
+    }
+  ],
+  "serializer19_seed_absence_boundary": "全部pdata canonical directRIP写审计；不声称排除任意外部内存破坏或任意间接地址与cell相等。该固定程序常量按正常静态PE上下文读取。",
+  "dependencies": [
+    "17_SPae0_lifetime_proof.json",
+    "17_phase_index230_proof.json",
+    "utf8_validator_tag_proof.json",
+    "17_flag_path_proof.json",
+    "19_flag_path_proof.json",
+    "17_native_literals.json",
+    "19_native_literals.json",
+    "17_call_effect_inventory.json",
+    "19_call_effect_inventory.json",
+    "collector_behavior_zh.json",
+    "REPORT_zh.md"
+  ],
+  "no_original_execution": true,
+  "no_browser_or_key_access": true,
+  "no_network_or_C2": true,
+  "unresolved_collector_indirect_calls": []
+}

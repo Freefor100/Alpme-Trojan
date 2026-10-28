@@ -1,0 +1,58 @@
+[
+  {
+    "sample": "19_payload.dll.bin",
+    "rva": "0x4665",
+    "native_instructions": 1454,
+    "computed_sites": 52,
+    "C_sha256": "3922481f021adf7c52a0d79e73c80f327d0ddd487a47e8274441e0e0b71329a9",
+    "quality_proof_sha256": "ede867fc40cab30d1fde885517cc3f137c5f9ecb20ba68319654088a8f22b0c2"
+  },
+  {
+    "sample": "19_payload.dll.bin",
+    "rva": "0x1557e",
+    "native_instructions": 1289,
+    "computed_sites": 58,
+    "C_sha256": "825e69af2d33f0aa5604ed9337a6cfa62c3b481fe40b7cfccc4056df120e101d",
+    "quality_proof_sha256": "ede867fc40cab30d1fde885517cc3f137c5f9ecb20ba68319654088a8f22b0c2"
+  },
+  {
+    "sample": "17_payload.dll.bin",
+    "rva": "0x467ce",
+    "native_instructions": 1209,
+    "computed_sites": 57,
+    "C_sha256": "d908756f8f3ade257438f87513053b0d62834a718830134028887f7d2d072e93",
+    "quality_proof_sha256": "ede867fc40cab30d1fde885517cc3f137c5f9ecb20ba68319654088a8f22b0c2"
+  },
+  {
+    "sample": "19_payload.dll.bin",
+    "rva": "0x1aab1",
+    "native_instructions": 5392,
+    "computed_sites": 231,
+    "C_sha256": "5cbd882bdd418bff8fd30ed1ac6939a2a2508194f3f95d1e6a9004fdd09ee0a2",
+    "quality_proof_sha256": "3a1499d41665a07fcf2ac287b7606976d35c2ac925a18be79a98c45717445762"
+  },
+  {
+    "sample": "17_payload.dll.bin",
+    "rva": "0x2f497",
+    "native_instructions": 5212,
+    "computed_sites": 230,
+    "C_sha256": "937816b1c224fab042df4f7ad1ebbf52c82af2b913ee3f9ea2cb3dd579c7b958",
+    "quality_proof_sha256": "e9cfdb4efb7af3bab94179e5b2147e70d76051c3186a4278207925a1bbcb7064"
+  },
+  {
+    "sample": "19_payload.dll.bin",
+    "rva": "0x3d057",
+    "native_instructions": 6325,
+    "computed_sites": 280,
+    "C_sha256": "421887fd11d0f712399d1ac388c6e7eeb479d9f2acc088d5da3510c01f0e1e82",
+    "quality_proof_sha256": "f79a5484cd19128ffad63c0c60e219292e56c9db69687f5fae5073f1695fac4f"
+  },
+  {
+    "sample": "17_payload.dll.bin",
+    "rva": "0x227e8",
+    "native_instructions": 5841,
+    "computed_sites": 274,
+    "C_sha256": "d53d2b4466ed495c1f585662e4b66dde9a4c97b1eeadc90aaa3b20c2b28bce41",
+    "quality_proof_sha256": "5ea4b2cd91e47542af8a872572b6b4d5196270325151fc978a485f799685b7c8"
+  }
+]

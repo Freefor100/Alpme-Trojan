@@ -1,0 +1,1512 @@
+{
+  "status": "PASS_CONSERVATIVE_LOCAL_CFG_AND_METADATA_ONLY_C_EXPORTS",
+  "scope": "Normal PE/TLS and inherited explicit ABI contracts are listed per function. Unknown calls/stores retain havoc; no additional phase-slot preservation. Local CFG does not close transitive callees or all indirect CALL targets.",
+  "jobs": 97,
+  "C_completed": 95,
+  "original_byte_fixed_points_rerun": true,
+  "rows": [
+    {
+      "program": "17_payload.dll.bin",
+      "entry": "0x3bafb",
+      "native_instructions": 13,
+      "finite_local_computed_sites": 0,
+      "symbolic_import_tail_sites": {
+        "0x3bb21": "HeapFree"
+      },
+      "inherited_explicit_helper_ABIs": [],
+      "export_status": "completed",
+      "plan_sha256": "934f846fd11075eb0b9411d46ed0d7e128c52836513e82c2d4d8060b01d60000",
+      "C_sha256": "55e7f23491044d3cbed03efa09fdca5c3a49839aa4e7e53ab0f1d4aaebb46f4b"
+    },
+    {
+      "program": "17_payload.dll.bin",
+      "entry": "0x690fd",
+      "native_instructions": 13,
+      "finite_local_computed_sites": 0,
+      "symbolic_import_tail_sites": {
+        "0x69122": "HeapFree"
+      },
+      "inherited_explicit_helper_ABIs": [],
+      "export_status": "completed",
+      "plan_sha256": "a1be46f3a7b4391bb2e9f90ab51bd928f5b1e7bfeefe72529bd88a8f50d94ce1",
+      "C_sha256": "188c1b6cda52d98ae9aaf04bee018104f3b1c584cfff321019ef73dd9226f9db"
+    },
+    {
+      "program": "19_payload.dll.bin",
+      "entry": "0x227c7",
+      "native_instructions": 13,
+      "finite_local_computed_sites": 0,
+      "symbolic_import_tail_sites": {
+        "0x227ed": "HeapFree"
+      },
+      "inherited_explicit_helper_ABIs": [],
+      "export_status": "completed",
+      "plan_sha256": "4232a6db9ae963ec60eab42cbd5bf535d0ac579bc19cd867a7b71581e0421c73",
+      "C_sha256": "7a23e510a2b4e227f2fc8f4a313722cdac3ed7c95d03edb1cc10fad9b61a158c"
+    },
+    {
+      "program": "19_payload.dll.bin",
+      "entry": "0x29ab8",
+      "native_instructions": 13,
+      "finite_local_computed_sites": 0,
+      "symbolic_import_tail_sites": {
+        "0x29add": "HeapFree"
+      },
+      "inherited_explicit_helper_ABIs": [],
+      "export_status": "completed",
+      "plan_sha256": "0014dc086237a127c8daf371f4da3a9a8065c899439b6ad220d89060019d3592",
+      "C_sha256": "b415e18f55e329a9c8b68a76e78dbcef6e5cdd6b58d8a7e5e189fe1038f833b0"
+    },
+    {
+      "program": "17_payload.dll.bin",
+      "entry": "0x7b820",
+      "native_instructions": 14,
+      "finite_local_computed_sites": 0,
+      "symbolic_import_tail_sites": {
+        "0x7b852": "HeapSize"
+      },
+      "inherited_explicit_helper_ABIs": [],
+      "export_status": "completed",
+      "plan_sha256": "f9f90704a3a3a94a17db77a10f7656e260db8ef6f0645633e0738ed23987840b",
+      "C_sha256": "319ec8cfb120e1c7c9d3a4ad60fa9c1b416e1e73e9d4678124ee6c4b10b08405"
+    },
+    {
+      "program": "19_payload.dll.bin",
+      "entry": "0x7a1c0",
+      "native_instructions": 14,
+      "finite_local_computed_sites": 0,
+      "symbolic_import_tail_sites": {
+        "0x7a1f2": "HeapSize"
+      },
+      "inherited_explicit_helper_ABIs": [],
+      "export_status": "completed",
+      "plan_sha256": "50a46ffcef09dd2bf0dd46f343f972679ad578fed8d0e2d0bde547153c94960d",
+      "C_sha256": "bb3021c09b3c4de12f970acb60e1799b07743b84e50920e9efbe234b4d299068"
+    },
+    {
+      "program": "17_payload.dll.bin",
+      "entry": "0x751c0",
+      "native_instructions": 16,
+      "finite_local_computed_sites": 0,
+      "symbolic_import_tail_sites": {
+        "0x75200": "TerminateProcess"
+      },
+      "inherited_explicit_helper_ABIs": [],
+      "export_status": "completed",
+      "plan_sha256": "ab8ddbb6bb9b3b01d66843832900fcb46ccf10ff5e9fcf016ddf7aabd717851d",
+      "C_sha256": "5d069055d42648114111480dc91a09a0b8a73c2cb63b5a6e41ac0e71a17a68cd"
+    },
+    {
+      "program": "19_payload.dll.bin",
+      "entry": "0x73b60",
+      "native_instructions": 16,
+      "finite_local_computed_sites": 0,
+      "symbolic_import_tail_sites": {
+        "0x73ba0": "TerminateProcess"
+      },
+      "inherited_explicit_helper_ABIs": [],
+      "export_status": "completed",
+      "plan_sha256": "6b6287a55a6c982682dce569b3b01e4773b8e0987e62bafdca5b88cedf6a73b4",
+      "C_sha256": "e04c3ed72a886a2098636e90a410a61486652d7c6af788404372f1d3c0060437"
+    },
+    {
+      "program": "17_payload.dll.bin",
+      "entry": "0x5693d",
+      "native_instructions": 20,
+      "finite_local_computed_sites": 0,
+      "symbolic_import_tail_sites": {
+        "0x56961": "HeapAlloc"
+      },
+      "inherited_explicit_helper_ABIs": [],
+      "export_status": "completed",
+      "plan_sha256": "770eefbbf4a792112efc5ac8903092ab45df0df711e841b6b4af7a98af015873",
+      "C_sha256": "e66aae0571f22e42ee5a4abee50999c775a21ed0f15766154fd8f7bb9a1e03ea"
+    },
+    {
+      "program": "19_payload.dll.bin",
+      "entry": "0x69abe",
+      "native_instructions": 20,
+      "finite_local_computed_sites": 0,
+      "symbolic_import_tail_sites": {
+        "0x69ae2": "HeapAlloc"
+      },
+      "inherited_explicit_helper_ABIs": [],
+      "export_status": "completed",
+      "plan_sha256": "44f3eae2349cc5cc062314a03a2473c9472a33e3879e645c6cbadab3e87b3a22",
+      "C_sha256": "f3749798ed084faa263ea9e37215a59e7e6915faf7a0b75f3d2d1cd50080d596"
+    },
+    {
+      "program": "19_payload.dll.bin",
+      "entry": "0x6e57e",
+      "native_instructions": 21,
+      "finite_local_computed_sites": 1,
+      "symbolic_import_tail_sites": {},
+      "inherited_explicit_helper_ABIs": [],
+      "export_status": "completed",
+      "plan_sha256": "6f3ac968067db819ebb956d974454838d6e7496b1e5c09c9b8efcd1e5e67928b",
+      "C_sha256": "b8e7c017cb71043b312c7baeaa2300b45354b03e6cf791145fdf50853840f3d2"
+    },
+    {
+      "program": "17_payload.dll.bin",
+      "entry": "0x3b02",
+      "native_instructions": 22,
+      "finite_local_computed_sites": 0,
+      "symbolic_import_tail_sites": {
+        "0x3b49": "HeapFree"
+      },
+      "inherited_explicit_helper_ABIs": [],
+      "export_status": "completed",
+      "plan_sha256": "863bb440d7820bf4c2f9109949844f270c1658c8d03d677a1f368bc9c99e493e",
+      "C_sha256": "8be45ff0332c01feb9895d0d2be5e8fd195a847bbc2bf208bcdd9398a2dc3347"
+    },
+    {
+      "program": "17_payload.dll.bin",
+      "entry": "0x295fe",
+      "native_instructions": 22,
+      "finite_local_computed_sites": 0,
+      "symbolic_import_tail_sites": {
+        "0x29639": "HeapFree"
+      },
+      "inherited_explicit_helper_ABIs": [],
+      "export_status": "completed",
+      "plan_sha256": "3ae3cf00429e1adae497d51783fdf0d24c2594d93edfb3d51d566d2905b577ee",
+      "C_sha256": "04164480582a95bb2d1e44f99bd925b0a65a5a8bd13b33fb0f59a73f63c8acd7"
+    },
+    {
+      "program": "17_payload.dll.bin",
+      "entry": "0x2eeac",
+      "native_instructions": 22,
+      "finite_local_computed_sites": 0,
+      "symbolic_import_tail_sites": {
+        "0x2eeed": "HeapFree"
+      },
+      "inherited_explicit_helper_ABIs": [],
+      "export_status": "completed",
+      "plan_sha256": "aac1fb2e53f3819a07f1a59d7d3d25ee6be0ab0c1a856171d8d6640cc6fe5b41",
+      "C_sha256": "682ff060a56e928d367c60e14b7b4fa38a80969ee2631fb110c0b230a97363e1"
+    },
+    {
+      "program": "19_payload.dll.bin",
+      "entry": "0x6142",
+      "native_instructions": 22,
+      "finite_local_computed_sites": 0,
+      "symbolic_import_tail_sites": {
+        "0x617d": "HeapFree"
+      },
+      "inherited_explicit_helper_ABIs": [],
+      "export_status": "completed",
+      "plan_sha256": "73ece04ca907b680c2272a86e3f47c234282943e34bbd6203d1d58c830fce28b",
+      "C_sha256": "8209601fb48fba2fa28464e8258336c369652ff3cd87f0fbdb773618e8569181"
+    },
+    {
+      "program": "19_payload.dll.bin",
+      "entry": "0x6888",
+      "native_instructions": 22,
+      "finite_local_computed_sites": 0,
+      "symbolic_import_tail_sites": {
+        "0x68c9": "HeapFree"
+      },
+      "inherited_explicit_helper_ABIs": [],
+      "export_status": "completed",
+      "plan_sha256": "b51387224eaea87680d3473c699bbc64d85f6e0bf3e0a4515d6abb58b8202d49",
+      "C_sha256": "85128f43d090abee2c8a623fdb86853978fc7164378c1ab1c5b99d2bd4b9b080"
+    },
+    {
+      "program": "19_payload.dll.bin",
+      "entry": "0x227f4",
+      "native_instructions": 22,
+      "finite_local_computed_sites": 0,
+      "symbolic_import_tail_sites": {
+        "0x22835": "HeapFree"
+      },
+      "inherited_explicit_helper_ABIs": [],
+      "export_status": "completed",
+      "plan_sha256": "9b6116869df9eb4f1874d6d1ccf117a94a8cb59637c99fc5fa0ef3f75224c88e",
+      "C_sha256": "85a3113a97f86cf7a0fbeaf9dff67d07d0dc0d1a2fb771fba692c643f71d7c92"
+    },
+    {
+      "program": "19_payload.dll.bin",
+      "entry": "0x66c50",
+      "native_instructions": 22,
+      "finite_local_computed_sites": 1,
+      "symbolic_import_tail_sites": {},
+      "inherited_explicit_helper_ABIs": [],
+      "export_status": "completed",
+      "plan_sha256": "5d86c0351442430c99b7d21fd1b5856b06e85f8ee194cc077f7717529b3a541e",
+      "C_sha256": "056854f3bb2510fe0dbb3191ff79cd1a085bda1e852afebbb63022dac568c31d"
+    },
+    {
+      "program": "17_payload.dll.bin",
+      "entry": "0x86fa",
+      "native_instructions": 23,
+      "finite_local_computed_sites": 1,
+      "symbolic_import_tail_sites": {},
+      "inherited_explicit_helper_ABIs": [],
+      "export_status": "completed",
+      "plan_sha256": "8688a6512158e9833f722a2ec6a436d5cfb2d86fd9e48674e7cfe6ab8d2bf1e9",
+      "C_sha256": "cceaa69f448fbc0f7bca3d4370ab15876481b8b6c05e9d3b73ba4d985ab7fa1e"
+    },
+    {
+      "program": "19_payload.dll.bin",
+      "entry": "0x686e7",
+      "native_instructions": 27,
+      "finite_local_computed_sites": 1,
+      "symbolic_import_tail_sites": {},
+      "inherited_explicit_helper_ABIs": [],
+      "export_status": "failed",
+      "plan_sha256": "32e5716f89954dbe865ce1bbf91d59a861e99b305f59d189be2fd3a0031756eb",
+      "C_sha256": null
+    },
+    {
+      "program": "17_payload.dll.bin",
+      "entry": "0x2a2a0",
+      "native_instructions": 36,
+      "finite_local_computed_sites": 1,
+      "symbolic_import_tail_sites": {},
+      "inherited_explicit_helper_ABIs": [],
+      "export_status": "failed",
+      "plan_sha256": "93052efc1ecd174ee15f82d027e8ca7349f2f218dc4202195ca2bf43f46d62e0",
+      "C_sha256": null
+    },
+    {
+      "program": "17_payload.dll.bin",
+      "entry": "0x21621",
+      "native_instructions": 38,
+      "finite_local_computed_sites": 0,
+      "symbolic_import_tail_sites": {
+        "0x21683": "HeapFree"
+      },
+      "inherited_explicit_helper_ABIs": [],
+      "export_status": "completed",
+      "plan_sha256": "78977cc70df7b276688dabd7faf57a81e5550192986cb55d27fac6c95afc22d6",
+      "C_sha256": "be4cd6f21e9ab0c69b6b598517f02aef0263ca6b014d01f45216496757b2d336"
+    },
+    {
+      "program": "19_payload.dll.bin",
+      "entry": "0x11b15",
+      "native_instructions": 38,
+      "finite_local_computed_sites": 0,
+      "symbolic_import_tail_sites": {
+        "0x11b7e": "HeapFree"
+      },
+      "inherited_explicit_helper_ABIs": [],
+      "export_status": "completed",
+      "plan_sha256": "98703de52c10001dcd5f43e6fcb23f20a98a2654d5446c3722b18a7b5a0737a1",
+      "C_sha256": "5eab2da9bf371ed1282f507f7b3c0a539a9c1f55b8bc8e06c22a44d22260d6ee"
+    },
+    {
+      "program": "19_payload.dll.bin",
+      "entry": "0x448fe",
+      "native_instructions": 43,
+      "finite_local_computed_sites": 3,
+      "symbolic_import_tail_sites": {},
+      "inherited_explicit_helper_ABIs": [],
+      "export_status": "completed",
+      "plan_sha256": "615f4eeff7c9188ff3be6d9c8f5a15f6a1c143fd731a4236ed7d2c45fb7f0d84",
+      "C_sha256": "ab625ca3b49bbc30d1f21865a7cb295828c41cd2f6819260ed0a722282359f3f"
+    },
+    {
+      "program": "17_payload.dll.bin",
+      "entry": "0x821d",
+      "native_instructions": 46,
+      "finite_local_computed_sites": 0,
+      "symbolic_import_tail_sites": {
+        "0x828f": "HeapFree"
+      },
+      "inherited_explicit_helper_ABIs": [],
+      "export_status": "completed",
+      "plan_sha256": "9577f96dab4bcefcb7a483540a155bfaeee93a86dc7a2282c2485e5d92f23958",
+      "C_sha256": "3c3e26af9b1833d22b3230fff096330bb8fe073fd0df9e6f242baf8e527be8d1"
+    },
+    {
+      "program": "19_payload.dll.bin",
+      "entry": "0x2c008",
+      "native_instructions": 46,
+      "finite_local_computed_sites": 0,
+      "symbolic_import_tail_sites": {
+        "0x2c084": "HeapFree"
+      },
+      "inherited_explicit_helper_ABIs": [],
+      "export_status": "completed",
+      "plan_sha256": "ad75bee129ef67b82713f765d65310d039796234bea42e31f97861c909061616",
+      "C_sha256": "178e4ab940b1cdf8c1fd62c72aaba86028980760c30dfd5f2f4b650b3297bc37"
+    },
+    {
+      "program": "17_payload.dll.bin",
+      "entry": "0x62965",
+      "native_instructions": 48,
+      "finite_local_computed_sites": 0,
+      "symbolic_import_tail_sites": {
+        "0x629e8": "HeapReAlloc"
+      },
+      "inherited_explicit_helper_ABIs": [
+        {
+          "site": "0x629a0",
+          "callee": "0x7e630",
+          "contract": "bounded singleton memcpy argument/effect contract"
+        }
+      ],
+      "export_status": "completed",
+      "plan_sha256": "838855aec8341dcda1408f827baeeed52c1abda42102d0c16d0f17e7f5e7533d",
+      "C_sha256": "4e1b29b59e7b685d0305dbe985e129fb454ab4997973a03cc4617dfa4200484d"
+    },
+    {
+      "program": "19_payload.dll.bin",
+      "entry": "0x66a0d",
+      "native_instructions": 48,
+      "finite_local_computed_sites": 0,
+      "symbolic_import_tail_sites": {
+        "0x66a3c": "HeapReAlloc"
+      },
+      "inherited_explicit_helper_ABIs": [
+        {
+          "site": "0x66a6a",
+          "callee": "0x7cfd0",
+          "contract": "bounded singleton memcpy argument/effect contract"
+        }
+      ],
+      "export_status": "completed",
+      "plan_sha256": "507d3cafbcfb4f8827ddaeffda1a093ed488a41c8e46b682d3c0ed35d66850e1",
+      "C_sha256": "6952361df433ea04271c4223ff3cb839a5350d754001f62f0d1e2a6b53154e22"
+    },
+    {
+      "program": "19_payload.dll.bin",
+      "entry": "0x32055",
+      "native_instructions": 58,
+      "finite_local_computed_sites": 3,
+      "symbolic_import_tail_sites": {},
+      "inherited_explicit_helper_ABIs": [],
+      "export_status": "completed",
+      "plan_sha256": "d58b79bcdc7def47e51541b77555d97bd4ad9874c29f317b4307a0cb9156c4e4",
+      "C_sha256": "32a92c94a99b5d2ddaaf85a923bda89d13006925f579ab2a24be34906f53aa72"
+    },
+    {
+      "program": "17_payload.dll.bin",
+      "entry": "0x48051",
+      "native_instructions": 68,
+      "finite_local_computed_sites": 1,
+      "symbolic_import_tail_sites": {},
+      "inherited_explicit_helper_ABIs": [],
+      "export_status": "completed",
+      "plan_sha256": "3791fe545acd675ec66b46de9afc62e8ac785d4e62c6761b1ff2302dac81f65d",
+      "C_sha256": "d551f7dcdbbf014fb2e0cac9af1cffac0de70e00262cda311f0ff265ca379d22"
+    },
+    {
+      "program": "19_payload.dll.bin",
+      "entry": "0x291e2",
+      "native_instructions": 69,
+      "finite_local_computed_sites": 4,
+      "symbolic_import_tail_sites": {},
+      "inherited_explicit_helper_ABIs": [],
+      "export_status": "completed",
+      "plan_sha256": "ce1240cee61b657b98dcdcdc75e9c16026f3b718315a5a79170237ca46c1a444",
+      "C_sha256": "4965d3c0086ae79dc351989b84d91afcc2ca69d0cf51deccf8fef271b8c14bdc"
+    },
+    {
+      "program": "19_payload.dll.bin",
+      "entry": "0x6e945",
+      "native_instructions": 71,
+      "finite_local_computed_sites": 2,
+      "symbolic_import_tail_sites": {},
+      "inherited_explicit_helper_ABIs": [],
+      "export_status": "completed",
+      "plan_sha256": "e34af6058fb374b930174dd6cdbcd20ca78d4e49d91628463d5d2cdfecebdb5b",
+      "C_sha256": "a35da2b1b4cc8d3f4dab95a852780a633d77783de1255d1745c1217647f649b8"
+    },
+    {
+      "program": "17_payload.dll.bin",
+      "entry": "0x772b0",
+      "native_instructions": 73,
+      "finite_local_computed_sites": 0,
+      "symbolic_import_tail_sites": {
+        "0x77387": "WideCharToMultiByte"
+      },
+      "inherited_explicit_helper_ABIs": [],
+      "export_status": "completed",
+      "plan_sha256": "4304000630a279620c480f7f52bce7763e85213cefe78b8e397647a949f82331",
+      "C_sha256": "28a72e0b79aa5722c82b095ea76c50905a7267d33e969ae8c8cb3f0415e76add"
+    },
+    {
+      "program": "19_payload.dll.bin",
+      "entry": "0x2cf58",
+      "native_instructions": 73,
+      "finite_local_computed_sites": 1,
+      "symbolic_import_tail_sites": {},
+      "inherited_explicit_helper_ABIs": [
+        {
+          "site": "0x2cf61",
+          "callee": "0x6190",
+          "contract": "normal module TLS initialization and pointer return"
+        }
+      ],
+      "export_status": "completed",
+      "plan_sha256": "bac0fbbf4bdc22a1b97d2419d64530d05f5a7e17a1fad36b60ef0b9c6445133a",
+      "C_sha256": "1cb584bd4a4f4ff24d1bafe5791671a839aa707ef9ee095d2443929b0dfcde30"
+    },
+    {
+      "program": "19_payload.dll.bin",
+      "entry": "0x46ec1",
+      "native_instructions": 73,
+      "finite_local_computed_sites": 2,
+      "symbolic_import_tail_sites": {},
+      "inherited_explicit_helper_ABIs": [
+        {
+          "site": "0x46fb6",
+          "callee": "0x7cfd0",
+          "contract": "bounded singleton memcpy argument/effect contract"
+        }
+      ],
+      "export_status": "completed",
+      "plan_sha256": "9fe40eb3be420dd5a3bcb59548ecd000fbcfd33be691b40c4ddba4bdaeaa20f7",
+      "C_sha256": "6b8998c83392cc9f6d2c80fc85aaa555f539c378c5cff73c39653acf1dc4c7da"
+    },
+    {
+      "program": "19_payload.dll.bin",
+      "entry": "0x75c50",
+      "native_instructions": 73,
+      "finite_local_computed_sites": 0,
+      "symbolic_import_tail_sites": {
+        "0x75d27": "WideCharToMultiByte"
+      },
+      "inherited_explicit_helper_ABIs": [],
+      "export_status": "completed",
+      "plan_sha256": "92d0f5f0afc7400b1b9f4a252a689ddb9ec388ffb75ae3e6debaf68501ff699d",
+      "C_sha256": "783f7cf565864752f15abb8a61d1ee886671988fdb2912d1cde0e6bc829e8822"
+    },
+    {
+      "program": "17_payload.dll.bin",
+      "entry": "0x39aad",
+      "native_instructions": 75,
+      "finite_local_computed_sites": 4,
+      "symbolic_import_tail_sites": {},
+      "inherited_explicit_helper_ABIs": [],
+      "export_status": "completed",
+      "plan_sha256": "4e850dc71d46da51eebb653991e83cb3c0d13a7fb5570e8e40d9bcf9c8a8140a",
+      "C_sha256": "e270d60b47308b6b80ed040e110dea128915141c97df1cf32ef3ab72ececcc89"
+    },
+    {
+      "program": "19_payload.dll.bin",
+      "entry": "0x68f8b",
+      "native_instructions": 77,
+      "finite_local_computed_sites": 2,
+      "symbolic_import_tail_sites": {},
+      "inherited_explicit_helper_ABIs": [],
+      "export_status": "completed",
+      "plan_sha256": "e3973b7762955ed16d633a7cff2767ba8d5c548472e7204c088a643d736bbe91",
+      "C_sha256": "9040a4e0463080a392f2d5a30a01e9046c2e1c27bd0bc895f229d1469e2c760d"
+    },
+    {
+      "program": "17_payload.dll.bin",
+      "entry": "0x1bd55",
+      "native_instructions": 82,
+      "finite_local_computed_sites": 0,
+      "symbolic_import_tail_sites": {
+        "0x1be4e": "HeapFree"
+      },
+      "inherited_explicit_helper_ABIs": [],
+      "export_status": "completed",
+      "plan_sha256": "052c1bd788752b5d031eee7facd96d0cde0cbb2f3fa51f293bb8dcf0f0e0edf0",
+      "C_sha256": "861c1587836e9022f1a072ac3610ef8792dfc100be235aad73dd9151fb91c92a"
+    },
+    {
+      "program": "19_payload.dll.bin",
+      "entry": "0x44cd",
+      "native_instructions": 82,
+      "finite_local_computed_sites": 0,
+      "symbolic_import_tail_sites": {
+        "0x45cf": "HeapFree"
+      },
+      "inherited_explicit_helper_ABIs": [],
+      "export_status": "completed",
+      "plan_sha256": "2952c477c7a7421055907c82c51157e8d65edf5fa65ce491ee7042caa120178c",
+      "C_sha256": "1504af3eee329265f10837c7f0b1c228a58aa36a408f48e789903007952abc3f"
+    },
+    {
+      "program": "17_payload.dll.bin",
+      "entry": "0x65756",
+      "native_instructions": 83,
+      "finite_local_computed_sites": 4,
+      "symbolic_import_tail_sites": {},
+      "inherited_explicit_helper_ABIs": [],
+      "export_status": "completed",
+      "plan_sha256": "e23ce32a436953f9a71c2baa96548c046ee0d1a5de7fc6c8655bd62c6fcfcff8",
+      "C_sha256": "b37ae0451348a9da29c295f44c9a33ffbdf5fba3c1dc0148a512898462638920"
+    },
+    {
+      "program": "19_payload.dll.bin",
+      "entry": "0x1810e",
+      "native_instructions": 84,
+      "finite_local_computed_sites": 1,
+      "symbolic_import_tail_sites": {},
+      "inherited_explicit_helper_ABIs": [],
+      "export_status": "completed",
+      "plan_sha256": "ec29050e89ce1d4c41040a874df36a02b748d18f58a46cc021ba39ef60ab93c0",
+      "C_sha256": "1f99b18beab1b2d305534ecdb3862f016f4c49bb661920b5ecc0664dcb73fb67"
+    },
+    {
+      "program": "17_payload.dll.bin",
+      "entry": "0x154e9",
+      "native_instructions": 91,
+      "finite_local_computed_sites": 1,
+      "symbolic_import_tail_sites": {},
+      "inherited_explicit_helper_ABIs": [
+        {
+          "site": "0x154fe",
+          "callee": "0x2af30",
+          "contract": "normal module TLS initialization and pointer return"
+        }
+      ],
+      "export_status": "completed",
+      "plan_sha256": "b7c9ac6d12abc7146f12552c488014d888e449f1c6629536082686554e246f3b",
+      "C_sha256": "b0d762120745819d6ce89d05c963257b528b7ce2d02f32203dca8288539dff5d"
+    },
+    {
+      "program": "17_payload.dll.bin",
+      "entry": "0x60db",
+      "native_instructions": 96,
+      "finite_local_computed_sites": 2,
+      "symbolic_import_tail_sites": {},
+      "inherited_explicit_helper_ABIs": [],
+      "export_status": "completed",
+      "plan_sha256": "86c158feccfbb4cde73ee55f13dd86da7c322ac747dc7c99092bed2317f37710",
+      "C_sha256": "1a0f39c0305e1727a3bf356a6bb9a29306655954ddf395a75877334cfce087d4"
+    },
+    {
+      "program": "17_payload.dll.bin",
+      "entry": "0x2c138",
+      "native_instructions": 96,
+      "finite_local_computed_sites": 2,
+      "symbolic_import_tail_sites": {},
+      "inherited_explicit_helper_ABIs": [],
+      "export_status": "completed",
+      "plan_sha256": "485f9effe9b6a35876ad8aa09263af79ac27db7ed3543d92f234f22892758135",
+      "C_sha256": "cfe4b45d68c7162952d9e54d21859d68820e0b8ecd31f56dd1406154c022df4e"
+    },
+    {
+      "program": "17_payload.dll.bin",
+      "entry": "0x627c",
+      "native_instructions": 101,
+      "finite_local_computed_sites": 4,
+      "symbolic_import_tail_sites": {},
+      "inherited_explicit_helper_ABIs": [],
+      "export_status": "completed",
+      "plan_sha256": "d7c450c88a79d1654800de3d72731eb6a8763d2f1eff66831e05d63477329e2a",
+      "C_sha256": "128f1bdd3fddf5ab2754d75ef0c9aefee3dd8aaa06f83a240f67a7b2b4dac6ac"
+    },
+    {
+      "program": "17_payload.dll.bin",
+      "entry": "0x2a97b",
+      "native_instructions": 102,
+      "finite_local_computed_sites": 2,
+      "symbolic_import_tail_sites": {},
+      "inherited_explicit_helper_ABIs": [
+        {
+          "site": "0x2a98b",
+          "callee": "0x2af30",
+          "contract": "normal module TLS initialization and pointer return"
+        }
+      ],
+      "export_status": "completed",
+      "plan_sha256": "969a5e925a7160a0595b5507e5bc4cf0fccbb2086f3d05177dbe50f5fec8a112",
+      "C_sha256": "41838d021ab84bf45890e81e8a73caa538919b756c08a57f09c92765b4616849"
+    },
+    {
+      "program": "19_payload.dll.bin",
+      "entry": "0x67b85",
+      "native_instructions": 103,
+      "finite_local_computed_sites": 4,
+      "symbolic_import_tail_sites": {},
+      "inherited_explicit_helper_ABIs": [],
+      "export_status": "completed",
+      "plan_sha256": "65c942f0c823bdd2dd36ab2d327d9a0c260519ffb26061334da34fa8cbf06397",
+      "C_sha256": "fec27d11979823dea95da83e1b9f13b7f3939b65bcc7eabd60e0efaf929200de"
+    },
+    {
+      "program": "17_payload.dll.bin",
+      "entry": "0x61ff6",
+      "native_instructions": 107,
+      "finite_local_computed_sites": 0,
+      "symbolic_import_tail_sites": {
+        "0x62145": "WakeByAddressSingle"
+      },
+      "inherited_explicit_helper_ABIs": [],
+      "export_status": "completed",
+      "plan_sha256": "50979dfe86819353ffd34761cf69410954b0bbf6f52cd00e0d01c13297d46de0",
+      "C_sha256": "a2918384a1b8ddc75a0e8986e34b9c005fa1ec9927ad3eddcca4942e5fcdf6c8"
+    },
+    {
+      "program": "19_payload.dll.bin",
+      "entry": "0x2cd37",
+      "native_instructions": 107,
+      "finite_local_computed_sites": 0,
+      "symbolic_import_tail_sites": {
+        "0x2ce86": "WakeByAddressSingle"
+      },
+      "inherited_explicit_helper_ABIs": [],
+      "export_status": "completed",
+      "plan_sha256": "c81d20778df8217dfc3e9640d39d9095a0047f2d565626bea7ce554d6da2f7b4",
+      "C_sha256": "85691ea8930e5d5d3266752339b707797ffa0f7f06813db926ce151e88a9b735"
+    },
+    {
+      "program": "17_payload.dll.bin",
+      "entry": "0x49ccd",
+      "native_instructions": 108,
+      "finite_local_computed_sites": 4,
+      "symbolic_import_tail_sites": {},
+      "inherited_explicit_helper_ABIs": [],
+      "export_status": "completed",
+      "plan_sha256": "06f4ece28462e6bf5de0456c0ec3c963d9e2d90ae411f2d30c3cf833dbd3cffb",
+      "C_sha256": "9e3bb18b7bd9522e3bb8d9f6b16747d96f79ecd455cd64f92fa6762ce7a28335"
+    },
+    {
+      "program": "19_payload.dll.bin",
+      "entry": "0x2b043",
+      "native_instructions": 116,
+      "finite_local_computed_sites": 6,
+      "symbolic_import_tail_sites": {},
+      "inherited_explicit_helper_ABIs": [],
+      "export_status": "completed",
+      "plan_sha256": "9b3692a3e5dad766dc79cda2eb63e15601c0246e33e5c1149fefd5a41b921862",
+      "C_sha256": "f85ac219c5f1e929d406773c867224df5657e280161c025369ca25318c206b57"
+    },
+    {
+      "program": "17_payload.dll.bin",
+      "entry": "0x3b946",
+      "native_instructions": 118,
+      "finite_local_computed_sites": 7,
+      "symbolic_import_tail_sites": {},
+      "inherited_explicit_helper_ABIs": [
+        {
+          "site": "0x3b961",
+          "callee": "0x2af30",
+          "contract": "normal module TLS initialization and pointer return"
+        }
+      ],
+      "export_status": "completed",
+      "plan_sha256": "81473c42de11c77aff789d639b6ab5ccbba169e9fc0ab5ee00e1ee4d303f5281",
+      "C_sha256": "8a608f4d62a789d1de06dd1d42f590c296b06d339ff085f28c6f5fcc011cb86e"
+    },
+    {
+      "program": "19_payload.dll.bin",
+      "entry": "0x151d5",
+      "native_instructions": 121,
+      "finite_local_computed_sites": 4,
+      "symbolic_import_tail_sites": {},
+      "inherited_explicit_helper_ABIs": [],
+      "export_status": "completed",
+      "plan_sha256": "029041533af35bddc936169120a2ada6ca070fb9b51c859dd909f38fbc354a91",
+      "C_sha256": "bae9f47305bf2ebef1f7703a09530df210eb289a14498048ed98226a5d4e8606"
+    },
+    {
+      "program": "19_payload.dll.bin",
+      "entry": "0x238fc",
+      "native_instructions": 123,
+      "finite_local_computed_sites": 0,
+      "symbolic_import_tail_sites": {
+        "0x23a5f": "HeapFree"
+      },
+      "inherited_explicit_helper_ABIs": [],
+      "export_status": "completed",
+      "plan_sha256": "2d953a3f224722b58cbf60ff5d1e45f9fe67871f7b4743bbf0bff621b2c71078",
+      "C_sha256": "01783fc536c8475fefabeeaf8fac25a760c5eb3789f044a7cf843dd9c1278468"
+    },
+    {
+      "program": "19_payload.dll.bin",
+      "entry": "0xa103",
+      "native_instructions": 124,
+      "finite_local_computed_sites": 7,
+      "symbolic_import_tail_sites": {},
+      "inherited_explicit_helper_ABIs": [],
+      "export_status": "completed",
+      "plan_sha256": "2725d5b246c1c9eaadba6c86a231d3bebee1f326414a682e29e4127b96c9a9fc",
+      "C_sha256": "eb3dc05f398ae1506692ac64343ba9f443d107561155d1e9508d32c030e1c2dd"
+    },
+    {
+      "program": "17_payload.dll.bin",
+      "entry": "0x2ddde",
+      "native_instructions": 127,
+      "finite_local_computed_sites": 0,
+      "symbolic_import_tail_sites": {
+        "0x2ded0": "HeapFree"
+      },
+      "inherited_explicit_helper_ABIs": [],
+      "export_status": "completed",
+      "plan_sha256": "a37f2657b15d6a396a51d1999f19ebfb4f3d3fb16d7d24b301866794a85dcdf0",
+      "C_sha256": "b08ecdaa40025929e4a673cb34946d2d750ffd96fba6989f34191f8ec05dad05"
+    },
+    {
+      "program": "19_payload.dll.bin",
+      "entry": "0x84c5",
+      "native_instructions": 128,
+      "finite_local_computed_sites": 5,
+      "symbolic_import_tail_sites": {},
+      "inherited_explicit_helper_ABIs": [],
+      "export_status": "completed",
+      "plan_sha256": "edae1f9c37b9067bb60e63730d9a716120ec20fef5c7264cda876a6814f076ca",
+      "C_sha256": "96d58100a8136717555139bd48b41e4e231083247e89ace680b6e8352818ff1b"
+    },
+    {
+      "program": "19_payload.dll.bin",
+      "entry": "0x45cdf",
+      "native_instructions": 130,
+      "finite_local_computed_sites": 7,
+      "symbolic_import_tail_sites": {},
+      "inherited_explicit_helper_ABIs": [],
+      "export_status": "completed",
+      "plan_sha256": "9da7e11d05a6ce63bbccf2435510e296de4519efa8d0a285496c13d5b475627f",
+      "C_sha256": "e778149b75222fe1fe7911759fc847d4107f19f7b37d651d85820017fa7e2050"
+    },
+    {
+      "program": "17_payload.dll.bin",
+      "entry": "0x3bc94",
+      "native_instructions": 136,
+      "finite_local_computed_sites": 0,
+      "symbolic_import_tail_sites": {
+        "0x3be62": "HeapFree"
+      },
+      "inherited_explicit_helper_ABIs": [],
+      "export_status": "completed",
+      "plan_sha256": "051ff8b4cb34aae17955c2653efa5becdb52122ed6d5592dc959aa171330c75e",
+      "C_sha256": "0a5a1794dbc529bf5567ad3902831fb69494f09bb298e33273d04a2b41e72c64"
+    },
+    {
+      "program": "17_payload.dll.bin",
+      "entry": "0x803a",
+      "native_instructions": 137,
+      "finite_local_computed_sites": 5,
+      "symbolic_import_tail_sites": {},
+      "inherited_explicit_helper_ABIs": [
+        {
+          "site": "0x80f8",
+          "callee": "0x7e630",
+          "contract": "bounded singleton memcpy argument/effect contract"
+        }
+      ],
+      "export_status": "completed",
+      "plan_sha256": "5a13ed0fa976ceee0de99531c8c415f3c2b8adf98aea0e284c19b78a9edc6510",
+      "C_sha256": "3e50336912d5bf3ac670056f6909a577ea8eda2e52852a94fe18b5797a9dd74c"
+    },
+    {
+      "program": "19_payload.dll.bin",
+      "entry": "0x68d44",
+      "native_instructions": 139,
+      "finite_local_computed_sites": 0,
+      "symbolic_import_tail_sites": {
+        "0x68f1b": "HeapFree"
+      },
+      "inherited_explicit_helper_ABIs": [],
+      "export_status": "completed",
+      "plan_sha256": "fafbcc86fe3ae75f9d225395f32d2dfc7a667b96856d6ecdeea3661646d2a9d8",
+      "C_sha256": "e7767f3bdc2632c3391d8a939f767eaaa8787768d91e24a155a21abb710d662e"
+    },
+    {
+      "program": "17_payload.dll.bin",
+      "entry": "0x1372a",
+      "native_instructions": 143,
+      "finite_local_computed_sites": 7,
+      "symbolic_import_tail_sites": {},
+      "inherited_explicit_helper_ABIs": [],
+      "export_status": "completed",
+      "plan_sha256": "88e7c3e1c10617be97078d3dd21aace7471be7e667eb311652b0f82d482b7ad7",
+      "C_sha256": "05b5579183306a4d65a9f7541c5cf6bc302a0d01756b30b8434a374f8659bb7c"
+    },
+    {
+      "program": "17_payload.dll.bin",
+      "entry": "0x66a0b",
+      "native_instructions": 143,
+      "finite_local_computed_sites": 8,
+      "symbolic_import_tail_sites": {},
+      "inherited_explicit_helper_ABIs": [
+        {
+          "site": "0x66a1e",
+          "callee": "0x2af30",
+          "contract": "normal module TLS initialization and pointer return"
+        }
+      ],
+      "export_status": "completed",
+      "plan_sha256": "79d685e7049d45666e027290491bfe0699d445a53b92db4408cf3f2684662f4a",
+      "C_sha256": "38f6f27a89ceac4a5ccd0f9da3e85913b5905fa18425884da26e8b3d3c1e1251"
+    },
+    {
+      "program": "19_payload.dll.bin",
+      "entry": "0x14b79",
+      "native_instructions": 143,
+      "finite_local_computed_sites": 7,
+      "symbolic_import_tail_sites": {},
+      "inherited_explicit_helper_ABIs": [
+        {
+          "site": "0x14c10",
+          "callee": "0x7cfd0",
+          "contract": "bounded singleton memcpy argument/effect contract"
+        },
+        {
+          "site": "0x14c53",
+          "callee": "0x7cfd0",
+          "contract": "bounded singleton memcpy argument/effect contract"
+        }
+      ],
+      "export_status": "completed",
+      "plan_sha256": "970ea1067a843d5baf5106bb9c4379a401dea77a35489d888863d9d61bc5a60f",
+      "C_sha256": "c3806e2abc5a65b5e1333bb2e52b41b3a5825de58e3e5adc4143d10f46bf82d0"
+    },
+    {
+      "program": "19_payload.dll.bin",
+      "entry": "0x23e6d",
+      "native_instructions": 145,
+      "finite_local_computed_sites": 2,
+      "symbolic_import_tail_sites": {},
+      "inherited_explicit_helper_ABIs": [
+        {
+          "site": "0x23e89",
+          "callee": "0x6190",
+          "contract": "normal module TLS initialization and pointer return"
+        }
+      ],
+      "export_status": "completed",
+      "plan_sha256": "10b98dded60e0ef563e504183b3864baf005be7f4080dde46a1eef80adb101e0",
+      "C_sha256": "34fc896f0b4ed4e7d7b6483216f448d53779077d41cdd2aef981e2e194b521b0"
+    },
+    {
+      "program": "17_payload.dll.bin",
+      "entry": "0x65893",
+      "native_instructions": 146,
+      "finite_local_computed_sites": 0,
+      "symbolic_import_tail_sites": {
+        "0x65a71": "WakeByAddressSingle"
+      },
+      "inherited_explicit_helper_ABIs": [
+        {
+          "site": "0x65980",
+          "callee": "0x7e630",
+          "contract": "bounded singleton memcpy argument/effect contract"
+        }
+      ],
+      "export_status": "completed",
+      "plan_sha256": "1497f56f24dae3c8a92f3f7560e339876092a62860c53f9aa094c387276d2766",
+      "C_sha256": "89bc13a810914a0e6393a850b102114f37baba1943defeab2ec3f23fbb2136ae"
+    },
+    {
+      "program": "19_payload.dll.bin",
+      "entry": "0xe745",
+      "native_instructions": 146,
+      "finite_local_computed_sites": 0,
+      "symbolic_import_tail_sites": {
+        "0xe91f": "WakeByAddressSingle"
+      },
+      "inherited_explicit_helper_ABIs": [
+        {
+          "site": "0xe82f",
+          "callee": "0x7cfd0",
+          "contract": "bounded singleton memcpy argument/effect contract"
+        }
+      ],
+      "export_status": "completed",
+      "plan_sha256": "60776f7a1484b27d40b5f51b7475bda8a6d36e8d090b5e16537e60465c4cc259",
+      "C_sha256": "cb295f54eaf981f0c25b60d617e4be1fc2bfe7e6a267202acd6ad1308cca8ba5"
+    },
+    {
+      "program": "17_payload.dll.bin",
+      "entry": "0x47d48",
+      "native_instructions": 148,
+      "finite_local_computed_sites": 5,
+      "symbolic_import_tail_sites": {},
+      "inherited_explicit_helper_ABIs": [],
+      "export_status": "completed",
+      "plan_sha256": "e5975a4ed871c8373f250d68fef431ca717fb1929ee09fb005867b0e180f3c1c",
+      "C_sha256": "83a6f5323b2b391c2d450ad84f9e4dc0fc084b2476448d35bf39dcbf97ee8c2e"
+    },
+    {
+      "program": "19_payload.dll.bin",
+      "entry": "0x19f1",
+      "native_instructions": 153,
+      "finite_local_computed_sites": 6,
+      "symbolic_import_tail_sites": {},
+      "inherited_explicit_helper_ABIs": [
+        {
+          "site": "0x1a72",
+          "callee": "0x63b50",
+          "contract": "allocation output discriminant0/1"
+        },
+        {
+          "site": "0x1b65",
+          "callee": "0x7cfd0",
+          "contract": "bounded singleton memcpy argument/effect contract"
+        },
+        {
+          "site": "0x1ba2",
+          "callee": "0x7cfd0",
+          "contract": "bounded singleton memcpy argument/effect contract"
+        }
+      ],
+      "export_status": "completed",
+      "plan_sha256": "5d287811468da7cb32fccb1ef2c7df7f8925b20be5e0a4f0490d00639a6110a9",
+      "C_sha256": "92878ea305a4590cdecd9c1298fe57594fcaf909d668cfac4d1e12c030215af0"
+    },
+    {
+      "program": "19_payload.dll.bin",
+      "entry": "0x11453",
+      "native_instructions": 155,
+      "finite_local_computed_sites": 7,
+      "symbolic_import_tail_sites": {},
+      "inherited_explicit_helper_ABIs": [
+        {
+          "site": "0x114b3",
+          "callee": "0x63b50",
+          "contract": "allocation output discriminant0/1"
+        }
+      ],
+      "export_status": "completed",
+      "plan_sha256": "8f4ae1a1026c04a9b082e14c38e2355f0942a44f6c6b28a70cd94f8a587a6cf5",
+      "C_sha256": "2cf4468b8905bb77c5d5398149d0652d0179bb9c4d589c15956b05d4881a60a9"
+    },
+    {
+      "program": "19_payload.dll.bin",
+      "entry": "0x28e8e",
+      "native_instructions": 156,
+      "finite_local_computed_sites": 8,
+      "symbolic_import_tail_sites": {},
+      "inherited_explicit_helper_ABIs": [
+        {
+          "site": "0x28fdb",
+          "callee": "0x7cfd0",
+          "contract": "bounded singleton memcpy argument/effect contract"
+        },
+        {
+          "site": "0x2900e",
+          "callee": "0x7cfd0",
+          "contract": "bounded singleton memcpy argument/effect contract"
+        }
+      ],
+      "export_status": "completed",
+      "plan_sha256": "ad8fdbf1c207da977fa248a0705718ac5817e15c0c696c39535134747af74389",
+      "C_sha256": "e08ed086df8f067a6007c9281e8cdd05ea1b897911ea421a0071b14df653c63d"
+    },
+    {
+      "program": "17_payload.dll.bin",
+      "entry": "0x492e4",
+      "native_instructions": 160,
+      "finite_local_computed_sites": 8,
+      "symbolic_import_tail_sites": {},
+      "inherited_explicit_helper_ABIs": [
+        {
+          "site": "0x492fd",
+          "callee": "0x2af30",
+          "contract": "normal module TLS initialization and pointer return"
+        },
+        {
+          "site": "0x49394",
+          "callee": "0x7e630",
+          "contract": "bounded singleton memcpy argument/effect contract"
+        },
+        {
+          "site": "0x4945a",
+          "callee": "0x7e630",
+          "contract": "bounded singleton memcpy argument/effect contract"
+        },
+        {
+          "site": "0x494b6",
+          "callee": "0x7e630",
+          "contract": "bounded singleton memcpy argument/effect contract"
+        }
+      ],
+      "export_status": "completed",
+      "plan_sha256": "9d820b5a60f28d7a9c2e88a24f692746f3de65dfb5f570cc442a09f326f4c9d2",
+      "C_sha256": "49261236c825e2132fb0d51b6ff44e9bb8b75db68b93099f7ed95b3b3e010e3a"
+    },
+    {
+      "program": "19_payload.dll.bin",
+      "entry": "0x22e4b",
+      "native_instructions": 166,
+      "finite_local_computed_sites": 7,
+      "symbolic_import_tail_sites": {},
+      "inherited_explicit_helper_ABIs": [
+        {
+          "site": "0x22e71",
+          "callee": "0x6190",
+          "contract": "normal module TLS initialization and pointer return"
+        },
+        {
+          "site": "0x22ef9",
+          "callee": "0x7cfd0",
+          "contract": "bounded singleton memcpy argument/effect contract"
+        },
+        {
+          "site": "0x2306f",
+          "callee": "0x63b50",
+          "contract": "allocation output discriminant0/1"
+        }
+      ],
+      "export_status": "completed",
+      "plan_sha256": "66392d0c170766cb174a6f6685a405be33a50970502c841025cf1a6d66a28574",
+      "C_sha256": "bcb7381ac3a66b552018d9684b38311ca00a9925451185b7e46a74ca9d041e62"
+    },
+    {
+      "program": "17_payload.dll.bin",
+      "entry": "0x3c5a",
+      "native_instructions": 171,
+      "finite_local_computed_sites": 3,
+      "symbolic_import_tail_sites": {},
+      "inherited_explicit_helper_ABIs": [],
+      "export_status": "completed",
+      "plan_sha256": "c90e20d53b897db15e00d0d1c2463bc82fe47a730a319f5b3f48e9adb4338980",
+      "C_sha256": "2534c5e18d718906076290ea87a40d72087423dc98d73e82ba3825e619fb7153"
+    },
+    {
+      "program": "19_payload.dll.bin",
+      "entry": "0x20d2",
+      "native_instructions": 172,
+      "finite_local_computed_sites": 6,
+      "symbolic_import_tail_sites": {},
+      "inherited_explicit_helper_ABIs": [
+        {
+          "site": "0x2176",
+          "callee": "0x7cfd0",
+          "contract": "bounded singleton memcpy argument/effect contract"
+        },
+        {
+          "site": "0x2308",
+          "callee": "0x7cfd0",
+          "contract": "bounded singleton memcpy argument/effect contract"
+        }
+      ],
+      "export_status": "completed",
+      "plan_sha256": "595ab7de870049947f275194867b12d4fdc28ef8dc30b97be9dea5c4c5472a9d",
+      "C_sha256": "beaa2346583c4b35a673cbe04ea71288c8c3cdba039a4d18a5682b470444b8e7"
+    },
+    {
+      "program": "17_payload.dll.bin",
+      "entry": "0x15661",
+      "native_instructions": 187,
+      "finite_local_computed_sites": 6,
+      "symbolic_import_tail_sites": {},
+      "inherited_explicit_helper_ABIs": [],
+      "export_status": "completed",
+      "plan_sha256": "b1cc290dfcafc76d05e742ba95b5256d0834b41a02e2e8ad1583b4aecd64a010",
+      "C_sha256": "169e06b2765c5de9ef5f0cecdb036e861a3aaa121590c6abbd52034c86b981b3"
+    },
+    {
+      "program": "17_payload.dll.bin",
+      "entry": "0x37d7b",
+      "native_instructions": 187,
+      "finite_local_computed_sites": 4,
+      "symbolic_import_tail_sites": {},
+      "inherited_explicit_helper_ABIs": [
+        {
+          "site": "0x37da3",
+          "callee": "0x2af30",
+          "contract": "normal module TLS initialization and pointer return"
+        }
+      ],
+      "export_status": "completed",
+      "plan_sha256": "086276ecbe2c0f04a567565e18d32c087f8635e3ba861bfff6ae4bebb49bf1c2",
+      "C_sha256": "aa9ee70d0872f99cbed933ab410d0409c91cb562326a03863c487f70fccc1061"
+    },
+    {
+      "program": "19_payload.dll.bin",
+      "entry": "0xf03b",
+      "native_instructions": 190,
+      "finite_local_computed_sites": 3,
+      "symbolic_import_tail_sites": {},
+      "inherited_explicit_helper_ABIs": [],
+      "export_status": "completed",
+      "plan_sha256": "b717462f5fd64a3ceb277e6e90e072228f421c2d94f6874e17d335d1a67b9af7",
+      "C_sha256": "e0b50229c0df83781359751a94ae9f4b16ef6c93cc91a5a21ef7fddc7ea384d5"
+    },
+    {
+      "program": "19_payload.dll.bin",
+      "entry": "0x689b3",
+      "native_instructions": 191,
+      "finite_local_computed_sites": 6,
+      "symbolic_import_tail_sites": {},
+      "inherited_explicit_helper_ABIs": [
+        {
+          "site": "0x689dc",
+          "callee": "0x6190",
+          "contract": "normal module TLS initialization and pointer return"
+        }
+      ],
+      "export_status": "completed",
+      "plan_sha256": "71354f2b4ce6c7726d6a19385ad85196b52cf56c35dc92a4ff70e4419b329b92",
+      "C_sha256": "828216824f009eef7f616ba48b8a6cf1ea1f6249cc5be1afe8c364da25b49dc8"
+    },
+    {
+      "program": "19_payload.dll.bin",
+      "entry": "0x2acab",
+      "native_instructions": 200,
+      "finite_local_computed_sites": 5,
+      "symbolic_import_tail_sites": {},
+      "inherited_explicit_helper_ABIs": [],
+      "export_status": "completed",
+      "plan_sha256": "189ad9ee6b36dcb499fd83f2faffd88929309942a804dca70020ba3bbe3731da",
+      "C_sha256": "dae14247b7b3221d76c0eb0b6816c9469319d19025c944aee000b0891e0771e6"
+    },
+    {
+      "program": "19_payload.dll.bin",
+      "entry": "0x1d0b",
+      "native_instructions": 202,
+      "finite_local_computed_sites": 9,
+      "symbolic_import_tail_sites": {},
+      "inherited_explicit_helper_ABIs": [],
+      "export_status": "completed",
+      "plan_sha256": "a0e31934265d7c285b90f370e5df7bf02d876ab36cdf69976d6143761f4918c2",
+      "C_sha256": "d97bdbf2d9854319a45b2f8abb8e91323b55c5a4051d3954218af4227c1d2198"
+    },
+    {
+      "program": "17_payload.dll.bin",
+      "entry": "0x2eb7d",
+      "native_instructions": 203,
+      "finite_local_computed_sites": 12,
+      "symbolic_import_tail_sites": {},
+      "inherited_explicit_helper_ABIs": [
+        {
+          "site": "0x2ed31",
+          "callee": "0x7e630",
+          "contract": "bounded singleton memcpy argument/effect contract"
+        }
+      ],
+      "export_status": "completed",
+      "plan_sha256": "27cb02b337aa51038d4578d01a10b664c71a1c4426813d2b24bd9aa6af12e164",
+      "C_sha256": "1ba5a26ad48ae123f7ffdeb6de00c5ca4027afd1ecfee66999417c72ee95dc6c"
+    },
+    {
+      "program": "19_payload.dll.bin",
+      "entry": "0x1a61c",
+      "native_instructions": 208,
+      "finite_local_computed_sites": 4,
+      "symbolic_import_tail_sites": {},
+      "inherited_explicit_helper_ABIs": [
+        {
+          "site": "0x1a63c",
+          "callee": "0x6190",
+          "contract": "normal module TLS initialization and pointer return"
+        },
+        {
+          "site": "0x1a943",
+          "callee": "0x63b50",
+          "contract": "allocation output discriminant0/1"
+        }
+      ],
+      "export_status": "completed",
+      "plan_sha256": "35d48615dab34e4d4506669c43d8c351906107348ab9f4600cf18677fabeee5c",
+      "C_sha256": "eb4de3211d75f9d06d0c1d02f1d032f41bd2d4cf040ab095a27acd1748515331"
+    },
+    {
+      "program": "17_payload.dll.bin",
+      "entry": "0x2b13d",
+      "native_instructions": 238,
+      "finite_local_computed_sites": 7,
+      "symbolic_import_tail_sites": {},
+      "inherited_explicit_helper_ABIs": [
+        {
+          "site": "0x2b320",
+          "callee": "0x5b993",
+          "contract": "allocation output discriminant0/1"
+        }
+      ],
+      "export_status": "completed",
+      "plan_sha256": "e8ec3f257032ee4c84bd67704ec01456edc9e5941528960c704ad110f0afc842",
+      "C_sha256": "b1f40ef41bac305a4a47c165e72362d6b3e5c6eff8752c901f3457a2ffe84494"
+    },
+    {
+      "program": "17_payload.dll.bin",
+      "entry": "0x1dc19",
+      "native_instructions": 269,
+      "finite_local_computed_sites": 0,
+      "symbolic_import_tail_sites": {
+        "0x1de90": "HeapFree"
+      },
+      "inherited_explicit_helper_ABIs": [],
+      "export_status": "completed",
+      "plan_sha256": "544600c725994ffde60c7376f64866812c90bb1c1198fd4940a0174a719260b2",
+      "C_sha256": "df5c5ecaa8e0f14d7dd09d7b9965b9905e4c94bbd74cce9462ab7c6a0409733c"
+    },
+    {
+      "program": "19_payload.dll.bin",
+      "entry": "0x46522",
+      "native_instructions": 269,
+      "finite_local_computed_sites": 0,
+      "symbolic_import_tail_sites": {
+        "0x468fa": "HeapFree"
+      },
+      "inherited_explicit_helper_ABIs": [],
+      "export_status": "completed",
+      "plan_sha256": "28c83d14dfefc996331f4079041c6100a705fac3a9005203a3d6db3b1b179e39",
+      "C_sha256": "1932899b517cbd1f62a09e77873895f1cf736b9a218d9c8db2f394e64a8f15ef"
+    },
+    {
+      "program": "17_payload.dll.bin",
+      "entry": "0x63a05",
+      "native_instructions": 272,
+      "finite_local_computed_sites": 12,
+      "symbolic_import_tail_sites": {},
+      "inherited_explicit_helper_ABIs": [
+        {
+          "site": "0x63dcf",
+          "callee": "0x5b993",
+          "contract": "allocation output discriminant0/1"
+        }
+      ],
+      "export_status": "completed",
+      "plan_sha256": "96fc84fb346541a126b66925cee8e683a4be13f4dba1deff802522c0a1fdb799",
+      "C_sha256": "bd3462d018d6788b496c50a9ae53309afb454029c4a8600fb33d747c80beed93"
+    },
+    {
+      "program": "17_payload.dll.bin",
+      "entry": "0x63f30",
+      "native_instructions": 284,
+      "finite_local_computed_sites": 7,
+      "symbolic_import_tail_sites": {},
+      "inherited_explicit_helper_ABIs": [
+        {
+          "site": "0x63f5e",
+          "callee": "0x2af30",
+          "contract": "normal module TLS initialization and pointer return"
+        },
+        {
+          "site": "0x63ffa",
+          "callee": "0x5b993",
+          "contract": "allocation output discriminant0/1"
+        },
+        {
+          "site": "0x642a9",
+          "callee": "0x7e630",
+          "contract": "bounded singleton memcpy argument/effect contract"
+        }
+      ],
+      "export_status": "completed",
+      "plan_sha256": "2302241532af519a9550e60ebf99f0856e8c7c16bfd5c5559882ba35a8e089e8",
+      "C_sha256": "06840ae8b77e550ce3d6badd3dbcd2ec9febaf134e13463cb127c9b60f5f0892"
+    },
+    {
+      "program": "19_payload.dll.bin",
+      "entry": "0x57ab8",
+      "native_instructions": 303,
+      "finite_local_computed_sites": 2,
+      "symbolic_import_tail_sites": {
+        "0x57dcd": "CloseHandle"
+      },
+      "inherited_explicit_helper_ABIs": [
+        {
+          "site": "0x57e95",
+          "callee": "0x63b50",
+          "contract": "allocation output discriminant0/1"
+        }
+      ],
+      "export_status": "completed",
+      "plan_sha256": "29ec318c7a12de67a3ec16ee58a4acf8c731f4779a3a05e8250fffd34dfb0ce2",
+      "C_sha256": "926f75a504e7dd2e6f27626bb9bbddf979f258d1c439d1fdb28a45e4ac2073cd"
+    },
+    {
+      "program": "19_payload.dll.bin",
+      "entry": "0x4699e",
+      "native_instructions": 306,
+      "finite_local_computed_sites": 13,
+      "symbolic_import_tail_sites": {},
+      "inherited_explicit_helper_ABIs": [
+        {
+          "site": "0x469b6",
+          "callee": "0x6190",
+          "contract": "normal module TLS initialization and pointer return"
+        },
+        {
+          "site": "0x46e3e",
+          "callee": "0x7cfd0",
+          "contract": "bounded singleton memcpy argument/effect contract"
+        },
+        {
+          "site": "0x46e8e",
+          "callee": "0x63b50",
+          "contract": "allocation output discriminant0/1"
+        }
+      ],
+      "export_status": "completed",
+      "plan_sha256": "1bacae268c1e6626c129d4452627f95f15be45fc542d31abafd1f96aeedc876f",
+      "C_sha256": "34562e6b38965f84676b450802dc1c8b8b98cab6540768e4b6ec5f2d9d168869"
+    },
+    {
+      "program": "17_payload.dll.bin",
+      "entry": "0x2d5fb",
+      "native_instructions": 360,
+      "finite_local_computed_sites": 17,
+      "symbolic_import_tail_sites": {},
+      "inherited_explicit_helper_ABIs": [
+        {
+          "site": "0x2da9f",
+          "callee": "0x5b993",
+          "contract": "allocation output discriminant0/1"
+        },
+        {
+          "site": "0x2dac0",
+          "callee": "0x7e630",
+          "contract": "bounded singleton memcpy argument/effect contract"
+        }
+      ],
+      "export_status": "completed",
+      "plan_sha256": "963b15a5f0a32379cb184fec4bfd100f3d3926cfcb1580ecd39569c363f722d8",
+      "C_sha256": "b258c565e295cbd16e1a7ce570607f60d11ee862498bc14f968359164750a089"
+    },
+    {
+      "program": "17_payload.dll.bin",
+      "entry": "0x5d076",
+      "native_instructions": 365,
+      "finite_local_computed_sites": 9,
+      "symbolic_import_tail_sites": {},
+      "inherited_explicit_helper_ABIs": [
+        {
+          "site": "0x5d659",
+          "callee": "0x5b993",
+          "contract": "allocation output discriminant0/1"
+        }
+      ],
+      "export_status": "completed",
+      "plan_sha256": "a091d29498c2f5b7a539c98486a08ad9229f3bdbc6c732c81facda9708ed9b22",
+      "C_sha256": "c60f839f3a319e99edd7d91cc51a4904cb9d7739ebe05bf5f9be7d0843c40896"
+    },
+    {
+      "program": "19_payload.dll.bin",
+      "entry": "0x6627b",
+      "native_instructions": 413,
+      "finite_local_computed_sites": 8,
+      "symbolic_import_tail_sites": {},
+      "inherited_explicit_helper_ABIs": [
+        {
+          "site": "0x669ec",
+          "callee": "0x63b50",
+          "contract": "allocation output discriminant0/1"
+        }
+      ],
+      "export_status": "completed",
+      "plan_sha256": "48a14c8eb3f8d2bf98d9fa64e6cc839709090ce00d4088253669d3cec6135b8f",
+      "C_sha256": "78910fd442c0a1a61444ff993f2613b051bc4e3ed6095aaa8c91bf8f7795ab88"
+    },
+    {
+      "program": "17_payload.dll.bin",
+      "entry": "0x36230",
+      "native_instructions": 688,
+      "finite_local_computed_sites": 35,
+      "symbolic_import_tail_sites": {},
+      "inherited_explicit_helper_ABIs": [
+        {
+          "site": "0x3625a",
+          "callee": "0x2af30",
+          "contract": "normal module TLS initialization and pointer return"
+        }
+      ],
+      "export_status": "completed",
+      "plan_sha256": "a7031fe75e19bd48f51b860cdb334685ac9cdc20afec67d8c75e967252cd692c",
+      "C_sha256": "2fee3bb654252fb32f582424be1dc4c6444c89b87bb59ed33d105c41e1cda2d1"
+    },
+    {
+      "program": "19_payload.dll.bin",
+      "entry": "0x5f29a",
+      "native_instructions": 735,
+      "finite_local_computed_sites": 37,
+      "symbolic_import_tail_sites": {
+        "0x5fef0": "HeapFree"
+      },
+      "inherited_explicit_helper_ABIs": [
+        {
+          "site": "0x5f2ab",
+          "callee": "0x70e00",
+          "contract": "stack-probe ABI"
+        },
+        {
+          "site": "0x5f5e6",
+          "callee": "0x7cfd0",
+          "contract": "bounded singleton memcpy argument/effect contract"
+        },
+        {
+          "site": "0x5f70c",
+          "callee": "0x7cfd0",
+          "contract": "bounded singleton memcpy argument/effect contract"
+        },
+        {
+          "site": "0x5f768",
+          "callee": "0xdda5",
+          "contract": "ReadDirNext output discriminant0/1"
+        },
+        {
+          "site": "0x5f80a",
+          "callee": "0x7cfd0",
+          "contract": "bounded singleton memcpy argument/effect contract"
+        },
+        {
+          "site": "0x5fa7a",
+          "callee": "0x7cfd0",
+          "contract": "bounded singleton memcpy argument/effect contract"
+        },
+        {
+          "site": "0x5fb14",
+          "callee": "0x7cfd0",
+          "contract": "bounded singleton memcpy argument/effect contract"
+        },
+        {
+          "site": "0x5fb8f",
+          "callee": "0x7cfd0",
+          "contract": "bounded singleton memcpy argument/effect contract"
+        },
+        {
+          "site": "0x5fc01",
+          "callee": "0x7cfd0",
+          "contract": "bounded singleton memcpy argument/effect contract"
+        },
+        {
+          "site": "0x5fcd4",
+          "callee": "0x7cfd0",
+          "contract": "bounded singleton memcpy argument/effect contract"
+        },
+        {
+          "site": "0x5fd52",
+          "callee": "0x7cfd0",
+          "contract": "bounded singleton memcpy argument/effect contract"
+        },
+        {
+          "site": "0x5fdba",
+          "callee": "0x7cfd0",
+          "contract": "bounded singleton memcpy argument/effect contract"
+        }
+      ],
+      "export_status": "completed",
+      "plan_sha256": "822765b2b5ba01abd7266695ec066d1773ef5fe932ff527dd5bb0013de292c25",
+      "C_sha256": "8bc50eff6a494ae5e8979deb25982e8168f6b3da311bae1d034b6ac6a18f1fb2"
+    },
+    {
+      "program": "17_payload.dll.bin",
+      "entry": "0x141d7",
+      "native_instructions": 1029,
+      "finite_local_computed_sites": 51,
+      "symbolic_import_tail_sites": {},
+      "inherited_explicit_helper_ABIs": [
+        {
+          "site": "0x141ff",
+          "callee": "0x2af30",
+          "contract": "normal module TLS initialization and pointer return"
+        },
+        {
+          "site": "0x15078",
+          "callee": "0x7e630",
+          "contract": "bounded singleton memcpy argument/effect contract"
+        }
+      ],
+      "export_status": "completed",
+      "plan_sha256": "d77b606eebbede3e917121445278b9d5839bbf520bd547f3c47bbcf75d0cb4c7",
+      "C_sha256": "8e05ae74ac14826f0ecb96427e10fac7e0b4df5ea62e91e2b3e5fabb7d0b163e"
+    }
+  ],
+  "analysis_module_sha256": {
+    "work\\alpme_analysis\\semantic_closure_20261027\\round5_whole_native\\verify_baseline_exports.py": "fe8e316b2f64f4e4f8de29674a3b399cd9cb885d697055df5063470393926c1d",
+    "work\\alpme_analysis\\semantic_closure_20261027\\round3_cleanup_finish\\normal_tls_static.py": "16d7a4fa002f2d04b5c7d1c7eb9363ee63886cb1e02b2b12140703874ed71241",
+    "work\\alpme_analysis\\semantic_closure_20261027\\round3_cleanup_finish\\block_fixpoint.py": "75f930314859438a7e3110cf3bc8dccab0c8072367feaf1a503f3f9c5d55a402",
+    "work\\alpme_analysis\\semantic_closure_20261027\\round5_whole_native\\scan_conservative.py": "d0afa5a7e8f385893569f419d717099d0be09ead20950305e2e2c5dfbb39991e"
+  },
+  "receipt_sha256": "3f4076cfdb003765d947c47a32fe4d249ddb3b55b391ac1f320ed0184100c226",
+  "metadata_sha256": {
+    "17": "3753366821e1d7058d7360d1dab47096cf9bd752de2771e470b5023d180f0bf3",
+    "19": "124770705dc5b8548d2e8fddf1ce5b5392b875f169bc2d8fa3c279f540df030a"
+  },
+  "verifier_sha256": "fe8e316b2f64f4e4f8de29674a3b399cd9cb885d697055df5063470393926c1d",
+  "elapsed_seconds": 32.95300000000134,
+  "native_sample_execution": false,
+  "network": false,
+  "host_secrets": false
+}
