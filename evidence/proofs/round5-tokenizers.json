@@ -1,0 +1,3694 @@
+{
+  "scope": "CONDITIONAL NORMAL PE/TLS STATIC CFG AND LOCAL SEMANTICS; not original source or whole-program proof",
+  "sample_execution": false,
+  "network": false,
+  "secret_reads": false,
+  "original_byte_patches": 0,
+  "assumptions": [
+    "Original PE read-only tables and TLS template plus actual normal static initializer algebra are unchanged.",
+    "Windows x64 calling convention; valid parser objects; caller output/input and owned allocations do not alias callee private stack scalars.",
+    "No arbitrary memory-corruption or adversarial alias guarantee. Finite branch target sets may overapproximate feasible paths."
+  ],
+  "functions": [
+    {
+      "version": "17",
+      "entry": "0x8e81",
+      "end": "0x987a",
+      "source_sha256": "24f7eed14b69c561bd2dde6aa61759cabc8588293e9a0099dde8e381f96f228a",
+      "original_imagebase": "0x180000000",
+      "frozen_imagebase": "0x8f70000",
+      "function_sha256": "71b7f46b506138f15b75b54e5745727a8801d42e54d0f6ca8e3b381ae926e9e2",
+      "function_bytes": 2553,
+      "normalized_function_bytes_identical": true,
+      "instructions": 641,
+      "computed_jumps": 48,
+      "computed_jump_targets": [
+        {
+          "site_rva": "0x8f0e",
+          "instruction": "jmp rcx",
+          "targets_rva": [
+            "0x9366",
+            "0x953b"
+          ],
+          "targets_address": [
+            "0x180009366",
+            "0x18000953b"
+          ],
+          "complete_over_abstract_states": true,
+          "proof": "Finite-set abstract interpretation; setcc={0,1}; cmov=union of both operands; only file-backed nonwritable table bytes used as constants. No condition forced.",
+          "original_bytes": "ffe1"
+        },
+        {
+          "site_rva": "0x9591",
+          "instruction": "jmp rax",
+          "targets_rva": [
+            "0x93e5",
+            "0x9748"
+          ],
+          "targets_address": [
+            "0x1800093e5",
+            "0x180009748"
+          ],
+          "complete_over_abstract_states": true,
+          "proof": "Finite-set abstract interpretation; setcc={0,1}; cmov=union of both operands; only file-backed nonwritable table bytes used as constants. No condition forced.",
+          "original_bytes": "ffe0"
+        },
+        {
+          "site_rva": "0x97bc",
+          "instruction": "jmp rax",
+          "targets_rva": [
+            "0x9008",
+            "0x90d3"
+          ],
+          "targets_address": [
+            "0x180009008",
+            "0x1800090d3"
+          ],
+          "complete_over_abstract_states": true,
+          "proof": "Finite-set abstract interpretation; setcc={0,1}; cmov=union of both operands; only file-backed nonwritable table bytes used as constants. No condition forced.",
+          "original_bytes": "ffe0"
+        },
+        {
+          "site_rva": "0x9468",
+          "instruction": "jmp rcx",
+          "targets_rva": [
+            "0x9319"
+          ],
+          "targets_address": [
+            "0x180009319"
+          ],
+          "complete_over_abstract_states": true,
+          "proof": "Finite-set abstract interpretation; setcc={0,1}; cmov=union of both operands; only file-backed nonwritable table bytes used as constants. No condition forced.",
+          "original_bytes": "ffe1"
+        },
+        {
+          "site_rva": "0x94f0",
+          "instruction": "jmp rax",
+          "targets_rva": [
+            "0x904a",
+            "0x97be"
+          ],
+          "targets_address": [
+            "0x18000904a",
+            "0x1800097be"
+          ],
+          "complete_over_abstract_states": true,
+          "proof": "Finite-set abstract interpretation; setcc={0,1}; cmov=union of both operands; only file-backed nonwritable table bytes used as constants. No condition forced.",
+          "original_bytes": "ffe0"
+        },
+        {
+          "site_rva": "0x9539",
+          "instruction": "jmp rax",
+          "targets_rva": [
+            "0x8f78",
+            "0x904a",
+            "0x96c9",
+            "0x97be"
+          ],
+          "targets_address": [
+            "0x180008f78",
+            "0x18000904a",
+            "0x1800096c9",
+            "0x1800097be"
+          ],
+          "complete_over_abstract_states": true,
+          "proof": "Finite-set abstract interpretation; setcc={0,1}; cmov=union of both operands; only file-backed nonwritable table bytes used as constants. No condition forced.",
+          "original_bytes": "ffe0"
+        },
+        {
+          "site_rva": "0x951a",
+          "instruction": "jmp rcx",
+          "targets_rva": [
+            "0x8fb0",
+            "0x9236"
+          ],
+          "targets_address": [
+            "0x180008fb0",
+            "0x180009236"
+          ],
+          "complete_over_abstract_states": true,
+          "proof": "Finite-set abstract interpretation; setcc={0,1}; cmov=union of both operands; only file-backed nonwritable table bytes used as constants. No condition forced.",
+          "original_bytes": "ffe1"
+        },
+        {
+          "site_rva": "0x94d2",
+          "instruction": "jmp rcx",
+          "targets_rva": [
+            "0x904a",
+            "0x908d",
+            "0x9319",
+            "0x94fe"
+          ],
+          "targets_address": [
+            "0x18000904a",
+            "0x18000908d",
+            "0x180009319",
+            "0x1800094fe"
+          ],
+          "complete_over_abstract_states": true,
+          "proof": "Finite-set abstract interpretation; setcc={0,1}; cmov=union of both operands; only file-backed nonwritable table bytes used as constants. No condition forced.",
+          "original_bytes": "ffe1"
+        },
+        {
+          "site_rva": "0x94ab",
+          "instruction": "jmp rcx",
+          "targets_rva": [
+            "0x911f",
+            "0x9382"
+          ],
+          "targets_address": [
+            "0x18000911f",
+            "0x180009382"
+          ],
+          "complete_over_abstract_states": true,
+          "proof": "Finite-set abstract interpretation; setcc={0,1}; cmov=union of both operands; only file-backed nonwritable table bytes used as constants. No condition forced.",
+          "original_bytes": "ffe1"
+        },
+        {
+          "site_rva": "0x9336",
+          "instruction": "jmp rcx",
+          "targets_rva": [
+            "0x9289",
+            "0x9748"
+          ],
+          "targets_address": [
+            "0x180009289",
+            "0x180009748"
+          ],
+          "complete_over_abstract_states": true,
+          "proof": "Finite-set abstract interpretation; setcc={0,1}; cmov=union of both operands; only file-backed nonwritable table bytes used as constants. No condition forced.",
+          "original_bytes": "ffe1"
+        },
+        {
+          "site_rva": "0x9048",
+          "instruction": "jmp rcx",
+          "targets_rva": [
+            "0x9338",
+            "0x969c"
+          ],
+          "targets_address": [
+            "0x180009338",
+            "0x18000969c"
+          ],
+          "complete_over_abstract_states": true,
+          "proof": "Finite-set abstract interpretation; setcc={0,1}; cmov=union of both operands; only file-backed nonwritable table bytes used as constants. No condition forced.",
+          "original_bytes": "ffe1"
+        },
+        {
+          "site_rva": "0x9251",
+          "instruction": "jmp rax",
+          "targets_rva": [
+            "0x8f39",
+            "0x962f"
+          ],
+          "targets_address": [
+            "0x180008f39",
+            "0x18000962f"
+          ],
+          "complete_over_abstract_states": true,
+          "proof": "Finite-set abstract interpretation; setcc={0,1}; cmov=union of both operands; only file-backed nonwritable table bytes used as constants. No condition forced.",
+          "original_bytes": "ffe0"
+        },
+        {
+          "site_rva": "0x97f5",
+          "instruction": "jmp rcx",
+          "targets_rva": [
+            "0x904a"
+          ],
+          "targets_address": [
+            "0x18000904a"
+          ],
+          "complete_over_abstract_states": true,
+          "proof": "Finite-set abstract interpretation; setcc={0,1}; cmov=union of both operands; only file-backed nonwritable table bytes used as constants. No condition forced.",
+          "original_bytes": "ffe1"
+        },
+        {
+          "site_rva": "0x8fae",
+          "instruction": "jmp rax",
+          "targets_rva": [
+            "0x96c9"
+          ],
+          "targets_address": [
+            "0x1800096c9"
+          ],
+          "complete_over_abstract_states": true,
+          "proof": "Finite-set abstract interpretation; setcc={0,1}; cmov=union of both operands; only file-backed nonwritable table bytes used as constants. No condition forced.",
+          "original_bytes": "ffe0"
+        },
+        {
+          "site_rva": "0x8fce",
+          "instruction": "jmp rdx",
+          "targets_rva": [
+            "0x9236",
+            "0x9680"
+          ],
+          "targets_address": [
+            "0x180009236",
+            "0x180009680"
+          ],
+          "complete_over_abstract_states": true,
+          "proof": "Finite-set abstract interpretation; setcc={0,1}; cmov=union of both operands; only file-backed nonwritable table bytes used as constants. No condition forced.",
+          "original_bytes": "ffe2"
+        },
+        {
+          "site_rva": "0x9348",
+          "instruction": "jmp rax",
+          "targets_rva": [
+            "0x9008",
+            "0x90d3"
+          ],
+          "targets_address": [
+            "0x180009008",
+            "0x1800090d3"
+          ],
+          "complete_over_abstract_states": true,
+          "proof": "Finite-set abstract interpretation; setcc={0,1}; cmov=union of both operands; only file-backed nonwritable table bytes used as constants. No condition forced.",
+          "original_bytes": "ffe0"
+        },
+        {
+          "site_rva": "0x908b",
+          "instruction": "jmp rax",
+          "targets_rva": [
+            "0x9289",
+            "0x9748"
+          ],
+          "targets_address": [
+            "0x180009289",
+            "0x180009748"
+          ],
+          "complete_over_abstract_states": true,
+          "proof": "Finite-set abstract interpretation; setcc={0,1}; cmov=union of both operands; only file-backed nonwritable table bytes used as constants. No condition forced.",
+          "original_bytes": "ffe0"
+        },
+        {
+          "site_rva": "0x9704",
+          "instruction": "jmp rax",
+          "targets_rva": [
+            "0x9289",
+            "0x9748"
+          ],
+          "targets_address": [
+            "0x180009289",
+            "0x180009748"
+          ],
+          "complete_over_abstract_states": true,
+          "proof": "Finite-set abstract interpretation; setcc={0,1}; cmov=union of both operands; only file-backed nonwritable table bytes used as constants. No condition forced.",
+          "original_bytes": "ffe0"
+        },
+        {
+          "site_rva": "0x90b2",
+          "instruction": "jmp rax",
+          "targets_rva": [
+            "0x8f10",
+            "0x94fe"
+          ],
+          "targets_address": [
+            "0x180008f10",
+            "0x1800094fe"
+          ],
+          "complete_over_abstract_states": true,
+          "proof": "Finite-set abstract interpretation; setcc={0,1}; cmov=union of both operands; only file-backed nonwritable table bytes used as constants. No condition forced.",
+          "original_bytes": "ffe0"
+        },
+        {
+          "site_rva": "0x9648",
+          "instruction": "jmp rax",
+          "targets_rva": [
+            "0x9289",
+            "0x9748"
+          ],
+          "targets_address": [
+            "0x180009289",
+            "0x180009748"
+          ],
+          "complete_over_abstract_states": true,
+          "proof": "Finite-set abstract interpretation; setcc={0,1}; cmov=union of both operands; only file-backed nonwritable table bytes used as constants. No condition forced.",
+          "original_bytes": "ffe0"
+        },
+        {
+          "site_rva": "0x9380",
+          "instruction": "jmp rax",
+          "targets_rva": [
+            "0x911f"
+          ],
+          "targets_address": [
+            "0x18000911f"
+          ],
+          "complete_over_abstract_states": true,
+          "proof": "Finite-set abstract interpretation; setcc={0,1}; cmov=union of both operands; only file-backed nonwritable table bytes used as constants. No condition forced.",
+          "original_bytes": "ffe0"
+        },
+        {
+          "site_rva": "0x96c7",
+          "instruction": "jmp rax",
+          "targets_rva": [
+            "0x9008",
+            "0x90d3"
+          ],
+          "targets_address": [
+            "0x180009008",
+            "0x1800090d3"
+          ],
+          "complete_over_abstract_states": true,
+          "proof": "Finite-set abstract interpretation; setcc={0,1}; cmov=union of both operands; only file-backed nonwritable table bytes used as constants. No condition forced.",
+          "original_bytes": "ffe0"
+        },
+        {
+          "site_rva": "0x8f5b",
+          "instruction": "jmp rax",
+          "targets_rva": [
+            "0x9366",
+            "0x97f7"
+          ],
+          "targets_address": [
+            "0x180009366",
+            "0x1800097f7"
+          ],
+          "complete_over_abstract_states": true,
+          "proof": "Finite-set abstract interpretation; setcc={0,1}; cmov=union of both operands; only file-backed nonwritable table bytes used as constants. No condition forced.",
+          "original_bytes": "ffe0"
+        },
+        {
+          "site_rva": "0x93ae",
+          "instruction": "jmp rcx",
+          "targets_rva": [
+            "0x9366",
+            "0x9706"
+          ],
+          "targets_address": [
+            "0x180009366",
+            "0x180009706"
+          ],
+          "complete_over_abstract_states": true,
+          "proof": "Finite-set abstract interpretation; setcc={0,1}; cmov=union of both operands; only file-backed nonwritable table bytes used as constants. No condition forced.",
+          "original_bytes": "ffe1"
+        },
+        {
+          "site_rva": "0x969a",
+          "instruction": "jmp rdx",
+          "targets_rva": [
+            "0x9236",
+            "0x934a"
+          ],
+          "targets_address": [
+            "0x180009236",
+            "0x18000934a"
+          ],
+          "complete_over_abstract_states": true,
+          "proof": "Finite-set abstract interpretation; setcc={0,1}; cmov=union of both operands; only file-backed nonwritable table bytes used as constants. No condition forced.",
+          "original_bytes": "ffe2"
+        },
+        {
+          "site_rva": "0x93e3",
+          "instruction": "jmp rax",
+          "targets_rva": [
+            "0x9366",
+            "0x9706"
+          ],
+          "targets_address": [
+            "0x180009366",
+            "0x180009706"
+          ],
+          "complete_over_abstract_states": true,
+          "proof": "Finite-set abstract interpretation; setcc={0,1}; cmov=union of both operands; only file-backed nonwritable table bytes used as constants. No condition forced.",
+          "original_bytes": "ffe0"
+        },
+        {
+          "site_rva": "0x8f37",
+          "instruction": "jmp rcx",
+          "targets_rva": [
+            "0x9253",
+            "0x9319"
+          ],
+          "targets_address": [
+            "0x180009253",
+            "0x180009319"
+          ],
+          "complete_over_abstract_states": true,
+          "proof": "Finite-set abstract interpretation; setcc={0,1}; cmov=union of both operands; only file-backed nonwritable table bytes used as constants. No condition forced.",
+          "original_bytes": "ffe1"
+        },
+        {
+          "site_rva": "0x919f",
+          "instruction": "jmp rax",
+          "targets_rva": [
+            "0x91a1"
+          ],
+          "targets_address": [
+            "0x1800091a1"
+          ],
+          "complete_over_abstract_states": true,
+          "proof": "Finite-set abstract interpretation; setcc={0,1}; cmov=union of both operands; only file-backed nonwritable table bytes used as constants. No condition forced.",
+          "original_bytes": "ffe0"
+        },
+        {
+          "site_rva": "0x9727",
+          "instruction": "jmp rax",
+          "targets_rva": [
+            "0x95b0",
+            "0x982e"
+          ],
+          "targets_address": [
+            "0x1800095b0",
+            "0x18000982e"
+          ],
+          "complete_over_abstract_states": true,
+          "proof": "Finite-set abstract interpretation; setcc={0,1}; cmov=union of both operands; only file-backed nonwritable table bytes used as constants. No condition forced.",
+          "original_bytes": "ffe0"
+        },
+        {
+          "site_rva": "0x9364",
+          "instruction": "jmp rdx",
+          "targets_rva": [
+            "0x95f2",
+            "0x9664"
+          ],
+          "targets_address": [
+            "0x1800095f2",
+            "0x180009664"
+          ],
+          "complete_over_abstract_states": true,
+          "proof": "Finite-set abstract interpretation; setcc={0,1}; cmov=union of both operands; only file-backed nonwritable table bytes used as constants. No condition forced.",
+          "original_bytes": "ffe2"
+        },
+        {
+          "site_rva": "0x982c",
+          "instruction": "jmp rax",
+          "targets_rva": [
+            "0x9105",
+            "0x9366"
+          ],
+          "targets_address": [
+            "0x180009105",
+            "0x180009366"
+          ],
+          "complete_over_abstract_states": true,
+          "proof": "Finite-set abstract interpretation; setcc={0,1}; cmov=union of both operands; only file-backed nonwritable table bytes used as constants. No condition forced.",
+          "original_bytes": "ffe0"
+        },
+        {
+          "site_rva": "0x9269",
+          "instruction": "jmp rax",
+          "targets_rva": [
+            "0x8f10",
+            "0x9748"
+          ],
+          "targets_address": [
+            "0x180008f10",
+            "0x180009748"
+          ],
+          "complete_over_abstract_states": true,
+          "proof": "Finite-set abstract interpretation; setcc={0,1}; cmov=union of both operands; only file-backed nonwritable table bytes used as constants. No condition forced.",
+          "original_bytes": "ffe0"
+        },
+        {
+          "site_rva": "0x967e",
+          "instruction": "jmp rdx",
+          "targets_rva": [
+            "0x9236",
+            "0x964a"
+          ],
+          "targets_address": [
+            "0x180009236",
+            "0x18000964a"
+          ],
+          "complete_over_abstract_states": true,
+          "proof": "Finite-set abstract interpretation; setcc={0,1}; cmov=union of both operands; only file-backed nonwritable table bytes used as constants. No condition forced.",
+          "original_bytes": "ffe2"
+        },
+        {
+          "site_rva": "0x95d7",
+          "instruction": "jmp rcx",
+          "targets_rva": [
+            "0x9368",
+            "0x9382"
+          ],
+          "targets_address": [
+            "0x180009368",
+            "0x180009382"
+          ],
+          "complete_over_abstract_states": true,
+          "proof": "Finite-set abstract interpretation; setcc={0,1}; cmov=union of both operands; only file-backed nonwritable table bytes used as constants. No condition forced.",
+          "original_bytes": "ffe1"
+        },
+        {
+          "site_rva": "0x95f0",
+          "instruction": "jmp rdx",
+          "targets_rva": [
+            "0x8fb0",
+            "0x9236"
+          ],
+          "targets_address": [
+            "0x180008fb0",
+            "0x180009236"
+          ],
+          "complete_over_abstract_states": true,
+          "proof": "Finite-set abstract interpretation; setcc={0,1}; cmov=union of both operands; only file-backed nonwritable table bytes used as constants. No condition forced.",
+          "original_bytes": "ffe2"
+        },
+        {
+          "site_rva": "0x911d",
+          "instruction": "jmp rax",
+          "targets_rva": [
+            "0x926b",
+            "0x928e"
+          ],
+          "targets_address": [
+            "0x18000926b",
+            "0x18000928e"
+          ],
+          "complete_over_abstract_states": true,
+          "proof": "Finite-set abstract interpretation; setcc={0,1}; cmov=union of both operands; only file-backed nonwritable table bytes used as constants. No condition forced.",
+          "original_bytes": "ffe0"
+        },
+        {
+          "site_rva": "0x962d",
+          "instruction": "jmp rdx",
+          "targets_rva": [
+            "0x8f5d",
+            "0x9236"
+          ],
+          "targets_address": [
+            "0x180008f5d",
+            "0x180009236"
+          ],
+          "complete_over_abstract_states": true,
+          "proof": "Finite-set abstract interpretation; setcc={0,1}; cmov=union of both operands; only file-backed nonwritable table bytes used as constants. No condition forced.",
+          "original_bytes": "ffe2"
+        },
+        {
+          "site_rva": "0x9878",
+          "instruction": "jmp rcx",
+          "targets_rva": [
+            "0x9368",
+            "0x9382"
+          ],
+          "targets_address": [
+            "0x180009368",
+            "0x180009382"
+          ],
+          "complete_over_abstract_states": true,
+          "proof": "Finite-set abstract interpretation; setcc={0,1}; cmov=union of both operands; only file-backed nonwritable table bytes used as constants. No condition forced.",
+          "original_bytes": "ffe1"
+        },
+        {
+          "site_rva": "0x9662",
+          "instruction": "jmp rdx",
+          "targets_rva": [
+            "0x9236",
+            "0x9729"
+          ],
+          "targets_address": [
+            "0x180009236",
+            "0x180009729"
+          ],
+          "complete_over_abstract_states": true,
+          "proof": "Finite-set abstract interpretation; setcc={0,1}; cmov=union of both operands; only file-backed nonwritable table bytes used as constants. No condition forced.",
+          "original_bytes": "ffe2"
+        },
+        {
+          "site_rva": "0x9287",
+          "instruction": "jmp rax",
+          "targets_rva": [
+            "0x928e",
+            "0x9366"
+          ],
+          "targets_address": [
+            "0x18000928e",
+            "0x180009366"
+          ],
+          "complete_over_abstract_states": true,
+          "proof": "Finite-set abstract interpretation; setcc={0,1}; cmov=union of both operands; only file-backed nonwritable table bytes used as constants. No condition forced.",
+          "original_bytes": "ffe0"
+        },
+        {
+          "site_rva": "0x9234",
+          "instruction": "jmp rax",
+          "targets_rva": [
+            "0x9289",
+            "0x9748"
+          ],
+          "targets_address": [
+            "0x180009289",
+            "0x180009748"
+          ],
+          "complete_over_abstract_states": true,
+          "proof": "Finite-set abstract interpretation; setcc={0,1}; cmov=union of both operands; only file-backed nonwritable table bytes used as constants. No condition forced.",
+          "original_bytes": "ffe0"
+        },
+        {
+          "site_rva": "0x8f76",
+          "instruction": "jmp rdx",
+          "targets_rva": [
+            "0x8fb0",
+            "0x9236"
+          ],
+          "targets_address": [
+            "0x180008fb0",
+            "0x180009236"
+          ],
+          "complete_over_abstract_states": true,
+          "proof": "Finite-set abstract interpretation; setcc={0,1}; cmov=union of both operands; only file-backed nonwritable table bytes used as constants. No condition forced.",
+          "original_bytes": "ffe2"
+        },
+        {
+          "site_rva": "0x9746",
+          "instruction": "jmp rdx",
+          "targets_rva": [
+            "0x8feb",
+            "0x9236"
+          ],
+          "targets_address": [
+            "0x180008feb",
+            "0x180009236"
+          ],
+          "complete_over_abstract_states": true,
+          "proof": "Finite-set abstract interpretation; setcc={0,1}; cmov=union of both operands; only file-backed nonwritable table bytes used as constants. No condition forced.",
+          "original_bytes": "ffe2"
+        },
+        {
+          "site_rva": "0x92cb",
+          "instruction": "jmp rax",
+          "targets_rva": [
+            "0x92cd"
+          ],
+          "targets_address": [
+            "0x1800092cd"
+          ],
+          "complete_over_abstract_states": true,
+          "proof": "Finite-set abstract interpretation; setcc={0,1}; cmov=union of both operands; only file-backed nonwritable table bytes used as constants. No condition forced.",
+          "original_bytes": "ffe0"
+        },
+        {
+          "site_rva": "0x9006",
+          "instruction": "jmp rdx",
+          "targets_rva": [
+            "0x90b4",
+            "0x9236"
+          ],
+          "targets_address": [
+            "0x1800090b4",
+            "0x180009236"
+          ],
+          "complete_over_abstract_states": true,
+          "proof": "Finite-set abstract interpretation; setcc={0,1}; cmov=union of both operands; only file-backed nonwritable table bytes used as constants. No condition forced.",
+          "original_bytes": "ffe2"
+        },
+        {
+          "site_rva": "0x90d1",
+          "instruction": "jmp rdx",
+          "targets_rva": [
+            "0x9236",
+            "0x9593"
+          ],
+          "targets_address": [
+            "0x180009236",
+            "0x180009593"
+          ],
+          "complete_over_abstract_states": true,
+          "proof": "Finite-set abstract interpretation; setcc={0,1}; cmov=union of both operands; only file-backed nonwritable table bytes used as constants. No condition forced.",
+          "original_bytes": "ffe2"
+        },
+        {
+          "site_rva": "0x95ae",
+          "instruction": "jmp rcx",
+          "targets_rva": [
+            "0x8fd0",
+            "0x9236"
+          ],
+          "targets_address": [
+            "0x180008fd0",
+            "0x180009236"
+          ],
+          "complete_over_abstract_states": true,
+          "proof": "Finite-set abstract interpretation; setcc={0,1}; cmov=union of both operands; only file-backed nonwritable table bytes used as constants. No condition forced.",
+          "original_bytes": "ffe1"
+        },
+        {
+          "site_rva": "0x8fe9",
+          "instruction": "jmp rcx",
+          "targets_rva": [
+            "0x8fb0",
+            "0x9236"
+          ],
+          "targets_address": [
+            "0x180008fb0",
+            "0x180009236"
+          ],
+          "complete_over_abstract_states": true,
+          "proof": "Finite-set abstract interpretation; setcc={0,1}; cmov=union of both operands; only file-backed nonwritable table bytes used as constants. No condition forced.",
+          "original_bytes": "ffe1"
+        }
+      ],
+      "unresolved_computed_jumps": [],
+      "all_indirect_CALLs": [],
+      "indirect_CALL_classification": "NONE: every native CALL is immediate direct; old C indirect-call renderings are native JMPs",
+      "direct_calls": [
+        {
+          "rva": "0x8ee4",
+          "bytes": "e854da0400",
+          "instruction": "call 0x18005693d",
+          "target_rva": "0x5693d"
+        },
+        {
+          "rva": "0x8f7d",
+          "bytes": "e8e32c0300",
+          "instruction": "call 0x18003bc65",
+          "target_rva": "0x3bc65"
+        },
+        {
+          "rva": "0x9134",
+          "bytes": "e87b160200",
+          "instruction": "call 0x18002a7b4",
+          "target_rva": "0x2a7b4"
+        },
+        {
+          "rva": "0x9184",
+          "bytes": "e82bd50400",
+          "instruction": "call 0x1800566b4",
+          "target_rva": "0x566b4"
+        },
+        {
+          "rva": "0x91b5",
+          "bytes": "e8ab2a0300",
+          "instruction": "call 0x18003bc65",
+          "target_rva": "0x3bc65"
+        },
+        {
+          "rva": "0x9202",
+          "bytes": "e8aa140400",
+          "instruction": "call 0x18004a6b1",
+          "target_rva": "0x4a6b1"
+        },
+        {
+          "rva": "0x92a0",
+          "bytes": "e80fd40400",
+          "instruction": "call 0x1800566b4",
+          "target_rva": "0x566b4"
+        },
+        {
+          "rva": "0x92b1",
+          "bytes": "e8af290300",
+          "instruction": "call 0x18003bc65",
+          "target_rva": "0x3bc65"
+        },
+        {
+          "rva": "0x96ab",
+          "bytes": "e801100400",
+          "instruction": "call 0x18004a6b1",
+          "target_rva": "0x4a6b1"
+        },
+        {
+          "rva": "0x976d",
+          "bytes": "e83f0f0400",
+          "instruction": "call 0x18004a6b1",
+          "target_rva": "0x4a6b1"
+        },
+        {
+          "rva": "0x978a",
+          "bytes": "e8cca20000",
+          "instruction": "call 0x180013a5b",
+          "target_rva": "0x13a5b"
+        },
+        {
+          "rva": "0x97c6",
+          "bytes": "e89a240300",
+          "instruction": "call 0x18003bc65",
+          "target_rva": "0x3bc65"
+        },
+        {
+          "rva": "0x9833",
+          "bytes": "e8d0900500",
+          "instruction": "call 0x180062908",
+          "target_rva": "0x62908"
+        }
+      ],
+      "external_tail_jumps": [
+        {
+          "rva": "0x9100",
+          "bytes": "e9ac150400",
+          "instruction": "jmp 0x18004a6b1"
+        }
+      ],
+      "static_table_read_count": 53,
+      "normal_TLS_sha256": "808efb6ec1b51e9add2cbdfa8ce2ccbe4350d191d4f10a241af9e5c368f2bd7e",
+      "baseline_C_diagnostic": {
+        "path": "work\\alpme_analysis\\semantic_closure_20261027\\ghidra_repair\\repaired_exports\\17_payload.dll.bin\\0x8e81.c",
+        "bytes": 23251,
+        "sha256": "5fbda6187cc1b0e9d7f8d732d48852a6fc0e29b4d26a20eb19e3d3af64c8582b",
+        "candidate": false,
+        "counts": {
+          "Could not recover jumptable": 3,
+          "Treating indirect jump as call": 3,
+          "halt_baddata": 0,
+          "Bad instruction data": 0,
+          "UnimplementedPcode": 0
+        },
+        "partial_markers": 6,
+        "normal_context": false
+      },
+      "previous_C_truncation_sites": [
+        {
+          "rva": "0x8fae",
+          "bytes": "ffe0",
+          "instruction": "jmp rax",
+          "finite_targets": [
+            "0x96c9"
+          ]
+        },
+        {
+          "rva": "0x919f",
+          "bytes": "ffe0",
+          "instruction": "jmp rax",
+          "finite_targets": [
+            "0x91a1"
+          ]
+        },
+        {
+          "rva": "0x9380",
+          "bytes": "ffe0",
+          "instruction": "jmp rax",
+          "finite_targets": [
+            "0x911f"
+          ]
+        },
+        {
+          "rva": "0x9468",
+          "bytes": "ffe1",
+          "instruction": "jmp rcx",
+          "finite_targets": [
+            "0x9319"
+          ]
+        },
+        {
+          "rva": "0x97f5",
+          "bytes": "ffe1",
+          "instruction": "jmp rcx",
+          "finite_targets": [
+            "0x904a"
+          ]
+        }
+      ],
+      "TLS_constants": {
+        "0x280": "0xb291bd596e52a587"
+      },
+      "scalar_proof": {
+        "frame_size": 248,
+        "entry_push_bytes": 64,
+        "retained_scalar_byte_offsets": [
+          56,
+          57,
+          58,
+          59,
+          60,
+          61,
+          62,
+          63,
+          68,
+          69,
+          70,
+          71,
+          72,
+          73,
+          74,
+          75,
+          76,
+          77,
+          78,
+          79,
+          80,
+          81,
+          82,
+          83,
+          84,
+          85,
+          86,
+          87,
+          112,
+          113,
+          114,
+          115,
+          116,
+          117,
+          118,
+          119,
+          120,
+          121,
+          122,
+          123,
+          124,
+          125,
+          126,
+          127
+        ],
+        "only_direct_writers": [
+          {
+            "rva": "0x8ea5",
+            "bytes": "c7442444bbce5764",
+            "instruction": "mov dword ptr [rsp + 0x44], 0x6457cebb"
+          },
+          {
+            "rva": "0x8ec7",
+            "bytes": "4889442438",
+            "instruction": "mov qword ptr [rsp + 0x38], rax"
+          },
+          {
+            "rva": "0x93f1",
+            "bytes": "4889442478",
+            "instruction": "mov qword ptr [rsp + 0x78], rax"
+          },
+          {
+            "rva": "0x9403",
+            "bytes": "4889442448",
+            "instruction": "mov qword ptr [rsp + 0x48], rax"
+          },
+          {
+            "rva": "0x940f",
+            "bytes": "4889442470",
+            "instruction": "mov qword ptr [rsp + 0x70], rax"
+          },
+          {
+            "rva": "0x9422",
+            "bytes": "4889442450",
+            "instruction": "mov qword ptr [rsp + 0x50], rax"
+          }
+        ],
+        "all_nonRSP_store_classes": {
+          "fresh_58byte_allocation_RAX_from8ee4_success_dispatch953b": [
+            {
+              "rva": "0x954a",
+              "bytes": "0f11482a",
+              "instruction": "movups xmmword ptr [rax + 0x2a], xmm1"
+            },
+            {
+              "rva": "0x9555",
+              "bytes": "0f114820",
+              "instruction": "movups xmmword ptr [rax + 0x20], xmm1"
+            },
+            {
+              "rva": "0x9560",
+              "bytes": "0f114810",
+              "instruction": "movups xmmword ptr [rax + 0x10], xmm1"
+            },
+            {
+              "rva": "0x9573",
+              "bytes": "0f1108",
+              "instruction": "movups xmmword ptr [rax], xmm1"
+            }
+          ],
+          "owned_24byte_token_Vec_data_from_SP20_grown_by3bc65": [
+            {
+              "rva": "0x9064",
+              "bytes": "49894cc208",
+              "instruction": "mov qword ptr [r10 + rax*8 + 8], rcx"
+            },
+            {
+              "rva": "0x91d5",
+              "bytes": "48894cc710",
+              "instruction": "mov qword ptr [rdi + rax*8 + 0x10], rcx"
+            },
+            {
+              "rva": "0x91e2",
+              "bytes": "0f110cc7",
+              "instruction": "movups xmmword ptr [rdi + rax*8], xmm1"
+            },
+            {
+              "rva": "0x92fc",
+              "bytes": "49894cc210",
+              "instruction": "mov qword ptr [r10 + rax*8 + 0x10], rcx"
+            },
+            {
+              "rva": "0x9309",
+              "bytes": "410f110cc2",
+              "instruction": "movups xmmword ptr [r10 + rax*8], xmm1"
+            },
+            {
+              "rva": "0x96e1",
+              "bytes": "49894cc208",
+              "instruction": "mov qword ptr [r10 + rax*8 + 8], rcx"
+            }
+          ],
+          "owned_quoted_string_byte_Vec_data_from_SP58_grown_by62908": [
+            {
+              "rva": "0x95b0",
+              "bytes": "4588243a",
+              "instruction": "mov byte ptr [r10 + rdi], r12b"
+            },
+            {
+              "rva": "0x9851",
+              "bytes": "4588243a",
+              "instruction": "mov byte ptr [r10 + rdi], r12b"
+            }
+          ],
+          "private_cursor_SP20_from9748_LEA_R15": [
+            {
+              "rva": "0x9772",
+              "bytes": "49c70700000000",
+              "instruction": "mov qword ptr [r15], 0"
+            }
+          ],
+          "private_byte_Vec_capacity_and_length_SP60..6f_from9480_LEA_RCX": [
+            {
+              "rva": "0x9485",
+              "bytes": "0f1131",
+              "instruction": "movups xmmword ptr [rcx], xmm6"
+            }
+          ]
+        },
+        "ordinary_RSP_stores_model": "exact explicit intervals; XMM stores counted even when access flags are missing",
+        "no_unclassified_nonstack_stores": true,
+        "retention_events": {
+          "0x8ee4": {
+            "instruction": "call 0x18005693d",
+            "reason": "native call footprint excludes private scalars; normal valid objects and x64 ABI",
+            "bytes": [
+              56,
+              57,
+              58,
+              59,
+              60,
+              61,
+              62,
+              63,
+              68,
+              69,
+              70,
+              71
+            ]
+          },
+          "0x954a": {
+            "instruction": "movups xmmword ptr [rax + 0x2a], xmm1",
+            "reason": "native classified owned heap store; normal heap is disjoint from private scalars",
+            "bytes": [
+              56,
+              57,
+              58,
+              59,
+              60,
+              61,
+              62,
+              63,
+              68,
+              69,
+              70,
+              71
+            ]
+          },
+          "0x9555": {
+            "instruction": "movups xmmword ptr [rax + 0x20], xmm1",
+            "reason": "native classified owned heap store; normal heap is disjoint from private scalars",
+            "bytes": [
+              56,
+              57,
+              58,
+              59,
+              60,
+              61,
+              62,
+              63,
+              68,
+              69,
+              70,
+              71
+            ]
+          },
+          "0x9560": {
+            "instruction": "movups xmmword ptr [rax + 0x10], xmm1",
+            "reason": "native classified owned heap store; normal heap is disjoint from private scalars",
+            "bytes": [
+              56,
+              57,
+              58,
+              59,
+              60,
+              61,
+              62,
+              63,
+              68,
+              69,
+              70,
+              71
+            ]
+          },
+          "0x9573": {
+            "instruction": "movups xmmword ptr [rax], xmm1",
+            "reason": "native classified owned heap store; normal heap is disjoint from private scalars",
+            "bytes": [
+              56,
+              57,
+              58,
+              59,
+              60,
+              61,
+              62,
+              63,
+              68,
+              69,
+              70,
+              71
+            ]
+          },
+          "0x976d": {
+            "instruction": "call 0x18004a6b1",
+            "reason": "native call footprint excludes private scalars; normal valid objects and x64 ABI",
+            "bytes": [
+              56,
+              57,
+              58,
+              59,
+              60,
+              61,
+              62,
+              63,
+              68,
+              69,
+              70,
+              71
+            ]
+          },
+          "0x978a": {
+            "instruction": "call 0x180013a5b",
+            "reason": "native call footprint excludes private scalars; normal valid objects and x64 ABI",
+            "bytes": [
+              56,
+              57,
+              58,
+              59,
+              60,
+              61,
+              62,
+              63,
+              68,
+              69,
+              70,
+              71
+            ]
+          },
+          "0x97c6": {
+            "instruction": "call 0x18003bc65",
+            "reason": "native call footprint excludes private scalars; normal valid objects and x64 ABI",
+            "bytes": [
+              56,
+              57,
+              58,
+              59,
+              60,
+              61,
+              62,
+              63,
+              68,
+              69,
+              70,
+              71,
+              72,
+              73,
+              74,
+              75,
+              76,
+              77,
+              78,
+              79,
+              80,
+              81,
+              82,
+              83,
+              84,
+              85,
+              86,
+              87,
+              112,
+              113,
+              114,
+              115,
+              116,
+              117,
+              118,
+              119,
+              120,
+              121,
+              122,
+              123,
+              124,
+              125,
+              126,
+              127
+            ]
+          },
+          "0x8f7d": {
+            "instruction": "call 0x18003bc65",
+            "reason": "native call footprint excludes private scalars; normal valid objects and x64 ABI",
+            "bytes": [
+              56,
+              57,
+              58,
+              59,
+              60,
+              61,
+              62,
+              63,
+              68,
+              69,
+              70,
+              71,
+              72,
+              73,
+              74,
+              75,
+              76,
+              77,
+              78,
+              79,
+              80,
+              81,
+              82,
+              83,
+              84,
+              85,
+              86,
+              87,
+              112,
+              113,
+              114,
+              115,
+              116,
+              117,
+              118,
+              119,
+              120,
+              121,
+              122,
+              123,
+              124,
+              125,
+              126,
+              127
+            ]
+          },
+          "0x9064": {
+            "instruction": "mov qword ptr [r10 + rax*8 + 8], rcx",
+            "reason": "native classified owned heap store; normal heap is disjoint from private scalars",
+            "bytes": [
+              56,
+              57,
+              58,
+              59,
+              60,
+              61,
+              62,
+              63,
+              68,
+              69,
+              70,
+              71,
+              72,
+              73,
+              74,
+              75,
+              76,
+              77,
+              78,
+              79,
+              80,
+              81,
+              82,
+              83,
+              84,
+              85,
+              86,
+              87,
+              112,
+              113,
+              114,
+              115,
+              116,
+              117,
+              118,
+              119,
+              120,
+              121,
+              122,
+              123,
+              124,
+              125,
+              126,
+              127
+            ]
+          },
+          "0x96ab": {
+            "instruction": "call 0x18004a6b1",
+            "reason": "native call footprint excludes private scalars; normal valid objects and x64 ABI",
+            "bytes": [
+              56,
+              57,
+              58,
+              59,
+              60,
+              61,
+              62,
+              63,
+              68,
+              69,
+              70,
+              71
+            ]
+          },
+          "0x9134": {
+            "instruction": "call 0x18002a7b4",
+            "reason": "native call footprint excludes private scalars; normal valid objects and x64 ABI",
+            "bytes": [
+              56,
+              57,
+              58,
+              59,
+              60,
+              61,
+              62,
+              63,
+              68,
+              69,
+              70,
+              71,
+              72,
+              73,
+              74,
+              75,
+              76,
+              77,
+              78,
+              79,
+              80,
+              81,
+              82,
+              83,
+              84,
+              85,
+              86,
+              87,
+              112,
+              113,
+              114,
+              115,
+              116,
+              117,
+              118,
+              119,
+              120,
+              121,
+              122,
+              123,
+              124,
+              125,
+              126,
+              127
+            ]
+          },
+          "0x96e1": {
+            "instruction": "mov qword ptr [r10 + rax*8 + 8], rcx",
+            "reason": "native classified owned heap store; normal heap is disjoint from private scalars",
+            "bytes": [
+              56,
+              57,
+              58,
+              59,
+              60,
+              61,
+              62,
+              63,
+              68,
+              69,
+              70,
+              71,
+              72,
+              73,
+              74,
+              75,
+              76,
+              77,
+              78,
+              79,
+              80,
+              81,
+              82,
+              83,
+              84,
+              85,
+              86,
+              87,
+              112,
+              113,
+              114,
+              115,
+              116,
+              117,
+              118,
+              119,
+              120,
+              121,
+              122,
+              123,
+              124,
+              125,
+              126,
+              127
+            ]
+          },
+          "0x9184": {
+            "instruction": "call 0x1800566b4",
+            "reason": "native call footprint excludes private scalars; normal valid objects and x64 ABI",
+            "bytes": [
+              56,
+              57,
+              58,
+              59,
+              60,
+              61,
+              62,
+              63,
+              68,
+              69,
+              70,
+              71,
+              72,
+              73,
+              74,
+              75,
+              76,
+              77,
+              78,
+              79,
+              80,
+              81,
+              82,
+              83,
+              84,
+              85,
+              86,
+              87,
+              112,
+              113,
+              114,
+              115,
+              116,
+              117,
+              118,
+              119,
+              120,
+              121,
+              122,
+              123,
+              124,
+              125,
+              126,
+              127
+            ]
+          },
+          "0x91b5": {
+            "instruction": "call 0x18003bc65",
+            "reason": "native call footprint excludes private scalars; normal valid objects and x64 ABI",
+            "bytes": [
+              56,
+              57,
+              58,
+              59,
+              60,
+              61,
+              62,
+              63,
+              68,
+              69,
+              70,
+              71,
+              72,
+              73,
+              74,
+              75,
+              76,
+              77,
+              78,
+              79,
+              80,
+              81,
+              82,
+              83,
+              84,
+              85,
+              86,
+              87,
+              112,
+              113,
+              114,
+              115,
+              116,
+              117,
+              118,
+              119,
+              120,
+              121,
+              122,
+              123,
+              124,
+              125,
+              126,
+              127
+            ]
+          },
+          "0x9833": {
+            "instruction": "call 0x180062908",
+            "reason": "native call footprint excludes private scalars; normal valid objects and x64 ABI",
+            "bytes": [
+              56,
+              57,
+              58,
+              59,
+              60,
+              61,
+              62,
+              63,
+              68,
+              69,
+              70,
+              71,
+              72,
+              73,
+              74,
+              75,
+              76,
+              77,
+              78,
+              79,
+              80,
+              81,
+              82,
+              83,
+              84,
+              85,
+              86,
+              87,
+              112,
+              113,
+              114,
+              115,
+              116,
+              117,
+              118,
+              119,
+              120,
+              121,
+              122,
+              123,
+              124,
+              125,
+              126,
+              127
+            ]
+          },
+          "0x91d5": {
+            "instruction": "mov qword ptr [rdi + rax*8 + 0x10], rcx",
+            "reason": "native classified owned heap store; normal heap is disjoint from private scalars",
+            "bytes": [
+              56,
+              57,
+              58,
+              59,
+              60,
+              61,
+              62,
+              63,
+              68,
+              69,
+              70,
+              71,
+              72,
+              73,
+              74,
+              75,
+              76,
+              77,
+              78,
+              79,
+              80,
+              81,
+              82,
+              83,
+              84,
+              85,
+              86,
+              87,
+              112,
+              113,
+              114,
+              115,
+              116,
+              117,
+              118,
+              119,
+              120,
+              121,
+              122,
+              123,
+              124,
+              125,
+              126,
+              127
+            ]
+          },
+          "0x91e2": {
+            "instruction": "movups xmmword ptr [rdi + rax*8], xmm1",
+            "reason": "native classified owned heap store; normal heap is disjoint from private scalars",
+            "bytes": [
+              56,
+              57,
+              58,
+              59,
+              60,
+              61,
+              62,
+              63,
+              68,
+              69,
+              70,
+              71,
+              72,
+              73,
+              74,
+              75,
+              76,
+              77,
+              78,
+              79,
+              80,
+              81,
+              82,
+              83,
+              84,
+              85,
+              86,
+              87,
+              112,
+              113,
+              114,
+              115,
+              116,
+              117,
+              118,
+              119,
+              120,
+              121,
+              122,
+              123,
+              124,
+              125,
+              126,
+              127
+            ]
+          },
+          "0x9851": {
+            "instruction": "mov byte ptr [r10 + rdi], r12b",
+            "reason": "native classified owned heap store; normal heap is disjoint from private scalars",
+            "bytes": [
+              56,
+              57,
+              58,
+              59,
+              60,
+              61,
+              62,
+              63,
+              68,
+              69,
+              70,
+              71,
+              72,
+              73,
+              74,
+              75,
+              76,
+              77,
+              78,
+              79,
+              80,
+              81,
+              82,
+              83,
+              84,
+              85,
+              86,
+              87,
+              112,
+              113,
+              114,
+              115,
+              116,
+              117,
+              118,
+              119,
+              120,
+              121,
+              122,
+              123,
+              124,
+              125,
+              126,
+              127
+            ]
+          },
+          "0x9202": {
+            "instruction": "call 0x18004a6b1",
+            "reason": "native call footprint excludes private scalars; normal valid objects and x64 ABI",
+            "bytes": [
+              56,
+              57,
+              58,
+              59,
+              60,
+              61,
+              62,
+              63,
+              68,
+              69,
+              70,
+              71,
+              72,
+              73,
+              74,
+              75,
+              76,
+              77,
+              78,
+              79,
+              80,
+              81,
+              82,
+              83,
+              84,
+              85,
+              86,
+              87,
+              112,
+              113,
+              114,
+              115,
+              116,
+              117,
+              118,
+              119,
+              120,
+              121,
+              122,
+              123,
+              124,
+              125,
+              126,
+              127
+            ]
+          },
+          "0x92a0": {
+            "instruction": "call 0x1800566b4",
+            "reason": "native call footprint excludes private scalars; normal valid objects and x64 ABI",
+            "bytes": [
+              56,
+              57,
+              58,
+              59,
+              60,
+              61,
+              62,
+              63,
+              68,
+              69,
+              70,
+              71,
+              72,
+              73,
+              74,
+              75,
+              76,
+              77,
+              78,
+              79,
+              80,
+              81,
+              82,
+              83,
+              84,
+              85,
+              86,
+              87,
+              112,
+              113,
+              114,
+              115,
+              116,
+              117,
+              118,
+              119,
+              120,
+              121,
+              122,
+              123,
+              124,
+              125,
+              126,
+              127
+            ]
+          },
+          "0x92b1": {
+            "instruction": "call 0x18003bc65",
+            "reason": "native call footprint excludes private scalars; normal valid objects and x64 ABI",
+            "bytes": [
+              56,
+              57,
+              58,
+              59,
+              60,
+              61,
+              62,
+              63,
+              68,
+              69,
+              70,
+              71,
+              72,
+              73,
+              74,
+              75,
+              76,
+              77,
+              78,
+              79,
+              80,
+              81,
+              82,
+              83,
+              84,
+              85,
+              86,
+              87,
+              112,
+              113,
+              114,
+              115,
+              116,
+              117,
+              118,
+              119,
+              120,
+              121,
+              122,
+              123,
+              124,
+              125,
+              126,
+              127
+            ]
+          },
+          "0x92fc": {
+            "instruction": "mov qword ptr [r10 + rax*8 + 0x10], rcx",
+            "reason": "native classified owned heap store; normal heap is disjoint from private scalars",
+            "bytes": [
+              56,
+              57,
+              58,
+              59,
+              60,
+              61,
+              62,
+              63,
+              68,
+              69,
+              70,
+              71,
+              72,
+              73,
+              74,
+              75,
+              76,
+              77,
+              78,
+              79,
+              80,
+              81,
+              82,
+              83,
+              84,
+              85,
+              86,
+              87,
+              112,
+              113,
+              114,
+              115,
+              116,
+              117,
+              118,
+              119,
+              120,
+              121,
+              122,
+              123,
+              124,
+              125,
+              126,
+              127
+            ]
+          },
+          "0x9309": {
+            "instruction": "movups xmmword ptr [r10 + rax*8], xmm1",
+            "reason": "native classified owned heap store; normal heap is disjoint from private scalars",
+            "bytes": [
+              56,
+              57,
+              58,
+              59,
+              60,
+              61,
+              62,
+              63,
+              68,
+              69,
+              70,
+              71,
+              72,
+              73,
+              74,
+              75,
+              76,
+              77,
+              78,
+              79,
+              80,
+              81,
+              82,
+              83,
+              84,
+              85,
+              86,
+              87,
+              112,
+              113,
+              114,
+              115,
+              116,
+              117,
+              118,
+              119,
+              120,
+              121,
+              122,
+              123,
+              124,
+              125,
+              126,
+              127
+            ]
+          },
+          "0x95b0": {
+            "instruction": "mov byte ptr [r10 + rdi], r12b",
+            "reason": "native classified owned heap store; normal heap is disjoint from private scalars",
+            "bytes": [
+              56,
+              57,
+              58,
+              59,
+              60,
+              61,
+              62,
+              63,
+              68,
+              69,
+              70,
+              71,
+              72,
+              73,
+              74,
+              75,
+              76,
+              77,
+              78,
+              79,
+              80,
+              81,
+              82,
+              83,
+              84,
+              85,
+              86,
+              87,
+              112,
+              113,
+              114,
+              115,
+              116,
+              117,
+              118,
+              119,
+              120,
+              121,
+              122,
+              123,
+              124,
+              125,
+              126,
+              127
+            ]
+          }
+        }
+      },
+      "call_scalar_exclusion": {
+        "contracts": {
+          "0x5693d": "GetProcessHeap/HeapAlloc fresh allocation; incoming RCX is flags, RDX=size; no private caller output",
+          "0x4a6b1": "normal owned allocation free through690fd -> GetProcessHeap/HeapFree; caller scalar frame excluded",
+          "0x3bc65": "RCX Vec header; transitively1b55f writes only first16 bytes of original RCX; owns heap reallocation",
+          "0x62908": "same1b55f growth contract for byte Vec at ownSP58..6f",
+          "0x566b4": "original RCX writes exactly offsets0,8,16 (24B); RDX/R8 input span read and cloned",
+          "0x2a7b4": "original RCX writes within0..31 (32B); UTF8 lossy materialization with EFBFBD replacement; input span read-only",
+          "0x13a5b": "prior original-byte proof: original RCX output24B and R9 cursor8B; raw token array read-only"
+        },
+        "actual_call_targets": [
+          "0x13a5b",
+          "0x2a7b4",
+          "0x3bc65",
+          "0x4a6b1",
+          "0x566b4",
+          "0x5693d",
+          "0x62908"
+        ],
+        "private_outputs": {
+          "0x9134": [
+            168,
+            200
+          ],
+          "0x9184": [
+            144,
+            168
+          ],
+          "0x92a0": [
+            200,
+            224
+          ],
+          "3bc65_calls": [
+            32,
+            56
+          ],
+          "0x9833": [
+            88,
+            112
+          ],
+          "0x978a_R9_cursor": [
+            32,
+            40
+          ]
+        },
+        "original_RCX_output_disjoint": true
+      },
+      "native_bounded_helper_stores": {
+        "0x566b4": {
+          "end": "0x56726",
+          "native_sha256": "9790a92732c43978b96c62b4865c82ef2c3fba59681660b4fa89f9b6d3826467",
+          "original_output_alias": "rdi",
+          "stores": [
+            {
+              "rva": "0x5670d",
+              "bytes": "4c8937",
+              "instruction": "mov qword ptr [rdi], r14"
+            },
+            {
+              "rva": "0x56710",
+              "bytes": "4c897f08",
+              "instruction": "mov qword ptr [rdi + 8], r15"
+            },
+            {
+              "rva": "0x56714",
+              "bytes": "48897710",
+              "instruction": "mov qword ptr [rdi + 0x10], rsi"
+            }
+          ]
+        },
+        "0x2a7b4": {
+          "end": "0x2a97b",
+          "native_sha256": "9007eba91b312682693fee3a10da209801922e97dd8f1f38c4341f7b3150f9df",
+          "original_output_alias": "rsi",
+          "stores": [
+            {
+              "rva": "0x2a93f",
+              "bytes": "48894618",
+              "instruction": "mov qword ptr [rsi + 0x18], rax"
+            },
+            {
+              "rva": "0x2a948",
+              "bytes": "0f116e08",
+              "instruction": "movups xmmword ptr [rsi + 8], xmm5"
+            },
+            {
+              "rva": "0x2a95a",
+              "bytes": "48895e08",
+              "instruction": "mov qword ptr [rsi + 8], rbx"
+            },
+            {
+              "rva": "0x2a95e",
+              "bytes": "48897e10",
+              "instruction": "mov qword ptr [rsi + 0x10], rdi"
+            },
+            {
+              "rva": "0x2a964",
+              "bytes": "488906",
+              "instruction": "mov qword ptr [rsi], rax"
+            }
+          ]
+        },
+        "0x1b55f": {
+          "end": "0x1b5e2",
+          "native_sha256": "dbe35428dbc412842116ff3eced88688747ebedc73d496e8e34c52a8c1f32039",
+          "original_output_alias": "rsi",
+          "stores": [
+            {
+              "rva": "0x1b5d2",
+              "bytes": "488906",
+              "instruction": "mov qword ptr [rsi], rax"
+            },
+            {
+              "rva": "0x1b5d5",
+              "bytes": "48897e08",
+              "instruction": "mov qword ptr [rsi + 8], rdi"
+            }
+          ]
+        }
+      },
+      "prior_output_cursor_proof_sha256": "b0ff9af23bca42be96245dd905b0c716a5b7eeea64294b37df59139038e1b532",
+      "reopened_cell_arithmetic": [
+        {
+          "site": "0x8fae",
+          "table": "0x892ac",
+          "index": 3,
+          "cell": "0x892b8",
+          "bytes": "1d04f8ff",
+          "signed_displacement": -523235,
+          "target": "0x96c9"
+        },
+        {
+          "site": "0x919f",
+          "table": "0x892cc",
+          "index": 1,
+          "cell": "0x892d0",
+          "bytes": "d5fef7ff",
+          "signed_displacement": -524587,
+          "target": "0x91a1"
+        },
+        {
+          "site": "0x9380",
+          "table": "0x892ac",
+          "index": 2,
+          "cell": "0x892b4",
+          "bytes": "73fef7ff",
+          "signed_displacement": -524685,
+          "target": "0x911f"
+        },
+        {
+          "site": "0x9468",
+          "table": "0x892bc",
+          "index": 1,
+          "cell": "0x892c0",
+          "bytes": "5d00f8ff",
+          "signed_displacement": -524195,
+          "target": "0x9319"
+        },
+        {
+          "site": "0x97f5",
+          "table": "0x892bc",
+          "index": 2,
+          "cell": "0x892c4",
+          "bytes": "8efdf7ff",
+          "signed_displacement": -524914,
+          "target": "0x904a"
+        }
+      ],
+      "decompiler_export": {
+        "path": "work\\alpme_analysis\\semantic_closure_20261027\\round5_tokenizers\\normal_exports\\17_payload.dll.bin_0x8e81.c",
+        "sha256": "62828e2a429a715d437f98aebf2ec97684958463464d3a76dd8f8cc419ff16bc",
+        "markers": {
+          "Could not recover jumptable": 0,
+          "Treating indirect jump as call": 0,
+          "halt_baddata": 0,
+          "Bad instruction data": 0,
+          "UnimplementedPcode": 0
+        },
+        "text_bytes_unchanged": true,
+        "purpose": "reference C for conditional CFG, not original source"
+      }
+    },
+    {
+      "version": "19",
+      "entry": "0x126b7",
+      "end": "0x134e0",
+      "source_sha256": "4e4636d2c9d57eb609b7d18ee3dc01713fbcda39c5eee52bd4a66f222f67bb31",
+      "original_imagebase": "0x180000000",
+      "frozen_imagebase": "0xec30000",
+      "function_sha256": "090df7c129ee7bdf73ce1d3ce0376530d646f4838d6cab0d09b67d3b8ca840b7",
+      "function_bytes": 3625,
+      "normalized_function_bytes_identical": true,
+      "instructions": 971,
+      "computed_jumps": 79,
+      "computed_jump_targets": [
+        {
+          "site_rva": "0x12763",
+          "instruction": "jmp rax",
+          "targets_rva": [
+            "0x13437",
+            "0x13493"
+          ],
+          "targets_address": [
+            "0x180013437",
+            "0x180013493"
+          ],
+          "complete_over_abstract_states": true,
+          "proof": "Finite-set abstract interpretation; setcc={0,1}; cmov=union of both operands; only file-backed nonwritable table bytes used as constants. No condition forced.",
+          "original_bytes": "ffe0"
+        },
+        {
+          "site_rva": "0x134a9",
+          "instruction": "jmp rcx",
+          "targets_rva": [
+            "0x12e52",
+            "0x1301b"
+          ],
+          "targets_address": [
+            "0x180012e52",
+            "0x18001301b"
+          ],
+          "complete_over_abstract_states": true,
+          "proof": "Finite-set abstract interpretation; setcc={0,1}; cmov=union of both operands; only file-backed nonwritable table bytes used as constants. No condition forced.",
+          "original_bytes": "ffe1"
+        },
+        {
+          "site_rva": "0x13475",
+          "instruction": "jmp r9",
+          "targets_rva": [
+            "0x1301b",
+            "0x13478"
+          ],
+          "targets_address": [
+            "0x18001301b",
+            "0x180013478"
+          ],
+          "complete_over_abstract_states": true,
+          "proof": "Finite-set abstract interpretation; setcc={0,1}; cmov=union of both operands; only file-backed nonwritable table bytes used as constants. No condition forced.",
+          "original_bytes": "41ffe1"
+        },
+        {
+          "site_rva": "0x12e7e",
+          "instruction": "jmp rax",
+          "targets_rva": [
+            "0x12bf1",
+            "0x13115"
+          ],
+          "targets_address": [
+            "0x180012bf1",
+            "0x180013115"
+          ],
+          "complete_over_abstract_states": true,
+          "proof": "Finite-set abstract interpretation; setcc={0,1}; cmov=union of both operands; only file-backed nonwritable table bytes used as constants. No condition forced.",
+          "original_bytes": "ffe0"
+        },
+        {
+          "site_rva": "0x12c0e",
+          "instruction": "jmp rax",
+          "targets_rva": [
+            "0x12aad",
+            "0x12c7e"
+          ],
+          "targets_address": [
+            "0x180012aad",
+            "0x180012c7e"
+          ],
+          "complete_over_abstract_states": true,
+          "proof": "Finite-set abstract interpretation; setcc={0,1}; cmov=union of both operands; only file-backed nonwritable table bytes used as constants. No condition forced.",
+          "original_bytes": "ffe0"
+        },
+        {
+          "site_rva": "0x1312f",
+          "instruction": "jmp rax",
+          "targets_rva": [
+            "0x12a57",
+            "0x13242"
+          ],
+          "targets_address": [
+            "0x180012a57",
+            "0x180013242"
+          ],
+          "complete_over_abstract_states": true,
+          "proof": "Finite-set abstract interpretation; setcc={0,1}; cmov=union of both operands; only file-backed nonwritable table bytes used as constants. No condition forced.",
+          "original_bytes": "ffe0"
+        },
+        {
+          "site_rva": "0x12a74",
+          "instruction": "jmp rax",
+          "targets_rva": [
+            "0x12c29",
+            "0x13261"
+          ],
+          "targets_address": [
+            "0x180012c29",
+            "0x180013261"
+          ],
+          "complete_over_abstract_states": true,
+          "proof": "Finite-set abstract interpretation; setcc={0,1}; cmov=union of both operands; only file-backed nonwritable table bytes used as constants. No condition forced.",
+          "original_bytes": "ffe0"
+        },
+        {
+          "site_rva": "0x1325f",
+          "instruction": "jmp rax",
+          "targets_rva": [
+            "0x129f5",
+            "0x13226"
+          ],
+          "targets_address": [
+            "0x1800129f5",
+            "0x180013226"
+          ],
+          "complete_over_abstract_states": true,
+          "proof": "Finite-set abstract interpretation; setcc={0,1}; cmov=union of both operands; only file-backed nonwritable table bytes used as constants. No condition forced.",
+          "original_bytes": "ffe0"
+        },
+        {
+          "site_rva": "0x12aef",
+          "instruction": "jmp rax",
+          "targets_rva": [
+            "0x12bd5",
+            "0x12c5b"
+          ],
+          "targets_address": [
+            "0x180012bd5",
+            "0x180012c5b"
+          ],
+          "complete_over_abstract_states": true,
+          "proof": "Finite-set abstract interpretation; setcc={0,1}; cmov=union of both operands; only file-backed nonwritable table bytes used as constants. No condition forced.",
+          "original_bytes": "ffe0"
+        },
+        {
+          "site_rva": "0x12ad1",
+          "instruction": "jmp rax",
+          "targets_rva": [
+            "0x12c5b",
+            "0x12eac"
+          ],
+          "targets_address": [
+            "0x180012c5b",
+            "0x180012eac"
+          ],
+          "complete_over_abstract_states": true,
+          "proof": "Finite-set abstract interpretation; setcc={0,1}; cmov=union of both operands; only file-backed nonwritable table bytes used as constants. No condition forced.",
+          "original_bytes": "ffe0"
+        },
+        {
+          "site_rva": "0x12c7c",
+          "instruction": "jmp rcx",
+          "targets_rva": [
+            "0x1301b",
+            "0x13343"
+          ],
+          "targets_address": [
+            "0x18001301b",
+            "0x180013343"
+          ],
+          "complete_over_abstract_states": true,
+          "proof": "Finite-set abstract interpretation; setcc={0,1}; cmov=union of both operands; only file-backed nonwritable table bytes used as constants. No condition forced.",
+          "original_bytes": "ffe1"
+        },
+        {
+          "site_rva": "0x13240",
+          "instruction": "jmp rax",
+          "targets_rva": [
+            "0x12a85",
+            "0x12c5b"
+          ],
+          "targets_address": [
+            "0x180012a85",
+            "0x180012c5b"
+          ],
+          "complete_over_abstract_states": true,
+          "proof": "Finite-set abstract interpretation; setcc={0,1}; cmov=union of both operands; only file-backed nonwritable table bytes used as constants. No condition forced.",
+          "original_bytes": "ffe0"
+        },
+        {
+          "site_rva": "0x1327d",
+          "instruction": "jmp rax",
+          "targets_rva": [
+            "0x12bd5",
+            "0x12c5b",
+            "0x12eac"
+          ],
+          "targets_address": [
+            "0x180012bd5",
+            "0x180012c5b",
+            "0x180012eac"
+          ],
+          "complete_over_abstract_states": true,
+          "proof": "Finite-set abstract interpretation; setcc={0,1}; cmov=union of both operands; only file-backed nonwritable table bytes used as constants. No condition forced.",
+          "original_bytes": "ffe0"
+        },
+        {
+          "site_rva": "0x12a11",
+          "instruction": "jmp rax",
+          "targets_rva": [
+            "0x12a76",
+            "0x12a85",
+            "0x12c5b"
+          ],
+          "targets_address": [
+            "0x180012a76",
+            "0x180012a85",
+            "0x180012c5b"
+          ],
+          "complete_over_abstract_states": true,
+          "proof": "Finite-set abstract interpretation; setcc={0,1}; cmov=union of both operands; only file-backed nonwritable table bytes used as constants. No condition forced.",
+          "original_bytes": "ffe0"
+        },
+        {
+          "site_rva": "0x12bef",
+          "instruction": "jmp rax",
+          "targets_rva": [
+            "0x12f56"
+          ],
+          "targets_address": [
+            "0x180012f56"
+          ],
+          "complete_over_abstract_states": true,
+          "proof": "Finite-set abstract interpretation; setcc={0,1}; cmov=union of both operands; only file-backed nonwritable table bytes used as constants. No condition forced.",
+          "original_bytes": "ffe0"
+        },
+        {
+          "site_rva": "0x12c58",
+          "instruction": "jmp r10",
+          "targets_rva": [
+            "0x1301b"
+          ],
+          "targets_address": [
+            "0x18001301b"
+          ],
+          "complete_over_abstract_states": true,
+          "proof": "Finite-set abstract interpretation; setcc={0,1}; cmov=union of both operands; only file-backed nonwritable table bytes used as constants. No condition forced.",
+          "original_bytes": "41ffe2"
+        },
+        {
+          "site_rva": "0x12ecb",
+          "instruction": "jmp r9",
+          "targets_rva": [
+            "0x12839",
+            "0x1301b"
+          ],
+          "targets_address": [
+            "0x180012839",
+            "0x18001301b"
+          ],
+          "complete_over_abstract_states": true,
+          "proof": "Finite-set abstract interpretation; setcc={0,1}; cmov=union of both operands; only file-backed nonwritable table bytes used as constants. No condition forced.",
+          "original_bytes": "41ffe1"
+        },
+        {
+          "site_rva": "0x1335f",
+          "instruction": "jmp r8",
+          "targets_rva": [
+            "0x1301b",
+            "0x130ec"
+          ],
+          "targets_address": [
+            "0x18001301b",
+            "0x1800130ec"
+          ],
+          "complete_over_abstract_states": true,
+          "proof": "Finite-set abstract interpretation; setcc={0,1}; cmov=union of both operands; only file-backed nonwritable table bytes used as constants. No condition forced.",
+          "original_bytes": "41ffe0"
+        },
+        {
+          "site_rva": "0x12ce6",
+          "instruction": "jmp r10",
+          "targets_rva": [
+            "0x12f92",
+            "0x13019"
+          ],
+          "targets_address": [
+            "0x180012f92",
+            "0x180013019"
+          ],
+          "complete_over_abstract_states": true,
+          "proof": "Finite-set abstract interpretation; setcc={0,1}; cmov=union of both operands; only file-backed nonwritable table bytes used as constants. No condition forced.",
+          "original_bytes": "41ffe2"
+        },
+        {
+          "site_rva": "0x12f71",
+          "instruction": "jmp r8",
+          "targets_rva": [
+            "0x1301b",
+            "0x130ec"
+          ],
+          "targets_address": [
+            "0x18001301b",
+            "0x1800130ec"
+          ],
+          "complete_over_abstract_states": true,
+          "proof": "Finite-set abstract interpretation; setcc={0,1}; cmov=union of both operands; only file-backed nonwritable table bytes used as constants. No condition forced.",
+          "original_bytes": "41ffe0"
+        },
+        {
+          "site_rva": "0x13112",
+          "instruction": "jmp r9",
+          "targets_rva": [
+            "0x129a5",
+            "0x12d83"
+          ],
+          "targets_address": [
+            "0x1800129a5",
+            "0x180012d83"
+          ],
+          "complete_over_abstract_states": true,
+          "proof": "Finite-set abstract interpretation; setcc={0,1}; cmov=union of both operands; only file-backed nonwritable table bytes used as constants. No condition forced.",
+          "original_bytes": "41ffe1"
+        },
+        {
+          "site_rva": "0x12da1",
+          "instruction": "jmp rax",
+          "targets_rva": [
+            "0x133cf"
+          ],
+          "targets_address": [
+            "0x1800133cf"
+          ],
+          "complete_over_abstract_states": true,
+          "proof": "Finite-set abstract interpretation; setcc={0,1}; cmov=union of both operands; only file-backed nonwritable table bytes used as constants. No condition forced.",
+          "original_bytes": "ffe0"
+        },
+        {
+          "site_rva": "0x133e5",
+          "instruction": "jmp rax",
+          "targets_rva": [
+            "0x128c6",
+            "0x134c9"
+          ],
+          "targets_address": [
+            "0x1800128c6",
+            "0x1800134c9"
+          ],
+          "complete_over_abstract_states": true,
+          "proof": "Finite-set abstract interpretation; setcc={0,1}; cmov=union of both operands; only file-backed nonwritable table bytes used as constants. No condition forced.",
+          "original_bytes": "ffe0"
+        },
+        {
+          "site_rva": "0x129f2",
+          "instruction": "jmp r9",
+          "targets_rva": [
+            "0x12839",
+            "0x1301b",
+            "0x1316f"
+          ],
+          "targets_address": [
+            "0x180012839",
+            "0x18001301b",
+            "0x18001316f"
+          ],
+          "complete_over_abstract_states": true,
+          "proof": "Finite-set abstract interpretation; setcc={0,1}; cmov=union of both operands; only file-backed nonwritable table bytes used as constants. No condition forced.",
+          "original_bytes": "41ffe1"
+        },
+        {
+          "site_rva": "0x134de",
+          "instruction": "jmp rdx",
+          "targets_rva": [
+            "0x12a13",
+            "0x1301b"
+          ],
+          "targets_address": [
+            "0x180012a13",
+            "0x18001301b"
+          ],
+          "complete_over_abstract_states": true,
+          "proof": "Finite-set abstract interpretation; setcc={0,1}; cmov=union of both operands; only file-backed nonwritable table bytes used as constants. No condition forced.",
+          "original_bytes": "ffe2"
+        },
+        {
+          "site_rva": "0x128c4",
+          "instruction": "jmp rax",
+          "targets_rva": [
+            "0x127ed",
+            "0x12b14"
+          ],
+          "targets_address": [
+            "0x1800127ed",
+            "0x180012b14"
+          ],
+          "complete_over_abstract_states": true,
+          "proof": "Finite-set abstract interpretation; setcc={0,1}; cmov=union of both operands; only file-backed nonwritable table bytes used as constants. No condition forced.",
+          "original_bytes": "ffe0"
+        },
+        {
+          "site_rva": "0x128f5",
+          "instruction": "jmp r10",
+          "targets_rva": [
+            "0x12ece",
+            "0x1301b",
+            "0x134c9"
+          ],
+          "targets_address": [
+            "0x180012ece",
+            "0x18001301b",
+            "0x1800134c9"
+          ],
+          "complete_over_abstract_states": true,
+          "proof": "Finite-set abstract interpretation; setcc={0,1}; cmov=union of both operands; only file-backed nonwritable table bytes used as constants. No condition forced.",
+          "original_bytes": "41ffe2"
+        },
+        {
+          "site_rva": "0x12a33",
+          "instruction": "jmp r10",
+          "targets_rva": [
+            "0x12982",
+            "0x133e7"
+          ],
+          "targets_address": [
+            "0x180012982",
+            "0x1800133e7"
+          ],
+          "complete_over_abstract_states": true,
+          "proof": "Finite-set abstract interpretation; setcc={0,1}; cmov=union of both operands; only file-backed nonwritable table bytes used as constants. No condition forced.",
+          "original_bytes": "41ffe2"
+        },
+        {
+          "site_rva": "0x131a6",
+          "instruction": "jmp r9",
+          "targets_rva": [
+            "0x12ef3",
+            "0x12f74"
+          ],
+          "targets_address": [
+            "0x180012ef3",
+            "0x180012f74"
+          ],
+          "complete_over_abstract_states": true,
+          "proof": "Finite-set abstract interpretation; setcc={0,1}; cmov=union of both operands; only file-backed nonwritable table bytes used as constants. No condition forced.",
+          "original_bytes": "41ffe1"
+        },
+        {
+          "site_rva": "0x1280b",
+          "instruction": "jmp rcx",
+          "targets_rva": [
+            "0x12af1",
+            "0x13362"
+          ],
+          "targets_address": [
+            "0x180012af1",
+            "0x180013362"
+          ],
+          "complete_over_abstract_states": true,
+          "proof": "Finite-set abstract interpretation; setcc={0,1}; cmov=union of both operands; only file-backed nonwritable table bytes used as constants. No condition forced.",
+          "original_bytes": "ffe1"
+        },
+        {
+          "site_rva": "0x12b3b",
+          "instruction": "jmp rax",
+          "targets_rva": [
+            "0x128f8",
+            "0x12b40"
+          ],
+          "targets_address": [
+            "0x1800128f8",
+            "0x180012b40"
+          ],
+          "complete_over_abstract_states": true,
+          "proof": "Finite-set abstract interpretation; setcc={0,1}; cmov=union of both operands; only file-backed nonwritable table bytes used as constants. No condition forced.",
+          "original_bytes": "ffe0"
+        },
+        {
+          "site_rva": "0x133fe",
+          "instruction": "jmp rdx",
+          "targets_rva": [
+            "0x12982",
+            "0x1301b"
+          ],
+          "targets_address": [
+            "0x180012982",
+            "0x18001301b"
+          ],
+          "complete_over_abstract_states": true,
+          "proof": "Finite-set abstract interpretation; setcc={0,1}; cmov=union of both operands; only file-backed nonwritable table bytes used as constants. No condition forced.",
+          "original_bytes": "ffe2"
+        },
+        {
+          "site_rva": "0x12ef1",
+          "instruction": "jmp rcx",
+          "targets_rva": [
+            "0x1301b",
+            "0x131ce"
+          ],
+          "targets_address": [
+            "0x18001301b",
+            "0x1800131ce"
+          ],
+          "complete_over_abstract_states": true,
+          "proof": "Finite-set abstract interpretation; setcc={0,1}; cmov=union of both operands; only file-backed nonwritable table bytes used as constants. No condition forced.",
+          "original_bytes": "ffe1"
+        },
+        {
+          "site_rva": "0x12f8f",
+          "instruction": "jmp r9",
+          "targets_rva": [
+            "0x12956",
+            "0x12ef3"
+          ],
+          "targets_address": [
+            "0x180012956",
+            "0x180012ef3"
+          ],
+          "complete_over_abstract_states": true,
+          "proof": "Finite-set abstract interpretation; setcc={0,1}; cmov=union of both operands; only file-backed nonwritable table bytes used as constants. No condition forced.",
+          "original_bytes": "41ffe1"
+        },
+        {
+          "site_rva": "0x1337e",
+          "instruction": "jmp r10",
+          "targets_rva": [
+            "0x12af1",
+            "0x12dbd"
+          ],
+          "targets_address": [
+            "0x180012af1",
+            "0x180012dbd"
+          ],
+          "complete_over_abstract_states": true,
+          "proof": "Finite-set abstract interpretation; setcc={0,1}; cmov=union of both operands; only file-backed nonwritable table bytes used as constants. No condition forced.",
+          "original_bytes": "41ffe2"
+        },
+        {
+          "site_rva": "0x12f0d",
+          "instruction": "jmp r10",
+          "targets_rva": [
+            "0x1301b",
+            "0x133cf"
+          ],
+          "targets_address": [
+            "0x18001301b",
+            "0x1800133cf"
+          ],
+          "complete_over_abstract_states": true,
+          "proof": "Finite-set abstract interpretation; setcc={0,1}; cmov=union of both operands; only file-backed nonwritable table bytes used as constants. No condition forced.",
+          "original_bytes": "41ffe2"
+        },
+        {
+          "site_rva": "0x12b80",
+          "instruction": "jmp rax",
+          "targets_rva": [
+            "0x13381",
+            "0x13400"
+          ],
+          "targets_address": [
+            "0x180013381",
+            "0x180013400"
+          ],
+          "complete_over_abstract_states": true,
+          "proof": "Finite-set abstract interpretation; setcc={0,1}; cmov=union of both operands; only file-backed nonwritable table bytes used as constants. No condition forced.",
+          "original_bytes": "ffe0"
+        },
+        {
+          "site_rva": "0x129a2",
+          "instruction": "jmp r8",
+          "targets_rva": [
+            "0x132c4",
+            "0x132e6"
+          ],
+          "targets_address": [
+            "0x1800132c4",
+            "0x1800132e6"
+          ],
+          "complete_over_abstract_states": true,
+          "proof": "Finite-set abstract interpretation; setcc={0,1}; cmov=union of both operands; only file-backed nonwritable table bytes used as constants. No condition forced.",
+          "original_bytes": "41ffe0"
+        },
+        {
+          "site_rva": "0x12b12",
+          "instruction": "jmp rax",
+          "targets_rva": [
+            "0x127ed",
+            "0x12b40"
+          ],
+          "targets_address": [
+            "0x1800127ed",
+            "0x180012b40"
+          ],
+          "complete_over_abstract_states": true,
+          "proof": "Finite-set abstract interpretation; setcc={0,1}; cmov=union of both operands; only file-backed nonwritable table bytes used as constants. No condition forced.",
+          "original_bytes": "ffe0"
+        },
+        {
+          "site_rva": "0x12dd4",
+          "instruction": "jmp rcx",
+          "targets_rva": [
+            "0x12af1",
+            "0x13131"
+          ],
+          "targets_address": [
+            "0x180012af1",
+            "0x180013131"
+          ],
+          "complete_over_abstract_states": true,
+          "proof": "Finite-set abstract interpretation; setcc={0,1}; cmov=union of both operands; only file-backed nonwritable table bytes used as constants. No condition forced.",
+          "original_bytes": "ffe1"
+        },
+        {
+          "site_rva": "0x1341d",
+          "instruction": "jmp rax",
+          "targets_rva": [
+            "0x12792",
+            "0x12d16"
+          ],
+          "targets_address": [
+            "0x180012792",
+            "0x180012d16"
+          ],
+          "complete_over_abstract_states": true,
+          "proof": "Finite-set abstract interpretation; setcc={0,1}; cmov=union of both operands; only file-backed nonwritable table bytes used as constants. No condition forced.",
+          "original_bytes": "ffe0"
+        },
+        {
+          "site_rva": "0x132e3",
+          "instruction": "jmp r10",
+          "targets_rva": [
+            "0x1280d",
+            "0x12ce9"
+          ],
+          "targets_address": [
+            "0x18001280d",
+            "0x180012ce9"
+          ],
+          "complete_over_abstract_states": true,
+          "proof": "Finite-set abstract interpretation; setcc={0,1}; cmov=union of both operands; only file-backed nonwritable table bytes used as constants. No condition forced.",
+          "original_bytes": "41ffe2"
+        },
+        {
+          "site_rva": "0x1297f",
+          "instruction": "jmp r9",
+          "targets_rva": [
+            "0x12ef3",
+            "0x12f74"
+          ],
+          "targets_address": [
+            "0x180012ef3",
+            "0x180012f74"
+          ],
+          "complete_over_abstract_states": true,
+          "proof": "Finite-set abstract interpretation; setcc={0,1}; cmov=union of both operands; only file-backed nonwritable table bytes used as constants. No condition forced.",
+          "original_bytes": "41ffe1"
+        },
+        {
+          "site_rva": "0x13206",
+          "instruction": "jmp rax",
+          "targets_rva": [
+            "0x1327f",
+            "0x1341f"
+          ],
+          "targets_address": [
+            "0x18001327f",
+            "0x18001341f"
+          ],
+          "complete_over_abstract_states": true,
+          "proof": "Finite-set abstract interpretation; setcc={0,1}; cmov=union of both operands; only file-backed nonwritable table bytes used as constants. No condition forced.",
+          "original_bytes": "ffe0"
+        },
+        {
+          "site_rva": "0x133b4",
+          "instruction": "jmp rax",
+          "targets_rva": [
+            "0x13381",
+            "0x13400"
+          ],
+          "targets_address": [
+            "0x180013381",
+            "0x180013400"
+          ],
+          "complete_over_abstract_states": true,
+          "proof": "Finite-set abstract interpretation; setcc={0,1}; cmov=union of both operands; only file-backed nonwritable table bytes used as constants. No condition forced.",
+          "original_bytes": "ffe0"
+        },
+        {
+          "site_rva": "0x13149",
+          "instruction": "jmp rax",
+          "targets_rva": [
+            "0x12af1",
+            "0x12b14"
+          ],
+          "targets_address": [
+            "0x180012af1",
+            "0x180012b14"
+          ],
+          "complete_over_abstract_states": true,
+          "proof": "Finite-set abstract interpretation; setcc={0,1}; cmov=union of both operands; only file-backed nonwritable table bytes used as constants. No condition forced.",
+          "original_bytes": "ffe0"
+        },
+        {
+          "site_rva": "0x12cfb",
+          "instruction": "jmp r10",
+          "targets_rva": [
+            "0x1301b"
+          ],
+          "targets_address": [
+            "0x18001301b"
+          ],
+          "complete_over_abstract_states": true,
+          "proof": "Finite-set abstract interpretation; setcc={0,1}; cmov=union of both operands; only file-backed nonwritable table bytes used as constants. No condition forced.",
+          "original_bytes": "41ffe2"
+        },
+        {
+          "site_rva": "0x12953",
+          "instruction": "jmp r10",
+          "targets_rva": [
+            "0x1301b"
+          ],
+          "targets_address": [
+            "0x18001301b"
+          ],
+          "complete_over_abstract_states": true,
+          "proof": "Finite-set abstract interpretation; setcc={0,1}; cmov=union of both operands; only file-backed nonwritable table bytes used as constants. No condition forced.",
+          "original_bytes": "41ffe2"
+        },
+        {
+          "site_rva": "0x12836",
+          "instruction": "jmp r8",
+          "targets_rva": [
+            "0x12fe6",
+            "0x130a6"
+          ],
+          "targets_address": [
+            "0x180012fe6",
+            "0x1800130a6"
+          ],
+          "complete_over_abstract_states": true,
+          "proof": "Finite-set abstract interpretation; setcc={0,1}; cmov=union of both operands; only file-backed nonwritable table bytes used as constants. No condition forced.",
+          "original_bytes": "41ffe0"
+        },
+        {
+          "site_rva": "0x13435",
+          "instruction": "jmp rdx",
+          "targets_rva": [
+            "0x1301b",
+            "0x134c9"
+          ],
+          "targets_address": [
+            "0x18001301b",
+            "0x1800134c9"
+          ],
+          "complete_over_abstract_states": true,
+          "proof": "Finite-set abstract interpretation; setcc={0,1}; cmov=union of both operands; only file-backed nonwritable table bytes used as constants. No condition forced.",
+          "original_bytes": "ffe2"
+        },
+        {
+          "site_rva": "0x13340",
+          "instruction": "jmp r10",
+          "targets_rva": [
+            "0x132c4"
+          ],
+          "targets_address": [
+            "0x1800132c4"
+          ],
+          "complete_over_abstract_states": true,
+          "proof": "Finite-set abstract interpretation; setcc={0,1}; cmov=union of both operands; only file-backed nonwritable table bytes used as constants. No condition forced.",
+          "original_bytes": "41ffe2"
+        },
+        {
+          "site_rva": "0x12d7f",
+          "instruction": "jmp rcx",
+          "targets_rva": [
+            "0x1301b",
+            "0x131a9"
+          ],
+          "targets_address": [
+            "0x18001301b",
+            "0x1800131a9"
+          ],
+          "complete_over_abstract_states": true,
+          "proof": "Finite-set abstract interpretation; setcc={0,1}; cmov=union of both operands; only file-backed nonwritable table bytes used as constants. No condition forced.",
+          "original_bytes": "ffe1"
+        },
+        {
+          "site_rva": "0x132a4",
+          "instruction": "jmp rax",
+          "targets_rva": [
+            "0x131ce",
+            "0x1341f"
+          ],
+          "targets_address": [
+            "0x1800131ce",
+            "0x18001341f"
+          ],
+          "complete_over_abstract_states": true,
+          "proof": "Finite-set abstract interpretation; setcc={0,1}; cmov=union of both operands; only file-backed nonwritable table bytes used as constants. No condition forced.",
+          "original_bytes": "ffe0"
+        },
+        {
+          "site_rva": "0x12fff",
+          "instruction": "jmp r13",
+          "targets_rva": [
+            "0x12ce9",
+            "0x1301b"
+          ],
+          "targets_address": [
+            "0x180012ce9",
+            "0x18001301b"
+          ],
+          "complete_over_abstract_states": true,
+          "proof": "Finite-set abstract interpretation; setcc={0,1}; cmov=union of both operands; only file-backed nonwritable table bytes used as constants. No condition forced.",
+          "original_bytes": "41ffe5"
+        },
+        {
+          "site_rva": "0x127eb",
+          "instruction": "jmp rax",
+          "targets_rva": [
+            "0x13072",
+            "0x132a6"
+          ],
+          "targets_address": [
+            "0x180013072",
+            "0x1800132a6"
+          ],
+          "complete_over_abstract_states": true,
+          "proof": "Finite-set abstract interpretation; setcc={0,1}; cmov=union of both operands; only file-backed nonwritable table bytes used as constants. No condition forced.",
+          "original_bytes": "ffe0"
+        },
+        {
+          "site_rva": "0x130cb",
+          "instruction": "jmp r8",
+          "targets_rva": [
+            "0x1280d",
+            "0x12fe6"
+          ],
+          "targets_address": [
+            "0x18001280d",
+            "0x180012fe6"
+          ],
+          "complete_over_abstract_states": true,
+          "proof": "Finite-set abstract interpretation; setcc={0,1}; cmov=union of both operands; only file-backed nonwritable table bytes used as constants. No condition forced.",
+          "original_bytes": "41ffe0"
+        },
+        {
+          "site_rva": "0x131cc",
+          "instruction": "jmp rax",
+          "targets_rva": [
+            "0x12f10",
+            "0x133b6"
+          ],
+          "targets_address": [
+            "0x180012f10",
+            "0x1800133b6"
+          ],
+          "complete_over_abstract_states": true,
+          "proof": "Finite-set abstract interpretation; setcc={0,1}; cmov=union of both operands; only file-backed nonwritable table bytes used as constants. No condition forced.",
+          "original_bytes": "ffe0"
+        },
+        {
+          "site_rva": "0x132c2",
+          "instruction": "jmp rdx",
+          "targets_rva": [
+            "0x1301b"
+          ],
+          "targets_address": [
+            "0x18001301b"
+          ],
+          "complete_over_abstract_states": true,
+          "proof": "Finite-set abstract interpretation; setcc={0,1}; cmov=union of both operands; only file-backed nonwritable table bytes used as constants. No condition forced.",
+          "original_bytes": "ffe2"
+        },
+        {
+          "site_rva": "0x133cc",
+          "instruction": "jmp r10",
+          "targets_rva": [
+            "0x12ba9",
+            "0x1301b"
+          ],
+          "targets_address": [
+            "0x180012ba9",
+            "0x18001301b"
+          ],
+          "complete_over_abstract_states": true,
+          "proof": "Finite-set abstract interpretation; setcc={0,1}; cmov=union of both operands; only file-backed nonwritable table bytes used as constants. No condition forced.",
+          "original_bytes": "41ffe2"
+        },
+        {
+          "site_rva": "0x130a4",
+          "instruction": "jmp rdx",
+          "targets_rva": [
+            "0x12dd6",
+            "0x12e19"
+          ],
+          "targets_address": [
+            "0x180012dd6",
+            "0x180012e19"
+          ],
+          "complete_over_abstract_states": true,
+          "proof": "Finite-set abstract interpretation; setcc={0,1}; cmov=union of both operands; only file-backed nonwritable table bytes used as constants. No condition forced.",
+          "original_bytes": "ffe2"
+        },
+        {
+          "site_rva": "0x12f3a",
+          "instruction": "jmp r9",
+          "targets_rva": [
+            "0x12a36",
+            "0x13031"
+          ],
+          "targets_address": [
+            "0x180012a36",
+            "0x180013031"
+          ],
+          "complete_over_abstract_states": true,
+          "proof": "Finite-set abstract interpretation; setcc={0,1}; cmov=union of both operands; only file-backed nonwritable table bytes used as constants. No condition forced.",
+          "original_bytes": "41ffe1"
+        },
+        {
+          "site_rva": "0x12e30",
+          "instruction": "jmp rcx",
+          "targets_rva": [
+            "0x12b82",
+            "0x13002"
+          ],
+          "targets_address": [
+            "0x180012b82",
+            "0x180013002"
+          ],
+          "complete_over_abstract_states": true,
+          "proof": "Finite-set abstract interpretation; setcc={0,1}; cmov=union of both operands; only file-backed nonwritable table bytes used as constants. No condition forced.",
+          "original_bytes": "ffe1"
+        },
+        {
+          "site_rva": "0x12bd3",
+          "instruction": "jmp rax",
+          "targets_rva": [
+            "0x12da3",
+            "0x13208"
+          ],
+          "targets_address": [
+            "0x180012da3",
+            "0x180013208"
+          ],
+          "complete_over_abstract_states": true,
+          "proof": "Finite-set abstract interpretation; setcc={0,1}; cmov=union of both operands; only file-backed nonwritable table bytes used as constants. No condition forced.",
+          "original_bytes": "ffe0"
+        },
+        {
+          "site_rva": "0x1304f",
+          "instruction": "jmp r9",
+          "targets_rva": [
+            "0x12c10",
+            "0x134ab"
+          ],
+          "targets_address": [
+            "0x180012c10",
+            "0x1800134ab"
+          ],
+          "complete_over_abstract_states": true,
+          "proof": "Finite-set abstract interpretation; setcc={0,1}; cmov=union of both operands; only file-backed nonwritable table bytes used as constants. No condition forced.",
+          "original_bytes": "41ffe1"
+        },
+        {
+          "site_rva": "0x12a54",
+          "instruction": "jmp r9",
+          "targets_rva": [
+            "0x12f3d",
+            "0x1347a"
+          ],
+          "targets_address": [
+            "0x180012f3d",
+            "0x18001347a"
+          ],
+          "complete_over_abstract_states": true,
+          "proof": "Finite-set abstract interpretation; setcc={0,1}; cmov=union of both operands; only file-backed nonwritable table bytes used as constants. No condition forced.",
+          "original_bytes": "41ffe1"
+        },
+        {
+          "site_rva": "0x12dba",
+          "instruction": "jmp r8",
+          "targets_rva": [
+            "0x12e80",
+            "0x1301b"
+          ],
+          "targets_address": [
+            "0x180012e80",
+            "0x18001301b"
+          ],
+          "complete_over_abstract_states": true,
+          "proof": "Finite-set abstract interpretation; setcc={0,1}; cmov=union of both operands; only file-backed nonwritable table bytes used as constants. No condition forced.",
+          "original_bytes": "41ffe0"
+        },
+        {
+          "site_rva": "0x12ba7",
+          "instruction": "jmp rcx",
+          "targets_rva": [
+            "0x12765",
+            "0x13002"
+          ],
+          "targets_address": [
+            "0x180012765",
+            "0x180013002"
+          ],
+          "complete_over_abstract_states": true,
+          "proof": "Finite-set abstract interpretation; setcc={0,1}; cmov=union of both operands; only file-backed nonwritable table bytes used as constants. No condition forced.",
+          "original_bytes": "ffe1"
+        },
+        {
+          "site_rva": "0x12e16",
+          "instruction": "jmp r10",
+          "targets_rva": [
+            "0x12d81",
+            "0x13002"
+          ],
+          "targets_address": [
+            "0x180012d81",
+            "0x180013002"
+          ],
+          "complete_over_abstract_states": true,
+          "proof": "Finite-set abstract interpretation; setcc={0,1}; cmov=union of both operands; only file-backed nonwritable table bytes used as constants. No condition forced.",
+          "original_bytes": "41ffe2"
+        },
+        {
+          "site_rva": "0x13223",
+          "instruction": "jmp r10",
+          "targets_rva": [
+            "0x1301b"
+          ],
+          "targets_address": [
+            "0x18001301b"
+          ],
+          "complete_over_abstract_states": true,
+          "proof": "Finite-set abstract interpretation; setcc={0,1}; cmov=union of both operands; only file-backed nonwritable table bytes used as constants. No condition forced.",
+          "original_bytes": "41ffe2"
+        },
+        {
+          "site_rva": "0x12c27",
+          "instruction": "jmp rax",
+          "targets_rva": [
+            "0x13052",
+            "0x133b6"
+          ],
+          "targets_address": [
+            "0x180013052",
+            "0x1800133b6"
+          ],
+          "complete_over_abstract_states": true,
+          "proof": "Finite-set abstract interpretation; setcc={0,1}; cmov=union of both operands; only file-backed nonwritable table bytes used as constants. No condition forced.",
+          "original_bytes": "ffe0"
+        },
+        {
+          "site_rva": "0x13491",
+          "instruction": "jmp rax",
+          "targets_rva": [
+            "0x13052",
+            "0x133b6"
+          ],
+          "targets_address": [
+            "0x180013052",
+            "0x1800133b6"
+          ],
+          "complete_over_abstract_states": true,
+          "proof": "Finite-set abstract interpretation; setcc={0,1}; cmov=union of both operands; only file-backed nonwritable table bytes used as constants. No condition forced.",
+          "original_bytes": "ffe0"
+        },
+        {
+          "site_rva": "0x12f54",
+          "instruction": "jmp rax",
+          "targets_rva": [
+            "0x13052",
+            "0x133b6"
+          ],
+          "targets_address": [
+            "0x180013052",
+            "0x1800133b6"
+          ],
+          "complete_over_abstract_states": true,
+          "proof": "Finite-set abstract interpretation; setcc={0,1}; cmov=union of both operands; only file-backed nonwritable table bytes used as constants. No condition forced.",
+          "original_bytes": "ffe0"
+        },
+        {
+          "site_rva": "0x134c7",
+          "instruction": "jmp rax",
+          "targets_rva": [
+            "0x13052",
+            "0x133b6"
+          ],
+          "targets_address": [
+            "0x180013052",
+            "0x1800133b6"
+          ],
+          "complete_over_abstract_states": true,
+          "proof": "Finite-set abstract interpretation; setcc={0,1}; cmov=union of both operands; only file-backed nonwritable table bytes used as constants. No condition forced.",
+          "original_bytes": "ffe0"
+        },
+        {
+          "site_rva": "0x12eaa",
+          "instruction": "jmp rax",
+          "targets_rva": [
+            "0x13381",
+            "0x13400"
+          ],
+          "targets_address": [
+            "0x180013381",
+            "0x180013400"
+          ],
+          "complete_over_abstract_states": true,
+          "proof": "Finite-set abstract interpretation; setcc={0,1}; cmov=union of both operands; only file-backed nonwritable table bytes used as constants. No condition forced.",
+          "original_bytes": "ffe0"
+        },
+        {
+          "site_rva": "0x1306f",
+          "instruction": "jmp r9",
+          "targets_rva": [
+            "0x1301b",
+            "0x1314b"
+          ],
+          "targets_address": [
+            "0x18001301b",
+            "0x18001314b"
+          ],
+          "complete_over_abstract_states": true,
+          "proof": "Finite-set abstract interpretation; setcc={0,1}; cmov=union of both operands; only file-backed nonwritable table bytes used as constants. No condition forced.",
+          "original_bytes": "41ffe1"
+        },
+        {
+          "site_rva": "0x12790",
+          "instruction": "jmp rax",
+          "targets_rva": [
+            "0x12e32",
+            "0x130ce"
+          ],
+          "targets_address": [
+            "0x180012e32",
+            "0x1800130ce"
+          ],
+          "complete_over_abstract_states": true,
+          "proof": "Finite-set abstract interpretation; setcc={0,1}; cmov=union of both operands; only file-backed nonwritable table bytes used as constants. No condition forced.",
+          "original_bytes": "ffe0"
+        },
+        {
+          "site_rva": "0x1316c",
+          "instruction": "jmp r9",
+          "targets_rva": [
+            "0x12a36",
+            "0x13031"
+          ],
+          "targets_address": [
+            "0x180012a36",
+            "0x180013031"
+          ],
+          "complete_over_abstract_states": true,
+          "proof": "Finite-set abstract interpretation; setcc={0,1}; cmov=union of both operands; only file-backed nonwritable table bytes used as constants. No condition forced.",
+          "original_bytes": "41ffe1"
+        },
+        {
+          "site_rva": "0x130ea",
+          "instruction": "jmp rax",
+          "targets_rva": [
+            "0x12d0c",
+            "0x12d1d"
+          ],
+          "targets_address": [
+            "0x180012d0c",
+            "0x180012d1d"
+          ],
+          "complete_over_abstract_states": true,
+          "proof": "Finite-set abstract interpretation; setcc={0,1}; cmov=union of both operands; only file-backed nonwritable table bytes used as constants. No condition forced.",
+          "original_bytes": "ffe0"
+        },
+        {
+          "site_rva": "0x12e50",
+          "instruction": "jmp rax",
+          "targets_rva": [
+            "0x12cfe",
+            "0x12d0c",
+            "0x12d1d"
+          ],
+          "targets_address": [
+            "0x180012cfe",
+            "0x180012d0c",
+            "0x180012d1d"
+          ],
+          "complete_over_abstract_states": true,
+          "proof": "Finite-set abstract interpretation; setcc={0,1}; cmov=union of both operands; only file-backed nonwritable table bytes used as constants. No condition forced.",
+          "original_bytes": "ffe0"
+        }
+      ],
+      "unresolved_computed_jumps": [],
+      "all_indirect_CALLs": [],
+      "indirect_CALL_classification": "NONE: every native CALL is immediate direct; old C indirect-call renderings are native JMPs",
+      "direct_calls": [
+        {
+          "rva": "0x126d7",
+          "bytes": "e8b43affff",
+          "instruction": "call 0x180006190",
+          "target_rva": "0x6190"
+        },
+        {
+          "rva": "0x1279d",
+          "bytes": "e850730500",
+          "instruction": "call 0x180069af2",
+          "target_rva": "0x69af2"
+        },
+        {
+          "rva": "0x1291c",
+          "bytes": "e8be48ffff",
+          "instruction": "call 0x1800071df",
+          "target_rva": "0x71df"
+        },
+        {
+          "rva": "0x12937",
+          "bytes": "e844560000",
+          "instruction": "call 0x180017f80",
+          "target_rva": "0x17f80"
+        },
+        {
+          "rva": "0x12c40",
+          "bytes": "e825d60400",
+          "instruction": "call 0x18006026a",
+          "target_rva": "0x6026a"
+        },
+        {
+          "rva": "0x12c8d",
+          "bytes": "e8606e0500",
+          "instruction": "call 0x180069af2",
+          "target_rva": "0x69af2"
+        },
+        {
+          "rva": "0x12d2b",
+          "bytes": "e8a0a10600",
+          "instruction": "call 0x18007ced0",
+          "target_rva": "0x7ced0"
+        },
+        {
+          "rva": "0x12d4d",
+          "bytes": "e82e520000",
+          "instruction": "call 0x180017f80",
+          "target_rva": "0x17f80"
+        },
+        {
+          "rva": "0x12d5d",
+          "bytes": "e855f9ffff",
+          "instruction": "call 0x1800126b7",
+          "target_rva": "0x126b7"
+        },
+        {
+          "rva": "0x12fdd",
+          "bytes": "e89e4f0000",
+          "instruction": "call 0x180017f80",
+          "target_rva": "0x17f80"
+        },
+        {
+          "rva": "0x13014",
+          "bytes": "e8674f0000",
+          "instruction": "call 0x180017f80",
+          "target_rva": "0x17f80"
+        }
+      ],
+      "external_tail_jumps": [
+        {
+          "rva": "0x12aa8",
+          "bytes": "e9bdd70400",
+          "instruction": "jmp 0x18006026a"
+        }
+      ],
+      "static_table_read_count": 101,
+      "normal_TLS_sha256": "bc771bacab6afa5320e7f6a34bda2dce341f71abb7533a2d83eb66cad2e2b51b",
+      "baseline_C_diagnostic": {
+        "path": "work\\alpme_analysis\\semantic_closure_20261027\\ghidra_repair\\repaired_exports\\19_payload.dll.bin\\0x126b7.c",
+        "bytes": 39896,
+        "sha256": "a73fa68ccacbae1987d66b9fb3c69dd62320c723601e2c1a845b53cda2f67635",
+        "candidate": false,
+        "counts": {
+          "Could not recover jumptable": 3,
+          "Treating indirect jump as call": 3,
+          "halt_baddata": 0,
+          "Bad instruction data": 0,
+          "UnimplementedPcode": 0
+        },
+        "partial_markers": 6,
+        "normal_context": false
+      },
+      "previous_C_truncation_sites": [
+        {
+          "rva": "0x12f54",
+          "bytes": "ffe0",
+          "instruction": "jmp rax",
+          "finite_targets": [
+            "0x13052",
+            "0x133b6"
+          ]
+        },
+        {
+          "rva": "0x13491",
+          "bytes": "ffe0",
+          "instruction": "jmp rax",
+          "finite_targets": [
+            "0x13052",
+            "0x133b6"
+          ]
+        }
+      ],
+      "TLS_constants": {
+        "0x100": "0x20",
+        "0x240": "0xe7fd7fb7e72eb233",
+        "0x298": "0x241bb5391f9ee3fb",
+        "0x2c8": "0xef75b81f42a3d56"
+      },
+      "memory_retention_overrides": false,
+      "data_role": "recursive JSON value scanner and selected string-value extractor; RCX parser state, RDX recursion depth, R8B selection flag; logical result AL",
+      "state_layout": {
+        "0x0": "selector/control pointer tested nonzero",
+        "0x8": "first comparison key length",
+        "0x10": "second comparison key pointer",
+        "0x18": "second comparison key length",
+        "0x20": "cursor (mutated)",
+        "0x28": "raw JSON input pointer (read)",
+        "0x30": "raw JSON byte length (read)",
+        "0x38": "selected string output pointer",
+        "0x40": "selected string output capacity/tag",
+        "0x48": "selected string output length"
+      },
+      "normal_state_offset_arithmetic": {
+        "input_length_offset": "0x30",
+        "input_pointer_offset": "0x28",
+        "string_temporary_capacity_offset": "0x8",
+        "string_temporary_length_offset": "0x10",
+        "capture_capacity_offset": "0x40"
+      },
+      "semantic_native_anchors": [
+        {
+          "rva": "0x126ca",
+          "bytes": "4488442422",
+          "instruction": "mov byte ptr [rsp + 0x22], r8b"
+        },
+        {
+          "rva": "0x126cf",
+          "bytes": "4889542430",
+          "instruction": "mov qword ptr [rsp + 0x30], rdx"
+        },
+        {
+          "rva": "0x126d4",
+          "bytes": "4889ce",
+          "instruction": "mov rsi, rcx"
+        },
+        {
+          "rva": "0x12725",
+          "bytes": "b863b22ee7",
+          "instruction": "mov eax, 0xe72eb263"
+        },
+        {
+          "rva": "0x1272a",
+          "bytes": "412bc4",
+          "instruction": "sub eax, r12d"
+        },
+        {
+          "rva": "0x1272f",
+          "bytes": "4c8b3c1e",
+          "instruction": "mov r15, qword ptr [rsi + rbx]"
+        },
+        {
+          "rva": "0x12733",
+          "bytes": "488b5620",
+          "instruction": "mov rdx, qword ptr [rsi + 0x20]"
+        },
+        {
+          "rva": "0x12b48",
+          "bytes": "48ff442430",
+          "instruction": "inc qword ptr [rsp + 0x30]"
+        },
+        {
+          "rva": "0x12d55",
+          "bytes": "488b542430",
+          "instruction": "mov rdx, qword ptr [rsp + 0x30]"
+        },
+        {
+          "rva": "0x12d5d",
+          "bytes": "e855f9ffff",
+          "instruction": "call 0x1800126b7"
+        },
+        {
+          "rva": "0x12e52",
+          "bytes": "4489e0",
+          "instruction": "mov eax, r12d"
+        },
+        {
+          "rva": "0x12e55",
+          "bytes": "351bb22ee7",
+          "instruction": "xor eax, 0xe72eb21b"
+        },
+        {
+          "rva": "0x12eae",
+          "bytes": "48837c24307f",
+          "instruction": "cmp qword ptr [rsp + 0x30], 0x7f"
+        },
+        {
+          "rva": "0x12fc3",
+          "bytes": "48894e38",
+          "instruction": "mov qword ptr [rsi + 0x38], rcx"
+        },
+        {
+          "rva": "0x12fcb",
+          "bytes": "48894648",
+          "instruction": "mov qword ptr [rsi + 0x48], rax"
+        },
+        {
+          "rva": "0x1301b",
+          "bytes": "2401",
+          "instruction": "and al, 1"
+        },
+        {
+          "rva": "0x13030",
+          "bytes": "c3",
+          "instruction": "ret "
+        }
+      ],
+      "native_JSON_literal_sources": [
+        {
+          "rva": "0x815fd",
+          "bytes": "74727565",
+          "ASCII": "true"
+        },
+        {
+          "rva": "0x816b9",
+          "bytes": "6e756c6c",
+          "ASCII": "null"
+        },
+        {
+          "rva": "0x823d8",
+          "bytes": "66616c7365",
+          "ASCII": "false"
+        }
+      ],
+      "decompiler_export": {
+        "path": "work\\alpme_analysis\\semantic_closure_20261027\\round5_tokenizers\\normal_exports\\19_payload.dll.bin_0x126b7.c",
+        "sha256": "c3168e01ea3c6b1802583329905259b3c94efb20b7148619f7ebae6abb7787ba",
+        "markers": {
+          "Could not recover jumptable": 0,
+          "Treating indirect jump as call": 0,
+          "halt_baddata": 0,
+          "Bad instruction data": 0,
+          "UnimplementedPcode": 0
+        },
+        "text_bytes_unchanged": true,
+        "purpose": "reference C for conditional CFG, not original source"
+      }
+    }
+  ],
+  "verification_status": "PASS"
+}

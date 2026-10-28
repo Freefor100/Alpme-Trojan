@@ -51,7 +51,7 @@
     Chromium Default单独检查
     其他名字门: length>=8 且 memcmp(name,"Profile ",8)==0
         区分大小写，无数字后缀条件；保留完整basename
-    原始根初始化器、单profile与部分扩展采集函数仍有待审分支
+    两版根初始化器、Chromium和Gecko采集器有本轮正式CFG/来源收据；其它边界见analysis/PROGRESS.md
 
 19准备浏览器上下文:
     LastBrowser路径和app-bound相关解码结果可用时进入准备线程
@@ -79,3 +79,23 @@
     会话标识 + 类型化结果 -> 序列化 -> 压缩 -> 固定通信键包装
     WinHTTP HTTPS POST / 到hebaoshi[.]co:443
     文件字节和键材料等按实际结果通道组装；逻辑文件名不要求先落盘
+
+
+Chromium文件结果组织:
+    对profile描述符切片中的每项:
+        Cookies开 ->读Network/Cookies
+        Login开 ->读Login Data和Login Data For Account
+        History开 ->读History; WebData开 ->读Web Data
+        独立读Preferences; 独立平面枚举Local Storage/leveldb
+        排除精确basename LOCK/LOG/LOG.old及目录/name-surrogate项
+        成功LevelDB文件 ->basename到原bytes的有序map
+        local_storage二进制 ->u64LE count; 每项keylen/key/vallen/value
+        组合7数据字段+4已有metadata; 跳过缺失及普通空内容
+        非空map+浏览器名+profile路径 ->结果通道
+
+专用selector:
+    空列表 ->不做额外提取
+    只比较第一项的完整区分大小写字符串
+    roblox / discord / steam ->对应内置处理器
+    其它(含grass) ->释放比较文字,推进任务
+    普通root/pattern文件任务独立继续

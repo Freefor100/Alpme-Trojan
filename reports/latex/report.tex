@@ -58,7 +58,7 @@
 \fancyhead[L]{\sffamily\small Alpme / 17si / 19si}
 \fancyhead[R]{\sffamily\small 窃密木马技术分析\quad 2026-10-28}
 \fancyfoot[L]{\sffamily\footnotesize GPT-6.1 sol@Codex}
-\fancyfoot[C]{\sffamily\footnotesize 技术分析 · v3.1}
+\fancyfoot[C]{\sffamily\footnotesize 技术分析 · v3.2}
 \fancyfoot[R]{\sffamily\footnotesize \thepage\ / \pageref*{LastPage}}
 \renewcommand{\headrulewidth}{0.35pt}
 \renewcommand{\footrulewidth}{0pt}
@@ -104,7 +104,7 @@
 作者 & \textbf{GPT-6.1 sol@Codex}\\
 日期 & 2026年10月28日\\
 分析对象 & Alpme 1.0.25 VSIX、本地取得的17si.exe和19si.exe、两份内层DLL\\
-版本 & v3.1\\\bottomrule
+版本 & v3.2\\\bottomrule
 \end{tabularx}\par\medskip
 \vspace{7mm}
 {\small\color{Muted} 本报告以本地取得的两个木马程序为分析对象。其他受害设备上的程序可能属于不同版本，应以文件SHA-256和实际配置核对。\par}
@@ -300,7 +300,7 @@ PE是Windows可执行文件格式；节（section）将机器码、只读常量�
 \section{云控配置与运行调度}
 \label{sec:control}
 \subsection{第一次请求与配置下发}
-DLL初始化后收集CPU标识和品牌、卷序列、处理器数量、内存、屏幕、系统版本、用户和计算机名、区域、键盘布局、安装软件等信息，包装为首次POST。设备标识涉及CPU标识文本和卷序列文本的SHA-256组合。
+DLL初始化后收集CPU标识和品牌、卷序列、处理器数量、内存、屏幕、系统版本、用户和计算机名、区域、键盘布局、安装软件等信息，包装为首次POST。设备指纹的SHA-256输入组合CPU标识文字、显示设备文字及成功取得的卷序列文字。
 
 服务器回复经过应用层解密、解压及类型检查，形成配置对象，随后启动工作线程。正常根操作识别为五类；文件集合内部再区分文件任务和注册表任务。表中的tag是协议判别值。
 \begingroup\small
@@ -314,6 +314,34 @@ DLL初始化后收集CPU标识和品牌、卷序列、处理器数量、内存�
 下载执行 & \code{83} & \code{E3} & 下载指定URL并启动EXE、MSI或脚本 \\
 \bottomrule\end{longtable}\endgroup
 
+
+\subsection{首次请求中的主机资料怎样构造}
+17的\code{0x1593b}与19的\code{0x57f4f}构造同布局的\code{0x12c}字节内部记录。下表按原生终端写入和实际API来源排列；偏移用于逆向定位，网络上的序列化结果另由协议编码器组织。
+
+\begin{longtable}{@{}L{20mm}L{45mm}L{85mm}@{}}\toprule 内部偏移 & 资料 & 获取方式及含义\\\midrule\endhead
+\code{0x00} & CPU品牌 & CPUID扩展叶\code{0x80000002..04}的48字节，校验UTF-8并去除首尾空白\\
+\code{0x18} & 系统卷序列号 & \code{GetVolumeInformationW}查询\code{C:\textbackslash{}}的卷序列，再转成文字\\
+\code{0x30} & 设备指纹摘要 & SHA-256的32字节摘要转64字符小写十六进制\\
+\code{0x48} & 键盘布局/语言列表 & 读取HKCU的Keyboard Layout/Preload，解析LCID，再用\code{LCIDToLocaleName}转换并去重\\
+\code{0x60} & CPU标识文字 & CPUID叶1的寄存器数据经过格式化\\
+\code{0x78} & Windows版本 & \code{RtlGetVersion}结构和版本分支经格式化\\
+\code{0x90} & 已安装软件列表 & 枚举Uninstall子键，读取软件标识、名称、版本及卸载字符串\\
+\code{0xa8} & 默认区域名称 & \code{GetUserDefaultLocaleName}，UTF-16转换为UTF-8\\
+\code{0xc0} & 显示设备描述列表 & \code{EnumDisplayDevicesW(NULL,index,...,0)}，按StateFlags的\code{0x8}位筛选并读取DeviceString\\
+\code{0xd8} & 屏幕宽高文字 & 调用\code{SetProcessDPIAware}，再查询\code{GetSystemMetrics(0/1)}\\
+\code{0xf0} & 计算机名 & \code{GetComputerNameW}，初始容量16个WCHAR\\
+\code{0x108} & 用户名 & \code{GetUserNameW}，初始容量257个WCHAR\\
+\code{0x120} & 物理内存MiB & \code{GlobalMemoryStatusEx}的总物理内存字节数右移20位；失败分支为0\\
+\code{0x128} & 逻辑处理器数量 & \code{GetSystemInfo}返回的\code{dwNumberOfProcessors}；不是物理CPU核心数\\\bottomrule\end{longtable}
+
+软件枚举同时覆盖HKLM和HKCU，并在每个根下依次查两条路径：
+\par\smallskip\noindent\code{SOFTWARE/Microsoft/Windows/CurrentVersion/Uninstall}\par
+\noindent\code{SOFTWARE/WOW6432Node/Microsoft/Windows/CurrentVersion/Uninstall}\par\smallskip
+打开权限是\code{KEY\_READ(0x20019)}，没有另设WOW64视图标志；随后枚举子键，查询\code{SystemComponent}、\code{UninstallString}、\code{DisplayName}和\code{DisplayVersion}。卸载字符串在这里是被读取的注册表数据，这条收集链没有把它作为命令启动。
+
+设备指纹的哈希输入按顺序拼接CPU叶1的格式化文字、显示设备文字片段、成功取得的系统卷序列文字；再经BCrypt的SHA-256接口计算并转十六进制。它用于组织设备身份，与通信包的固定32字节键、浏览器数据解密键分别属于不同数据流。
+
+两函数各45个文字构造器已从自身原始source、长度和seed正向解码，18组接口解析器、23处间接CALL都已定位生产者。完整函数验收仍需检查控制数值是否被中途的调用或写入覆盖：当前带明确API和辅助函数输出约定的来源门，两版各271处读取中分别有42、47项待复核，主要阻点是UTF转换、字符串组合与注册表返回对象的写入范围。已恢复的字段和接口按本节说明，整函数统计保留这些具体未完成项。
 
 \subsection{本次取得的实际配置}
 两次使用合成指纹取得的回复分别为44,867和44,860字节。解密后配置在忽略排列次序时语义相同：325个文件任务、390组根、787条模式、3个注册表任务。截图开启；Cookies、登录数据和Web Data开启，History关闭。下载URL列表为空，剪贴板替换关闭，十组替换字符串为空。
@@ -372,12 +400,31 @@ Discord & \code{Local State}中的保护密钥，经DPAPI；扫描LevelDB的\cod
 
 三类处理各在两个版本的原始指令中验证，虚构明文均到达结果通道。Discord测试的nonce、密文和认证tag还经独立密码学核验。输出名\code{tokens.txt}是结果映射的逻辑名称，程序可直接封装上传，无须先在磁盘生成同名文本。
 
-selector区分大小写，例如\code{Discord}与\code{discord}并不相同；分类名变化也未关闭已测专用链。Grass的实际任务以深度3读取数据库、LevelDB和配置；已测\code{grass}输入正常返回普通文件结果，没有生成额外令牌结果。
+selector比较区分大小写。空列表跳过额外处理；非空列表只取第一个字符串，按\code{roblox}、\code{discord}、\code{steam}选择内置处理器，不逐项执行后续字符串。首项不等于这三个名称时，两版都只执行程序文字的克隆、比较和释放，然后推进到下一任务；这一额外处理路径不调用文件提取、DPAPI/CNG、网络或程序启动。Grass的\code{grass}首项属于该默认路径，另行配置的深度3普通文件采集继续生效。该字符串不是脚本或机器码；任意新增程序的执行能力来自独立的下载执行分支。
+
+\subsection{被占用文件怎样进入备用读取链}
+17的\code{0x56ab1}是接收调用者路径的通用文件读取后端，输出为24字节向量描述符。普通路径用\code{CreateFileW}以只读、共享读写、打开既有文件的方式取得句柄；查询大小后分配内存，循环\code{ReadFile}，校验实际读取量。它没有固定目标文件名，目标来自浏览器或通用文件任务的上一层。
+
+\begin{longtable}{@{}L{32mm}L{69mm}L{49mm}@{}}\toprule 阶段 & 原生动作 & 转入下一步的条件\\\midrule\endhead
+普通读取 & \code{CreateFileW}、\code{GetFileSizeEx}、\code{ReadFile} & 打开与读取成功，输出文件内容\\
+进入备用链 & 取\code{GetLastError} & 共享冲突\code{0x20}选择既有句柄路线\\
+匹配文件路径 & \code{GetFullPathNameW}、\code{QueryDosDeviceW} & 得到可比较的NT设备路径\\
+寻找既有句柄 & \code{NtQuerySystemInformation(0x40)}，解析40字节句柄记录 & 候选进程可打开，且存在可复制的磁盘文件句柄\\
+复制并核对 & \code{OpenProcess(0x40)}、\code{DuplicateHandle}、\code{NtQueryObject(1)} & 名称与边界检查通过；UTF-16后缀比较对ASCII大小写不敏感\\
+映射复制 & \code{CreateFileMappingW}、\code{MapViewOfFile}、\code{ReadProcessMemory} & 只读视图每块最多16MiB；实际复制数必须等于请求块长\\
+释放与退出 & \code{UnmapViewOfFile}、句柄关闭、缓冲释放 & 成功移交内容；失败按错误类别清理或重试\\\bottomrule\end{longtable}
+
+这里\code{ReadProcessMemory}的进程参数是\code{-1}，即当前进程伪句柄，读取源为刚映射到当前进程的文件视图，目的为新分配的内容向量。它在这条路线中负责受检查的映射复制，与浏览器内存取钥核心中的外部进程读取有明确不同的参数来源。
+
+备用链依赖目标文件存在匹配句柄，以及打开进程和复制句柄成功。\code{DuplicateHandle}使用\code{DUPLICATE\_SAME\_ACCESS}，没有关闭源句柄。只读映射和备用句柄读取可处理部分共享占用情形；进程权限、源句柄访问权与保护状态仍决定实际能否读取。
+
+暂时失败分支请求等待50毫秒，以计数10为退出门；共享冲突、空结果、硬失败与暂时失败各有独立错误tag。输出为空、失败sentinel和成功拥有的内容向量在调用层继续区分。此reader本身没有写文件、删除文件、注册表、自启动或网络调用；样本其它已确认的写入与上传在各自章节列出。
+
 
 \section{浏览器、进程内存与扩展存储}
 \label{sec:browser}
 \subsection{从哪里发现浏览器资料}
-Chromium发现器从\code{LOCALAPPDATA}和\code{APPDATA}开始，Gecko发现器从\code{APPDATA}开始。发现过程枚举两层目录。设起点为E，枚举出的子目录为A和B：先找\code{E/A/User Data}；没有找到时再检查\code{E/A/B/User Data}，也可由\code{E/A/B/Local State}识别B本身。Gecko对应寻找\code{Profiles}。
+Chromium发现器用\code{GetEnvironmentVariableW}读取\code{LOCALAPPDATA}和\code{APPDATA}后开始查找，Gecko发现器从\code{APPDATA}开始。发现过程枚举两层目录。设起点为E，枚举出的子目录为A和B：先找\code{E/A/User Data}；没有找到时再检查\code{E/A/B/User Data}，也可由\code{E/A/B/Local State}识别B本身。Gecko对应寻找\code{Profiles}。
 
 命中\code{User Data}不要求根目录同时存在\code{Local State}；资料目录选择包括\code{Default}和以\code{Profile }开头的目录。发现器避开带name-surrogate标志的重解析目录。完整的浏览器文件路径和通用文件任务是两条不同入口：服务器另行指定的文件任务也能指向浏览器目录。
 
@@ -391,6 +438,37 @@ Cookie库 & \code{Network/Cookies} & 域名、属性及Cookie值；认证Cookie�
 Gecko资料目录 & \code{cookies.sqlite}、\code{formhistory.sqlite}、\code{key4.db}、\code{logins.json}、\code{logins.db}、\code{places.sqlite}、\code{autofill-profiles.json}、\code{storage/default} & Cookie、登录密文、密钥库、表单和站点存储\\
 Chromium扩展 & \code{Extensions/<id>/<version>/manifest.json}、本地化消息、\code{Local Extension Settings/<id>} & 扩展身份以及LevelDB内的账户、配置和扩展自身保存的数据\\
 Gecko扩展 & \code{prefs.js}、\code{extensions.json}及\code{moz-extension+++<uuid>/idb}下SQLite/WAL/SHM & 扩展映射及IndexedDB存储\\\bottomrule\end{longtable}
+
+\subsection{四个开关以外仍会采集什么}
+17的\code{0x50d72}和19的\code{0xa7a1}接收一组Profile路径，并按每项24字节的描述符逐一处理。函数还接收浏览器名称、四组已有元数据及结果频道。它们在这一层读取原文件字节、构造结果；没有在采集器内查询SQLite行或调用AES/DPAPI来解开数据库。键材料由前面的准备链提供，与文件材料分别成为结果字段。
+
+\begin{longtable}{@{}L{31mm}L{66mm}L{53mm}@{}}\toprule 控制条件 & 读取位置 & 结果字段\\\midrule\endhead
+Cookies开启 & \code{Network/Cookies} & \code{cookies}\\
+登录数据开启 & \code{Login Data}、\code{Login Data For Account} & \code{logins}、\code{logins\_alt}\\
+History开启 & \code{History} & \code{history}\\
+Web Data开启 & \code{Web Data} & \code{web\_data}\\
+独立路径 & \code{Preferences} & \code{preferences}\\
+独立路径 & \code{Local Storage/leveldb}的直接文件项 & \code{local\_storage}\\
+准备链提供有效材料 & 四组已有字节向量 & \code{local\_state}、\code{aster\_encryption\_key}、\code{dpapi\_encryption\_key}、\code{encryption\_key}\\\bottomrule\end{longtable}
+
+\begin{finding}{四个普通浏览器开关不是采集总开关}
+四项全部关闭，原生分支仍会到达Preferences读取和LevelDB枚举；已有元数据也会独立组织为结果字段。扩展存储采集另外由独立线程执行。因此，单看Cookie或登录开关，无法判断浏览器本地资料是否会被带走。
+\end{finding}
+
+四组元数据在输入聚合对象中的偏移依次为0、24、48、72，对应Local State、Aster键、DPAPI键和通用键。采集器按对象是否存在来克隆字节；此处不检验键是否能通过数据库记录的认证解密。普通文件读取失败或返回空内容时，该字段被过滤；被关闭的类别也被跳过。每个Profile最终把七个数据字段与四个元数据字段合并、排序，非空结果连同Profile路径和浏览器名交给内部频道，再由上传线程完成网络包装。
+
+\subsection{站点本地存储的准确枚举与包装}
+LevelDB采集只枚举\code{Local Storage/leveldb}目录的直接项：一处ReadDir构造器、同一枚举器的两个next调用点，没有对子目录再次构造枚举器。目录项本身被排除；带name-surrogate标志的重解析项也被排除。文件名先取最后一个basename并检查UTF-8，再以等长度加全字节比较，精确排除\code{LOCK}、\code{LOG}、\code{LOG.old}三个名称。比较区分大小写；\code{lock}或\code{LOG.1}不受这三项字面规则排除。
+
+余下文件逐项读取，成功结果进入按basename组织的BTreeMap。读取失败项跳过；成功读取的空文件可以保留为空值。整张map为空时不生成\code{local\_storage}字段。
+
+\begin{longtable}{@{}L{37mm}L{45mm}L{68mm}@{}}\toprule 包内顺序 & 字节表示 & 解释\\\midrule\endhead
+开头 & 8字节，小端无符号整数 & 文件条目数\\
+每项第1部分 & 8字节长度，再接原始文件名字节 & key长度与key；长度按字节计\\
+每项第2部分 & 8字节长度，再接原始文件内容 & value长度与value；内容原样保留\\\bottomrule\end{longtable}
+
+包长为\code{8 + sum(16 + key长度 + value长度)}。它是二进制长度分帧，不是JSON或Base64。17由\code{0x61c04}、19由\code{0x2a295}完成包装。接收者按长度即可还原文件名和原文件字节，不必把它误当作LevelDB中单条键值的解析结果。站点若把认证材料直接保存在本地存储中，原文件本身就可能带有这些材料；数据库内仍受保护的列则需要相应有效键和格式处理。
+
 
 \subsection{准备目标进程与执行上下文}
 两个样本都包含浏览器进程准备函数和内存取钥函数。普通浏览器四个开关中任意一个开启，就能进入公共准备过程；取钥准备并非只有“登录密码”开关才能触发。
@@ -487,6 +565,39 @@ Chromium与Gecko的扩展存储采集由调度器分别启动，不读取四个�
 
 17内层\code{RVA 0x6214c}关联延迟初始化表，已恢复为4,193字节、276个非空词条。程序转ASCII小写后作子串比较，命中则排除，未命中继续。因此它是排除表。原始前后空格会影响匹配，配套数据表保留原值；通用文件任务还可以单独指定同一扩展目录。
 
+\subsection{Chromium扩展名称的本地化处理}
+两个Chromium扩展worker的唯一计算跳转分派Windows路径组件；原始指令与表项已对应。随后按扩展ID把Local Extension Settings文件归组，再借助Extensions目录中的manifest识别名称。
+
+manifest的name若具有\code{\_\_MSG\_}前缀和\code{\_\_}结尾，程序取出中间的消息键，依次尝试\code{\_locales/en/messages.json}、\code{\_locales/en\_US/messages.json}，从相应消息对象取message字符串。顺序是en在前、en\_US在后。其余普通名称按原值使用；本地化失败时保留原名称用于后续映射与筛选。这里的名称用于显示、归组及排除词匹配，扩展本地存储文件仍是采集主体。
+
+扩展worker没有读取四个普通数据库开关。两个worker本体也没有原生间接CALL；具体文件枚举、读取与结果通道由直接调用的辅助函数处理。
+\subsection{Gecko扩展：怎样把UUID目录还原成具体扩展}
+Gecko的扩展目录通常以内部UUID表示，不能只靠目录名知道是哪一个扩展。样本组合两组映射：从\code{prefs.js}的\code{extensions.webextensions.uuids}提取“UUID到扩展ID”，再从\code{extensions.json}提取“扩展ID到名称”。已有UUID重复时，后面的记录覆盖前面的记录；名称查不到时先退回扩展ID，ID也查不到则保留UUID。
+
+\begin{figure}[htbp]\centering
+\begin{tikzpicture}[x=1mm,y=1mm]
+\node[process,text width=66mm] (prefs) at (37,0) {\faFileCode\quad\textbf{prefs.js}\\内部UUID $\rightarrow$ 扩展ID};
+\node[process,text width=66mm] (meta) at (119,0) {\faPuzzlePiece\quad\textbf{extensions.json}\\扩展ID $\rightarrow$ 人类可读名称};
+\node[process,text width=146mm] (origin) at (78,-31) {\faFolderOpen\quad\textbf{Profile / storage / default}\\直接目录名须以\code{moz-extension+++}开头；取其后到第一个\code{\textasciicircum{}}之前的内容作UUID查找键};
+\node[dangerprocess,text width=146mm] (idb) at (78,-66) {\faDatabase\quad\textbf{对应origin / idb}\\平面枚举直接文件：\code{.sqlite}、\code{.sqlite-wal}、\code{.sqlite-shm}\\读入原文件内容，关联扩展ID/名称并进入扩展结果};
+\draw[call](prefs.south)--(origin.north -| prefs.south);
+\draw[call](meta.south)--(origin.north -| meta.south);
+\draw[call](origin)--(idb);
+\end{tikzpicture}
+\caption{Gecko扩展的身份映射与IndexedDB采集。目录名、后缀与映射字符串均按样本的实际比较规则处理。}
+\end{figure}
+
+目录前缀及三个文件后缀的比较区分大小写。\code{moz-extension+++}之后的部分没有再做标准UUID格式校验；\code{\textasciicircum{}}后面的origin属性不参与该UUID查找。程序进入匹配origin的\code{idb}目录后只枚举直接文件项，没有在这段收集器里再递归子目录。WAL和SHM也是接受后缀，不能误列为排除项。WAL可能包含尚未合并进主SQLite文件的新记录；判断影响时应把三个文件作为一组材料处理。\cite{sqlitewal}
+
+扩展名称还会经过内置排除词匹配。19版的词表已经从其自身原生构造器独立正向解码，得到4,193字节、276个词条；词条及顺序与17版逐字节一致。Gecko这一函数没有Chromium的\code{\_locales/messages.json}名称本地化路线。
+
+\subsection{prefs文字解析的实际规则}
+这里先截取目标属性文字，再扫描引号片段并成对组织UUID和ID。外层处理能转换反斜线引号、反斜线斜杠、双反斜线及n、r、t三种常见转义；\code{\textbackslash{}uXXXX}等其它转义保留反斜线。单独落在末尾的反斜线被丢弃。缺少闭合引号的片段在部分状态下会延伸到输入末尾，落单的最后一个quoted token不组成映射。
+
+这些规则解释了哪些原始配置能被识别、哪些扩展可能仅按UUID归组。配套19组人工输入逐条保存原文字节、各阶段输出及原生分支对应关系，覆盖转义、截断、重复UUID与奇数token；它们是对已恢复逻辑的语义转录测试，未运行原样本，也不含真实浏览器资料。
+
+两版收集器本体的原始控制流均已恢复：17为4,809条指令、271处计算跳转；19为2,181条指令，无计算跳转。17的阶段状态只在逐点证明不别名的调用和写入处保留各自活跃的8字节，所有保留点都列在配套证据中；没有把阶段值或跳转目的地直接塞给分析器。两版ReadDir错误对象的低tag为2，对应路径均跳过只接受tag1的自定义清理回调。
+
 
 \section{通信、结果格式与上传证据}
 \label{sec:upload}
@@ -580,21 +691,22 @@ Explorer注入 & 根据任务栏定位Explorer、进程写内存、私有RWX区�
 
 \section{证据覆盖与现场核验状态}
 \label{sec:status}
-两份内层完整代码节已经恢复；原始代码字节与用于本轮分析的副本逐字节相同。网络包装、文件采集、浏览器内存与进程准备等核心函数的控制流、系统接口和输出对象另行复核，详见附录\ref{app:boundaries}。
+本报告以本地保存的两份样本为分析对象；文件身份以封面的SHA-256及附录位置表核对。其它机器上的同名程序可能属于不同构建，应先比对文件hash。
 
-独立密码学与内容比对已核对四份离线上传请求，验证输入文件字节和截图像素实际进入POST缓冲。Steam、Roblox和Discord的专用处理以虚构秘密验证；浏览器取钥实验以虚构内存对象和模拟系统调用验证。真实首次云控回复与这些离线实验分别保存。
+旧41项失败清单中的三处重新打开项已经逐一复核：当前39项有不再截断的C表示，另有1个尾跳板、1处误识别编码数据。新增复核还覆盖两版Chromium Profile采集器、两版浏览器根目录初始化器、两版Gecko扩展采集器、Local Storage二进制包装及Chromium扩展worker的路径组件分派。上述计数描述具体清单，不代表整个程序完成。
 
-全程序分析尚未完成。旧41项失败清单重新核对后为36项未见截断标记的C、3项仍局部截断、2项特殊身份；另有全程序221个带诊断提示的入口需要与既有原汇编证明对齐。v3.0中的“39项完整C”统计已在本版纠正。
+两版根初始化器分别对3,367及3,224条原始指令求解全部分派，并独立检查42处及37处控制来源。函数调用和未知写入先按实际作用破坏抽象内存，再验证后续读取是否仍有有效来源；最终结果没有依赖整段栈帧保留、强制分支或把可写PE缓存固定为初始值。19使用的一处只读标量另按整个原生代码节核对其读写引用。
 
-\begin{longtable}{@{}L{34mm}L{62mm}L{54mm}@{}}\toprule 剩余重点 & 原生位置 & 当前准确进度\\\midrule\endhead
-Chromium单profile采集 & 17 \code{0x50d72}；19 \code{0xa7a1} & 已知读取目标和部分输入输出；整函数仍有未恢复控制流\\
-浏览器根目录初始化 & 17 \code{0x5d746}；19 \code{0x2e35f} & 两层发现与Profile名字规则已核对；整个初始化器未全闭合\\
-浏览器扩展采集 & 17 \code{0x6b869}、\code{0x4a94a}；19 \code{0x6ac84} & 已知存储位置、筛选和部分结果路径；仍需完整分支与间接目标复核\\
-外层其他大函数 & 17 \code{0x254d}；19 \code{0x9338}等 & 解包、映射和注入主链已有证据；其余分支未逐项审完\\\bottomrule\end{longtable}
+全程序扫描仍有87个带C诊断提示的原生入口，需要与已有原汇编证明逐项对齐。对本轮起始清单中的168个内层入口进行保守静态检查时，基线为98个恢复本地控制流、70个仍需专门处理；随后对其中97个入口重算并导出，95份C不再截断。Gecko等专门闭合另按各自证据计入，保留最初批次数字供重算比较。
 
-现场尚需解决的技术问题是：本机Chrome156优化构建的对象布局能否被这两个样本识别；相应进程权限和隔离状态是否允许其线程操作；取得的键是否能通过本机浏览器记录的认证解密。当前没有把虚构键结果当成本机成功取钥。
+\begin{longtable}{@{}L{33mm}L{61mm}L{56mm}@{}}\toprule 待完成重点 & 位置 & 当前进度\\\midrule\endhead
+扩展转调辅助链 & 名称提取、通用JSON、读取与结果包装 & 收集器本体已闭合；转调函数各自按来源证据继续对齐\\
+外层加载器 & 17 \code{0x254d}；19 \code{0x9338} & 17本体4,224指令/118分派及C已补；19还有217处计算跳转来源待闭，接口转调另审\\
+主机资料收集 & 17 \code{0x1593b}；19 \code{0x57f4f} & 14字段、文字与API均已定位；当前来源门分别42、47项待读写范围复核\\
+其它间接调用 & 配套原生入口与调用清单 & 分别核对导入接口、容器/错误析构及调用者数据来源\\
+Chrome156现场适配 & 156.0.8078.48优化构建 & 官方保护逻辑已对照；真实对象命中、进程权限/隔离及记录认证解密未完成现场验证\\\bottomrule\end{longtable}
 
-本机事件处置已有直接依据：目标路径存在有效认证材料，样本具备采集、包装和向控制端发送这些材料的实现。账户撤销与密钥轮换应以这些暴露面安排优先级。历史上传的逐项接收清单与实际二级程序，需从事件时点的网络和进程记录继续核定。
+已保存的四份离线上传请求通过独立解码和内容比对；Steam、Roblox、Discord专用提取使用虚构材料验证。已确认的采集目标、上传构造和下载执行能力足以安排账户撤销、会话清理与密钥轮换。历史事件中每个文件的实际接收情况和后续程序执行记录，仍须结合事件时点的日志核定。
 
 
 \clearpage\appendix\section{窃取目标目录与文件含义}\label{app:targets}
@@ -1103,27 +1215,37 @@ XOR之后仍是压缩数据。解压器读取单个字节时从低位取起，�
 19 / \code{0x3d057} & 浏览器进程准备 & 6,325 / 280 & 完成 \\
 17 / \code{0x227e8} & 浏览器进程准备 & 5,841 / 274 & 完成 \\
 \bottomrule\end{longtable}\endgroup
-重新核对实际C文件后，旧41项清单中有36项取得未见控制流截断标记的C表示，3项仍保留局部截断；另有1项确认是尾跳板，1项是误识别的编码数据。旧版把工具completed状态当成完整C，统计偏高。标记消失说明C表示不再在该处截断，程序语义仍须按原指令、调用和对象来源检查。
-\begingroup\footnotesize
-\begin{longtable}{@{}L{30mm} L{80mm} L{40mm}@{}}
-\toprule 样本 / RVA & 职责 & 仍有的C问题 \\
-\midrule\endhead
-17 / \code{0x8e81} & 文本tokenizer及字符串vector：空白、引号、反斜杠escape、slash/comment分支，UTF8-lossy替换，filewalk以ptr+len调用 & 未恢复跳转与跳转作调用提示 \\
-17 / \code{0x56ab1} & 共享锁/既有句柄借用读取：NtQuerySystemInformation/NtQueryObject/DuplicateHandle及FileMapping/MapView/ReadFile & 未恢复跳转与跳转作调用提示 \\
-19 / \code{0x126b7} & 结构化文本/token解析辅助：引号、冒号、逗号、数字扫描和输入cursor更新，JSON-like & 未恢复跳转与跳转作调用提示 \\
-\bottomrule\end{longtable}\endgroup
+重新核对实际C文件后，旧41项清单中有39项取得未见控制流截断标记的C表示，0项仍保留局部截断；另有1项确认是尾跳板，1项是误识别的编码数据。旧版把工具completed状态当成完整C，统计偏高。标记消失说明C表示不再在该处截断，程序语义仍须按原指令、调用和对象来源检查。
 \subsection{全程序仍待对齐的分析范围}
-全程序扫描覆盖四份PE的2,254个异常展开入口。当前有221个入口的现存C带未恢复跳转等提示；其中部分辅助函数已另有原汇编或局部控制流证明，尚需逐项对齐。该数字是复核候选数，不能直接当作221项新功能，也不能把它们统称为已审完的库函数。
+全程序扫描覆盖四份PE的2,254个异常展开入口。当前有87个入口的现存C带未恢复跳转等提示；其中部分辅助函数已另有原汇编或局部控制流证明，尚需逐项对齐。该数字是复核候选数，不能直接当作87项新功能，也不能把它们统称为已审完的库函数。
 \begingroup\footnotesize
 \begin{longtable}{@{}L{65mm} L{42mm} L{43mm}@{}}
 \toprule 对象 & 原生展开入口 & 现存C含诊断提示 \\
 \midrule\endhead
-17 外层EXE & 403 & 24 \\
-17 内层DLL & 718 & 82 \\
-19 外层EXE & 406 & 27 \\
-19 内层DLL & 727 & 88 \\
+17 外层EXE & 403 & 12 \\
+17 内层DLL & 718 & 30 \\
+19 外层EXE & 406 & 12 \\
+19 内层DLL & 727 & 33 \\
 \bottomrule\end{longtable}\endgroup
-需要继续完整审查的重点包括：两版Chromium单profile采集函数、浏览器根目录初始化器、17版Gecko扩展采集，以及外层加载器的其余分支。前面已给出的目录名谓词、已知文件读取路径或成功轨迹，只覆盖相应行为，不替代这些函数的全路径审查。
+需要继续完整审查的重点包括：其它大函数、外层加载器的其余分支及间接调用的转调语义。前面已给出的目录名谓词、已知文件读取路径或成功轨迹，只覆盖相应行为，不替代这些函数的全路径审查。
+
+\subsection{三处重新打开的函数怎样补回}
+旧失败清单中的17 \code{0x8e81}、17 \code{0x56ab1}和19 \code{0x126b7}已重新从原字节求解控制流。分词器与JSON扫描器中的“间接调用”提示来自反编译器把原生JMP渲染成伪调用；两函数实际全部CALL都是立即数直接目标。文件reader的22处间接CALL则全部绑定到具体Windows接口，并按读写参数检查其作用。
+\begin{longtable}{@{}L{30mm}L{72mm}L{48mm}@{}}\toprule 原生位置 & 已恢复职责 & 指令 / 计算跳转\\\midrule\endhead
+17 \code{0x8e81} & KeyValues风格分词：引号、裸词、花括号、空白、双斜杠注释；生成token向量，再递归构造结果 & 641 / 48\\
+17 \code{0x56ab1} & 普通读文件、共享占用后的既有句柄查找、只读映射分块复制及错误重试 & 3,677 / 157\\
+19 \code{0x126b7} & 递归JSON值扫描、字段比较及条件保存字符串；对象/数组展开受深度门约束 & 971 / 79\\
+17 \code{0x50d72} & 循环处理Profile切片，组织11种字段并过滤空结果 & 2,628 / 111\\
+19 \code{0xa7a1} & 同类Profile采集与内部频道结果交付 & 2,648 / 108\\
+17 \code{0x5d746} & 浏览器根目录、环境变量、Profile选择及结果容器 & 3,367 / 161\\
+19 \code{0x2e35f} & 浏览器根目录、环境变量、Profile选择及结果容器 & 3,224 / 156\\
+17 \code{0x6b869} & Gecko扩展身份映射、存储选择和结果交付 & 4,809 / 271\\
+19 \code{0x4a55a} & 同类Gecko扩展采集 & 2,181 / 0\\\bottomrule\end{longtable}
+
+完整性核对保留原始机器码。两个分词/扫描函数共127处计算JMP由只读表和正常初始化上下文导出；文件reader另核对292处来源切片、665个源字节、42个原生字符串构造器和21条接口解析来源。所有成功、失败及释放边都保留，随后才生成新的C表示。
+
+JSON扫描器的状态中，\code{+0x20}是输入游标，\code{+0x28/+0x30}是原始输入地址与长度，两组字段名比较参数位于\code{+0x00/+0x08}、\code{+0x10/+0x18}；选中字符串保存在\code{+0x38/+0x40/+0x48}。这说明它怎样按调用者指定的字段提取内容，不能把这些内部状态偏移当作新的服务器命令。
+
 \subsection{四个清理调用的实际来源}
 四个曾未确定目标的调用点位于目录遍历和结果销毁路径。对象的tag决定清理方式：普通Windows错误携带数值错误码；只有特定自定义错误对象才附带可调用的析构函数。不能把同一栈地址上更早出现过的另一个对象，算作当前清理点的输入。
 
@@ -1146,6 +1268,25 @@ XOR之后仍是压缩数据。解压器读取单个字节时从低位取起，�
 协议仍解析并保存第五布尔值：配置对象偏移\code{0x14b}，17发布到\code{0x993bb}，19发布到\code{0x967f3}。对发布前副本、全局地址、地址别名和数值相等的候选引用逐一核对后，本地这两份正常构建没有操作消费者。
 
 几个看似指向该字段的数值实际属于UTF-16区域字符串、Unicode字节表、PE展开信息或跨字段读取的跳转表。它们不构成该开关的读取。因此本报告将它记为“保留字段”，不为它添加取钥、提权或新云控功能。
+
+\subsection{其它间接CALL的逐项复核}
+本轮保守批量检查得到的98个完整本地控制流函数中，共有77处原生间接CALL。42处由导入元数据及原始寄存器来源对应Windows接口，17处由原生字符串构造、完整codec、cache、resolver与字节生存期复核唯一命名；另外4处在实际进程枚举调用者中对应NtQuerySystemInformation，5处由FileReadAll错误对象的tag排除实际调用。
+
+后续又复核余下9处中的5处。表内分别列直接目标、目标继续调用的函数，以及当前路径实际绕过的回调，避免在中间一层停止追踪。
+\begin{longtable}{@{}L{34mm}L{56mm}L{60mm}@{}}\toprule 对象角色 & 原生CALL位置 & 实际来源与当前状态\\\midrule\endhead
+拥有的外层box清理 & 17 \code{0x3bb0b}；19 \code{0x227d7} & 原生构造器固定为\code{0xbd0f}/\code{0x61222}；其转调虚表再对应\code{0x3bf90}/\code{0x9d57}，最终释放拥有的字节Vec\\
+清空后的Arc根 & 17 \code{0x823c}；19 \code{0x2c027} & 两个外部调用者均先清空同一owned根；正常路径跳过该处回调\\
+ReadDir错误对象 & 19 \code{0x5f923} & 实际producer为\code{0xdda5}，错误低tag2；要求tag1的回调不进入\\
+线程结果包 & 17 \code{0x1bd7d}、\code{0x1be17}；19 \code{0x44f6}、\code{0x4590} & 已定位每版14个构造实例；完整来源、生存期及枚举域门仍在收尾\\\bottomrule\end{longtable}
+
+最后四处属于线程结果包。已确认的返回体把结果标志置1、数据指针置0；另有一个线程体持续循环，没有正常出口。析构器要求标志和数据指针同时非零才调用虚表。当前保留的问题是创建者的动态字段索引、频道消息到闭包的复制来源，以及两处niche编码的取值域；这些点补齐前不把四处计为关闭。相关Rust线程wrapper没有本地catch或Err发布分支，CRT异常处理入口另外列在证据中。
+
+\subsection{批量恢复如何与逐函数审查对应}
+对保守分析已经耗尽工作队列、完整覆盖原生指令的函数，重新生成95份C表示并独立重算原始控制流。未知调用和写入按普通破坏处理，没有额外保留栈槽。原PE导入表能唯一对应的外部尾跳，按尾调用语义标注；没有把IAT磁盘占位值当作运行时地址，也没有给它编造本地跳转目标。
+
+这95项是本地控制流及反编译表示的补全。Windows接口身份、虚表目标和被调用函数的行为仍分别跟踪。外层51个诊断函数另有27个本地CFG及C表示补齐，包含17的主加载函数。两版PE的LoadConfig分别把guard分派槽对应到\code{0x230b0}和\code{0x21eb0}，两处原始叶均为\code{jmp rax}，按外部尾调用保留其动态目标。
+
+四份PE另附真实CALL指令清单，按原始操作数区分直接调用、固定导入和计算调用；77项是其中一个已深入复核的批次，不是整个程序全部间接调用的总数。
 \clearpage\section{IOC与残留位置}
 \label{app:ioc}
 以下线索适合与文件hash、时间和行为联合使用。Temp目录的随机后缀可变；短常量路径属于样本内固定写入尝试。域名去活化以避免误访问。
@@ -1269,6 +1410,7 @@ Windows数据保护（DPAPI） & 与用户/系统等上下文关联的保护接�
 \bibitem{login156} Chromium Authors. Login database, tag156.0.8078.48. \url{https://raw.githubusercontent.com/chromium/chromium/156.0.8078.48/components/password_manager/core/browser/password_store/login_database.cc}.
 \bibitem{payments156} Chromium Authors. Payments Web Data, tag156.0.8078.48. \url{https://raw.githubusercontent.com/chromium/chromium/156.0.8078.48/components/autofill/core/browser/webdata/payments/payments_autofill_table.cc}.
 \bibitem{chromequarterly} Chromium Security. Quarterly updates, 2026Q1-Q3. \url{https://www.chromium.org/Home/chromium-security/quarterly-updates/}.
+\bibitem{sqlitewal} SQLite Authors. Write-Ahead Logging. \url{https://sqlite.org/wal.html}. Accessed2026-10-28.
 \end{thebibliography}
 
 \end{document}

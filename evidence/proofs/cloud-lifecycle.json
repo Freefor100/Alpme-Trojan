@@ -215,7 +215,7 @@
     }
   ],
   "full_evidence": {
-    "path": "C:\\Users\\leo\\Documents\\Codex\\2026-10-26\\ni\\work\\alpme_analysis\\semantic_closure_20261027\\round4_network_core\\cloud_lifecycle_review\\cloud_lifecycle_static_review.json",
+    "path": "<ANALYSIS_WORKSPACE>\\work\\alpme_analysis\\semantic_closure_20261027\\round4_network_core\\cloud_lifecycle_review\\cloud_lifecycle_static_review.json",
     "sha256": "9eb7b4ca5e14d0cb7d8cb8a5f669c62729655ef7f61642fb0aea00b7b0a80f29"
   },
   "script_sha256": "a4f4a3baf96d35aed8d9780cb235cf5dee5fa013816055237a40e71239c5ae15",

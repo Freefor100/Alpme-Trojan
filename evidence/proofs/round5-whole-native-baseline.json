@@ -1,0 +1,5013 @@
+{
+  "status": "BATCH_DIAGNOSTIC_FINISHED",
+  "scope": "Inner payload native entries with remaining C-text markers, conservative unmodified interpreter. Not original source or whole-program semantics.",
+  "jobs": 168,
+  "baseline_complete_CFG": 98,
+  "remaining_cfg_diagnostics": 70,
+  "rows": [
+    {
+      "version": "17",
+      "entry": "0x7e4f0",
+      "end": "0x7e4f5",
+      "canonical_instructions": 4,
+      "reached": 1,
+      "native_computed_sites": 1,
+      "finite_sites": 0,
+      "missing_or_unresolved_sites": [
+        "0x7e4f0"
+      ],
+      "worklist_exhausted": true,
+      "all_native_instruction_starts_reached": false,
+      "baseline_local_CFG_complete": false,
+      "symbolic_import_tail_exits": {},
+      "external_targets": [],
+      "indirect_CALL_count": 0,
+      "fixed_IAT_CALL_count": 0,
+      "unattributed_indirect_CALLs": [],
+      "seconds": 0.078,
+      "native_sha256": "95b2d8172b1c2b1a33ec5b48bf6610f8356578e6722883668eb4d5cb39813d47"
+    },
+    {
+      "version": "19",
+      "entry": "0x7ce90",
+      "end": "0x7ce95",
+      "canonical_instructions": 4,
+      "reached": 1,
+      "native_computed_sites": 1,
+      "finite_sites": 0,
+      "missing_or_unresolved_sites": [
+        "0x7ce90"
+      ],
+      "worklist_exhausted": true,
+      "all_native_instruction_starts_reached": false,
+      "baseline_local_CFG_complete": false,
+      "symbolic_import_tail_exits": {},
+      "external_targets": [],
+      "indirect_CALL_count": 0,
+      "fixed_IAT_CALL_count": 0,
+      "unattributed_indirect_CALLs": [],
+      "seconds": 0.078,
+      "native_sha256": "95b2d8172b1c2b1a33ec5b48bf6610f8356578e6722883668eb4d5cb39813d47"
+    },
+    {
+      "version": "17",
+      "entry": "0x3bafb",
+      "end": "0x3bb28",
+      "canonical_instructions": 13,
+      "reached": 13,
+      "native_computed_sites": 1,
+      "finite_sites": 0,
+      "missing_or_unresolved_sites": [],
+      "worklist_exhausted": true,
+      "all_native_instruction_starts_reached": true,
+      "baseline_local_CFG_complete": true,
+      "symbolic_import_tail_exits": {
+        "0x3bb21": "HeapFree"
+      },
+      "external_targets": [],
+      "indirect_CALL_count": 2,
+      "fixed_IAT_CALL_count": 1,
+      "unattributed_indirect_CALLs": [
+        {
+          "site": "0x3bb0b",
+          "asm": "call qword ptr [rsi + 0x20]",
+          "fixed_IAT": null
+        }
+      ],
+      "seconds": 0.094,
+      "native_sha256": "d84c7aa91bbb26db9fe84e8f6f4d320704c099e7fb473d28732835be273dec8f"
+    },
+    {
+      "version": "17",
+      "entry": "0x690fd",
+      "end": "0x69129",
+      "canonical_instructions": 13,
+      "reached": 13,
+      "native_computed_sites": 1,
+      "finite_sites": 0,
+      "missing_or_unresolved_sites": [],
+      "worklist_exhausted": true,
+      "all_native_instruction_starts_reached": true,
+      "baseline_local_CFG_complete": true,
+      "symbolic_import_tail_exits": {
+        "0x69122": "HeapFree"
+      },
+      "external_targets": [],
+      "indirect_CALL_count": 1,
+      "fixed_IAT_CALL_count": 1,
+      "unattributed_indirect_CALLs": [],
+      "seconds": 0.062,
+      "native_sha256": "4acf73ee2dabc50ec7d5f108470294c8bc090884fab1af8691dbbf12c266c34f"
+    },
+    {
+      "version": "19",
+      "entry": "0x227c7",
+      "end": "0x227f4",
+      "canonical_instructions": 13,
+      "reached": 13,
+      "native_computed_sites": 1,
+      "finite_sites": 0,
+      "missing_or_unresolved_sites": [],
+      "worklist_exhausted": true,
+      "all_native_instruction_starts_reached": true,
+      "baseline_local_CFG_complete": true,
+      "symbolic_import_tail_exits": {
+        "0x227ed": "HeapFree"
+      },
+      "external_targets": [],
+      "indirect_CALL_count": 2,
+      "fixed_IAT_CALL_count": 1,
+      "unattributed_indirect_CALLs": [
+        {
+          "site": "0x227d7",
+          "asm": "call qword ptr [rsi + 0x20]",
+          "fixed_IAT": null
+        }
+      ],
+      "seconds": 0.094,
+      "native_sha256": "85bb4c13305254884603185a44583c8e6f2fb1e540a1d4f31cfd03c1d893bf4f"
+    },
+    {
+      "version": "19",
+      "entry": "0x29ab8",
+      "end": "0x29ae4",
+      "canonical_instructions": 13,
+      "reached": 13,
+      "native_computed_sites": 1,
+      "finite_sites": 0,
+      "missing_or_unresolved_sites": [],
+      "worklist_exhausted": true,
+      "all_native_instruction_starts_reached": true,
+      "baseline_local_CFG_complete": true,
+      "symbolic_import_tail_exits": {
+        "0x29add": "HeapFree"
+      },
+      "external_targets": [],
+      "indirect_CALL_count": 1,
+      "fixed_IAT_CALL_count": 1,
+      "unattributed_indirect_CALLs": [],
+      "seconds": 0.078,
+      "native_sha256": "24ec5f42982b93569271f3c972c74bdb982b3a2af4447122eb12a0ba3db29767"
+    },
+    {
+      "version": "17",
+      "entry": "0x7b820",
+      "end": "0x7b859",
+      "canonical_instructions": 14,
+      "reached": 14,
+      "native_computed_sites": 1,
+      "finite_sites": 0,
+      "missing_or_unresolved_sites": [],
+      "worklist_exhausted": true,
+      "all_native_instruction_starts_reached": true,
+      "baseline_local_CFG_complete": true,
+      "symbolic_import_tail_exits": {
+        "0x7b852": "HeapSize"
+      },
+      "external_targets": [],
+      "indirect_CALL_count": 0,
+      "fixed_IAT_CALL_count": 0,
+      "unattributed_indirect_CALLs": [],
+      "seconds": 0.094,
+      "native_sha256": "929aab8fa1f9c6a7ad9de8bdeb2e2e41e125364a4ed13ab5e288b5acd0378b26"
+    },
+    {
+      "version": "19",
+      "entry": "0x7a1c0",
+      "end": "0x7a1f9",
+      "canonical_instructions": 14,
+      "reached": 14,
+      "native_computed_sites": 1,
+      "finite_sites": 0,
+      "missing_or_unresolved_sites": [],
+      "worklist_exhausted": true,
+      "all_native_instruction_starts_reached": true,
+      "baseline_local_CFG_complete": true,
+      "symbolic_import_tail_exits": {
+        "0x7a1f2": "HeapSize"
+      },
+      "external_targets": [],
+      "indirect_CALL_count": 0,
+      "fixed_IAT_CALL_count": 0,
+      "unattributed_indirect_CALLs": [],
+      "seconds": 0.078,
+      "native_sha256": "2603509f49ae5698950572864945dcd70a2a7237f7f754d90df5c9d3d1d3708c"
+    },
+    {
+      "version": "17",
+      "entry": "0x751c0",
+      "end": "0x75207",
+      "canonical_instructions": 16,
+      "reached": 16,
+      "native_computed_sites": 1,
+      "finite_sites": 0,
+      "missing_or_unresolved_sites": [],
+      "worklist_exhausted": true,
+      "all_native_instruction_starts_reached": true,
+      "baseline_local_CFG_complete": true,
+      "symbolic_import_tail_exits": {
+        "0x75200": "TerminateProcess"
+      },
+      "external_targets": [],
+      "indirect_CALL_count": 2,
+      "fixed_IAT_CALL_count": 2,
+      "unattributed_indirect_CALLs": [],
+      "seconds": 0.078,
+      "native_sha256": "f7b7fefac20b7316551b13ce27a7b5e420bd960febb83d2564e70790b34bf214"
+    },
+    {
+      "version": "19",
+      "entry": "0x73b60",
+      "end": "0x73ba7",
+      "canonical_instructions": 16,
+      "reached": 16,
+      "native_computed_sites": 1,
+      "finite_sites": 0,
+      "missing_or_unresolved_sites": [],
+      "worklist_exhausted": true,
+      "all_native_instruction_starts_reached": true,
+      "baseline_local_CFG_complete": true,
+      "symbolic_import_tail_exits": {
+        "0x73ba0": "TerminateProcess"
+      },
+      "external_targets": [],
+      "indirect_CALL_count": 2,
+      "fixed_IAT_CALL_count": 2,
+      "unattributed_indirect_CALLs": [],
+      "seconds": 0.109,
+      "native_sha256": "90b45367797378facbc263253807de9d538d94d07eeecb03c9410cbb15b02deb"
+    },
+    {
+      "version": "17",
+      "entry": "0x5693d",
+      "end": "0x56971",
+      "canonical_instructions": 20,
+      "reached": 20,
+      "native_computed_sites": 1,
+      "finite_sites": 0,
+      "missing_or_unresolved_sites": [],
+      "worklist_exhausted": true,
+      "all_native_instruction_starts_reached": true,
+      "baseline_local_CFG_complete": true,
+      "symbolic_import_tail_exits": {
+        "0x56961": "HeapAlloc"
+      },
+      "external_targets": [],
+      "indirect_CALL_count": 1,
+      "fixed_IAT_CALL_count": 1,
+      "unattributed_indirect_CALLs": [],
+      "seconds": 0.094,
+      "native_sha256": "142734bef666f570916aacd3da12a7ae3a8caf887556f2f2e4111a268013a522"
+    },
+    {
+      "version": "19",
+      "entry": "0x69abe",
+      "end": "0x69af2",
+      "canonical_instructions": 20,
+      "reached": 20,
+      "native_computed_sites": 1,
+      "finite_sites": 0,
+      "missing_or_unresolved_sites": [],
+      "worklist_exhausted": true,
+      "all_native_instruction_starts_reached": true,
+      "baseline_local_CFG_complete": true,
+      "symbolic_import_tail_exits": {
+        "0x69ae2": "HeapAlloc"
+      },
+      "external_targets": [],
+      "indirect_CALL_count": 1,
+      "fixed_IAT_CALL_count": 1,
+      "unattributed_indirect_CALLs": [],
+      "seconds": 0.094,
+      "native_sha256": "a3aac1da9abe3abc51642f6ac9b36ba68ec0e10452da022707888c982a7a88ac"
+    },
+    {
+      "version": "19",
+      "entry": "0x6e57e",
+      "end": "0x6e5dd",
+      "canonical_instructions": 21,
+      "reached": 21,
+      "native_computed_sites": 1,
+      "finite_sites": 1,
+      "missing_or_unresolved_sites": [],
+      "worklist_exhausted": true,
+      "all_native_instruction_starts_reached": true,
+      "baseline_local_CFG_complete": true,
+      "symbolic_import_tail_exits": {},
+      "external_targets": [],
+      "indirect_CALL_count": 0,
+      "fixed_IAT_CALL_count": 0,
+      "unattributed_indirect_CALLs": [],
+      "seconds": 0.109,
+      "native_sha256": "ba358dfae3ef6ca59f19367bb689b3fa5ec8d3c742bbd6be079060f0196918ba"
+    },
+    {
+      "version": "17",
+      "entry": "0x3b02",
+      "end": "0x3b50",
+      "canonical_instructions": 22,
+      "reached": 22,
+      "native_computed_sites": 1,
+      "finite_sites": 0,
+      "missing_or_unresolved_sites": [],
+      "worklist_exhausted": true,
+      "all_native_instruction_starts_reached": true,
+      "baseline_local_CFG_complete": true,
+      "symbolic_import_tail_exits": {
+        "0x3b49": "HeapFree"
+      },
+      "external_targets": [],
+      "indirect_CALL_count": 1,
+      "fixed_IAT_CALL_count": 1,
+      "unattributed_indirect_CALLs": [],
+      "seconds": 0.094,
+      "native_sha256": "16df621c9590a3b845cb41bfe61fa98374de79ce35c52a06ebe4688f0f3df4be"
+    },
+    {
+      "version": "17",
+      "entry": "0x295fe",
+      "end": "0x29646",
+      "canonical_instructions": 22,
+      "reached": 22,
+      "native_computed_sites": 1,
+      "finite_sites": 0,
+      "missing_or_unresolved_sites": [],
+      "worklist_exhausted": true,
+      "all_native_instruction_starts_reached": true,
+      "baseline_local_CFG_complete": true,
+      "symbolic_import_tail_exits": {
+        "0x29639": "HeapFree"
+      },
+      "external_targets": [],
+      "indirect_CALL_count": 1,
+      "fixed_IAT_CALL_count": 1,
+      "unattributed_indirect_CALLs": [],
+      "seconds": 0.093,
+      "native_sha256": "979b44efafcc178d0f3edd008bbcba8dc9044d0ca62f2ec46d8779e11ad70de1"
+    },
+    {
+      "version": "17",
+      "entry": "0x2eeac",
+      "end": "0x2eef4",
+      "canonical_instructions": 22,
+      "reached": 22,
+      "native_computed_sites": 1,
+      "finite_sites": 0,
+      "missing_or_unresolved_sites": [],
+      "worklist_exhausted": true,
+      "all_native_instruction_starts_reached": true,
+      "baseline_local_CFG_complete": true,
+      "symbolic_import_tail_exits": {
+        "0x2eeed": "HeapFree"
+      },
+      "external_targets": [],
+      "indirect_CALL_count": 1,
+      "fixed_IAT_CALL_count": 1,
+      "unattributed_indirect_CALLs": [],
+      "seconds": 0.094,
+      "native_sha256": "e8b45a41fdad839486c9f10baa1add4ce2a2c43295152dcc81b36da71efb31b6"
+    },
+    {
+      "version": "19",
+      "entry": "0x6142",
+      "end": "0x618a",
+      "canonical_instructions": 22,
+      "reached": 22,
+      "native_computed_sites": 1,
+      "finite_sites": 0,
+      "missing_or_unresolved_sites": [],
+      "worklist_exhausted": true,
+      "all_native_instruction_starts_reached": true,
+      "baseline_local_CFG_complete": true,
+      "symbolic_import_tail_exits": {
+        "0x617d": "HeapFree"
+      },
+      "external_targets": [],
+      "indirect_CALL_count": 1,
+      "fixed_IAT_CALL_count": 1,
+      "unattributed_indirect_CALLs": [],
+      "seconds": 0.078,
+      "native_sha256": "d4696c7dc0e5d29117dd8b06f9c6fb6c4c69f761d4cff1023eab3819cc7dd96c"
+    },
+    {
+      "version": "19",
+      "entry": "0x6888",
+      "end": "0x68d0",
+      "canonical_instructions": 22,
+      "reached": 22,
+      "native_computed_sites": 1,
+      "finite_sites": 0,
+      "missing_or_unresolved_sites": [],
+      "worklist_exhausted": true,
+      "all_native_instruction_starts_reached": true,
+      "baseline_local_CFG_complete": true,
+      "symbolic_import_tail_exits": {
+        "0x68c9": "HeapFree"
+      },
+      "external_targets": [],
+      "indirect_CALL_count": 1,
+      "fixed_IAT_CALL_count": 1,
+      "unattributed_indirect_CALLs": [],
+      "seconds": 0.094,
+      "native_sha256": "7660d7ca37b8c498e349b68a08192a7228168970d0aa5ab5a5bf88ce4ee1d6b3"
+    },
+    {
+      "version": "19",
+      "entry": "0x227f4",
+      "end": "0x22842",
+      "canonical_instructions": 22,
+      "reached": 22,
+      "native_computed_sites": 1,
+      "finite_sites": 0,
+      "missing_or_unresolved_sites": [],
+      "worklist_exhausted": true,
+      "all_native_instruction_starts_reached": true,
+      "baseline_local_CFG_complete": true,
+      "symbolic_import_tail_exits": {
+        "0x22835": "HeapFree"
+      },
+      "external_targets": [],
+      "indirect_CALL_count": 1,
+      "fixed_IAT_CALL_count": 1,
+      "unattributed_indirect_CALLs": [],
+      "seconds": 0.078,
+      "native_sha256": "87c16daffe4568865fa431d910c2acc7433e8fa220650b3b0ee5bad6dfb86279"
+    },
+    {
+      "version": "19",
+      "entry": "0x66c50",
+      "end": "0x66cb4",
+      "canonical_instructions": 22,
+      "reached": 22,
+      "native_computed_sites": 1,
+      "finite_sites": 1,
+      "missing_or_unresolved_sites": [],
+      "worklist_exhausted": true,
+      "all_native_instruction_starts_reached": true,
+      "baseline_local_CFG_complete": true,
+      "symbolic_import_tail_exits": {},
+      "external_targets": [],
+      "indirect_CALL_count": 0,
+      "fixed_IAT_CALL_count": 0,
+      "unattributed_indirect_CALLs": [],
+      "seconds": 0.094,
+      "native_sha256": "94ef2b2d479272e8d94c8d5ec678ae381c2a1b78e61234612972e67599fa1bf7"
+    },
+    {
+      "version": "17",
+      "entry": "0x86fa",
+      "end": "0x8763",
+      "canonical_instructions": 23,
+      "reached": 23,
+      "native_computed_sites": 1,
+      "finite_sites": 1,
+      "missing_or_unresolved_sites": [],
+      "worklist_exhausted": true,
+      "all_native_instruction_starts_reached": true,
+      "baseline_local_CFG_complete": true,
+      "symbolic_import_tail_exits": {},
+      "external_targets": [],
+      "indirect_CALL_count": 0,
+      "fixed_IAT_CALL_count": 0,
+      "unattributed_indirect_CALLs": [],
+      "seconds": 0.078,
+      "native_sha256": "97f6ed93397b3146170b260aa8c1f81b7b96d188b5f9d5f614f9d272cb27001c"
+    },
+    {
+      "version": "19",
+      "entry": "0x686e7",
+      "end": "0x68746",
+      "canonical_instructions": 27,
+      "reached": 27,
+      "native_computed_sites": 1,
+      "finite_sites": 1,
+      "missing_or_unresolved_sites": [],
+      "worklist_exhausted": true,
+      "all_native_instruction_starts_reached": true,
+      "baseline_local_CFG_complete": true,
+      "symbolic_import_tail_exits": {},
+      "external_targets": [
+        "0x240de"
+      ],
+      "indirect_CALL_count": 0,
+      "fixed_IAT_CALL_count": 0,
+      "unattributed_indirect_CALLs": [],
+      "seconds": 0.078,
+      "native_sha256": "a920aa9c9cfe86f1d520776aedb12ecb0e113962fc5d7338878bf18922266b82"
+    },
+    {
+      "version": "17",
+      "entry": "0x8763",
+      "end": "0x87cb",
+      "canonical_instructions": 35,
+      "reached": 35,
+      "native_computed_sites": 1,
+      "finite_sites": 0,
+      "missing_or_unresolved_sites": [
+        "0x87c7"
+      ],
+      "worklist_exhausted": true,
+      "all_native_instruction_starts_reached": true,
+      "baseline_local_CFG_complete": false,
+      "symbolic_import_tail_exits": {},
+      "external_targets": [
+        "0x4a6b1"
+      ],
+      "indirect_CALL_count": 0,
+      "fixed_IAT_CALL_count": 0,
+      "unattributed_indirect_CALLs": [],
+      "seconds": 0.094,
+      "native_sha256": "9b1a223aed5c17e88ef03f3392f1edc5ce8d5abc887f58ac1d5afb02d0927fde"
+    },
+    {
+      "version": "19",
+      "entry": "0x658eb",
+      "end": "0x65952",
+      "canonical_instructions": 35,
+      "reached": 35,
+      "native_computed_sites": 1,
+      "finite_sites": 0,
+      "missing_or_unresolved_sites": [
+        "0x6594e"
+      ],
+      "worklist_exhausted": true,
+      "all_native_instruction_starts_reached": true,
+      "baseline_local_CFG_complete": false,
+      "symbolic_import_tail_exits": {},
+      "external_targets": [
+        "0x17f80"
+      ],
+      "indirect_CALL_count": 0,
+      "fixed_IAT_CALL_count": 0,
+      "unattributed_indirect_CALLs": [],
+      "seconds": 0.078,
+      "native_sha256": "7f8759ba643b45d2ab53e8ca2377cabda6e44f9170a8e674d23ae6ab0f403f5e"
+    },
+    {
+      "version": "17",
+      "entry": "0x2a2a0",
+      "end": "0x2a324",
+      "canonical_instructions": 36,
+      "reached": 36,
+      "native_computed_sites": 1,
+      "finite_sites": 1,
+      "missing_or_unresolved_sites": [],
+      "worklist_exhausted": true,
+      "all_native_instruction_starts_reached": true,
+      "baseline_local_CFG_complete": true,
+      "symbolic_import_tail_exits": {},
+      "external_targets": [
+        "0x56ab1"
+      ],
+      "indirect_CALL_count": 0,
+      "fixed_IAT_CALL_count": 0,
+      "unattributed_indirect_CALLs": [],
+      "seconds": 0.078,
+      "native_sha256": "16873bdc1f4d372ec84bd52cee0e0afe07eb8d0bd24dc72da1819ac7e25d7278"
+    },
+    {
+      "version": "17",
+      "entry": "0x21621",
+      "end": "0x21693",
+      "canonical_instructions": 38,
+      "reached": 38,
+      "native_computed_sites": 1,
+      "finite_sites": 0,
+      "missing_or_unresolved_sites": [],
+      "worklist_exhausted": true,
+      "all_native_instruction_starts_reached": true,
+      "baseline_local_CFG_complete": true,
+      "symbolic_import_tail_exits": {
+        "0x21683": "HeapFree"
+      },
+      "external_targets": [],
+      "indirect_CALL_count": 3,
+      "fixed_IAT_CALL_count": 3,
+      "unattributed_indirect_CALLs": [],
+      "seconds": 0.094,
+      "native_sha256": "3a93e7fc5cdcb98c1e21651eab6aa88dd09fbca25d739a0c96b76dd9921b20e4"
+    },
+    {
+      "version": "17",
+      "entry": "0x2bdcd",
+      "end": "0x2be2a",
+      "canonical_instructions": 38,
+      "reached": 38,
+      "native_computed_sites": 1,
+      "finite_sites": 0,
+      "missing_or_unresolved_sites": [
+        "0x2be1a"
+      ],
+      "worklist_exhausted": true,
+      "all_native_instruction_starts_reached": true,
+      "baseline_local_CFG_complete": false,
+      "symbolic_import_tail_exits": {},
+      "external_targets": [],
+      "indirect_CALL_count": 1,
+      "fixed_IAT_CALL_count": 0,
+      "unattributed_indirect_CALLs": [
+        {
+          "site": "0x2bdf3",
+          "asm": "call qword ptr [r11 + 0x20]",
+          "fixed_IAT": null
+        }
+      ],
+      "seconds": 0.078,
+      "native_sha256": "58c6770c777a6182e2baedf8c210cf03e0ea63cdbf630d928e03a529c902651b"
+    },
+    {
+      "version": "19",
+      "entry": "0x11b15",
+      "end": "0x11b85",
+      "canonical_instructions": 38,
+      "reached": 38,
+      "native_computed_sites": 1,
+      "finite_sites": 0,
+      "missing_or_unresolved_sites": [],
+      "worklist_exhausted": true,
+      "all_native_instruction_starts_reached": true,
+      "baseline_local_CFG_complete": true,
+      "symbolic_import_tail_exits": {
+        "0x11b7e": "HeapFree"
+      },
+      "external_targets": [],
+      "indirect_CALL_count": 3,
+      "fixed_IAT_CALL_count": 3,
+      "unattributed_indirect_CALLs": [],
+      "seconds": 0.078,
+      "native_sha256": "95b7ef3d2e2a99b4dcbaa58884f2ccf420a29e23b70930765537a18ec290fdf6"
+    },
+    {
+      "version": "19",
+      "entry": "0x15522",
+      "end": "0x1557e",
+      "canonical_instructions": 38,
+      "reached": 38,
+      "native_computed_sites": 1,
+      "finite_sites": 0,
+      "missing_or_unresolved_sites": [
+        "0x1556e"
+      ],
+      "worklist_exhausted": true,
+      "all_native_instruction_starts_reached": true,
+      "baseline_local_CFG_complete": false,
+      "symbolic_import_tail_exits": {},
+      "external_targets": [],
+      "indirect_CALL_count": 1,
+      "fixed_IAT_CALL_count": 0,
+      "unattributed_indirect_CALLs": [
+        {
+          "site": "0x15548",
+          "asm": "call qword ptr [r9 + 0x20]",
+          "fixed_IAT": null
+        }
+      ],
+      "seconds": 0.079,
+      "native_sha256": "693cec5a7651e24460bd87fe64b1c2e94c057b842ab0d419af0bc292e7f3c999"
+    },
+    {
+      "version": "19",
+      "entry": "0x448fe",
+      "end": "0x4499d",
+      "canonical_instructions": 43,
+      "reached": 43,
+      "native_computed_sites": 3,
+      "finite_sites": 3,
+      "missing_or_unresolved_sites": [],
+      "worklist_exhausted": true,
+      "all_native_instruction_starts_reached": true,
+      "baseline_local_CFG_complete": true,
+      "symbolic_import_tail_exits": {},
+      "external_targets": [],
+      "indirect_CALL_count": 0,
+      "fixed_IAT_CALL_count": 0,
+      "unattributed_indirect_CALLs": [],
+      "seconds": 0.109,
+      "native_sha256": "feccbe5001ae4459c5f763c57b8db0603bf9e48e4db226cd910e03ffed021597"
+    },
+    {
+      "version": "17",
+      "entry": "0x821d",
+      "end": "0x82a0",
+      "canonical_instructions": 46,
+      "reached": 46,
+      "native_computed_sites": 1,
+      "finite_sites": 0,
+      "missing_or_unresolved_sites": [],
+      "worklist_exhausted": true,
+      "all_native_instruction_starts_reached": true,
+      "baseline_local_CFG_complete": true,
+      "symbolic_import_tail_exits": {
+        "0x828f": "HeapFree"
+      },
+      "external_targets": [],
+      "indirect_CALL_count": 2,
+      "fixed_IAT_CALL_count": 1,
+      "unattributed_indirect_CALLs": [
+        {
+          "site": "0x823c",
+          "asm": "call rax",
+          "fixed_IAT": null
+        }
+      ],
+      "seconds": 0.078,
+      "native_sha256": "7e6c536644a78a7bf6e043e83b21d463144772a2310e8592b1ff8f62807185b3"
+    },
+    {
+      "version": "19",
+      "entry": "0x2c008",
+      "end": "0x2c08b",
+      "canonical_instructions": 46,
+      "reached": 46,
+      "native_computed_sites": 1,
+      "finite_sites": 0,
+      "missing_or_unresolved_sites": [],
+      "worklist_exhausted": true,
+      "all_native_instruction_starts_reached": true,
+      "baseline_local_CFG_complete": true,
+      "symbolic_import_tail_exits": {
+        "0x2c084": "HeapFree"
+      },
+      "external_targets": [],
+      "indirect_CALL_count": 2,
+      "fixed_IAT_CALL_count": 1,
+      "unattributed_indirect_CALLs": [
+        {
+          "site": "0x2c027",
+          "asm": "call rax",
+          "fixed_IAT": null
+        }
+      ],
+      "seconds": 0.078,
+      "native_sha256": "105eaffc73baa5977aff1acbcb3c779ece01de4128185c5ea5e6813e18e32138"
+    },
+    {
+      "version": "17",
+      "entry": "0x62965",
+      "end": "0x629ef",
+      "canonical_instructions": 48,
+      "reached": 48,
+      "native_computed_sites": 1,
+      "finite_sites": 0,
+      "missing_or_unresolved_sites": [],
+      "worklist_exhausted": true,
+      "all_native_instruction_starts_reached": true,
+      "baseline_local_CFG_complete": true,
+      "symbolic_import_tail_exits": {
+        "0x629e8": "HeapReAlloc"
+      },
+      "external_targets": [],
+      "indirect_CALL_count": 3,
+      "fixed_IAT_CALL_count": 3,
+      "unattributed_indirect_CALLs": [],
+      "seconds": 0.094,
+      "native_sha256": "aee4f73c2f895b3358338e588d8c36398c57b31a238b0d34cd5215a037fd6d0f"
+    },
+    {
+      "version": "19",
+      "entry": "0x66a0d",
+      "end": "0x66a98",
+      "canonical_instructions": 48,
+      "reached": 48,
+      "native_computed_sites": 1,
+      "finite_sites": 0,
+      "missing_or_unresolved_sites": [],
+      "worklist_exhausted": true,
+      "all_native_instruction_starts_reached": true,
+      "baseline_local_CFG_complete": true,
+      "symbolic_import_tail_exits": {
+        "0x66a3c": "HeapReAlloc"
+      },
+      "external_targets": [],
+      "indirect_CALL_count": 3,
+      "fixed_IAT_CALL_count": 3,
+      "unattributed_indirect_CALLs": [],
+      "seconds": 0.062,
+      "native_sha256": "456cd37ee070378c7582bb9d2bf6df5ff104de21cf3a6cbd7dddd508a2288a40"
+    },
+    {
+      "version": "19",
+      "entry": "0x32055",
+      "end": "0x32121",
+      "canonical_instructions": 58,
+      "reached": 58,
+      "native_computed_sites": 3,
+      "finite_sites": 3,
+      "missing_or_unresolved_sites": [],
+      "worklist_exhausted": true,
+      "all_native_instruction_starts_reached": true,
+      "baseline_local_CFG_complete": true,
+      "symbolic_import_tail_exits": {},
+      "external_targets": [],
+      "indirect_CALL_count": 0,
+      "fixed_IAT_CALL_count": 0,
+      "unattributed_indirect_CALLs": [],
+      "seconds": 0.094,
+      "native_sha256": "132bf746ce0eeac34b77d70fde12da1bc102bc36686789062fd64a2ce38d8d85"
+    },
+    {
+      "version": "17",
+      "entry": "0x48051",
+      "end": "0x48166",
+      "canonical_instructions": 68,
+      "reached": 68,
+      "native_computed_sites": 1,
+      "finite_sites": 1,
+      "missing_or_unresolved_sites": [],
+      "worklist_exhausted": true,
+      "all_native_instruction_starts_reached": true,
+      "baseline_local_CFG_complete": true,
+      "symbolic_import_tail_exits": {},
+      "external_targets": [],
+      "indirect_CALL_count": 0,
+      "fixed_IAT_CALL_count": 0,
+      "unattributed_indirect_CALLs": [],
+      "seconds": 0.094,
+      "native_sha256": "221fbdd6700e51cb072f8dc9212bd1f96041495c64b13a0a3045ad1efbeb72b9"
+    },
+    {
+      "version": "19",
+      "entry": "0x28d34",
+      "end": "0x28e34",
+      "canonical_instructions": 68,
+      "reached": 62,
+      "native_computed_sites": 3,
+      "finite_sites": 2,
+      "missing_or_unresolved_sites": [
+        "0x28e00"
+      ],
+      "worklist_exhausted": true,
+      "all_native_instruction_starts_reached": false,
+      "baseline_local_CFG_complete": false,
+      "symbolic_import_tail_exits": {},
+      "external_targets": [],
+      "indirect_CALL_count": 0,
+      "fixed_IAT_CALL_count": 0,
+      "unattributed_indirect_CALLs": [],
+      "seconds": 0.078,
+      "native_sha256": "8b31c239353ec19617d98f4a306063014d932eceabd9d9446aad302b69f0b536"
+    },
+    {
+      "version": "19",
+      "entry": "0x291e2",
+      "end": "0x292ed",
+      "canonical_instructions": 69,
+      "reached": 69,
+      "native_computed_sites": 4,
+      "finite_sites": 4,
+      "missing_or_unresolved_sites": [],
+      "worklist_exhausted": true,
+      "all_native_instruction_starts_reached": true,
+      "baseline_local_CFG_complete": true,
+      "symbolic_import_tail_exits": {},
+      "external_targets": [],
+      "indirect_CALL_count": 0,
+      "fixed_IAT_CALL_count": 0,
+      "unattributed_indirect_CALLs": [],
+      "seconds": 0.125,
+      "native_sha256": "008ddd474a2eb7558d00b7e1419a12a31a680ce00b6d4bb698c64fa9d847dd71"
+    },
+    {
+      "version": "17",
+      "entry": "0x6b22",
+      "end": "0x6c21",
+      "canonical_instructions": 70,
+      "reached": 61,
+      "native_computed_sites": 5,
+      "finite_sites": 4,
+      "missing_or_unresolved_sites": [
+        "0x6bdc"
+      ],
+      "worklist_exhausted": true,
+      "all_native_instruction_starts_reached": false,
+      "baseline_local_CFG_complete": false,
+      "symbolic_import_tail_exits": {},
+      "external_targets": [],
+      "indirect_CALL_count": 0,
+      "fixed_IAT_CALL_count": 0,
+      "unattributed_indirect_CALLs": [],
+      "seconds": 0.093,
+      "native_sha256": "7256dd5ed0947975496e1f2ea6b2f4e3896477b4612aad5904a1d4ba04629587"
+    },
+    {
+      "version": "19",
+      "entry": "0x6e945",
+      "end": "0x6ea3b",
+      "canonical_instructions": 71,
+      "reached": 71,
+      "native_computed_sites": 2,
+      "finite_sites": 2,
+      "missing_or_unresolved_sites": [],
+      "worklist_exhausted": true,
+      "all_native_instruction_starts_reached": true,
+      "baseline_local_CFG_complete": true,
+      "symbolic_import_tail_exits": {},
+      "external_targets": [],
+      "indirect_CALL_count": 0,
+      "fixed_IAT_CALL_count": 0,
+      "unattributed_indirect_CALLs": [],
+      "seconds": 0.079,
+      "native_sha256": "c9355d4f546bd24d6d6e015b14a474ec4698d51c387515997bceb557597a3be5"
+    },
+    {
+      "version": "17",
+      "entry": "0x772b0",
+      "end": "0x7738e",
+      "canonical_instructions": 73,
+      "reached": 73,
+      "native_computed_sites": 1,
+      "finite_sites": 0,
+      "missing_or_unresolved_sites": [],
+      "worklist_exhausted": true,
+      "all_native_instruction_starts_reached": true,
+      "baseline_local_CFG_complete": true,
+      "symbolic_import_tail_exits": {
+        "0x77387": "WideCharToMultiByte"
+      },
+      "external_targets": [],
+      "indirect_CALL_count": 0,
+      "fixed_IAT_CALL_count": 0,
+      "unattributed_indirect_CALLs": [],
+      "seconds": 0.078,
+      "native_sha256": "2e9420c683bbbf5f7bfd444ac53ad786324efe98debc2c851272629bdf7013e1"
+    },
+    {
+      "version": "19",
+      "entry": "0x2cf58",
+      "end": "0x2d092",
+      "canonical_instructions": 73,
+      "reached": 73,
+      "native_computed_sites": 1,
+      "finite_sites": 1,
+      "missing_or_unresolved_sites": [],
+      "worklist_exhausted": true,
+      "all_native_instruction_starts_reached": true,
+      "baseline_local_CFG_complete": true,
+      "symbolic_import_tail_exits": {},
+      "external_targets": [],
+      "indirect_CALL_count": 0,
+      "fixed_IAT_CALL_count": 0,
+      "unattributed_indirect_CALLs": [],
+      "seconds": 0.094,
+      "native_sha256": "e243a5d35e13a84fae230da0e5157ce89b01be60cfdd4fb546eba7b19cd28671"
+    },
+    {
+      "version": "19",
+      "entry": "0x46ec1",
+      "end": "0x46fd2",
+      "canonical_instructions": 73,
+      "reached": 73,
+      "native_computed_sites": 2,
+      "finite_sites": 2,
+      "missing_or_unresolved_sites": [],
+      "worklist_exhausted": true,
+      "all_native_instruction_starts_reached": true,
+      "baseline_local_CFG_complete": true,
+      "symbolic_import_tail_exits": {},
+      "external_targets": [],
+      "indirect_CALL_count": 0,
+      "fixed_IAT_CALL_count": 0,
+      "unattributed_indirect_CALLs": [],
+      "seconds": 0.078,
+      "native_sha256": "aaa955f34091c9d6311ba66a3d0311a9d3454eb13319410d350bbed84427cae0"
+    },
+    {
+      "version": "19",
+      "entry": "0x75c50",
+      "end": "0x75d2e",
+      "canonical_instructions": 73,
+      "reached": 73,
+      "native_computed_sites": 1,
+      "finite_sites": 0,
+      "missing_or_unresolved_sites": [],
+      "worklist_exhausted": true,
+      "all_native_instruction_starts_reached": true,
+      "baseline_local_CFG_complete": true,
+      "symbolic_import_tail_exits": {
+        "0x75d27": "WideCharToMultiByte"
+      },
+      "external_targets": [],
+      "indirect_CALL_count": 0,
+      "fixed_IAT_CALL_count": 0,
+      "unattributed_indirect_CALLs": [],
+      "seconds": 0.078,
+      "native_sha256": "380f727c53c0b75ce9add5a50778ab5886c048a4db056fe232ecff5d6496c8dc"
+    },
+    {
+      "version": "17",
+      "entry": "0x39aad",
+      "end": "0x39ba0",
+      "canonical_instructions": 75,
+      "reached": 75,
+      "native_computed_sites": 4,
+      "finite_sites": 4,
+      "missing_or_unresolved_sites": [],
+      "worklist_exhausted": true,
+      "all_native_instruction_starts_reached": true,
+      "baseline_local_CFG_complete": true,
+      "symbolic_import_tail_exits": {},
+      "external_targets": [],
+      "indirect_CALL_count": 0,
+      "fixed_IAT_CALL_count": 0,
+      "unattributed_indirect_CALLs": [],
+      "seconds": 1.078,
+      "native_sha256": "90f43118f28198c7c7810e4c6063f395453e8c0378a48bd35e7b85686c59d89e"
+    },
+    {
+      "version": "19",
+      "entry": "0x68f8b",
+      "end": "0x690b1",
+      "canonical_instructions": 77,
+      "reached": 77,
+      "native_computed_sites": 2,
+      "finite_sites": 2,
+      "missing_or_unresolved_sites": [],
+      "worklist_exhausted": true,
+      "all_native_instruction_starts_reached": true,
+      "baseline_local_CFG_complete": true,
+      "symbolic_import_tail_exits": {},
+      "external_targets": [],
+      "indirect_CALL_count": 0,
+      "fixed_IAT_CALL_count": 0,
+      "unattributed_indirect_CALLs": [],
+      "seconds": 0.094,
+      "native_sha256": "06af6353518112bb097da12dc150e192701deb5329ff2a4ef1658fbc8780e582"
+    },
+    {
+      "version": "17",
+      "entry": "0x1bd55",
+      "end": "0x1be5d",
+      "canonical_instructions": 82,
+      "reached": 82,
+      "native_computed_sites": 1,
+      "finite_sites": 0,
+      "missing_or_unresolved_sites": [],
+      "worklist_exhausted": true,
+      "all_native_instruction_starts_reached": true,
+      "baseline_local_CFG_complete": true,
+      "symbolic_import_tail_exits": {
+        "0x1be4e": "HeapFree"
+      },
+      "external_targets": [],
+      "indirect_CALL_count": 4,
+      "fixed_IAT_CALL_count": 2,
+      "unattributed_indirect_CALLs": [
+        {
+          "site": "0x1bd7d",
+          "asm": "call rax",
+          "fixed_IAT": null
+        },
+        {
+          "site": "0x1be17",
+          "asm": "call rax",
+          "fixed_IAT": null
+        }
+      ],
+      "seconds": 0.062,
+      "native_sha256": "c83e41cb1f0f12750928444ff900b6736e0bb2e82a94f4875bc8267423f2c74b"
+    },
+    {
+      "version": "19",
+      "entry": "0x44cd",
+      "end": "0x45d6",
+      "canonical_instructions": 82,
+      "reached": 82,
+      "native_computed_sites": 1,
+      "finite_sites": 0,
+      "missing_or_unresolved_sites": [],
+      "worklist_exhausted": true,
+      "all_native_instruction_starts_reached": true,
+      "baseline_local_CFG_complete": true,
+      "symbolic_import_tail_exits": {
+        "0x45cf": "HeapFree"
+      },
+      "external_targets": [],
+      "indirect_CALL_count": 4,
+      "fixed_IAT_CALL_count": 2,
+      "unattributed_indirect_CALLs": [
+        {
+          "site": "0x44f6",
+          "asm": "call rax",
+          "fixed_IAT": null
+        },
+        {
+          "site": "0x4590",
+          "asm": "call rax",
+          "fixed_IAT": null
+        }
+      ],
+      "seconds": 0.078,
+      "native_sha256": "6fc33fee43f17ee609eacbbe1fd76d8577172d1c679e64d30462baed7f1b4c31"
+    },
+    {
+      "version": "17",
+      "entry": "0x65756",
+      "end": "0x6585d",
+      "canonical_instructions": 83,
+      "reached": 83,
+      "native_computed_sites": 4,
+      "finite_sites": 4,
+      "missing_or_unresolved_sites": [],
+      "worklist_exhausted": true,
+      "all_native_instruction_starts_reached": true,
+      "baseline_local_CFG_complete": true,
+      "symbolic_import_tail_exits": {},
+      "external_targets": [],
+      "indirect_CALL_count": 0,
+      "fixed_IAT_CALL_count": 0,
+      "unattributed_indirect_CALLs": [],
+      "seconds": 0.625,
+      "native_sha256": "3b16bab52300022481ca9040830a9c35d078885553934cd4169a26f1a8c6d57d"
+    },
+    {
+      "version": "19",
+      "entry": "0x1810e",
+      "end": "0x1825f",
+      "canonical_instructions": 84,
+      "reached": 84,
+      "native_computed_sites": 1,
+      "finite_sites": 1,
+      "missing_or_unresolved_sites": [],
+      "worklist_exhausted": true,
+      "all_native_instruction_starts_reached": true,
+      "baseline_local_CFG_complete": true,
+      "symbolic_import_tail_exits": {},
+      "external_targets": [],
+      "indirect_CALL_count": 0,
+      "fixed_IAT_CALL_count": 0,
+      "unattributed_indirect_CALLs": [],
+      "seconds": 0.563,
+      "native_sha256": "cac51288585d7183daadd432620b685274389818e02c4362ac72434cc166cf80"
+    },
+    {
+      "version": "17",
+      "entry": "0x154e9",
+      "end": "0x15661",
+      "canonical_instructions": 91,
+      "reached": 91,
+      "native_computed_sites": 1,
+      "finite_sites": 1,
+      "missing_or_unresolved_sites": [],
+      "worklist_exhausted": true,
+      "all_native_instruction_starts_reached": true,
+      "baseline_local_CFG_complete": true,
+      "symbolic_import_tail_exits": {},
+      "external_targets": [],
+      "indirect_CALL_count": 0,
+      "fixed_IAT_CALL_count": 0,
+      "unattributed_indirect_CALLs": [],
+      "seconds": 0.562,
+      "native_sha256": "7fde7a35fa7dac282329e17dd062ea48f53a1dac96a333a352285f637403a73a"
+    },
+    {
+      "version": "17",
+      "entry": "0x7f080",
+      "end": "0x7f281",
+      "canonical_instructions": 93,
+      "reached": 80,
+      "native_computed_sites": 2,
+      "finite_sites": 1,
+      "missing_or_unresolved_sites": [
+        "0x7f18c"
+      ],
+      "worklist_exhausted": true,
+      "all_native_instruction_starts_reached": false,
+      "baseline_local_CFG_complete": false,
+      "symbolic_import_tail_exits": {},
+      "external_targets": [
+        "0x72440"
+      ],
+      "indirect_CALL_count": 0,
+      "fixed_IAT_CALL_count": 0,
+      "unattributed_indirect_CALLs": [],
+      "seconds": 0.109,
+      "native_sha256": "c173b41add3a65e5f2439f95f12c4cbfe5d077b963f9a5f5d07efb77b268c002"
+    },
+    {
+      "version": "19",
+      "entry": "0x7da20",
+      "end": "0x7dc21",
+      "canonical_instructions": 93,
+      "reached": 80,
+      "native_computed_sites": 2,
+      "finite_sites": 1,
+      "missing_or_unresolved_sites": [
+        "0x7db2c"
+      ],
+      "worklist_exhausted": true,
+      "all_native_instruction_starts_reached": false,
+      "baseline_local_CFG_complete": false,
+      "symbolic_import_tail_exits": {},
+      "external_targets": [
+        "0x70de0"
+      ],
+      "indirect_CALL_count": 0,
+      "fixed_IAT_CALL_count": 0,
+      "unattributed_indirect_CALLs": [],
+      "seconds": 0.094,
+      "native_sha256": "ce83cbde6f775c35deb3bca90fed8d6a463367b96dbd4eaaf49aed9cff8f668a"
+    },
+    {
+      "version": "17",
+      "entry": "0x60db",
+      "end": "0x627c",
+      "canonical_instructions": 96,
+      "reached": 96,
+      "native_computed_sites": 2,
+      "finite_sites": 2,
+      "missing_or_unresolved_sites": [],
+      "worklist_exhausted": true,
+      "all_native_instruction_starts_reached": true,
+      "baseline_local_CFG_complete": true,
+      "symbolic_import_tail_exits": {},
+      "external_targets": [],
+      "indirect_CALL_count": 1,
+      "fixed_IAT_CALL_count": 0,
+      "unattributed_indirect_CALLs": [
+        {
+          "site": "0x626d",
+          "asm": "call rdi",
+          "fixed_IAT": null
+        }
+      ],
+      "seconds": 0.078,
+      "native_sha256": "4463088332a309c49d5daeb7e6ce0a336756dd872c93458bdeda1708a857f832"
+    },
+    {
+      "version": "17",
+      "entry": "0x2c138",
+      "end": "0x2c2e1",
+      "canonical_instructions": 96,
+      "reached": 96,
+      "native_computed_sites": 2,
+      "finite_sites": 2,
+      "missing_or_unresolved_sites": [],
+      "worklist_exhausted": true,
+      "all_native_instruction_starts_reached": true,
+      "baseline_local_CFG_complete": true,
+      "symbolic_import_tail_exits": {},
+      "external_targets": [],
+      "indirect_CALL_count": 1,
+      "fixed_IAT_CALL_count": 0,
+      "unattributed_indirect_CALLs": [
+        {
+          "site": "0x2c2d2",
+          "asm": "call rdi",
+          "fixed_IAT": null
+        }
+      ],
+      "seconds": 0.094,
+      "native_sha256": "438ad19c7f9f436861083e57207102a45444693a93148ad3c8f14f8b9f4f8624"
+    },
+    {
+      "version": "17",
+      "entry": "0x627c",
+      "end": "0x63ff",
+      "canonical_instructions": 101,
+      "reached": 101,
+      "native_computed_sites": 4,
+      "finite_sites": 4,
+      "missing_or_unresolved_sites": [],
+      "worklist_exhausted": true,
+      "all_native_instruction_starts_reached": true,
+      "baseline_local_CFG_complete": true,
+      "symbolic_import_tail_exits": {},
+      "external_targets": [],
+      "indirect_CALL_count": 2,
+      "fixed_IAT_CALL_count": 0,
+      "unattributed_indirect_CALLs": [
+        {
+          "site": "0x632b",
+          "asm": "call rdi",
+          "fixed_IAT": null
+        },
+        {
+          "site": "0x63e9",
+          "asm": "call rdi",
+          "fixed_IAT": null
+        }
+      ],
+      "seconds": 0.078,
+      "native_sha256": "aed85d69277835d91c17528e6fcf96d1c63212a3c82e2f7fe858a937fd2829d4"
+    },
+    {
+      "version": "17",
+      "entry": "0x2a97b",
+      "end": "0x2ab4f",
+      "canonical_instructions": 102,
+      "reached": 102,
+      "native_computed_sites": 2,
+      "finite_sites": 2,
+      "missing_or_unresolved_sites": [],
+      "worklist_exhausted": true,
+      "all_native_instruction_starts_reached": true,
+      "baseline_local_CFG_complete": true,
+      "symbolic_import_tail_exits": {},
+      "external_targets": [],
+      "indirect_CALL_count": 1,
+      "fixed_IAT_CALL_count": 0,
+      "unattributed_indirect_CALLs": [
+        {
+          "site": "0x2ab3e",
+          "asm": "call rdi",
+          "fixed_IAT": null
+        }
+      ],
+      "seconds": 0.078,
+      "native_sha256": "4276d33b4ef99211c90c7a1a7b6ad7f07ae24f43e6c5f26a6b4039fa28465f9e"
+    },
+    {
+      "version": "19",
+      "entry": "0x67b85",
+      "end": "0x67d10",
+      "canonical_instructions": 103,
+      "reached": 103,
+      "native_computed_sites": 4,
+      "finite_sites": 4,
+      "missing_or_unresolved_sites": [],
+      "worklist_exhausted": true,
+      "all_native_instruction_starts_reached": true,
+      "baseline_local_CFG_complete": true,
+      "symbolic_import_tail_exits": {},
+      "external_targets": [],
+      "indirect_CALL_count": 2,
+      "fixed_IAT_CALL_count": 0,
+      "unattributed_indirect_CALLs": [
+        {
+          "site": "0x67c28",
+          "asm": "call rbx",
+          "fixed_IAT": null
+        },
+        {
+          "site": "0x67cda",
+          "asm": "call rbx",
+          "fixed_IAT": null
+        }
+      ],
+      "seconds": 0.094,
+      "native_sha256": "acf5fd97dd863f069d33294114fb5d46b080f0f0259df2fda96b8687db92627a"
+    },
+    {
+      "version": "17",
+      "entry": "0x61ff6",
+      "end": "0x6214c",
+      "canonical_instructions": 107,
+      "reached": 107,
+      "native_computed_sites": 1,
+      "finite_sites": 0,
+      "missing_or_unresolved_sites": [],
+      "worklist_exhausted": true,
+      "all_native_instruction_starts_reached": true,
+      "baseline_local_CFG_complete": true,
+      "symbolic_import_tail_exits": {
+        "0x62145": "WakeByAddressSingle"
+      },
+      "external_targets": [],
+      "indirect_CALL_count": 2,
+      "fixed_IAT_CALL_count": 0,
+      "unattributed_indirect_CALLs": [
+        {
+          "site": "0x6205c",
+          "asm": "call r12",
+          "fixed_IAT": null
+        },
+        {
+          "site": "0x620bd",
+          "asm": "call r15",
+          "fixed_IAT": null
+        }
+      ],
+      "seconds": 0.5,
+      "native_sha256": "720781e878b696beebff745418f7fb3dbdea0925b6d4832daaede92185a2222c"
+    },
+    {
+      "version": "19",
+      "entry": "0x2cd37",
+      "end": "0x2ce8d",
+      "canonical_instructions": 107,
+      "reached": 107,
+      "native_computed_sites": 1,
+      "finite_sites": 0,
+      "missing_or_unresolved_sites": [],
+      "worklist_exhausted": true,
+      "all_native_instruction_starts_reached": true,
+      "baseline_local_CFG_complete": true,
+      "symbolic_import_tail_exits": {
+        "0x2ce86": "WakeByAddressSingle"
+      },
+      "external_targets": [],
+      "indirect_CALL_count": 2,
+      "fixed_IAT_CALL_count": 0,
+      "unattributed_indirect_CALLs": [
+        {
+          "site": "0x2cd9d",
+          "asm": "call r12",
+          "fixed_IAT": null
+        },
+        {
+          "site": "0x2cdfe",
+          "asm": "call r15",
+          "fixed_IAT": null
+        }
+      ],
+      "seconds": 0.5,
+      "native_sha256": "52f2f6cea33a9f4e59cc32896adad0698b0ab845d4e43d71c609f62ef75d2ead"
+    },
+    {
+      "version": "17",
+      "entry": "0x49ccd",
+      "end": "0x49e65",
+      "canonical_instructions": 108,
+      "reached": 108,
+      "native_computed_sites": 4,
+      "finite_sites": 4,
+      "missing_or_unresolved_sites": [],
+      "worklist_exhausted": true,
+      "all_native_instruction_starts_reached": true,
+      "baseline_local_CFG_complete": true,
+      "symbolic_import_tail_exits": {},
+      "external_targets": [],
+      "indirect_CALL_count": 0,
+      "fixed_IAT_CALL_count": 0,
+      "unattributed_indirect_CALLs": [],
+      "seconds": 0.407,
+      "native_sha256": "2760d193987c930f5f72440ae48c6aedef4cc1bb59e8fd9778b606944142b01c"
+    },
+    {
+      "version": "19",
+      "entry": "0x2b043",
+      "end": "0x2b1e8",
+      "canonical_instructions": 116,
+      "reached": 116,
+      "native_computed_sites": 6,
+      "finite_sites": 6,
+      "missing_or_unresolved_sites": [],
+      "worklist_exhausted": true,
+      "all_native_instruction_starts_reached": true,
+      "baseline_local_CFG_complete": true,
+      "symbolic_import_tail_exits": {},
+      "external_targets": [],
+      "indirect_CALL_count": 0,
+      "fixed_IAT_CALL_count": 0,
+      "unattributed_indirect_CALLs": [],
+      "seconds": 0.938,
+      "native_sha256": "529381a5872ac276555223c5521fe0ba27e47a463b285fc086b28b4ba00a9d2f"
+    },
+    {
+      "version": "17",
+      "entry": "0x3b946",
+      "end": "0x3bafb",
+      "canonical_instructions": 118,
+      "reached": 118,
+      "native_computed_sites": 7,
+      "finite_sites": 7,
+      "missing_or_unresolved_sites": [],
+      "worklist_exhausted": true,
+      "all_native_instruction_starts_reached": true,
+      "baseline_local_CFG_complete": true,
+      "symbolic_import_tail_exits": {},
+      "external_targets": [],
+      "indirect_CALL_count": 0,
+      "fixed_IAT_CALL_count": 0,
+      "unattributed_indirect_CALLs": [],
+      "seconds": 0.985,
+      "native_sha256": "e6ae267487ae45b85a47f940bee0b3984befc95e838f4234d2cdbee31f8b6dc5"
+    },
+    {
+      "version": "19",
+      "entry": "0x151d5",
+      "end": "0x153a9",
+      "canonical_instructions": 121,
+      "reached": 121,
+      "native_computed_sites": 4,
+      "finite_sites": 4,
+      "missing_or_unresolved_sites": [],
+      "worklist_exhausted": true,
+      "all_native_instruction_starts_reached": true,
+      "baseline_local_CFG_complete": true,
+      "symbolic_import_tail_exits": {},
+      "external_targets": [
+        "0x17f80"
+      ],
+      "indirect_CALL_count": 0,
+      "fixed_IAT_CALL_count": 0,
+      "unattributed_indirect_CALLs": [],
+      "seconds": 0.922,
+      "native_sha256": "3b6a2928818a79020050123a570fac6a8a1064585d948d5b6fa0889962c741ed"
+    },
+    {
+      "version": "19",
+      "entry": "0x238fc",
+      "end": "0x23a66",
+      "canonical_instructions": 123,
+      "reached": 123,
+      "native_computed_sites": 1,
+      "finite_sites": 0,
+      "missing_or_unresolved_sites": [],
+      "worklist_exhausted": true,
+      "all_native_instruction_starts_reached": true,
+      "baseline_local_CFG_complete": true,
+      "symbolic_import_tail_exits": {
+        "0x23a5f": "HeapFree"
+      },
+      "external_targets": [],
+      "indirect_CALL_count": 7,
+      "fixed_IAT_CALL_count": 1,
+      "unattributed_indirect_CALLs": [
+        {
+          "site": "0x2397a",
+          "asm": "call rbx",
+          "fixed_IAT": null
+        },
+        {
+          "site": "0x23984",
+          "asm": "call r14",
+          "fixed_IAT": null
+        },
+        {
+          "site": "0x239bf",
+          "asm": "call rbx",
+          "fixed_IAT": null
+        },
+        {
+          "site": "0x239c9",
+          "asm": "call r14",
+          "fixed_IAT": null
+        },
+        {
+          "site": "0x23a2b",
+          "asm": "call rbx",
+          "fixed_IAT": null
+        },
+        {
+          "site": "0x23a35",
+          "asm": "call r14",
+          "fixed_IAT": null
+        }
+      ],
+      "seconds": 0.094,
+      "native_sha256": "265ab75e18cb54522f4854e7d393b1b7659d0b05b6d0881e8578391fd7674fe6"
+    },
+    {
+      "version": "19",
+      "entry": "0xa103",
+      "end": "0xa2d6",
+      "canonical_instructions": 124,
+      "reached": 124,
+      "native_computed_sites": 7,
+      "finite_sites": 7,
+      "missing_or_unresolved_sites": [],
+      "worklist_exhausted": true,
+      "all_native_instruction_starts_reached": true,
+      "baseline_local_CFG_complete": true,
+      "symbolic_import_tail_exits": {},
+      "external_targets": [],
+      "indirect_CALL_count": 0,
+      "fixed_IAT_CALL_count": 0,
+      "unattributed_indirect_CALLs": [],
+      "seconds": 1.171,
+      "native_sha256": "20011eb16b68ee8d9f43c74868b1a291f5b55fea749da309941cc78d79a73566"
+    },
+    {
+      "version": "17",
+      "entry": "0x2ddde",
+      "end": "0x2df52",
+      "canonical_instructions": 127,
+      "reached": 127,
+      "native_computed_sites": 1,
+      "finite_sites": 0,
+      "missing_or_unresolved_sites": [],
+      "worklist_exhausted": true,
+      "all_native_instruction_starts_reached": true,
+      "baseline_local_CFG_complete": true,
+      "symbolic_import_tail_exits": {
+        "0x2ded0": "HeapFree"
+      },
+      "external_targets": [],
+      "indirect_CALL_count": 7,
+      "fixed_IAT_CALL_count": 1,
+      "unattributed_indirect_CALLs": [
+        {
+          "site": "0x2de2e",
+          "asm": "call rbx",
+          "fixed_IAT": null
+        },
+        {
+          "site": "0x2de38",
+          "asm": "call r14",
+          "fixed_IAT": null
+        },
+        {
+          "site": "0x2de94",
+          "asm": "call rbx",
+          "fixed_IAT": null
+        },
+        {
+          "site": "0x2de9e",
+          "asm": "call r14",
+          "fixed_IAT": null
+        },
+        {
+          "site": "0x2df09",
+          "asm": "call rbx",
+          "fixed_IAT": null
+        },
+        {
+          "site": "0x2df13",
+          "asm": "call r14",
+          "fixed_IAT": null
+        }
+      ],
+      "seconds": 0.094,
+      "native_sha256": "9a7d5f8b351a58cf719d7471ad93e0a1a706ddd159b11ce8c932acc020d6cad7"
+    },
+    {
+      "version": "19",
+      "entry": "0x78e30",
+      "canonical_instructions": 127,
+      "reached": 0,
+      "native_computed_sites": null,
+      "finite_sites": 0,
+      "missing_or_unresolved_sites": [
+        "requires_native_extent_or_instruction_boundary_review"
+      ],
+      "worklist_exhausted": false,
+      "all_native_instruction_starts_reached": false,
+      "baseline_local_CFG_complete": false,
+      "unattributed_indirect_CALLs": [],
+      "analysis_error": "AssertionError: ",
+      "seconds": 0.094
+    },
+    {
+      "version": "19",
+      "entry": "0x84c5",
+      "end": "0x86a5",
+      "canonical_instructions": 128,
+      "reached": 128,
+      "native_computed_sites": 5,
+      "finite_sites": 5,
+      "missing_or_unresolved_sites": [],
+      "worklist_exhausted": true,
+      "all_native_instruction_starts_reached": true,
+      "baseline_local_CFG_complete": true,
+      "symbolic_import_tail_exits": {},
+      "external_targets": [],
+      "indirect_CALL_count": 0,
+      "fixed_IAT_CALL_count": 0,
+      "unattributed_indirect_CALLs": [],
+      "seconds": 1.953,
+      "native_sha256": "a0d26e97b6466dfce56d97da93a0d8f25d5d7e67477d9e5fec8eea3c99f6ea64"
+    },
+    {
+      "version": "17",
+      "entry": "0x4a322",
+      "end": "0x4a506",
+      "canonical_instructions": 129,
+      "reached": 119,
+      "native_computed_sites": 1,
+      "finite_sites": 0,
+      "missing_or_unresolved_sites": [
+        "0x4a504"
+      ],
+      "worklist_exhausted": true,
+      "all_native_instruction_starts_reached": false,
+      "baseline_local_CFG_complete": false,
+      "symbolic_import_tail_exits": {},
+      "external_targets": [],
+      "indirect_CALL_count": 0,
+      "fixed_IAT_CALL_count": 0,
+      "unattributed_indirect_CALLs": [],
+      "seconds": 0.093,
+      "native_sha256": "2df607b5d7c0720023bd02f32c0a25cc2629a27302195ae6b4be3334d6e8a65c"
+    },
+    {
+      "version": "17",
+      "entry": "0x5e3d",
+      "end": "0x5fc6",
+      "canonical_instructions": 130,
+      "reached": 130,
+      "native_computed_sites": 1,
+      "finite_sites": 0,
+      "missing_or_unresolved_sites": [
+        "0x5fc2"
+      ],
+      "worklist_exhausted": true,
+      "all_native_instruction_starts_reached": true,
+      "baseline_local_CFG_complete": false,
+      "symbolic_import_tail_exits": {},
+      "external_targets": [],
+      "indirect_CALL_count": 3,
+      "fixed_IAT_CALL_count": 0,
+      "unattributed_indirect_CALLs": [
+        {
+          "site": "0x5e8c",
+          "asm": "call r13",
+          "fixed_IAT": null
+        },
+        {
+          "site": "0x5f58",
+          "asm": "call qword ptr [rsi + rax]",
+          "fixed_IAT": null
+        },
+        {
+          "site": "0x5f83",
+          "asm": "call r13",
+          "fixed_IAT": null
+        }
+      ],
+      "seconds": 0.109,
+      "native_sha256": "d337145beb1921003b6061023bd9ba3e8028a572d0f6d51b911c2e837d84c760"
+    },
+    {
+      "version": "19",
+      "entry": "0x23ce8",
+      "end": "0x23e6d",
+      "canonical_instructions": 130,
+      "reached": 130,
+      "native_computed_sites": 1,
+      "finite_sites": 0,
+      "missing_or_unresolved_sites": [
+        "0x23d62"
+      ],
+      "worklist_exhausted": true,
+      "all_native_instruction_starts_reached": true,
+      "baseline_local_CFG_complete": false,
+      "symbolic_import_tail_exits": {},
+      "external_targets": [],
+      "indirect_CALL_count": 3,
+      "fixed_IAT_CALL_count": 0,
+      "unattributed_indirect_CALLs": [
+        {
+          "site": "0x23d33",
+          "asm": "call r13",
+          "fixed_IAT": null
+        },
+        {
+          "site": "0x23e1f",
+          "asm": "call qword ptr [rsi + rax]",
+          "fixed_IAT": null
+        },
+        {
+          "site": "0x23e4a",
+          "asm": "call r13",
+          "fixed_IAT": null
+        }
+      ],
+      "seconds": 0.11,
+      "native_sha256": "81c3b4dfb940a43b12bd38b1d596575260aacadd2303b3ba89b6ac45427f8994"
+    },
+    {
+      "version": "19",
+      "entry": "0x45cdf",
+      "end": "0x45ed9",
+      "canonical_instructions": 130,
+      "reached": 130,
+      "native_computed_sites": 7,
+      "finite_sites": 7,
+      "missing_or_unresolved_sites": [],
+      "worklist_exhausted": true,
+      "all_native_instruction_starts_reached": true,
+      "baseline_local_CFG_complete": true,
+      "symbolic_import_tail_exits": {},
+      "external_targets": [
+        "0x17f80"
+      ],
+      "indirect_CALL_count": 0,
+      "fixed_IAT_CALL_count": 0,
+      "unattributed_indirect_CALLs": [],
+      "seconds": 0.094,
+      "native_sha256": "906e24225c4d8b2c3defa065b5ff05a4f0c9bc921bafe8840e55a6958eb59bf2"
+    },
+    {
+      "version": "17",
+      "entry": "0x71570",
+      "end": "0x7187d",
+      "canonical_instructions": 132,
+      "reached": 111,
+      "native_computed_sites": 2,
+      "finite_sites": 1,
+      "missing_or_unresolved_sites": [
+        "0x716c8"
+      ],
+      "worklist_exhausted": true,
+      "all_native_instruction_starts_reached": false,
+      "baseline_local_CFG_complete": false,
+      "symbolic_import_tail_exits": {},
+      "external_targets": [
+        "0x72220",
+        "0x72240"
+      ],
+      "indirect_CALL_count": 0,
+      "fixed_IAT_CALL_count": 0,
+      "unattributed_indirect_CALLs": [],
+      "seconds": 0.093,
+      "native_sha256": "87abfb70d7dfb47701994a4703df809caf46659292e6c10212b0e5bd9de140cc"
+    },
+    {
+      "version": "19",
+      "entry": "0x6ff10",
+      "end": "0x7021d",
+      "canonical_instructions": 132,
+      "reached": 111,
+      "native_computed_sites": 2,
+      "finite_sites": 1,
+      "missing_or_unresolved_sites": [
+        "0x70068"
+      ],
+      "worklist_exhausted": true,
+      "all_native_instruction_starts_reached": false,
+      "baseline_local_CFG_complete": false,
+      "symbolic_import_tail_exits": {},
+      "external_targets": [
+        "0x70bc0",
+        "0x70be0"
+      ],
+      "indirect_CALL_count": 0,
+      "fixed_IAT_CALL_count": 0,
+      "unattributed_indirect_CALLs": [],
+      "seconds": 0.078,
+      "native_sha256": "ffa7a27b11119eda355ad31eddb2c0705bb3ced7d45859491594e9e9153967c4"
+    },
+    {
+      "version": "17",
+      "entry": "0x3bc94",
+      "end": "0x3be69",
+      "canonical_instructions": 136,
+      "reached": 136,
+      "native_computed_sites": 1,
+      "finite_sites": 0,
+      "missing_or_unresolved_sites": [],
+      "worklist_exhausted": true,
+      "all_native_instruction_starts_reached": true,
+      "baseline_local_CFG_complete": true,
+      "symbolic_import_tail_exits": {
+        "0x3be62": "HeapFree"
+      },
+      "external_targets": [],
+      "indirect_CALL_count": 7,
+      "fixed_IAT_CALL_count": 1,
+      "unattributed_indirect_CALLs": [
+        {
+          "site": "0x3bd1f",
+          "asm": "call r14",
+          "fixed_IAT": null
+        },
+        {
+          "site": "0x3bd2a",
+          "asm": "call r15",
+          "fixed_IAT": null
+        },
+        {
+          "site": "0x3bd6e",
+          "asm": "call r14",
+          "fixed_IAT": null
+        },
+        {
+          "site": "0x3bd79",
+          "asm": "call r15",
+          "fixed_IAT": null
+        },
+        {
+          "site": "0x3be28",
+          "asm": "call rbx",
+          "fixed_IAT": null
+        },
+        {
+          "site": "0x3be32",
+          "asm": "call r14",
+          "fixed_IAT": null
+        }
+      ],
+      "seconds": 0.109,
+      "native_sha256": "b27c66c57894354a7a83fff8ed60fd410346b4d323789f9a2f64ad4994cba6bf"
+    },
+    {
+      "version": "17",
+      "entry": "0x803a",
+      "end": "0x821d",
+      "canonical_instructions": 137,
+      "reached": 137,
+      "native_computed_sites": 5,
+      "finite_sites": 5,
+      "missing_or_unresolved_sites": [],
+      "worklist_exhausted": true,
+      "all_native_instruction_starts_reached": true,
+      "baseline_local_CFG_complete": true,
+      "symbolic_import_tail_exits": {},
+      "external_targets": [
+        "0x29ec0"
+      ],
+      "indirect_CALL_count": 0,
+      "fixed_IAT_CALL_count": 0,
+      "unattributed_indirect_CALLs": [],
+      "seconds": 0.36,
+      "native_sha256": "4207af0b792ced4ea2f6489719860197465e0fe30acf494b4ec12a99ce60413f"
+    },
+    {
+      "version": "19",
+      "entry": "0x68d44",
+      "end": "0x68f22",
+      "canonical_instructions": 139,
+      "reached": 139,
+      "native_computed_sites": 1,
+      "finite_sites": 0,
+      "missing_or_unresolved_sites": [],
+      "worklist_exhausted": true,
+      "all_native_instruction_starts_reached": true,
+      "baseline_local_CFG_complete": true,
+      "symbolic_import_tail_exits": {
+        "0x68f1b": "HeapFree"
+      },
+      "external_targets": [],
+      "indirect_CALL_count": 7,
+      "fixed_IAT_CALL_count": 1,
+      "unattributed_indirect_CALLs": [
+        {
+          "site": "0x68dcf",
+          "asm": "call r15",
+          "fixed_IAT": null
+        },
+        {
+          "site": "0x68dda",
+          "asm": "call r12",
+          "fixed_IAT": null
+        },
+        {
+          "site": "0x68e1e",
+          "asm": "call r15",
+          "fixed_IAT": null
+        },
+        {
+          "site": "0x68e29",
+          "asm": "call r12",
+          "fixed_IAT": null
+        },
+        {
+          "site": "0x68edc",
+          "asm": "call rbx",
+          "fixed_IAT": null
+        },
+        {
+          "site": "0x68ee6",
+          "asm": "call r14",
+          "fixed_IAT": null
+        }
+      ],
+      "seconds": 0.094,
+      "native_sha256": "699c6c26a561f83f6deb7ef7cd16d6f66228fa9efff8488d5d9f5835ae481dc5"
+    },
+    {
+      "version": "19",
+      "entry": "0x8000",
+      "end": "0x8203",
+      "canonical_instructions": 142,
+      "reached": 142,
+      "native_computed_sites": 13,
+      "finite_sites": 13,
+      "missing_or_unresolved_sites": [],
+      "worklist_exhausted": false,
+      "all_native_instruction_starts_reached": true,
+      "baseline_local_CFG_complete": false,
+      "symbolic_import_tail_exits": {},
+      "external_targets": [],
+      "indirect_CALL_count": 0,
+      "fixed_IAT_CALL_count": 0,
+      "unattributed_indirect_CALLs": [],
+      "seconds": 3.687,
+      "native_sha256": "bf48198b9480dc5ef52e30c578c905c98ed72c6dae3e9d7659f53bc6300f1364"
+    },
+    {
+      "version": "17",
+      "entry": "0x1372a",
+      "end": "0x13933",
+      "canonical_instructions": 143,
+      "reached": 143,
+      "native_computed_sites": 7,
+      "finite_sites": 7,
+      "missing_or_unresolved_sites": [],
+      "worklist_exhausted": true,
+      "all_native_instruction_starts_reached": true,
+      "baseline_local_CFG_complete": true,
+      "symbolic_import_tail_exits": {},
+      "external_targets": [
+        "0x4a6b1"
+      ],
+      "indirect_CALL_count": 0,
+      "fixed_IAT_CALL_count": 0,
+      "unattributed_indirect_CALLs": [],
+      "seconds": 1.109,
+      "native_sha256": "26e6e83934734e6a1004b397df334665629fb48660b64396b94db4760606fb37"
+    },
+    {
+      "version": "17",
+      "entry": "0x66a0b",
+      "end": "0x66c0b",
+      "canonical_instructions": 143,
+      "reached": 143,
+      "native_computed_sites": 8,
+      "finite_sites": 8,
+      "missing_or_unresolved_sites": [],
+      "worklist_exhausted": true,
+      "all_native_instruction_starts_reached": true,
+      "baseline_local_CFG_complete": true,
+      "symbolic_import_tail_exits": {},
+      "external_targets": [],
+      "indirect_CALL_count": 0,
+      "fixed_IAT_CALL_count": 0,
+      "unattributed_indirect_CALLs": [],
+      "seconds": 1.36,
+      "native_sha256": "9e4e7d25d64d51ffe63599ee6a5f81ed60d15030aafe62f94957bffd1b895094"
+    },
+    {
+      "version": "19",
+      "entry": "0x14b79",
+      "end": "0x14d6e",
+      "canonical_instructions": 143,
+      "reached": 143,
+      "native_computed_sites": 7,
+      "finite_sites": 7,
+      "missing_or_unresolved_sites": [],
+      "worklist_exhausted": true,
+      "all_native_instruction_starts_reached": true,
+      "baseline_local_CFG_complete": true,
+      "symbolic_import_tail_exits": {},
+      "external_targets": [],
+      "indirect_CALL_count": 0,
+      "fixed_IAT_CALL_count": 0,
+      "unattributed_indirect_CALLs": [],
+      "seconds": 0.094,
+      "native_sha256": "4f3342c541ee970212c07140169a98db604feea538495d84bd46e1f821b0f689"
+    },
+    {
+      "version": "17",
+      "entry": "0x2becc",
+      "end": "0x2c0b6",
+      "canonical_instructions": 145,
+      "reached": 143,
+      "native_computed_sites": 1,
+      "finite_sites": 0,
+      "missing_or_unresolved_sites": [],
+      "worklist_exhausted": true,
+      "all_native_instruction_starts_reached": false,
+      "baseline_local_CFG_complete": false,
+      "symbolic_import_tail_exits": {
+        "0x2bfa0": "CloseHandle"
+      },
+      "external_targets": [],
+      "indirect_CALL_count": 3,
+      "fixed_IAT_CALL_count": 2,
+      "unattributed_indirect_CALLs": [
+        {
+          "site": "0x2c0b1",
+          "asm": "call qword ptr [rdi + 7]",
+          "fixed_IAT": null
+        }
+      ],
+      "seconds": 0.093,
+      "native_sha256": "70a251951ecd672db719711fd89ed0638acaefbd609975798c8c5e51f6298ea1"
+    },
+    {
+      "version": "19",
+      "entry": "0x23e6d",
+      "end": "0x240de",
+      "canonical_instructions": 145,
+      "reached": 145,
+      "native_computed_sites": 2,
+      "finite_sites": 2,
+      "missing_or_unresolved_sites": [],
+      "worklist_exhausted": true,
+      "all_native_instruction_starts_reached": true,
+      "baseline_local_CFG_complete": true,
+      "symbolic_import_tail_exits": {},
+      "external_targets": [],
+      "indirect_CALL_count": 1,
+      "fixed_IAT_CALL_count": 0,
+      "unattributed_indirect_CALLs": [
+        {
+          "site": "0x2405d",
+          "asm": "call r14",
+          "fixed_IAT": null
+        }
+      ],
+      "seconds": 0.094,
+      "native_sha256": "840c04f0b21b96112e9f3cdf50cd68426ee714addbd2212d3a5c409d19326757"
+    },
+    {
+      "version": "17",
+      "entry": "0x65893",
+      "end": "0x65a78",
+      "canonical_instructions": 146,
+      "reached": 146,
+      "native_computed_sites": 1,
+      "finite_sites": 0,
+      "missing_or_unresolved_sites": [],
+      "worklist_exhausted": true,
+      "all_native_instruction_starts_reached": true,
+      "baseline_local_CFG_complete": true,
+      "symbolic_import_tail_exits": {
+        "0x65a71": "WakeByAddressSingle"
+      },
+      "external_targets": [],
+      "indirect_CALL_count": 2,
+      "fixed_IAT_CALL_count": 1,
+      "unattributed_indirect_CALLs": [
+        {
+          "site": "0x659f6",
+          "asm": "call r15",
+          "fixed_IAT": null
+        }
+      ],
+      "seconds": 0.938,
+      "native_sha256": "567bed5b8930da1424589ceeae9a07294e07bbaf6102c405964174e8ccfe590c"
+    },
+    {
+      "version": "19",
+      "entry": "0xe745",
+      "end": "0xe926",
+      "canonical_instructions": 146,
+      "reached": 146,
+      "native_computed_sites": 1,
+      "finite_sites": 0,
+      "missing_or_unresolved_sites": [],
+      "worklist_exhausted": true,
+      "all_native_instruction_starts_reached": true,
+      "baseline_local_CFG_complete": true,
+      "symbolic_import_tail_exits": {
+        "0xe91f": "WakeByAddressSingle"
+      },
+      "external_targets": [],
+      "indirect_CALL_count": 2,
+      "fixed_IAT_CALL_count": 1,
+      "unattributed_indirect_CALLs": [
+        {
+          "site": "0xe8a4",
+          "asm": "call r15",
+          "fixed_IAT": null
+        }
+      ],
+      "seconds": 0.968,
+      "native_sha256": "2404abb74b951be55b23bf2be6b50c97560f3d8db2aa82df32f66f47e4c5d2d0"
+    },
+    {
+      "version": "19",
+      "entry": "0x3246f",
+      "end": "0x32666",
+      "canonical_instructions": 146,
+      "reached": 144,
+      "native_computed_sites": 1,
+      "finite_sites": 0,
+      "missing_or_unresolved_sites": [],
+      "worklist_exhausted": true,
+      "all_native_instruction_starts_reached": false,
+      "baseline_local_CFG_complete": false,
+      "symbolic_import_tail_exits": {
+        "0x324f8": "CloseHandle"
+      },
+      "external_targets": [],
+      "indirect_CALL_count": 3,
+      "fixed_IAT_CALL_count": 2,
+      "unattributed_indirect_CALLs": [
+        {
+          "site": "0x325ed",
+          "asm": "call qword ptr [rdi + 7]",
+          "fixed_IAT": null
+        }
+      ],
+      "seconds": 0.094,
+      "native_sha256": "5320e4a94ecc65b26292f72f1913d58c2f80c1ef3385c7cc3c6419a123b54f03"
+    },
+    {
+      "version": "17",
+      "entry": "0x47d48",
+      "end": "0x47f93",
+      "canonical_instructions": 148,
+      "reached": 148,
+      "native_computed_sites": 5,
+      "finite_sites": 5,
+      "missing_or_unresolved_sites": [],
+      "worklist_exhausted": true,
+      "all_native_instruction_starts_reached": true,
+      "baseline_local_CFG_complete": true,
+      "symbolic_import_tail_exits": {},
+      "external_targets": [],
+      "indirect_CALL_count": 0,
+      "fixed_IAT_CALL_count": 0,
+      "unattributed_indirect_CALLs": [],
+      "seconds": 1.234,
+      "native_sha256": "5c6284982afd7be34fc46052d865c00495fef446e92ec7bb2627094a3f44354e"
+    },
+    {
+      "version": "19",
+      "entry": "0x19f1",
+      "end": "0x1c5e",
+      "canonical_instructions": 153,
+      "reached": 153,
+      "native_computed_sites": 6,
+      "finite_sites": 6,
+      "missing_or_unresolved_sites": [],
+      "worklist_exhausted": true,
+      "all_native_instruction_starts_reached": true,
+      "baseline_local_CFG_complete": true,
+      "symbolic_import_tail_exits": {},
+      "external_targets": [],
+      "indirect_CALL_count": 0,
+      "fixed_IAT_CALL_count": 0,
+      "unattributed_indirect_CALLs": [],
+      "seconds": 0.11,
+      "native_sha256": "ba8c50d7e64b20e7f1e7d9c443fff4638018908e23cfcae1860950eca742db9e"
+    },
+    {
+      "version": "19",
+      "entry": "0x11453",
+      "end": "0x116ad",
+      "canonical_instructions": 155,
+      "reached": 155,
+      "native_computed_sites": 7,
+      "finite_sites": 7,
+      "missing_or_unresolved_sites": [],
+      "worklist_exhausted": true,
+      "all_native_instruction_starts_reached": true,
+      "baseline_local_CFG_complete": true,
+      "symbolic_import_tail_exits": {},
+      "external_targets": [],
+      "indirect_CALL_count": 0,
+      "fixed_IAT_CALL_count": 0,
+      "unattributed_indirect_CALLs": [],
+      "seconds": 0.469,
+      "native_sha256": "fee74a827a976dce13afab3de5abd42905a5e2e32f1cc5ff421bbafcf4277fb4"
+    },
+    {
+      "version": "19",
+      "entry": "0x28e8e",
+      "end": "0x290d5",
+      "canonical_instructions": 156,
+      "reached": 156,
+      "native_computed_sites": 8,
+      "finite_sites": 8,
+      "missing_or_unresolved_sites": [],
+      "worklist_exhausted": true,
+      "all_native_instruction_starts_reached": true,
+      "baseline_local_CFG_complete": true,
+      "symbolic_import_tail_exits": {},
+      "external_targets": [],
+      "indirect_CALL_count": 0,
+      "fixed_IAT_CALL_count": 0,
+      "unattributed_indirect_CALLs": [],
+      "seconds": 0.375,
+      "native_sha256": "9dba254dcd6131b2c01bbade88b7c1ee1f4ed171f326b8251238abb2388584ef"
+    },
+    {
+      "version": "17",
+      "entry": "0x492e4",
+      "end": "0x49538",
+      "canonical_instructions": 160,
+      "reached": 160,
+      "native_computed_sites": 8,
+      "finite_sites": 8,
+      "missing_or_unresolved_sites": [],
+      "worklist_exhausted": true,
+      "all_native_instruction_starts_reached": true,
+      "baseline_local_CFG_complete": true,
+      "symbolic_import_tail_exits": {},
+      "external_targets": [],
+      "indirect_CALL_count": 0,
+      "fixed_IAT_CALL_count": 0,
+      "unattributed_indirect_CALLs": [],
+      "seconds": 0.094,
+      "native_sha256": "e400d231897211e661ae33ee86fb32a26a56c20cbf3c505383b20a0719511738"
+    },
+    {
+      "version": "17",
+      "entry": "0x665a1",
+      "end": "0x667f9",
+      "canonical_instructions": 161,
+      "reached": 161,
+      "native_computed_sites": 13,
+      "finite_sites": 13,
+      "missing_or_unresolved_sites": [],
+      "worklist_exhausted": false,
+      "all_native_instruction_starts_reached": true,
+      "baseline_local_CFG_complete": false,
+      "symbolic_import_tail_exits": {},
+      "external_targets": [],
+      "indirect_CALL_count": 0,
+      "fixed_IAT_CALL_count": 0,
+      "unattributed_indirect_CALLs": [],
+      "seconds": 4.015,
+      "native_sha256": "aece62bcb2cc81ea21ff05f9f875415088baa844a68a40f117a4632eb7aa795a"
+    },
+    {
+      "version": "17",
+      "entry": "0x71cc0",
+      "end": "0x71f57",
+      "canonical_instructions": 164,
+      "reached": 160,
+      "native_computed_sites": 2,
+      "finite_sites": 2,
+      "missing_or_unresolved_sites": [],
+      "worklist_exhausted": true,
+      "all_native_instruction_starts_reached": false,
+      "baseline_local_CFG_complete": false,
+      "symbolic_import_tail_exits": {},
+      "external_targets": [
+        "0x72330",
+        "0x72350"
+      ],
+      "indirect_CALL_count": 0,
+      "fixed_IAT_CALL_count": 0,
+      "unattributed_indirect_CALLs": [],
+      "seconds": 0.094,
+      "native_sha256": "0b5d8e94aeb14bcc780a24c39161465e12d38446ef15c1d0150fb03e0d62871e"
+    },
+    {
+      "version": "17",
+      "entry": "0x71f70",
+      "end": "0x72207",
+      "canonical_instructions": 164,
+      "reached": 160,
+      "native_computed_sites": 2,
+      "finite_sites": 2,
+      "missing_or_unresolved_sites": [],
+      "worklist_exhausted": true,
+      "all_native_instruction_starts_reached": false,
+      "baseline_local_CFG_complete": false,
+      "symbolic_import_tail_exits": {},
+      "external_targets": [
+        "0x72220",
+        "0x72240"
+      ],
+      "indirect_CALL_count": 0,
+      "fixed_IAT_CALL_count": 0,
+      "unattributed_indirect_CALLs": [],
+      "seconds": 0.109,
+      "native_sha256": "23fdca8755f6b7efc094f4d2d18e2f3073e39ded578f0de4829dd8ac0cccdeb8"
+    },
+    {
+      "version": "19",
+      "entry": "0x70660",
+      "end": "0x708f7",
+      "canonical_instructions": 164,
+      "reached": 160,
+      "native_computed_sites": 2,
+      "finite_sites": 2,
+      "missing_or_unresolved_sites": [],
+      "worklist_exhausted": true,
+      "all_native_instruction_starts_reached": false,
+      "baseline_local_CFG_complete": false,
+      "symbolic_import_tail_exits": {},
+      "external_targets": [
+        "0x70cd0",
+        "0x70cf0"
+      ],
+      "indirect_CALL_count": 0,
+      "fixed_IAT_CALL_count": 0,
+      "unattributed_indirect_CALLs": [],
+      "seconds": 0.094,
+      "native_sha256": "778a9c29e4f9d0b6309a35ef57901c438c2ec56d532826940240551612fc4a4f"
+    },
+    {
+      "version": "19",
+      "entry": "0x70910",
+      "end": "0x70ba7",
+      "canonical_instructions": 164,
+      "reached": 160,
+      "native_computed_sites": 2,
+      "finite_sites": 2,
+      "missing_or_unresolved_sites": [],
+      "worklist_exhausted": true,
+      "all_native_instruction_starts_reached": false,
+      "baseline_local_CFG_complete": false,
+      "symbolic_import_tail_exits": {},
+      "external_targets": [
+        "0x70bc0",
+        "0x70be0"
+      ],
+      "indirect_CALL_count": 0,
+      "fixed_IAT_CALL_count": 0,
+      "unattributed_indirect_CALLs": [],
+      "seconds": 0.094,
+      "native_sha256": "a3c2f2344ac23d5b1977b74826dae3cbafeff6f72021d481ffecd25975377411"
+    },
+    {
+      "version": "19",
+      "entry": "0x22e4b",
+      "end": "0x230ed",
+      "canonical_instructions": 166,
+      "reached": 166,
+      "native_computed_sites": 7,
+      "finite_sites": 7,
+      "missing_or_unresolved_sites": [],
+      "worklist_exhausted": true,
+      "all_native_instruction_starts_reached": true,
+      "baseline_local_CFG_complete": true,
+      "symbolic_import_tail_exits": {},
+      "external_targets": [],
+      "indirect_CALL_count": 0,
+      "fixed_IAT_CALL_count": 0,
+      "unattributed_indirect_CALLs": [],
+      "seconds": 0.094,
+      "native_sha256": "086df1668744276ac4735646cd4b4ac7615d496ec3fe843c80ac87b773b13754"
+    },
+    {
+      "version": "17",
+      "entry": "0x3c5a",
+      "end": "0x3f37",
+      "canonical_instructions": 171,
+      "reached": 171,
+      "native_computed_sites": 3,
+      "finite_sites": 3,
+      "missing_or_unresolved_sites": [],
+      "worklist_exhausted": true,
+      "all_native_instruction_starts_reached": true,
+      "baseline_local_CFG_complete": true,
+      "symbolic_import_tail_exits": {},
+      "external_targets": [],
+      "indirect_CALL_count": 1,
+      "fixed_IAT_CALL_count": 0,
+      "unattributed_indirect_CALLs": [
+        {
+          "site": "0x3e36",
+          "asm": "call rbx",
+          "fixed_IAT": null
+        }
+      ],
+      "seconds": 0.078,
+      "native_sha256": "2e971a19fb7293bd48f16df38f04b0c14534131c96993cecd49bd9b3c2796243"
+    },
+    {
+      "version": "19",
+      "entry": "0x20d2",
+      "end": "0x233b",
+      "canonical_instructions": 172,
+      "reached": 172,
+      "native_computed_sites": 6,
+      "finite_sites": 6,
+      "missing_or_unresolved_sites": [],
+      "worklist_exhausted": true,
+      "all_native_instruction_starts_reached": true,
+      "baseline_local_CFG_complete": true,
+      "symbolic_import_tail_exits": {},
+      "external_targets": [],
+      "indirect_CALL_count": 0,
+      "fixed_IAT_CALL_count": 0,
+      "unattributed_indirect_CALLs": [],
+      "seconds": 0.094,
+      "native_sha256": "cc56225116f4ced078153771999bf522514ec8a60d4556b3ba8d893cb82bbed9"
+    },
+    {
+      "version": "17",
+      "entry": "0x7ece0",
+      "end": "0x7f068",
+      "canonical_instructions": 176,
+      "reached": 160,
+      "native_computed_sites": 4,
+      "finite_sites": 3,
+      "missing_or_unresolved_sites": [
+        "0x7ee74"
+      ],
+      "worklist_exhausted": true,
+      "all_native_instruction_starts_reached": false,
+      "baseline_local_CFG_complete": false,
+      "symbolic_import_tail_exits": {},
+      "external_targets": [
+        "0x7ecd0"
+      ],
+      "indirect_CALL_count": 0,
+      "fixed_IAT_CALL_count": 0,
+      "unattributed_indirect_CALLs": [],
+      "seconds": 0.125,
+      "native_sha256": "9ddb15ba2818ee3877636d04c04c2f86832db55e64ca72c4f660403ed5eac9a5"
+    },
+    {
+      "version": "19",
+      "entry": "0x7d680",
+      "end": "0x7da08",
+      "canonical_instructions": 176,
+      "reached": 160,
+      "native_computed_sites": 4,
+      "finite_sites": 3,
+      "missing_or_unresolved_sites": [
+        "0x7d814"
+      ],
+      "worklist_exhausted": true,
+      "all_native_instruction_starts_reached": false,
+      "baseline_local_CFG_complete": false,
+      "symbolic_import_tail_exits": {},
+      "external_targets": [
+        "0x7d670"
+      ],
+      "indirect_CALL_count": 0,
+      "fixed_IAT_CALL_count": 0,
+      "unattributed_indirect_CALLs": [],
+      "seconds": 0.094,
+      "native_sha256": "6b9548ade90b1146b623c79f51d8c0fbc604a44d55c0ca34425e6557a7b12d6d"
+    },
+    {
+      "version": "17",
+      "entry": "0x2bf2",
+      "end": "0x2e29",
+      "canonical_instructions": 181,
+      "reached": 181,
+      "native_computed_sites": 1,
+      "finite_sites": 0,
+      "missing_or_unresolved_sites": [
+        "0x2e25"
+      ],
+      "worklist_exhausted": true,
+      "all_native_instruction_starts_reached": true,
+      "baseline_local_CFG_complete": false,
+      "symbolic_import_tail_exits": {},
+      "external_targets": [],
+      "indirect_CALL_count": 4,
+      "fixed_IAT_CALL_count": 0,
+      "unattributed_indirect_CALLs": [
+        {
+          "site": "0x2ced",
+          "asm": "call qword ptr [rsi + 0x18]",
+          "fixed_IAT": null
+        },
+        {
+          "site": "0x2d17",
+          "asm": "call qword ptr [rsi + 0x20]",
+          "fixed_IAT": null
+        },
+        {
+          "site": "0x2d91",
+          "asm": "call qword ptr [r13 + 0x18]",
+          "fixed_IAT": null
+        },
+        {
+          "site": "0x2da5",
+          "asm": "call qword ptr [r13 + 0x20]",
+          "fixed_IAT": null
+        }
+      ],
+      "seconds": 0.312,
+      "native_sha256": "a47dcfad81ecccf0e705f276b117c71008b1826ec3c854e4c5206781c7568e7a"
+    },
+    {
+      "version": "19",
+      "entry": "0x6fab",
+      "end": "0x71df",
+      "canonical_instructions": 183,
+      "reached": 183,
+      "native_computed_sites": 1,
+      "finite_sites": 0,
+      "missing_or_unresolved_sites": [
+        "0x7067"
+      ],
+      "worklist_exhausted": true,
+      "all_native_instruction_starts_reached": true,
+      "baseline_local_CFG_complete": false,
+      "symbolic_import_tail_exits": {},
+      "external_targets": [],
+      "indirect_CALL_count": 4,
+      "fixed_IAT_CALL_count": 0,
+      "unattributed_indirect_CALLs": [
+        {
+          "site": "0x70e4",
+          "asm": "call qword ptr [r13 + 0x18]",
+          "fixed_IAT": null
+        },
+        {
+          "site": "0x70f8",
+          "asm": "call qword ptr [r13 + 0x20]",
+          "fixed_IAT": null
+        },
+        {
+          "site": "0x717a",
+          "asm": "call qword ptr [rsi + 0x18]",
+          "fixed_IAT": null
+        },
+        {
+          "site": "0x719c",
+          "asm": "call qword ptr [rsi + 0x20]",
+          "fixed_IAT": null
+        }
+      ],
+      "seconds": 0.422,
+      "native_sha256": "453f032b65b9e207d6ada84f57f5d732da24b1cce631defe7b8ec08e2d8be8ab"
+    },
+    {
+      "version": "17",
+      "entry": "0x15661",
+      "end": "0x1593b",
+      "canonical_instructions": 187,
+      "reached": 187,
+      "native_computed_sites": 6,
+      "finite_sites": 6,
+      "missing_or_unresolved_sites": [],
+      "worklist_exhausted": true,
+      "all_native_instruction_starts_reached": true,
+      "baseline_local_CFG_complete": true,
+      "symbolic_import_tail_exits": {},
+      "external_targets": [],
+      "indirect_CALL_count": 5,
+      "fixed_IAT_CALL_count": 5,
+      "unattributed_indirect_CALLs": [],
+      "seconds": 1.531,
+      "native_sha256": "5a4b08db94428c9905dc8eeab77bb39b3fc7a4b3869d714bc27e190593f1502e"
+    },
+    {
+      "version": "17",
+      "entry": "0x37d7b",
+      "end": "0x38103",
+      "canonical_instructions": 187,
+      "reached": 187,
+      "native_computed_sites": 4,
+      "finite_sites": 4,
+      "missing_or_unresolved_sites": [],
+      "worklist_exhausted": true,
+      "all_native_instruction_starts_reached": true,
+      "baseline_local_CFG_complete": true,
+      "symbolic_import_tail_exits": {},
+      "external_targets": [],
+      "indirect_CALL_count": 1,
+      "fixed_IAT_CALL_count": 0,
+      "unattributed_indirect_CALLs": [
+        {
+          "site": "0x380e3",
+          "asm": "call qword ptr [rsp + 0x58]",
+          "fixed_IAT": null
+        }
+      ],
+      "seconds": 0.078,
+      "native_sha256": "8f0b1bf217578c1ded6a6da89da95f25f0d39a8488796449685f6b95481cc70e"
+    },
+    {
+      "version": "19",
+      "entry": "0xf03b",
+      "end": "0xf37c",
+      "canonical_instructions": 190,
+      "reached": 190,
+      "native_computed_sites": 3,
+      "finite_sites": 3,
+      "missing_or_unresolved_sites": [],
+      "worklist_exhausted": true,
+      "all_native_instruction_starts_reached": true,
+      "baseline_local_CFG_complete": true,
+      "symbolic_import_tail_exits": {},
+      "external_targets": [],
+      "indirect_CALL_count": 1,
+      "fixed_IAT_CALL_count": 0,
+      "unattributed_indirect_CALLs": [
+        {
+          "site": "0xf1b4",
+          "asm": "call qword ptr [rsp + 0x40]",
+          "fixed_IAT": null
+        }
+      ],
+      "seconds": 0.109,
+      "native_sha256": "f19c82ddb3c51dcce1ad8241fdfa44ad446f903654f7f4b0567f69a6c09176bf"
+    },
+    {
+      "version": "19",
+      "entry": "0x689b3",
+      "end": "0x68cfd",
+      "canonical_instructions": 191,
+      "reached": 191,
+      "native_computed_sites": 6,
+      "finite_sites": 6,
+      "missing_or_unresolved_sites": [],
+      "worklist_exhausted": true,
+      "all_native_instruction_starts_reached": true,
+      "baseline_local_CFG_complete": true,
+      "symbolic_import_tail_exits": {},
+      "external_targets": [],
+      "indirect_CALL_count": 0,
+      "fixed_IAT_CALL_count": 0,
+      "unattributed_indirect_CALLs": [],
+      "seconds": 0.11,
+      "native_sha256": "d5d246ed9e9b171cf163dc7eb34ac2b4908e468223365554cbd748008ce56715"
+    },
+    {
+      "version": "19",
+      "entry": "0x9aa8",
+      "end": "0x9d57",
+      "canonical_instructions": 195,
+      "reached": 195,
+      "native_computed_sites": 4,
+      "finite_sites": 4,
+      "missing_or_unresolved_sites": [],
+      "worklist_exhausted": false,
+      "all_native_instruction_starts_reached": true,
+      "baseline_local_CFG_complete": false,
+      "symbolic_import_tail_exits": {},
+      "external_targets": [],
+      "indirect_CALL_count": 0,
+      "fixed_IAT_CALL_count": 0,
+      "unattributed_indirect_CALLs": [],
+      "seconds": 1.531,
+      "native_sha256": "78d59e70f2d5e5c6e57b0504ba689aab20c59e04ccb9ae19ff8e489dabf25bfc"
+    },
+    {
+      "version": "19",
+      "entry": "0x2acab",
+      "end": "0x2b043",
+      "canonical_instructions": 200,
+      "reached": 200,
+      "native_computed_sites": 5,
+      "finite_sites": 5,
+      "missing_or_unresolved_sites": [],
+      "worklist_exhausted": true,
+      "all_native_instruction_starts_reached": true,
+      "baseline_local_CFG_complete": true,
+      "symbolic_import_tail_exits": {},
+      "external_targets": [],
+      "indirect_CALL_count": 1,
+      "fixed_IAT_CALL_count": 0,
+      "unattributed_indirect_CALLs": [
+        {
+          "site": "0x2af66",
+          "asm": "call r12",
+          "fixed_IAT": null
+        }
+      ],
+      "seconds": 0.094,
+      "native_sha256": "2a42cb261fa6d73aad71fff1a5084727127f2d37b451f930cff92bede80a0cbc"
+    },
+    {
+      "version": "19",
+      "entry": "0x1d0b",
+      "end": "0x1fff",
+      "canonical_instructions": 202,
+      "reached": 202,
+      "native_computed_sites": 9,
+      "finite_sites": 9,
+      "missing_or_unresolved_sites": [],
+      "worklist_exhausted": true,
+      "all_native_instruction_starts_reached": true,
+      "baseline_local_CFG_complete": true,
+      "symbolic_import_tail_exits": {},
+      "external_targets": [
+        "0x17f80"
+      ],
+      "indirect_CALL_count": 0,
+      "fixed_IAT_CALL_count": 0,
+      "unattributed_indirect_CALLs": [],
+      "seconds": 0.078,
+      "native_sha256": "57e340ce13b9e06af07d16fd177b43e38388b063e7ff74a8d1d459ce6f75e3f2"
+    },
+    {
+      "version": "17",
+      "entry": "0x2eb7d",
+      "end": "0x2ee69",
+      "canonical_instructions": 203,
+      "reached": 203,
+      "native_computed_sites": 12,
+      "finite_sites": 12,
+      "missing_or_unresolved_sites": [],
+      "worklist_exhausted": true,
+      "all_native_instruction_starts_reached": true,
+      "baseline_local_CFG_complete": true,
+      "symbolic_import_tail_exits": {},
+      "external_targets": [
+        "0x4a6b1"
+      ],
+      "indirect_CALL_count": 0,
+      "fixed_IAT_CALL_count": 0,
+      "unattributed_indirect_CALLs": [],
+      "seconds": 0.094,
+      "native_sha256": "141f45abdd63ed402c4d46b89e3ecf0c3ddc6706b5524ac4516058917e2c9e86"
+    },
+    {
+      "version": "19",
+      "entry": "0x1a61c",
+      "end": "0x1a990",
+      "canonical_instructions": 208,
+      "reached": 208,
+      "native_computed_sites": 4,
+      "finite_sites": 4,
+      "missing_or_unresolved_sites": [],
+      "worklist_exhausted": true,
+      "all_native_instruction_starts_reached": true,
+      "baseline_local_CFG_complete": true,
+      "symbolic_import_tail_exits": {},
+      "external_targets": [],
+      "indirect_CALL_count": 2,
+      "fixed_IAT_CALL_count": 0,
+      "unattributed_indirect_CALLs": [
+        {
+          "site": "0x1a85c",
+          "asm": "call r14",
+          "fixed_IAT": null
+        },
+        {
+          "site": "0x1a965",
+          "asm": "call r14",
+          "fixed_IAT": null
+        }
+      ],
+      "seconds": 0.109,
+      "native_sha256": "25752c0e775648a96a4337336d42db9c581beca83bdc3882948c15b701d004c1"
+    },
+    {
+      "version": "17",
+      "entry": "0x71140",
+      "end": "0x71551",
+      "canonical_instructions": 217,
+      "reached": 194,
+      "native_computed_sites": 3,
+      "finite_sites": 2,
+      "missing_or_unresolved_sites": [
+        "0x71392"
+      ],
+      "worklist_exhausted": true,
+      "all_native_instruction_starts_reached": false,
+      "baseline_local_CFG_complete": false,
+      "symbolic_import_tail_exits": {},
+      "external_targets": [
+        "0x72220",
+        "0x72240"
+      ],
+      "indirect_CALL_count": 0,
+      "fixed_IAT_CALL_count": 0,
+      "unattributed_indirect_CALLs": [],
+      "seconds": 0.094,
+      "native_sha256": "475a3cbe41b62971323ed79063861138a3c815993529c54b87f6b2f130832d1a"
+    },
+    {
+      "version": "17",
+      "entry": "0x71890",
+      "end": "0x71ca1",
+      "canonical_instructions": 217,
+      "reached": 194,
+      "native_computed_sites": 3,
+      "finite_sites": 2,
+      "missing_or_unresolved_sites": [
+        "0x71ae2"
+      ],
+      "worklist_exhausted": true,
+      "all_native_instruction_starts_reached": false,
+      "baseline_local_CFG_complete": false,
+      "symbolic_import_tail_exits": {},
+      "external_targets": [
+        "0x72330",
+        "0x72350"
+      ],
+      "indirect_CALL_count": 0,
+      "fixed_IAT_CALL_count": 0,
+      "unattributed_indirect_CALLs": [],
+      "seconds": 0.094,
+      "native_sha256": "00501f07a9c17ab5c7440a63c8925cbc7642611b226a6263b44972b1885a2d50"
+    },
+    {
+      "version": "19",
+      "entry": "0x6fae0",
+      "end": "0x6fef1",
+      "canonical_instructions": 217,
+      "reached": 194,
+      "native_computed_sites": 3,
+      "finite_sites": 2,
+      "missing_or_unresolved_sites": [
+        "0x6fd32"
+      ],
+      "worklist_exhausted": true,
+      "all_native_instruction_starts_reached": false,
+      "baseline_local_CFG_complete": false,
+      "symbolic_import_tail_exits": {},
+      "external_targets": [
+        "0x70bc0",
+        "0x70be0"
+      ],
+      "indirect_CALL_count": 0,
+      "fixed_IAT_CALL_count": 0,
+      "unattributed_indirect_CALLs": [],
+      "seconds": 0.109,
+      "native_sha256": "9e0d85a34e5118a472798719fc97706dcfc4c6ac302567578f441ef9c2cdb813"
+    },
+    {
+      "version": "19",
+      "entry": "0x70230",
+      "end": "0x70641",
+      "canonical_instructions": 217,
+      "reached": 194,
+      "native_computed_sites": 3,
+      "finite_sites": 2,
+      "missing_or_unresolved_sites": [
+        "0x70482"
+      ],
+      "worklist_exhausted": true,
+      "all_native_instruction_starts_reached": false,
+      "baseline_local_CFG_complete": false,
+      "symbolic_import_tail_exits": {},
+      "external_targets": [
+        "0x70cd0",
+        "0x70cf0"
+      ],
+      "indirect_CALL_count": 0,
+      "fixed_IAT_CALL_count": 0,
+      "unattributed_indirect_CALLs": [],
+      "seconds": 0.094,
+      "native_sha256": "1ee2ab7e2211dc091c156c902f4c9fe1d3848c6e870bd8b13aaec3aeebee9776"
+    },
+    {
+      "version": "19",
+      "entry": "0x4fa6e",
+      "end": "0x4fdba",
+      "canonical_instructions": 218,
+      "reached": 113,
+      "native_computed_sites": 15,
+      "finite_sites": 6,
+      "missing_or_unresolved_sites": [
+        "0x4faf5",
+        "0x4fb8b",
+        "0x4fc0a",
+        "0x4fc39",
+        "0x4fc55",
+        "0x4fd18",
+        "0x4fd57",
+        "0x4fd9a",
+        "0x4fdb8"
+      ],
+      "worklist_exhausted": true,
+      "all_native_instruction_starts_reached": false,
+      "baseline_local_CFG_complete": false,
+      "symbolic_import_tail_exits": {},
+      "external_targets": [],
+      "indirect_CALL_count": 0,
+      "fixed_IAT_CALL_count": 0,
+      "unattributed_indirect_CALLs": [],
+      "seconds": 0.078,
+      "native_sha256": "d6dbe1803aef33ecbd8752314a2411d6a5edafe8ecf5dc72207eab3f2f8c7583"
+    },
+    {
+      "version": "19",
+      "entry": "0x223c4",
+      "end": "0x227c7",
+      "canonical_instructions": 232,
+      "reached": 175,
+      "native_computed_sites": 1,
+      "finite_sites": 0,
+      "missing_or_unresolved_sites": [
+        "0x224e7"
+      ],
+      "worklist_exhausted": true,
+      "all_native_instruction_starts_reached": false,
+      "baseline_local_CFG_complete": false,
+      "symbolic_import_tail_exits": {},
+      "external_targets": [],
+      "indirect_CALL_count": 2,
+      "fixed_IAT_CALL_count": 2,
+      "unattributed_indirect_CALLs": [],
+      "seconds": 2.078,
+      "native_sha256": "1e5cd6de324a14a69f2e187f789b9167c5dfbc3b9528b844d8dca16a72396f4d"
+    },
+    {
+      "version": "17",
+      "entry": "0x2090a",
+      "end": "0x20c61",
+      "canonical_instructions": 234,
+      "reached": 234,
+      "native_computed_sites": 5,
+      "finite_sites": 5,
+      "missing_or_unresolved_sites": [],
+      "worklist_exhausted": false,
+      "all_native_instruction_starts_reached": true,
+      "baseline_local_CFG_complete": false,
+      "symbolic_import_tail_exits": {},
+      "external_targets": [
+        "0x4a6b1"
+      ],
+      "indirect_CALL_count": 0,
+      "fixed_IAT_CALL_count": 0,
+      "unattributed_indirect_CALLs": [],
+      "seconds": 1.531,
+      "native_sha256": "26156281e6daa899c793e1962f7dd3d45bc782f18d74ae1e47d83e85bf372520"
+    },
+    {
+      "version": "17",
+      "entry": "0x48d79",
+      "end": "0x49178",
+      "canonical_instructions": 236,
+      "reached": 178,
+      "native_computed_sites": 1,
+      "finite_sites": 0,
+      "missing_or_unresolved_sites": [
+        "0x48e89"
+      ],
+      "worklist_exhausted": true,
+      "all_native_instruction_starts_reached": false,
+      "baseline_local_CFG_complete": false,
+      "symbolic_import_tail_exits": {},
+      "external_targets": [],
+      "indirect_CALL_count": 2,
+      "fixed_IAT_CALL_count": 2,
+      "unattributed_indirect_CALLs": [],
+      "seconds": 0.86,
+      "native_sha256": "df5650688ca85f4857c66e9e13010e6a7a3b0586f83480789d7d5920a5ec4cef"
+    },
+    {
+      "version": "17",
+      "entry": "0x2b13d",
+      "end": "0x2b51a",
+      "canonical_instructions": 238,
+      "reached": 238,
+      "native_computed_sites": 7,
+      "finite_sites": 7,
+      "missing_or_unresolved_sites": [],
+      "worklist_exhausted": true,
+      "all_native_instruction_starts_reached": true,
+      "baseline_local_CFG_complete": true,
+      "symbolic_import_tail_exits": {},
+      "external_targets": [],
+      "indirect_CALL_count": 2,
+      "fixed_IAT_CALL_count": 0,
+      "unattributed_indirect_CALLs": [
+        {
+          "site": "0x2b2e5",
+          "asm": "call r15",
+          "fixed_IAT": null
+        },
+        {
+          "site": "0x2b36a",
+          "asm": "call r15",
+          "fixed_IAT": null
+        }
+      ],
+      "seconds": 0.109,
+      "native_sha256": "609ce08c6f71ad74a825bb5b34c787b1a15083c3f8902a69c905fa00dd45d46c"
+    },
+    {
+      "version": "19",
+      "entry": "0x67d10",
+      "end": "0x68018",
+      "canonical_instructions": 240,
+      "reached": 240,
+      "native_computed_sites": 1,
+      "finite_sites": 0,
+      "missing_or_unresolved_sites": [
+        "0x67f18"
+      ],
+      "worklist_exhausted": true,
+      "all_native_instruction_starts_reached": true,
+      "baseline_local_CFG_complete": false,
+      "symbolic_import_tail_exits": {},
+      "external_targets": [],
+      "indirect_CALL_count": 2,
+      "fixed_IAT_CALL_count": 0,
+      "unattributed_indirect_CALLs": [
+        {
+          "site": "0x67f7c",
+          "asm": "call qword ptr [rdi + 0x18]",
+          "fixed_IAT": null
+        },
+        {
+          "site": "0x67f9a",
+          "asm": "call qword ptr [rdi + 0x20]",
+          "fixed_IAT": null
+        }
+      ],
+      "seconds": 2.531,
+      "native_sha256": "b23a08da882576ffc9e0aef05ca5d4a0a26d124cffbd1a8e5aa0d8dddd29054d"
+    },
+    {
+      "version": "17",
+      "entry": "0x20c61",
+      "end": "0x20f7b",
+      "canonical_instructions": 243,
+      "reached": 243,
+      "native_computed_sites": 1,
+      "finite_sites": 0,
+      "missing_or_unresolved_sites": [
+        "0x20ebc"
+      ],
+      "worklist_exhausted": true,
+      "all_native_instruction_starts_reached": true,
+      "baseline_local_CFG_complete": false,
+      "symbolic_import_tail_exits": {},
+      "external_targets": [],
+      "indirect_CALL_count": 2,
+      "fixed_IAT_CALL_count": 0,
+      "unattributed_indirect_CALLs": [
+        {
+          "site": "0x20d13",
+          "asm": "call qword ptr [rdi + 0x18]",
+          "fixed_IAT": null
+        },
+        {
+          "site": "0x20d31",
+          "asm": "call qword ptr [rdi + 0x20]",
+          "fixed_IAT": null
+        }
+      ],
+      "seconds": 2.672,
+      "native_sha256": "a3c3baad8837473c8f121f462cd51b9af50cf0f8c2d165cb8141a2d3520498b1"
+    },
+    {
+      "version": "17",
+      "entry": "0x61c04",
+      "end": "0x61ff6",
+      "canonical_instructions": 251,
+      "reached": 251,
+      "native_computed_sites": 11,
+      "finite_sites": 11,
+      "missing_or_unresolved_sites": [],
+      "worklist_exhausted": true,
+      "all_native_instruction_starts_reached": true,
+      "baseline_local_CFG_complete": true,
+      "symbolic_import_tail_exits": {},
+      "external_targets": [],
+      "indirect_CALL_count": 0,
+      "fixed_IAT_CALL_count": 0,
+      "unattributed_indirect_CALLs": [],
+      "seconds": 0.109,
+      "native_sha256": "5684cab72070dcd4e8d992e8cebcec359e72b64f401b15e4190c22780d2e5a5d"
+    },
+    {
+      "version": "17",
+      "entry": "0x1dc19",
+      "end": "0x1dff3",
+      "canonical_instructions": 269,
+      "reached": 269,
+      "native_computed_sites": 1,
+      "finite_sites": 0,
+      "missing_or_unresolved_sites": [],
+      "worklist_exhausted": true,
+      "all_native_instruction_starts_reached": true,
+      "baseline_local_CFG_complete": true,
+      "symbolic_import_tail_exits": {
+        "0x1de90": "HeapFree"
+      },
+      "external_targets": [],
+      "indirect_CALL_count": 12,
+      "fixed_IAT_CALL_count": 6,
+      "unattributed_indirect_CALLs": [
+        {
+          "site": "0x1dcb3",
+          "asm": "call r13",
+          "fixed_IAT": null
+        },
+        {
+          "site": "0x1dd13",
+          "asm": "call r12",
+          "fixed_IAT": null
+        },
+        {
+          "site": "0x1dda7",
+          "asm": "call r13",
+          "fixed_IAT": null
+        },
+        {
+          "site": "0x1de07",
+          "asm": "call r12",
+          "fixed_IAT": null
+        },
+        {
+          "site": "0x1df5a",
+          "asm": "call r15",
+          "fixed_IAT": null
+        },
+        {
+          "site": "0x1df65",
+          "asm": "call r12",
+          "fixed_IAT": null
+        }
+      ],
+      "seconds": 0.984,
+      "native_sha256": "acde92cb33be5b4a494a7f2bc37225b465766167134b59ac0b4aaaf37b6e3c4a"
+    },
+    {
+      "version": "19",
+      "entry": "0x46522",
+      "end": "0x46901",
+      "canonical_instructions": 269,
+      "reached": 269,
+      "native_computed_sites": 1,
+      "finite_sites": 0,
+      "missing_or_unresolved_sites": [],
+      "worklist_exhausted": true,
+      "all_native_instruction_starts_reached": true,
+      "baseline_local_CFG_complete": true,
+      "symbolic_import_tail_exits": {
+        "0x468fa": "HeapFree"
+      },
+      "external_targets": [],
+      "indirect_CALL_count": 12,
+      "fixed_IAT_CALL_count": 6,
+      "unattributed_indirect_CALLs": [
+        {
+          "site": "0x465f7",
+          "asm": "call r15",
+          "fixed_IAT": null
+        },
+        {
+          "site": "0x46602",
+          "asm": "call r12",
+          "fixed_IAT": null
+        },
+        {
+          "site": "0x4672b",
+          "asm": "call r13",
+          "fixed_IAT": null
+        },
+        {
+          "site": "0x4678b",
+          "asm": "call r12",
+          "fixed_IAT": null
+        },
+        {
+          "site": "0x46813",
+          "asm": "call r13",
+          "fixed_IAT": null
+        },
+        {
+          "site": "0x46874",
+          "asm": "call r12",
+          "fixed_IAT": null
+        }
+      ],
+      "seconds": 0.969,
+      "native_sha256": "62eb2e904a079d33aebe580ccb7ee5205c8f1b38294bc7d966e5ffb23d6c1721"
+    },
+    {
+      "version": "17",
+      "entry": "0x63a05",
+      "end": "0x63e74",
+      "canonical_instructions": 272,
+      "reached": 272,
+      "native_computed_sites": 12,
+      "finite_sites": 12,
+      "missing_or_unresolved_sites": [],
+      "worklist_exhausted": true,
+      "all_native_instruction_starts_reached": true,
+      "baseline_local_CFG_complete": true,
+      "symbolic_import_tail_exits": {},
+      "external_targets": [],
+      "indirect_CALL_count": 2,
+      "fixed_IAT_CALL_count": 0,
+      "unattributed_indirect_CALLs": [
+        {
+          "site": "0x63b4c",
+          "asm": "call r14",
+          "fixed_IAT": null
+        },
+        {
+          "site": "0x63d7e",
+          "asm": "call r14",
+          "fixed_IAT": null
+        }
+      ],
+      "seconds": 0.094,
+      "native_sha256": "adfca99c24b8bd760530417cc53e5666f83572ba07126d42f1e9b0cae2ec5f96"
+    },
+    {
+      "version": "17",
+      "entry": "0x63f30",
+      "end": "0x64447",
+      "canonical_instructions": 284,
+      "reached": 284,
+      "native_computed_sites": 7,
+      "finite_sites": 7,
+      "missing_or_unresolved_sites": [],
+      "worklist_exhausted": true,
+      "all_native_instruction_starts_reached": true,
+      "baseline_local_CFG_complete": true,
+      "symbolic_import_tail_exits": {},
+      "external_targets": [],
+      "indirect_CALL_count": 2,
+      "fixed_IAT_CALL_count": 0,
+      "unattributed_indirect_CALLs": [
+        {
+          "site": "0x64182",
+          "asm": "call qword ptr [rsp + 0x98]",
+          "fixed_IAT": null
+        },
+        {
+          "site": "0x642b7",
+          "asm": "call r14",
+          "fixed_IAT": null
+        }
+      ],
+      "seconds": 0.109,
+      "native_sha256": "60db2571ea29fd2076d06a52bd7e2ac58aeb0747f05b26f8c4d7b5b2b03bf111"
+    },
+    {
+      "version": "19",
+      "entry": "0x690b1",
+      "end": "0x6950f",
+      "canonical_instructions": 284,
+      "reached": 284,
+      "native_computed_sites": 12,
+      "finite_sites": 12,
+      "missing_or_unresolved_sites": [],
+      "worklist_exhausted": false,
+      "all_native_instruction_starts_reached": true,
+      "baseline_local_CFG_complete": false,
+      "symbolic_import_tail_exits": {},
+      "external_targets": [],
+      "indirect_CALL_count": 0,
+      "fixed_IAT_CALL_count": 0,
+      "unattributed_indirect_CALLs": [],
+      "seconds": 1.859,
+      "native_sha256": "2dc8f471d41339363d7d39d59b3a80781a47f97ea3d03eb5a0ae9559f4c45a9b"
+    },
+    {
+      "version": "19",
+      "entry": "0x449cf",
+      "end": "0x44e24",
+      "canonical_instructions": 292,
+      "reached": 77,
+      "native_computed_sites": 16,
+      "finite_sites": 1,
+      "missing_or_unresolved_sites": [
+        "0x44a73",
+        "0x44ab3",
+        "0x44acb",
+        "0x44b61",
+        "0x44bdc",
+        "0x44bfc",
+        "0x44c21",
+        "0x44c44",
+        "0x44c66",
+        "0x44c9c",
+        "0x44cb3",
+        "0x44d5e",
+        "0x44d7b",
+        "0x44d97",
+        "0x44e22"
+      ],
+      "worklist_exhausted": true,
+      "all_native_instruction_starts_reached": false,
+      "baseline_local_CFG_complete": false,
+      "symbolic_import_tail_exits": {},
+      "external_targets": [],
+      "indirect_CALL_count": 0,
+      "fixed_IAT_CALL_count": 0,
+      "unattributed_indirect_CALLs": [],
+      "seconds": 0.094,
+      "native_sha256": "a267bf0bc91a840a0c14596ad2f7c2c8b6f80850b80256b1cdd446b45662ba4c"
+    },
+    {
+      "version": "17",
+      "entry": "0x6e5b",
+      "end": "0x72c6",
+      "canonical_instructions": 300,
+      "reached": 69,
+      "native_computed_sites": 16,
+      "finite_sites": 1,
+      "missing_or_unresolved_sites": [
+        "0x6f5c",
+        "0x6f73",
+        "0x6f9f",
+        "0x7010",
+        "0x7027",
+        "0x704d",
+        "0x705b",
+        "0x7132",
+        "0x71bf",
+        "0x71fe",
+        "0x722b",
+        "0x7254",
+        "0x7277",
+        "0x7295",
+        "0x72c4"
+      ],
+      "worklist_exhausted": true,
+      "all_native_instruction_starts_reached": false,
+      "baseline_local_CFG_complete": false,
+      "symbolic_import_tail_exits": {},
+      "external_targets": [],
+      "indirect_CALL_count": 0,
+      "fixed_IAT_CALL_count": 0,
+      "unattributed_indirect_CALLs": [],
+      "seconds": 0.094,
+      "native_sha256": "56639397cf051dc8c2877ab11b5079d26fda27f498561523204254d8325091a2"
+    },
+    {
+      "version": "19",
+      "entry": "0x57ab8",
+      "end": "0x57f4f",
+      "canonical_instructions": 303,
+      "reached": 303,
+      "native_computed_sites": 3,
+      "finite_sites": 2,
+      "missing_or_unresolved_sites": [],
+      "worklist_exhausted": true,
+      "all_native_instruction_starts_reached": true,
+      "baseline_local_CFG_complete": true,
+      "symbolic_import_tail_exits": {
+        "0x57dcd": "CloseHandle"
+      },
+      "external_targets": [],
+      "indirect_CALL_count": 5,
+      "fixed_IAT_CALL_count": 0,
+      "unattributed_indirect_CALLs": [
+        {
+          "site": "0x57ce8",
+          "asm": "call qword ptr [rbp + 7]",
+          "fixed_IAT": null
+        },
+        {
+          "site": "0x57de0",
+          "asm": "call qword ptr [rbp + 7]",
+          "fixed_IAT": null
+        },
+        {
+          "site": "0x57df6",
+          "asm": "call qword ptr [rax + 8]",
+          "fixed_IAT": null
+        },
+        {
+          "site": "0x57e2f",
+          "asm": "call qword ptr [rax]",
+          "fixed_IAT": null
+        },
+        {
+          "site": "0x57e76",
+          "asm": "call qword ptr [rsi + 7]",
+          "fixed_IAT": null
+        }
+      ],
+      "seconds": 0.14,
+      "native_sha256": "a3f52aeddd5c329e061904f03fa195b4f2d91d71fd5d5cd8d6f683a9e8618c6f"
+    },
+    {
+      "version": "19",
+      "entry": "0x4699e",
+      "end": "0x46ec1",
+      "canonical_instructions": 306,
+      "reached": 306,
+      "native_computed_sites": 13,
+      "finite_sites": 13,
+      "missing_or_unresolved_sites": [],
+      "worklist_exhausted": true,
+      "all_native_instruction_starts_reached": true,
+      "baseline_local_CFG_complete": true,
+      "symbolic_import_tail_exits": {},
+      "external_targets": [],
+      "indirect_CALL_count": 0,
+      "fixed_IAT_CALL_count": 0,
+      "unattributed_indirect_CALLs": [],
+      "seconds": 0.11,
+      "native_sha256": "8de00ac084aed685b87e5f0903e4a94793dbe652ad6cade661043f243d21ebaf"
+    },
+    {
+      "version": "19",
+      "entry": "0x4d092",
+      "end": "0x4d63a",
+      "canonical_instructions": 324,
+      "reached": 87,
+      "native_computed_sites": 16,
+      "finite_sites": 1,
+      "missing_or_unresolved_sites": [
+        "0x4d181",
+        "0x4d1b8",
+        "0x4d1e3",
+        "0x4d239",
+        "0x4d26a",
+        "0x4d294",
+        "0x4d36e",
+        "0x4d392",
+        "0x4d3b0",
+        "0x4d3f1",
+        "0x4d438",
+        "0x4d45a",
+        "0x4d4f8",
+        "0x4d61b",
+        "0x4d638"
+      ],
+      "worklist_exhausted": true,
+      "all_native_instruction_starts_reached": false,
+      "baseline_local_CFG_complete": false,
+      "symbolic_import_tail_exits": {},
+      "external_targets": [],
+      "indirect_CALL_count": 0,
+      "fixed_IAT_CALL_count": 0,
+      "unattributed_indirect_CALLs": [],
+      "seconds": 0.109,
+      "native_sha256": "111107896f81958edeb37f4357f0ca91720d42ced10e66f0ac1033799be65c04"
+    },
+    {
+      "version": "17",
+      "entry": "0x13a5b",
+      "end": "0x13fcc",
+      "canonical_instructions": 330,
+      "reached": 330,
+      "native_computed_sites": 15,
+      "finite_sites": 14,
+      "missing_or_unresolved_sites": [
+        "0x13e62"
+      ],
+      "worklist_exhausted": false,
+      "all_native_instruction_starts_reached": true,
+      "baseline_local_CFG_complete": false,
+      "symbolic_import_tail_exits": {},
+      "external_targets": [],
+      "indirect_CALL_count": 0,
+      "fixed_IAT_CALL_count": 0,
+      "unattributed_indirect_CALLs": [],
+      "seconds": 1.875,
+      "native_sha256": "b268cb1239ef9cd995c446849c6a050b9dacc51c645bcfaa448088affe9d65c6"
+    },
+    {
+      "version": "17",
+      "entry": "0x7e630",
+      "end": "0x7ecad",
+      "canonical_instructions": 347,
+      "reached": 321,
+      "native_computed_sites": 4,
+      "finite_sites": 3,
+      "missing_or_unresolved_sites": [
+        "0x7e8b2"
+      ],
+      "worklist_exhausted": true,
+      "all_native_instruction_starts_reached": false,
+      "baseline_local_CFG_complete": false,
+      "symbolic_import_tail_exits": {},
+      "external_targets": [
+        "0x7e620"
+      ],
+      "indirect_CALL_count": 0,
+      "fixed_IAT_CALL_count": 0,
+      "unattributed_indirect_CALLs": [],
+      "seconds": 0.109,
+      "native_sha256": "d1d957e3557866367e2eb4100b748d59d9cf3252c608db122a7aed750714c26c"
+    },
+    {
+      "version": "19",
+      "entry": "0x29ae4",
+      "end": "0x2a0a5",
+      "canonical_instructions": 347,
+      "reached": 347,
+      "native_computed_sites": 18,
+      "finite_sites": 16,
+      "missing_or_unresolved_sites": [
+        "0x29c2a",
+        "0x29d01"
+      ],
+      "worklist_exhausted": false,
+      "all_native_instruction_starts_reached": true,
+      "baseline_local_CFG_complete": false,
+      "symbolic_import_tail_exits": {},
+      "external_targets": [],
+      "indirect_CALL_count": 0,
+      "fixed_IAT_CALL_count": 0,
+      "unattributed_indirect_CALLs": [],
+      "seconds": 2.047,
+      "native_sha256": "7a1ee0e1348b90a1c7822b47748c5205821323980c034164c840482d8f8cfc26"
+    },
+    {
+      "version": "19",
+      "entry": "0x7cfd0",
+      "end": "0x7d64d",
+      "canonical_instructions": 347,
+      "reached": 321,
+      "native_computed_sites": 4,
+      "finite_sites": 3,
+      "missing_or_unresolved_sites": [
+        "0x7d252"
+      ],
+      "worklist_exhausted": true,
+      "all_native_instruction_starts_reached": false,
+      "baseline_local_CFG_complete": false,
+      "symbolic_import_tail_exits": {},
+      "external_targets": [
+        "0x7cfc0"
+      ],
+      "indirect_CALL_count": 0,
+      "fixed_IAT_CALL_count": 0,
+      "unattributed_indirect_CALLs": [],
+      "seconds": 0.109,
+      "native_sha256": "bfd013ba9e81402e9639f1c776b3c4112b7b4123072f60e3d841d4d2694a12c5"
+    },
+    {
+      "version": "17",
+      "entry": "0x87cb",
+      "end": "0x8dbb",
+      "canonical_instructions": 349,
+      "reached": 84,
+      "native_computed_sites": 22,
+      "finite_sites": 1,
+      "missing_or_unresolved_sites": [
+        "0x88ee",
+        "0x8918",
+        "0x8999",
+        "0x89dd",
+        "0x89f4",
+        "0x8a3f",
+        "0x8a69",
+        "0x8a9d",
+        "0x8ac4",
+        "0x8aeb",
+        "0x8b11",
+        "0x8b38",
+        "0x8b60",
+        "0x8b9b",
+        "0x8bea",
+        "0x8ca1",
+        "0x8ccd",
+        "0x8d07",
+        "0x8d2b",
+        "0x8d9e",
+        "0x8db9"
+      ],
+      "worklist_exhausted": true,
+      "all_native_instruction_starts_reached": false,
+      "baseline_local_CFG_complete": false,
+      "symbolic_import_tail_exits": {},
+      "external_targets": [],
+      "indirect_CALL_count": 0,
+      "fixed_IAT_CALL_count": 0,
+      "unattributed_indirect_CALLs": [],
+      "seconds": 0.078,
+      "native_sha256": "cb3a9d15869ac8f5eb5a6b71013dddc35e4c1bbb4e6a39d740aae5ce29be030d"
+    },
+    {
+      "version": "17",
+      "entry": "0x3b298",
+      "end": "0x3b946",
+      "canonical_instructions": 359,
+      "reached": 51,
+      "native_computed_sites": 1,
+      "finite_sites": 0,
+      "missing_or_unresolved_sites": [
+        "0x3b382"
+      ],
+      "worklist_exhausted": true,
+      "all_native_instruction_starts_reached": false,
+      "baseline_local_CFG_complete": false,
+      "symbolic_import_tail_exits": {},
+      "external_targets": [],
+      "indirect_CALL_count": 0,
+      "fixed_IAT_CALL_count": 0,
+      "unattributed_indirect_CALLs": [],
+      "seconds": 0.094,
+      "native_sha256": "ec0f1336791d2ad4edb4677dabab6b708069bc011cd76661927bc552ac9822ed"
+    },
+    {
+      "version": "17",
+      "entry": "0x2d5fb",
+      "end": "0x2dc00",
+      "canonical_instructions": 360,
+      "reached": 360,
+      "native_computed_sites": 17,
+      "finite_sites": 17,
+      "missing_or_unresolved_sites": [],
+      "worklist_exhausted": true,
+      "all_native_instruction_starts_reached": true,
+      "baseline_local_CFG_complete": true,
+      "symbolic_import_tail_exits": {},
+      "external_targets": [],
+      "indirect_CALL_count": 0,
+      "fixed_IAT_CALL_count": 0,
+      "unattributed_indirect_CALLs": [],
+      "seconds": 0.109,
+      "native_sha256": "37cfc24a9e2d0d165973d35eb2960b3686e084dda9eace9009aef4fc01b8a52d"
+    },
+    {
+      "version": "17",
+      "entry": "0x5d076",
+      "end": "0x5d746",
+      "canonical_instructions": 365,
+      "reached": 365,
+      "native_computed_sites": 9,
+      "finite_sites": 9,
+      "missing_or_unresolved_sites": [],
+      "worklist_exhausted": true,
+      "all_native_instruction_starts_reached": true,
+      "baseline_local_CFG_complete": true,
+      "symbolic_import_tail_exits": {},
+      "external_targets": [],
+      "indirect_CALL_count": 0,
+      "fixed_IAT_CALL_count": 0,
+      "unattributed_indirect_CALLs": [],
+      "seconds": 1.625,
+      "native_sha256": "fbe27d3cddf45da900f8e858fb3b64fd380bad034b8c721e6f5311e2e6c78837"
+    },
+    {
+      "version": "19",
+      "entry": "0x2d092",
+      "end": "0x2d7d6",
+      "canonical_instructions": 388,
+      "reached": 50,
+      "native_computed_sites": 1,
+      "finite_sites": 0,
+      "missing_or_unresolved_sites": [
+        "0x2d175"
+      ],
+      "worklist_exhausted": true,
+      "all_native_instruction_starts_reached": false,
+      "baseline_local_CFG_complete": false,
+      "symbolic_import_tail_exits": {},
+      "external_targets": [],
+      "indirect_CALL_count": 0,
+      "fixed_IAT_CALL_count": 0,
+      "unattributed_indirect_CALLs": [],
+      "seconds": 0.094,
+      "native_sha256": "b869faef2ea8ff965fdbb4bf62309cf7bcd8a4dd1c16c0cec8e45330dce2491e"
+    },
+    {
+      "version": "19",
+      "entry": "0x6627b",
+      "end": "0x66a0d",
+      "canonical_instructions": 413,
+      "reached": 413,
+      "native_computed_sites": 8,
+      "finite_sites": 8,
+      "missing_or_unresolved_sites": [],
+      "worklist_exhausted": true,
+      "all_native_instruction_starts_reached": true,
+      "baseline_local_CFG_complete": true,
+      "symbolic_import_tail_exits": {},
+      "external_targets": [],
+      "indirect_CALL_count": 0,
+      "fixed_IAT_CALL_count": 0,
+      "unattributed_indirect_CALLs": [],
+      "seconds": 1.734,
+      "native_sha256": "5d3fed9e30879576e225fa02b21799b8d565c2d818f8ab3fff072d44eed92ca7"
+    },
+    {
+      "version": "19",
+      "entry": "0x2a295",
+      "end": "0x2ac0d",
+      "canonical_instructions": 569,
+      "reached": 441,
+      "native_computed_sites": 28,
+      "finite_sites": 16,
+      "missing_or_unresolved_sites": [
+        "0x2a415",
+        "0x2a55d",
+        "0x2a5d1",
+        "0x2a5f5",
+        "0x2a610",
+        "0x2a69b",
+        "0x2a77f",
+        "0x2a7f2",
+        "0x2a83c",
+        "0x2a8e6",
+        "0x2aa0a",
+        "0x2abf1"
+      ],
+      "worklist_exhausted": true,
+      "all_native_instruction_starts_reached": false,
+      "baseline_local_CFG_complete": false,
+      "symbolic_import_tail_exits": {},
+      "external_targets": [],
+      "indirect_CALL_count": 0,
+      "fixed_IAT_CALL_count": 0,
+      "unattributed_indirect_CALLs": [],
+      "seconds": 0.141,
+      "native_sha256": "f052c201e5029a7cda168adb6042868b13ce788f26a512a070c7dd0858926b3b"
+    },
+    {
+      "version": "19",
+      "entry": "0x603da",
+      "end": "0x60cf4",
+      "canonical_instructions": 577,
+      "reached": 575,
+      "native_computed_sites": 38,
+      "finite_sites": 33,
+      "missing_or_unresolved_sites": [
+        "0x60603",
+        "0x60705",
+        "0x60789",
+        "0x6087e",
+        "0x60c0e"
+      ],
+      "worklist_exhausted": false,
+      "all_native_instruction_starts_reached": false,
+      "baseline_local_CFG_complete": false,
+      "symbolic_import_tail_exits": {},
+      "external_targets": [
+        "0x17f80"
+      ],
+      "indirect_CALL_count": 0,
+      "fixed_IAT_CALL_count": 0,
+      "unattributed_indirect_CALLs": [],
+      "seconds": 2.422,
+      "native_sha256": "dcbecae2bb83a564a2da8862e96229237ab3f48d32cd5eb7c49cd57d2b216401"
+    },
+    {
+      "version": "17",
+      "entry": "0x36230",
+      "end": "0x36d92",
+      "canonical_instructions": 688,
+      "reached": 688,
+      "native_computed_sites": 35,
+      "finite_sites": 35,
+      "missing_or_unresolved_sites": [],
+      "worklist_exhausted": true,
+      "all_native_instruction_starts_reached": true,
+      "baseline_local_CFG_complete": true,
+      "symbolic_import_tail_exits": {},
+      "external_targets": [],
+      "indirect_CALL_count": 1,
+      "fixed_IAT_CALL_count": 0,
+      "unattributed_indirect_CALLs": [
+        {
+          "site": "0x366d9",
+          "asm": "call r13",
+          "fixed_IAT": null
+        }
+      ],
+      "seconds": 0.187,
+      "native_sha256": "0aa1ed054160bd28defa58d605437dfd94e870d0cb4a04cfad945f9cbdf2e879"
+    },
+    {
+      "version": "19",
+      "entry": "0x5f29a",
+      "end": "0x5ff39",
+      "canonical_instructions": 735,
+      "reached": 735,
+      "native_computed_sites": 38,
+      "finite_sites": 37,
+      "missing_or_unresolved_sites": [],
+      "worklist_exhausted": true,
+      "all_native_instruction_starts_reached": true,
+      "baseline_local_CFG_complete": true,
+      "symbolic_import_tail_exits": {
+        "0x5fef0": "HeapFree"
+      },
+      "external_targets": [],
+      "indirect_CALL_count": 2,
+      "fixed_IAT_CALL_count": 1,
+      "unattributed_indirect_CALLs": [
+        {
+          "site": "0x5f923",
+          "asm": "call qword ptr [rbp + 7]",
+          "fixed_IAT": null
+        }
+      ],
+      "seconds": 0.141,
+      "native_sha256": "8c13d87e3d1d72fcf5f3cee121cd45b208167ed5a776ee8c7d8b540a433f8077"
+    },
+    {
+      "version": "19",
+      "entry": "0x6ea6a",
+      "end": "0x6f85a",
+      "canonical_instructions": 777,
+      "reached": 431,
+      "native_computed_sites": 33,
+      "finite_sites": 12,
+      "missing_or_unresolved_sites": [
+        "0x6ebe5",
+        "0x6ec00",
+        "0x6ed7a",
+        "0x6edb1",
+        "0x6edd5",
+        "0x6ef98",
+        "0x6efc6",
+        "0x6f0b3",
+        "0x6f0cd",
+        "0x6f0ef",
+        "0x6f1a7",
+        "0x6f361",
+        "0x6f383",
+        "0x6f4f1",
+        "0x6f512",
+        "0x6f52b",
+        "0x6f563",
+        "0x6f58a",
+        "0x6f5b3",
+        "0x6f6fd",
+        "0x6f7b0"
+      ],
+      "worklist_exhausted": true,
+      "all_native_instruction_starts_reached": false,
+      "baseline_local_CFG_complete": false,
+      "symbolic_import_tail_exits": {},
+      "external_targets": [],
+      "indirect_CALL_count": 0,
+      "fixed_IAT_CALL_count": 0,
+      "unattributed_indirect_CALLs": [],
+      "seconds": 0.11,
+      "native_sha256": "0310e32cd879a4c23bc4f25725407bc78d82467a5e4c0f039afa2f1d51178be1"
+    },
+    {
+      "version": "19",
+      "entry": "0x69af2",
+      "end": "0x6a717",
+      "canonical_instructions": 778,
+      "reached": 733,
+      "native_computed_sites": 47,
+      "finite_sites": 43,
+      "missing_or_unresolved_sites": [
+        "0x69d3d",
+        "0x69f1e",
+        "0x6a11a",
+        "0x6a624"
+      ],
+      "worklist_exhausted": true,
+      "all_native_instruction_starts_reached": false,
+      "baseline_local_CFG_complete": false,
+      "symbolic_import_tail_exits": {},
+      "external_targets": [],
+      "indirect_CALL_count": 0,
+      "fixed_IAT_CALL_count": 0,
+      "unattributed_indirect_CALLs": [],
+      "seconds": 0.25,
+      "native_sha256": "d6b4201b9eaad9cab4d7f3129877708970f26351ad4a7e4a1d8ab22e5757a88b"
+    },
+    {
+      "version": "17",
+      "entry": "0x36fcd",
+      "end": "0x37c6e",
+      "canonical_instructions": 824,
+      "reached": 811,
+      "native_computed_sites": 55,
+      "finite_sites": 46,
+      "missing_or_unresolved_sites": [
+        "0x37364",
+        "0x374c2",
+        "0x3760b",
+        "0x3763d",
+        "0x37886",
+        "0x378a0",
+        "0x378ba",
+        "0x378d4",
+        "0x379fc"
+      ],
+      "worklist_exhausted": false,
+      "all_native_instruction_starts_reached": false,
+      "baseline_local_CFG_complete": false,
+      "symbolic_import_tail_exits": {},
+      "external_targets": [],
+      "indirect_CALL_count": 0,
+      "fixed_IAT_CALL_count": 0,
+      "unattributed_indirect_CALLs": [],
+      "seconds": 1.968,
+      "native_sha256": "86923ecb65f03704fa069c2a20dff3d51186da525efdb8da5908aa54f8fcc3c5"
+    },
+    {
+      "version": "17",
+      "entry": "0x5ba43",
+      "end": "0x5c994",
+      "canonical_instructions": 875,
+      "reached": 875,
+      "native_computed_sites": 36,
+      "finite_sites": 36,
+      "missing_or_unresolved_sites": [],
+      "worklist_exhausted": false,
+      "all_native_instruction_starts_reached": true,
+      "baseline_local_CFG_complete": false,
+      "symbolic_import_tail_exits": {},
+      "external_targets": [],
+      "indirect_CALL_count": 0,
+      "fixed_IAT_CALL_count": 0,
+      "unattributed_indirect_CALLs": [],
+      "seconds": 1.704,
+      "native_sha256": "73f87477144ea0449099c368a7f6c709ddc77269ee811621e414a5c9ffe36eb3"
+    },
+    {
+      "version": "17",
+      "entry": "0x1568",
+      "end": "0x2645",
+      "canonical_instructions": 899,
+      "reached": 809,
+      "native_computed_sites": 44,
+      "finite_sites": 32,
+      "missing_or_unresolved_sites": [
+        "0x16ca",
+        "0x16ff",
+        "0x185c",
+        "0x1abb",
+        "0x1c29",
+        "0x1c61",
+        "0x1da9",
+        "0x1e1e",
+        "0x1ed9",
+        "0x2074",
+        "0x23b6",
+        "0x2643"
+      ],
+      "worklist_exhausted": true,
+      "all_native_instruction_starts_reached": false,
+      "baseline_local_CFG_complete": false,
+      "symbolic_import_tail_exits": {},
+      "external_targets": [],
+      "indirect_CALL_count": 2,
+      "fixed_IAT_CALL_count": 0,
+      "unattributed_indirect_CALLs": [
+        {
+          "site": "0x1ac2",
+          "asm": "call qword ptr [r13 + 7]",
+          "fixed_IAT": null
+        },
+        {
+          "site": "0x1d6f",
+          "asm": "call qword ptr [r14 + 7]",
+          "fixed_IAT": null
+        }
+      ],
+      "seconds": 0.156,
+      "native_sha256": "252530d525b539d2b8353dc65ad5eb6f60939f24d6c0c798e3a1c0a3dbfe8b51"
+    },
+    {
+      "version": "19",
+      "entry": "0x49648",
+      "end": "0x4a4bb",
+      "canonical_instructions": 902,
+      "reached": 902,
+      "native_computed_sites": 52,
+      "finite_sites": 52,
+      "missing_or_unresolved_sites": [],
+      "worklist_exhausted": false,
+      "all_native_instruction_starts_reached": true,
+      "baseline_local_CFG_complete": false,
+      "symbolic_import_tail_exits": {},
+      "external_targets": [],
+      "indirect_CALL_count": 1,
+      "fixed_IAT_CALL_count": 1,
+      "unattributed_indirect_CALLs": [],
+      "seconds": 2.672,
+      "native_sha256": "92127a3d00dc425aefa5c2bad641fd08e22eb7a58d346859d38cb907769691c1"
+    },
+    {
+      "version": "19",
+      "entry": "0x10191",
+      "end": "0x1123a",
+      "canonical_instructions": 906,
+      "reached": 870,
+      "native_computed_sites": 50,
+      "finite_sites": 39,
+      "missing_or_unresolved_sites": [
+        "0x10248",
+        "0x10392",
+        "0x10442",
+        "0x1055a",
+        "0x1083e",
+        "0x10a5a",
+        "0x10be8",
+        "0x10c9b",
+        "0x10d5a",
+        "0x10da3",
+        "0x10e81"
+      ],
+      "worklist_exhausted": true,
+      "all_native_instruction_starts_reached": false,
+      "baseline_local_CFG_complete": false,
+      "symbolic_import_tail_exits": {},
+      "external_targets": [],
+      "indirect_CALL_count": 2,
+      "fixed_IAT_CALL_count": 0,
+      "unattributed_indirect_CALLs": [
+        {
+          "site": "0x10531",
+          "asm": "call qword ptr [rdi + 7]",
+          "fixed_IAT": null
+        },
+        {
+          "site": "0x10869",
+          "asm": "call qword ptr [rdi + 7]",
+          "fixed_IAT": null
+        }
+      ],
+      "seconds": 0.157,
+      "native_sha256": "cb3b580d21f709706be455eb19de40e9fabbc4d741e9e3e66d5aef3516c7d4f6"
+    },
+    {
+      "version": "17",
+      "entry": "0x4324",
+      "end": "0x5249",
+      "canonical_instructions": 908,
+      "reached": 908,
+      "native_computed_sites": 46,
+      "finite_sites": 46,
+      "missing_or_unresolved_sites": [],
+      "worklist_exhausted": false,
+      "all_native_instruction_starts_reached": true,
+      "baseline_local_CFG_complete": false,
+      "symbolic_import_tail_exits": {},
+      "external_targets": [],
+      "indirect_CALL_count": 1,
+      "fixed_IAT_CALL_count": 1,
+      "unattributed_indirect_CALLs": [],
+      "seconds": 2.765,
+      "native_sha256": "98022cbc7f682f9660df05ae3d204b47ce5d785ecc7f7bf757151ddbd0ea13ff"
+    },
+    {
+      "version": "17",
+      "entry": "0x141d7",
+      "end": "0x1544b",
+      "canonical_instructions": 1029,
+      "reached": 1029,
+      "native_computed_sites": 51,
+      "finite_sites": 51,
+      "missing_or_unresolved_sites": [],
+      "worklist_exhausted": true,
+      "all_native_instruction_starts_reached": true,
+      "baseline_local_CFG_complete": true,
+      "symbolic_import_tail_exits": {},
+      "external_targets": [],
+      "indirect_CALL_count": 0,
+      "fixed_IAT_CALL_count": 0,
+      "unattributed_indirect_CALLs": [],
+      "seconds": 1.969,
+      "native_sha256": "185a055504dc2e92d91b10e7772f2e08e78f425fa026661858c3db48ff1ea171"
+    },
+    {
+      "version": "19",
+      "entry": "0x6ac84",
+      "end": "0x6cdaa",
+      "canonical_instructions": 1497,
+      "reached": 1441,
+      "native_computed_sites": 1,
+      "finite_sites": 0,
+      "missing_or_unresolved_sites": [
+        "0x6af99"
+      ],
+      "worklist_exhausted": true,
+      "all_native_instruction_starts_reached": false,
+      "baseline_local_CFG_complete": false,
+      "symbolic_import_tail_exits": {},
+      "external_targets": [],
+      "indirect_CALL_count": 0,
+      "fixed_IAT_CALL_count": 0,
+      "unattributed_indirect_CALLs": [],
+      "seconds": 0.235,
+      "native_sha256": "486561b4d08c12f6d132dc8b05cc258232586ebb43cecc68ec7cb9ae4bb989d5"
+    },
+    {
+      "version": "17",
+      "entry": "0x4a94a",
+      "end": "0x4ca9e",
+      "canonical_instructions": 1504,
+      "reached": 1448,
+      "native_computed_sites": 1,
+      "finite_sites": 0,
+      "missing_or_unresolved_sites": [
+        "0x4ac63"
+      ],
+      "worklist_exhausted": true,
+      "all_native_instruction_starts_reached": false,
+      "baseline_local_CFG_complete": false,
+      "symbolic_import_tail_exits": {},
+      "external_targets": [],
+      "indirect_CALL_count": 0,
+      "fixed_IAT_CALL_count": 0,
+      "unattributed_indirect_CALLs": [],
+      "seconds": 0.218,
+      "native_sha256": "7cbd59803ef1eab56abf9b7e91b53ec721b40360227439b3b8eccb0dc1c4d3cc"
+    },
+    {
+      "version": "17",
+      "entry": "0x50d72",
+      "end": "0x5423b",
+      "canonical_instructions": 2628,
+      "reached": 2331,
+      "native_computed_sites": 111,
+      "finite_sites": 92,
+      "missing_or_unresolved_sites": [
+        "0x50ea6",
+        "0x510bc",
+        "0x51a8d",
+        "0x51d1d",
+        "0x51eec",
+        "0x52087",
+        "0x52488",
+        "0x525f2",
+        "0x52b79",
+        "0x52cbc",
+        "0x52f1f",
+        "0x52f58",
+        "0x53674",
+        "0x53865",
+        "0x53b4c",
+        "0x53d19",
+        "0x53d6a",
+        "0x53f6d",
+        "0x5413d"
+      ],
+      "worklist_exhausted": false,
+      "all_native_instruction_starts_reached": false,
+      "baseline_local_CFG_complete": false,
+      "symbolic_import_tail_exits": {},
+      "external_targets": [],
+      "indirect_CALL_count": 0,
+      "fixed_IAT_CALL_count": 0,
+      "unattributed_indirect_CALLs": [],
+      "seconds": 2.047,
+      "native_sha256": "ff1e8de27b1f4f118cb7d3beb321adc3ce96be2fa57cd6bad4efcb63eddb0a21"
+    },
+    {
+      "version": "19",
+      "entry": "0xa7a1",
+      "end": "0xdd6e",
+      "canonical_instructions": 2648,
+      "reached": 2067,
+      "native_computed_sites": 108,
+      "finite_sites": 77,
+      "missing_or_unresolved_sites": [
+        "0xa9b6",
+        "0xabdd",
+        "0xb23a",
+        "0xb358",
+        "0xb57a",
+        "0xb767",
+        "0xb79e",
+        "0xb92c",
+        "0xba47",
+        "0xbdf4",
+        "0xbee0",
+        "0xbf8e",
+        "0xbffc",
+        "0xc159",
+        "0xc3af",
+        "0xc3f5",
+        "0xc549",
+        "0xc6f9",
+        "0xcb64",
+        "0xce1c",
+        "0xcf06",
+        "0xcf2e",
+        "0xd003",
+        "0xd204",
+        "0xd473",
+        "0xd60f",
+        "0xd69a",
+        "0xd78b",
+        "0xd944",
+        "0xd9b0",
+        "0xdc26"
+      ],
+      "worklist_exhausted": true,
+      "all_native_instruction_starts_reached": false,
+      "baseline_local_CFG_complete": false,
+      "symbolic_import_tail_exits": {},
+      "external_targets": [],
+      "indirect_CALL_count": 0,
+      "fixed_IAT_CALL_count": 0,
+      "unattributed_indirect_CALLs": [],
+      "seconds": 2.203,
+      "native_sha256": "22e7a0b77f21cf7edc7d5afef66b27c31448d1e7b442352a4c96bd94019cf6f2"
+    },
+    {
+      "version": "19",
+      "entry": "0x2e35f",
+      "end": "0x31fca",
+      "canonical_instructions": 3224,
+      "reached": 3207,
+      "native_computed_sites": 156,
+      "finite_sites": 139,
+      "missing_or_unresolved_sites": [
+        "0x2e893",
+        "0x2ea6c",
+        "0x2ed40",
+        "0x2f4d2",
+        "0x2f554",
+        "0x301a0",
+        "0x301f3",
+        "0x306ec",
+        "0x30b37",
+        "0x31040",
+        "0x312a3",
+        "0x3142f",
+        "0x3191a",
+        "0x31aa1",
+        "0x31ad5",
+        "0x31c60",
+        "0x31d0f"
+      ],
+      "worklist_exhausted": false,
+      "all_native_instruction_starts_reached": false,
+      "baseline_local_CFG_complete": false,
+      "symbolic_import_tail_exits": {},
+      "external_targets": [],
+      "indirect_CALL_count": 9,
+      "fixed_IAT_CALL_count": 8,
+      "unattributed_indirect_CALLs": [
+        {
+          "site": "0x30b45",
+          "asm": "call qword ptr [rax + 7]",
+          "fixed_IAT": null
+        }
+      ],
+      "seconds": 2.437,
+      "native_sha256": "1b34b084bb9d9c3044a3bb19d4f13610b55c1a2a18c8dd25ba0d222c2808408a"
+    },
+    {
+      "version": "17",
+      "entry": "0x5d746",
+      "end": "0x61768",
+      "canonical_instructions": 3367,
+      "reached": 3202,
+      "native_computed_sites": 161,
+      "finite_sites": 138,
+      "missing_or_unresolved_sites": [
+        "0x5dce6",
+        "0x5dd99",
+        "0x5ddc5",
+        "0x5e126",
+        "0x5e14e",
+        "0x5e5aa",
+        "0x5e914",
+        "0x5ea47",
+        "0x5eddd",
+        "0x5f3d1",
+        "0x5f652",
+        "0x5f67d",
+        "0x5fce7",
+        "0x5fea7",
+        "0x5ff4e",
+        "0x5fff0",
+        "0x602f9",
+        "0x60507",
+        "0x60af5",
+        "0x60b4b",
+        "0x60d0b",
+        "0x60d37",
+        "0x60e9e"
+      ],
+      "worklist_exhausted": true,
+      "all_native_instruction_starts_reached": false,
+      "baseline_local_CFG_complete": false,
+      "symbolic_import_tail_exits": {},
+      "external_targets": [],
+      "indirect_CALL_count": 17,
+      "fixed_IAT_CALL_count": 16,
+      "unattributed_indirect_CALLs": [
+        {
+          "site": "0x60d1e",
+          "asm": "call qword ptr [rax + rdx]",
+          "fixed_IAT": null
+        }
+      ],
+      "seconds": 5.86,
+      "native_sha256": "174fe535ecd0c699024c68e5d0aa20b22c10f98c796d4561c5e370e78c486e7b"
+    },
+    {
+      "version": "17",
+      "entry": "0x56ab1",
+      "end": "0x5b3be",
+      "canonical_instructions": 3677,
+      "reached": 1111,
+      "native_computed_sites": 157,
+      "finite_sites": 31,
+      "missing_or_unresolved_sites": [
+        "0x5709e",
+        "0x570be",
+        "0x570f2",
+        "0x57182",
+        "0x571f3",
+        "0x57233",
+        "0x57419",
+        "0x57461",
+        "0x5749e",
+        "0x5753a",
+        "0x57551",
+        "0x57585",
+        "0x575a4",
+        "0x57874",
+        "0x5795e",
+        "0x57991",
+        "0x579c0",
+        "0x57a37",
+        "0x57b15",
+        "0x57b45",
+        "0x57b94",
+        "0x57bd1",
+        "0x57ca4",
+        "0x57cd3",
+        "0x57d57",
+        "0x57e25",
+        "0x57f1c",
+        "0x57f90",
+        "0x5806f",
+        "0x580c1",
+        "0x5812e",
+        "0x58173",
+        "0x58224",
+        "0x5829f",
+        "0x583d6",
+        "0x583f7",
+        "0x58434",
+        "0x584e0",
+        "0x58501",
+        "0x5857b",
+        "0x5865e",
+        "0x58689",
+        "0x58709",
+        "0x5881f",
+        "0x588f1",
+        "0x5890b",
+        "0x58928",
+        "0x589a5",
+        "0x58aad",
+        "0x58b68",
+        "0x58b84",
+        "0x58b9f",
+        "0x58c4b",
+        "0x58c92",
+        "0x58ced",
+        "0x58d20",
+        "0x58db4",
+        "0x58e70",
+        "0x58ee8",
+        "0x58f19",
+        "0x59023",
+        "0x590a7",
+        "0x59102",
+        "0x59154",
+        "0x59245",
+        "0x592a0",
+        "0x59324",
+        "0x59392",
+        "0x594c3",
+        "0x59512",
+        "0x59563",
+        "0x595e2",
+        "0x59635",
+        "0x5965f",
+        "0x59729",
+        "0x597cc",
+        "0x597fb",
+        "0x59848",
+        "0x5988e",
+        "0x598c7",
+        "0x598fd",
+        "0x599de",
+        "0x59a23",
+        "0x59a5a",
+        "0x59b41",
+        "0x59b9e",
+        "0x59c7f",
+        "0x59d1c",
+        "0x59e50",
+        "0x59f2f",
+        "0x59f6c",
+        "0x59fa5",
+        "0x5a008",
+        "0x5a038",
+        "0x5a05d",
+        "0x5a0d2",
+        "0x5a2bb",
+        "0x5a2df",
+        "0x5a3b9",
+        "0x5a434",
+        "0x5a553",
+        "0x5a5b4",
+        "0x5a61d",
+        "0x5a65c",
+        "0x5a685",
+        "0x5a6b7",
+        "0x5a6e5",
+        "0x5a715",
+        "0x5a833",
+        "0x5a8a4",
+        "0x5a8e8",
+        "0x5aad9",
+        "0x5abe5",
+        "0x5ac43",
+        "0x5acc9",
+        "0x5ad29",
+        "0x5ae02",
+        "0x5ae2b",
+        "0x5aeaf",
+        "0x5aef7",
+        "0x5af96",
+        "0x5affc",
+        "0x5b0e6",
+        "0x5b1dc",
+        "0x5b357",
+        "0x5b3bc"
+      ],
+      "worklist_exhausted": true,
+      "all_native_instruction_starts_reached": false,
+      "baseline_local_CFG_complete": false,
+      "symbolic_import_tail_exits": {},
+      "external_targets": [],
+      "indirect_CALL_count": 22,
+      "fixed_IAT_CALL_count": 0,
+      "unattributed_indirect_CALLs": [
+        {
+          "site": "0x572e7",
+          "asm": "call qword ptr [rsp + 0x78]",
+          "fixed_IAT": null
+        },
+        {
+          "site": "0x57729",
+          "asm": "call r14",
+          "fixed_IAT": null
+        },
+        {
+          "site": "0x57dfe",
+          "asm": "call rbp",
+          "fixed_IAT": null
+        },
+        {
+          "site": "0x581f5",
+          "asm": "call qword ptr [rsp + 0xb8]",
+          "fixed_IAT": null
+        },
+        {
+          "site": "0x5843e",
+          "asm": "call qword ptr [rsp + 0x1c8]",
+          "fixed_IAT": null
+        },
+        {
+          "site": "0x58457",
+          "asm": "call qword ptr [rsp + 0x2a0]",
+          "fixed_IAT": null
+        },
+        {
+          "site": "0x586c4",
+          "asm": "call rbp",
+          "fixed_IAT": null
+        },
+        {
+          "site": "0x58b8b",
+          "asm": "call rdx",
+          "fixed_IAT": null
+        },
+        {
+          "site": "0x59375",
+          "asm": "call rdi",
+          "fixed_IAT": null
+        },
+        {
+          "site": "0x594a1",
+          "asm": "call qword ptr [rsp + 0x78]",
+          "fixed_IAT": null
+        },
+        {
+          "site": "0x594ef",
+          "asm": "call rdi",
+          "fixed_IAT": null
+        },
+        {
+          "site": "0x59642",
+          "asm": "call qword ptr [rsp + 0x240]",
+          "fixed_IAT": null
+        },
+        {
+          "site": "0x59769",
+          "asm": "call qword ptr [rsp + 0x120]",
+          "fixed_IAT": null
+        },
+        {
+          "site": "0x59775",
+          "asm": "call qword ptr [rsp + 0xf8]",
+          "fixed_IAT": null
+        },
+        {
+          "site": "0x5982a",
+          "asm": "call rbx",
+          "fixed_IAT": null
+        },
+        {
+          "site": "0x59897",
+          "asm": "call rdi",
+          "fixed_IAT": null
+        },
+        {
+          "site": "0x59985",
+          "asm": "call rsi",
+          "fixed_IAT": null
+        },
+        {
+          "site": "0x59b20",
+          "asm": "call rbx",
+          "fixed_IAT": null
+        },
+        {
+          "site": "0x5a178",
+          "asm": "call rdi",
+          "fixed_IAT": null
+        },
+        {
+          "site": "0x5a49b",
+          "asm": "call rax",
+          "fixed_IAT": null
+        },
+        {
+          "site": "0x5a801",
+          "asm": "call rdi",
+          "fixed_IAT": null
+        },
+        {
+          "site": "0x5ab08",
+          "asm": "call qword ptr [rsp + 0xb0]",
+          "fixed_IAT": null
+        }
+      ],
+      "seconds": 0.219,
+      "native_sha256": "70b1e39be8808ca5a7e10f481b5d9286cb8b8a0f481630f62ad685702a2ab23a"
+    },
+    {
+      "version": "17",
+      "entry": "0x1593b",
+      "end": "0x1b478",
+      "canonical_instructions": 4730,
+      "reached": 3834,
+      "native_computed_sites": 168,
+      "finite_sites": 140,
+      "missing_or_unresolved_sites": [
+        "0x17143",
+        "0x1807f",
+        "0x1a14c",
+        "0x1a1d4",
+        "0x1a2a2",
+        "0x1a387",
+        "0x1a409",
+        "0x1a4d7",
+        "0x1a579",
+        "0x1a661",
+        "0x1a6dd",
+        "0x1a7b0",
+        "0x1a89c",
+        "0x1a9b1",
+        "0x1aa22",
+        "0x1aae2",
+        "0x1ab42",
+        "0x1ab5d",
+        "0x1ae2e",
+        "0x1ae4e",
+        "0x1ae77",
+        "0x1aebf",
+        "0x1aed6",
+        "0x1af50",
+        "0x1afeb",
+        "0x1b069",
+        "0x1b13b",
+        "0x1b19e"
+      ],
+      "worklist_exhausted": false,
+      "all_native_instruction_starts_reached": false,
+      "baseline_local_CFG_complete": false,
+      "symbolic_import_tail_exits": {},
+      "external_targets": [],
+      "indirect_CALL_count": 23,
+      "fixed_IAT_CALL_count": 0,
+      "unattributed_indirect_CALLs": [
+        {
+          "site": "0x15c43",
+          "asm": "call rbx",
+          "fixed_IAT": null
+        },
+        {
+          "site": "0x15f5a",
+          "asm": "call rbx",
+          "fixed_IAT": null
+        },
+        {
+          "site": "0x1643b",
+          "asm": "call rbx",
+          "fixed_IAT": null
+        },
+        {
+          "site": "0x1669b",
+          "asm": "call rsi",
+          "fixed_IAT": null
+        },
+        {
+          "site": "0x16b65",
+          "asm": "call rsi",
+          "fixed_IAT": null
+        },
+        {
+          "site": "0x17cbe",
+          "asm": "call r14",
+          "fixed_IAT": null
+        },
+        {
+          "site": "0x181c2",
+          "asm": "call r14",
+          "fixed_IAT": null
+        },
+        {
+          "site": "0x184e2",
+          "asm": "call rbx",
+          "fixed_IAT": null
+        },
+        {
+          "site": "0x18868",
+          "asm": "call qword ptr [rsp + 0x68]",
+          "fixed_IAT": null
+        },
+        {
+          "site": "0x18f57",
+          "asm": "call rbx",
+          "fixed_IAT": null
+        },
+        {
+          "site": "0x1922c",
+          "asm": "call r14",
+          "fixed_IAT": null
+        },
+        {
+          "site": "0x19239",
+          "asm": "call rsi",
+          "fixed_IAT": null
+        },
+        {
+          "site": "0x19244",
+          "asm": "call rsi",
+          "fixed_IAT": null
+        },
+        {
+          "site": "0x19817",
+          "asm": "call rsi",
+          "fixed_IAT": null
+        },
+        {
+          "site": "0x1ab21",
+          "asm": "call qword ptr [rsp + 0xa0]",
+          "fixed_IAT": null
+        },
+        {
+          "site": "0x1adfc",
+          "asm": "call rdi",
+          "fixed_IAT": null
+        },
+        {
+          "site": "0x1ae37",
+          "asm": "call qword ptr [rsp + 0x130]",
+          "fixed_IAT": null
+        },
+        {
+          "site": "0x1ae8b",
+          "asm": "call r14",
+          "fixed_IAT": null
+        },
+        {
+          "site": "0x1af07",
+          "asm": "call qword ptr [rsp + 0x1f0]",
+          "fixed_IAT": null
+        },
+        {
+          "site": "0x1af17",
+          "asm": "call qword ptr [rsp + 0x130]",
+          "fixed_IAT": null
+        },
+        {
+          "site": "0x1af26",
+          "asm": "call qword ptr [rsp + 0x1c8]",
+          "fixed_IAT": null
+        },
+        {
+          "site": "0x1aff5",
+          "asm": "call qword ptr [rsp + 0x1c8]",
+          "fixed_IAT": null
+        },
+        {
+          "site": "0x1b003",
+          "asm": "call qword ptr [rsp + 0x130]",
+          "fixed_IAT": null
+        }
+      ],
+      "seconds": 1.796,
+      "native_sha256": "24f86b729f0c32176aa5394ce3c7f3e9858960e150413b58ecb5dd228a48a907"
+    },
+    {
+      "version": "17",
+      "entry": "0x6b869",
+      "end": "0x70fd6",
+      "canonical_instructions": 4809,
+      "reached": 3655,
+      "native_computed_sites": 271,
+      "finite_sites": 187,
+      "missing_or_unresolved_sites": [
+        "0x6bb86",
+        "0x6bcc8",
+        "0x6be04",
+        "0x6be92",
+        "0x6bfd2",
+        "0x6c066",
+        "0x6c1a7",
+        "0x6c2b8",
+        "0x6c371",
+        "0x6c39d",
+        "0x6c4a4",
+        "0x6c5b1",
+        "0x6c5fa",
+        "0x6c6ce",
+        "0x6c707",
+        "0x6c76e",
+        "0x6c7d0",
+        "0x6c80d",
+        "0x6c9a0",
+        "0x6c9ec",
+        "0x6ca1d",
+        "0x6ca91",
+        "0x6cb6e",
+        "0x6cba5",
+        "0x6cbd2",
+        "0x6cbfc",
+        "0x6cc22",
+        "0x6cc5d",
+        "0x6ccca",
+        "0x6cdff",
+        "0x6ceae",
+        "0x6cff4",
+        "0x6d176",
+        "0x6d19c",
+        "0x6d234",
+        "0x6d3b9",
+        "0x6d625",
+        "0x6d677",
+        "0x6d808",
+        "0x6dbd6",
+        "0x6dd03",
+        "0x6dd23",
+        "0x6e077",
+        "0x6e160",
+        "0x6e17f",
+        "0x6e1ad",
+        "0x6e2d9",
+        "0x6e3ac",
+        "0x6e518",
+        "0x6e531",
+        "0x6e578",
+        "0x6e5dc",
+        "0x6e863",
+        "0x6ebfe",
+        "0x6ec80",
+        "0x6ecb9",
+        "0x6ee54",
+        "0x6ef00",
+        "0x6ef42",
+        "0x6f291",
+        "0x6f649",
+        "0x6f666",
+        "0x6f6a7",
+        "0x6f73f",
+        "0x6f7d7",
+        "0x6fa17",
+        "0x6fa95",
+        "0x6fb58",
+        "0x6fbb4",
+        "0x6fd6e",
+        "0x6fea0",
+        "0x70036",
+        "0x700e9",
+        "0x70134",
+        "0x70299",
+        "0x70450",
+        "0x7070f",
+        "0x7072e",
+        "0x7074b",
+        "0x707dc",
+        "0x70bc6",
+        "0x70ca7",
+        "0x70e51",
+        "0x70fd4"
+      ],
+      "worklist_exhausted": false,
+      "all_native_instruction_starts_reached": false,
+      "baseline_local_CFG_complete": false,
+      "symbolic_import_tail_exits": {},
+      "external_targets": [],
+      "indirect_CALL_count": 1,
+      "fixed_IAT_CALL_count": 0,
+      "unattributed_indirect_CALLs": [
+        {
+          "site": "0x6dbdd",
+          "asm": "call qword ptr [r12 + 7]",
+          "fixed_IAT": null
+        }
+      ],
+      "seconds": 1.922,
+      "native_sha256": "1deb198bc57aca0e853297c7bbfa1f367ec9bb4c4f820ed78f4e6a9ef9547d9d"
+    },
+    {
+      "version": "19",
+      "entry": "0x57f4f",
+      "end": "0x5df18",
+      "canonical_instructions": 5013,
+      "reached": 4888,
+      "native_computed_sites": 189,
+      "finite_sites": 179,
+      "missing_or_unresolved_sites": [
+        "0x59146",
+        "0x592b0",
+        "0x59365",
+        "0x596bc",
+        "0x596f5",
+        "0x59891",
+        "0x5c6f7",
+        "0x5c803",
+        "0x5ca2b",
+        "0x5ca61"
+      ],
+      "worklist_exhausted": false,
+      "all_native_instruction_starts_reached": false,
+      "baseline_local_CFG_complete": false,
+      "symbolic_import_tail_exits": {},
+      "external_targets": [],
+      "indirect_CALL_count": 23,
+      "fixed_IAT_CALL_count": 0,
+      "unattributed_indirect_CALLs": [
+        {
+          "site": "0x582a8",
+          "asm": "call r14",
+          "fixed_IAT": null
+        },
+        {
+          "site": "0x58579",
+          "asm": "call rsi",
+          "fixed_IAT": null
+        },
+        {
+          "site": "0x58cc8",
+          "asm": "call rsi",
+          "fixed_IAT": null
+        },
+        {
+          "site": "0x59e55",
+          "asm": "call rbx",
+          "fixed_IAT": null
+        },
+        {
+          "site": "0x5a0c7",
+          "asm": "call rbx",
+          "fixed_IAT": null
+        },
+        {
+          "site": "0x5a86e",
+          "asm": "call r15",
+          "fixed_IAT": null
+        },
+        {
+          "site": "0x5aedb",
+          "asm": "call rsi",
+          "fixed_IAT": null
+        },
+        {
+          "site": "0x5b2f1",
+          "asm": "call qword ptr [rsp + 0x98]",
+          "fixed_IAT": null
+        },
+        {
+          "site": "0x5c10a",
+          "asm": "call qword ptr [rsp + 0x98]",
+          "fixed_IAT": null
+        },
+        {
+          "site": "0x5c1b9",
+          "asm": "call qword ptr [rsp + 0x318]",
+          "fixed_IAT": null
+        },
+        {
+          "site": "0x5c1f0",
+          "asm": "call qword ptr [rsp + 0x210]",
+          "fixed_IAT": null
+        },
+        {
+          "site": "0x5c5ad",
+          "asm": "call rbp",
+          "fixed_IAT": null
+        },
+        {
+          "site": "0x5c638",
+          "asm": "call qword ptr [rsp + 0x308]",
+          "fixed_IAT": null
+        },
+        {
+          "site": "0x5c64b",
+          "asm": "call qword ptr [rsp + 0x210]",
+          "fixed_IAT": null
+        },
+        {
+          "site": "0x5c65a",
+          "asm": "call qword ptr [rsp + 0x270]",
+          "fixed_IAT": null
+        },
+        {
+          "site": "0x5c701",
+          "asm": "call qword ptr [rsp + 0x270]",
+          "fixed_IAT": null
+        },
+        {
+          "site": "0x5c712",
+          "asm": "call qword ptr [rsp + 0x210]",
+          "fixed_IAT": null
+        },
+        {
+          "site": "0x5d00f",
+          "asm": "call qword ptr [rsp + 0x90]",
+          "fixed_IAT": null
+        },
+        {
+          "site": "0x5d125",
+          "asm": "call qword ptr [rsp + 0xe0]",
+          "fixed_IAT": null
+        },
+        {
+          "site": "0x5d4bf",
+          "asm": "call r14",
+          "fixed_IAT": null
+        },
+        {
+          "site": "0x5dbbc",
+          "asm": "call rsi",
+          "fixed_IAT": null
+        },
+        {
+          "site": "0x5dbc0",
+          "asm": "call r15",
+          "fixed_IAT": null
+        },
+        {
+          "site": "0x5dbce",
+          "asm": "call r15",
+          "fixed_IAT": null
+        }
+      ],
+      "seconds": 1.703,
+      "native_sha256": "02841ed459b8c3982485b1592f85127fa12d7471c758db5bc4925c40a940a0fa"
+    }
+  ],
+  "seconds": 92.984,
+  "native_execution": false
+}

@@ -2,22 +2,22 @@
   "status": "COMPLETE_IN_DECLARED_NORMAL_CONTEXT",
   "entry": "17:0x2f497",
   "final_gate": {
-    "path": "C:\\Users\\leo\\Documents\\Codex\\2026-10-26\\ni\\work\\alpme_analysis\\semantic_closure_20261027\\round4_browser_17_2f497_gate\\17_2f497_final_normal_gate.json",
+    "path": "<ANALYSIS_WORKSPACE>\\work\\alpme_analysis\\semantic_closure_20261027\\round4_browser_17_2f497_gate\\17_2f497_final_normal_gate.json",
     "sha256": "25e74429f2c20f5980644bb4ba866d2b5678b3e0a42338f6363cd1d53a6abc57",
     "bytes": 552717
   },
   "verified_normal_plan": {
-    "path": "C:\\Users\\leo\\Documents\\Codex\\2026-10-26\\ni\\work\\alpme_analysis\\semantic_closure_20261027\\round4_browser_17_2f497_gate\\17_2f497_verified_normal_plan.json",
+    "path": "<ANALYSIS_WORKSPACE>\\work\\alpme_analysis\\semantic_closure_20261027\\round4_browser_17_2f497_gate\\17_2f497_verified_normal_plan.json",
     "sha256": "0c5805b3d4414fd9130b125e890e38159f18dced4e4f441b5042f5fd7d2200bb",
     "bytes": 151250
   },
   "independent_C": {
-    "path": "C:\\Users\\leo\\Documents\\Codex\\2026-10-26\\ni\\work\\alpme_analysis\\semantic_closure_20261027\\round4_browser_17_2f497_gate\\verified_exports\\17_payload.dll.bin_0x2f497.c",
+    "path": "<ANALYSIS_WORKSPACE>\\work\\alpme_analysis\\semantic_closure_20261027\\round4_browser_17_2f497_gate\\verified_exports\\17_payload.dll.bin_0x2f497.c",
     "sha256": "937816b1c224fab042df4f7ad1ebbf52c82af2b913ee3f9ea2cb3dd579c7b958",
     "bytes": 172474
   },
   "independent_C_metadata": {
-    "path": "C:\\Users\\leo\\Documents\\Codex\\2026-10-26\\ni\\work\\alpme_analysis\\semantic_closure_20261027\\round4_browser_17_2f497_gate\\verified_exports\\17_payload.dll.bin_0x2f497_listing_retry.json",
+    "path": "<ANALYSIS_WORKSPACE>\\work\\alpme_analysis\\semantic_closure_20261027\\round4_browser_17_2f497_gate\\verified_exports\\17_payload.dll.bin_0x2f497_listing_retry.json",
     "sha256": "07d9b14bb5f6391aae3dbbf2dcc9c83547d9aa9db3873e4b4db116cf4b07ba8d",
     "bytes": 1348
   },
@@ -44,7 +44,7 @@
   },
   "output_ABI": {
     "certificate": {
-      "path": "C:\\Users\\leo\\Documents\\Codex\\2026-10-26\\ni\\work\\alpme_analysis\\semantic_closure_20261027\\round4_browser_17_2f497_gate\\17_2f497_original_output_span.json",
+      "path": "<ANALYSIS_WORKSPACE>\\work\\alpme_analysis\\semantic_closure_20261027\\round4_browser_17_2f497_gate\\17_2f497_original_output_span.json",
       "sha256": "16ae332dd9f2a85201a8ed2603239ebf1b6c59fcffbae120b495adec7bd13fb4",
       "bytes": 6775
     },
@@ -60,7 +60,7 @@
     "all5_destinations_and_no_later_child_forward_proved": true
   },
   "new_helper_closure": {
-    "path": "C:\\Users\\leo\\Documents\\Codex\\2026-10-26\\ni\\work\\alpme_analysis\\semantic_closure_20261027\\round4_browser_17_2f497_gate\\17_1b4bb_typed_caller_effects.json",
+    "path": "<ANALYSIS_WORKSPACE>\\work\\alpme_analysis\\semantic_closure_20261027\\round4_browser_17_2f497_gate\\17_1b4bb_typed_caller_effects.json",
     "sha256": "2a32f398795000f1c8fe935b7de8c59690b7c2a15ddecbb946bc39dec52754ca",
     "bytes": 70742
   },

@@ -1,0 +1,293 @@
+{
+  "scope": "Two contextual next-result cleanup sites; original bytes plus local relational output and independent nearest-writer source gate",
+  "sites": [
+    {
+      "version": "17",
+      "site": "0x60d1e",
+      "status": "CONTEXTUAL_EMPTY_TARGET_SET_PROVED_UNDER_MINIMAL_CFG_AND_NORMAL_NEXT_ABI",
+      "native_call": {
+        "rva": "0x60d1e",
+        "asm": "call qword ptr [rax + rdx]",
+        "bytes": "ff1410"
+      },
+      "actual_invoked_target_set": [],
+      "next_producer": "0x5f352",
+      "next_callee": "0x4a0d2",
+      "next_native_sha256": "43155e2e2aa1ec6e681e628a5bc8250df5b51585b86ac096b49b11725f97bb57",
+      "owner_R12_all_native_definitions": [
+        {
+          "rva": "0x4a16e",
+          "bytes": "4c8ba368020000",
+          "asm": "mov r12, qword ptr [rbx + 0x268]"
+        },
+        {
+          "rva": "0x4a1f8",
+          "bytes": "4c8ba368020000",
+          "asm": "mov r12, qword ptr [rbx + 0x268]"
+        },
+        {
+          "rva": "0x4a2f8",
+          "bytes": "4531e4",
+          "asm": "xor r12d, r12d"
+        }
+      ],
+      "owner_zero_gate": {
+        "native_jump": {
+          "rva": "0x5ec1d",
+          "asm": "jmp rax",
+          "bytes": "ffe0"
+        },
+        "zero_cell": "0x8c9c4",
+        "bytes": "47cbffff",
+        "zero_target": "0x5dc33",
+        "payload_block_sole_predecessor": "0x5ec1d"
+      },
+      "error_payload_anchors": [
+        {
+          "rva": "0x4a2db",
+          "bytes": "89c7",
+          "asm": "mov edi, eax"
+        },
+        {
+          "rva": "0x4a2f0",
+          "bytes": "48c1e720",
+          "asm": "shl rdi, 0x20"
+        },
+        {
+          "rva": "0x4a2f4",
+          "bytes": "4883cf02",
+          "asm": "or rdi, 2"
+        },
+        {
+          "rva": "0x4a2f8",
+          "bytes": "4531e4",
+          "asm": "xor r12d, r12d"
+        },
+        {
+          "rva": "0x4a2fb",
+          "bytes": "e971ffffff",
+          "asm": "jmp 0x18004a271"
+        },
+        {
+          "rva": "0x4a271",
+          "bytes": "4c896608",
+          "asm": "mov qword ptr [rsi + 8], r12"
+        },
+        {
+          "rva": "0x4a275",
+          "bytes": "48897e10",
+          "asm": "mov qword ptr [rsi + 0x10], rdi"
+        }
+      ],
+      "source_writer_gate": [
+        {
+          "load": {
+            "rva": "0x5ebfa",
+            "asm": "mov rsi, qword ptr [rsp + 0x13c0]",
+            "bytes": "488bb424c0130000"
+          },
+          "frame_offset": "0x13c0",
+          "nearest_possible_writer": {
+            "rva": "0x5f352",
+            "asm": "call 0x18004a0d2",
+            "bytes": "e87badfeff"
+          },
+          "all_unknown_CALLs_and_stores_count_as_writers": true
+        },
+        {
+          "load": {
+            "rva": "0x5dc33",
+            "asm": "mov rax, qword ptr [rsp + 0x13c8]",
+            "bytes": "488b8424c8130000"
+          },
+          "frame_offset": "0x13c8",
+          "nearest_possible_writer": {
+            "rva": "0x5f352",
+            "asm": "call 0x18004a0d2",
+            "bytes": "e87badfeff"
+          },
+          "all_unknown_CALLs_and_stores_count_as_writers": true
+        }
+      ],
+      "payload_formula": "(u64(u32(GetLastError())) <<32)|2",
+      "error_lowtag": 2,
+      "tag_dispatch": [
+        {
+          "lowtag": 0,
+          "index": 3,
+          "cell": "0x88dc8",
+          "bytes": "8665fdff",
+          "target": "0x5f342"
+        },
+        {
+          "lowtag": 1,
+          "index": 0,
+          "cell": "0x88dbc",
+          "bytes": "517ffdff",
+          "target": "0x60d0d"
+        },
+        {
+          "lowtag": 2,
+          "index": 1,
+          "cell": "0x88dc0",
+          "bytes": "8665fdff",
+          "target": "0x5f342"
+        },
+        {
+          "lowtag": 3,
+          "index": 2,
+          "cell": "0x88dc4",
+          "bytes": "465cfdff",
+          "target": "0x5ea02"
+        }
+      ],
+      "relation": "Some success has nonnull owner and avoids error-unpack. Some error has owner0 and lowtag2. None skips unpack. Only lowtag1 dispatches custom cleanup, hence not invoked in this normal next-result context.",
+      "qualification": "The numeric initializer CFG itself is still conditional on24-byte scalar preservation gate. This proof discharges next-result field lifetimes and contextual callback effect; it is not a claim of a generic unconditional destructor target."
+    },
+    {
+      "version": "19",
+      "site": "0x30b45",
+      "status": "CONTEXTUAL_EMPTY_TARGET_SET_PROVED_UNDER_MINIMAL_CFG_AND_NORMAL_NEXT_ABI",
+      "native_call": {
+        "rva": "0x30b45",
+        "asm": "call qword ptr [rax + 7]",
+        "bytes": "ff5007"
+      },
+      "actual_invoked_target_set": [],
+      "next_producer": "0x30b60",
+      "next_callee": "0xdda5",
+      "next_native_sha256": "d3547ff02efa9efb1cb5e8c620302e13ad02760f0831f053e286d4ece96d86fa",
+      "owner_R12_all_native_definitions": [
+        {
+          "rva": "0xddee",
+          "bytes": "4c8ba368020000",
+          "asm": "mov r12, qword ptr [rbx + 0x268]"
+        },
+        {
+          "rva": "0xdf2e",
+          "bytes": "4c8ba368020000",
+          "asm": "mov r12, qword ptr [rbx + 0x268]"
+        },
+        {
+          "rva": "0xdfcd",
+          "bytes": "4531e4",
+          "asm": "xor r12d, r12d"
+        }
+      ],
+      "owner_zero_gate": {
+        "native_jump": {
+          "rva": "0x31bd0",
+          "asm": "jmp rax",
+          "bytes": "ffe0"
+        },
+        "zero_cell": "0x8af94",
+        "bytes": "19100000",
+        "zero_target": "0x3036f",
+        "payload_block_sole_predecessor": "0x31bd0"
+      },
+      "error_payload_anchors": [
+        {
+          "rva": "0xdfb0",
+          "bytes": "8bf8",
+          "asm": "mov edi, eax"
+        },
+        {
+          "rva": "0xdfc5",
+          "bytes": "48c1e720",
+          "asm": "shl rdi, 0x20"
+        },
+        {
+          "rva": "0xdfc9",
+          "bytes": "4883cf02",
+          "asm": "or rdi, 2"
+        },
+        {
+          "rva": "0xdfcd",
+          "bytes": "4531e4",
+          "asm": "xor r12d, r12d"
+        },
+        {
+          "rva": "0xdfd0",
+          "bytes": "e996feffff",
+          "asm": "jmp 0x18000de6b"
+        },
+        {
+          "rva": "0xde6b",
+          "bytes": "4c896608",
+          "asm": "mov qword ptr [rsi + 8], r12"
+        },
+        {
+          "rva": "0xde6f",
+          "bytes": "48897e10",
+          "asm": "mov qword ptr [rsi + 0x10], rdi"
+        }
+      ],
+      "source_writer_gate": [
+        {
+          "load": {
+            "rva": "0x31baa",
+            "asm": "mov r14, qword ptr [rsp + 0x15b8]",
+            "bytes": "4c8bb424b8150000"
+          },
+          "frame_offset": "0x15b8",
+          "nearest_possible_writer": {
+            "rva": "0x30b60",
+            "asm": "call 0x18000dda5",
+            "bytes": "e840d2fdff"
+          },
+          "all_unknown_CALLs_and_stores_count_as_writers": true
+        },
+        {
+          "load": {
+            "rva": "0x3036f",
+            "asm": "mov rax, qword ptr [rsp + 0x15c0]",
+            "bytes": "488b8424c0150000"
+          },
+          "frame_offset": "0x15c0",
+          "nearest_possible_writer": {
+            "rva": "0x30b60",
+            "asm": "call 0x18000dda5",
+            "bytes": "e840d2fdff"
+          },
+          "all_unknown_CALLs_and_stores_count_as_writers": true
+        }
+      ],
+      "payload_formula": "(u64(u32(GetLastError())) <<32)|2",
+      "error_lowtag": 2,
+      "tag_dispatch": [
+        {
+          "lowtag": 0,
+          "index": 2,
+          "cell": "0x877c4",
+          "bytes": "9493faff",
+          "target": "0x30b50"
+        },
+        {
+          "lowtag": 1,
+          "index": 3,
+          "cell": "0x877c8",
+          "bytes": "8393faff",
+          "target": "0x30b3f"
+        },
+        {
+          "lowtag": 2,
+          "index": 0,
+          "cell": "0x877bc",
+          "bytes": "9493faff",
+          "target": "0x30b50"
+        },
+        {
+          "lowtag": 3,
+          "index": 1,
+          "cell": "0x877c0",
+          "bytes": "c27cfaff",
+          "target": "0x2f47e"
+        }
+      ],
+      "relation": "Some success has nonnull owner and avoids error-unpack. Some error has owner0 and lowtag2. None skips unpack. Only lowtag1 dispatches custom cleanup, hence not invoked in this normal next-result context.",
+      "qualification": "The numeric initializer CFG itself is still conditional on24-byte scalar preservation gate. This proof discharges next-result field lifetimes and contextual callback effect; it is not a claim of a generic unconditional destructor target."
+    }
+  ],
+  "sample_execution": false,
+  "network": false
+}

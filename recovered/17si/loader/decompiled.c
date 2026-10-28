@@ -1,6 +1,6 @@
-/* Current selected decompiler texts, indexed by sample + RVA.
- * Analyst names/types; includes partial functions and retained warnings.
- * This is analysis material, not a buildable original-source project.
+/* Selected original-byte decompiler representations; analysis only.
+ * Includes explicit normal-context and partial functions.
+ * Names/types are analyst/tool output, not a buildable original project.
  */
 
 /* ===== SAMPLE 17_loader.exe.bin | RVA 0x100e | no_partial_markers_not_a_CFG_proof ===== */
@@ -25,8 +25,8 @@ void FUN_14000100e(undefined8 *param_1,ulonglong param_2)
 
 
 
-/* ===== SAMPLE 17_loader.exe.bin | RVA 0x1046 | partial_markers_remain ===== */
-/* address=140001046 rva=0x1046 */
+/* ===== SAMPLE 17_loader.exe.bin | RVA 0x1046 | verified_conservative_local_CFG_only ===== */
+/* NORMAL INITIALIZATION CONTEXT ONLY. Original-byte conservative local CFG with statically derived loader TLS. Local computed-JMP targets are finite; PE-bound import tails and CFG guard dispatch are represented as tail calls. Unknown callee/store effects remain havoc. Actual indirect CALL targets and transitive behavior require separate evidence. Not original source, not a buildable project. Original instruction bytes unchanged. */
 
 void FUN_140001046(LPVOID param_1)
 
@@ -36,30 +36,75 @@ void FUN_140001046(LPVOID param_1)
   (**(code **)((longlong)param_1 + 0x20))
             (*(undefined8 *)((longlong)param_1 + 0x10),*(undefined8 *)((longlong)param_1 + 0x18));
   hHeap = GetProcessHeap();
-                    /* WARNING: Could not recover jumptable at 0x00014000106c. Too many branches */
-                    /* WARNING: Treating indirect jump as call */
   HeapFree(hHeap,0,param_1);
   return;
 }
 
 
 
-/* ===== SAMPLE 17_loader.exe.bin | RVA 0x1073 | partial_markers_remain ===== */
-/* address=140001073 rva=0x1073 */
+/* ===== SAMPLE 17_loader.exe.bin | RVA 0x1073 | verified_conservative_local_CFG_only ===== */
+/* NORMAL INITIALIZATION CONTEXT ONLY. Original-byte conservative local CFG with statically derived loader TLS. Local computed-JMP targets are finite; PE-bound import tails and CFG guard dispatch are represented as tail calls. Unknown callee/store effects remain havoc. Actual indirect CALL targets and transitive behavior require separate evidence. Not original source, not a buildable project. Original instruction bytes unchanged. */
 
-void FUN_140001073(undefined8 param_1,ulonglong param_2)
+/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+
+undefined8 FUN_140001073(longlong param_1,ulonglong param_2)
 
 {
-  int *piVar1;
+  char cVar1;
+  UINT CodePage;
+  DWORD DVar2;
+  undefined4 *puVar3;
+  HWND pHVar4;
+  ulonglong uVar5;
+  ulonglong uVar6;
+  ulonglong in_R8;
+  ulonglong uVar7;
+  _cpinfo a_Stack_68 [3];
   
-  piVar1 = &DAT_1400762e0;
+  puVar3 = &UNK_1400762e0;
   if (param_2 != 0xeee47b33 - (int)DAT_1400d0278) {
-    piVar1 = &DAT_1400762dc;
+    puVar3 = &UNK_1400762dc;
   }
-                    /* WARNING: Could not recover jumptable at 0x0001400010be. Too many branches */
-                    /* WARNING: Treating indirect jump as call */
-  (*(code *)(&LAB_14000117d + *piVar1))();
-  return;
+  uVar6 = 0;
+                    /* WARNING: Switch is manually overridden */
+  switch(*puVar3) {
+  case 0:
+override_jmp_1400010be_case_1:
+    return 0;
+  }
+  do {
+    while( true ) {
+      uVar5 = (param_2 - uVar6 >> 1) + uVar6;
+      uVar7 = (ulonglong)*(uint *)(param_1 + uVar5 * 0xc);
+      cVar1 = (in_R8 < uVar7) - (uVar7 < in_R8);
+      if (cVar1 == '\x01') break;
+      if (cVar1 != -1) {
+        if (_DAT_1400cfe88 == 0x4920209c) {
+          CodePage = GetConsoleOutputCP();
+          IsValidCodePage(CodePage);
+          GetCPInfo(CodePage,a_Stack_68);
+          pHVar4 = GetConsoleWindow();
+          if ((pHVar4 != (HWND)0x0) &&
+             (DVar2 = GetConsoleTitleW((LPWSTR)a_Stack_68,0x20), DVar2 != 0)) {
+            GetConsoleCP();
+          }
+        }
+        return 1;
+      }
+      uVar6 = uVar5 + 1;
+                    /* WARNING: Switch is manually overridden */
+      switch(param_2 <= uVar6) {
+      case true:
+        goto override_jmp_1400010be_case_1;
+      }
+    }
+    param_2 = uVar5;
+                    /* WARNING: Switch is manually overridden */
+    switch(uVar5 <= uVar6) {
+    case true:
+      goto override_jmp_1400010be_case_1;
+    }
+  } while( true );
 }
 
 
@@ -1258,70 +1303,127 @@ void FUN_14000250d(LPVOID param_1,longlong param_2,ulonglong param_3,longlong pa
 
 
 
-/* ===== SAMPLE 17_loader.exe.bin | RVA 0x254d | partial_markers_remain ===== */
-/* address=14000254d rva=0x254d */
+/* ===== SAMPLE 17_loader.exe.bin | RVA 0x254d | verified_conservative_local_CFG_only ===== */
+/* NORMAL INITIALIZATION CONTEXT ONLY. Original-byte conservative local CFG with statically derived loader TLS. Local computed-JMP targets are finite; PE-bound import tails and CFG guard dispatch are represented as tail calls. Unknown callee/store effects remain havoc. Actual indirect CALL targets and transitive behavior require separate evidence. Not original source, not a buildable project. Original instruction bytes unchanged. */
+
+/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 void FUN_14000254d(void)
 
 {
-  int *piVar1;
-  undefined8 local_590 [3];
-  undefined1 local_571;
-  undefined1 local_570;
-  undefined1 local_56f;
-  undefined1 local_56e;
-  undefined1 local_56d;
-  undefined1 local_56c;
-  undefined1 local_56b;
-  undefined1 local_56a;
-  undefined1 local_569;
-  undefined2 local_560;
-  undefined2 local_55e;
-  undefined2 local_55c;
-  undefined2 local_55a;
-  undefined2 local_558;
-  undefined2 local_556;
-  undefined2 local_554;
-  undefined4 local_530;
-  undefined4 local_52c;
-  undefined4 local_528;
-  undefined4 local_524;
+  HMODULE pHVar1;
+  byte *pbVar2;
+  code cVar3;
+  code cVar4;
+  ulonglong uVar5;
+  byte bVar6;
+  char cVar7;
+  byte bVar8;
+  ushort uVar9;
+  int iVar10;
+  undefined4 uVar11;
+  longlong lVar12;
+  code *pcVar13;
+  byte *pbVar14;
+  HMODULE pHVar15;
+  code *pcVar16;
+  byte *pbVar17;
+  undefined8 *puVar18;
+  HMODULE pHVar19;
+  code *pcVar20;
+  undefined8 uVar21;
+  ulonglong uVar22;
+  ulonglong uVar23;
+  uint uVar24;
+  undefined4 *puVar25;
+  ushort *puVar26;
+  uint uVar27;
+  undefined8 *******pppppppuVar28;
+  ushort uVar29;
+  int iVar30;
+  uint uVar31;
+  ulonglong uVar32;
+  HMODULE pHVar33;
+  uint uVar34;
+  longlong lVar35;
+  ulonglong uVar36;
+  undefined8 ******ppppppuVar37;
+  uint uVar38;
+  byte *pbVar39;
+  LPVOID pvVar40;
+  bool bVar41;
+  longlong lStack_598;
+  undefined8 *******local_590 [3];
+  char local_571;
+  byte local_570;
+  char local_56f;
+  char local_56e;
+  byte local_56d;
+  byte local_56c;
+  char local_56b;
+  char local_56a;
+  char local_569;
+  HMODULE pHStack_568;
+  ushort local_560;
+  ushort local_55e;
+  ushort local_55c;
+  ushort local_55a;
+  ushort local_558;
+  ushort local_556;
+  ushort local_554;
+  undefined1 uStack_551;
+  undefined8 uStack_550;
+  ulonglong uStack_548;
+  code *pcStack_540;
+  code *pcStack_538;
+  int local_530;
+  uint local_52c;
+  int local_528;
+  int local_524;
   undefined4 local_520;
-  undefined4 local_51c;
-  undefined4 local_518;
-  undefined4 local_514;
-  char *local_510;
-  undefined8 local_508;
-  undefined8 *local_500;
+  int local_51c;
+  int local_518;
+  uint local_514;
+  HMODULE local_510 [2];
+  undefined8 local_500;
+  undefined8 uStack_300;
+  int aiStack_2f8 [2];
+  undefined8 uStack_2f0;
+  undefined8 auStack_2e8 [63];
+  code *pcStack_f0;
+  code *pcStack_e8;
+  code *pcStack_e0;
+  undefined8 *puStack_d8;
   undefined8 local_d0;
-  undefined8 local_c8;
+  ulonglong local_c8;
   undefined8 local_c0;
   undefined8 local_b8;
   undefined8 local_b0;
-  undefined8 local_a8;
-  undefined8 local_a0;
-  undefined8 local_98;
-  undefined8 local_90;
-  undefined8 local_88;
+  ulonglong local_a8;
+  longlong local_a0;
+  ulonglong local_98;
+  ulonglong local_90;
+  longlong local_88;
   undefined8 local_80;
-  undefined8 local_78;
-  undefined8 local_70;
-  undefined8 local_68;
+  longlong local_78;
+  longlong local_70;
+  longlong local_68;
+  undefined4 auStack_5c [7];
   
   FUN_140012ed0();
   local_b8 = 0xf241ff6198b24821;
-  local_569 = 0xf3;
+  local_569 = -0xd;
   local_52c = 0x4e8dff8a;
-  local_56f = 0xb0;
+  local_56f = -0x50;
   local_556 = 0x4eed;
   local_558 = 0x1e66;
   local_560 = 0x84d4;
   local_51c = 0x2045940c;
   local_554 = 0x22aa;
-  local_68 = 0xdf88c2144a901470;
+  local_68 = -0x20773debb56feb90;
   local_90 = 0x6338a7a6604a9c31;
   local_98 = 0x50cc327829cb0950;
-  local_56e = 0xe1;
+  local_56e = -0x1f;
   local_56c = 0x75;
   local_528 = 0x50054eba;
   local_a0 = 0x2362abe8324d976e;
@@ -1333,37 +1435,2135 @@ void FUN_14000254d(void)
   local_530 = 0x2fdeb6b8;
   local_c0 = 0x20e23910ae11b0c3;
   local_520 = 0xfffffffd;
-  local_88 = 0xdd5fcfa00cf91850;
-  local_56b = 0xff;
+  local_88 = -0x22a0305ff306e7b0;
+  local_56b = -1;
   local_80 = 0xe30a863bafbff79f;
   local_55c = 0x4ea4;
   local_524 = 0x3ce45f4f;
   local_56d = 0x36;
-  local_571 = 0x23;
+  local_571 = '#';
   local_55e = 0xec76;
-  local_56a = 0x8d;
+  local_56a = -0x73;
   local_514 = 0x2eeb8f69;
-  local_78 = 0xdab794cf30ee6b9d;
+  local_78 = -0x25486b30cf119463;
   local_b0 = 0xffffffffffffffff;
   local_570 = 0x6f;
   local_c8 = 0xcb76519b7f9d6ccf;
-  local_500 = local_590;
-  local_590[0] = 0xe9d44cb7113359bc;
-  local_510 = 
-  "mOalms3oyEIsqArE-agyC9BEZ0ErOCMmh8ZW16gTin.cdNjZMyt0-stl archive timestamp from deltaqJn49VYGTCmNhF9AhynDoleQINxaveCWXXeKAr_phDhsA-yPBz_e5ics9b6_BkarJJwybnAbZ2rxjzXUJeZZ-Udd01G6XJp14x0igKGDae-3wvJMsdZS2Pk4bsOHD9KUNZ4KrgcQySdtSa0dFDPR8h2j-P5TNFOgmAKthrough may little line had end eE9F-_gg5ofUHmLMfsJchdqV30mN8IrQx2mPktqiGvCMKI08h7hPYKAMf7R6h5BOHhizQvDdXypmaEDRsOAdpPMsZvL"
-  ;
-  local_508 = 0x34;
-  piVar1 = &DAT_140075998;
-  if (DAT_1400d0188 ==
-      ((uint)*(undefined8 *)
-              (*(longlong *)((longlong)ThreadLocalStoragePointer + (ulonglong)_tls_index * 8) + 0xd0
-              ) ^ 0x519d6cb2)) {
-    piVar1 = &DAT_1400757ec;
+  uVar5 = *(ulonglong *)
+           (*(longlong *)((longlong)ThreadLocalStoragePointer + (ulonglong)_tls_index * 8) + 0xd0);
+  local_590[0] = (undefined8 *******)0xe9d44cb7113359bc;
+  local_510[0] = (HMODULE)0x140073a9f;
+  local_510[1] = (HMODULE)0x34;
+  uVar27 = (uint)uVar5;
+  puVar25 = &UNK_140075998;
+  if (DAT_1400d0188 == (uVar27 ^ 0x519d6cb2)) {
+    puVar25 = &UNK_1400757ec;
   }
-                    /* WARNING: Could not recover jumptable at 0x0001400027ad. Too many branches */
-                    /* WARNING: Treating indirect jump as call */
-  (*(code *)(&LAB_140006d28 + *piVar1))();
-  return;
+  local_500 = (undefined1 (*) [32])local_590;
+                    /* WARNING: Switch is manually overridden */
+  switch(*puVar25) {
+  case 0xffffc12f:
+    FUN_140023e50(0x1400d0170,local_510);
+  }
+  FUN_14000118c(&uStack_300,DAT_1400d0170,DAT_1400d0180);
+  pbVar39 = (byte *)CONCAT44(uStack_300._4_4_,(uint)uStack_300);
+  FUN_140014872(local_510,pbVar39,(HANDLE)CONCAT44(uStack_2f0._4_4_,(undefined4)uStack_2f0));
+  lVar35 = 0x1a4;
+  if (local_510[1] == (HMODULE)(0x6c35ae21519d6cb1 - uVar5)) {
+    lVar35 = 0xd0;
+  }
+                    /* WARNING: Switch is manually overridden */
+  switch(*(undefined4 *)(&UNK_1400756b4 + lVar35)) {
+  case 0xffffecea:
+    local_590[0] = (undefined8 *******)local_500;
+    FUN_14000250d(local_510[0],(longlong)local_510[1],1,1);
+    break;
+  case 0xfffff5c9:
+    uVar24 = (uVar27 ^ 0x519d6cb1) & (uint)local_510[0];
+    uVar31 = 4;
+    if (uVar24 < 4) {
+      uVar31 = uVar24 + 2 & 3;
+    }
+                    /* WARNING: Switch is manually overridden */
+    switch(uVar31) {
+    case 1:
+      break;
+    case 3:
+      (**(code **)((longlong)&local_510[0][1].unused + 3))
+                ((code *)((longlong)&local_510[0][-1].unused + 3));
+      break;
+    case 4:
+      goto override_jmp_140005370_case_1;
+    }
+  }
+  uVar31 = uVar27 ^ 0x519d6cba;
+  FUN_14000250d(pbVar39,*(longlong *)((longlong)aiStack_2f8 + ((ulonglong)uVar31 - 8)),1,1);
+  local_590[0] = (undefined8 *******)
+                 (*(ulonglong *)
+                   (*(longlong *)((longlong)ThreadLocalStoragePointer + (ulonglong)_tls_index * 8) +
+                   0x130) ^ ~local_c8);
+  local_510[0] = (HMODULE)&UNK_140074822;
+  *(undefined8 *)((longlong)local_510 + (ulonglong)(uVar31 & 0xff)) = 0x14;
+  lVar35 = 0xbc;
+  if (_DAT_1400cf810 == 8 - uVar31) {
+    lVar35 = 0x268;
+  }
+  local_500 = (undefined1 (*) [32])local_590;
+                    /* WARNING: Switch is manually overridden */
+  switch(*(undefined4 *)(&UNK_1400756b4 + lVar35)) {
+  case 0xffffc7a9:
+    FUN_140023e50(0x1400cf7f8,local_510);
+  }
+  FUN_14000118c(&uStack_300,_DAT_1400cf7f8,_DAT_1400cf808);
+  uVar21 = CONCAT44(uStack_300._4_4_,(uint)uStack_300);
+  local_590[0] = (undefined8 *******)0xac832a73841a84d7;
+  local_510[0] = (HMODULE)&UNK_140074d40;
+  local_510[1] = (HMODULE)0x14;
+  puVar25 = (undefined4 *)&UNK_14007588c;
+  if (_DAT_1400cfe80 == 0) {
+    puVar25 = (undefined4 *)&UNK_14007585c;
+  }
+  local_500 = (undefined1 (*) [32])local_590;
+                    /* WARNING: Switch is manually overridden */
+  switch(*puVar25) {
+  case 0xffffd115:
+    FUN_140023e50(0x1400cfe68,local_510);
+  }
+  FUN_14000118c(local_510,_DAT_1400cfe68,_DAT_1400cfe78);
+  pHVar33 = local_510[0];
+  pcStack_538 = (code *)FUN_140009863(-0x6651fd12,uVar21,0x36ef164d,local_510[0]);
+  FUN_14000250d(pHVar33,(longlong)local_510[1],1,1);
+  FUN_14000250d((LPVOID)CONCAT44(uStack_300._4_4_,(uint)uStack_300),
+                *(longlong *)((longlong)aiStack_2f8 + ((ulonglong)(0x519d6cba - uVar27) - 8)),1,1);
+  local_590[0] = (undefined8 *******)0x1241e745f3157098;
+  local_510[0] = (HMODULE)&UNK_14007503b;
+  local_510[1] = (HMODULE)0x14;
+  bVar8 = ~(((byte)_DAT_1400cfd98 ^ local_570) * -9 - 0x22);
+  *(undefined8 *********)((longlong)local_510 + (ulonglong)bVar8) = local_590;
+  lVar35 = 0x180;
+  if (_DAT_1400cfd70 ==
+      ((0x519d6cba - uVar27 ^ (uint)bVar8) +
+       (((uint)*(ushort *)
+                (*(longlong *)((longlong)ThreadLocalStoragePointer + (ulonglong)_tls_index * 8) +
+                0x78) * -0x3ba3 + 0x30b) - (uVar31 & 0xff)) & 0xffff)) {
+    lVar35 = 0x310;
+  }
+                    /* WARNING: Switch is manually overridden */
+  switch(*(undefined4 *)(&UNK_1400756b4 + lVar35)) {
+  case 0xffffdeca:
+    FUN_140023e50(0x1400cfd58,local_510);
+  }
+  FUN_14000118c(&uStack_300,_DAT_1400cfd58,_DAT_1400cfd68);
+  uVar21 = CONCAT44(uStack_300._4_4_,(uint)uStack_300);
+  local_590[0] = (undefined8 *******)(0x754c5a0062350169 - uVar5);
+  local_510[0] = (HMODULE)0x14007394a;
+  uVar31 = 0x109794bf - (uint)local_590[0];
+  uVar24 = (uint)local_590[0] ^ 0x109794b8;
+  *(ulonglong *)((longlong)local_510 + (ulonglong)uVar31) = (ulonglong)uVar24;
+  local_500 = (undefined1 (*) [32])local_590;
+                    /* WARNING: Switch is manually overridden */
+  switch(_DAT_1400cf968 ==
+         (byte)(((byte)_DAT_1400cf858 ^
+                *(byte *)(*(longlong *)
+                           ((longlong)ThreadLocalStoragePointer + (ulonglong)_tls_index * 8) + 0x81)
+                ) - (char)uVar31)) {
+  case false:
+    FUN_140023e50(0x1400cf950,local_510);
+  }
+  FUN_14000118c(local_510,_DAT_1400cf950,_DAT_1400cf960);
+  pHVar33 = local_510[0];
+  pcStack_e0 = (code *)FUN_140009863(-0x6651fd12,uVar21,0x21d6c4a4,local_510[0]);
+  FUN_14000250d(pHVar33,*(longlong *)((longlong)local_510 + (ulonglong)(uVar27 ^ 0x519d6cba)),1,1);
+  FUN_14000250d((LPVOID)CONCAT44(uStack_300._4_4_,(uint)uStack_300),
+                CONCAT44(aiStack_2f8[1],aiStack_2f8[0]),1,1);
+  ppppppuVar37 = (undefined8 ******)(-0x10b726c6f9e5c43f - (ulonglong)(uVar27 ^ 0x519d6cba));
+  local_510[0] = (HMODULE)0x140073936;
+  local_510[1] = (HMODULE)0x14;
+  puVar25 = (undefined4 *)&UNK_1400759c0;
+  if (_DAT_1400cfdb8 ==
+      uVar24 - *(int *)(*(longlong *)
+                         ((longlong)ThreadLocalStoragePointer + (ulonglong)_tls_index * 8) + 0x50))
+  {
+    puVar25 = (undefined4 *)&UNK_140075928;
+  }
+  local_590[0] = (undefined8 *******)ppppppuVar37;
+  local_500 = (undefined1 (*) [32])local_590;
+                    /* WARNING: Switch is manually overridden */
+  switch(*puVar25) {
+  case 0xffffd566:
+    FUN_140023e50(0x1400cfda0,local_510);
+  }
+  FUN_14000118c(&uStack_300,_DAT_1400cfda0,_DAT_1400cfdb0);
+  uVar21 = CONCAT44(uStack_300._4_4_,(uint)uStack_300);
+  local_590[0] = (undefined8 *******)0xb0055ec51679b17e;
+  local_510[0] = (HMODULE)0x140073be0;
+  *(undefined8 *)((longlong)local_510 + (ulonglong)(0x519d6cba - uVar27)) = 0x1e;
+  *(undefined8 *********)((longlong)local_510 + (ulonglong)(0x18 - (0x519d6cba - uVar27))) =
+       local_590;
+  puVar25 = (undefined4 *)&UNK_1400756fc;
+  if (_DAT_1400d00a8 == 0) {
+    puVar25 = (undefined4 *)&UNK_1400756e4;
+  }
+                    /* WARNING: Switch is manually overridden */
+  switch(*puVar25) {
+  case 0xffffe819:
+    FUN_140023e50(0x1400d0090,local_510);
+  }
+  FUN_14000118c(local_510,_DAT_1400d0090,_DAT_1400d00a0);
+  pHVar33 = local_510[0];
+  pcStack_e8 = (code *)FUN_140009863(-0x6651fd12,uVar21,0x2b8e2567,local_510[0]);
+  uVar31 = uVar27 ^ 0x519d6cba;
+  FUN_14000250d(pHVar33,*(longlong *)((longlong)local_510 + (ulonglong)uVar31),1,1);
+  FUN_14000250d((LPVOID)CONCAT44(uStack_300._4_4_,(uint)uStack_300),
+                CONCAT44(aiStack_2f8[1],aiStack_2f8[0]),1,1);
+  local_590[0] = (undefined8 *******)0xb7e1d97a58d5a0cc;
+  local_510[0] = (HMODULE)0x140073a75;
+  *(ulonglong *)((longlong)local_510 + (ulonglong)uVar31) = (ulonglong)(uVar31 + 0xc);
+  *(undefined8 *********)((longlong)local_510 + (ulonglong)(0x18 - uVar31)) = local_590;
+  puVar25 = (undefined4 *)&UNK_1400757b0;
+  if (_DAT_1400d0248 == ((int)ppppppuVar37 + uVar31) * ~(uint)local_b0) {
+    puVar25 = (undefined4 *)&UNK_14007581c;
+  }
+                    /* WARNING: Switch is manually overridden */
+  switch(*puVar25) {
+  case 0xffffeb17:
+    FUN_140023e50(0x1400d0230,local_510);
+  }
+  FUN_14000118c(&uStack_300,_DAT_1400d0230,_DAT_1400d0240);
+  uVar21 = CONCAT44(uStack_300._4_4_,(uint)uStack_300);
+  local_590[0] = (undefined8 *******)0xfb2c816e79022c9d;
+  local_510[0] = (HMODULE)&UNK_140074b25;
+  local_510[1] = (HMODULE)0x13;
+  puVar25 = (undefined4 *)&UNK_140075808;
+  if (_DAT_1400cf878 == 0) {
+    puVar25 = (undefined4 *)&UNK_1400758b8;
+  }
+  local_500 = (undefined1 (*) [32])local_590;
+                    /* WARNING: Switch is manually overridden */
+  switch(*puVar25) {
+  case 0xffffef7b:
+    FUN_140023e50(0x1400cf860,local_510);
+  }
+  FUN_14000118c(local_510,_DAT_1400cf860,_DAT_1400cf870);
+  pHVar33 = local_510[0];
+  pcStack_f0 = (code *)FUN_140009863(uVar27 ^ 0xc8336e5c,uVar21,-0x25d0847a,local_510[0]);
+  FUN_14000250d(pHVar33,(longlong)local_510[1],1,1);
+  FUN_14000250d((LPVOID)CONCAT44(uStack_300._4_4_,(uint)uStack_300),
+                CONCAT44(aiStack_2f8[1],aiStack_2f8[0]),1,1);
+  lVar35 = *(longlong *)((longlong)ThreadLocalStoragePointer + (ulonglong)_tls_index * 8);
+  uVar36 = ~((*(ulonglong *)(lVar35 + 0x120) ^ *(ulonglong *)(lVar35 + 8)) + 0xfd00904fad3e8229);
+  puVar18 = FUN_1400128ed(0,uVar36);
+  puVar25 = (undefined4 *)&UNK_140075780;
+  if (puVar18 == (undefined8 *)0x0) {
+    puVar25 = (undefined4 *)&UNK_1400757f4;
+  }
+                    /* WARNING: Switch is manually overridden */
+  switch(*puVar25) {
+  case 0xffffe5b6:
+    *(undefined8 *)((longlong)puVar18 + 7) = 0x6c61756469736572;
+    *puVar18 = 0x726e6f6974636e75;
+    lVar35 = (ulonglong)(uVar31 + 0xc ^ uVar31) + local_78;
+    FUN_1400146e3(local_510,7,0,2,(ulonglong)(0xd1147091 - (~local_514 - (uVar31 ^ (uint)uVar36))));
+    pHVar33 = local_510[1];
+    puVar25 = (undefined4 *)&UNK_14007596c;
+    if ((char)local_510[0] != '\0') {
+      puVar25 = (undefined4 *)&UNK_1400756d4;
+    }
+    pbVar39 = (byte *)(lVar35 + (ulonglong)uVar31 + 0x25486b30cf11944e + (longlong)puVar18);
+                    /* WARNING: Switch is manually overridden */
+    switch(*puVar25) {
+    case 0xffffdd59:
+      puStack_d8 = puVar18;
+      pbVar14 = (byte *)((longlong)puVar18 + 1);
+      uVar23 = (ulonglong)(uVar27 + 0xae629354);
+      pcStack_540 = (code *)CONCAT44(pcStack_540._4_4_,uVar27 + 0xae6293c3);
+      *(short *)&local_510[1]->unused = (short)(uVar27 + 0xae6293c3);
+      local_510[0] = local_510[1];
+      uVar22 = (ulonglong)
+               (byte)(((byte)*(undefined8 *)
+                              (*(longlong *)
+                                ((longlong)ThreadLocalStoragePointer + (ulonglong)_tls_index * 8) +
+                              0x130) ^
+                      DAT_1400d029f * -0x21 -
+                      ((char)(uVar27 ^ 0xc8336e5c) - (char)(uVar27 + 0xae629354))) * -0x1f - 0x1c);
+      *(undefined1 (**) [32])((longlong)local_510 + uVar22) = local_500;
+      local_500 = (undefined1 (*) [32])0x1;
+      uVar31 = 0;
+      lVar35 = 0x2c8;
+      if (pbVar14 == (byte *)0x0) {
+        lVar35 = 0x264;
+      }
+      uVar29 = 1;
+      uStack_548 = uVar23;
+                    /* WARNING: Switch is manually overridden */
+      switch(*(undefined4 *)(&UNK_1400756b4 + lVar35)) {
+      case 0xfffff355:
+        goto override_jmp_140004b5e_case_1;
+      }
+override_jmp_140004b5e_case_0:
+      do {
+        uVar9 = (ushort)uVar31;
+                    /* WARNING: Switch is manually overridden */
+        switch(uVar9 == (byte)(((local_56a - (char)pcStack_540) - (byte)uVar36) -
+                              ((byte)uVar23 ^ (byte)uVar36))) {
+        case false:
+          lVar35 = 400;
+          if (local_500 == (undefined1 (*) [32])*(undefined8 ********)((longlong)local_510 + uVar22)
+             ) {
+            lVar35 = 0x6c;
+          }
+          uVar31 = 0;
+          pbVar17 = pbVar14;
+                    /* WARNING: Switch is manually overridden */
+          switch(*(undefined4 *)(&UNK_1400756b4 + lVar35)) {
+          case 0xfffff196:
+            goto override_jmp_1400031d1_case_1;
+          }
+          break;
+        case true:
+                    /* WARNING: Switch is manually overridden */
+          switch(pbVar14 == pbVar39) {
+          case false:
+            pHStack_568 = pHVar33;
+            bVar8 = *pbVar14;
+            lVar35 = 0x2b0;
+            if ((char)bVar8 < '\0') {
+              lVar35 = 0;
+            }
+            break;
+          case true:
+            goto override_jmp_140004b5e_case_1;
+          }
+          uVar31 = (uint)bVar8;
+          uVar23 = uStack_548;
+                    /* WARNING: Switch is manually overridden */
+          switch(*(undefined4 *)(&UNK_1400756b4 + lVar35)) {
+          case 0xffffcf86:
+            uVar24 = uVar31 & 0x1f;
+            uVar31 = uVar24 << 6 | pbVar14[1] & 0x3f;
+            lVar35 = 0x24c;
+            if ((byte)(0x519d6d91 - uVar27) < bVar8) {
+              lVar35 = 0x240;
+            }
+            pbVar17 = pbVar14 + 2;
+                    /* WARNING: Switch is manually overridden */
+            switch(*(undefined4 *)(&UNK_1400756b4 + lVar35)) {
+            case 0xfffff30e:
+              uVar34 = (pbVar14[1] & 0x3f) << 6 | pbVar14[2] & 0x3f;
+              uVar31 = uVar24 << 0xc | uVar34;
+              pbVar2 = pbVar14 + 3;
+              pbVar17 = pbVar2;
+                    /* WARNING: Switch is manually overridden */
+              switch((bVar8 <= (byte)(uVar27 ^ 0x519d6c5d)) * '\x02') {
+              case '\0':
+                pbVar17 = pbVar14 + 4;
+                uVar31 = 0x51b96cb2 - uVar27 & uVar24 << 0x12 | *pbVar2 & 0x3f | uVar34 << 6;
+              case '\x02':
+                puVar25 = (undefined4 *)&UNK_1400757e8;
+                if (uVar31 < (0x519d6d91 - uVar27) - ((uVar27 ^ 0x519d6c5d) + (int)_DAT_1400cf880))
+                {
+                  puVar25 = (undefined4 *)&UNK_140075900;
+                }
+                    /* WARNING: Switch is manually overridden */
+                switch(*puVar25) {
+                case 0xffffc440:
+                  uVar9 = (short)(uVar31 >> 10) + 0x3fc0U | 0xd800;
+                  uVar31 = uVar27 + 0xae62974d & uVar31 | 0xdc00;
+                  lVar35 = 400;
+                  if (local_500 ==
+                      (undefined1 (*) [32])*(undefined8 ********)((longlong)local_510 + uVar22)) {
+                    lVar35 = 0x6c;
+                  }
+                  pHVar33 = pHStack_568;
+                  pbVar14 = pbVar17;
+                    /* WARNING: Switch is manually overridden */
+                  switch(*(undefined4 *)(&UNK_1400756b4 + lVar35)) {
+                  case 0xffffe688:
+                    goto override_jmp_1400031d1_case_0;
+                  }
+override_jmp_1400031d1_case_1:
+                  uVar32 = (longlong)pbVar39 - (longlong)pbVar17;
+                  uVar32 = (ulonglong)(uVar32 % 3 != (ulonglong)(uVar27 ^ 0x519d6cb2)) +
+                           ((ulonglong)uVar29 - (ulonglong)((short)uVar31 == 0)) + uVar32 / 3 + 2;
+                  pbVar14 = pbVar17;
+                  goto LAB_140005f51;
+                }
+              }
+            }
+            break;
+          case 0xffffd8eb:
+            pbVar17 = pbVar14 + 1;
+                    /* WARNING: Switch is manually overridden */
+          }
+          uVar9 = (ushort)uVar31;
+          uVar31 = 0;
+          lVar35 = 400;
+          if (local_500 == (undefined1 (*) [32])*(undefined8 ********)((longlong)local_510 + uVar22)
+             ) {
+            lVar35 = 0x6c;
+          }
+          pbVar14 = pbVar17;
+                    /* WARNING: Switch is manually overridden */
+          switch(*(undefined4 *)(&UNK_1400756b4 + lVar35)) {
+          case 0xfffff196:
+            goto override_jmp_1400031d1_case_1;
+          }
+        }
+override_jmp_1400031d1_case_0:
+        *(ushort *)((longlong)&pHVar33->unused + (longlong)local_500 * 2) = uVar9;
+        lVar35 = 0x2c8;
+        if (pbVar14 == (byte *)0x0) {
+          lVar35 = 0x264;
+        }
+        local_500 = (undefined1 (*) [32])((longlong)local_500 + 1);
+                    /* WARNING: Switch is manually overridden */
+        switch(*(undefined4 *)(&UNK_1400756b4 + lVar35)) {
+        case 0xfffff355:
+override_jmp_140004b5e_case_1:
+          do {
+            lVar35 = 0x44;
+            if (uVar29 == 0) {
+              lVar35 = 0x2d4;
+            }
+                    /* WARNING: Switch is manually overridden */
+            switch(*(undefined4 *)(&UNK_1400756b4 + lVar35)) {
+            case 0xffffba87:
+              lVar35 = *(longlong *)((longlong)local_510 + uVar22);
+              FUN_14000250d(puStack_d8,0xf,1,1);
+              lVar12 = (*pcStack_538)(0,0,1,pHVar33);
+              puVar25 = (undefined4 *)&UNK_140075878;
+              if (lVar12 == 0) {
+                puVar25 = (undefined4 *)&UNK_14007576c;
+              }
+                    /* WARNING: Switch is manually overridden */
+              switch(*puVar25) {
+              case 0xffffc6ec:
+                (*pcStack_e0)(lVar12);
+                (*pcStack_e8)(lVar12,0);
+                (*pcStack_f0)(lVar12);
+              }
+              uVar31 = ~(~(uint)local_55e * 0x7d5) & 0xffff;
+              FUN_14000250d(pHVar33,lVar35,2,(ulonglong)uVar31);
+              uStack_300._0_4_ = 0x809e9bfd;
+              uStack_300._4_4_ = 0x3cf965c0;
+              local_510[0] = (HMODULE)&UNK_1400748d4;
+              local_510[1] = (HMODULE)0x14;
+              local_500 = (undefined1 (*) [32])&uStack_300;
+              puVar25 = (undefined4 *)&UNK_140075888;
+              if (_DAT_1400cfce8 == 2 - uVar31) {
+                puVar25 = (undefined4 *)&UNK_140075820;
+              }
+                    /* WARNING: Switch is manually overridden */
+              switch(*puVar25) {
+              case 0xffffda04:
+                FUN_140023e50(0x1400cfcd0,local_510);
+              }
+              FUN_14000118c(local_510,_DAT_1400cfcd0,_DAT_1400cfce0);
+              pHVar33 = local_510[0];
+              local_590[0] = (undefined8 *******)0x16f34ff9d0dd348c;
+              uStack_300._0_4_ = 0x40074a8f;
+              uStack_300._4_4_ = 1;
+              aiStack_2f8[0] = 0x1a;
+              aiStack_2f8[1] = 0;
+              uStack_2f0 = local_590;
+              puVar25 = (undefined4 *)&UNK_140075848;
+              if (_DAT_1400cf9e8 == (uVar27 ^ 0x519d6cb2)) {
+                puVar25 = (undefined4 *)&UNK_1400758dc;
+              }
+                    /* WARNING: Switch is manually overridden */
+              switch(*puVar25) {
+              case 0xffffd634:
+                FUN_140023e50(0x1400cf9d0,&uStack_300);
+              }
+              FUN_14000118c(&uStack_300,_DAT_1400cf9d0,_DAT_1400cf9e0);
+              pHVar19 = (HMODULE)CONCAT44(uStack_300._4_4_,(uint)uStack_300);
+              uVar31 = 0xea00cb09 - uVar27;
+              pcVar13 = (code *)FUN_140009863(-0x6651fd12,pHVar33,uVar31,pHVar19);
+              FUN_14000250d(pHVar19,*(longlong *)
+                                     ((longlong)aiStack_2f8 + ((ulonglong)(uVar31 ^ 0x98635e5f) - 8)
+                                     ),1,1);
+              FUN_14000250d(local_510[0],(longlong)local_510[1],1,1);
+              FUN_1400237e0((undefined1 (*) [32])local_510,0,0x208);
+              uStack_300._0_4_ = 0x104;
+              (*pcVar13)((undefined1 (*) [32])local_510,&uStack_300);
+              local_590[0] = (undefined8 *******)0xa40179228f4f3086;
+              local_510[0] = (HMODULE)&UNK_1400751ad;
+              local_510[1] = (HMODULE)0x14;
+              *(undefined8 *********)((longlong)local_510 + (ulonglong)(uVar31 ^ 0x98635e47)) =
+                   local_590;
+              lVar35 = 0x10;
+              if (_DAT_1400d0020 == -0x679ca1a9 - uVar31) {
+                lVar35 = 0xe8;
+              }
+                    /* WARNING: Switch is manually overridden */
+              switch(*(undefined4 *)(&UNK_1400756b4 + lVar35)) {
+              case 0x24e:
+                FUN_140023e50(0x1400d0008,local_510);
+              }
+              FUN_14000118c(&uStack_300,_DAT_1400d0008,_DAT_1400d0018);
+              uVar21 = CONCAT44(uStack_300._4_4_,(uint)uStack_300);
+              local_590[0] = (undefined8 *******)0xad41bf999774439b;
+              local_510[0] = (HMODULE)&UNK_140074701;
+              local_510[1] = (HMODULE)0x24;
+              puVar25 = (undefined4 *)&UNK_14007584c;
+              if (_DAT_1400cfbc8 == 0x519d6cb2 - uVar27) {
+                puVar25 = (undefined4 *)&UNK_14007572c;
+              }
+              local_500 = (undefined1 (*) [32])local_590;
+                    /* WARNING: Switch is manually overridden */
+              switch(*puVar25) {
+              case 0xffffca5f:
+                FUN_140023e50(0x1400cfbb0,local_510);
+              }
+              FUN_14000118c(local_510,_DAT_1400cfbb0,_DAT_1400cfbc0);
+              pHVar33 = local_510[0];
+              pcVar13 = (code *)FUN_140009863(-0x6651fd12,uVar21,-0xb39dff3,local_510[0]);
+              FUN_14000250d(pHVar33,(longlong)local_510[1],1,1);
+              uVar31 = 0x519d6cba - uVar27;
+              FUN_14000250d((LPVOID)CONCAT44(uStack_300._4_4_,(uint)uStack_300),
+                            *(longlong *)((longlong)aiStack_2f8 + ((ulonglong)uVar31 - 8)),1,1);
+              uStack_300 = (undefined8 ******)((ulonglong)uVar31 + 0x20993b83197e65a2);
+              local_510[0] = (HMODULE)&UNK_1400748f8;
+              local_510[1] = (HMODULE)(ulonglong)
+                                      (byte)-((char)(0x519d6cb2 - uVar27) + (char)uStack_300 +
+                                              local_571 + (char)uVar31 + '\x17');
+              *(undefined8 **)((longlong)local_510 + (ulonglong)(0x18 - uVar31)) = &uStack_300;
+              lVar35 = 0x1b4;
+              if (_DAT_1400d01c8 == 0) {
+                lVar35 = 0x2ec;
+              }
+                    /* WARNING: Switch is manually overridden */
+              switch(*(undefined4 *)(&UNK_1400756b4 + lVar35)) {
+              case 0xfffff28a:
+                FUN_140023e50(0x1400d01b0,local_510);
+              }
+              FUN_14000118c(local_510,_DAT_1400d01b0,_DAT_1400d01c0);
+              pHVar33 = local_510[0];
+              local_590[0] = (undefined8 *******)0xe81ec32dc9993ea5;
+              uStack_300._0_4_ = 0x4007546e;
+              uStack_300._4_4_ = 1;
+              aiStack_2f8[0] = uVar27 + 0xae629375;
+              aiStack_2f8[1] = 0;
+              puVar25 = (undefined4 *)&UNK_140075954;
+              if (_DAT_1400d0208 == 0) {
+                puVar25 = (undefined4 *)&UNK_140075788;
+              }
+              uStack_2f0 = local_590;
+                    /* WARNING: Switch is manually overridden */
+              switch(*puVar25) {
+              case 0xffffe3ae:
+                FUN_140023e50(0x1400d01f0,&uStack_300);
+              }
+              FUN_14000118c(&uStack_300,_DAT_1400d01f0,_DAT_1400d0200);
+              pHVar19 = (HMODULE)CONCAT44(uStack_300._4_4_,(uint)uStack_300);
+              iVar30 = -uVar27 + -0x14b49060;
+              pcVar16 = (code *)FUN_140009863(iVar30,pHVar33,0x4062e75b,pHVar19);
+              uVar36 = (ulonglong)(-uVar27 + 0x519d6cba);
+              FUN_14000250d(pHVar19,*(longlong *)((longlong)aiStack_2f8 + (uVar36 - 8)),1,1);
+              FUN_14000250d(local_510[0],(longlong)local_510[1],1,1);
+              FUN_1400237e0((undefined1 (*) [32])local_510,0,0x208);
+              (*pcVar13)((undefined1 (*) [32])local_510);
+              FUN_1400237e0((undefined1 (*) [32])&uStack_300,0,0x208);
+              (*pcVar16)((undefined1 (*) [32])&uStack_300,0x104);
+              bVar8 = (byte)iVar30;
+              local_590[0] = (undefined8 *******)0x8354529e936bfff;
+              local_510[0] = (HMODULE)&UNK_140074b5b;
+              *(undefined8 *)((longlong)local_510 + uVar36) = 0x14;
+              lVar35 = 0x148;
+              if (_DAT_1400cff78 ==
+                  (byte)(((bVar8 ^ 0x11) - bVar8 ^
+                         (byte)*(undefined8 *)
+                                (*(longlong *)
+                                  ((longlong)ThreadLocalStoragePointer + (ulonglong)_tls_index * 8)
+                                + 0xf8) ^ local_56d) * '_')) {
+                lVar35 = 0x15c;
+              }
+              local_500 = (undefined1 (*) [32])local_590;
+                    /* WARNING: Switch is manually overridden */
+              switch(*(undefined4 *)(&UNK_1400756b4 + lVar35)) {
+              case 0xffffcb9b:
+                FUN_140023e50(0x1400cff60,local_510);
+              }
+              FUN_14000118c(&uStack_300,_DAT_1400cff60,_DAT_1400cff70);
+              uVar21 = CONCAT44(uStack_300._4_4_,(uint)uStack_300);
+              local_590[0] = (undefined8 *******)0xe1c5648d1145eea;
+              local_510[0] = (HMODULE)&UNK_140074ddb;
+              uVar31 = 0x519d6cba - uVar27;
+              *(undefined8 *)((longlong)local_510 + (ulonglong)uVar31) = 0x1a;
+              *(undefined8 *********)
+               ((longlong)local_510 +
+               (ulonglong)
+               (((*(ushort *)
+                   (*(longlong *)((longlong)ThreadLocalStoragePointer + (ulonglong)_tls_index * 8) +
+                   0x7a) - uVar31) + -0x3156) * 0x3b2f + 0x87bd & 0xffff)) = local_590;
+              lVar35 = 0x270;
+              if (_DAT_1400cf5c0 == (uVar31 ^ 8)) {
+                lVar35 = 0x7c;
+              }
+                    /* WARNING: Switch is manually overridden */
+              switch(*(undefined4 *)(&UNK_1400756b4 + lVar35)) {
+              case 0xffffd252:
+                FUN_140023e50(0x1400cf5a8,local_510);
+              }
+              FUN_14000118c(local_510,_DAT_1400cf5a8,_DAT_1400cf5b8);
+              pHVar33 = local_510[0];
+              pcVar13 = (code *)FUN_140009863(-0x6651fd12,uVar21,0xedbd755,local_510[0]);
+              FUN_14000250d(pHVar33,(longlong)local_510[1],1,1);
+              FUN_14000250d((LPVOID)CONCAT44(uStack_300._4_4_,(uint)uStack_300),
+                            CONCAT44(aiStack_2f8[1],aiStack_2f8[0]),1,1);
+              local_590[0] = (undefined8 *******)(uVar5 ^ 0xb4cd0b101c043a86);
+              local_510[0] = (HMODULE)&UNK_140075027;
+              local_510[1] = (HMODULE)0x14;
+              *(undefined8 *********)
+               ((longlong)local_510 + (ulonglong)(0x4d995644 - (int)local_590[0])) = local_590;
+              puVar25 = (undefined4 *)&UNK_14007593c;
+              if (_DAT_1400cf500 == 0) {
+                puVar25 = (undefined4 *)&UNK_1400757a0;
+              }
+                    /* WARNING: Switch is manually overridden */
+              switch(*puVar25) {
+              case 0xfffff514:
+                FUN_140023e50(0x1400cf4e8,local_510);
+              }
+              FUN_14000118c(&uStack_300,_DAT_1400cf4e8,_DAT_1400cf4f8);
+              uVar21 = CONCAT44(uStack_300._4_4_,(uint)uStack_300);
+              local_590[0] = (undefined8 *******)0x7c91d739470985c6;
+              local_510[0] = (HMODULE)0x140075269;
+              local_510[1] = (HMODULE)(ulonglong)(-uVar27 + 0x519d6cc5);
+              puVar25 = (undefined4 *)&UNK_1400758a8;
+              if (_DAT_1400cfae0 == -uVar27 + 0x519d6cb2) {
+                puVar25 = (undefined4 *)&UNK_1400756c8;
+              }
+              local_500 = (undefined1 (*) [32])local_590;
+                    /* WARNING: Switch is manually overridden */
+              switch(*puVar25) {
+              case 0xfffff277:
+                FUN_140023e50(0x1400cfac8,local_510);
+              }
+              FUN_14000118c(local_510,_DAT_1400cfac8,_DAT_1400cfad8);
+              pHVar33 = local_510[0];
+              uVar31 = uVar27 + 0x4810963c;
+              pcVar16 = (code *)FUN_140009863(uVar31,uVar21,-0x594ead2f,local_510[0]);
+              FUN_14000250d(pHVar33,*(longlong *)
+                                     ((longlong)local_510 + (ulonglong)(0x99ae02f6 - uVar31)),1,1);
+              FUN_14000250d((LPVOID)CONCAT44(uStack_300._4_4_,(uint)uStack_300),
+                            CONCAT44(aiStack_2f8[1],aiStack_2f8[0]),1,1);
+              uStack_300._0_4_ = 0xbf4a789c;
+              uStack_300._4_4_ = 0x2e7a052;
+              local_510[0] = (HMODULE)&UNK_14007476d;
+              local_510[1] = (HMODULE)0x14;
+              *(undefined8 **)((longlong)local_510 + (ulonglong)(uVar31 ^ 0x99ae02fe)) = &uStack_300
+              ;
+              lVar35 = 0x250;
+              if (_DAT_1400cff10 == uVar27 + 0xae62934e) {
+                lVar35 = 0x10c;
+              }
+                    /* WARNING: Switch is manually overridden */
+              switch(*(undefined4 *)(&UNK_1400756b4 + lVar35)) {
+              case 0xfffff846:
+                FUN_140023e50(0x1400cfef8,local_510);
+              }
+              FUN_14000118c(local_510,_DAT_1400cfef8,_DAT_1400cff08);
+              pHVar33 = local_510[0];
+              local_590[0] = (undefined8 *******)(uVar5 ^ 0x81c3e683e30a19ef);
+              uStack_300._0_4_ = 0x40074ce9;
+              uStack_300._4_4_ = 1;
+              aiStack_2f8[0] = -0x4d688a87 - (int)local_590[0];
+              aiStack_2f8[1] = 0;
+              lVar35 = 0x1c;
+              if (_DAT_1400d0108 == -0x4d688aa3 - (int)local_590[0]) {
+                lVar35 = 0x50;
+              }
+              uStack_2f0 = local_590;
+                    /* WARNING: Switch is manually overridden */
+              switch(*(undefined4 *)(&UNK_1400756b4 + lVar35)) {
+              case 0x19e:
+                FUN_140023e50(0x1400d00f0,&uStack_300);
+              }
+              FUN_14000118c(&uStack_300,_DAT_1400d00f0,_DAT_1400d0100);
+              pHVar19 = (HMODULE)CONCAT44(uStack_300._4_4_,(uint)uStack_300);
+              pcVar20 = (code *)FUN_140009863(-0x6651fd12,pHVar33,-0x17d0dac0,pHVar19);
+              uVar31 = ~(local_524 * 0x807ff71 + 0x653911caU) * -0x31ae38cb + 0xbeb12d3a;
+              FUN_14000250d(pHVar19,*(longlong *)((longlong)aiStack_2f8 + ((ulonglong)uVar31 - 8)),1
+                            ,1);
+              FUN_14000250d(local_510[0],(longlong)local_510[1],1,1);
+              uVar21 = (*pcVar13)();
+              (*pcVar16)(uVar21);
+              (*pcVar20)();
+              local_590[0] = (undefined8 *******)((ulonglong)uVar31 + 0x60c19607d1c49031);
+              local_510[0] = (HMODULE)&UNK_14007494b;
+              local_510[1] = (HMODULE)(ulonglong)(uVar31 ^ 0x1c);
+              puVar25 = (undefined4 *)&UNK_1400759ac;
+              if (_DAT_1400cf850 == 0) {
+                puVar25 = (undefined4 *)&UNK_1400757e4;
+              }
+              local_500 = (undefined1 (*) [32])local_590;
+                    /* WARNING: Switch is manually overridden */
+              switch(*puVar25) {
+              case 0xffffd8d2:
+                FUN_140023e50(0x1400cf838,local_510);
+              }
+              FUN_14000118c(&uStack_300,_DAT_1400cf838,_DAT_1400cf848);
+              uVar21 = CONCAT44(uStack_300._4_4_,(uint)uStack_300);
+              local_590[0] = (undefined8 *******)0x5cfc4b173d8e8491;
+              local_510[0] = (HMODULE)0x140073b42;
+              uVar31 = uVar27 + 0xae629356;
+              *(ulonglong *)((longlong)local_510 + (ulonglong)uVar31) =
+                   (ulonglong)(uVar27 + 0xae629368);
+              lVar35 = 0x88;
+              if (_DAT_1400cfec8 == 8 - uVar31) {
+                lVar35 = 0x4c;
+              }
+              local_500 = (undefined1 (*) [32])local_590;
+                    /* WARNING: Switch is manually overridden */
+              switch(*(undefined4 *)(&UNK_1400756b4 + lVar35)) {
+              case 0xffffe9d5:
+                FUN_140023e50(0x1400cfeb0,local_510);
+              }
+              FUN_14000118c(local_510,_DAT_1400cfeb0,_DAT_1400cfec0);
+              pHVar33 = local_510[0];
+              pcStack_540 = (code *)FUN_140009863(-0x6651fd12,uVar21,-0x6f144ef6,local_510[0]);
+              FUN_14000250d(pHVar33,(longlong)local_510[1],1,1);
+              FUN_14000250d((LPVOID)CONCAT44(uStack_300._4_4_,(uint)uStack_300),
+                            CONCAT44(aiStack_2f8[1],aiStack_2f8[0]),1,1);
+              local_590[0] = (undefined8 *******)0xf5b0acdf36893489;
+              local_510[0] = (HMODULE)0x140073983;
+              local_510[1] = (HMODULE)0x14;
+              lVar35 = 0xa8;
+              if (_DAT_1400cf540 == 0) {
+                lVar35 = 0x2c0;
+              }
+              local_500 = (undefined1 (*) [32])local_590;
+                    /* WARNING: Switch is manually overridden */
+              switch(*(undefined4 *)(&UNK_1400756b4 + lVar35)) {
+              case 0xffffcb85:
+                FUN_140023e50(0x1400cf528,local_510);
+              }
+              FUN_14000118c(&uStack_300,_DAT_1400cf528,_DAT_1400cf538);
+              uVar21 = CONCAT44(uStack_300._4_4_,(uint)uStack_300);
+              local_590[0] = (undefined8 *******)0x2578c751252045c2;
+              local_510[0] = (HMODULE)&UNK_1400747d4;
+              uVar38 = 0x519d6cba - uVar27;
+              *(undefined8 *)((longlong)local_510 + (ulonglong)uVar38) = 0x20;
+              uVar24 = (uint)*(undefined8 *)
+                              (*(longlong *)
+                                ((longlong)ThreadLocalStoragePointer + (ulonglong)_tls_index * 8) +
+                              200) ^ local_55c ^ uVar31;
+              uVar34 = uVar24 & 0xffff;
+              local_500 = (undefined1 (*) [32])local_590;
+                    /* WARNING: Switch is manually overridden */
+              switch(_DAT_1400d0060 != uVar34) {
+              case true:
+                FUN_140023e50(0x1400d0048,local_510);
+              }
+              FUN_14000118c(local_510,_DAT_1400d0048,_DAT_1400d0058);
+              pHVar33 = local_510[0];
+              pHVar19 = (HMODULE)FUN_140009863(-0x6651fd12,uVar21,
+                                               ((int)local_80 * -0x5e6c247 + -0x4c3a812) -
+                                               (8 - uVar31),local_510[0]);
+              FUN_14000250d(pHVar33,(longlong)local_510[1],1,1);
+              FUN_14000250d((LPVOID)CONCAT44(uStack_300._4_4_,(uint)uStack_300),
+                            CONCAT44(aiStack_2f8[1],aiStack_2f8[0]),1,1);
+              uStack_300 = (undefined8 ******)
+                           ((ulonglong)uVar34 -
+                           ((ulonglong)uVar38 + _DAT_1400cfed0 * -0x5d618dacd54608c5));
+              local_510[0] = (HMODULE)&UNK_140074861;
+              bVar8 = (byte)uVar24;
+              *(undefined8 *)
+               ((longlong)local_510 + (ulonglong)(byte)~(local_56b - ((byte)uVar38 ^ bVar8))) = 8;
+              local_500 = (undefined1 (*) [32])&uStack_300;
+              lVar35 = 0x304;
+              if (_DAT_1400d0080 == 0) {
+                lVar35 = 300;
+              }
+                    /* WARNING: Switch is manually overridden */
+              switch(*(undefined4 *)(&UNK_1400756b4 + lVar35)) {
+              case 0xffffe2f4:
+                FUN_140023e50(0x1400d0068,local_510);
+              }
+              FUN_14000118c(local_510,_DAT_1400d0068,_DAT_1400d0078);
+              lVar35 = *(longlong *)((longlong)local_510 + (ulonglong)(0x519d6cc2 - uVar27));
+              lVar12 = 0xdc;
+              if (lVar35 == (local_88 * -0x13e8e306a4df5e89 ^ (ulonglong)(0x519d6cc2 - uVar27) ^
+                            0xcddcbc262a149d20) * -0x564fe606f27e5573) {
+                lVar12 = 0xf0;
+              }
+              pHVar33 = (HMODULE)((longlong)&local_510[0]->unused + lVar35);
+                    /* WARNING: Switch is manually overridden */
+              switch(*(undefined4 *)(&UNK_1400756b4 + lVar12)) {
+              case 0xffffc0ee:
+                cVar3 = *(code *)&local_510[0]->unused;
+                uVar31 = (uint)(byte)cVar3;
+                bVar6 = (byte)uVar5;
+                puVar25 = (undefined4 *)&UNK_140075938;
+                if ((char)(bVar6 ^ 0x4d) < (char)cVar3) {
+                  puVar25 = (undefined4 *)&UNK_14007587c;
+                }
+                    /* WARNING: Switch is manually overridden */
+                switch(*puVar25) {
+                case 0xffffbc2a:
+                  pHVar15 = (HMODULE)((longlong)&local_510[0]->unused +
+                                     (ulonglong)(3 - (uVar27 ^ 0x519d6cb3)));
+                  uVar24 = (byte)*(code *)((longlong)&local_510[0]->unused + 1) & 0x3f;
+                  lVar35 = 0x90;
+                  if ((bVar6 ^ 0x6d) < (byte)cVar3) {
+                    lVar35 = 0xc4;
+                  }
+                  uVar29 = (ushort)((uVar31 & 0x1f) <<
+                                   (((byte)*(undefined8 *)
+                                            (*(longlong *)
+                                              ((longlong)ThreadLocalStoragePointer +
+                                              (ulonglong)_tls_index * 8) + 0xf0) ^
+                                    ((char)_DAT_1400d0294 - bVar8) * -0x67) & 0x1f)) |
+                           (ushort)uVar24;
+                    /* WARNING: Switch is manually overridden */
+                  switch(*(undefined4 *)(&UNK_1400756b4 + lVar35)) {
+                  case 0xffffc4ab:
+                    uVar24 = uVar24 << 6 | (byte)*(code *)&pHVar15->unused & 0x3f;
+                    puVar25 = (undefined4 *)&UNK_1400756c0;
+                    if ((byte)(bVar6 + 0x50 ^ 0xed) < (byte)cVar3) {
+                      puVar25 = (undefined4 *)&UNK_140075850;
+                    }
+                    /* WARNING: Switch is manually overridden */
+                    switch(*puVar25) {
+                    case 0xffffde38:
+                      pHVar15 = local_510[0] + 1;
+                      uVar31 = (uVar27 ^ 0x519d6cb3) * (int)local_c0 + 0x51ee4f7c &
+                               (uint)(byte)*(code *)((longlong)&local_510[0]->unused + 3) |
+                               (uVar31 & 7) << 0x12 |
+                               uVar24 << ((-0x4b - bVar6) - (char)local_520 & 0x1f);
+                      break;
+                    case 0xffffdf0b:
+                      pHVar15 = (HMODULE)((longlong)&local_510[0]->unused + 3);
+                      uVar31 = uVar24 | (uVar31 & 0x1f) << ((bVar6 + 0x50 ^ 0xe) & 0x1f);
+                    }
+                    if (uVar31 < 0x10000) goto LAB_140004c0e;
+                    uVar29 = (ushort)(uVar31 + (uVar27 ^ 0x51626cb2) >> 10) | 0xd800;
+                    uVar31 = (uVar27 ^ 0x51626cb2) - 0xfefc01 & uVar31 | 0xdc00;
+                    lVar35 = 1;
+                    break;
+                  case 0xffffdf58:
+                    goto LAB_140004c90;
+                  }
+                  break;
+                case 0xffffdedb:
+                  pHVar15 = (HMODULE)((longlong)&local_510[0]->unused + 1);
+LAB_140004c0e:
+                  uVar29 = (ushort)uVar31;
+LAB_140004c90:
+                  uVar31 = 0;
+                  lVar35 = 0;
+                }
+                uVar23 = (ulonglong)
+                         ((ulonglong)((longlong)pHVar33 - (longlong)pHVar15) % 3 !=
+                         (ulonglong)(3 - (uVar27 ^ 0x519d6cb1))) + lVar35 +
+                         (ulonglong)((longlong)pHVar33 - (longlong)pHVar15) /
+                         (ulonglong)(uVar27 ^ 0x519d6cb1);
+                uVar36 = 3;
+                if (3 < uVar23) {
+                  uVar36 = uVar23;
+                }
+                pHStack_568 = pHVar19;
+                FUN_1400146e3(&uStack_300,uVar36 + 1,0,2,2);
+                puVar25 = (undefined4 *)&UNK_1400756e0;
+                if ((char)uStack_300 != '\0') {
+                  puVar25 = (undefined4 *)&UNK_1400757c4;
+                }
+                break;
+              case 0xffffc522:
+                pvVar40 = (LPVOID)0x2;
+                lStack_598 = 0;
+                pppppppuVar28 = uStack_2f0;
+                goto LAB_14000325c;
+              }
+                    /* WARNING: Switch is manually overridden */
+              switch(*puVar25) {
+              case 0xffffe777:
+                uVar21 = *(undefined8 *)
+                          ((longlong)aiStack_2f8 + ((ulonglong)(0x519d6cc2 - uVar27) - 8));
+                puVar26 = (ushort *)CONCAT44(aiStack_2f8[1],aiStack_2f8[0]);
+                *puVar26 = uVar29;
+                uStack_300._0_4_ = aiStack_2f8[0];
+                uStack_300._4_4_ = aiStack_2f8[1];
+                uVar36 = (ulonglong)(0x18 - (0x519d6cc2 - uVar27));
+                *(undefined8 *)((longlong)aiStack_2f8 + (uVar36 - 8)) = uVar21;
+                uStack_2f0._0_4_ = 1;
+                uStack_2f0._4_4_ = 0;
+                pppppppuVar28 = (undefined8 *******)0x1;
+                lVar35 = 0x290;
+                if ((ushort)uVar31 == (ushort)((ushort)uVar5 ^ 0x6cb2)) {
+                  lVar35 = 0x22c;
+                }
+                pHVar19 = pHVar15;
+                    /* WARNING: Switch is manually overridden */
+                switch(*(undefined4 *)(&UNK_1400756b4 + lVar35)) {
+                case 0xffffcdf3:
+                  goto override_jmp_140004276_case_1;
+                }
+override_jmp_140004276_case_0:
+                lVar35 = 0x2b4;
+                if (pHVar19 == pHVar33) {
+                  lVar35 = 0x25c;
+                }
+                    /* WARNING: Switch is manually overridden */
+                switch(*(undefined4 *)(&UNK_1400756b4 + lVar35)) {
+                case 0xffffc4f3:
+                  pvVar40 = (LPVOID)CONCAT44(uStack_300._4_4_,(uint)uStack_300);
+                  lStack_598 = *(longlong *)((longlong)aiStack_2f8 + (uVar36 - 8));
+                  pHVar19 = pHStack_568;
+                  break;
+                case 0xffffca11:
+                  cVar3 = *(code *)&pHVar19->unused;
+                  lVar35 = 0x278;
+                  if ((char)(-0x4f - bVar6) < (char)cVar3) {
+                    lVar35 = 0x1b0;
+                  }
+                  uVar24 = (uint)(byte)cVar3;
+                    /* WARNING: Switch is manually overridden */
+                  switch(*(undefined4 *)(&UNK_1400756b4 + lVar35)) {
+                  case 0xffffcf3c:
+                    uVar34 = uVar24 & 0x1f;
+                    uVar31 = (byte)*(code *)((longlong)&pHVar19->unused + 1) & 0x3f;
+                    uVar24 = uVar34 << 6 | uVar31;
+                    lVar35 = 0x5c;
+                    if ((byte)(bVar6 + 0x2d) < (byte)cVar3) {
+                      lVar35 = 0x308;
+                    }
+                    pHVar15 = (HMODULE)((longlong)&pHVar19->unused + 2);
+                    /* WARNING: Switch is manually overridden */
+                    switch(*(undefined4 *)(&UNK_1400756b4 + lVar35)) {
+                    case 0xffffc075:
+                      goto override_jmp_140003cac_case_0;
+                    case 0xffffde95:
+                      pHVar1 = (HMODULE)((longlong)&pHVar19->unused + 3);
+                      cVar4 = *(code *)((longlong)&pHVar19->unused + 2);
+                      uVar31 = uVar31 << 6;
+                      lVar35 = 0x248;
+                      if (0xef < (byte)cVar3) {
+                        lVar35 = 0x160;
+                      }
+                    /* WARNING: Switch is manually overridden */
+                      switch(*(undefined4 *)(&UNK_1400756b4 + lVar35)) {
+                      case 0xffffd2f2:
+                        uVar24 = uVar31 | (byte)cVar4 & (bVar6 ^ 0x8d) | uVar34 << 0xc;
+                        lVar35 = 0xa4;
+                        if (uVar24 < (uVar27 ^ 0x519c6cb2)) {
+                          lVar35 = 0x5c;
+                        }
+                        pHVar15 = pHVar1;
+                    /* WARNING: Switch is manually overridden */
+                        switch(*(undefined4 *)(&UNK_1400756b4 + lVar35)) {
+                        case 0xffffc075:
+                          goto override_jmp_140003cac_case_0;
+                        case 0xffffe64a:
+override_jmp_140004054_case_1:
+                          uVar31 = (uVar27 ^ 0x51626cb2) + uVar24 >> 10 | 0xd800;
+                          uVar34 = uVar24 & 0x3ff | 0xdc00;
+                          lVar35 = 0xb4;
+                          if (pppppppuVar28 ==
+                              *(undefined8 ********)((longlong)aiStack_2f8 + (uVar36 - 8))) {
+                            lVar35 = 0x210;
+                          }
+                    /* WARNING: Switch is manually overridden */
+                          switch(*(undefined4 *)(&UNK_1400756b4 + lVar35)) {
+                          case 0xffffd4f3:
+                            goto override_jmp_140002dbb_case_1;
+                          }
+                        }
+                        break;
+                      case 0xffffe3bc:
+                        pHVar15 = (HMODULE)((longlong)&pHVar19->unused +
+                                           (ulonglong)(uVar27 ^ 0x519d6cb6));
+                        cVar7 = (char)(uVar27 ^ 0x519d6cb6);
+                        uVar24 = (byte)*(code *)&pHVar1->unused & 0x3f |
+                                 (uVar31 | (byte)cVar4 & (bVar6 ^ 0x8d)) << (cVar7 + 2U & 0x1f) |
+                                 (local_530 + -0x231ab6b8) * 0x489338b7 &
+                                 uVar34 << (cVar7 + 0xeU & 0x1f);
+                        lVar35 = 0xa4;
+                    /* WARNING: Switch is manually overridden */
+                        if (uVar24 < (uVar27 ^ 0x519c6cb2)) {
+                          lVar35 = 0x5c;
+                        }
+                    /* WARNING: Switch is manually overridden */
+                        switch(*(undefined4 *)(&UNK_1400756b4 + lVar35)) {
+                        case 0xffffe64a:
+                          goto override_jmp_140004054_case_1;
+                        }
+                        goto override_jmp_140003cac_case_0;
+                      }
+                    }
+                    break;
+                  case 0xffffe757:
+                    pHVar15 = (HMODULE)((longlong)&pHVar19->unused + 1);
+                    /* WARNING: Switch is manually overridden */
+override_jmp_140003cac_case_0:
+                    uVar34 = 0;
+                    lVar35 = 0xb4;
+                    if (pppppppuVar28 ==
+                        *(undefined8 ********)((longlong)aiStack_2f8 + (uVar36 - 8))) {
+                      lVar35 = 0x210;
+                    }
+                    uVar31 = uVar24;
+                    /* WARNING: Switch is manually overridden */
+                    switch(*(undefined4 *)(&UNK_1400756b4 + lVar35)) {
+                    case 0xffffd4f3:
+                      goto override_jmp_140002dbb_case_1;
+                    }
+                  }
+override_jmp_140002dbb_case_0:
+                  uVar23 = (ulonglong)((longlong)pHVar33 - (longlong)pHVar15) / 3;
+                  uStack_2f0 = pppppppuVar28;
+                  lVar35 = FUN_14000965c(&uStack_300,(ulonglong)pppppppuVar28,
+                                         ((uVar23 + 2) - (ulonglong)((short)uVar34 == 0)) +
+                                         (ulonglong)
+                                         ((longlong)pHVar33 - (longlong)pHVar15 != uVar23 * 3),
+                                         (LPVOID)0x2,2);
+                  puVar25 = (undefined4 *)&UNK_1400757b4;
+                  if (lVar35 == -1) {
+                    puVar25 = (undefined4 *)&UNK_14007582c;
+                  }
+                    /* WARNING: Switch is manually overridden */
+                  switch(*puVar25) {
+                  case 0xffffd550:
+                    puVar26 = (ushort *)CONCAT44(uStack_300._4_4_,(uint)uStack_300);
+override_jmp_140002dbb_case_1:
+                    do {
+                      *(ushort *)
+                       ((longlong)puVar26 +
+                       (0x57fc0a03e56a3c24 - (_DAT_1400cfac0 + -0x1572e4a3718634f)) *
+                       (longlong)pppppppuVar28) = (ushort)uVar31;
+                      pppppppuVar28 = (undefined8 *******)((longlong)pppppppuVar28 + 1);
+                      uStack_2f0._0_4_ = SUB84(pppppppuVar28,0);
+                      uStack_2f0._4_4_ = (undefined4)((ulonglong)pppppppuVar28 >> 0x20);
+                      lVar35 = 0x290;
+                      if ((ushort)uVar34 == (ushort)((ushort)uVar5 ^ 0x6cb2)) {
+                        lVar35 = 0x22c;
+                      }
+                      pHVar19 = pHVar15;
+                      uVar31 = uVar34;
+                    /* WARNING: Switch is manually overridden */
+                      switch(*(undefined4 *)(&UNK_1400756b4 + lVar35)) {
+                      case 0xffffcbd4:
+                        goto override_jmp_140004276_case_0;
+                      case 0xffffcdf3:
+override_jmp_140004276_case_1:
+                        uVar34 = 0;
+                        lVar35 = 0xb4;
+                        if (pppppppuVar28 ==
+                            *(undefined8 ********)((longlong)aiStack_2f8 + (uVar36 - 8))) {
+                          lVar35 = 0x210;
+                        }
+                      }
+                    /* WARNING: Switch is manually overridden */
+                      switch(*(undefined4 *)(&UNK_1400756b4 + lVar35)) {
+                      case 0xffffd26b:
+                        goto override_jmp_140002dbb_case_0;
+                      }
+                    } while( true );
+                  case 0xfffff275:
+                  }
+                  goto override_jmp_140005370_case_1;
+                }
+LAB_14000325c:
+                uVar24 = -uVar27 + 0x519d6cba;
+                uStack_2f0 = pppppppuVar28;
+                FUN_14000250d(local_510[0],*(longlong *)((longlong)local_510 + (ulonglong)uVar24),1,
+                              1);
+                FUN_1400237e0((undefined1 (*) [32])local_510,0,0x20a);
+                FUN_1400237e0((undefined1 (*) [32])&uStack_300,0,0x20a);
+                local_590[0] = (undefined8 *******)((ulonglong)local_590[0] & 0xffffffff00000000);
+                uStack_550 = (ulonglong)uStack_550._4_4_ << 0x20;
+                auStack_5c[0] = 0;
+                iVar30 = (*(code *)pHVar19)(pvVar40,(undefined1 (*) [32])local_510,0x105,local_590,
+                                            &uStack_550,auStack_5c,(undefined1 (*) [32])&uStack_300,
+                                            0x105);
+                uStack_551 = (int)local_590[0] != 0 && iVar30 != 0;
+                uVar36 = (ulonglong)(-uVar27 + 0x519d6cb4);
+                FUN_14000250d(pvVar40,lStack_598,uVar36,2);
+                ppppppuVar37 = (undefined8 ******)(-0x1747ec089f74c6fd - (ulonglong)uVar24);
+                uStack_300._0_4_ = (uint)ppppppuVar37;
+                uVar31 = (uint)uStack_300;
+                local_510[0] = (HMODULE)&UNK_14007490c;
+                uStack_300 = ppppppuVar37;
+                *(undefined8 *)((longlong)local_510 + (ulonglong)(uVar24 & 0xff)) = 0x14;
+                uVar23 = (ulonglong)(0x18 - uVar24);
+                *(undefined1 (**) [32])((longlong)local_510 + uVar23) =
+                     (undefined1 (*) [32])&uStack_300;
+                lVar35 = *(longlong *)
+                          ((longlong)ThreadLocalStoragePointer + (ulonglong)_tls_index * 8);
+                    /* WARNING: Switch is manually overridden */
+                switch(_DAT_1400cf928 ==
+                       (((uint)*(undefined8 *)(lVar35 + 0xb0) ^ *(uint *)(lVar35 + 0x54)) -
+                       (uVar24 & 0xff ^ uVar31)) * -0x1eaae201) {
+                case false:
+                  FUN_140023e50(0x1400cf910,local_510);
+                }
+                FUN_14000118c(local_510,_DAT_1400cf910,_DAT_1400cf920);
+                pHVar33 = local_510[0];
+                local_590[0] = (undefined8 *******)
+                               (*(ulonglong *)
+                                 (*(longlong *)
+                                   ((longlong)ThreadLocalStoragePointer + (ulonglong)_tls_index * 8)
+                                 + 0xd8) ^ (-uVar36 - local_70) - ((longlong)ppppppuVar37 + uVar23))
+                ;
+                uStack_300._0_4_ = 0x40075453;
+                uStack_300._4_4_ = 1;
+                uVar31 = 0x36cc - local_55a & 0xffff;
+                *(undefined8 *)((longlong)aiStack_2f8 + ((ulonglong)uVar31 - 8)) = 0x1b;
+                uStack_2f0 = local_590;
+                lVar35 = 0x13c;
+                if (_DAT_1400cf728 == 0) {
+                  lVar35 = 0x1f0;
+                }
+                    /* WARNING: Switch is manually overridden */
+                switch(*(undefined4 *)(&UNK_1400756b4 + lVar35)) {
+                case 0xfffff5b0:
+                  FUN_140023e50(0x1400cf710,&uStack_300);
+                }
+                FUN_14000118c(&uStack_300,_DAT_1400cf710,_DAT_1400cf720);
+                pHVar19 = (HMODULE)CONCAT44(uStack_300._4_4_,(uint)uStack_300);
+                pcVar13 = (code *)FUN_140009863(-0x6651fd12,pHVar33,-0x7059d81c - uVar27,pHVar19);
+                uVar24 = 0x3e08bb3a - (-0x7059d81c - uVar27);
+                FUN_14000250d(pHVar19,*(longlong *)((longlong)aiStack_2f8 + ((ulonglong)uVar24 - 8))
+                              ,1,1);
+                FUN_14000250d(local_510[0],
+                              *(longlong *)((longlong)local_510 + (ulonglong)(ushort)uVar24),1,1);
+                local_590[0] = (undefined8 *******)0x968d50a742790aa;
+                local_510[0] = (HMODULE)&UNK_140074ac5;
+                *(ulonglong *)((longlong)local_510 + (ulonglong)(uVar24 & 0xff)) =
+                     uVar23 + (_DAT_1400cffc0 ^ uVar36 ^ local_a8) * 0x6544e4c40d801c29;
+                lVar35 = 0x38;
+                if (_DAT_1400cf6e8 == 0x25b619f5 - ((uint)local_d0 ^ (uint)_DAT_1400cf858)) {
+                  lVar35 = 0x74;
+                }
+                local_500 = (undefined1 (*) [32])local_590;
+                    /* WARNING: Switch is manually overridden */
+                switch(*(undefined4 *)(&UNK_1400756b4 + lVar35)) {
+                case 0xffffc095:
+                  FUN_140023e50(0x1400cf6d0,local_510);
+                }
+                FUN_14000118c(&uStack_300,_DAT_1400cf6d0,_DAT_1400cf6e0);
+                uVar21 = CONCAT44(uStack_300._4_4_,(uint)uStack_300);
+                local_590[0] = (undefined8 *******)0x20d874a1419c1bbb;
+                local_510[0] = (HMODULE)0x140073b04;
+                uVar36 = (ulonglong)-(~(local_518 + 0xd6d351deU) - uVar31);
+                *(undefined8 *)((longlong)local_510 + uVar36) = 0x1a;
+                local_500 = (undefined1 (*) [32])local_590;
+                    /* WARNING: Switch is manually overridden */
+                switch(_DAT_1400cf9c8 == 0) {
+                case false:
+                  FUN_140023e50(0x1400cf9b0,local_510);
+                }
+                FUN_14000118c(local_510,_DAT_1400cf9b0,_DAT_1400cf9c0);
+                pHVar33 = local_510[0];
+                lVar35 = (uVar36 + local_a0) * 0x5e5c223b049a92d3;
+                uVar31 = (int)lVar35 + 0x7addb4fc;
+                pHStack_568 = (HMODULE)FUN_140009863(-0x6df6080c,uVar21,uVar31,local_510[0]);
+                FUN_14000250d(pHVar33,(longlong)local_510[1],1,1);
+                FUN_14000250d((LPVOID)CONCAT44(uStack_300._4_4_,(uint)uStack_300),
+                              CONCAT44(aiStack_2f8[1],aiStack_2f8[0]),1,1);
+                uStack_300 = (undefined8 ******)(lVar35 + 0x477e1af928385613);
+                local_510[0] = (HMODULE)&UNK_14007480e;
+                *(undefined8 *)((longlong)local_510 + (ulonglong)(0x262ed746 - uVar31)) = 0x14;
+                *(undefined8 **)((longlong)local_510 + (ulonglong)(0x262ed74e - uVar31)) =
+                     &uStack_300;
+                lVar35 = 0x18c;
+                if (_DAT_1400cfa28 == (uVar31 ^ 0x262ed73e)) {
+                  lVar35 = 0xb0;
+                }
+                    /* WARNING: Switch is manually overridden */
+                switch(*(undefined4 *)(&UNK_1400756b4 + lVar35)) {
+                case 0xffffe6b7:
+                  FUN_140023e50(0x1400cfa10,local_510);
+                }
+                FUN_14000118c(local_510,_DAT_1400cfa10,_DAT_1400cfa20);
+                pHVar33 = local_510[0];
+                ppppppuVar37 = (undefined8 ******)(uVar5 ^ 0xfcb7385227a94942);
+                uStack_300._0_4_ = 0x4007487d;
+                uStack_300._4_4_ = 1;
+                aiStack_2f8[0] = 0x1e;
+                aiStack_2f8[1] = 0;
+                uStack_2f0 = local_590;
+                uVar24 = (uint)_DAT_1400d0d88 * 0x5107 & 0xffff;
+                puVar25 = (undefined4 *)&UNK_14007598c;
+                if (_DAT_1400cfb00 == uVar24) {
+                  puVar25 = (undefined4 *)&UNK_1400757b8;
+                }
+                local_590[0] = (undefined8 *******)ppppppuVar37;
+                    /* WARNING: Switch is manually overridden */
+                switch(*puVar25) {
+                case 0xffffc05c:
+                  FUN_140023e50(0x1400cfae8,&uStack_300);
+                }
+                FUN_14000118c(&uStack_300,_DAT_1400cfae8,_DAT_1400cfaf8);
+                pHVar19 = (HMODULE)CONCAT44(uStack_300._4_4_,(uint)uStack_300);
+                pcVar16 = (code *)FUN_140009863(-0x6df6080c,pHVar33,uVar27 + 0x955798d7,pHVar19);
+                FUN_14000250d(pHVar19,*(longlong *)
+                                       ((longlong)aiStack_2f8 +
+                                       ((ulonglong)
+                                        ((local_528 + uVar24 + uVar31) - (int)ppppppuVar37) - 8)),1,
+                              1);
+                FUN_14000250d(local_510[0],
+                              *(longlong *)((longlong)local_510 + (ulonglong)(uVar27 + 0xae629356)),
+                              1,1);
+                local_590[0] = (undefined8 *******)0xe01fc761c6add596;
+                local_510[0] = (HMODULE)&UNK_14007489b;
+                local_510[1] = (HMODULE)(ulonglong)
+                                        (byte)~((byte)*(undefined8 *)
+                                                       (*(longlong *)
+                                                         ((longlong)ThreadLocalStoragePointer +
+                                                         (ulonglong)_tls_index * 8) + 0xb0) ^
+                                               local_56c);
+                lVar35 = 0x28;
+                if (_DAT_1400cfb48 == (uVar27 + 0x955798d7 ^ 0xe6f50589)) {
+                  lVar35 = 0xa0;
+                }
+                local_500 = (undefined1 (*) [32])local_590;
+                    /* WARNING: Switch is manually overridden */
+                switch(*(undefined4 *)(&UNK_1400756b4 + lVar35)) {
+                case 0xffffca6d:
+                  FUN_140023e50(0x1400cfb30,local_510);
+                }
+                FUN_14000118c(&uStack_300,_DAT_1400cfb30,_DAT_1400cfb40);
+                uVar21 = CONCAT44(uStack_300._4_4_,(uint)uStack_300);
+                local_590[0] = (undefined8 *******)(-uVar5 + 0xc6b964340f557081);
+                local_510[0] = (HMODULE)&UNK_1400748af;
+                local_510[1] = (HMODULE)0x13;
+                *(undefined8 *********)((longlong)local_510 + (ulonglong)((int)-uVar5 + 0x519d6cc2))
+                     = local_590;
+                puVar25 = (undefined4 *)&UNK_1400757d4;
+                if (_DAT_1400cf9a8 == (int)local_590[0] + 0x4247fc31) {
+                  puVar25 = (undefined4 *)&UNK_14007599c;
+                }
+                    /* WARNING: Switch is manually overridden */
+                switch(*puVar25) {
+                case 0xfffffa7d:
+                  FUN_140023e50(0x1400cf990,local_510);
+                }
+                FUN_14000118c(local_510,_DAT_1400cf990,_DAT_1400cf9a0);
+                pHVar33 = local_510[0];
+                pcVar20 = (code *)FUN_140009863(-0x6651fd12,uVar21,-0x25d0847a,local_510[0]);
+                FUN_14000250d(pHVar33,*(longlong *)
+                                       ((longlong)local_510 + (ulonglong)(uVar27 ^ 0x519d6cba)),1,1)
+                ;
+                FUN_14000250d((LPVOID)CONCAT44(uStack_300._4_4_,(uint)uStack_300),
+                              CONCAT44(aiStack_2f8[1],aiStack_2f8[0]),1,1);
+                uStack_300._0_4_ = 0;
+                uStack_300._4_4_ = 0;
+                uVar21 = (*pcVar13)();
+                uVar31 = (*(code *)pHStack_568)(uVar21,8,&uStack_300);
+                puVar25 = (undefined4 *)&UNK_14007595c;
+                if (uVar31 == (uVar27 ^ 0x519d6cb2)) {
+                  puVar25 = (undefined4 *)&UNK_140075984;
+                }
+                    /* WARNING: Switch is manually overridden */
+                switch(*puVar25) {
+                case 0x5e3:
+                  FUN_1400237e0((undefined1 (*) [32])local_510,0,0x100);
+                  local_590[0] = (undefined8 *******)((ulonglong)local_590[0] & 0xffffffff00000000);
+                  (*pcVar16)(CONCAT44(uStack_300._4_4_,(uint)uStack_300),1,
+                             (undefined1 (*) [32])local_510,0x100,local_590);
+                  (*pcVar20)(CONCAT44(uStack_300._4_4_,(uint)uStack_300));
+                  uStack_550 = CONCAT44(uStack_550._4_4_,(int)local_590[0]);
+                }
+                uVar11 = (*pcStack_540)();
+                pHStack_568 = (HMODULE)CONCAT44(pHStack_568._4_4_,uVar11);
+                bVar8 = local_56e * '\r';
+                uStack_548 = (ulonglong)bVar8;
+                local_590[0] = (undefined8 *******)0xf060d333ca42688b;
+                local_510[0] = (HMODULE)&UNK_140074d17;
+                local_510[1] = (HMODULE)0x14;
+                *(undefined8 *********)((longlong)local_510 + (ulonglong)(0x7d - bVar8)) = local_590
+                ;
+                puVar25 = (undefined4 *)&UNK_140075798;
+                if (_DAT_1400cffb8 == bVar8 - 0x6d) {
+                  puVar25 = (undefined4 *)&UNK_14007590c;
+                }
+                    /* WARNING: Switch is manually overridden */
+                switch(*puVar25) {
+                case 0xffffdef2:
+                  FUN_140023e50(0x1400cffa0,local_510);
+                }
+                FUN_14000118c(&uStack_300,_DAT_1400cffa0,_DAT_1400cffb0);
+                uVar21 = CONCAT44(uStack_300._4_4_,(uint)uStack_300);
+                local_590[0] = (undefined8 *******)0x86fcf9364d5249b5;
+                local_510[0] = (HMODULE)0x1400739cd;
+                local_510[1] = (HMODULE)0x14;
+                lVar35 = 0x2cc;
+                if (_DAT_1400cfbe8 == 0x519d6cb2 - uVar27) {
+                  lVar35 = 0x17c;
+                }
+                local_500 = (undefined1 (*) [32])local_590;
+                    /* WARNING: Switch is manually overridden */
+                switch(*(undefined4 *)(&UNK_1400756b4 + lVar35)) {
+                case 0xffffda93:
+                  FUN_140023e50(0x1400cfbd0,local_510);
+                }
+                FUN_14000118c(local_510,_DAT_1400cfbd0,_DAT_1400cfbe0);
+                pHVar33 = local_510[0];
+                pcVar13 = (code *)FUN_140009863(-0x6651fd12,uVar21,-0x2cf476c0,local_510[0]);
+                FUN_14000250d(pHVar33,(longlong)local_510[1],1,1);
+                FUN_14000250d((LPVOID)CONCAT44(uStack_300._4_4_,(uint)uStack_300),
+                              CONCAT44(aiStack_2f8[1],aiStack_2f8[0]),1,1);
+                ppppppuVar37 = (undefined8 ******)(uVar5 ^ 0x10d12df2ab91ab69);
+                local_510[0] = (HMODULE)0x140073af4;
+                local_510[1] = (HMODULE)0x10;
+                *(undefined8 *********)
+                 ((longlong)local_510 + (ulonglong)((int)ppppppuVar37 + 0x5f33835)) = local_590;
+                puVar25 = (undefined4 *)&UNK_140075854;
+                if (_DAT_1400d0148 == 0) {
+                  puVar25 = (undefined4 *)&UNK_14007589c;
+                }
+                local_590[0] = (undefined8 *******)ppppppuVar37;
+                    /* WARNING: Switch is manually overridden */
+                switch(*puVar25) {
+                case 0xffffd763:
+                  FUN_140023e50(0x1400d0130,local_510);
+                }
+                FUN_14000118c(&uStack_300,_DAT_1400d0130,_DAT_1400d0140);
+                uVar21 = CONCAT44(uStack_300._4_4_,(uint)uStack_300);
+                local_590[0] = (undefined8 *******)0x3796daf872452b06;
+                local_510[0] = (HMODULE)0x14007467c;
+                uVar24 = uVar27 ^ 0x519d6cba;
+                uVar31 = 0x1a - uVar24;
+                *(ulonglong *)((longlong)local_510 + (ulonglong)uVar24) = (ulonglong)uVar31;
+                lVar35 = 0x200;
+                if (_DAT_1400cfca8 ==
+                    ((*(int *)(*(longlong *)
+                                ((longlong)ThreadLocalStoragePointer + (ulonglong)_tls_index * 8) +
+                              0x58) + 0x75c55e94) * 0x523bf067 - uVar31) * 0x44b12363 + 0x3febb48a)
+                {
+                  lVar35 = 0x18;
+                }
+                local_500 = (undefined1 (*) [32])local_590;
+                    /* WARNING: Switch is manually overridden */
+                switch(*(undefined4 *)(&UNK_1400756b4 + lVar35)) {
+                case 0xfffffe30:
+                  FUN_140023e50(0x1400cfc90,local_510);
+                }
+                FUN_14000118c(local_510,_DAT_1400cfc90,_DAT_1400cfca0);
+                pHVar33 = local_510[0];
+                pcVar16 = (code *)FUN_140009863(-0x15d9ef50,uVar21,0xc0ce86f4 - uVar27,local_510[0])
+                ;
+                FUN_14000250d(pHVar33,(longlong)local_510[1],1,1);
+                FUN_14000250d((LPVOID)CONCAT44(uStack_300._4_4_,(uint)uStack_300),
+                              CONCAT44(aiStack_2f8[1],aiStack_2f8[0]),1,1);
+                uStack_300._0_4_ = (*pcVar13)();
+                (*pcVar16)(&uStack_300);
+                uStack_300._0_4_ = 0x9f26f67b;
+                uStack_300._4_4_ = 0x1ec88e95;
+                local_510[0] = (HMODULE)0x140073f60;
+                local_510[1] = (HMODULE)(((longlong)ppppppuVar37 - (ulonglong)uVar31) *
+                                        (~local_98 ^ (ulonglong)ppppppuVar37));
+                uVar31 = ((uint)*(ushort *)
+                                 (*(longlong *)
+                                   ((longlong)ThreadLocalStoragePointer + (ulonglong)_tls_index * 8)
+                                 + 0x7c) + uVar24 * 2) - 0x638b & 0xffff;
+                *(undefined8 **)((longlong)local_510 + (ulonglong)uVar31) = &uStack_300;
+                puVar25 = (undefined4 *)&UNK_1400757d0;
+                if (_DAT_1400cfc48 == 0) {
+                  puVar25 = (undefined4 *)&UNK_140075994;
+                }
+                    /* WARNING: Switch is manually overridden */
+                switch(*puVar25) {
+                case 0xfffffe49:
+                  FUN_140023e50(0x1400cfc30,local_510);
+                }
+                FUN_14000118c(local_510,_DAT_1400cfc30,_DAT_1400cfc40);
+                pHVar33 = local_510[0];
+                ppppppuVar37 = (undefined8 ******)(uVar5 ^ 0x58d0c32e70a6d277);
+                uStack_300._0_4_ = 0x4007527c;
+                uStack_300._4_4_ = 1;
+                aiStack_2f8[0] = 0x1b;
+                aiStack_2f8[1] = 0;
+                uStack_2f0 = local_590;
+                lVar35 = 0x26c;
+                if (_DAT_1400cf5e0 == ((uint)ppppppuVar37 ^ 0x213bbec5)) {
+                  lVar35 = 0x1f8;
+                }
+                local_590[0] = (undefined8 *******)ppppppuVar37;
+                    /* WARNING: Switch is manually overridden */
+                switch(*(undefined4 *)(&UNK_1400756b4 + lVar35)) {
+                case 0xfffffbd1:
+                  FUN_140023e50(0x1400cf5c8,&uStack_300);
+                }
+                FUN_14000118c(&uStack_300,_DAT_1400cf5c8,_DAT_1400cf5d8);
+                pHVar19 = (HMODULE)CONCAT44(uStack_300._4_4_,(uint)uStack_300);
+                lVar35 = *(longlong *)
+                          ((longlong)ThreadLocalStoragePointer + (ulonglong)_tls_index * 8);
+                uVar31 = (uVar31 ^ 0xc0ce86f4 - uVar27 ^
+                         (int)*(undefined8 *)(lVar35 + 0x10) * -0x3173d5e7) * 0x2f131a3;
+                pcVar13 = (code *)FUN_140009863(-0x6651fd12,pHVar33,uVar31,pHVar19);
+                FUN_14000250d(pHVar19,CONCAT44(aiStack_2f8[1],aiStack_2f8[0]),1,1);
+                FUN_14000250d(local_510[0],(longlong)local_510[1],1,1);
+                local_590[0] = (undefined8 *******)
+                               ((*(ulonglong *)(lVar35 + 0x128) ^ local_90) * (longlong)ppppppuVar37
+                               );
+                local_510[0] = (HMODULE)&UNK_140075183;
+                local_510[1] = (HMODULE)0x14;
+                *(undefined8 *********)((longlong)local_510 + (ulonglong)(uVar31 ^ 0x3e08bb22)) =
+                     local_590;
+                lVar35 = 0x27c;
+                if (_DAT_1400cfe20 == (uVar31 ^ 0x3e08bb32)) {
+                  lVar35 = 200;
+                }
+                    /* WARNING: Switch is manually overridden */
+                switch(*(undefined4 *)(&UNK_1400756b4 + lVar35)) {
+                case 0xffffe395:
+                  FUN_140023e50(0x1400cfe08,local_510);
+                }
+                FUN_14000118c(&uStack_300,_DAT_1400cfe08,_DAT_1400cfe18);
+                uVar21 = CONCAT44(uStack_300._4_4_,(uint)uStack_300);
+                local_590[0] = (undefined8 *******)(-uVar5 + 0x5fde09973154ca51);
+                local_510[0] = (HMODULE)0x1400752eb;
+                local_510[1] = (HMODULE)(ulonglong)((int)-uVar5 + 0x519d6ccc);
+                *(undefined8 *********)((longlong)local_510 + local_68 * -0x224f35f064ffa789) =
+                     local_590;
+                iVar30 = -0x2048a261 - (int)local_590[0];
+                lVar35 = 0x28c;
+                if (_DAT_1400cff50 == iVar30) {
+                  lVar35 = 0x60;
+                }
+                    /* WARNING: Switch is manually overridden */
+                switch(*(undefined4 *)(&UNK_1400756b4 + lVar35)) {
+                case 0xffffcce8:
+                  FUN_140023e50(0x1400cff38,local_510);
+                }
+                FUN_14000118c(local_510,_DAT_1400cff38,_DAT_1400cff48);
+                pHVar33 = local_510[0];
+                pcStack_540 = (code *)FUN_140009863(-0x6df6080c,uVar21,0x262ed73e,local_510[0]);
+                FUN_14000250d(pHVar33,(longlong)local_510[1],1,1);
+                FUN_14000250d((LPVOID)CONCAT44(uStack_300._4_4_,(uint)uStack_300),
+                              CONCAT44(aiStack_2f8[1],aiStack_2f8[0]),1,1);
+                local_590[0] = (undefined8 *******)(0x3a138d5a346dcd94 - uVar5);
+                local_510[0] = (HMODULE)0x140073b2e;
+                uVar31 = (uint)local_590[0] ^ 0xe2d060ea;
+                *(undefined8 *)((longlong)local_510 + (ulonglong)uVar31) = 0x14;
+                uVar24 = (uint)local_590[0] ^ 0xe2d060e2;
+                lVar35 = 0x1bc;
+                if (_DAT_1400cfc68 == uVar24) {
+                  lVar35 = 0x300;
+                }
+                local_500 = (undefined1 (*) [32])local_590;
+                    /* WARNING: Switch is manually overridden */
+                switch(*(undefined4 *)(&UNK_1400756b4 + lVar35)) {
+                case 0xffffc350:
+                  FUN_140023e50(0x1400cfc50,local_510);
+                }
+                FUN_14000118c(&uStack_300,_DAT_1400cfc50,_DAT_1400cfc60);
+                uVar21 = CONCAT44(uStack_300._4_4_,(uint)uStack_300);
+                local_590[0] = (undefined8 *******)0x31f9b6c1d7f9ddc4;
+                local_510[0] = (HMODULE)0x1400753f8;
+                local_510[1] = (HMODULE)0x1e;
+                local_500 = (undefined1 (*) [32])local_590;
+                    /* WARNING: Switch is manually overridden */
+                switch(_DAT_1400d0270 == 0) {
+                case false:
+                  FUN_140023e50(0x1400d0258,local_510);
+                }
+                FUN_14000118c(local_510,_DAT_1400d0258,_DAT_1400d0268);
+                pHVar33 = local_510[0];
+                pcStack_538 = (code *)FUN_140009863(-0x6df6080c,uVar21,-0x190afa77,local_510[0]);
+                uVar31 = (uVar31 - iVar30) + ((local_554 - 0x22aa) - uVar24) * -0xd5 & 0xffff;
+                FUN_14000250d(pHVar33,*(longlong *)((longlong)local_510 + (ulonglong)uVar31),1,1);
+                FUN_14000250d((LPVOID)CONCAT44(uStack_300._4_4_,(uint)uStack_300),
+                              CONCAT44(aiStack_2f8[1],aiStack_2f8[0]),1,1);
+                local_590[0] = (undefined8 *******)0x977ce6854fcfe3f4;
+                local_510[0] = (HMODULE)&UNK_140074d8c;
+                local_510[1] = (HMODULE)(ulonglong)(uVar31 + 0xc);
+                lVar35 = 0x170;
+                if (_DAT_1400cf8e0 == 0) {
+                  lVar35 = 0x24;
+                }
+                local_500 = (undefined1 (*) [32])local_590;
+                    /* WARNING: Switch is manually overridden */
+                switch(*(undefined4 *)(&UNK_1400756b4 + lVar35)) {
+                case 0xfffff39b:
+                  FUN_140023e50(0x1400cf8c8,local_510);
+                }
+                FUN_14000118c(&uStack_300,_DAT_1400cf8c8,_DAT_1400cf8d8);
+                uVar21 = CONCAT44(uStack_300._4_4_,(uint)uStack_300);
+                local_590[0] = (undefined8 *******)(uVar5 + 0x56240063a284b44c);
+                local_510[0] = (HMODULE)&UNK_140074b6f;
+                uVar31 = uVar27 + 0xae629356;
+                uVar24 = (uint)local_590[0];
+                *(ulonglong *)((longlong)local_510 + (ulonglong)uVar31) =
+                     (ulonglong)((uVar31 ^ uVar24) + (local_51c - uVar31) + 0xeb984b19);
+                lVar35 = 0xd8;
+                if (_DAT_1400d0168 == uVar27 + 0xae62934e) {
+                  lVar35 = 0x230;
+                }
+                local_500 = (undefined1 (*) [32])local_590;
+                    /* WARNING: Switch is manually overridden */
+                switch(*(undefined4 *)(&UNK_1400756b4 + lVar35)) {
+                case 0xffffbefb:
+                  FUN_140023e50(0x1400d0150,local_510);
+                }
+                FUN_14000118c(local_510,_DAT_1400d0150,_DAT_1400d0160);
+                pHVar33 = local_510[0];
+                pcVar16 = (code *)FUN_140009863(uVar27 + 0x4810963c,uVar21,-0x25d0847a,local_510[0])
+                ;
+                FUN_14000250d(pHVar33,(longlong)local_510[1],1,1);
+                FUN_14000250d((LPVOID)CONCAT44(uStack_300._4_4_,(uint)uStack_300),
+                              *(longlong *)
+                               ((longlong)aiStack_2f8 +
+                               ((ulonglong)(uVar27 + 0x4810963c ^ 0x99ae02e6) - 8)),1,1);
+                uStack_300._0_4_ = 0;
+                uStack_300._4_4_ = 0;
+                uVar21 = (*pcVar13)();
+                iVar30 = (*pcStack_540)(uVar21,8,&uStack_300);
+                lVar35 = 0x1ec;
+                if (iVar30 == (uVar24 ^ uVar27 + 0xae62934e ^
+                              *(int *)(*(longlong *)
+                                        ((longlong)ThreadLocalStoragePointer +
+                                        (ulonglong)_tls_index * 8) + 0x5c) * 0x3a11f447) *
+                              -0x2408d911) {
+                  lVar35 = 0x1d0;
+                }
+                    /* WARNING: Switch is manually overridden */
+                switch(*(undefined4 *)(&UNK_1400756b4 + lVar35)) {
+                case 0xffffd076:
+                  FUN_1400237e0((undefined1 (*) [32])local_510,0,0x100);
+                  uStack_550 = uStack_550 & 0xffffffff00000000;
+                  (*pcStack_538)(CONCAT44(uStack_300._4_4_,(uint)uStack_300),2,
+                                 (undefined1 (*) [32])local_510,0x100,&uStack_550);
+                  (*pcVar16)();
+                  local_590[0] = (undefined8 *******)
+                                 CONCAT44(local_590[0]._4_4_,(undefined4)uStack_550);
+                }
+                puVar18 = FUN_1400128ed(0,(ulonglong)(0x519d6d00 - uVar27));
+                puVar25 = (undefined4 *)&UNK_140075894;
+                if (puVar18 == (undefined8 *)0x0) {
+                  puVar25 = (undefined4 *)&UNK_14007586c;
+                }
+                    /* WARNING: Switch is manually overridden */
+                switch(*puVar25) {
+                case 0xffffe539:
+                  FUN_140023130(puVar18,(undefined8 *)
+                                        "variables, value declarations, non-static data members incompatible with C++20AXaa2AlwyFnIOFNCi1J5mneHbGE-wcbeen for so must make one right with word use been hand over eqkOMUsnrZvbL6atVpeUrjy7iyqqgT-Fi2VBVrE3r_frpGW-8FNAmCPWGotJusgw7P0123456789abcdefS_imju6t_nojNc8x"
+                                ,0x4e);
+                  uStack_300._0_4_ = 0x453cd2d8;
+                  uStack_300._4_4_ = 0x7957b249;
+                  local_510[0] = (HMODULE)0x140073ff8;
+                  *(undefined8 *)((longlong)local_510 + (ulonglong)(0x519d6cba - uVar27)) = 0x12;
+                  puVar25 = (undefined4 *)&UNK_140075990;
+                  if (_DAT_1400cf580 == (0x519d6cba - uVar27 ^ 8)) {
+                    puVar25 = (undefined4 *)&UNK_140075734;
+                  }
+                  local_500 = (undefined1 (*) [32])&uStack_300;
+                    /* WARNING: Switch is manually overridden */
+                  switch(*puVar25) {
+                  case 0x7b:
+                    FUN_140023e50(0x1400cf568,local_510);
+                  }
+                  FUN_14000118c(local_510,DAT_1400cf568,DAT_1400cf578);
+                  pHVar33 = local_510[0];
+                  local_590[0] = (undefined8 *******)(0x34cdc27141bedabd - uVar5);
+                  uStack_300._0_4_ = 0x400747f4;
+                  uStack_300._4_4_ = 1;
+                  aiStack_2f8[0] = 0x1a;
+                  aiStack_2f8[1] = 0;
+                  lVar35 = 0x218;
+                  if (DAT_1400cf7e8 == (int)local_590[0] + 0xfde91f5) {
+                    lVar35 = 0x23c;
+                  }
+                  uStack_2f0 = local_590;
+                    /* WARNING: Switch is manually overridden */
+                  switch(*(undefined4 *)(&UNK_1400756b4 + lVar35)) {
+                  case 0xffffef6d:
+                    FUN_140023e50(0x1400cf7d0,&uStack_300);
+                  }
+                  FUN_14000118c(&uStack_300,_DAT_1400cf7d0,_DAT_1400cf7e0);
+                  pHVar19 = (HMODULE)CONCAT44(uStack_300._4_4_,(uint)uStack_300);
+                  pcVar13 = (code *)FUN_140009863(-0x5f88d2b8,pHVar33,0x32df8dfa,pHVar19);
+                  FUN_14000250d(pHVar19,CONCAT44(aiStack_2f8[1],aiStack_2f8[0]),1,1);
+                  FUN_14000250d(local_510[0],(longlong)local_510[1],1,1);
+                  iVar30 = (*pcVar13)(1);
+                  iVar10 = (*pcVar13)(0);
+                  lVar35 = 0x40;
+                  if (iVar10 == 800) {
+                    lVar35 = 0x220;
+                  }
+                    /* WARNING: Switch is manually overridden */
+                  switch(*(undefined4 *)(&UNK_1400756b4 + lVar35)) {
+                  case 0x8a2:
+                    bVar41 = (int)pHStack_568 == (int)uStack_548;
+                    FUN_14000250d(puVar18,(ulonglong)(uVar27 ^ 0x519d6cfc),1,1);
+                    /* WARNING: Switch is manually overridden */
+                    switch(iVar30 == 600 || bVar41) {
+                    case true:
+                      goto override_jmp_140002e14_case_1;
+                    }
+                    break;
+                  case 0xffffc0ae:
+                    bVar41 = (int)pHStack_568 == (int)uStack_548;
+                    FUN_14000250d(puVar18,0x4e,1,1);
+                    /* WARNING: Switch is manually overridden */
+                    switch(bVar41) {
+                    case true:
+override_jmp_140002e14_case_1:
+                      uStack_300 = (undefined8 ******)(-uVar5 + 0x2c3772fefcc2f8f5);
+                      iVar10 = (uint)uStack_300;
+                      local_510[0] = (HMODULE)0x140073b83;
+                      iVar30 = (int)-uVar5;
+                      *(undefined8 *)((longlong)local_510 + (ulonglong)(iVar30 + 0x519d6cba)) = 0x14
+                      ;
+                      *(undefined8 **)((longlong)local_510 + (ulonglong)(iVar30 + 0x519d6cc2)) =
+                           &uStack_300;
+                      lVar35 = 0x208;
+                      if (_DAT_1400d00c8 == iVar10 + 0x54da73bd) {
+                        lVar35 = 0x8c;
+                      }
+                    /* WARNING: Switch is manually overridden */
+                      switch(*(undefined4 *)(&UNK_1400756b4 + lVar35)) {
+                      case 0xffffcfdb:
+                        FUN_140023e50(0x1400d00b0,local_510);
+                      }
+                      FUN_14000118c(local_510,_DAT_1400d00b0,_DAT_1400d00c0);
+                      pHVar33 = local_510[0];
+                      local_590[0] = (undefined8 *******)(uVar5 ^ 0xc9e4c655d9dc959f);
+                      uStack_300._0_4_ = 0x4007524b;
+                      uStack_300._4_4_ = 1;
+                      aiStack_2f8[0] = -0x77be06b5 - (uint)local_590[0];
+                      aiStack_2f8[1] = 0;
+                      puVar25 = (undefined4 *)&UNK_1400757dc;
+                      if (_DAT_1400cf688 == ((uint)local_590[0] ^ 0x8841f92d)) {
+                        puVar25 = (undefined4 *)&UNK_140075914;
+                      }
+                      uStack_2f0 = local_590;
+                    /* WARNING: Switch is manually overridden */
+                      switch(*puVar25) {
+                      case 0xffffd8bc:
+                        FUN_140023e50(0x1400cf670,&uStack_300);
+                      }
+                      FUN_14000118c(&uStack_300,_DAT_1400cf670,_DAT_1400cf680);
+                      pHVar19 = (HMODULE)CONCAT44(uStack_300._4_4_,(uint)uStack_300);
+                      pcVar13 = (code *)FUN_140009863(-0x6651fd12,pHVar33,0x431216bf,pHVar19);
+                      FUN_14000250d(pHVar19,CONCAT44(aiStack_2f8[1],aiStack_2f8[0]),1,1);
+                      iVar30 = -uVar27;
+                      FUN_14000250d(local_510[0],
+                                    *(longlong *)
+                                     ((longlong)local_510 + (ulonglong)(iVar30 + 0x519d6cbaU)),1,1);
+                      (*pcVar13)();
+                      uStack_300._0_4_ = 0xa485c4ce;
+                      uStack_300._4_4_ = 0x74c487a8;
+                      local_510[0] = (HMODULE)&UNK_140074b96;
+                      *(undefined8 *)
+                       ((longlong)local_510 + (ulonglong)(iVar30 + 0x519d6cbaU & 0xff)) = 0x14;
+                      *(undefined8 **)((longlong)local_510 + (ulonglong)(iVar30 + 0x519d6cc2)) =
+                           &uStack_300;
+                      puVar25 = (undefined4 *)&UNK_1400757c8;
+                      if (_DAT_1400cf648 == iVar30 + 0x519d6cb2) {
+                        puVar25 = (undefined4 *)&UNK_140075960;
+                      }
+                    /* WARNING: Switch is manually overridden */
+                      switch(*puVar25) {
+                      case 0xffffdaac:
+                        FUN_140023e50(0x1400cf630,local_510);
+                      }
+                      FUN_14000118c(local_510,_DAT_1400cf630,_DAT_1400cf640);
+                      pHVar33 = local_510[0];
+                      local_590[0] = (undefined8 *******)0x2a0e446f3ce04830;
+                      uStack_300._0_4_ = 0x40074cd5;
+                      uStack_300._4_4_ = 1;
+                      iVar30 = -uVar27 + 0x519d6cc6;
+                      aiStack_2f8[1] = 0;
+                      aiStack_2f8[0] = iVar30;
+                      *(undefined8 *********)
+                       ((longlong)aiStack_2f8 + ((ulonglong)(-uVar27 + 0x519d6cc2) - 8)) = local_590
+                      ;
+                      puVar25 = (undefined4 *)&UNK_1400758f8;
+                      if (_DAT_1400cff30 == 0x14 - iVar30) {
+                        puVar25 = (undefined4 *)&UNK_1400757cc;
+                      }
+                    /* WARNING: Switch is manually overridden */
+                      switch(*puVar25) {
+                      case 0xfffff36f:
+                        FUN_140023e50(0x1400cff18,&uStack_300);
+                      }
+                      FUN_14000118c(&uStack_300,_DAT_1400cff18,_DAT_1400cff28);
+                      pHVar19 = (HMODULE)CONCAT44(uStack_300._4_4_,(uint)uStack_300);
+                      uVar31 = uVar27 + 0x4810963c;
+                      pcVar13 = (code *)FUN_140009863(uVar31,pHVar33,-0x2cf476c0,pHVar19);
+                      FUN_14000250d(pHVar19,*(longlong *)
+                                             ((longlong)aiStack_2f8 +
+                                             ((ulonglong)(0x99ae02f6 - uVar31) - 8)),1,1);
+                      FUN_14000250d(local_510[0],(longlong)local_510[1],1,1);
+                      local_590[0] = (undefined8 *******)((ulonglong)uVar31 ^ 0xc8e0fc2ea80d8dec);
+                      local_510[0] = (HMODULE)&UNK_140074e21;
+                      local_510[1] = (HMODULE)(ulonglong)(uVar27 + 0xae62935e);
+                      lVar35 = 0x184;
+                      if (_DAT_1400cf4c0 == -0x6651fd12 - uVar31) {
+                        lVar35 = 0x280;
+                      }
+                      local_500 = (undefined1 (*) [32])local_590;
+                    /* WARNING: Switch is manually overridden */
+                      switch(*(undefined4 *)(&UNK_1400756b4 + lVar35)) {
+                      case 0xfffff52d:
+                        FUN_140023e50(0x1400cf4a8,local_510);
+                      }
+                      FUN_14000118c(&uStack_300,_DAT_1400cf4a8,_DAT_1400cf4b8);
+                      uVar21 = CONCAT44(uStack_300._4_4_,(uint)uStack_300);
+                      local_590[0] = (undefined8 *******)0xa69e977b7a181442;
+                      local_510[0] = (HMODULE)&UNK_140074d05;
+                      local_510[1] = (HMODULE)0x12;
+                      lVar35 = 8;
+                      if (_DAT_1400cf6a8 == 0) {
+                        lVar35 = 0x294;
+                      }
+                      local_500 = (undefined1 (*) [32])local_590;
+                    /* WARNING: Switch is manually overridden */
+                      switch(*(undefined4 *)(&UNK_1400756b4 + lVar35)) {
+                      case 0xfffffbc3:
+                        FUN_140023e50(0x1400cf690,local_510);
+                      }
+                      FUN_14000118c(local_510,_DAT_1400cf690,_DAT_1400cf6a0);
+                      pHVar33 = local_510[0];
+                      pcVar16 = (code *)FUN_140009863(-0x15d9ef50,uVar21,0x6f311a42,local_510[0]);
+                      uVar31 = 0x519d6cba - uVar27;
+                      FUN_14000250d(pHVar33,*(longlong *)((longlong)local_510 + (ulonglong)uVar31),1
+                                    ,1);
+                      FUN_14000250d((LPVOID)CONCAT44(uStack_300._4_4_,(uint)uStack_300),
+                                    *(longlong *)
+                                     ((longlong)aiStack_2f8 + ((ulonglong)(uVar31 & 0xff) - 8)),1,1)
+                      ;
+                      uVar11 = (*pcVar13)();
+                      local_510[0] = (HMODULE)CONCAT44(local_510[0]._4_4_,uVar11);
+                      uStack_300._0_4_ = (*pcVar16)(local_510);
+                      local_590[0] = (undefined8 *******)0x17d4f7eaff30b648;
+                      local_510[0] = (HMODULE)&UNK_1400751f1;
+                      local_510[1] = (HMODULE)0x14;
+                      *(undefined8 *********)((longlong)local_510 + (ulonglong)(0x18 - uVar31)) =
+                           local_590;
+                    /* WARNING: Switch is manually overridden */
+                      switch(_DAT_1400cf4e0 == 0) {
+                      case false:
+                        FUN_140023e50(0x1400cf4c8,local_510);
+                      }
+                      FUN_14000118c(&uStack_300,_DAT_1400cf4c8,_DAT_1400cf4d8);
+                      uVar21 = CONCAT44(uStack_300._4_4_,(uint)uStack_300);
+                      local_590[0] = (undefined8 *******)(uVar5 + 0x66c6196c59a76fb);
+                      local_510[0] = (HMODULE)&UNK_140075197;
+                      *(undefined8 *)
+                       ((longlong)local_510 + (ulonglong)((int)local_590[0] + 0xe8c81c5b)) = 0x16;
+                      puVar25 = (undefined4 *)&UNK_140075760;
+                      if (_DAT_1400cfb88 == 0) {
+                        puVar25 = (undefined4 *)&UNK_1400759a4;
+                      }
+                      local_500 = (undefined1 (*) [32])local_590;
+                    /* WARNING: Switch is manually overridden */
+                      switch(*puVar25) {
+                      case 0xffffe018:
+                        FUN_140023e50(0x1400cfb70,local_510);
+                      }
+                      FUN_14000118c(local_510,_DAT_1400cfb70,_DAT_1400cfb80);
+                      pHVar33 = local_510[0];
+                      pcVar13 = (code *)FUN_140009863(-0x6651fd12,uVar21,0x24d76354,local_510[0]);
+                      uVar36 = _DAT_1400cfde0 + 0x4210aeb825cae9d2U >> 0xf;
+                      FUN_14000250d(pHVar33,*(longlong *)
+                                             ((longlong)local_510 +
+                                             (uVar36 | _DAT_1400cfde0 + 0x4210aeb825cae9d2U << 0x31)
+                                             ),1,1);
+                      FUN_14000250d((LPVOID)CONCAT44(uStack_300._4_4_,(uint)uStack_300),
+                                    CONCAT44(aiStack_2f8[1],aiStack_2f8[0]),1,1);
+                      uStack_300._0_4_ = 0x2e81b525;
+                      uStack_300._4_4_ = 0x3ffa9cc6;
+                      local_510[0] = (HMODULE)&UNK_1400748e8;
+                      uVar31 = (uint)uVar36;
+                      local_510[1] = (HMODULE)(ulonglong)(uVar31 ^ 0x18);
+                      *(undefined8 **)((longlong)local_510 + (ulonglong)(uVar31 + 8)) = &uStack_300;
+                      lVar35 = 0x2fc;
+                      if (_DAT_1400cfe40 == 0) {
+                        lVar35 = 0x94;
+                      }
+                    /* WARNING: Switch is manually overridden */
+                      switch(*(undefined4 *)(&UNK_1400756b4 + lVar35)) {
+                      case 0xfffff857:
+                        FUN_140023e50(0x1400cfe28,local_510);
+                      }
+                      FUN_14000118c(local_510,_DAT_1400cfe28,_DAT_1400cfe38);
+                      pHVar33 = local_510[0];
+                      local_590[0] = (undefined8 *******)0x20b7f36b792d2e79;
+                      uStack_300._0_4_ = 0x40073a89;
+                      uStack_300._4_4_ = 1;
+                      aiStack_2f8[0] = 0x16;
+                      aiStack_2f8[1] = 0;
+                      lVar35 = 0x158;
+                      if (_DAT_1400cfab0 == 0x519d6cb2 - uVar27) {
+                        lVar35 = 0x9c;
+                      }
+                      uStack_2f0 = local_590;
+                    /* WARNING: Switch is manually overridden */
+                      switch(*(undefined4 *)(&UNK_1400756b4 + lVar35)) {
+                      case 0xffffbd41:
+                        FUN_140023e50(0x1400cfa98,&uStack_300);
+                      }
+                      FUN_14000118c(&uStack_300,_DAT_1400cfa98,_DAT_1400cfaa8);
+                      pHVar19 = (HMODULE)CONCAT44(uStack_300._4_4_,(uint)uStack_300);
+                      pcVar16 = (code *)FUN_140009863(-0x15d9ef50,pHVar33,-0x38d69152,pHVar19);
+                      uVar31 = uVar27 ^ 0x519d6cba;
+                      FUN_14000250d(pHVar19,*(longlong *)
+                                             ((longlong)aiStack_2f8 + ((ulonglong)uVar31 - 8)),1,1);
+                      FUN_14000250d(local_510[0],(longlong)local_510[1],1,1);
+                      uVar36 = (ulonglong)(uVar27 ^ 0x519d6ca6);
+                      *(undefined8 *)((longlong)aiStack_2f8 + (uVar36 - 8)) = 0;
+                      *(undefined8 *)((longlong)aiStack_2f8 + uVar36) = 0;
+                      *(undefined8 *)((longlong)aiStack_2f8 + uVar36 + 8) = 0;
+                      *(undefined8 *)((longlong)auStack_2e8 + uVar36) = 0;
+                      *(undefined8 *)((longlong)auStack_2e8 + uVar36 + 8) = 0;
+                      *(undefined8 *)((longlong)auStack_2e8 + uVar36 + 0x10) = 0;
+                      *(undefined8 *)((longlong)auStack_2e8 + uVar36 + 0x18) = 0;
+                      *(undefined8 *)((longlong)auStack_2e8 + uVar36 + 0x20) = 0;
+                      *(undefined8 *)((longlong)auStack_2e8 + uVar36 + 0x28) = 0;
+                      *(undefined8 *)((longlong)auStack_2e8 + uVar36 + 0x30) = 0;
+                      *(undefined8 *)((longlong)auStack_2e8 + uVar36 + 0x38) = 0;
+                      *(undefined8 *)((longlong)auStack_2e8 + uVar36 + 0x40) = 0;
+                      *(undefined8 *)((longlong)auStack_2e8 + uVar36 + 0x48) = 0;
+                      *(undefined8 *)((longlong)auStack_2e8 + uVar36 + 0x50) = 0;
+                      *(undefined8 *)((longlong)auStack_2e8 + uVar36 + 0x58) = 0;
+                      *(undefined8 *)((longlong)auStack_2e8 + uVar36 + 0x60) = 0;
+                      uStack_300._0_4_ = 0x94;
+                      uStack_300._4_4_ = 0;
+                      aiStack_2f8[0] = 0;
+                      aiStack_2f8[1] = 0;
+                      uStack_2f0._0_4_ = 0;
+                      FUN_1400237e0((undefined1 (*) [32])((longlong)&local_500 + 4),0,0x100);
+                      local_510[0] = (HMODULE)CONCAT44(local_510[0]._4_4_,0x114);
+                      *(undefined8 *)((longlong)local_510 + (ulonglong)(uVar31 - 4)) = 0;
+                      *(undefined8 *)((longlong)local_510 + (ulonglong)(uVar31 - 4) + 8) = 0;
+                      (*pcVar13)(&uStack_300);
+                      (*pcVar16)(local_510);
+                      local_590[0] = (undefined8 *******)0x56c1787bd24319bf;
+                      local_510[0] = (HMODULE)0x140073f4c;
+                      local_510[1] = (HMODULE)0x14;
+                      uVar31 = 0x18 - uVar31;
+                      *(undefined8 *********)((longlong)local_510 + (ulonglong)uVar31) = local_590;
+                      lVar35 = 0x164;
+                      if (_DAT_1400d00e8 == 0) {
+                        lVar35 = 0xe0;
+                      }
+                    /* WARNING: Switch is manually overridden */
+                      switch(*(undefined4 *)(&UNK_1400756b4 + lVar35)) {
+                      case 0xfffff838:
+                        FUN_140023e50(0x1400d00d0,local_510);
+                      }
+                      FUN_14000118c(&uStack_300,_DAT_1400d00d0,_DAT_1400d00e0);
+                      uVar21 = CONCAT44(uStack_300._4_4_,(uint)uStack_300);
+                      local_590[0] = (undefined8 *******)0x22024a419ca0b89e;
+                      local_510[0] = (HMODULE)&UNK_140074e31;
+                      uVar24 = 0x519d6cba - uVar27;
+                      *(ulonglong *)((longlong)local_510 + (ulonglong)uVar24) =
+                           (ulonglong)(uVar24 ^ 0x1c);
+                      lVar35 = 0x68;
+                      if (_DAT_1400d01e8 == 0) {
+                        lVar35 = 0x1ac;
+                      }
+                      local_500 = (undefined1 (*) [32])local_590;
+                    /* WARNING: Switch is manually overridden */
+                      switch(*(undefined4 *)(&UNK_1400756b4 + lVar35)) {
+                      case 0xffffbcaf:
+                        FUN_140023e50(0x1400d01d0,local_510);
+                      }
+                      FUN_14000118c(local_510,_DAT_1400d01d0,_DAT_1400d01e0);
+                      pHVar33 = local_510[0];
+                      pcVar13 = (code *)FUN_140009863(-0x6651fd12,uVar21,-0x2292264a,local_510[0]);
+                      uVar34 = uVar27 ^ 0x519d6cba;
+                      FUN_14000250d(pHVar33,*(longlong *)((longlong)local_510 + (ulonglong)uVar34),1
+                                    ,1);
+                      FUN_14000250d((LPVOID)CONCAT44(uStack_300._4_4_,(uint)uStack_300),
+                                    *(longlong *)((longlong)aiStack_2f8 + ((ulonglong)uVar34 - 8)),1
+                                    ,1);
+                      lVar35 = *(longlong *)
+                                ((longlong)ThreadLocalStoragePointer + (ulonglong)_tls_index * 8);
+                      uStack_300 = (undefined8 ******)
+                                   (-(ulonglong)(uVar24 ^ 0x1c) -
+                                   (((ulonglong)uVar24 * 2 - (ulonglong)uVar31) +
+                                   *(longlong *)(lVar35 + 0x18)));
+                      local_510[0] = (HMODULE)0x140073bcc;
+                      local_510[1] = (HMODULE)(ulonglong)(0x1c - uVar34);
+                      *(undefined8 **)
+                       ((longlong)local_510 +
+                       (ulonglong)(((uint)DAT_1400d0278 ^ ~(local_560 - uVar24 ^ uVar31)) & 0xffff))
+                           = &uStack_300;
+                      puVar25 = (undefined4 *)&UNK_1400757f8;
+                      if (_DAT_1400cf8c0 ==
+                          ((uint)*(undefined8 *)(lVar35 + 0xa8) ^ -*(int *)(lVar35 + 0x60)) + uVar31
+                         ) {
+                        puVar25 = (undefined4 *)&UNK_140075978;
+                      }
+                    /* WARNING: Switch is manually overridden */
+                      switch(*puVar25) {
+                      case 0x188:
+                        FUN_140023e50(0x1400cf8a8,local_510);
+                      }
+                      FUN_14000118c(local_510,_DAT_1400cf8a8,_DAT_1400cf8b8);
+                      pHVar33 = local_510[0];
+                      local_590[0] = (undefined8 *******)0x186a721780c7aa66;
+                      uStack_300._0_4_ = 0x400747b5;
+                      uStack_300._4_4_ = 1;
+                      aiStack_2f8[0] = 0x1f;
+                      aiStack_2f8[1] = 0;
+                      *(undefined8 *********)
+                       ((longlong)aiStack_2f8 + ((ulonglong)(uVar27 + 0xae62935e) - 8)) = local_590;
+                      puVar25 = (undefined4 *)&UNK_140075970;
+                      if (_DAT_1400cfea8 == 0x10 - (uVar27 + 0xae62935e)) {
+                        puVar25 = (undefined4 *)&UNK_1400756b8;
+                      }
+                    /* WARNING: Switch is manually overridden */
+                      switch(*puVar25) {
+                      case 0x491:
+                        FUN_140023e50(0x1400cfe90,&uStack_300);
+                      }
+                      FUN_14000118c(&uStack_300,_DAT_1400cfe90,_DAT_1400cfea0);
+                      pHVar19 = (HMODULE)CONCAT44(uStack_300._4_4_,(uint)uStack_300);
+                      pcVar16 = (code *)FUN_140009863(-0x6651fd12,pHVar33,0x41d94fd5,pHVar19);
+                      FUN_14000250d(pHVar19,CONCAT44(aiStack_2f8[1],aiStack_2f8[0]),1,1);
+                      FUN_14000250d(local_510[0],(longlong)local_510[1],1,1);
+                      FUN_1400237e0((undefined1 (*) [32])&uStack_300,0,0x208);
+                      iVar30 = (*pcVar13)(0x104);
+                      FUN_1400237e0((undefined1 (*) [32])local_510,0,0x208);
+                      uVar31 = (*pcVar16)((undefined1 (*) [32])local_510,0x104);
+                      iVar10 = uVar27 + 0xae62934e;
+                      local_590[0] = (undefined8 *******)
+                                     CONCAT71(local_590[0]._1_7_,
+                                              uVar31 != (-(local_558 - 0x1e66) & 0xffff) &&
+                                              iVar30 != iVar10);
+                      uStack_300._0_4_ = 0xe3c13e32;
+                      uStack_300._4_4_ = 0xcf0041f5;
+                      local_510[0] = (HMODULE)&UNK_140074920;
+                      local_510[1] = (HMODULE)0x14;
+                      puVar25 = (undefined4 *)&UNK_14007574c;
+                      if (_DAT_1400cf7a8 == -iVar10) {
+                        puVar25 = (undefined4 *)&UNK_140075874;
+                      }
+                      local_500 = (undefined1 (*) [32])&uStack_300;
+                    /* WARNING: Switch is manually overridden */
+                      switch(*puVar25) {
+                      case 0xfffff9e7:
+                        FUN_140023e50(0x1400cf790,local_510);
+                      }
+                      FUN_14000118c(local_590,_DAT_1400cf790,_DAT_1400cf7a0);
+                      pppppppuVar28 = local_590[0];
+                      uStack_550 = 0x650c9589586aeadc;
+                      local_510[0] = (HMODULE)&UNK_140074846;
+                      local_510[1] = (HMODULE)0x1b;
+                      *(undefined8 **)((longlong)local_510 + (ulonglong)(uVar27 + 0xae62935e)) =
+                           &uStack_550;
+                      puVar25 = (undefined4 *)&UNK_140075828;
+                      if (_DAT_1400d0000 == 0) {
+                        puVar25 = (undefined4 *)&UNK_140075950;
+                      }
+                    /* WARNING: Switch is manually overridden */
+                      switch(*puVar25) {
+                      case 0xffffcbb4:
+                        FUN_140023e50(0x1400cffe8,local_510);
+                    /* WARNING: Switch is manually overridden */
+                      }
+                      FUN_14000118c(&uStack_300,_DAT_1400cffe8,_DAT_1400cfff8);
+                      pHVar33 = (HMODULE)CONCAT44(uStack_300._4_4_,(uint)uStack_300);
+                      uVar31 = uVar27 + 0xec6b4e80;
+                      pcVar13 = (code *)FUN_140009863(-0x6651fd12,pppppppuVar28,uVar31,pHVar33);
+                      FUN_14000250d(pHVar33,CONCAT44(aiStack_2f8[1],aiStack_2f8[0]),1,1);
+                      FUN_14000250d(local_590[0],
+                                    *(longlong *)
+                                     ((longlong)local_590 + (ulonglong)(0x3e08bb3a - uVar31)),1,1);
+                      ppppppuVar37 = (undefined8 ******)(-0x7c87017d72aefdda - (ulonglong)uVar31);
+                      local_510[0] = (HMODULE)0x140073bb8;
+                      *(undefined8 *)((longlong)local_510 + (ulonglong)(uVar27 + 0xae629356)) = 0x14
+                      ;
+                      puVar25 = (undefined4 *)&UNK_14007583c;
+                      if (_DAT_1400cfe00 == (int)_DAT_1400cf7f0 + iVar10 + uVar27 + 0xae629356) {
+                        puVar25 = (undefined4 *)&UNK_1400757d8;
+                      }
+                      local_590[0] = (undefined8 *******)ppppppuVar37;
+                      local_500 = (undefined1 (*) [32])local_590;
+                    /* WARNING: Switch is manually overridden */
+                      switch(*puVar25) {
+                      case 0xffffc116:
+                        FUN_140023e50(0x1400cfde8,local_510);
+                      }
+                      FUN_14000118c(&uStack_300,_DAT_1400cfde8,_DAT_1400cfdf8);
+                      uVar21 = CONCAT44(uStack_300._4_4_,(uint)uStack_300);
+                      local_590[0] = (undefined8 *******)0x846996aef2534d53;
+                      local_510[0] = (HMODULE)0x140074065;
+                      local_510[1] = (HMODULE)0x14;
+                      uVar31 = (uint)*(undefined8 *)
+                                      (*(longlong *)
+                                        ((longlong)ThreadLocalStoragePointer +
+                                        (ulonglong)_tls_index * 8) + 0x90) ^
+                               (uVar31 - (uVar27 + 0xae62935e)) + (uint)local_556;
+                      *(undefined8 *********)((longlong)local_510 + (ulonglong)(uVar31 & 0xffff)) =
+                           local_590;
+                      puVar25 = (undefined4 *)&UNK_14007570c;
+                      if (_DAT_1400cfc08 == 0) {
+                        puVar25 = (undefined4 *)&UNK_1400756f0;
+                      }
+                    /* WARNING: Switch is manually overridden */
+                      switch(*puVar25) {
+                      case 0xffffcddd:
+                        FUN_140023e50(0x1400cfbf0,local_510);
+                      }
+                      FUN_14000118c(local_510,_DAT_1400cfbf0,_DAT_1400cfc00);
+                      pHVar33 = local_510[0];
+                      pcVar16 = (code *)FUN_140009863(-0x6651fd12,uVar21,0x6db24894,local_510[0]);
+                      FUN_14000250d(pHVar33,*(longlong *)
+                                             ((longlong)local_510 + (ulonglong)(uVar27 + 0xae629356)
+                                             ),1,1);
+                      FUN_14000250d((LPVOID)CONCAT44(uStack_300._4_4_,(uint)uStack_300),
+                                    CONCAT44(aiStack_2f8[1],aiStack_2f8[0]),1,1);
+                      uVar21 = (*pcVar13)();
+                      (*pcVar16)(uVar21);
+                      uStack_300._0_4_ = 0xc20f2455;
+                      uStack_300._4_4_ = 0x4fbe96d9;
+                      local_510[0] = (HMODULE)0x140073912;
+                      uVar24 = uVar27 + 0xae629356 & 0xffff;
+                      *(ulonglong *)((longlong)local_510 + (ulonglong)uVar24) =
+                           (ulonglong)
+                           (byte)-(local_56f * -0x79 - ((byte)ppppppuVar37 ^ (byte)uVar31));
+                      local_500 = (undefined1 (*) [32])&uStack_300;
+                      lVar35 = 0x238;
+                      if (_DAT_1400d01a8 == uVar27 + 0xae62934e) {
+                        lVar35 = 0x34;
+                      }
+                    /* WARNING: Switch is manually overridden */
+                      switch(*(undefined4 *)(&UNK_1400756b4 + lVar35)) {
+                      case 0xfffff385:
+                        FUN_140023e50(0x1400d0190,local_510);
+                      }
+                      FUN_14000118c(local_510,_DAT_1400d0190,_DAT_1400d01a0);
+                      pHVar33 = local_510[0];
+                      local_590[0] = (undefined8 *******)0x140d0b2b96ebf127;
+                      uStack_300._0_4_ = 0x40074d68;
+                      uStack_300._4_4_ = 1;
+                      aiStack_2f8[0] = 0x24;
+                      aiStack_2f8[1] = 0;
+                      uStack_2f0 = local_590;
+                      uVar31 = (uint)*(undefined8 *)
+                                      (*(longlong *)
+                                        ((longlong)ThreadLocalStoragePointer +
+                                        (ulonglong)_tls_index * 8) + 0x128) ^ local_52c;
+                      lVar35 = 0x254;
+                      if (_DAT_1400cfd90 == uVar24 + (uVar31 >> 0x15 | uVar31 << 0xb)) {
+                        lVar35 = 0x298;
+                      }
+                    /* WARNING: Switch is manually overridden */
+                      switch(*(undefined4 *)(&UNK_1400756b4 + lVar35)) {
+                      case 0xffffedad:
+                        FUN_140023e50(0x1400cfd78,&uStack_300);
+                      }
+                      FUN_14000118c(&uStack_300,_DAT_1400cfd78,_DAT_1400cfd88);
+                      pHVar19 = (HMODULE)CONCAT44(uStack_300._4_4_,(uint)uStack_300);
+                      pcVar13 = (code *)FUN_140009863(-0x6651fd12,pHVar33,-0xb39dff3,pHVar19);
+                      FUN_14000250d(pHVar19,CONCAT44(aiStack_2f8[1],aiStack_2f8[0]),1,1);
+                      uVar27 = uVar27 ^ 0x519d6cba;
+                      FUN_14000250d(local_510[0],
+                                    *(longlong *)((longlong)local_510 + (ulonglong)uVar27),1,1);
+                      local_590[0] = (undefined8 *******)
+                                     (_DAT_1400cff58 ^ (ulonglong)uVar27 + ~_DAT_1400cf608);
+                      local_510[0] = (HMODULE)&UNK_140074e45;
+                      *(ulonglong *)((longlong)local_510 + (ulonglong)(0x10 - uVar27)) =
+                           (ulonglong)(byte)~(local_569 - (char)(0x10 - uVar27));
+                      lVar35 = 0x54;
+                      if (_DAT_1400d0228 == 8 - uVar27) {
+                        lVar35 = 0x224;
+                      }
+                      local_500 = (undefined1 (*) [32])local_590;
+                    /* WARNING: Switch is manually overridden */
+                      switch(*(undefined4 *)(&UNK_1400756b4 + lVar35)) {
+                      case 0xffffdcd5:
+                        FUN_140023e50(0x1400d0210,local_510);
+                      }
+                      FUN_14000118c(&uStack_300,_DAT_1400d0210,_DAT_1400d0220);
+                      uVar21 = CONCAT44(uStack_300._4_4_,(uint)uStack_300);
+                      local_590[0] = (undefined8 *******)(0x2515042b746ca89b - uVar5);
+                      local_510[0] = (HMODULE)&UNK_140074da0;
+                      local_510[1] = (HMODULE)0x27;
+                      lVar35 = 0x21c;
+                      if (_DAT_1400cfba8 == 0) {
+                        lVar35 = 0xc0;
+                      }
+                      local_500 = (undefined1 (*) [32])local_590;
+                    /* WARNING: Switch is manually overridden */
+                      switch(*(undefined4 *)(&UNK_1400756b4 + lVar35)) {
+                      case 0x49f:
+                        FUN_140023e50(0x1400cfb90,local_510);
+                      }
+                      FUN_14000118c(local_510,_DAT_1400cfb90,_DAT_1400cfba0);
+                      pHVar33 = local_510[0];
+                      pcVar16 = (code *)FUN_140009863(-0x6651fd12,uVar21,0x4062e75b,local_510[0]);
+                      FUN_14000250d(pHVar33,(longlong)local_510[1],1,1);
+                      FUN_14000250d((LPVOID)CONCAT44(uStack_300._4_4_,(uint)uStack_300),
+                                    CONCAT44(aiStack_2f8[1],aiStack_2f8[0]),1,1);
+                      FUN_1400237e0((undefined1 (*) [32])&uStack_300,0,0x208);
+                      (*pcVar13)((undefined1 (*) [32])&uStack_300);
+                      FUN_1400237e0((undefined1 (*) [32])local_510,0,0x208);
+                      (*pcVar16)((undefined1 (*) [32])local_510,0x104);
+                      return;
+                    }
+                  }
+                  FUN_14000bd8e();
+                  return;
+                    /* WARNING: Switch is manually overridden */
+                case 0xfffff288:
+                }
+                break;
+              case 0xfffff0a8:
+              }
+              goto override_jmp_140005370_case_1;
+            }
+            uVar29 = 0;
+            uVar32 = 1;
+            if (local_500 !=
+                (undefined1 (*) [32])*(undefined8 ********)((longlong)local_510 + uVar22)) {
+              *(undefined2 *)((longlong)&pHVar33->unused + (longlong)local_500 * 2) = 0;
+              local_500 = (undefined1 (*) [32])((longlong)local_500 + 1);
+              pbVar14 = (byte *)0x0;
+                    /* WARNING: Switch is manually overridden */
+              switch(0x14000607d) {
+              case 0x140002c34:
+                goto override_jmp_140004b5e_case_0;
+              }
+              goto override_jmp_140004b5e_case_1;
+            }
+            uVar9 = 0;
+            pbVar14 = (byte *)0x0;
+LAB_140005f51:
+            pppppppuVar28 = (undefined8 *******)local_500;
+            lVar35 = FUN_14000965c(local_510,(ulonglong)local_500,uVar32,(LPVOID)0x2,
+                                   (ulonglong)(0x519d6cb4 - uVar27));
+            puVar25 = (undefined4 *)&UNK_140075724;
+            if (lVar35 == -1) {
+              puVar25 = (undefined4 *)&UNK_140075958;
+            }
+                    /* WARNING: Switch is manually overridden */
+            switch(*puVar25) {
+            case 0x1b7:
+              goto override_jmp_140005370_case_1;
+            case 0xffffeb2d:
+              *(ushort *)((longlong)&local_510[0]->unused + (longlong)pppppppuVar28 * 2) = uVar9;
+              lVar35 = 0x2c8;
+              if (pbVar14 == (byte *)0x0) {
+                lVar35 = 0x264;
+              }
+            }
+            local_500 = (undefined1 (*) [32])((longlong)pppppppuVar28 + 1);
+            pHVar33 = local_510[0];
+                    /* WARNING: Switch is manually overridden */
+            switch(*(undefined4 *)(&UNK_1400756b4 + lVar35)) {
+            case 0xffffbf0c:
+              goto override_jmp_140004b5e_case_0;
+            }
+          } while( true );
+        }
+      } while( true );
+    }
+    break;
+  case 0xfffff396:
+  }
+override_jmp_140005370_case_1:
+                    /* WARNING: Does not return */
+  pcVar13 = (code *)invalidInstructionException();
+  (*pcVar13)();
 }
 
 
@@ -1415,19 +3615,21 @@ ulonglong FUN_140007969(uint param_1)
 
 
 
-/* ===== SAMPLE 17_loader.exe.bin | RVA 0x79e1 | partial_markers_remain ===== */
-/* address=1400079e1 rva=0x79e1 */
+/* ===== SAMPLE 17_loader.exe.bin | RVA 0x79e1 | verified_conservative_local_CFG_only ===== */
+/* NORMAL INITIALIZATION CONTEXT ONLY. Original-byte conservative local CFG with statically derived loader TLS. Local computed-JMP targets are finite; PE-bound import tails and CFG guard dispatch are represented as tail calls. Unknown callee/store effects remain havoc. Actual indirect CALL targets and transitive behavior require separate evidence. Not original source, not a buildable project. Original instruction bytes unchanged. */
 
-void FUN_1400079e1(undefined8 param_1,ulonglong param_2)
+void FUN_1400079e1(undefined8 *param_1,ulonglong param_2)
 
 {
-  int *piVar1;
-  uint uVar2;
-  ulonglong uVar3;
-  undefined4 local_88;
-  undefined4 uStack_84;
-  undefined4 uStack_80;
-  undefined4 uStack_7c;
+  undefined1 uVar1;
+  ulonglong uVar2;
+  undefined4 *puVar3;
+  uint uVar4;
+  ulonglong uVar5;
+  ulonglong uVar6;
+  undefined1 uStack_89;
+  undefined8 local_88;
+  undefined8 uStack_80;
   undefined8 local_78;
   undefined8 uStack_70;
   undefined8 local_68;
@@ -1441,25 +3643,39 @@ void FUN_1400079e1(undefined8 param_1,ulonglong param_2)
   uStack_60 = 0x767574737271706f;
   local_78 = 0x5857565554535251;
   uStack_70 = 0x6665646362615a59;
-  local_88 = 0x44434241;
-  uStack_84 = 0x48474645;
-  uStack_80 = 0x4c4b4a49;
-  uStack_7c = 0x504f4e4d;
-  uVar3 = (param_2 ^ 0xe7037ed1a0b428db) + 0x9e3779b97f4a7c15;
-  uVar2 = 0xa9ddc6cb - (int)DAT_1400cfab8;
-  uVar3 = (uVar3 >> 0x1e ^ uVar3) * -0x40a7b892e31b1a47;
-  uVar3 = ((ulonglong)uVar2 ^ 0x94d049bb133111f0) * (uVar3 >> ((byte)uVar2 & 0x3f) ^ uVar3);
-  uVar3 = (uVar3 >> 0x1f ^ uVar3) % 2;
-  local_88 = CONCAT22(0x4443,CONCAT11(*(undefined1 *)((longlong)&local_88 + uVar3),0x41));
-  *(undefined1 *)((longlong)&local_88 + uVar3) = 0x42;
-  piVar1 = &DAT_140075f90;
-  if (uVar2 != 0x59) {
-    piVar1 = &DAT_140075f94;
-  }
-                    /* WARNING: Could not recover jumptable at 0x000140007ad5. Too many branches */
-                    /* WARNING: Treating indirect jump as call */
-  (*(code *)(&LAB_140007adf + *piVar1))(uVar2,uVar3,0x9e3779b97f4a7c15,param_1);
-  return;
+  local_88 = 0x4847464544434241;
+  uStack_80 = 0x504f4e4d4c4b4a49;
+  uVar6 = param_2 ^ 0xe7037ed1a0b428db;
+  uVar5 = 2;
+  uVar4 = 0xa9ddc6cb - (int)DAT_1400cfab8;
+  do {
+    uVar6 = uVar6 + 0x9e3779b97f4a7c15;
+    uVar2 = (uVar6 >> 0x1e ^ uVar6) * -0x40a7b892e31b1a47;
+    uVar2 = ((ulonglong)uVar4 ^ 0x94d049bb133111f0) * (uVar2 >> ((byte)uVar4 & 0x3f) ^ uVar2);
+    uVar2 = (uVar2 >> 0x1f ^ uVar2) % uVar5;
+    uVar1 = (&uStack_89)[uVar5];
+    (&uStack_89)[uVar5] = *(undefined1 *)((longlong)&local_88 + uVar2);
+    *(undefined1 *)((longlong)&local_88 + uVar2) = uVar1;
+    puVar3 = &UNK_140075f90;
+    if (uVar5 != 0x5b - uVar4) {
+      puVar3 = &UNK_140075f94;
+    }
+                    /* WARNING: Switch is manually overridden */
+    switch(*puVar3) {
+    case 0:
+      param_1[6] = local_58;
+      param_1[7] = uStack_50;
+      param_1[4] = local_68;
+      param_1[5] = uStack_60;
+      param_1[2] = local_78;
+      param_1[3] = uStack_70;
+      *param_1 = local_88;
+      param_1[1] = uStack_80;
+      return;
+    case 0xfffffff8:
+      uVar5 = uVar5 + 1;
+    }
+  } while( true );
 }
 
 
@@ -1999,1780 +4215,832 @@ undefined8 FUN_140008319(undefined8 param_1,ulonglong param_2)
 
 
 
-/* ===== SAMPLE 17_loader.exe.bin | RVA 0x858c | partial_markers_remain ===== */
-/* address=14000858c rva=0x858c */
+/* ===== SAMPLE 17_loader.exe.bin | RVA 0x858c | verified_conservative_local_CFG_only ===== */
+/* NORMAL INITIALIZATION CONTEXT ONLY. Original-byte conservative local CFG with statically derived loader TLS. Local computed-JMP targets are finite; PE-bound import tails and CFG guard dispatch are represented as tail calls. Unknown callee/store effects remain havoc. Actual indirect CALL targets and transitive behavior require separate evidence. Not original source, not a buildable project. Original instruction bytes unchanged. */
 
-/* WARNING: Instruction at (ram,0x000140008a2e) overlaps instruction at (ram,0x000140008a2c)
-    */
+/* WARNING: Type propagation algorithm not settling */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 HMODULE FUN_14000858c(uint param_1,HMODULE param_2,HMODULE param_3,uint *param_4)
 
 {
-  HMODULE pHVar1;
+  undefined1 *puVar1;
   ushort uVar2;
-  code *pcVar3;
-  byte bVar4;
-  uint uVar5;
-  HMODULE pHVar6;
-  LPVOID pvVar7;
-  HMODULE pHVar8;
-  longlong lVar9;
-  undefined8 *puVar10;
-  HMODULE pHVar11;
-  uint *puVar12;
-  char *pcVar13;
-  HMODULE unaff_RBX;
-  char *pcVar14;
-  int iVar15;
-  HMODULE unaff_RSI;
-  HMODULE in_R10;
-  char cVar16;
-  HMODULE in_R11;
-  HMODULE unaff_R12;
-  HMODULE unaff_R13;
-  ulonglong uVar17;
-  HMODULE unaff_R14;
-  HMODULE unaff_R15;
-  ulonglong uVar18;
-  bool bVar19;
-  HMODULE local_e8;
-  HMODULE local_e0;
+  ushort uVar3;
+  undefined8 uVar4;
+  code *pcVar5;
+  byte bVar6;
+  byte bVar7;
+  uint uVar8;
+  undefined8 *puVar9;
+  char *pcVar10;
+  uint *******pppppppuVar11;
+  uint *******pppppppuVar12;
+  HMODULE pHVar13;
+  uint *******pppppppuVar14;
+  HMODULE pHVar15;
+  longlong lVar16;
+  uint *puVar17;
+  uint uVar18;
+  ulonglong uVar19;
+  uint *******pppppppuVar20;
+  int iVar21;
+  char cVar22;
+  HMODULE pHVar23;
+  ulonglong uVar24;
+  ulonglong uVar25;
+  HMODULE pHVar26;
+  bool bVar27;
+  bool bVar28;
+  uint ******local_e8;
   HMODULE local_d8;
   HMODULE local_d0;
-  HMODULE local_c8;
-  HMODULE local_b8;
-  HMODULE local_b0;
-  undefined8 local_a8;
-  HMODULE local_a0;
-  undefined4 local_94;
-  HMODULE local_88;
+  uint *******local_b8;
+  uint *******local_88;
   longlong local_80;
-  HMODULE local_70;
+  uint *******local_70;
   longlong local_68;
-  HMODULE local_58;
-  HMODULE local_50;
+  uint ******local_58;
+  ulonglong local_50;
   HMODULE local_48;
   
-  puVar12 = (uint *)param_3;
   FUN_140012ed0();
-  pHVar8 = *(HMODULE *)
-            (*(longlong *)((longlong)ThreadLocalStoragePointer + (ulonglong)_tls_index * 8) + 0xa0);
+  uVar4 = *(undefined8 *)
+           (*(longlong *)((longlong)ThreadLocalStoragePointer + (ulonglong)_tls_index * 8) + 0xa0);
   LOCK();
-  bVar19 = DAT_1400d0d78 == 0;
-  if (bVar19) {
+  bVar28 = DAT_1400d0d78 == 0;
+  if (bVar28) {
     DAT_1400d0d78 = 1;
   }
   UNLOCK();
-  pHVar11 = (HMODULE)0xb0;
-  if (bVar19) {
-    pHVar11 = (HMODULE)0xc;
+  lVar16 = 0xb0;
+  if (bVar28) {
+    lVar16 = 0xc;
   }
-  pcVar14 = (char *)0x140008dfc;
-  pHVar6 = (HMODULE)((longlong)pHVar11[0x5001d826].unused + 0x140008dfc);
-  local_d8 = param_2;
-  local_d0 = param_3;
-  switch(pHVar11) {
-  case (HMODULE)0x0:
-switchD_140008621_caseD_0:
+  bVar6 = (byte)uVar4;
+                    /* WARNING: Switch is manually overridden */
+  switch(*(undefined4 *)((longlong)&switchD_140008621::switchdataD_140076098 + lVar16)) {
+  case 0xfffffc82:
+switchD_140008621_caseD_c:
+    puVar17 = &UINT_1400760cc;
+    if (DAT_1400d0d70 == (uint *******)0x0) {
+      puVar17 = &switchD_140008c28::switchdataD_1400760f0;
+    }
+    break;
+  case 0xfffffd9d:
     do {
-      pHVar6 = (HMODULE)((longlong)&pHVar6->unused + 1);
-LAB_14000926b:
-      lVar9 = *(longlong *)(unaff_R13 + (longlong)pHVar6 * 2);
-      *(HMODULE *)(lVar9 + (ulonglong)((uint)unaff_RSI ^ 0x1256036f)) = unaff_R12;
-      *(short *)(lVar9 + 0x88) = (short)pHVar6;
-      switch(pcVar14 + (int)(&switchD_140008621::switchdataD_140076098)
-                            [(ulonglong)(unaff_R15 == pHVar6) * 0x10]) {
-      case (char *)0x140008773:
-switchD_140008621_caseD_40:
+      puVar17 = &switchD_1400089b7::switchdataD_140076180;
+      if (DAT_1400d0d78 == (bVar6 ^ 0xff)) {
+        puVar17 = &switchD_140008c28::switchdataD_1400760b8;
+      }
+                    /* WARNING: Switch is manually overridden */
+      switch(*puVar17) {
+      case 0xfffff8cf:
         do {
-          puVar12 = (uint *)((ulonglong)local_d0 & 0xffffffff);
-          param_4 = (uint *)local_e8;
-          local_88 = unaff_R12;
-          local_70 = unaff_R14;
-          FUN_140012b23((longlong)local_50,*(longlong *)local_b8,local_d0._0_4_,local_e8,in_R11);
-          pHVar11 = (HMODULE)0x8;
-          if (local_70 ==
-              (HMODULE)(ulonglong)
-                       ((~((uint)*(undefined8 *)
-                                  (*(longlong *)
-                                    ((longlong)ThreadLocalStoragePointer + (ulonglong)_tls_index * 8
-                                    ) + 200) ^ 0x4351b1f3) ^ (uint)local_e0) - (int)local_a8)) {
-            pHVar11 = (HMODULE)0x80;
+          lVar16 = 0xe8;
+          if (DAT_1400d0d78 == 0) {
+            lVar16 = 0x20;
           }
-          pHVar6 = (HMODULE)(pcVar14 + pHVar11[0x5001d826].unused);
-          pHVar8 = ThreadLocalStoragePointer;
-          in_R11 = local_88;
-          unaff_R12 = local_70;
-          unaff_R13 = local_c8;
-          switch(pHVar6) {
-          case (HMODULE)0x140008623:
-            goto switchD_140008621_caseD_30;
-          case (HMODULE)0x140008804:
-            goto switchD_140008621_caseD_28;
-          case (HMODULE)0x140008868:
-            goto switchD_140008621_caseD_10;
-          case (HMODULE)0x1400088c6:
-            goto switchD_140008621_caseD_70;
-          case (HMODULE)0x140008968:
-switchD_140008621_caseD_8:
-            do {
-              uVar5 = (uint)DAT_1400d02a0 * 0x40 + (uint)DAT_1400d02a0;
-              pHVar8 = (HMODULE)(ulonglong)uVar5;
-              unaff_R14 = *(HMODULE *)
-                           ((longlong)&unaff_R12->unused +
-                           (ulonglong)(byte)(((byte)unaff_RSI ^ 0xff) + (char)uVar5));
-              lVar9 = 0xa8;
-              if (unaff_R14 == (HMODULE)0x0) {
-                lVar9 = 0xd0;
-              }
-              pHVar6 = (HMODULE)(pcVar14 +
-                                *(int *)((longlong)&switchD_140008621::switchdataD_140076098 + lVar9
-                                        ));
-              local_d0 = (HMODULE)CONCAT44(local_d0._4_4_,local_94);
-              local_e8 = local_58;
-              pHVar11 = local_58;
-              switch(pHVar6) {
-              case (HMODULE)0x140008623:
-                goto switchD_140008621_caseD_30;
-              case (HMODULE)0x1400086cd:
-switchD_14000931c_caseD_400086cd:
-                lVar9 = 0xe8;
-                if (DAT_1400d0d78 == 0) {
-                  lVar9 = 0x20;
-                }
-                    /* WARNING: Could not recover jumptable at 0x0001400086e9. Too many branches */
-                    /* WARNING: Treating indirect jump as call */
-                pHVar8 = (HMODULE)(*(code *)(pcVar14 +
-                                            *(int *)((longlong)
-                                                     &switchD_140008621::switchdataD_140076098 +
-                                                    lVar9)))();
-                return pHVar8;
-              case (HMODULE)0x140008773:
-                goto switchD_140008621_caseD_40;
-              case (HMODULE)0x140008804:
-                goto switchD_140008621_caseD_28;
-              case (HMODULE)0x140008868:
-                goto switchD_140008621_caseD_10;
-              case (HMODULE)0x1400088c6:
-                goto switchD_140008621_caseD_70;
-              case (HMODULE)0x1400089b9:
-switchD_14000931c_caseD_400089b9:
-                if ((char)(((uint)pHVar6->unused < param_1) - (param_1 < (uint)pHVar6->unused)) !=
-                    '\x01') {
-                  unaff_R12 = unaff_R15;
-                }
-                    /* WARNING: Could not recover jumptable at 0x0001400089de. Too many branches */
-                    /* WARNING: Treating indirect jump as call */
-                pHVar8 = (HMODULE)(*(code *)(pcVar14 + unaff_R12->unused))();
-                return pHVar8;
-              case (HMODULE)0x1400089e0:
-                goto switchD_140008621_caseD_b8;
-              case (HMODULE)0x140008b2d:
-                goto switchD_140008621_caseD_a0;
-              case (HMODULE)0x140008b77:
-switchD_140008621_caseD_20:
-                do {
-                  LOCK();
-                  bVar19 = DAT_1400d0d78 == 0;
-                  if (bVar19) {
-                    DAT_1400d0d78 = 1;
-                  }
-                  UNLOCK();
-                  pHVar11 = (HMODULE)0xb0;
-                  if (bVar19) {
-                    pHVar11 = (HMODULE)0xc;
-                  }
-                  pHVar6 = (HMODULE)(pcVar14 + pHVar11[0x5001d826].unused);
-                  switch(pHVar6) {
-                  case (HMODULE)0x140008623:
-                    goto switchD_140008621_caseD_30;
-                  case (HMODULE)0x1400086eb:
-                    goto switchD_140008621_caseD_6c;
-                  case (HMODULE)0x14000870a:
-                    goto switchD_140008621_caseD_1c;
-                  case (HMODULE)0x140008773:
-                    goto switchD_140008621_caseD_40;
-                  case (HMODULE)0x140008804:
-                    goto switchD_140008621_caseD_28;
-                  case (HMODULE)0x140008868:
-                    goto switchD_140008621_caseD_10;
-                  case (HMODULE)0x1400088c6:
-                    goto switchD_140008621_caseD_70;
-                  case (HMODULE)0x1400088ec:
-                    goto switchD_140008621_caseD_44;
-                  case (HMODULE)0x140008924:
-                    goto switchD_140008621_caseD_54;
-                  case (HMODULE)0x140008968:
-                    goto switchD_140008621_caseD_8;
-                  case (HMODULE)0x1400089e0:
-                    goto switchD_140008621_caseD_b8;
-                  case (HMODULE)0x1400089e2:
-                    goto switchD_140008621_caseD_bc;
-                  case (HMODULE)0x140008a1a:
-                    goto switchD_140008621_caseD_5c;
-                  case (HMODULE)0x140008a56:
-                    goto switchD_140008621_caseD_9c;
-                  case (HMODULE)0x140008a7e:
-                    goto switchD_140008621_caseD_c;
-                  case (HMODULE)0x140008afc:
-                    goto switchD_140008621_caseD_ac;
-                  case (HMODULE)0x140008b12:
-                    goto switchD_140008621_caseD_4;
-                  case (HMODULE)0x140008b2d:
-                    goto switchD_140008621_caseD_a0;
-                  case (HMODULE)0x140008b99:
-                    goto switchD_140008621_caseD_b0;
-                  case (HMODULE)0x140008c0a:
-                    goto switchD_140008621_caseD_90;
-                  case (HMODULE)0x140008c2a:
-                    goto switchD_140008621_caseD_50;
-                  case (HMODULE)0x140008ce4:
-                    goto switchD_140008621_caseD_8c;
-                  case (HMODULE)0x140008cfb:
-                    goto switchD_140008621_caseD_34;
-                  case (HMODULE)0x140008d66:
-                    goto switchD_140008621_caseD_98;
-                  case (HMODULE)0x140008d68:
-                    goto switchD_140008621_caseD_60;
-                  case (HMODULE)0x140008d6a:
-                    goto switchD_140008621_caseD_4c;
-                  case (HMODULE)0x140008d94:
-                    goto switchD_140008621_caseD_64;
-                  case (HMODULE)0x140008dba:
-                    goto switchD_140008621_caseD_74;
-                  case (HMODULE)0x140008dfa:
-                    goto switchD_140008621_caseD_14;
-                  case (HMODULE)0x140008dfc:
-                    goto switchD_140008621_caseD_78;
-                  case (HMODULE)0x140008e1e:
-                    goto switchD_140008621_caseD_58;
-                  case (HMODULE)0x140008ea7:
-                    goto switchD_140008621_caseD_80;
-                  case (HMODULE)0x140008ef3:
-                    goto switchD_140008621_caseD_68;
-                  case (HMODULE)0x140008ef9:
-                    goto switchD_140008621_caseD_94;
-                  case (HMODULE)0x140008f1e:
-                    goto switchD_140008621_caseD_84;
-                  case (HMODULE)0x140008f34:
-switchD_140008621_caseD_38:
-                    in_R10 = (HMODULE)(ulonglong)((char)in_R11 == '\0');
-                    switch(pcVar14 + (int)(&switchD_140008c28::switchdataD_140076128)
-                                          [(longlong)in_R10]) {
-                    case (char *)0x140008c0a:
-switchD_140008621_caseD_90:
-                      do {
-                        unaff_RBX = unaff_R14;
-                        cVar16 = (char)in_R11;
-                        in_R11 = (HMODULE)0x98;
-                        lVar9 = 0x48;
-                        if (cVar16 != -1) {
-                          lVar9 = 0x98;
-                        }
-                        pHVar6 = (HMODULE)(pcVar14 +
-                                          *(int *)((longlong)
-                                                   &switchD_140008621::switchdataD_140076098 + lVar9
-                                                  ));
-                        unaff_R14 = unaff_RBX;
-                        switch(pHVar6) {
-                        case (HMODULE)0x140008623:
-                          goto switchD_140008621_caseD_30;
-                        case (HMODULE)0x140008773:
-                          goto switchD_140008621_caseD_40;
-                        case (HMODULE)0x140008804:
-                          goto switchD_140008621_caseD_28;
-                        case (HMODULE)0x140008868:
-                          goto switchD_140008621_caseD_10;
-                        case (HMODULE)0x1400088c6:
-                          goto switchD_140008621_caseD_70;
-                        case (HMODULE)0x140008968:
-                          goto switchD_140008621_caseD_8;
-                        case (HMODULE)0x1400089e0:
-                          goto switchD_140008621_caseD_b8;
-                        case (HMODULE)0x140008b2d:
-                          goto switchD_140008621_caseD_a0;
-                        case (HMODULE)0x140008b77:
-                          goto switchD_140008621_caseD_20;
-                        case (HMODULE)0x140008b99:
-                          goto switchD_140008621_caseD_b0;
-                        case (HMODULE)0x140008bc3:
-                          goto switchD_14000931c_caseD_40008bc3;
-                        case (HMODULE)0x140008c2a:
-                          goto switchD_140008621_caseD_50;
-                        case (HMODULE)0x140008d66:
-                          goto switchD_140008621_caseD_98;
-                        case (HMODULE)0x140008d68:
-                          goto switchD_140008621_caseD_60;
-                        case (HMODULE)0x140008dfc:
-                          goto switchD_140008621_caseD_78;
-                        case (HMODULE)0x140008e1e:
-switchD_140008621_caseD_58:
-                          do {
-                            DAT_1400d0d78 = 0;
-                            pHVar8 = local_d0;
-                            unaff_R13 = (HMODULE)GetProcAddress(local_d8,(LPCSTR)local_d0);
-                            if (unaff_R13 == (HMODULE)0x0) {
-                              return (HMODULE)0x0;
-                            }
-                            LOCK();
-                            bVar19 = DAT_1400d0d78 == 0;
-                            if (bVar19) {
-                              DAT_1400d0d78 = 1;
-                            }
-                            UNLOCK();
-                            pHVar11 = (HMODULE)0x70;
-                            if (bVar19) {
-                              pHVar11 = (HMODULE)0x44;
-                            }
-                            pHVar6 = (HMODULE)(pcVar14 + pHVar11[0x5001d826].unused);
-                            unaff_RSI = local_b0;
-                            switch(pHVar6) {
-                            case (HMODULE)0x140008623:
-                              goto switchD_140008621_caseD_30;
-                            case (HMODULE)0x1400086eb:
-                              goto switchD_140008621_caseD_6c;
-                            case (HMODULE)0x14000870a:
-                              goto switchD_140008621_caseD_1c;
-                            case (HMODULE)0x140008773:
-                              goto switchD_140008621_caseD_40;
-                            case (HMODULE)0x140008804:
-                              goto switchD_140008621_caseD_28;
-                            case (HMODULE)0x140008868:
-                              goto switchD_140008621_caseD_10;
-                            case (HMODULE)0x1400088c6:
-                              goto switchD_140008621_caseD_70;
-                            case (HMODULE)0x1400088ec:
-                              goto switchD_140008621_caseD_44;
-                            case (HMODULE)0x140008924:
-                              goto switchD_140008621_caseD_54;
-                            case (HMODULE)0x140008968:
-                              goto switchD_140008621_caseD_8;
-                            case (HMODULE)0x140008a1a:
-                              goto switchD_140008621_caseD_5c;
-                            case (HMODULE)0x140008a7e:
-                              goto switchD_140008621_caseD_c;
-                            case (HMODULE)0x140008b12:
-                              goto switchD_140008621_caseD_4;
-                            case (HMODULE)0x140008b77:
-                              goto switchD_140008621_caseD_20;
-                            case (HMODULE)0x140008c2a:
-                              goto switchD_140008621_caseD_50;
-                            case (HMODULE)0x140008cfb:
-                              goto switchD_140008621_caseD_34;
-                            case (HMODULE)0x140008d68:
-                              goto switchD_140008621_caseD_60;
-                            case (HMODULE)0x140008d6a:
-switchD_140008621_caseD_4c:
-                              do {
-                                puVar12 = (uint *)((longlong)local_e0 - (longlong)unaff_RBX);
-                                lVar9 = 0xd8;
-                                if ((int)puVar12 == (int)unaff_R15 + 1) {
-                                  lVar9 = 0xc4;
-                                }
-                                pHVar6 = (HMODULE)(pcVar14 +
-                                                  *(int *)((longlong)
-                                                           &switchD_140008621::switchdataD_140076098
-                                                          + lVar9));
-                                pHVar11 = local_d8;
-                                switch(pHVar6) {
-                                case (HMODULE)0x140008623:
-                                  goto switchD_140008621_caseD_30;
-                                case (HMODULE)0x1400086eb:
-                                  goto switchD_140008621_caseD_6c;
-                                case (HMODULE)0x14000870a:
-                                  goto switchD_140008621_caseD_1c;
-                                case (HMODULE)0x140008773:
-                                  goto switchD_140008621_caseD_40;
-                                case (HMODULE)0x140008804:
-                                  goto switchD_140008621_caseD_28;
-                                case (HMODULE)0x140008868:
-                                  goto switchD_140008621_caseD_10;
-                                case (HMODULE)0x1400088c6:
-                                  goto switchD_140008621_caseD_70;
-                                case (HMODULE)0x1400088ec:
-                                  goto switchD_140008621_caseD_44;
-                                case (HMODULE)0x140008924:
-switchD_140008621_caseD_54:
-                                  do {
-                                    DAT_1400d0d68 = pHVar11;
-                                    *(HMODULE *)(unaff_R15 + 0x24) = pHVar6;
-                                    *(undefined2 *)&unaff_R15[0x22].unused = 0;
-                                    lVar9 = 0x68;
-                                    if (local_d8 == unaff_R14) {
-                                      lVar9 = 0x5c;
-                                    }
-                                    pHVar11 = (HMODULE)(longlong)
-                                                       *(int *)((longlong)
-                                                                &switchD_140008621::
-                                                                 switchdataD_140076098 + lVar9);
-                                    pcVar14 = (char *)((longlong)&pHVar11->unused +
-                                                      (longlong)pcVar14);
-                                    in_R11 = (HMODULE)((ulonglong)local_d0 & 0xffffffff);
-                                    pHVar8 = local_e8;
-                                    DAT_1400d0d70 = pHVar6;
-                                    switch(pcVar14) {
-                                    case (char *)0x140008623:
-                                      goto switchD_140008621_caseD_30;
-                                    case (char *)0x1400086eb:
-                                      goto switchD_140008621_caseD_6c;
-                                    case (char *)0x14000870a:
-                                      goto switchD_140008621_caseD_1c;
-                                    case (char *)0x140008773:
-                                      goto switchD_140008621_caseD_40;
-                                    case (char *)0x140008804:
-                                      goto switchD_140008621_caseD_28;
-                                    case (char *)0x140008868:
-                                      goto switchD_140008621_caseD_10;
-                                    case (char *)0x1400088c6:
-                                      goto switchD_140008621_caseD_70;
-                                    case (char *)0x1400088ec:
-                                      goto switchD_140008621_caseD_44;
-                                    case (char *)0x140008968:
-                                      goto switchD_140008621_caseD_8;
-                                    case (char *)0x140008a1a:
-                                      goto switchD_140008621_caseD_5c;
-                                    case (char *)0x140008a7e:
-                                      goto switchD_140008621_caseD_c;
-                                    case (char *)0x140008b12:
-                                      goto switchD_140008621_caseD_4;
-                                    case (char *)0x140008b77:
-                                      goto switchD_140008621_caseD_20;
-                                    case (char *)0x140008c2a:
-                                      goto switchD_140008621_caseD_50;
-                                    case (char *)0x140008cfb:
-                                      goto switchD_140008621_caseD_34;
-                                    case (char *)0x140008d68:
-                                      goto switchD_140008621_caseD_60;
-                                    case (char *)0x140008d6a:
-                                      goto switchD_140008621_caseD_4c;
-                                    case (char *)0x140008d94:
-switchD_140008621_caseD_64:
-                                      do {
-                                        unaff_R14 = unaff_RSI;
-                                        pHVar11 = (HMODULE)0x3c;
-                                        if (unaff_R12 == (HMODULE)0x0) {
-                                          pHVar11 = (HMODULE)0xf0;
-                                        }
-                                        pHVar6 = (HMODULE)(pcVar14 + pHVar11[0x5001d826].unused);
-                                        unaff_RSI = local_b0;
-                                        unaff_R13 = local_c8;
-                                        switch(pHVar6) {
-                                        case (HMODULE)0x140008623:
-                                          goto switchD_140008621_caseD_30;
-                                        case (HMODULE)0x1400086cd:
-                                          goto switchD_14000931c_caseD_400086cd;
-                                        case (HMODULE)0x1400086eb:
-                                          goto switchD_140008621_caseD_6c;
-                                        case (HMODULE)0x14000870a:
-                                          goto switchD_140008621_caseD_1c;
-                                        case (HMODULE)0x140008729:
-                                          unaff_RSI = local_b0;
-                                          if ((short)unaff_R15 != 6) goto LAB_140008733;
-                                          unaff_R13 = (HMODULE)0x5;
-                                          pHVar8 = (HMODULE)0x0;
-                                          local_b8 = unaff_RBX;
-                                          goto LAB_140008740;
-                                        case (HMODULE)0x140008773:
-                                          goto switchD_140008621_caseD_40;
-                                        case (HMODULE)0x140008804:
-                                          goto switchD_140008621_caseD_28;
-                                        case (HMODULE)0x140008868:
-                                          goto switchD_140008621_caseD_10;
-                                        case (HMODULE)0x1400088c6:
-switchD_140008621_caseD_70:
-                                          do {
-                                            pHVar6 = (HMODULE)&DAT_00000024;
-                                            lVar9 = 0xcc;
-                                            if (DAT_1400d0d78 != (byte)((byte)unaff_RSI ^ 0xff)) {
-                                              lVar9 = 0x24;
-                                            }
-                                            pHVar11 = (HMODULE)(pcVar14 +
-                                                               *(int *)((longlong)
-                                                                        &switchD_140008621::
-                                                                         switchdataD_140076098 +
-                                                                       lVar9));
-                                            switch(pHVar11) {
-                                            case (HMODULE)0x140008623:
-                                              goto switchD_140008621_caseD_30;
-                                            case (HMODULE)0x1400086cd:
-                                              goto switchD_14000931c_caseD_400086cd;
-                                            case (HMODULE)0x1400086eb:
-                                              goto switchD_140008621_caseD_6c;
-                                            case (HMODULE)0x14000870a:
-                                              goto switchD_140008621_caseD_1c;
-                                            case (HMODULE)0x140008773:
-                                              goto switchD_140008621_caseD_40;
-                                            case (HMODULE)0x140008804:
-                                              goto switchD_140008621_caseD_28;
-                                            case (HMODULE)0x140008868:
-                                              goto switchD_140008621_caseD_10;
-                                            case (HMODULE)0x1400088ec:
-                                              goto switchD_140008621_caseD_44;
-                                            case (HMODULE)0x140008924:
-                                              goto switchD_140008621_caseD_54;
-                                            case (HMODULE)0x140008968:
-                                              goto switchD_140008621_caseD_8;
-                                            case (HMODULE)0x1400089b9:
-                                              goto switchD_14000931c_caseD_400089b9;
-                                            case (HMODULE)0x1400089e0:
-                                              goto switchD_140008621_caseD_b8;
-                                            case (HMODULE)0x1400089e2:
-                                              goto switchD_140008621_caseD_bc;
-                                            case (HMODULE)0x140008a1a:
-                                              goto switchD_140008621_caseD_5c;
-                                            case (HMODULE)0x140008a56:
-                                              goto switchD_140008621_caseD_9c;
-                                            case (HMODULE)0x140008a7e:
-                                              goto switchD_140008621_caseD_c;
-                                            case (HMODULE)0x140008afc:
-                                              goto switchD_140008621_caseD_ac;
-                                            case (HMODULE)0x140008b12:
-                                              goto switchD_140008621_caseD_4;
-                                            case (HMODULE)0x140008b2d:
-                                              goto switchD_140008621_caseD_a0;
-                                            case (HMODULE)0x140008b77:
-                                              goto switchD_140008621_caseD_20;
-                                            case (HMODULE)0x140008b99:
-                                              goto switchD_140008621_caseD_b0;
-                                            case (HMODULE)0x140008bc3:
-                                              goto switchD_14000931c_caseD_40008bc3;
-                                            case (HMODULE)0x140008be4:
-                                              goto switchD_14000931c_caseD_40008be4;
-                                            case (HMODULE)0x140008c0a:
-                                              goto switchD_140008621_caseD_90;
-                                            case (HMODULE)0x140008c2a:
-                                              goto switchD_140008621_caseD_50;
-                                            case (HMODULE)0x140008c95:
-                                              goto switchD_14000931c_caseD_40008c95;
-                                            case (HMODULE)0x140008ce4:
-                                              goto switchD_140008621_caseD_8c;
-                                            case (HMODULE)0x140008cfb:
-                                              goto switchD_140008621_caseD_34;
-                                            case (HMODULE)0x140008d66:
-                                              goto switchD_140008621_caseD_98;
-                                            case (HMODULE)0x140008d68:
-                                              goto switchD_140008621_caseD_60;
-                                            case (HMODULE)0x140008d6a:
-                                              goto switchD_140008621_caseD_4c;
-                                            case (HMODULE)0x140008d94:
-                                              goto switchD_140008621_caseD_64;
-                                            case (HMODULE)0x140008dba:
-                                              goto switchD_140008621_caseD_74;
-                                            case (HMODULE)0x140008dd9:
-                                              goto switchD_14000931c_caseD_40008dd9;
-                                            case (HMODULE)0x140008dfa:
-                                              goto switchD_140008621_caseD_14;
-                                            case (HMODULE)0x140008dfc:
-                                              goto switchD_140008621_caseD_78;
-                                            case (HMODULE)0x140008e1e:
-                                              goto switchD_140008621_caseD_58;
-                                            case (HMODULE)0x140008ea7:
-                                              goto switchD_140008621_caseD_80;
-                                            case (HMODULE)0x140008ef3:
-                                              goto switchD_140008621_caseD_68;
-                                            case (HMODULE)0x140008ef5:
-                                              goto switchD_14000931c_caseD_40008ef5;
-                                            case (HMODULE)0x140008ef9:
-                                              goto switchD_140008621_caseD_94;
-                                            case (HMODULE)0x140008f1e:
-                                              goto switchD_140008621_caseD_84;
-                                            case (HMODULE)0x140008f34:
-                                              goto switchD_140008621_caseD_38;
-                                            case (HMODULE)0x140008f7b:
-                                              goto switchD_140008621_caseD_18;
-                                            case (HMODULE)0x140008f7d:
-                                              goto switchD_140008621_caseD_a4;
-                                            case (HMODULE)0x140008f7f:
-                                              goto switchD_14000931c_caseD_40008f7f;
-                                            case (HMODULE)0x140008f81:
-                                              goto switchD_140008621_caseD_3c;
-                                            case (HMODULE)0x140008fba:
-                                              goto switchD_14000931c_caseD_40008fba;
-                                            case (HMODULE)0x140009122:
-                                              goto switchD_14000931c_caseD_40009122;
-                                            case (HMODULE)0x140009179:
-                                              goto switchD_140008621_caseD_48;
-                                            case (HMODULE)0x140009197:
-                                              goto switchD_14000931c_caseD_40009197;
-                                            case (HMODULE)0x1400091e8:
-                                              goto switchD_14000931c_caseD_400091e8;
-                                            case (HMODULE)0x140009201:
-                                              goto switchD_140008621_caseD_b4;
-                                            case (HMODULE)0x140009203:
-                                              goto switchD_140008621_caseD_7c;
-                                            case (HMODULE)0x14000921d:
-                                              goto switchD_14000931c_caseD_4000921d;
-                                            case (HMODULE)0x140009299:
-                                              goto switchD_140008621_caseD_0;
-                                            case (HMODULE)0x1400092c1:
-switchD_140008621_caseD_a8:
-                                              do {
-                                                uVar5 = (uint)unaff_RSI ^ 0x12560377;
-                                                unaff_R15 = (HMODULE)(ulonglong)
-                                                                     *(ushort *)
-                                                                      ((longlong)&unaff_R12->unused
-                                                                      + (ulonglong)uVar5);
-                                                uVar2 = (ushort)unaff_R14[0x26].unused;
-                                                puVar12 = (uint *)(ulonglong)uVar2;
-                                                bVar4 = (byte)uVar5;
-                                                pHVar11 = (HMODULE)0x28;
-                                                if (uVar2 < (byte)(((*(byte *)(*(longlong *)
-                                                                                ((longlong)
-                                                                                                                                                                  
-                                                  ThreadLocalStoragePointer +
-                                                  (ulonglong)_tls_index * 8) + 0x85) ^ bVar4) -
-                                                  bVar4) + 0xbe)) {
-                                                  pHVar11 = (HMODULE)&DAT_000000e4;
-                                                }
-                                                pHVar6 = (HMODULE)(pcVar14 +
-                                                                  pHVar11[0x5001d826].unused);
-                                                pHVar8 = ThreadLocalStoragePointer;
-                                                local_e0 = (HMODULE)puVar12;
-                                                local_a0 = in_R11;
-                                                switch(pHVar6) {
-                                                case (HMODULE)0x140008623:
-                                                  goto switchD_140008621_caseD_30;
-                                                case (HMODULE)0x1400086cd:
-                                                  goto switchD_14000931c_caseD_400086cd;
-                                                case (HMODULE)0x1400086eb:
-                                                  goto switchD_140008621_caseD_6c;
-                                                case (HMODULE)0x14000870a:
-                                                  goto switchD_140008621_caseD_1c;
-                                                case (HMODULE)0x140008773:
-                                                  goto switchD_140008621_caseD_40;
-                                                case (HMODULE)0x140008804:
-                                                  goto switchD_140008621_caseD_28;
-                                                case (HMODULE)0x140008868:
-                                                  goto switchD_140008621_caseD_10;
-                                                case (HMODULE)0x1400088c6:
-                                                  goto switchD_140008621_caseD_70;
-                                                case (HMODULE)0x1400088ec:
-                                                  goto switchD_140008621_caseD_44;
-                                                case (HMODULE)0x140008924:
-                                                  goto switchD_140008621_caseD_54;
-                                                case (HMODULE)0x140008968:
-                                                  goto switchD_140008621_caseD_8;
-                                                case (HMODULE)0x1400089b9:
-                                                  goto switchD_14000931c_caseD_400089b9;
-                                                case (HMODULE)0x1400089e0:
-                                                  goto switchD_140008621_caseD_b8;
-                                                case (HMODULE)0x1400089e2:
-                                                  goto switchD_140008621_caseD_bc;
-                                                case (HMODULE)0x140008a1a:
-                                                  goto switchD_140008621_caseD_5c;
-                                                case (HMODULE)0x140008a56:
-                                                  goto switchD_140008621_caseD_9c;
-                                                case (HMODULE)0x140008a7e:
-                                                  goto switchD_140008621_caseD_c;
-                                                case (HMODULE)0x140008afc:
-                                                  goto switchD_140008621_caseD_ac;
-                                                case (HMODULE)0x140008b12:
-                                                  goto switchD_140008621_caseD_4;
-                                                case (HMODULE)0x140008b2d:
-                                                  goto switchD_140008621_caseD_a0;
-                                                case (HMODULE)0x140008b77:
-                                                  goto switchD_140008621_caseD_20;
-                                                case (HMODULE)0x140008b99:
-                                                  goto switchD_140008621_caseD_b0;
-                                                case (HMODULE)0x140008bc3:
-                                                  goto switchD_14000931c_caseD_40008bc3;
-                                                case (HMODULE)0x140008be4:
-                                                  goto switchD_14000931c_caseD_40008be4;
-                                                case (HMODULE)0x140008c0a:
-                                                  goto switchD_140008621_caseD_90;
-                                                case (HMODULE)0x140008c2a:
-                                                  goto switchD_140008621_caseD_50;
-                                                case (HMODULE)0x140008c95:
-                                                  goto switchD_14000931c_caseD_40008c95;
-                                                case (HMODULE)0x140008ce4:
-                                                  goto switchD_140008621_caseD_8c;
-                                                case (HMODULE)0x140008cfb:
-                                                  goto switchD_140008621_caseD_34;
-                                                case (HMODULE)0x140008d66:
-                                                  goto switchD_140008621_caseD_98;
-                                                case (HMODULE)0x140008d68:
-                                                  goto switchD_140008621_caseD_60;
-                                                case (HMODULE)0x140008d6a:
-                                                  goto switchD_140008621_caseD_4c;
-                                                case (HMODULE)0x140008d94:
-                                                  goto switchD_140008621_caseD_64;
-                                                case (HMODULE)0x140008dba:
-                                                  goto switchD_140008621_caseD_74;
-                                                case (HMODULE)0x140008dd9:
-                                                  goto switchD_14000931c_caseD_40008dd9;
-                                                case (HMODULE)0x140008dfa:
-                                                  goto switchD_140008621_caseD_14;
-                                                case (HMODULE)0x140008dfc:
-                                                  goto switchD_140008621_caseD_78;
-                                                case (HMODULE)0x140008e1e:
-                                                  goto switchD_140008621_caseD_58;
-                                                case (HMODULE)0x140008ea7:
-                                                  goto switchD_140008621_caseD_80;
-                                                case (HMODULE)0x140008ef3:
-                                                  goto switchD_140008621_caseD_68;
-                                                case (HMODULE)0x140008ef5:
-                                                  goto switchD_14000931c_caseD_40008ef5;
-                                                case (HMODULE)0x140008ef9:
-                                                  goto switchD_140008621_caseD_94;
-                                                case (HMODULE)0x140008f1e:
-                                                  goto switchD_140008621_caseD_84;
-                                                case (HMODULE)0x140008f34:
-                                                  goto switchD_140008621_caseD_38;
-                                                case (HMODULE)0x140008f7b:
-                                                  goto switchD_140008621_caseD_18;
-                                                case (HMODULE)0x140008f7d:
-                                                  goto switchD_140008621_caseD_a4;
-                                                case (HMODULE)0x140008f7f:
-                                                  goto switchD_14000931c_caseD_40008f7f;
-                                                case (HMODULE)0x140008f81:
-                                                  goto switchD_140008621_caseD_3c;
-                                                case (HMODULE)0x140008fba:
-                                                  goto switchD_14000931c_caseD_40008fba;
-                                                case (HMODULE)0x140009122:
-                                                  goto switchD_14000931c_caseD_40009122;
-                                                case (HMODULE)0x140009179:
-                                                  goto switchD_140008621_caseD_48;
-                                                case (HMODULE)0x140009197:
-                                                  goto switchD_14000931c_caseD_40009197;
-                                                case (HMODULE)0x1400091e8:
-                                                  goto switchD_14000931c_caseD_400091e8;
-                                                case (HMODULE)0x140009201:
-                                                  goto switchD_140008621_caseD_b4;
-                                                case (HMODULE)0x140009203:
-                                                  goto switchD_140008621_caseD_7c;
-                                                case (HMODULE)0x14000921d:
-                                                  goto switchD_14000931c_caseD_4000921d;
-                                                case (HMODULE)0x140009299:
-                                                  goto switchD_140008621_caseD_0;
-                                                case (HMODULE)0x14000931e:
-                                                  goto switchD_140008621_caseD_2c;
-                                                case (HMODULE)0x1400094ac:
-                                                  goto switchD_140008621_caseD_88;
-                                                }
-                                              } while( true );
-                                            case (HMODULE)0x14000931e:
-                                              goto switchD_140008621_caseD_2c;
-                                            case (HMODULE)0x1400094ac:
-                                              goto switchD_140008621_caseD_88;
-                                            }
-                                          } while( true );
-                                        case (HMODULE)0x1400088ec:
-                                          goto switchD_140008621_caseD_44;
-                                        case (HMODULE)0x140008924:
-                                          goto switchD_140008621_caseD_54;
-                                        case (HMODULE)0x140008968:
-                                          goto switchD_140008621_caseD_8;
-                                        case (HMODULE)0x1400089b9:
-                                          goto switchD_14000931c_caseD_400089b9;
-                                        case (HMODULE)0x1400089e0:
-                                          goto switchD_140008621_caseD_b8;
-                                        case (HMODULE)0x1400089e2:
-                                          goto switchD_140008621_caseD_bc;
-                                        case (HMODULE)0x140008a1a:
-                                          goto switchD_140008621_caseD_5c;
-                                        case (HMODULE)0x140008a2e:
-                                          pHVar1 = pHVar6 + 0x12400000;
-                                          iVar15 = pHVar1->unused;
-                                          *(char *)&pHVar1->unused = (char)pHVar1->unused + 'w';
-                                          *(char *)&pHVar6[0x19800000].unused =
-                                               (char)pHVar6[0x19800000].unused + 'A' +
-                                               ((byte)iVar15 < 0x89);
-                                          pHVar6[0x22].unused = (int)pHVar11;
-                                          unaff_R13 = local_c8;
-                                          goto switchD_140008621_caseD_5c;
-                                        case (HMODULE)0x140008a56:
-                                          goto switchD_140008621_caseD_9c;
-                                        case (HMODULE)0x140008a7e:
-                                          goto switchD_140008621_caseD_c;
-                                        case (HMODULE)0x140008afc:
-                                          goto switchD_140008621_caseD_ac;
-                                        case (HMODULE)0x140008b12:
-                                          goto switchD_140008621_caseD_4;
-                                        case (HMODULE)0x140008b2d:
-                                          goto switchD_140008621_caseD_a0;
-                                        case (HMODULE)0x140008b77:
-                                          goto switchD_140008621_caseD_20;
-                                        case (HMODULE)0x140008b99:
-                                          goto switchD_140008621_caseD_b0;
-                                        case (HMODULE)0x140008bc3:
-                                          goto switchD_14000931c_caseD_40008bc3;
-                                        case (HMODULE)0x140008be4:
-                                          goto switchD_14000931c_caseD_40008be4;
-                                        case (HMODULE)0x140008c0a:
-                                          goto switchD_140008621_caseD_90;
-                                        case (HMODULE)0x140008c2a:
-                                          goto switchD_140008621_caseD_50;
-                                        case (HMODULE)0x140008c95:
-                                          goto switchD_14000931c_caseD_40008c95;
-                                        case (HMODULE)0x140008cb7:
-                                          goto switchD_140008db8_caseD_40008cb7;
-                                        case (HMODULE)0x140008ce4:
-                                          goto switchD_140008621_caseD_8c;
-                                        case (HMODULE)0x140008cfb:
-                                          goto switchD_140008621_caseD_34;
-                                        case (HMODULE)0x140008d66:
-                                          goto switchD_140008621_caseD_98;
-                                        case (HMODULE)0x140008d68:
-                                          goto switchD_140008621_caseD_60;
-                                        case (HMODULE)0x140008d6a:
-                                          goto switchD_140008621_caseD_4c;
-                                        case (HMODULE)0x140008dba:
-                                          goto switchD_140008621_caseD_74;
-                                        case (HMODULE)0x140008dd9:
-switchD_14000931c_caseD_40008dd9:
-                                          puVar12 = &switchD_140008c28::switchdataD_140076150;
-                                          if ((char)unaff_RBX == -1) {
-                                            puVar12 = &switchD_140008c92::switchdataD_140076174;
-                                          }
-                    /* WARNING: Could not recover jumptable at 0x000140008df8. Too many branches */
-                    /* WARNING: Treating indirect jump as call */
-                                          pHVar8 = (HMODULE)(*(code *)(pcVar14 + (int)*puVar12))
-                                                                      (pHVar11,pcVar14 + (int)*
-                                                  puVar12);
-                                          return pHVar8;
-                                        case (HMODULE)0x140008dfa:
-                                          goto switchD_140008621_caseD_14;
-                                        case (HMODULE)0x140008dfc:
-                                          goto switchD_140008621_caseD_78;
-                                        case (HMODULE)0x140008e1e:
-                                          goto switchD_140008621_caseD_58;
-                                        case (HMODULE)0x140008ea7:
-                                          goto switchD_140008621_caseD_80;
-                                        case (HMODULE)0x140008ef3:
-                                          goto switchD_140008621_caseD_68;
-                                        case (HMODULE)0x140008ef5:
-                                          goto switchD_14000931c_caseD_40008ef5;
-                                        case (HMODULE)0x140008ef9:
-                                          goto switchD_140008621_caseD_94;
-                                        case (HMODULE)0x140008f1e:
-                                          goto switchD_140008621_caseD_84;
-                                        case (HMODULE)0x140008f34:
-                                          goto switchD_140008621_caseD_38;
-                                        case (HMODULE)0x140008f7b:
-                                          goto switchD_140008621_caseD_18;
-                                        case (HMODULE)0x140008f7d:
-                                          goto switchD_140008621_caseD_a4;
-                                        case (HMODULE)0x140008f7f:
-                                          goto switchD_14000931c_caseD_40008f7f;
-                                        case (HMODULE)0x140008f81:
-                                          goto switchD_140008621_caseD_3c;
-                                        case (HMODULE)0x140008fba:
-                                          goto switchD_14000931c_caseD_40008fba;
-                                        case (HMODULE)0x140009122:
-                                          goto switchD_14000931c_caseD_40009122;
-                                        case (HMODULE)0x140009179:
-                                          goto switchD_140008621_caseD_48;
-                                        case (HMODULE)0x140009197:
-switchD_14000931c_caseD_40009197:
-                                          FUN_140012b23((longlong)unaff_R15,(longlong)unaff_R14,
-                                                        local_d0._0_4_,local_e8,in_R11);
-                                          goto switchD_140008621_caseD_80;
-                                        case (HMODULE)0x1400091e8:
-                                          goto switchD_14000931c_caseD_400091e8;
-                                        case (HMODULE)0x140009201:
-                                          goto switchD_140008621_caseD_b4;
-                                        case (HMODULE)0x140009203:
-                                          goto switchD_140008621_caseD_7c;
-                                        case (HMODULE)0x14000921d:
-                                          goto switchD_14000931c_caseD_4000921d;
-                                        case (HMODULE)0x140009299:
-                                          goto switchD_140008621_caseD_0;
-                                        case (HMODULE)0x14000929e:
-                                          goto switchD_140008dd6_caseD_4000929e;
-                                        case (HMODULE)0x1400092c1:
-                                          goto switchD_140008621_caseD_a8;
-                                        case (HMODULE)0x14000931e:
-                                          goto switchD_140008621_caseD_2c;
-                                        case (HMODULE)0x1400094ac:
-                                          goto switchD_140008621_caseD_88;
-                                        }
-                                      } while( true );
-                                    case (char *)0x140008dba:
-                                      goto switchD_140008621_caseD_74;
-                                    case (char *)0x140008dfa:
-                                      goto switchD_140008621_caseD_14;
-                                    case (char *)0x140008dfc:
-                                      goto switchD_140008621_caseD_78;
-                                    case (char *)0x140008e1e:
-                                      goto switchD_140008621_caseD_58;
-                                    case (char *)0x140008ef3:
-                                      goto switchD_140008621_caseD_68;
-                                    case (char *)0x140008f34:
-                                      goto switchD_140008621_caseD_38;
-                                    case (char *)0x140008f7b:
-                                      goto switchD_140008621_caseD_18;
-                                    case (char *)0x140008f81:
-                                      goto switchD_140008621_caseD_3c;
-                                    case (char *)0x140009179:
-                                      goto switchD_140008621_caseD_48;
-                                    case (char *)0x1400091e8:
-                                      goto switchD_14000931c_caseD_400091e8;
-                                    case (char *)0x140009203:
-                                      goto switchD_140008621_caseD_7c;
-                                    case (char *)0x140009299:
-                                      goto switchD_140008621_caseD_0;
-                                    case (char *)0x14000931e:
-                                      goto switchD_140008621_caseD_2c;
-                                    }
-                                  } while( true );
-                                case (HMODULE)0x140008968:
-                                  goto switchD_140008621_caseD_8;
-                                case (HMODULE)0x1400089e0:
-                                  goto switchD_140008621_caseD_b8;
-                                case (HMODULE)0x1400089e2:
-                                  goto switchD_140008621_caseD_bc;
-                                case (HMODULE)0x140008a1a:
-                                  goto switchD_140008621_caseD_5c;
-                                case (HMODULE)0x140008a56:
-                                  goto switchD_140008621_caseD_9c;
-                                case (HMODULE)0x140008a7e:
-                                  goto switchD_140008621_caseD_c;
-                                case (HMODULE)0x140008afc:
-                                  goto switchD_140008621_caseD_ac;
-                                case (HMODULE)0x140008b12:
-                                  goto switchD_140008621_caseD_4;
-                                case (HMODULE)0x140008b2d:
-                                  goto switchD_140008621_caseD_a0;
-                                case (HMODULE)0x140008b77:
-                                  goto switchD_140008621_caseD_20;
-                                case (HMODULE)0x140008b99:
-                                  goto switchD_140008621_caseD_b0;
-                                case (HMODULE)0x140008bc3:
-                                  goto switchD_14000931c_caseD_40008bc3;
-                                case (HMODULE)0x140008be4:
-switchD_14000931c_caseD_40008be4:
-                                  LOCK();
-                                  bVar19 = DAT_1400d0d78 == 0;
-                                  if (bVar19) {
-                                    DAT_1400d0d78 = 1;
-                                  }
-                                  UNLOCK();
-                                  puVar12 = &switchD_140008c28::switchdataD_140076108;
-                                  if (bVar19) {
-                                    puVar12 = &UINT_1400760dc;
-                                  }
-                    /* WARNING: Could not recover jumptable at 0x000140008c08. Too many branches */
-                    /* WARNING: Treating indirect jump as call */
-                                  pHVar8 = (HMODULE)(*(code *)(pcVar14 + (int)*puVar12))();
-                                  return pHVar8;
-                                case (HMODULE)0x140008c0a:
-                                  goto switchD_140008621_caseD_90;
-                                case (HMODULE)0x140008c2a:
-                                  goto switchD_140008621_caseD_50;
-                                case (HMODULE)0x140008c95:
-switchD_14000931c_caseD_40008c95:
-                                  unaff_R12 = *(HMODULE *)
-                                               ((longlong)&unaff_R12->unused +
-                                               (longlong)unaff_RSI *
-                                               (ulonglong)((int)local_e8 - 0x98) +
-                                               ((ulonglong)local_e8 & 0xffffffff));
-                                  goto LAB_140008c5c;
-                                case (HMODULE)0x140008ce4:
-                                  goto switchD_140008621_caseD_8c;
-                                case (HMODULE)0x140008cfb:
-                                  goto switchD_140008621_caseD_34;
-                                case (HMODULE)0x140008d66:
-                                  goto switchD_140008621_caseD_98;
-                                case (HMODULE)0x140008d68:
-                                  goto switchD_140008621_caseD_60;
-                                case (HMODULE)0x140008d94:
-                                  goto switchD_140008621_caseD_64;
-                                case (HMODULE)0x140008dba:
-                                  goto switchD_140008621_caseD_74;
-                                case (HMODULE)0x140008dfa:
-                                  goto switchD_140008621_caseD_14;
-                                case (HMODULE)0x140008dfc:
-                                  goto switchD_140008621_caseD_78;
-                                case (HMODULE)0x140008e1e:
-                                  goto switchD_140008621_caseD_58;
-                                case (HMODULE)0x140008ea7:
-                                  goto switchD_140008621_caseD_80;
-                                case (HMODULE)0x140008ef3:
-                                  goto switchD_140008621_caseD_68;
-                                case (HMODULE)0x140008ef5:
-                                  goto switchD_14000931c_caseD_40008ef5;
-                                case (HMODULE)0x140008ef9:
-                                  goto switchD_140008621_caseD_94;
-                                case (HMODULE)0x140008f1e:
-                                  goto switchD_140008621_caseD_84;
-                                case (HMODULE)0x140008f34:
-                                  goto switchD_140008621_caseD_38;
-                                case (HMODULE)0x140008f7b:
-                                  goto switchD_140008621_caseD_18;
-                                case (HMODULE)0x140008f7d:
-                                  goto switchD_140008621_caseD_a4;
-                                case (HMODULE)0x140008f7f:
-                                  goto switchD_14000931c_caseD_40008f7f;
-                                case (HMODULE)0x140008f81:
-                                  goto switchD_140008621_caseD_3c;
-                                case (HMODULE)0x140008fba:
-                                  goto switchD_14000931c_caseD_40008fba;
-                                case (HMODULE)0x140009122:
-                                  goto switchD_14000931c_caseD_40009122;
-                                case (HMODULE)0x140009179:
-                                  goto switchD_140008621_caseD_48;
-                                case (HMODULE)0x1400091e8:
-                                  goto switchD_14000931c_caseD_400091e8;
-                                case (HMODULE)0x140009201:
-                                  goto switchD_140008621_caseD_b4;
-                                case (HMODULE)0x140009203:
-                                  goto switchD_140008621_caseD_7c;
-                                case (HMODULE)0x14000921d:
-switchD_14000931c_caseD_4000921d:
-                                  local_d8 = (HMODULE)((longlong)&pHVar11->unused + 1);
-                                  local_e0 = (HMODULE)CONCAT44(local_e0._4_4_,(int)in_R11);
-                                  unaff_R13 = (HMODULE)((longlong)&unaff_R12->unused +
-                                                       ((ulonglong)in_R11 & 0xffffffff));
-                                  FUN_140023130((undefined8 *)unaff_R13,
-                                                (undefined8 *)
-                                                ((longlong)&pHVar8[0x2a].unused + local_a8),
-                                                (ulonglong)(uint)((int)puVar12 << 3));
-                                  local_a8 = CONCAT44(local_a8._4_4_,(int)unaff_RSI) ^ 0x125603ff;
-                                  unaff_RBX = (HMODULE)&local_88;
-                                  pHVar6 = (HMODULE)0x0;
-                                  in_R11 = local_a0;
-                                  unaff_R14 = pHVar8;
-                                  goto LAB_14000926b;
-                                case (HMODULE)0x140009299:
-                                  goto switchD_140008621_caseD_0;
-                                case (HMODULE)0x1400092c1:
-                                  goto switchD_140008621_caseD_a8;
-                                case (HMODULE)0x14000931e:
-                                  goto switchD_140008621_caseD_2c;
-                                case (HMODULE)0x1400094ac:
-                                  goto switchD_140008621_caseD_88;
-                                }
-                              } while( true );
-                            case (HMODULE)0x140008d94:
-                              goto switchD_140008621_caseD_64;
-                            case (HMODULE)0x140008dba:
-                              goto switchD_140008621_caseD_74;
-                            case (HMODULE)0x140008dfa:
-                              goto switchD_140008621_caseD_14;
-                            case (HMODULE)0x140008ef3:
-                              goto switchD_140008621_caseD_68;
-                            case (HMODULE)0x140008f34:
-                              goto switchD_140008621_caseD_38;
-                            case (HMODULE)0x140008f7b:
-                              goto switchD_140008621_caseD_18;
-                            case (HMODULE)0x140008f81:
-                              goto switchD_140008621_caseD_3c;
-                            case (HMODULE)0x140009179:
-                              goto switchD_140008621_caseD_48;
-                            case (HMODULE)0x1400091e8:
-                              goto switchD_14000931c_caseD_400091e8;
-                            case (HMODULE)0x140009299:
-                              goto switchD_140008621_caseD_0;
-                            case (HMODULE)0x14000931e:
-                              goto switchD_140008621_caseD_2c;
-                            }
-                          } while( true );
-                        case (HMODULE)0x140008ea7:
-                          goto switchD_140008621_caseD_80;
-                        case (HMODULE)0x140008ef3:
-                          goto switchD_140008621_caseD_68;
-                        case (HMODULE)0x140008ef5:
-                          goto switchD_14000931c_caseD_40008ef5;
-                        case (HMODULE)0x140008f34:
-                          goto switchD_140008621_caseD_38;
-                        case (HMODULE)0x140008f7b:
-                          goto switchD_140008621_caseD_18;
-                        case (HMODULE)0x140008f7f:
-                          goto switchD_14000931c_caseD_40008f7f;
-                        case (HMODULE)0x140008fba:
-                          goto switchD_14000931c_caseD_40008fba;
-                        case (HMODULE)0x140009179:
-                          goto switchD_140008621_caseD_48;
-                        case (HMODULE)0x140009299:
-                          goto switchD_140008621_caseD_0;
-                        case (HMODULE)0x1400092c1:
-                          goto switchD_140008621_caseD_a8;
-                        case (HMODULE)0x1400094ac:
-                          goto switchD_140008621_caseD_88;
-                        }
-                      } while( true );
-                    }
-                    goto switchD_140008621_caseD_94;
-                  case (HMODULE)0x140008f7b:
-                    goto switchD_140008621_caseD_18;
-                  case (HMODULE)0x140008f7d:
-                    goto switchD_140008621_caseD_a4;
-                  case (HMODULE)0x140008f81:
-                    goto switchD_140008621_caseD_3c;
-                  case (HMODULE)0x140009179:
-                    goto switchD_140008621_caseD_48;
-                  case (HMODULE)0x1400091e8:
-                    goto switchD_14000931c_caseD_400091e8;
-                  case (HMODULE)0x140009201:
-                    goto switchD_140008621_caseD_b4;
-                  case (HMODULE)0x140009203:
-                    goto switchD_140008621_caseD_7c;
-                  case (HMODULE)0x140009299:
-                    goto switchD_140008621_caseD_0;
-                  case (HMODULE)0x1400092c1:
-                    goto switchD_140008621_caseD_a8;
-                  case (HMODULE)0x14000931e:
-                    goto switchD_140008621_caseD_2c;
-                  case (HMODULE)0x1400094ac:
-                    goto switchD_140008621_caseD_88;
-                  }
-                } while( true );
-              case (HMODULE)0x140008b99:
-                goto switchD_140008621_caseD_b0;
-              case (HMODULE)0x140008bc3:
-switchD_14000931c_caseD_40008bc3:
-                pHVar11 = DAT_1400d0d70;
-                pHVar8 = DAT_1400d0d68;
-                switch(DAT_1400d0d70 != (HMODULE)0x0) {
-                case true:
-                  pvVar7 = FUN_1400128ed(0,0x100);
-                  switch(pvVar7 != (LPVOID)0x0) {
-                  case false:
-                    /* WARNING: Does not return */
-                    pcVar3 = (code *)invalidInstructionException();
-                    (*pcVar3)();
-                  }
-                  *(undefined8 *)((longlong)pvVar7 + 0x90) = 0;
-                  *(undefined2 *)((longlong)pvVar7 + 0x98) = 0;
-                  *(HMODULE *)((longlong)pvVar7 + 0xa0) = pHVar11;
-                  puVar12 = &UINT_1400760ec;
-                  pcVar13 = (char *)((longlong)&pHVar8->unused + 1);
-                  if (pcVar13 == (char *)0x0) {
-                    puVar12 = &switchD_140008c28::switchdataD_1400760f8;
-                  }
-                    /* WARNING: Could not recover jumptable at 0x000140009177. Too many branches */
-                    /* WARNING: Treating indirect jump as call */
-                  pHVar8 = (HMODULE)(*(code *)(pcVar14 + (int)*puVar12))
-                                              (pcVar13,pcVar14 + (int)*puVar12,in_R11);
-                  return pHVar8;
-                }
-                goto switchD_140008621_caseD_68;
-              case (HMODULE)0x140008c0a:
-                goto switchD_140008621_caseD_90;
-              case (HMODULE)0x140008c2a:
-                goto switchD_140008621_caseD_50;
-              case (HMODULE)0x140008cb7:
-switchD_140008db8_caseD_40008cb7:
-                pHVar8 = FUN_1400128ed(0,0xa0);
-                switch(pHVar8 == (HMODULE)0x0) {
-                case false:
-                  *(longlong *)(pHVar8 + 0x24) = 0;
-                  *(undefined2 *)&pHVar8[0x26].unused = 0;
-                  DAT_1400d0d68 = (HMODULE)0x0;
-                  DAT_1400d0d70 = pHVar8;
-                  *(undefined2 *)&pHVar8[0x26].unused = 1;
-                  pHVar8->unused = param_1;
-                  *(HMODULE *)((longlong)&pHVar8->unused + (ulonglong)(0x1256042f - (int)unaff_RSI))
-                       = unaff_R13;
-                  break;
-                case true:
-                    /* WARNING: Does not return */
-                  pcVar3 = (code *)invalidInstructionException();
-                  (*pcVar3)();
-                }
-                goto switchD_140008621_caseD_80;
-              case (HMODULE)0x140008d66:
-                goto switchD_140008621_caseD_98;
-              case (HMODULE)0x140008d68:
-                goto switchD_140008621_caseD_60;
-              case (HMODULE)0x140008dfc:
-                goto switchD_140008621_caseD_78;
-              case (HMODULE)0x140008e1e:
-                goto switchD_140008621_caseD_58;
-              case (HMODULE)0x140008ea7:
-                goto switchD_140008621_caseD_80;
-              case (HMODULE)0x140008ef3:
-                goto switchD_140008621_caseD_68;
-              case (HMODULE)0x140008ef5:
-switchD_14000931c_caseD_40008ef5:
-                    /* WARNING: Does not return */
-                pcVar3 = (code *)invalidInstructionException();
-                (*pcVar3)();
-              case (HMODULE)0x140008f34:
-                goto switchD_140008621_caseD_38;
-              case (HMODULE)0x140008f7b:
-                goto switchD_140008621_caseD_18;
-              case (HMODULE)0x140008f7f:
-switchD_14000931c_caseD_40008f7f:
-                    /* WARNING: Does not return */
-                pcVar3 = (code *)invalidInstructionException();
-                (*pcVar3)();
-              case (HMODULE)0x140008fba:
-switchD_14000931c_caseD_40008fba:
-                uVar5 = (uint)unaff_RSI;
-                FUN_140023130((undefined8 *)in_R11,(undefined8 *)pHVar8,(longlong)unaff_R13 * 4);
-                FUN_140023130((undefined8 *)(in_R11 + 0xc),
-                              (undefined8 *)(unaff_R12 + (longlong)unaff_R15 * 2 + 0xe),
-                              (longlong)unaff_R13 << 3);
-                pHVar8 = unaff_R12;
-                if (((ulonglong)local_e0 & 1) != 0) {
-                  pHVar8 = in_R11;
-                }
-                *(short *)&unaff_R12[0x26].unused = (short)unaff_R15;
-                uVar18 = (ulonglong)(0xa0 - (uVar5 ^ 0x125603f7));
-                uVar2 = *(ushort *)((longlong)&pHVar8->unused + uVar18);
-                pcVar13 = (char *)((longlong)&local_d8->unused + 1);
-                if ((char *)(ulonglong)uVar2 < pcVar13) {
-                  *(uint *)((longlong)&pHVar8->unused +
-                           (ulonglong)(0x12560403 - uVar5) * (longlong)local_d8) = param_1;
-                  pHVar11 = pHVar8 + 0xc;
-                }
-                else {
-                  lVar9 = (longlong)(ulonglong)uVar2 - (longlong)local_d8;
-                  FUN_140023130((undefined8 *)(pHVar8 + (longlong)pcVar13),
-                                (undefined8 *)(pHVar8 + (longlong)local_d8),lVar9 * 4);
-                  pHVar8[(longlong)local_d8].unused = param_1;
-                  pHVar11 = (HMODULE)((longlong)&pHVar8->unused + (ulonglong)(uVar5 ^ 0x125603cf));
-                  FUN_140023130((undefined8 *)(pHVar11 + (longlong)pcVar13 * 2),
-                                (undefined8 *)
-                                ((longlong)&pHVar11->unused +
-                                (ulonglong)(uVar5 ^ 0x125603f7) * (longlong)local_d8),lVar9 * 8);
-                }
-                *(HMODULE *)(pHVar11 + (longlong)local_d8 * 2) = local_c8;
-                *(ushort *)((longlong)&pHVar8->unused + uVar18) = uVar2 + 1;
-                lVar9 = 0xa8;
-                if (*(longlong *)((longlong)&unaff_R12->unused + (ulonglong)(uVar5 + 0xeda9fc91)) ==
-                    0) {
-                  lVar9 = 0xd0;
-                }
-                    /* WARNING: Could not recover jumptable at 0x000140009120. Too many branches */
-                    /* WARNING: Treating indirect jump as call */
-                pHVar8 = (HMODULE)(*(code *)(pcVar14 +
-                                            *(int *)((longlong)
-                                                     &switchD_140008621::switchdataD_140076098 +
-                                                    lVar9)))();
-                return pHVar8;
-              case (HMODULE)0x140009179:
-                goto switchD_140008621_caseD_48;
-              case (HMODULE)0x140009299:
-                goto switchD_140008621_caseD_0;
-              case (HMODULE)0x14000929e:
-                goto switchD_140008dd6_caseD_4000929e;
-              case (HMODULE)0x1400092c1:
-                goto switchD_140008621_caseD_a8;
-              case (HMODULE)0x1400094ac:
-                goto switchD_140008621_caseD_88;
-              }
-            } while( true );
-          case (HMODULE)0x140008b77:
+                    /* WARNING: Switch is manually overridden */
+          switch(*(undefined4 *)((longlong)&switchD_140008621::switchdataD_140076098 + lVar16)) {
+          case 0xfffffd7b:
             goto switchD_140008621_caseD_20;
-          case (HMODULE)0x140008c2a:
-            goto switchD_140008621_caseD_50;
-          case (HMODULE)0x140008d68:
-            goto switchD_140008621_caseD_60;
-          case (HMODULE)0x140008dfc:
-            goto switchD_140008621_caseD_78;
-          case (HMODULE)0x140008e1e:
-            goto switchD_140008621_caseD_58;
-          case (HMODULE)0x140008ea7:
-            goto switchD_140008621_caseD_80;
-          case (HMODULE)0x140008ef3:
-            goto switchD_140008621_caseD_68;
-          case (HMODULE)0x140008f34:
-            goto switchD_140008621_caseD_38;
-          case (HMODULE)0x140008f7b:
-            goto switchD_140008621_caseD_18;
-          case (HMODULE)0x140009179:
+          }
+        } while( true );
+      case 0xfffffd7b:
+switchD_140008621_caseD_20:
+        LOCK();
+        bVar28 = DAT_1400d0d78 == 0;
+        if (bVar28) {
+          DAT_1400d0d78 = 1;
+        }
+        UNLOCK();
+        lVar16 = 0xb0;
+        if (bVar28) {
+          lVar16 = 0xc;
+        }
+      }
+                    /* WARNING: Switch is manually overridden */
+      switch(*(undefined4 *)((longlong)&switchD_140008621::switchdataD_140076098 + lVar16)) {
+      case 0xfffffc82:
+        goto switchD_140008621_caseD_c;
+      }
+    } while( true );
+  }
+  uVar8 = (uint)uVar4;
+                    /* WARNING: Switch is manually overridden */
+  switch(*puVar17) {
+  case 0x22:
+switchD_140008621_caseD_58:
+    DAT_1400d0d78 = 0;
+    pHVar15 = (HMODULE)GetProcAddress(param_2,(LPCSTR)param_3);
+    if (pHVar15 == (HMODULE)0x0) {
+      return (HMODULE)0x0;
+    }
+    LOCK();
+    bVar28 = DAT_1400d0d78 == 0;
+    if (bVar28) {
+      DAT_1400d0d78 = 1;
+    }
+    UNLOCK();
+    lVar16 = 0x70;
+    if (bVar28) {
+      lVar16 = 0x44;
+    }
+    break;
+  case 0xfffffeff:
+    local_e8 = (uint ******)CONCAT44(local_e8._4_4_,0x12560497 - uVar8);
+    pppppppuVar12 = DAT_1400d0d70;
+    pHVar15 = DAT_1400d0d68;
+    do {
+      uVar19 = (ulonglong)*(ushort *)((longlong)pppppppuVar12 + (ulonglong)(0x12560497 - uVar8));
+      pppppppuVar11 = (uint *******)((longlong)pppppppuVar12 + uVar19 * 4);
+      puVar17 = &switchD_1400089b7::switchdataD_140076178;
+      if (pppppppuVar12 == pppppppuVar11) {
+        puVar17 = &switchD_140008c28::switchdataD_1400760e0;
+      }
+      pppppppuVar14 = pppppppuVar12;
+      uVar25 = uVar19;
+      uVar24 = 0;
+                    /* WARNING: Switch is manually overridden */
+      switch(*puVar17) {
+      case 0x37d:
+switchD_140008621_caseD_48:
+        bVar28 = pHVar15 == (HMODULE)0x0;
+        pHVar15 = (HMODULE)((longlong)&pHVar15[-1].unused + 3);
+        puVar17 = &UINT_140076124;
+        if (bVar28) {
+          puVar17 = &switchD_140008c28::switchdataD_1400760f0;
+        }
+        break;
+      case 0xfffffbbd:
+        do {
+          uVar25 = uVar24;
+          uVar18 = *(uint *)pppppppuVar14;
+          cVar22 = (uVar18 < param_1) - (param_1 < uVar18);
+          puVar17 = &UINT_140076114;
+          if (cVar22 != '\x01') {
+            puVar17 = &switchD_140008c28::switchdataD_1400760d0;
+          }
+                    /* WARNING: Switch is manually overridden */
+          switch(*puVar17) {
+          case 0x138:
+                    /* WARNING: Switch is manually overridden */
+            switch(uVar18 < param_1 == param_1 < uVar18) {
+            case true:
+              DAT_1400d0d78 = 0;
+              return (HMODULE)pppppppuVar12[uVar25 + 6];
+            }
+            lVar16 = 0x48;
+            if (cVar22 != -1) {
+              lVar16 = 0x98;
+            }
+                    /* WARNING: Switch is manually overridden */
+            switch(*(undefined4 *)((longlong)&switchD_140008621::switchdataD_140076098 + lVar16)) {
+            case 0xffffff6a:
+                    /* WARNING: Does not return */
+              pcVar5 = (code *)invalidInstructionException();
+              (*pcVar5)();
+            }
             goto switchD_140008621_caseD_48;
-          case (HMODULE)0x140009299:
-            goto switchD_140008621_caseD_0;
-          case (HMODULE)0x1400094ac:
-            goto switchD_140008621_caseD_88;
+          case 0x407:
+            uVar24 = uVar25 + 1;
+            pppppppuVar14 = (uint *******)((longlong)pppppppuVar14 + 4);
+            puVar17 = &switchD_1400089b7::switchdataD_140076178;
+            if (pppppppuVar14 == pppppppuVar11) {
+              puVar17 = &switchD_140008c28::switchdataD_1400760e0;
+            }
+          }
+          uVar25 = uVar19;
+                    /* WARNING: Switch is manually overridden */
+          switch(*puVar17) {
+          case 0x37d:
+            goto switchD_140008621_caseD_48;
           }
         } while( true );
       }
+                    /* WARNING: Switch is manually overridden */
+      switch(*puVar17) {
+      case 0x22:
+        goto switchD_140008621_caseD_58;
+      case 0xfffffee8:
+        pppppppuVar12 =
+             *(uint ********)((longlong)pppppppuVar12 + uVar25 * (0x12560407 - uVar8) + 0xa0);
+      }
     } while( true );
-  case (HMODULE)0x4:
-switchD_140008621_caseD_4:
-                    /* WARNING: Does not return */
-    pcVar3 = (code *)invalidInstructionException();
-    (*pcVar3)();
-  case (HMODULE)0x8:
-    goto switchD_140008621_caseD_8;
-  case (HMODULE)0xc:
-switchD_140008621_caseD_c:
-    puVar12 = &UINT_1400760cc;
-    if (DAT_1400d0d70 == (HMODULE)0x0) {
-      puVar12 = &switchD_140008c28::switchdataD_1400760f0;
-    }
-                    /* WARNING: Could not recover jumptable at 0x000140008aa5. Too many branches */
-                    /* WARNING: Treating indirect jump as call */
-    pHVar8 = (HMODULE)(*(code *)(pcVar14 + (int)*puVar12))();
-    return pHVar8;
-  case (HMODULE)0x10:
-switchD_140008621_caseD_10:
-    local_50 = unaff_R15;
-    *(longlong *)(unaff_R12 + 0x24) = 0;
-    *(undefined2 *)&unaff_R12[0x26].unused = 0;
-    uVar18 = ~(ulonglong)unaff_R13 + (ulonglong)(ushort)unaff_R14[0x26].unused;
-    *(short *)&unaff_R12[0x26].unused = (short)uVar18;
-    puVar12 = &UINT_14007614c;
-    if (uVar18 < (int)unaff_RSI + 0xeda9fc0d) {
-      puVar12 = &UINT_1400760c4;
-    }
-                    /* WARNING: Could not recover jumptable at 0x0001400088c4. Too many branches */
-                    /* WARNING: Treating indirect jump as call */
-    pHVar8 = (HMODULE)(*(code *)(pcVar14 + (int)*puVar12))();
-    return pHVar8;
-  case (HMODULE)0x14:
-switchD_140008621_caseD_14:
-                    /* WARNING: Does not return */
-    pcVar3 = (code *)invalidInstructionException();
-    (*pcVar3)();
-  case (HMODULE)0x18:
-switchD_140008621_caseD_18:
-                    /* WARNING: Does not return */
-    pcVar3 = (code *)invalidInstructionException();
-    (*pcVar3)();
-  case (HMODULE)0x1c:
-    goto switchD_140008621_caseD_1c;
-  case (HMODULE)0x20:
-    goto switchD_140008621_caseD_20;
-  case (HMODULE)0x24:
-switchD_14000931c_caseD_400091e8:
-    uVar18 = 0xcc;
-    if (DAT_1400d0d78 != 0) {
-      uVar18 = (ulonglong)pHVar6 & 0xffffffff;
-    }
-                    /* WARNING: Could not emulate address calculation at 0x0001400091f8 */
-                    /* WARNING: Treating indirect jump as call */
-    pHVar8 = (HMODULE)(*(code *)(pcVar14 +
-                                *(int *)((longlong)&switchD_140008621::switchdataD_140076098 +
-                                        uVar18)))
-                                (pcVar14 + *(int *)((longlong)
-                                                    &switchD_140008621::switchdataD_140076098 +
-                                                   uVar18));
-    return pHVar8;
-  case (HMODULE)0x28:
-switchD_140008621_caseD_28:
-    puVar12 = &switchD_140008c28::switchdataD_140076110;
-    if ((ushort)unaff_R15 < 5) {
-      puVar12 = &UINT_140076104;
-    }
-                    /* WARNING: Could not recover jumptable at 0x000140008831. Too many branches */
-                    /* WARNING: Treating indirect jump as call */
-    pHVar8 = (HMODULE)(*(code *)(pcVar14 + (int)*puVar12))();
-    return pHVar8;
-  case (HMODULE)0x2c:
-switchD_140008621_caseD_2c:
-    local_58 = (HMODULE)*(undefined8 *)
-                         ((longlong)&unaff_R14[0xc].unused + (ulonglong)(uint)((int)unaff_RBX * 8));
-    uVar5 = (int)unaff_RSI + 0xeda9fc05;
-    FUN_140023130((undefined8 *)unaff_R12,
-                  (undefined8 *)
-                  ((longlong)&unaff_R14->unused +
-                  (ulonglong)uVar5 * (longlong)((longlong)&unaff_RBX->unused + 1)),
-                  (longlong)unaff_R13 * 4);
-    FUN_140023130((undefined8 *)
-                  ((longlong)&unaff_R12->unused + (ulonglong)((int)unaff_RSI + 0xeda9fc31)),
-                  (undefined8 *)(unaff_R14 + (longlong)unaff_RBX * 2 + 0xe),(longlong)unaff_R13 << 3
-                 );
-    *(short *)&unaff_R14[0x26].unused = (short)unaff_RBX;
-    puVar12 = &switchD_140008c28::switchdataD_140076160;
-    if ((ushort)unaff_R12[0x26].unused < (ushort)(0x10U - (short)uVar5)) {
-      puVar12 = &UINT_1400760e4;
-    }
-                    /* WARNING: Could not recover jumptable at 0x0001400093c6. Too many branches */
-                    /* WARNING: Treating indirect jump as call */
-    pHVar8 = (HMODULE)(*(code *)(pcVar14 + (int)*puVar12))(puVar12,unaff_R14);
-    return pHVar8;
-  case (HMODULE)0x30:
-switchD_140008621_caseD_30:
-    FUN_140023130((undefined8 *)unaff_R15,
-                  (undefined8 *)
-                  "callback intends evaluate module entry load time snapshot exports correctlymTeCSSCFq2zmdv0pSMSBnNWrJYZrnyTILCOXenhfwGmOalms3oyEIsqArE-agyC9BEZ0ErOCMmh8ZW16gTin.cdNjZMyt0-stl archive timestamp from deltaqJn49VYGTCmNhF9AhynDoleQINxaveCWXXeKAr_phDhsA-yPBz_e5ics9b6_BkarJJwybnAbZ2rxjzXUJeZZ-Udd01G6XJp14x0igKGDae-3wvJMsdZS2Pk4bsOHD9KUNZ4KrgcQySdtSa0dFDPR8h2j-P5TNFOgmAKthrough may little line had end eE9F-_gg5ofUHmLMfsJchdqV30mN8IrQx2mPktqiGvCMKI08h7hPYKAMf7R6h5BOHhizQvDdXypmaEDRsOAdpPMsZvL"
-                  ,0x4b);
-    uVar18 = 0x4b;
-    puVar10 = (undefined8 *)FUN_1400017de((longlong)unaff_R15,0x4b);
-    FUN_140012ab1((undefined8 *)unaff_RBX,puVar10,uVar18);
-    local_88 = unaff_RBX;
-    pvVar7 = FUN_1400128ed(0,*(longlong *)
-                              (*(longlong *)
-                                ((longlong)ThreadLocalStoragePointer + (ulonglong)_tls_index * 8) +
-                              0x40) + 0x932efcb2062ad4cd);
-    puVar12 = &switchD_140008c28::switchdataD_140076120;
-    if (pvVar7 == (LPVOID)0x0) {
-      puVar12 = &UINT_14007613c;
-    }
-                    /* WARNING: Could not recover jumptable at 0x0001400086c9. Too many branches */
-                    /* WARNING: Treating indirect jump as call */
-    pHVar8 = (HMODULE)(*(code *)(pcVar14 + (int)*puVar12))();
-    return pHVar8;
-  case (HMODULE)0x34:
-switchD_140008621_caseD_34:
-    local_e8 = (HMODULE)(ulonglong)(0x12560497 - (int)local_b0);
-    param_4 = &switchD_1400089b7::switchdataD_140076178;
-    puVar12 = &switchD_140008c28::switchdataD_1400760e0;
-    goto LAB_140008d3f;
-  case (HMODULE)0x38:
-    goto switchD_140008621_caseD_38;
-  case (HMODULE)0x3c:
-switchD_140008621_caseD_3c:
-    uVar2 = (ushort)unaff_R12[0x26].unused;
-    iVar15 = (int)unaff_RSI;
-    if (uVar2 < (ushort)((ushort)unaff_RSI ^ 0x3f4)) {
-      pcVar14 = (char *)((longlong)&unaff_R14->unused + 1);
-      switch(pcVar14 <= (char *)(ulonglong)uVar2) {
-      case false:
-        unaff_R12[(longlong)unaff_R14].unused = param_1;
-        break;
-      case true:
-        lVar9 = (longlong)(ulonglong)uVar2 - (longlong)unaff_R14;
-        FUN_140023130((undefined8 *)
-                      ((longlong)&unaff_R12->unused +
-                      (ulonglong)
-                      (((uint)*(undefined8 *)
-                               (*(longlong *)
-                                 ((longlong)ThreadLocalStoragePointer + (ulonglong)_tls_index * 8) +
-                               0xc0) ^ 0xdbdfa507) & 0xffff) * (longlong)pcVar14),
-                      (undefined8 *)(unaff_R12 + (longlong)unaff_R14),lVar9 * 4);
-        unaff_R12[(longlong)unaff_R14].unused = param_1;
-        FUN_140023130((undefined8 *)(unaff_R12 + (longlong)pcVar14 * 2 + 0xc),
-                      (undefined8 *)(unaff_R12 + (longlong)unaff_R14 * 2 + 0xc),lVar9 * 8);
+  }
+                    /* WARNING: Switch is manually overridden */
+  switch(*(undefined4 *)((longlong)&switchD_140008621::switchdataD_140076098 + lVar16)) {
+  case 0xfffffaca:
+    do {
+      lVar16 = 0xcc;
+      if (DAT_1400d0d78 != (bVar6 ^ 0xff)) {
+        lVar16 = 0x24;
       }
-      *(HMODULE *)
-       ((longlong)&unaff_R12[0xc].unused + (longlong)unaff_R14 * (ulonglong)(0x12560407 - iVar15)) =
-           unaff_R13;
-      *(ushort *)&unaff_R12[0x26].unused = uVar2 + 1;
-      goto switchD_140008621_caseD_80;
-    }
-    uVar18 = 4;
-    switch(unaff_R14 < (HMODULE)(ulonglong)(iVar15 + 0xeda9fc06)) {
-    case false:
-      lVar9 = 0xac;
-      if (unaff_R14 < (HMODULE)0x6) {
-        lVar9 = 0xa0;
+                    /* WARNING: Switch is manually overridden */
+      switch(*(undefined4 *)((longlong)&switchD_140008621::switchdataD_140076098 + lVar16)) {
+      case 0x3ea:
+        do {
+          lVar16 = 0xcc;
+          if (DAT_1400d0d78 != 0) {
+            lVar16 = 0x24;
+          }
+                    /* WARNING: Switch is manually overridden */
+          switch(*(undefined4 *)((longlong)&switchD_140008621::switchdataD_140076098 + lVar16)) {
+          case 0xfffffde8:
+            goto switchD_14000931c_caseD_40008be4;
+          }
+        } while( true );
+      case 0xfffffde8:
+switchD_14000931c_caseD_40008be4:
+        LOCK();
+        bVar28 = DAT_1400d0d78 == 0;
+        if (bVar28) {
+          DAT_1400d0d78 = 1;
+        }
+        UNLOCK();
+        puVar17 = &switchD_140008c28::switchdataD_140076108;
+        if (bVar28) {
+          puVar17 = &UINT_1400760dc;
+        }
       }
-                    /* WARNING: Could not recover jumptable at 0x0001400091e4. Too many branches */
-                    /* WARNING: Treating indirect jump as call */
-      pHVar8 = (HMODULE)(*(code *)(pcVar14 +
-                                  *(int *)((longlong)&switchD_140008621::switchdataD_140076098 +
-                                          lVar9)))();
-      return pHVar8;
-    case true:
-    }
-    goto LAB_140008b4c;
-  case (HMODULE)0x40:
-    goto switchD_140008621_caseD_40;
-  case (HMODULE)0x44:
-    goto switchD_140008621_caseD_44;
-  case (HMODULE)0x48:
-switchD_140008621_caseD_48:
-    puVar12 = &UINT_140076124;
-    if (pHVar8 == (HMODULE)0x0) {
-      puVar12 = &switchD_140008c28::switchdataD_1400760f0;
-    }
-                    /* WARNING: Could not recover jumptable at 0x000140009195. Too many branches */
-                    /* WARNING: Treating indirect jump as call */
-    pHVar8 = (HMODULE)(*(code *)(pcVar14 + (int)*puVar12))
-                                (pHVar11,(char *)((longlong)&pHVar8[-1].unused + 3));
-    return pHVar8;
-  case (HMODULE)0x4c:
-    goto switchD_140008621_caseD_4c;
-  case (HMODULE)0x50:
-switchD_140008621_caseD_50:
-    pHVar11 = (HMODULE)(ulonglong)(0x12560403 - (int)unaff_RSI);
-    puVar12 = (uint *)&DAT_000000bc;
-    pHVar6 = DAT_1400d0d68;
-LAB_140008c5c:
-    unaff_R14 = unaff_R12;
-    switch(pcVar14 + (int)(&switchD_140008c92::switchdataD_140076134)
-                          [(ulonglong)
-                           (unaff_R12 ==
-                           (HMODULE)((longlong)&unaff_R12->unused +
-                                    ((ulonglong)pHVar11 & 0xffffffff) *
-                                    (ulonglong)(ushort)unaff_R12[0x26].unused)) * 0x10]) {
-    case (char *)0x140009122:
-switchD_14000931c_caseD_40009122:
-      lVar9 = 100;
-      if (pHVar6 != (HMODULE)0x0) {
-        lVar9 = 0xd4;
+                    /* WARNING: Switch is manually overridden */
+      switch(*puVar17) {
+      case 0xfffffaf0:
+        goto switchD_140008621_caseD_44;
       }
-                    /* WARNING: Could not recover jumptable at 0x00014000913c. Too many branches */
-                    /* WARNING: Treating indirect jump as call */
-      pHVar8 = (HMODULE)(*(code *)(pcVar14 +
-                                  *(int *)((longlong)&switchD_140008621::switchdataD_140076098 +
-                                          lVar9)))
-                                  (pHVar11,pcVar14 + *(int *)((longlong)
-                                                              &switchD_140008621::
-                                                               switchdataD_140076098 + lVar9));
-      return pHVar8;
+    } while( true );
+  case 0xfffffaf0:
+switchD_140008621_caseD_44:
+    pppppppuVar12 = FUN_1400128ed(0,0x4b);
+    lVar16 = 0x30;
+    if (pppppppuVar12 == (uint *******)0x0) {
+      lVar16 = 0x18;
     }
-  case (HMODULE)0x9c:
-switchD_140008621_caseD_9c:
-    uVar18 = 0x84;
-    if ((uint)unaff_R14->unused < param_1 == param_1 < (uint)unaff_R14->unused) {
-      uVar18 = (ulonglong)puVar12 & 0xffffffff;
-    }
-                    /* WARNING: Could not recover jumptable at 0x000140008a7b. Too many branches */
-                    /* WARNING: Treating indirect jump as call */
-    pHVar8 = (HMODULE)(*(code *)(pcVar14 +
-                                *(int *)((longlong)&switchD_140008621::switchdataD_140076098 +
-                                        uVar18)))();
-    return pHVar8;
-  case (HMODULE)0x54:
-    goto switchD_140008621_caseD_54;
-  case (HMODULE)0x58:
-    goto switchD_140008621_caseD_58;
-  case (HMODULE)0x5c:
-switchD_140008621_caseD_5c:
-    *(undefined2 *)&pHVar6[0x26].unused = 1;
-    pHVar6->unused = (int)in_R11;
-    *(HMODULE *)(pHVar6 + 0xc) = pHVar8;
-    *(uint **)(pHVar6 + 0x2a) = puVar12;
-    *(HMODULE *)(puVar12 + 0x24) = pHVar6;
-    *(undefined2 *)&((HMODULE)(puVar12 + 0x22))->unused = 1;
-  case (HMODULE)0x80:
-switchD_140008621_caseD_80:
-    _DAT_1400d0d60 = _DAT_1400d0d60 + 1;
-    DAT_1400d0d78 = 0;
-    return unaff_R13;
-  case (HMODULE)0x60:
-switchD_140008621_caseD_60:
+    pHVar13 = (HMODULE)&local_88;
+                    /* WARNING: Switch is manually overridden */
+    switch(*(undefined4 *)((longlong)&switchD_140008621::switchdataD_140076098 + lVar16)) {
+    case 0x17f:
                     /* WARNING: Does not return */
-    pcVar3 = (code *)invalidInstructionException();
-    (*pcVar3)();
-  case (HMODULE)0x64:
-    goto switchD_140008621_caseD_64;
-  case (HMODULE)0x68:
-switchD_140008621_caseD_68:
+      pcVar5 = (code *)invalidInstructionException();
+      (*pcVar5)();
+    case 0xfffff827:
+      FUN_140023130(pppppppuVar12,
+                    (undefined8 *)
+                    "callback intends evaluate module entry load time snapshot exports correctlymTeCSSCFq2zmdv0pSMSBnNWrJYZrnyTILCOXenhfwGmOalms3oyEIsqArE-agyC9BEZ0ErOCMmh8ZW16gTin.cdNjZMyt0-stl archive timestamp from deltaqJn49VYGTCmNhF9AhynDoleQINxaveCWXXeKAr_phDhsA-yPBz_e5ics9b6_BkarJJwybnAbZ2rxjzXUJeZZ-Udd01G6XJp14x0igKGDae-3wvJMsdZS2Pk4bsOHD9KUNZ4KrgcQySdtSa0dFDPR8h2j-P5TNFOgmAKthrough may little line had end eE9F-_gg5ofUHmLMfsJchdqV30mN8IrQx2mPktqiGvCMKI08h7hPYKAMf7R6h5BOHhizQvDdXypmaEDRsOAdpPMsZvL"
+                    ,0x4b);
+      uVar19 = 0x4b;
+      puVar9 = (undefined8 *)FUN_1400017de((longlong)pppppppuVar12,0x4b);
+      FUN_140012ab1(&local_70,puVar9,uVar19);
+      local_88 = (uint *******)&local_70;
+      pcVar10 = FUN_1400128ed(0,*(longlong *)
+                                 (*(longlong *)
+                                   ((longlong)ThreadLocalStoragePointer + (ulonglong)_tls_index * 8)
+                                 + 0x40) + 0x932efcb2062ad4cd);
+      puVar17 = &switchD_140008c28::switchdataD_140076120;
+      if (pcVar10 == (char *)0x0) {
+        puVar17 = &UINT_14007613c;
+      }
+    }
+                    /* WARNING: Switch is manually overridden */
+    switch(*puVar17) {
+    case 0x181:
                     /* WARNING: Does not return */
-    pcVar3 = (code *)invalidInstructionException();
-    (*pcVar3)();
-  case (HMODULE)0x6c:
-    goto switchD_140008621_caseD_6c;
-  case (HMODULE)0x70:
-    goto switchD_140008621_caseD_70;
-  case (HMODULE)0x74:
-switchD_140008621_caseD_74:
-    switch(pcVar14 + (int)(&switchD_140008c28::switchdataD_140076150)
-                          [(ulonglong)((char)unaff_RBX == '\x01') * 0x10]) {
-    case (char *)0x14000929e:
-switchD_140008dd6_caseD_4000929e:
-                    /* WARNING: Could not recover jumptable at 0x0001400092be. Too many branches */
-                    /* WARNING: Treating indirect jump as call */
-      pHVar8 = (HMODULE)(*(code *)(pcVar14 +
-                                  (int)(&switchD_140008c92::switchdataD_140076134)
-                                       [(ulonglong)(unaff_R14 + 1 == pHVar8) * 0x10]))();
-      return pHVar8;
-    }
-    break;
-  case (HMODULE)0x78:
-switchD_140008621_caseD_78:
-    puVar12 = &UINT_14007618c;
-    if ((ushort)unaff_R15 < 6) {
-      puVar12 = &UINT_1400760b4;
-    }
-                    /* WARNING: Could not recover jumptable at 0x000140008e1c. Too many branches */
-                    /* WARNING: Treating indirect jump as call */
-    pHVar8 = (HMODULE)(*(code *)(pcVar14 + (int)*puVar12))();
-    return pHVar8;
-  case (HMODULE)0x7c:
-switchD_140008621_caseD_7c:
-    if (pHVar6 + 1 == in_R10) {
-      param_4 = puVar12;
-    }
-                    /* WARNING: Could not recover jumptable at 0x00014000921a. Too many branches */
-                    /* WARNING: Treating indirect jump as call */
-    pHVar8 = (HMODULE)(*(code *)(pcVar14 + ((HMODULE)param_4)->unused))();
-    return pHVar8;
-  case (HMODULE)0x84:
-switchD_140008621_caseD_84:
-    if ((char)unaff_RBX != -1) {
-      in_R10 = (HMODULE)param_4;
-    }
-                    /* WARNING: Could not recover jumptable at 0x000140008f31. Too many branches */
-                    /* WARNING: Treating indirect jump as call */
-    pHVar8 = (HMODULE)(*(code *)(pcVar14 + in_R10->unused))();
-    return pHVar8;
-  case (HMODULE)0x88:
-switchD_140008621_caseD_88:
-    *(undefined8 *)(unaff_R12 + 4) = 0x756f68206b636162;
-    *(undefined8 *)(unaff_R12 + 6) = 0x68746f6e61206573;
-    *(undefined8 *)unaff_R12 = 0x2077656e20776f6e;
-    *(undefined8 *)(unaff_R12 + 2) = 0x207473756a207369;
-    *(char *)&unaff_R12[8].unused = 'e';
-    uVar18 = 0x21;
-    puVar10 = (undefined8 *)FUN_1400017de((longlong)unaff_R12,0x21);
-    FUN_140012ab1((undefined8 *)unaff_R14,puVar10,uVar18);
-    local_48 = unaff_R14;
-    FUN_14000250d(local_88,local_80,1,1);
-    FUN_14000250d(unaff_R12,0x21,1,1);
-    FUN_14000250d(local_70,local_68,1,1);
-    FUN_14000250d(unaff_R15,0x4b,1,1);
-    puVar12 = &switchD_140008c28::switchdataD_1400760e8;
-    if (DAT_1400d0d70 == (HMODULE)0x0) {
-      puVar12 = &switchD_1400089b7::switchdataD_140076188;
-    }
-                    /* WARNING: Could not recover jumptable at 0x000140009584. Too many branches */
-                    /* WARNING: Treating indirect jump as call */
-    pHVar8 = (HMODULE)(*(code *)(pcVar14 + (int)*puVar12))();
-    return pHVar8;
-  case (HMODULE)0x8c:
-switchD_140008621_caseD_8c:
-    pHVar11 = *(HMODULE *)
-               ((longlong)&pHVar11[0x28].unused +
-               (longlong)unaff_RBX * (ulonglong)((int)local_c8 - 4));
-LAB_140008d3f:
-    if (pHVar11 ==
-        pHVar11 + *(ushort *)((longlong)&pHVar11->unused + ((ulonglong)local_e8 & 0xffffffff))) {
-      param_4 = puVar12;
-    }
-                    /* WARNING: Could not recover jumptable at 0x000140008d63. Too many branches */
-                    /* WARNING: Treating indirect jump as call */
-    pHVar8 = (HMODULE)(*(code *)(pcVar14 + ((HMODULE)param_4)->unused))();
-    return pHVar8;
-  case (HMODULE)0x90:
-    goto switchD_140008621_caseD_90;
-  case (HMODULE)0x94:
-switchD_140008621_caseD_94:
-    DAT_1400d0d78 = 0;
-    return *(HMODULE *)(pHVar11 + (longlong)unaff_R14 * 2 + 0xc);
-  case (HMODULE)0x98:
-switchD_140008621_caseD_98:
-                    /* WARNING: Does not return */
-    pcVar3 = (code *)invalidInstructionException();
-    (*pcVar3)();
-  case (HMODULE)0xa0:
-switchD_140008621_caseD_a0:
-    iVar15 = (int)unaff_RSI;
-    if (unaff_R14 == (HMODULE)0x5) {
-      uVar18 = 5;
-      goto LAB_140008b4c;
-    }
-    goto LAB_140008b37;
-  case (HMODULE)0xa4:
-switchD_140008621_caseD_a4:
-                    /* WARNING: Does not return */
-    pcVar3 = (code *)invalidInstructionException();
-    (*pcVar3)();
-  case (HMODULE)0xa8:
-    goto switchD_140008621_caseD_a8;
-  case (HMODULE)0xac:
-switchD_140008621_caseD_ac:
-    iVar15 = (int)unaff_RSI;
-    if (unaff_R14 == (HMODULE)0x6) {
-      uVar18 = 5;
-      goto LAB_140008b4c;
-    }
-LAB_140008b37:
-    uVar18 = 6;
-LAB_140008b4c:
-    pvVar7 = FUN_1400128ed(0,0xa0);
-    switch(pvVar7 == (LPVOID)0x0) {
-    case true:
-                    /* WARNING: Does not return */
-      pcVar3 = (code *)invalidInstructionException();
-      (*pcVar3)();
-    }
-    *(undefined8 *)((longlong)pvVar7 + 0x90) = 0;
-    uVar17 = ~uVar18 + (ulonglong)(ushort)unaff_R12[0x26].unused;
-    *(short *)((longlong)pvVar7 + (ulonglong)(0x12560497U - iVar15)) = (short)uVar17;
-    lVar9 = 0x14;
-    if (uVar17 < 0xa4 - (0x12560497U - iVar15)) {
-      lVar9 = 0xc0;
-    }
-                    /* WARNING: Could not recover jumptable at 0x000140008afa. Too many branches */
-                    /* WARNING: Treating indirect jump as call */
-    pHVar8 = (HMODULE)(*(code *)(pcVar14 +
-                                *(int *)((longlong)&switchD_140008621::switchdataD_140076098 + lVar9
-                                        )))(lVar9,unaff_R12 + uVar18 + 1);
-    return pHVar8;
-  case (HMODULE)0xb0:
-switchD_140008621_caseD_b0:
-    puVar12 = &switchD_1400089b7::switchdataD_140076180;
-    if (DAT_1400d0d78 == (byte)((byte)pHVar8 ^ 0xff)) {
-      puVar12 = &switchD_140008c28::switchdataD_1400760b8;
-    }
-                    /* WARNING: Could not recover jumptable at 0x000140008bc1. Too many branches */
-                    /* WARNING: Treating indirect jump as call */
-    pHVar8 = (HMODULE)(*(code *)(pcVar14 + (int)*puVar12))();
-    return pHVar8;
-  case (HMODULE)0xb4:
-switchD_140008621_caseD_b4:
-                    /* WARNING: Does not return */
-    pcVar3 = (code *)invalidInstructionException();
-    (*pcVar3)();
-  case (HMODULE)0xbc:
-switchD_140008621_caseD_bc:
-    if ((char)unaff_RBX == '\0') {
-      *(HMODULE *)
-       ((longlong)&unaff_R12[(longlong)unaff_R13 * 2].unused +
-       (ulonglong)((int)local_b0 + 0xeda9fc31)) = local_c8;
-      DAT_1400d0d78 = 0;
-      return local_c8;
+      pcVar5 = (code *)invalidInstructionException();
+      (*pcVar5)();
+    case 0x6b0:
+      builtin_strncpy(pcVar10,"now new is just back house anothe",0x21);
+      uVar19 = 0x21;
+      puVar9 = (undefined8 *)FUN_1400017de((longlong)pcVar10,0x21);
+      FUN_140012ab1((undefined8 *)pHVar13,puVar9,uVar19);
+      local_48 = pHVar13;
+      FUN_14000250d(local_88,local_80,1,1);
+      FUN_14000250d(pcVar10,0x21,1,1);
+      FUN_14000250d(local_70,local_68,1,1);
+      FUN_14000250d(pppppppuVar12,0x4b,1,1);
+      puVar17 = &switchD_140008c28::switchdataD_1400760e8;
+      if (DAT_1400d0d70 == (uint *******)0x0) {
+        puVar17 = &switchD_1400089b7::switchdataD_140076188;
+      }
     }
   }
+                    /* WARNING: Switch is manually overridden */
+  switch(*puVar17) {
+  case 0xfffffe2e:
+    uVar18 = -uVar8 + 0x1256049f;
+    local_e8 = (uint ******)CONCAT44(local_e8._4_4_,uVar18);
+    pHVar26 = DAT_1400d0d68;
+    pppppppuVar11 = DAT_1400d0d70;
+    do {
+      pHVar13 = (HMODULE)(ulonglong)*(ushort *)(pppppppuVar11 + 0x13);
+      pppppppuVar20 =
+           (uint *******)
+           ((ulonglong)(0x12560403 - uVar8) * (longlong)pHVar13 + (longlong)pppppppuVar11);
+      pHVar23 = (HMODULE)0x0;
+      pppppppuVar14 = pppppppuVar11;
+                    /* WARNING: Switch is manually overridden */
+      switch(pppppppuVar11 == pppppppuVar20) {
+      case false:
+        do {
+          bVar27 = param_1 < *(uint *)pppppppuVar14;
+          bVar28 = *(uint *)pppppppuVar14 < param_1;
+          cVar22 = bVar28 - bVar27;
+          lVar16 = 0x84;
+          if (bVar28 == bVar27) {
+            lVar16 = 0xbc;
+          }
+                    /* WARNING: Switch is manually overridden */
+          switch(*(undefined4 *)((longlong)&switchD_140008621::switchdataD_140076098 + lVar16)) {
+          case 0x122:
+            puVar17 = &UINT_140076184;
+            if (cVar22 != -1) {
+              puVar17 = &UINT_14007610c;
+            }
+            break;
+          case 0xfffffbe6:
+            if (bVar28 == bVar27) {
+              *(HMODULE *)
+               ((longlong)pppppppuVar11 + (longlong)pHVar23 * 8 + (ulonglong)(uVar8 + 0xeda9fc31)) =
+                   pHVar15;
+              DAT_1400d0d78 = 0;
+              return pHVar15;
+                    /* WARNING: Switch is manually overridden */
+            }
 switchD_140008621_caseD_b8:
                     /* WARNING: Does not return */
-  pcVar3 = (code *)invalidInstructionException();
-  (*pcVar3)();
-switchD_140008621_caseD_6c:
-  local_b8 = (HMODULE)&local_70;
-  unaff_R13 = (HMODULE)0x4;
-  goto LAB_14000874b;
-switchD_140008621_caseD_44:
-  pHVar8 = (HMODULE)0x4b;
-  unaff_R15 = FUN_1400128ed(0,0x4b);
-  pHVar11 = (HMODULE)0x30;
-  if (unaff_R15 == (HMODULE)0x0) {
-    pHVar11 = (HMODULE)0x18;
+            pcVar5 = (code *)invalidInstructionException();
+            (*pcVar5)();
+          }
+                    /* WARNING: Switch is manually overridden */
+          switch(*puVar17) {
+          case 0xffffffbe:
+            pppppppuVar12 = (uint *******)((ulonglong)(cVar22 == '\x01') * 0x40);
+                    /* WARNING: Switch is manually overridden */
+            switch(cVar22 == '\x01') {
+            case false:
+              goto switchD_140008621_caseD_b8;
+            }
+            break;
+          case 0xffffffdd:
+            puVar17 = &switchD_140008c28::switchdataD_140076150;
+            if (cVar22 == -1) {
+              puVar17 = &switchD_140008c92::switchdataD_140076174;
+            }
+            pHVar13 = pHVar23;
+                    /* WARNING: Switch is manually overridden */
+            switch(*puVar17) {
+            case 0xfffffbe4:
+              goto switchD_140008621_caseD_b8;
+            }
+            goto switchD_14000931c_caseD_40009122;
+          }
+          pHVar23 = (HMODULE)((longlong)&pHVar23->unused + 1);
+          pppppppuVar14 = (uint *******)((longlong)pppppppuVar14 + 4);
+                    /* WARNING: Switch is manually overridden */
+          switch(pppppppuVar14 == pppppppuVar20) {
+          case true:
+            goto switchD_14000931c_caseD_40009122;
+          }
+        } while( true );
+      case true:
+switchD_14000931c_caseD_40009122:
+        bVar28 = pHVar26 != (HMODULE)0x0;
+        pHVar26 = (HMODULE)((longlong)&pHVar26[-1].unused + 3);
+        lVar16 = 100;
+        if (bVar28) {
+          lVar16 = 0xd4;
+        }
+      }
+                    /* WARNING: Switch is manually overridden */
+      switch(*(undefined4 *)((longlong)&switchD_140008621::switchdataD_140076098 + lVar16)) {
+      case 0xfffffe99:
+        pppppppuVar11 =
+             *(uint ********)
+              ((longlong)pppppppuVar11 +
+              (longlong)pHVar13 * (ulonglong)(-uVar8 + 0x12560407) + (ulonglong)uVar18);
+        break;
+      case 0xffffff98:
+        goto switchD_140008621_caseD_64;
+      }
+    } while( true );
   }
-  pHVar6 = (HMODULE)(pcVar14 + pHVar11[0x5001d826].unused);
-  unaff_R14 = (HMODULE)&local_88;
-  unaff_RBX = (HMODULE)&local_70;
-  switch(pHVar6) {
-  case (HMODULE)0x140008623:
-    goto switchD_140008621_caseD_30;
-  case (HMODULE)0x140008804:
-    goto switchD_140008621_caseD_28;
-  case (HMODULE)0x140008868:
-    goto switchD_140008621_caseD_10;
-  case (HMODULE)0x140008968:
-    goto switchD_140008621_caseD_8;
-  case (HMODULE)0x140008b77:
-    goto switchD_140008621_caseD_20;
-  case (HMODULE)0x140008f7b:
-    goto switchD_140008621_caseD_18;
-  case (HMODULE)0x140009299:
-    goto switchD_140008621_caseD_0;
+switchD_140008db8_caseD_40008cb7:
+  pppppppuVar14 = FUN_1400128ed(0,0xa0);
+  pppppppuVar11 = (uint *******)((ulonglong)(pppppppuVar14 == (uint *******)0x0) * 2 + 1);
+  local_d8 = param_2;
+  local_d0 = param_3;
+                    /* WARNING: Switch is manually overridden */
+  switch(pppppppuVar11) {
+  case (uint *******)0x2:
+switchD_140008866_caseD_1:
+    pppppppuVar11[0x12] = (uint ******)0x0;
+    *(undefined2 *)(pppppppuVar11 + 0x13) = 0;
+    pppppppuVar11[0x14] = (uint ******)pppppppuVar12;
+    puVar17 = &UINT_1400760ec;
+    pHVar26 = (HMODULE)((longlong)&pHVar13->unused + 1);
+    if (pHVar26 == (HMODULE)0x0) {
+      puVar17 = &switchD_140008c28::switchdataD_1400760f8;
+    }
+                    /* WARNING: Switch is manually overridden */
+    switch(*puVar17) {
+    case 0xfffffb28:
+      pppppppuVar12[0x12] = (uint ******)pppppppuVar11;
+      *(undefined2 *)(pppppppuVar12 + 0x11) = 0;
+      lVar16 = 0x68;
+      if (local_d8 == pHVar13) {
+        lVar16 = 0x5c;
+      }
+      break;
+    case 0xffffff6c:
+                    /* WARNING: Does not return */
+      pcVar5 = (code *)invalidInstructionException();
+      (*pcVar5)();
+    }
+    DAT_1400d0d68 = pHVar26;
+    DAT_1400d0d70 = pppppppuVar11;
+                    /* WARNING: Switch is manually overridden */
+    switch(*(undefined4 *)((longlong)&switchD_140008621::switchdataD_140076098 + lVar16)) {
+    case 0xf7:
+switchD_140008621_caseD_68:
+                    /* WARNING: Does not return */
+      pcVar5 = (code *)invalidInstructionException();
+      (*pcVar5)();
+    case 0xfffffc1e:
+      *(undefined2 *)(pppppppuVar11 + 0x13) = 1;
+      *(uint *)pppppppuVar11 = (uint)local_d0;
+      pppppppuVar11[6] = local_e8;
+      pppppppuVar11[0x15] = (uint ******)pppppppuVar14;
+      pppppppuVar14[0x12] = (uint ******)pppppppuVar11;
+      *(undefined2 *)(pppppppuVar14 + 0x11) = 1;
+                    /* WARNING: Switch is manually overridden */
+    }
+    goto switchD_140008621_caseD_80;
+  case (uint *******)0x3:
+                    /* WARNING: Does not return */
+    pcVar5 = (code *)invalidInstructionException();
+    (*pcVar5)();
   }
-  goto switchD_140008621_caseD_38;
-switchD_140008621_caseD_1c:
-  unaff_R13 = (HMODULE)0x5;
-  pHVar8 = (HMODULE)0x5;
-  local_b8 = (HMODULE)&local_70;
-  if ((short)unaff_R15 != 5) {
+switchD_140008ce2_caseD_0:
+  pppppppuVar14[0x12] = (uint ******)0x0;
+  *(undefined2 *)(pppppppuVar14 + 0x13) = 0;
+  DAT_1400d0d68 = (HMODULE)0x0;
+  DAT_1400d0d70 = pppppppuVar14;
+  *(undefined2 *)(pppppppuVar14 + 0x13) = 1;
+  *(uint *)pppppppuVar14 = param_1;
+  *(HMODULE *)((longlong)pppppppuVar14 + (ulonglong)(0x1256042f - uVar8)) = pHVar15;
+switchD_140008621_caseD_80:
+  _DAT_1400d0d60 = _DAT_1400d0d60 + 1;
+  DAT_1400d0d78 = 0;
+  return pHVar15;
+switchD_140008621_caseD_64:
+  lVar16 = 0x3c;
+  if (pppppppuVar11 == (uint *******)0x0) {
+    lVar16 = 0xf0;
+  }
+                    /* WARNING: Switch is manually overridden */
+  switch(*(undefined4 *)((longlong)&switchD_140008621::switchdataD_140076098 + lVar16)) {
+  case 0x185:
+    uVar2 = *(ushort *)(pppppppuVar11 + 0x13);
+    pHVar26 = (HMODULE)(ulonglong)uVar2;
+    if (uVar2 < (ushort)((ushort)uVar4 ^ 0x3f4)) {
+      local_d8 = (HMODULE)((longlong)&pHVar13->unused + 1);
+                    /* WARNING: Switch is manually overridden */
+      switch((local_d8 <= pHVar26) * '\x03') {
+      case '\0':
+        *(uint *)((longlong)pppppppuVar11 + (longlong)pHVar13 * 4) = param_1;
+        break;
+      case '\x01':
+        goto switchD_140008f79_caseD_1;
+      case '\x02':
+        goto switchD_140008f79_caseD_0;
+      case '\x03':
+        FUN_140023130((uint *******)
+                      ((ulonglong)
+                       (((uint)*(undefined8 *)
+                                (*(longlong *)
+                                  ((longlong)ThreadLocalStoragePointer + (ulonglong)_tls_index * 8)
+                                + 0xc0) ^ 0xdbdfa507) & 0xffff) * (longlong)local_d8 +
+                      (longlong)pppppppuVar11),
+                      (undefined8 *)((longlong)pppppppuVar11 + (longlong)pHVar13 * 4),
+                      ((longlong)pHVar26 - (longlong)pHVar13) * 4);
+        *(uint *)((longlong)pppppppuVar11 + (longlong)pHVar13 * 4) = param_1;
+        FUN_140023130(pppppppuVar11 + (longlong)((longlong)&local_d8[1].unused + 2),
+                      pppppppuVar11 + (longlong)((longlong)&pHVar13[1].unused + 2),
+                      ((longlong)pHVar26 - (longlong)pHVar13) * 8);
+                    /* WARNING: Switch is manually overridden */
+      }
+      *(HMODULE *)
+       ((longlong)pppppppuVar11 + (longlong)pHVar13 * (ulonglong)(0x12560407 - uVar8) + 0x30) =
+           pHVar15;
+      *(ushort *)(pppppppuVar11 + 0x13) = uVar2 + 1;
+      goto switchD_140008621_caseD_80;
+    }
+    pHVar26 = (HMODULE)0x4;
+    local_d8 = pHVar13;
+                    /* WARNING: Switch is manually overridden */
+    switch(-(uint)(pHVar13 < (HMODULE)(ulonglong)(uVar8 + 0xeda9fc06))) {
+    case 0:
+switchD_140008f79_caseD_0:
+      lVar16 = 0xac;
+      if (pHVar13 < (HMODULE)0x6) {
+        lVar16 = 0xa0;
+      }
+                    /* WARNING: Switch is manually overridden */
+      switch(*(undefined4 *)((longlong)&switchD_140008621::switchdataD_140076098 + lVar16)) {
+      case 0xfffffd00:
+        if (pHVar13 == (HMODULE)0x6) {
+          pHVar26 = (HMODULE)0x5;
+          bVar28 = true;
+          pHVar13 = (HMODULE)0x0;
+        }
+        else {
+LAB_140008b37:
+          pHVar26 = (HMODULE)0x6;
+          bVar28 = true;
+          pHVar13 = (HMODULE)((longlong)&pHVar13[-2].unused + 1);
+        }
+        break;
+      case 0xfffffd31:
+        if (pHVar13 != (HMODULE)0x5) goto LAB_140008b37;
+        bVar28 = false;
+        pHVar26 = (HMODULE)0x5;
+      }
+      local_d8 = pHVar13;
+      break;
+    case 0xffffffff:
+switchD_140008f79_caseD_1:
+      bVar28 = false;
+    }
+    pppppppuVar14 = FUN_1400128ed(0,0xa0);
+                    /* WARNING: Switch is manually overridden */
+    switch(pppppppuVar14 == (uint *******)0x0) {
+    case true:
+                    /* WARNING: Does not return */
+      pcVar5 = (code *)invalidInstructionException();
+      (*pcVar5)();
+    }
+    pppppppuVar14[0x12] = (uint ******)0x0;
+    uVar19 = ~(ulonglong)pHVar26 + (ulonglong)*(ushort *)(pppppppuVar11 + 0x13);
+    *(short *)((longlong)pppppppuVar14 + (ulonglong)(0x12560497 - uVar8)) = (short)uVar19;
+    lVar16 = 0x14;
+    if (uVar19 < 0xa4 - (0x12560497 - uVar8)) {
+      lVar16 = 0xc0;
+    }
+                    /* WARNING: Switch is manually overridden */
+    switch(*(undefined4 *)((longlong)&switchD_140008621::switchdataD_140076098 + lVar16)) {
+    case 0xfffffffe:
+                    /* WARNING: Does not return */
+      pcVar5 = (code *)invalidInstructionException();
+      (*pcVar5)();
+    }
+    local_e8 = *(uint *******)
+                ((longlong)pppppppuVar11 +
+                (ulonglong)(uVar8 ^ 0x125603f7) * (longlong)pHVar26 + 0x30);
+    local_d0 = (HMODULE)(ulonglong)*(uint *)((longlong)pppppppuVar11 + (longlong)pHVar26 * 4);
+    FUN_140023130(pppppppuVar14,
+                  (undefined8 *)
+                  ((longlong)pppppppuVar11 + (longlong)((longlong)&pHVar26->unused + 1) * 4),
+                  uVar19 * 4);
+    FUN_140023130(pppppppuVar14 + 6,pppppppuVar11 + (longlong)((longlong)&pHVar26[1].unused + 3),
+                  uVar19 * 8);
+    pppppppuVar12 = pppppppuVar11;
+    if (bVar28) {
+      pppppppuVar12 = pppppppuVar14;
+    }
+    *(short *)(pppppppuVar11 + 0x13) = (short)pHVar26;
+    uVar19 = (ulonglong)(0xa0 - (uVar8 ^ 0x125603f7));
+    uVar2 = *(ushort *)((longlong)pppppppuVar12 + uVar19);
+    puVar1 = (undefined1 *)((longlong)&local_d8->unused + 1);
+    if ((undefined1 *)(ulonglong)uVar2 < puVar1) {
+      *(uint *)((longlong)pppppppuVar12 + (ulonglong)(0x12560403 - uVar8) * (longlong)local_d8) =
+           param_1;
+      pppppppuVar20 = pppppppuVar12 + 6;
+    }
+    else {
+      lVar16 = (longlong)(ulonglong)uVar2 - (longlong)local_d8;
+      puVar17 = (uint *)((longlong)pppppppuVar12 + (longlong)local_d8 * 4);
+      FUN_140023130((undefined8 *)((longlong)pppppppuVar12 + (longlong)puVar1 * 4),
+                    (undefined8 *)puVar17,lVar16 * 4);
+      *puVar17 = param_1;
+      pppppppuVar20 = (uint *******)((ulonglong)(uVar8 ^ 0x125603cf) + (longlong)pppppppuVar12);
+      FUN_140023130(pppppppuVar20 + (longlong)puVar1,
+                    (uint *******)
+                    ((ulonglong)(uVar8 ^ 0x125603f7) * (longlong)local_d8 + (longlong)pppppppuVar20)
+                    ,lVar16 * 8);
+    }
+    pppppppuVar20[(longlong)local_d8] = (uint ******)pHVar15;
+    *(ushort *)((longlong)pppppppuVar12 + uVar19) = uVar2 + 1;
+    pppppppuVar12 = *(uint ********)((longlong)pppppppuVar11 + (ulonglong)(uVar8 + 0xeda9fc91));
+    lVar16 = 0xa8;
+    if (pppppppuVar12 == (uint *******)0x0) {
+      lVar16 = 0xd0;
+    }
+    local_d8 = (HMODULE)0x0;
+                    /* WARNING: Switch is manually overridden */
+    switch(*(undefined4 *)((longlong)&switchD_140008621::switchdataD_140076098 + lVar16)) {
+    case 0x4c5:
+switchD_140008621_caseD_a8:
+      uVar2 = *(ushort *)((longlong)pppppppuVar11 + (ulonglong)(uVar8 ^ 0x12560377));
+      uVar19 = (ulonglong)uVar2;
+      uVar3 = *(ushort *)(pppppppuVar12 + 0x13);
+      bVar7 = (byte)(uVar8 ^ 0x12560377);
+      lVar16 = 0x28;
+      if (uVar3 < (byte)(((*(byte *)(*(longlong *)
+                                      ((longlong)ThreadLocalStoragePointer +
+                                      (ulonglong)_tls_index * 8) + 0x85) ^ bVar7) - bVar7) + 0xbe))
+      {
+        lVar16 = 0xe4;
+      }
+                    /* WARNING: Switch is manually overridden */
+      switch(*(undefined4 *)((longlong)&switchD_140008621::switchdataD_140076098 + lVar16)) {
+      case 0x39b:
+        FUN_140012b23(uVar19,(longlong)pppppppuVar12,(uint)local_d0,local_e8,pppppppuVar14);
+                    /* WARNING: Switch is manually overridden */
+        break;
+      case 0xfffffa08:
+        puVar17 = &switchD_140008c28::switchdataD_140076110;
+        if (uVar2 < 5) {
+          puVar17 = &UINT_140076104;
+        }
+                    /* WARNING: Switch is manually overridden */
+        switch(*puVar17) {
+        case 0:
+          puVar17 = &UINT_14007618c;
+          if (uVar2 < 6) {
+            puVar17 = &UINT_1400760b4;
+          }
+          break;
+        case 0xfffff8ef:
+          local_b8 = (uint *******)&local_70;
+          uVar24 = 4;
+          uVar25 = uVar19;
+          goto LAB_14000874b;
+        }
+                    /* WARNING: Switch is manually overridden */
+        switch(*puVar17) {
+        case 0xfffff90e:
+          uVar24 = 5;
+          uVar25 = 5;
+          local_b8 = (uint *******)&local_70;
+          if (uVar2 == 5) goto LAB_14000874b;
 LAB_140008733:
-    pHVar8 = (HMODULE)((longlong)&unaff_R15[-2].unused + 1);
-    unaff_R13 = (HMODULE)0x6;
-    local_b8 = unaff_RBX;
-LAB_140008740:
-    unaff_RBX = local_b8;
-  }
-  unaff_R15 = pHVar8;
+          uVar25 = uVar19 - 7;
+          uVar24 = 6;
+          break;
+        case 0xfffff92d:
+          if (uVar2 != 6) goto LAB_140008733;
+          uVar24 = 5;
+          uVar25 = 0;
+        }
+        local_b8 = (uint *******)&local_88;
 LAB_14000874b:
-  unaff_R12 = FUN_1400128ed(0,0x100);
-  lVar9 = 0x10;
-  if (unaff_R12 == (HMODULE)0x0) {
-    lVar9 = 4;
+        pppppppuVar11 = FUN_1400128ed(0,0x100);
+        lVar16 = 0x10;
+        if (pppppppuVar11 == (uint *******)0x0) {
+          lVar16 = 4;
+        }
+                    /* WARNING: Switch is manually overridden */
+        switch(*(undefined4 *)((longlong)&switchD_140008621::switchdataD_140076098 + lVar16)) {
+        case 0xfffffa6c:
+          pppppppuVar11[0x12] = (uint ******)0x0;
+          *(undefined2 *)(pppppppuVar11 + 0x13) = 0;
+          uVar19 = ~uVar24 + (ulonglong)*(ushort *)(pppppppuVar12 + 0x13);
+          *(short *)(pppppppuVar11 + 0x13) = (short)uVar19;
+          puVar17 = &UINT_14007614c;
+          if (uVar19 < uVar8 + 0xeda9fc0d) {
+            puVar17 = &UINT_1400760c4;
+          }
+          break;
+        case 0xfffffd16:
+                    /* WARNING: Does not return */
+          pcVar5 = (code *)invalidInstructionException();
+          (*pcVar5)();
+        }
+        local_50 = uVar25;
+                    /* WARNING: Switch is manually overridden */
+        switch(*puVar17) {
+        case 0x405:
+                    /* WARNING: Does not return */
+          pcVar5 = (code *)invalidInstructionException();
+          (*pcVar5)();
+        case 0x522:
+          uVar25 = (ulonglong)(uint)((int)uVar24 * 8);
+          local_58 = *(uint *******)((longlong)pppppppuVar12 + uVar25 + 0x30);
+          uVar18 = *(uint *)((longlong)pppppppuVar12 + uVar24 * 4);
+          FUN_140023130(pppppppuVar11,
+                        (uint *******)
+                        ((ulonglong)(uVar8 + 0xeda9fc05) * (uVar24 + 1) + (longlong)pppppppuVar12),
+                        uVar19 * 4);
+          FUN_140023130((undefined8 *)((ulonglong)(uVar8 + 0xeda9fc31) + (longlong)pppppppuVar11),
+                        pppppppuVar12 + uVar24 + 7,uVar19 * 8);
+          *(short *)(pppppppuVar12 + 0x13) = (short)uVar24;
+          uVar2 = *(ushort *)(pppppppuVar11 + 0x13);
+          puVar17 = &switchD_140008c28::switchdataD_140076160;
+          if (uVar2 < (ushort)(0x10U - (short)(uVar8 + 0xeda9fc05))) {
+            puVar17 = &UINT_1400760e4;
+          }
+        }
+                    /* WARNING: Switch is manually overridden */
+        switch(*puVar17) {
+        case 0xf9:
+                    /* WARNING: Does not return */
+          pcVar5 = (code *)invalidInstructionException();
+          (*pcVar5)();
+        case 0xffffff6e:
+          iVar21 = (uint)uVar3 - (int)uVar24;
+          lVar16 = 0xd8;
+          if (iVar21 == uVar2 + 1) {
+            lVar16 = 0xc4;
+          }
+        }
+                    /* WARNING: Switch is manually overridden */
+        switch(*(undefined4 *)((longlong)&switchD_140008621::switchdataD_140076098 + lVar16)) {
+        case 0x183:
+                    /* WARNING: Does not return */
+          pcVar5 = (code *)invalidInstructionException();
+          (*pcVar5)();
+        case 0x421:
+          local_d8 = (HMODULE)((longlong)&local_d8->unused + 1);
+          puVar9 = (undefined8 *)((longlong)pppppppuVar11 + (ulonglong)(uVar8 + 0xeda9fca1));
+          FUN_140023130(puVar9,(undefined8 *)((longlong)pppppppuVar12 + uVar25 + 0xa8),
+                        (ulonglong)(uint)(iVar21 * 8));
+          uVar19 = 0;
+        }
+        do {
+          lVar16 = puVar9[uVar19];
+          *(uint ********)(lVar16 + (ulonglong)(uVar8 ^ 0x1256036f)) = pppppppuVar11;
+          *(short *)(lVar16 + 0x88) = (short)uVar19;
+                    /* WARNING: Switch is manually overridden */
+          switch((uint)uVar2 == uVar19) {
+          case false:
+            uVar19 = uVar19 + 1;
+            break;
+          case true:
+            goto switchD_140008621_caseD_40;
+          }
+        } while( true );
+      }
+      goto switchD_140008621_caseD_80;
+    }
+switchD_14000931c_caseD_40008bc3:
+    pppppppuVar12 = DAT_1400d0d70;
+    pHVar13 = DAT_1400d0d68;
+                    /* WARNING: Switch is manually overridden */
+    switch(DAT_1400d0d70 != (uint *******)0x0) {
+    case false:
+      goto switchD_140008621_caseD_68;
+    }
+    break;
+  case 0xfffffebb:
+    goto switchD_140008db8_caseD_40008cb7;
   }
-  pHVar6 = (HMODULE)(pcVar14 + *(int *)((longlong)&switchD_140008621::switchdataD_140076098 + lVar9)
-                    );
-  switch(pHVar6) {
-  case (HMODULE)0x140008868:
-    goto switchD_140008621_caseD_10;
-  case (HMODULE)0x140008a7e:
-    goto switchD_140008621_caseD_c;
-  case (HMODULE)0x140008b12:
-    goto switchD_140008621_caseD_4;
-  case (HMODULE)0x140008dfa:
-    goto switchD_140008621_caseD_14;
-  case (HMODULE)0x140009299:
-    goto switchD_140008621_caseD_0;
+  pppppppuVar11 = FUN_1400128ed(0,0x100);
+                    /* WARNING: Switch is manually overridden */
+  switch((pppppppuVar11 != (uint *******)0x0) * '\x02') {
+  case '\0':
+                    /* WARNING: Does not return */
+    pcVar5 = (code *)invalidInstructionException();
+    (*pcVar5)();
+  case '\x02':
+    goto switchD_140008866_caseD_1;
   }
-  goto switchD_140008621_caseD_8;
+  goto switchD_140008ce2_caseD_0;
+switchD_140008621_caseD_40:
+  local_88 = pppppppuVar11;
+  local_70 = pppppppuVar12;
+  FUN_140012b23(local_50,(longlong)*local_b8,(uint)local_d0,local_e8,pppppppuVar14);
+  lVar16 = 8;
+  if (local_70 ==
+      (uint *******)
+      (ulonglong)
+      ((~((uint)*(undefined8 *)
+                 (*(longlong *)((longlong)ThreadLocalStoragePointer + (ulonglong)_tls_index * 8) +
+                 200) ^ 0x4351b1f3) ^ uVar8 + 0xeda9fca1) - (uVar8 ^ 0x125603ff))) {
+    lVar16 = 0x80;
+  }
+                    /* WARNING: Switch is manually overridden */
+  switch(*(undefined4 *)((longlong)&switchD_140008621::switchdataD_140076098 + lVar16)) {
+  case 0xab:
+    goto switchD_140008621_caseD_80;
+  case 0xfffffb6c:
+    pppppppuVar12 =
+         *(uint ********)
+          ((longlong)local_70 + (ulonglong)(byte)((bVar6 ^ 0xff) + DAT_1400d02a0 * 'A'));
+    lVar16 = 0xa8;
+    if (pppppppuVar12 == (uint *******)0x0) {
+      lVar16 = 0xd0;
+    }
+  }
+  local_d0 = (HMODULE)(ulonglong)uVar18;
+  local_e8 = local_58;
+  pppppppuVar14 = local_88;
+  pppppppuVar11 = local_70;
+                    /* WARNING: Switch is manually overridden */
+  switch(*(undefined4 *)((longlong)&switchD_140008621::switchdataD_140076098 + lVar16)) {
+  case 0xfffffdc7:
+    goto switchD_14000931c_caseD_40008bc3;
+  }
+  goto switchD_140008621_caseD_a8;
 }
 
 
@@ -3976,29 +5244,860 @@ void FUN_1400098aa(undefined8 *param_1)
 
 
 
-/* ===== SAMPLE 17_loader.exe.bin | RVA 0x98d9 | partial_markers_remain ===== */
-/* address=1400098d9 rva=0x98d9 */
+/* ===== SAMPLE 17_loader.exe.bin | RVA 0x98d9 | verified_conservative_local_CFG_only ===== */
+/* NORMAL INITIALIZATION CONTEXT ONLY. Original-byte conservative local CFG with statically derived loader TLS. Local computed-JMP targets are finite; PE-bound import tails and CFG guard dispatch are represented as tail calls. Unknown callee/store effects remain havoc. Actual indirect CALL targets and transitive behavior require separate evidence. Not original source, not a buildable project. Original instruction bytes unchanged. */
 
-void FUN_1400098d9(void)
+/* WARNING: Type propagation algorithm not settling */
+/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+
+HMODULE FUN_1400098d9(void)
 
 {
-  int *piVar1;
-  bool bVar2;
+  uint *puVar1;
+  ushort uVar2;
+  ushort uVar3;
+  undefined8 uVar4;
+  code *pcVar5;
+  uint *******pppppppuVar6;
+  UINT UVar7;
+  DWORD DVar8;
+  uint ************ppppppppppppuVar9;
+  ulonglong uVar10;
+  uint *************pppppppppppppuVar11;
+  undefined8 *puVar12;
+  undefined8 *puVar13;
+  char *pcVar14;
+  uint in_ECX;
+  longlong lVar15;
+  LPCSTR in_RDX;
+  uint ************ppppppppppppuVar16;
+  ulonglong uVar17;
+  char cVar18;
+  char *pcVar19;
+  int iVar20;
+  uint uVar21;
+  uint uVar22;
+  longlong lVar23;
+  undefined4 *puVar24;
+  ushort *puVar25;
+  ulonglong uVar26;
+  ulonglong uVar27;
+  char *pcVar28;
+  ulonglong uVar29;
+  longlong lVar30;
+  undefined4 uVar31;
+  undefined4 uVar32;
+  HMODULE pHVar33;
+  bool bVar34;
+  ushort local_3d8;
+  uint *************pppppppppppppuStack_3c8;
+  HMODULE pHStack_3b0;
+  undefined8 uStack_3a8;
+  uint *************pppppppppppppuStack_388;
+  longlong lStack_380;
+  undefined8 uStack_370;
+  ulonglong uStack_368;
+  uint *************pppppppppppppuStack_360;
+  ulonglong uStack_358;
+  uint *************pppppppppppppuStack_350;
+  uint *************apppppppppppppuStack_348 [58];
+  WCHAR aWStack_174 [154];
   
+  lVar30 = *(longlong *)((longlong)ThreadLocalStoragePointer + (ulonglong)_tls_index * 8);
+  uVar4 = *(undefined8 *)(lVar30 + 0xc0);
   LOCK();
-  bVar2 = DAT_1400d0d58 == '\0';
-  if (bVar2) {
+  bVar34 = DAT_1400d0d58 == '\0';
+  if (bVar34) {
     DAT_1400d0d58 = '\x01';
   }
   UNLOCK();
-  piVar1 = &DAT_140075fb0;
-  if (bVar2) {
-    piVar1 = &DAT_140076024;
+  puVar24 = &UNK_140075fb0;
+  if (bVar34) {
+    puVar24 = &UNK_140076024;
   }
-                    /* WARNING: Could not recover jumptable at 0x000140009955. Too many branches */
-                    /* WARNING: Treating indirect jump as call */
-  (*(code *)(&LAB_14000a6db + *piVar1))();
-  return;
+  uVar22 = (uint)uVar4;
+                    /* WARNING: Switch is manually overridden */
+  switch(*puVar24) {
+  case 0xfffff401:
+    do {
+      lVar15 = 0xa4;
+      if (DAT_1400d0d58 != (char)('\x03' - (char)uVar4)) {
+        lVar15 = 0x38;
+      }
+                    /* WARNING: Switch is manually overridden */
+      switch(*(undefined4 *)(&UNK_140075f98 + lVar15)) {
+      case 0xfffff44a:
+override_jmp_140009b09_case_0:
+        LOCK();
+        bVar34 = DAT_1400d0d58 == '\0';
+        if (bVar34) {
+          DAT_1400d0d58 = '\x01';
+        }
+        UNLOCK();
+        lVar15 = 0x18;
+        if (bVar34) {
+          lVar15 = 0x8c;
+        }
+        break;
+      case 0xfffff740:
+        do {
+          lVar15 = 0xa4;
+          if (DAT_1400d0d58 != '\0') {
+            lVar15 = 0x38;
+          }
+                    /* WARNING: Switch is manually overridden */
+          switch(*(undefined4 *)(&UNK_140075f98 + lVar15)) {
+          case 0xfffff44a:
+            goto override_jmp_140009b09_case_0;
+          }
+        } while( true );
+      }
+                    /* WARNING: Switch is manually overridden */
+      switch(*(undefined4 *)(&UNK_140075f98 + lVar15)) {
+      case 0xfffff9df:
+        goto override_jmp_140009955_case_1;
+      }
+    } while( true );
+  case 0xfffff9df:
+override_jmp_140009955_case_1:
+    lVar15 = 0x9c;
+    if (DAT_1400d0d50 == (uint *******)0x0) {
+      lVar15 = 0xe8;
+    }
+  }
+                    /* WARNING: Switch is manually overridden */
+  switch(*(undefined4 *)(&UNK_140075f98 + lVar15)) {
+  case 0xffffff38:
+    uVar3 = *(ushort *)(DAT_1400d0d50 + 0x13);
+    uVar17 = (ulonglong)uVar3;
+    uVar27 = (ulonglong)uVar3 << 2;
+    puVar24 = (undefined4 *)&UNK_140075fd4;
+    if ((ulonglong)uVar3 == 0) {
+      puVar24 = (undefined4 *)&UNK_14007606c;
+    }
+    uVar10 = 0;
+    uVar26 = _DAT_1400d0d48;
+    uVar29 = uVar17;
+    pHStack_3b0 = (HMODULE)DAT_1400d0d50;
+                    /* WARNING: Switch is manually overridden */
+    switch(*puVar24) {
+    case 0xfffff923:
+      goto override_jmp_140009ded_case_1;
+    }
+override_jmp_140009ded_case_0:
+    bVar34 = uVar26 == 0;
+    uVar26 = uVar26 - 1;
+    lVar15 = 0x70;
+    if (bVar34) {
+      lVar15 = 0xe8;
+    }
+                    /* WARNING: Switch is manually overridden */
+    switch(*(undefined4 *)(&UNK_140075f98 + lVar15)) {
+    case 0xfffffa06:
+      pHStack_3b0 = *(HMODULE *)(pHStack_3b0 + uVar29 * 2 + 0x28);
+      uVar3 = (ushort)pHStack_3b0[0x26].unused;
+      uVar17 = (ulonglong)uVar3;
+      uVar27 = (ulonglong)((uint)uVar3 * 4);
+      puVar24 = (undefined4 *)&UNK_14007606c;
+      if (uVar27 != 0) {
+        puVar24 = (undefined4 *)&UNK_140075fd4;
+      }
+      uVar10 = 0;
+      uVar29 = uVar17;
+                    /* WARNING: Switch is manually overridden */
+      switch(*puVar24) {
+      case 0xfffff923:
+override_jmp_140009ded_case_1:
+        do {
+          uVar21 = pHStack_3b0[uVar10].unused;
+          cVar18 = (uVar21 < in_ECX) - (in_ECX < uVar21);
+          uVar29 = uVar10;
+                    /* WARNING: Switch is manually overridden */
+          switch(cVar18 == -1) {
+          case false:
+            lVar15 = 0xd0;
+            if (cVar18 == '\x01') {
+              lVar15 = 0x1c;
+            }
+                    /* WARNING: Switch is manually overridden */
+            switch(*(undefined4 *)(&UNK_140075f98 + lVar15)) {
+            case 0x202:
+                    /* WARNING: Switch is manually overridden */
+              switch((uVar21 < in_ECX != in_ECX < uVar21) * '\x02') {
+              case '\0':
+                DAT_1400d0d58 = '\0';
+                return *(HMODULE *)
+                        ((longlong)&pHStack_3b0[0xc].unused + (0x8bca50e - uVar22 ^ 3) * uVar10);
+              case '\x02':
+                    /* WARNING: Does not return */
+                pcVar5 = (code *)invalidInstructionException();
+                (*pcVar5)();
+              }
+              goto override_jmp_140009f55_case_0;
+            case 0xfffff6fe:
+              uVar27 = uVar27 - 4;
+              puVar24 = (undefined4 *)&UNK_140075fd4;
+              if (uVar27 == 0) {
+                puVar24 = (undefined4 *)&UNK_14007606c;
+              }
+            }
+            break;
+          case true:
+            goto override_jmp_140009ded_case_0;
+          }
+          uVar10 = uVar10 + 1;
+          uVar29 = uVar17;
+                    /* WARNING: Switch is manually overridden */
+          switch(*puVar24) {
+          case 0xfffff8e3:
+            goto override_jmp_140009ded_case_0;
+          }
+        } while( true );
+      }
+      goto override_jmp_140009ded_case_0;
+    }
+  }
+  DAT_1400d0d58 = '\0';
+  pHStack_3b0 = LoadLibraryA(in_RDX);
+                    /* WARNING: Switch is manually overridden */
+  switch(pHStack_3b0 == (HMODULE)0x0) {
+  case true:
+    return (HMODULE)0x0;
+  }
+  LOCK();
+  bVar34 = DAT_1400d0d58 == '\0';
+  if (bVar34) {
+    DAT_1400d0d58 = '\x01';
+  }
+  UNLOCK();
+  lVar15 = 0x84;
+  if (bVar34) {
+    lVar15 = 0x30;
+  }
+                    /* WARNING: Switch is manually overridden */
+  switch(*(undefined4 *)(&UNK_140075f98 + lVar15)) {
+  case 0x17e:
+    do {
+      lVar15 = 0x60;
+      if (DAT_1400d0d58 == '\0') {
+        lVar15 = 0xf8;
+      }
+                    /* WARNING: Switch is manually overridden */
+      switch(*(undefined4 *)(&UNK_140075f98 + lVar15)) {
+      case 0xfffff714:
+        do {
+        } while (DAT_1400d0d58 != '\0');
+      }
+      LOCK();
+      bVar34 = DAT_1400d0d58 == '\0';
+      if (bVar34) {
+        DAT_1400d0d58 = '\x01';
+      }
+      UNLOCK();
+      lVar15 = 0x84;
+      if (bVar34) {
+        lVar15 = 0x30;
+      }
+                    /* WARNING: Switch is manually overridden */
+      switch(*(undefined4 *)(&UNK_140075f98 + lVar15)) {
+      case 0xfffffe38:
+        goto override_jmp_1400099c1_case_0;
+      }
+    } while( true );
+  case 0xfffffe38:
+override_jmp_1400099c1_case_0:
+    puVar12 = FUN_1400128ed(0,0x4b);
+    puVar24 = (undefined4 *)&UNK_140076054;
+    if (puVar12 == (undefined8 *)0x0) {
+      puVar24 = (undefined4 *)&UNK_140075f98;
+    }
+  }
+                    /* WARNING: Switch is manually overridden */
+  switch(*puVar24) {
+  case 0xfffff7f7:
+    goto override_jmp_14000a53e_case_0;
+  case 0xffffff98:
+    FUN_140023130(puVar12,(undefined8 *)
+                          "callback intends evaluate module entry load time snapshot exports correctlymTeCSSCFq2zmdv0pSMSBnNWrJYZrnyTILCOXenhfwGmOalms3oyEIsqArE-agyC9BEZ0ErOCMmh8ZW16gTin.cdNjZMyt0-stl archive timestamp from deltaqJn49VYGTCmNhF9AhynDoleQINxaveCWXXeKAr_phDhsA-yPBz_e5ics9b6_BkarJJwybnAbZ2rxjzXUJeZZ-Udd01G6XJp14x0igKGDae-3wvJMsdZS2Pk4bsOHD9KUNZ4KrgcQySdtSa0dFDPR8h2j-P5TNFOgmAKthrough may little line had end eE9F-_gg5ofUHmLMfsJchdqV30mN8IrQx2mPktqiGvCMKI08h7hPYKAMf7R6h5BOHhizQvDdXypmaEDRsOAdpPMsZvL"
+                  ,0x4b);
+    uVar17 = 0x4b;
+    puVar13 = (undefined8 *)FUN_1400017de((longlong)puVar12,0x4b);
+    FUN_140012ab1(apppppppppppppuStack_348,puVar13,uVar17);
+    pppppppppppppuStack_388 = (uint *************)apppppppppppppuStack_348;
+    pcVar14 = FUN_1400128ed(0,0x21);
+    lVar15 = 0x40;
+    if (pcVar14 == (char *)0x0) {
+      lVar15 = 0xc;
+    }
+                    /* WARNING: Switch is manually overridden */
+    switch(*(undefined4 *)(&UNK_140075f98 + lVar15)) {
+    case 0xfffff73e:
+                    /* WARNING: Does not return */
+      pcVar5 = (code *)invalidInstructionException();
+      (*pcVar5)();
+    }
+    builtin_strncpy(pcVar14,"now new is just back house anothe",0x21);
+    uVar17 = 0x21;
+    puVar13 = (undefined8 *)FUN_1400017de((longlong)pcVar14,0x21);
+    FUN_140012ab1(&pppppppppppppuStack_388,puVar13,uVar17);
+    pppppppppppppuStack_350 = (uint *************)&pppppppppppppuStack_388;
+    FUN_14000250d(pppppppppppppuStack_388,lStack_380,1,1);
+    FUN_14000250d(pcVar14,(ulonglong)(-uVar22 + 0x8bca524),1,1);
+    FUN_14000250d(apppppppppppppuStack_348[0],
+                  *(longlong *)
+                   ((longlong)apppppppppppppuStack_348 + (ulonglong)(-uVar22 + 0x8bca50b)),1,1);
+    puVar25 = (ushort *)0x1;
+    FUN_14000250d(puVar12,0x4b,1,1);
+                    /* WARNING: Switch is manually overridden */
+    switch(DAT_1400d0d50 == (uint *******)0x0) {
+    case false:
+      pcVar19 = (char *)(ulonglong)*(ushort *)(DAT_1400d0d50 + 0x13);
+      lVar15 = (ulonglong)(uVar22 + 0xf7435b01) * (longlong)pcVar19;
+      puVar24 = (undefined4 *)&UNK_140076078;
+      if (lVar15 != 0) {
+        puVar24 = (undefined4 *)&UNK_140075ffc;
+      }
+      uVar17 = _DAT_1400d0d48;
+      pcVar28 = (char *)0x0;
+      ppppppppppppuVar9 = (uint ************)DAT_1400d0d50;
+      pcVar14 = pcVar19;
+                    /* WARNING: Switch is manually overridden */
+      switch(*puVar24) {
+      case 0xfffffe65:
+        goto override_jmp_140009e6c_case_1;
+      }
+override_jmp_140009e6c_case_0:
+      do {
+        uVar21 = *(uint *)((longlong)ppppppppppppuVar9 + (longlong)pcVar28 * 4);
+        cVar18 = (uVar21 < in_ECX) - (in_ECX < uVar21);
+        lVar23 = 0x7c;
+        if (cVar18 == -1) {
+          lVar23 = 0xe0;
+        }
+        pcVar14 = pcVar28;
+                    /* WARNING: Switch is manually overridden */
+        switch(*(undefined4 *)(&UNK_140075f98 + lVar23)) {
+        case 0xfffff8ff:
+          puVar24 = (undefined4 *)&UNK_140075fbc;
+          if (cVar18 == '\x01') {
+            puVar24 = (undefined4 *)&UNK_14007604c;
+          }
+                    /* WARNING: Switch is manually overridden */
+          switch(*puVar24) {
+          case 0xfffff7b1:
+                    /* WARNING: Switch is manually overridden */
+            switch(uVar21 < in_ECX != in_ECX < uVar21) {
+            case false:
+              *(HMODULE *)
+               ((longlong)ppppppppppppuVar9 +
+               (ulonglong)(0x8bca50b - uVar22) * (longlong)pcVar28 + 0x30) = pHStack_3b0;
+              DAT_1400d0d58 = '\0';
+              return pHStack_3b0;
+            case true:
+                    /* WARNING: Does not return */
+              pcVar5 = (code *)invalidInstructionException();
+              (*pcVar5)();
+            }
+          }
+          lVar15 = lVar15 + -4;
+          puVar24 = (undefined4 *)&UNK_140075ffc;
+          if (lVar15 == 0) {
+            puVar24 = (undefined4 *)&UNK_140076078;
+          }
+          break;
+        case 0xfffffe65:
+          goto override_jmp_140009e6c_case_1;
+        }
+        pcVar28 = pcVar28 + 1;
+        pcVar14 = pcVar19;
+                    /* WARNING: Switch is manually overridden */
+        switch(*puVar24) {
+        case 0xfffffe65:
+override_jmp_140009e6c_case_1:
+          do {
+            bVar34 = uVar17 == 0;
+            uVar17 = uVar17 - 1;
+            lVar15 = 0x58;
+            if (bVar34) {
+              lVar15 = 0xfc;
+            }
+            puVar25 = (ushort *)((longlong)*(int *)(&UNK_140075f98 + lVar15) + 0x14000a6db);
+                    /* WARNING: Switch is manually overridden */
+            switch(puVar25) {
+            case (ushort *)0x14000a4f2:
+                    /* WARNING: Switch is manually overridden */
+              switch(-(uint)(ppppppppppppuVar9 == (uint ************)0x0)) {
+              case 0xffffffff:
+                goto override_jmp_140009aa2_case_0;
+              }
+              puVar25 = (ushort *)((longlong)ppppppppppppuVar9 + (ulonglong)(uVar22 ^ 0x8bca59b));
+              local_3d8 = *(ushort *)((longlong)ppppppppppppuVar9 + (ulonglong)(uVar22 ^ 0x8bca59b))
+              ;
+              pHVar33 = (HMODULE)((longlong)ppppppppppppuVar9 + (longlong)pcVar14 * 4);
+              if (local_3d8 < (ushort)((ushort)uVar4 ^ 0xa508)) {
+                pcVar19 = pcVar14 + 1;
+                    /* WARNING: Switch is manually overridden */
+                switch(((char *)(ulonglong)local_3d8 < pcVar19) * '\x02') {
+                case '\0':
+                  uVar22 = ((uint)*(undefined8 *)
+                                   (*(longlong *)
+                                     ((longlong)ThreadLocalStoragePointer +
+                                     (ulonglong)_tls_index * 8) + 0xa8) ^ 0xd932) - 0x5dca & 0xffff;
+                  lVar30 = (longlong)(ulonglong)local_3d8 - (longlong)pcVar14;
+                  FUN_140023130((uint *************)
+                                ((ulonglong)uVar22 * (longlong)pcVar19 + (longlong)ppppppppppppuVar9
+                                ),(undefined8 *)pHVar33,lVar30 * 4);
+                  pHVar33->unused = in_ECX;
+                  FUN_140023130((undefined8 *)
+                                ((longlong)ppppppppppppuVar9 +
+                                (longlong)pcVar19 * 8 + (ulonglong)(0x34 - uVar22)),
+                                (undefined8 *)
+                                ((longlong)ppppppppppppuVar9 +
+                                (ulonglong)(uVar22 ^ 0xc) * (longlong)pcVar14 +
+                                (ulonglong)(0x34 - uVar22)),lVar30 * 8);
+                  break;
+                case '\x01':
+                  goto override_jmp_140009c27_case_2;
+                case '\x02':
+                  goto override_jmp_140009c27_case_0;
+                }
+                goto override_jmp_140009e50_case_0;
+              }
+              puVar24 = (undefined4 *)&UNK_140075fe8;
+              if (pcVar14 < (char *)(ulonglong)(uVar22 + 0xf7435b02)) {
+                puVar24 = (undefined4 *)&UNK_140076048;
+              }
+              bVar34 = false;
+              pcVar19 = pcVar14;
+              pcVar28 = (char *)0x4;
+                    /* WARNING: Switch is manually overridden */
+              switch(*puVar24) {
+              case 0xfffffcac:
+                puVar24 = (undefined4 *)&UNK_140076038;
+                if (pcVar14 == (char *)0x6) {
+                  puVar24 = (undefined4 *)&UNK_140075fcc;
+                }
+                bVar34 = true;
+                pcVar19 = (char *)0x0;
+                pcVar28 = (char *)0x5;
+                    /* WARNING: Switch is manually overridden */
+                switch(*puVar24) {
+                case 0xfffffa6d:
+                  lVar15 = 0xe4;
+                  if (pcVar14 == (char *)0x5) {
+                    lVar15 = 0xb0;
+                  }
+                  bVar34 = false;
+                  pcVar19 = pcVar14;
+                  pcVar28 = pcVar14;
+                    /* WARNING: Switch is manually overridden */
+                  switch(*(undefined4 *)(&UNK_140075f98 + lVar15)) {
+                  case 0xfffff580:
+                    if ((*(int *)(lVar30 + 0x100) == -0x7c5f324) &&
+                       (UVar7 = GetSystemDirectoryW((LPWSTR)apppppppppppppuStack_348,0x6d),
+                       UVar7 - 1 < 0x6c)) {
+                      DVar8 = GetCurrentDirectoryW(0xea,(LPWSTR)apppppppppppppuStack_348);
+                      if (DVar8 - 1 < 0xe9) {
+                        GetFileAttributesW((LPCWSTR)apppppppppppppuStack_348);
+                        DVar8 = GetTempPathW(0x98,aWStack_174);
+                        if (((DVar8 - 1 < 0x97) &&
+                            (DVar8 = GetFullPathNameW((LPCWSTR)apppppppppppppuStack_348,0x5a,
+                                                      aWStack_174,(LPWSTR *)0x0), DVar8 - 1 < 0x59))
+                           && (UVar7 = GetWindowsDirectoryW((LPWSTR)apppppppppppppuStack_348,0xc0),
+                              UVar7 - 1 < 0xbf)) {
+                          GetModuleHandleW((LPCWSTR)0x0);
+                        }
+                      }
+                    }
+                    pcVar19 = pcVar14 + -7;
+                    bVar34 = true;
+                    pcVar28 = (char *)0x6;
+                  }
+                }
+              }
+              pppppppppppppuStack_3c8 = FUN_1400128ed(0,0xa0);
+              puVar24 = (undefined4 *)&UNK_14007608c;
+              if (pppppppppppppuStack_3c8 == (uint *************)0x0) {
+                puVar24 = (undefined4 *)&UNK_140075f9c;
+              }
+                    /* WARNING: Switch is manually overridden */
+              switch(*puVar24) {
+              case 0xfffff27c:
+                pppppppppppppuStack_3c8[0x12] = (uint ************)0x0;
+                uVar17 = ~(ulonglong)pcVar28 + (ulonglong)*puVar25;
+                puVar24 = (undefined4 *)&UNK_140076064;
+                if (uVar17 < 0xc) {
+                  puVar24 = (undefined4 *)&UNK_140075fc4;
+                }
+                break;
+              case 0xfffff779:
+                    /* WARNING: Does not return */
+                pcVar5 = (code *)invalidInstructionException();
+                (*pcVar5)();
+              }
+              *(short *)(pppppppppppppuStack_3c8 + 0x13) = (short)uVar17;
+                    /* WARNING: Switch is manually overridden */
+              switch(*puVar24) {
+              case 0x70:
+                uVar21 = uVar22 + 0xf7435b05;
+                uStack_3a8 = *(undefined8 *)
+                              ((longlong)ppppppppppppuVar9 +
+                              (longlong)pcVar28 * (ulonglong)uVar21 + 0x30);
+                uVar32 = *(undefined4 *)
+                          ((longlong)ppppppppppppuVar9 +
+                          (ulonglong)(0xc - uVar21) * (longlong)pcVar28);
+                FUN_140023130(pppppppppppppuStack_3c8,
+                              (undefined8 *)
+                              ((longlong)ppppppppppppuVar9 + (longlong)pcVar28 * 4 + 4),
+                              uVar17 << (((byte)uVar21 ^ 10) & 0x3f));
+                FUN_140023130(pppppppppppppuStack_3c8 + 6,
+                              (undefined8 *)
+                              ((longlong)ppppppppppppuVar9 +
+                              (ulonglong)uVar21 * (longlong)(pcVar28 + 1) + 0x30),uVar17 * 8);
+                pppppppppppppuVar11 = pppppppppppppuStack_3c8;
+                if (!bVar34) {
+                  pppppppppppppuVar11 = (uint *************)ppppppppppppuVar9;
+                }
+                break;
+              case 0xfffffafe:
+                    /* WARNING: Does not return */
+                pcVar5 = (code *)invalidInstructionException();
+                (*pcVar5)();
+              }
+              *puVar25 = (ushort)pcVar28;
+              uVar3 = *(ushort *)((longlong)pppppppppppppuVar11 + (ulonglong)(0xa0 - uVar21));
+              puVar1 = (uint *)((longlong)pppppppppppppuVar11 + (longlong)pcVar19 * 4);
+                    /* WARNING: Switch is manually overridden */
+              switch(pcVar19 < (char *)(ulonglong)uVar3) {
+              case true:
+                lVar30 = (longlong)(ulonglong)uVar3 - (longlong)pcVar19;
+                FUN_140023130((undefined8 *)
+                              ((longlong)pppppppppppppuVar11 + (longlong)pcVar19 * 4 + 4),
+                              (undefined8 *)puVar1,lVar30 * 4);
+                FUN_140023130((undefined8 *)
+                              ((longlong)pppppppppppppuVar11 +
+                              (ulonglong)(uVar22 ^ 0x8bca50b) * (longlong)(pcVar19 + 1) + 0x30),
+                              pppppppppppppuVar11 + (longlong)(pcVar19 + 6),
+                              lVar30 << (((char)_DAT_1400d0280 + (char)(uVar22 ^ 0x8bca50b)) * 'i' &
+                                        0x3fU));
+              }
+              *puVar1 = in_ECX;
+              *(HMODULE *)
+               ((longlong)pppppppppppppuVar11 +
+               (ulonglong)(uVar22 ^ 0x8bca50b) * (longlong)pcVar19 + 0x30) = pHStack_3b0;
+              *(ushort *)((longlong)pppppppppppppuVar11 + (ulonglong)(0xa0 - uVar21)) = uVar3 + 1;
+              ppppppppppppuVar16 = (uint ************)ppppppppppppuVar9[0x12];
+              puVar24 = &UNK_140075fa0;
+              if (ppppppppppppuVar16 == (uint ************)0x0) {
+                puVar24 = &UNK_14007602c;
+              }
+              uVar17 = 0;
+              uVar31 = uVar32;
+                    /* WARNING: Switch is manually overridden */
+              switch(*puVar24) {
+              case 0xfffffbc3:
+                goto override_jmp_14000a5bc_case_0;
+              }
+              goto override_jmp_14000a5bc_case_1;
+            case (ushort *)0x14000a818:
+              ppppppppppppuVar9 = (uint ************)ppppppppppppuVar9[(longlong)(pcVar14 + 0x14)];
+              pcVar19 = (char *)(ulonglong)*(ushort *)(ppppppppppppuVar9 + 0x13);
+              lVar15 = (ulonglong)(uVar22 + 0xf7435b01) * (longlong)pcVar19;
+              puVar24 = (undefined4 *)&UNK_140076078;
+              if (lVar15 != 0) {
+                puVar24 = (undefined4 *)&UNK_140075ffc;
+              }
+            }
+            pcVar28 = (char *)0x0;
+            pcVar14 = pcVar19;
+                    /* WARNING: Switch is manually overridden */
+            switch(*puVar24) {
+            case 0xfffffcd8:
+              goto override_jmp_140009e6c_case_0;
+            }
+          } while( true );
+        }
+      } while( true );
+    case true:
+override_jmp_140009aa2_case_0:
+      ppppppppppppuVar9 = FUN_1400128ed(0,0xa0);
+      local_3d8 = 0x55c8;
+      pHVar33 = pHStack_3b0;
+                    /* WARNING: Switch is manually overridden */
+      switch((ppppppppppppuVar9 == (uint ************)0x0) * '\x02') {
+      case '\0':
+override_jmp_140009c27_case_2:
+        ppppppppppppuVar9[0x12] = (uint ***********)0x0;
+        *(undefined2 *)(ppppppppppppuVar9 + 0x13) = 0;
+        _DAT_1400d0d48 = 0;
+        DAT_1400d0d50 = (uint *******)ppppppppppppuVar9;
+        *(undefined2 *)(ppppppppppppuVar9 + 0x13) = 1;
+        *(uint *)ppppppppppppuVar9 = in_ECX;
+        *(HMODULE *)
+         ((longlong)ppppppppppppuVar9 +
+         (ulonglong)(byte)(((byte)DAT_1400cfab8 ^ 10) * '\x7f' - 0x16)) = pHStack_3b0;
+        break;
+      case '\x01':
+override_jmp_140009c27_case_0:
+        pHVar33->unused = in_ECX;
+override_jmp_140009e50_case_0:
+        ppppppppppppuVar9[(longlong)(pcVar14 + 6)] = (uint ***********)pHStack_3b0;
+        *puVar25 = local_3d8 + 1;
+        break;
+      case '\x02':
+                    /* WARNING: Does not return */
+        pcVar5 = (code *)invalidInstructionException();
+        (*pcVar5)();
+      }
+    }
+  }
+  goto override_jmp_140009f55_case_0;
+  do {
+    uStack_3a8 = uStack_370;
+    ppppppppppppuVar9 = (uint ************)pppppppppppppuStack_388;
+    uVar31 = uVar32;
+                    /* WARNING: Switch is manually overridden */
+    switch(*(undefined4 *)(&UNK_140075f98 + lVar30)) {
+    case 0xfffffbc3:
+override_jmp_14000a5bc_case_0:
+      pppppppppppppuVar11 = (uint *************)&pppppppppppppuStack_388;
+      uVar3 = *(ushort *)(ppppppppppppuVar9 + 0x11);
+      uVar27 = (ulonglong)uVar3;
+      uVar10 = (ulonglong)(uVar22 ^ 0x8bca59b);
+      uVar2 = *(ushort *)((longlong)ppppppppppppuVar16 + uVar10);
+      puVar24 = (undefined4 *)&UNK_140075fa8;
+      if (uVar2 < 0xb) {
+        puVar24 = (undefined4 *)&UNK_140076030;
+      }
+                    /* WARNING: Switch is manually overridden */
+      switch(*puVar24) {
+      case 0xfffff3c9:
+        lVar30 = 0xf0;
+        if (uVar3 < (ushort)(0xa508 - (ushort)uVar4)) {
+          lVar30 = 0x14;
+        }
+        uVar26 = 4;
+        uStack_358 = uVar27;
+                    /* WARNING: Switch is manually overridden */
+        switch(*(undefined4 *)(&UNK_140075f98 + lVar30)) {
+        case 0xfffff794:
+          lVar30 = 0xac;
+          if (uVar3 < 6) {
+            lVar30 = 0x48;
+          }
+                    /* WARNING: Switch is manually overridden */
+          switch(*(undefined4 *)(&UNK_140075f98 + lVar30)) {
+          case 0x44:
+            uStack_358 = 5;
+            uVar26 = 5;
+                    /* WARNING: Switch is manually overridden */
+            switch(uVar3 == 5) {
+            case false:
+              goto override_jmp_140009b23_case_1;
+            }
+            break;
+          case 0xfffff431:
+                    /* WARNING: Switch is manually overridden */
+            switch(uVar3 != 6) {
+            case false:
+              uStack_358 = 0;
+              pppppppppppppuVar11 = (uint *************)apppppppppppppuStack_348;
+              uVar26 = 5;
+              break;
+            case true:
+override_jmp_140009b23_case_1:
+              uStack_358 = uVar27 - 7;
+              uVar26 = 6;
+              pppppppppppppuVar11 = (uint *************)apppppppppppppuStack_348;
+            }
+          }
+        }
+        pppppppppppppuStack_360 = pppppppppppppuVar11;
+        pppppppppppppuVar11 = FUN_1400128ed(0,0x100);
+        puVar24 = (undefined4 *)&UNK_140076050;
+        if (pppppppppppppuVar11 == (uint *************)0x0) {
+          puVar24 = (undefined4 *)&UNK_140076028;
+        }
+                    /* WARNING: Switch is manually overridden */
+        switch(*puVar24) {
+        case 0xfffff7d1:
+                    /* WARNING: Does not return */
+          pcVar5 = (code *)invalidInstructionException();
+          (*pcVar5)();
+        case 0xfffffb00:
+          *(undefined8 *)((longlong)pppppppppppppuVar11 + (ulonglong)(uVar22 ^ 0x8bca593)) = 0;
+          uVar27 = (ulonglong)(uVar22 ^ 0x8bca59b);
+          *(undefined2 *)((longlong)pppppppppppppuVar11 + uVar27) = 0;
+          uVar29 = ~uVar26 + (ulonglong)*(ushort *)((longlong)ppppppppppppuVar16 + uVar10);
+          *(short *)((longlong)pppppppppppppuVar11 + uVar27) = (short)uVar29;
+          puVar24 = (undefined4 *)&UNK_140076074;
+          if (uVar29 < 0xc) {
+            puVar24 = (undefined4 *)&UNK_140076058;
+          }
+        }
+                    /* WARNING: Switch is manually overridden */
+        switch(*puVar24) {
+        case 0xfffff470:
+          uVar21 = uVar22 + 0xf7435b2d;
+          uStack_368 = (ulonglong)(uint)((int)uVar26 * 8);
+          uStack_370 = *(undefined8 *)((longlong)ppppppppppppuVar16 + uStack_368 + uVar21);
+          uVar32 = *(undefined4 *)((longlong)ppppppppppppuVar16 + uVar26 * 4);
+          FUN_140023130(pppppppppppppuVar11,
+                        (uint ************)
+                        ((ulonglong)(0x34 - uVar21) * (uVar26 + 1) + (longlong)ppppppppppppuVar16),
+                        uVar29 * 4);
+          FUN_140023130((undefined8 *)((ulonglong)uVar21 + (longlong)pppppppppppppuVar11),
+                        (undefined8 *)
+                        ((longlong)ppppppppppppuVar16 + uVar26 * 8 + 8 + (ulonglong)uVar21),
+                        uVar29 * 8);
+          *(short *)((longlong)ppppppppppppuVar16 + uVar10) = (short)uVar26;
+          uVar10 = (ulonglong)*(ushort *)((longlong)pppppppppppppuVar11 + uVar27);
+          puVar24 = (undefined4 *)&UNK_140076010;
+          if (0xb < uVar10) {
+            puVar24 = (undefined4 *)&UNK_140076040;
+          }
+          break;
+        case 0xfffff777:
+                    /* WARNING: Does not return */
+          pcVar5 = (code *)invalidInstructionException();
+          (*pcVar5)();
+        }
+                    /* WARNING: Switch is manually overridden */
+        switch(*puVar24) {
+        case 0xfffff8e1:
+          goto override_jmp_140009bf5_case_0;
+        case 0xfffffee3:
+          iVar20 = (uint)uVar2 - (int)uVar26;
+                    /* WARNING: Switch is manually overridden */
+          switch(iVar20 != *(ushort *)((longlong)pppppppppppppuVar11 + uVar27) + 1) {
+          case false:
+            FUN_140023130(pppppppppppppuVar11 + 0x14,
+                          (undefined8 *)((longlong)ppppppppppppuVar16 + uStack_368 + 0xa8),
+                          (ulonglong)(uint)(iVar20 * 8));
+            uVar27 = 1;
+            ppppppppppppuVar9 = pppppppppppppuVar11[0x14];
+            ppppppppppppuVar9[0x12] = (uint ***********)pppppppppppppuVar11;
+            *(undefined2 *)(ppppppppppppuVar9 + 0x11) = 0;
+            puVar24 = (undefined4 *)&UNK_14007600c;
+            if (uVar10 != 0) {
+              puVar24 = (undefined4 *)&UNK_140076070;
+            }
+                    /* WARNING: Switch is manually overridden */
+            switch(*puVar24) {
+            case 0xfffffa3f:
+              do {
+                ppppppppppppuVar9 = pppppppppppppuVar11[uVar27 + 0x14];
+                ppppppppppppuVar9[0x12] = (uint ***********)pppppppppppppuVar11;
+                *(short *)(ppppppppppppuVar9 + 0x11) = (short)uVar27;
+                puVar24 = (undefined4 *)&UNK_14007600c;
+                if (uVar10 != uVar27) {
+                  puVar24 = (undefined4 *)&UNK_140076070;
+                }
+                uVar27 = uVar27 + 1;
+                    /* WARNING: Switch is manually overridden */
+                switch(*puVar24) {
+                case 0xfffffc2d:
+                  goto override_jmp_14000a145_case_1;
+                }
+              } while( true );
+            case 0xfffffc2d:
+override_jmp_14000a145_case_1:
+              pppppppppppppuStack_388 = (uint *************)ppppppppppppuVar16;
+              apppppppppppppuStack_348[0] = pppppppppppppuVar11;
+              FUN_14001477f(uStack_358,(longlong)*pppppppppppppuStack_360,uVar31,uStack_3a8,
+                            pppppppppppppuStack_3c8);
+              pppppppppppppuStack_3c8 = apppppppppppppuStack_348[0];
+              puVar24 = (undefined4 *)&UNK_140076018;
+              if (pppppppppppppuStack_388 == (uint *************)(ulonglong)(uVar22 + 0xf7435afd)) {
+                puVar24 = (undefined4 *)&UNK_140075fec;
+              }
+            }
+                    /* WARNING: Switch is manually overridden */
+            switch(*puVar24) {
+            case 0:
+              uVar17 = uVar17 + 1;
+              ppppppppppppuVar16 = pppppppppppppuStack_388[0x12];
+              lVar30 = 8;
+              if (ppppppppppppuVar16 == (uint ************)0x0) {
+                lVar30 = 0x94;
+              }
+              break;
+            case 0xfffff8b8:
+              goto override_jmp_140009f55_case_0;
+            }
+            break;
+          case true:
+            goto override_jmp_14000a53e_case_0;
+          }
+        }
+        break;
+      case 0xfffffbff:
+        FUN_14001477f(uVar27,(longlong)ppppppppppppuVar16,uVar31,uStack_3a8,pppppppppppppuStack_3c8)
+        ;
+        goto override_jmp_140009f55_case_0;
+      }
+      break;
+    case 0xffffff10:
+      goto override_jmp_14000a5bc_case_1;
+    }
+  } while( true );
+override_jmp_14000a5bc_case_1:
+  pppppppuVar6 = DAT_1400d0d50;
+  uVar27 = _DAT_1400d0d48;
+                    /* WARNING: Switch is manually overridden */
+  switch(DAT_1400d0d50 == (uint *******)0x0) {
+  case true:
+override_jmp_140009bf5_case_0:
+                    /* WARNING: Does not return */
+    pcVar5 = (code *)invalidInstructionException();
+    (*pcVar5)();
+  }
+  ppppppppppppuVar9 = FUN_1400128ed(0,0x100);
+  puVar24 = (undefined4 *)&UNK_140076000;
+  if (ppppppppppppuVar9 == (uint ************)0x0) {
+    puVar24 = (undefined4 *)&UNK_140075fdc;
+  }
+                    /* WARNING: Switch is manually overridden */
+  switch(*puVar24) {
+  case 0xfffff893:
+                    /* WARNING: Does not return */
+    pcVar5 = (code *)invalidInstructionException();
+    (*pcVar5)();
+  }
+  uVar21 = uVar22 ^ 0x8bca593;
+  *(undefined8 *)((longlong)ppppppppppppuVar9 + (ulonglong)uVar21) = 0;
+  *(undefined2 *)((longlong)ppppppppppppuVar9 + (ulonglong)(0x128 - uVar21)) = 0;
+  ppppppppppppuVar9[0x14] = (uint ***********)pppppppuVar6;
+  uVar10 = uVar27 + 1;
+                    /* WARNING: Switch is manually overridden */
+  switch(uVar10 != uVar21 - 0x90) {
+  case false:
+                    /* WARNING: Does not return */
+    pcVar5 = (code *)invalidInstructionException();
+    (*pcVar5)();
+  }
+  *(uint *************)((longlong)pppppppuVar6 + (ulonglong)(uVar22 + 0xf7435b8d)) =
+       ppppppppppppuVar9;
+  *(undefined2 *)((longlong)pppppppuVar6 + (ulonglong)(0x118 - (uVar22 + 0xf7435b8d))) = 0;
+  _DAT_1400d0d48 = uVar10;
+  DAT_1400d0d50 = (uint *******)ppppppppppppuVar9;
+  if (uVar27 != uVar17) {
+override_jmp_14000a53e_case_0:
+                    /* WARNING: Does not return */
+    pcVar5 = (code *)invalidInstructionException();
+    (*pcVar5)();
+  }
+  *(undefined2 *)((longlong)ppppppppppppuVar9 + (ulonglong)(0x128 - uVar21)) = 1;
+  *(undefined4 *)ppppppppppppuVar9 = uVar32;
+  *(undefined8 *)((longlong)ppppppppppppuVar9 + (ulonglong)(uVar22 + 0xf7435b2d)) = uStack_3a8;
+  *(uint **************)((longlong)ppppppppppppuVar9 + (ulonglong)(0xd8 - (uVar22 + 0xf7435b2d))) =
+       pppppppppppppuStack_3c8;
+  pppppppppppppuStack_3c8[0x12] = ppppppppppppuVar9;
+  *(undefined2 *)(pppppppppppppuStack_3c8 + 0x11) = 1;
+override_jmp_140009f55_case_0:
+  _DAT_1400d0d40 = _DAT_1400d0d40 + 1;
+  DAT_1400d0d58 = '\0';
+  return pHStack_3b0;
 }
 
 
@@ -10151,8 +12250,8 @@ override_jmp_14001230a_case_1:
 
 
 
-/* ===== SAMPLE 17_loader.exe.bin | RVA 0x128ed | partial_markers_remain ===== */
-/* address=1400128ed rva=0x128ed */
+/* ===== SAMPLE 17_loader.exe.bin | RVA 0x128ed | verified_conservative_local_CFG_only ===== */
+/* NORMAL INITIALIZATION CONTEXT ONLY. Original-byte conservative local CFG with statically derived loader TLS. Local computed-JMP targets are finite; PE-bound import tails and CFG guard dispatch are represented as tail calls. Unknown callee/store effects remain havoc. Actual indirect CALL targets and transitive behavior require separate evidence. Not original source, not a buildable project. Original instruction bytes unchanged. */
 
 LPVOID FUN_1400128ed(DWORD param_1,SIZE_T param_2)
 
@@ -10164,8 +12263,6 @@ LPVOID FUN_1400128ed(DWORD param_1,SIZE_T param_2)
   if (hHeap == (HANDLE)0x0) {
     return (LPVOID)0x0;
   }
-                    /* WARNING: Could not recover jumptable at 0x000140012911. Too many branches */
-                    /* WARNING: Treating indirect jump as call */
   pvVar1 = HeapAlloc(hHeap,param_1,param_2);
   return pvVar1;
 }
@@ -10579,8 +12676,8 @@ void FUN_140012ed0(void)
 
 
 
-/* ===== SAMPLE 17_loader.exe.bin | RVA 0x1305a | partial_markers_remain ===== */
-/* address=14001305a rva=0x1305a */
+/* ===== SAMPLE 17_loader.exe.bin | RVA 0x1305a | verified_conservative_local_CFG_only ===== */
+/* NORMAL INITIALIZATION CONTEXT ONLY. Original-byte conservative local CFG with statically derived loader TLS. Local computed-JMP targets are finite; PE-bound import tails and CFG guard dispatch are represented as tail calls. Unknown callee/store effects remain havoc. Actual indirect CALL targets and transitive behavior require separate evidence. Not original source, not a buildable project. Original instruction bytes unchanged. */
 
 void FUN_14001305a(LPVOID param_1,ulonglong param_2)
 
@@ -10591,8 +12688,6 @@ void FUN_14001305a(LPVOID param_1,ulonglong param_2)
     param_1 = *(LPVOID *)((longlong)param_1 + -8);
   }
   hHeap = GetProcessHeap();
-                    /* WARNING: Could not recover jumptable at 0x00014001307f. Too many branches */
-                    /* WARNING: Treating indirect jump as call */
   HeapFree(hHeap,0,param_1);
   return;
 }
@@ -17711,8 +19806,8 @@ void FUN_1400192c4(void)
 
 
 
-/* ===== SAMPLE 17_loader.exe.bin | RVA 0x192e4 | partial_markers_remain ===== */
-/* address=1400192e4 rva=0x192e4 */
+/* ===== SAMPLE 17_loader.exe.bin | RVA 0x192e4 | verified_conservative_local_CFG_only ===== */
+/* NORMAL INITIALIZATION CONTEXT ONLY. Original-byte conservative local CFG with statically derived loader TLS. Local computed-JMP targets are finite; PE-bound import tails and CFG guard dispatch are represented as tail calls. Unknown callee/store effects remain havoc. Actual indirect CALL targets and transitive behavior require separate evidence. Not original source, not a buildable project. Original instruction bytes unchanged. */
 
 void FUN_1400192e4(void)
 
@@ -17735,8 +19830,6 @@ void FUN_1400192e4(void)
   FUN_14001932c(2,0xc0000417,1);
   *(undefined8 *)(puVar3 + -8) = 0x140019318;
   hProcess = GetCurrentProcess();
-                    /* WARNING: Could not recover jumptable at 0x000140019324. Too many branches */
-                    /* WARNING: Treating indirect jump as call */
   TerminateProcess(hProcess,0xc0000417);
   return;
 }
@@ -21113,8 +23206,8 @@ LPVOID FUN_14001c240(LPVOID param_1,ulonglong param_2,ulonglong param_3)
 
 
 
-/* ===== SAMPLE 17_loader.exe.bin | RVA 0x1c2e8 | partial_markers_remain ===== */
-/* address=14001c2e8 rva=0x1c2e8 */
+/* ===== SAMPLE 17_loader.exe.bin | RVA 0x1c2e8 | verified_conservative_local_CFG_only ===== */
+/* NORMAL INITIALIZATION CONTEXT ONLY. Original-byte conservative local CFG with statically derived loader TLS. Local computed-JMP targets are finite; PE-bound import tails and CFG guard dispatch are represented as tail calls. Unknown callee/store effects remain havoc. Actual indirect CALL targets and transitive behavior require separate evidence. Not original source, not a buildable project. Original instruction bytes unchanged. */
 
 void FUN_14001c2e8(uint param_1,uint param_2,undefined8 param_3,undefined4 param_4)
 
@@ -21158,8 +23251,6 @@ LAB_14001c388:
   if ((param_1 - 65000 < 2) && (in_stack_00000040 != (undefined4 *)0x0)) {
     *in_stack_00000040 = 0;
   }
-                    /* WARNING: Could not recover jumptable at 0x00014001c3bf. Too many branches */
-                    /* WARNING: Treating indirect jump as call */
   WideCharToMultiByte(param_1,uVar2,param_3,param_4);
   return;
 }
@@ -28767,8 +30858,8 @@ byte * FUN_1400213b4(byte *param_1,byte *param_2,undefined4 *param_3)
 
 
 
-/* ===== SAMPLE 17_loader.exe.bin | RVA 0x21450 | partial_markers_remain ===== */
-/* address=140021450 rva=0x21450 */
+/* ===== SAMPLE 17_loader.exe.bin | RVA 0x21450 | verified_conservative_local_CFG_only ===== */
+/* NORMAL INITIALIZATION CONTEXT ONLY. Original-byte conservative local CFG with statically derived loader TLS. Local computed-JMP targets are finite; PE-bound import tails and CFG guard dispatch are represented as tail calls. Unknown callee/store effects remain havoc. Actual indirect CALL targets and transitive behavior require separate evidence. Not original source, not a buildable project. Original instruction bytes unchanged. */
 
 undefined8 FUN_140021450(longlong param_1)
 
@@ -28782,8 +30873,6 @@ undefined8 FUN_140021450(longlong param_1)
     FUN_1400192c4();
     return 0xffffffffffffffff;
   }
-                    /* WARNING: Could not recover jumptable at 0x000140021482. Too many branches */
-                    /* WARNING: Treating indirect jump as call */
   uVar2 = HeapSize(DAT_1400d13b0,0,param_1);
   return uVar2;
 }
@@ -30997,19 +33086,17 @@ undefined8 FUN_140022fe0(void)
 
 
 
-/* ===== SAMPLE 17_loader.exe.bin | RVA 0x230b0 | partial_markers_remain ===== */
-/* address=1400230b0 rva=0x230b0 */
+/* ===== SAMPLE 17_loader.exe.bin | RVA 0x230b0 | verified_conservative_local_CFG_only ===== */
+/* NORMAL INITIALIZATION CONTEXT ONLY. Original-byte conservative local CFG with statically derived loader TLS. Local computed-JMP targets are finite; PE-bound import tails and CFG guard dispatch are represented as tail calls. Unknown callee/store effects remain havoc. Actual indirect CALL targets and transitive behavior require separate evidence. Not original source, not a buildable project. Original instruction bytes unchanged. */
 
 /* WARNING: This is an inlined function */
 
 void _guard_dispatch_icall(void)
 
 {
-  code *UNRECOVERED_JUMPTABLE;
+  code *in_RAX;
   
-                    /* WARNING: Could not recover jumptable at 0x0001400230b0. Too many branches */
-                    /* WARNING: Treating indirect jump as call */
-  (*UNRECOVERED_JUMPTABLE)();
+  (*in_RAX)();
   return;
 }
 

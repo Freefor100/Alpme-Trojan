@@ -37,6 +37,12 @@ flowchart TD
 
 已复现的门禁读取 `GetSystemFirmwareTable("RSMB")` 返回的SMBIOS，统计Type7缓存记录。查询成功但数量为0时显示标题 `yolo` 的提示窗口并返回；查询失败跳过该项。本案宿主记录为3，Windows Sandbox为0。提示文字试图阻止分析，并点名AI产品。还存在其他显示设备及键盘布局条件，详见报告。
 
+## 首次上报的主机资料
+
+两版用同布局的0x12c字节内部记录组织14项资料：Windows版本、计算机名、用户名、默认区域；CPU品牌和叶1标识、系统卷序列、逻辑处理器数量、物理内存MiB、屏幕宽高和显示设备；键盘布局/语言列表、已安装软件列表，以及设备指纹摘要。摘要按CPU标识文字、显示设备文字、成功取得的卷序列文字顺序计算SHA-256，再转64字符小写hex。
+
+软件枚举同时读取HKLM与HKCU下普通Uninstall及显式WOW6432Node路径，打开权限KEY_READ(0x20019)。SystemComponent、UninstallString、DisplayName、DisplayVersion是被查询的数据；读取卸载字符串在此链中不会启动卸载命令。完整字段偏移与证据见PDF及round5-host-information-fields.json；两大收集函数的来源门仍有具体未完成项。
+
 ## 云控操作与生命周期
 
 | 功能 | 17 tag | 19 tag | 操作内容 |
@@ -63,7 +69,7 @@ flowchart TD
 
 ## 浏览器磁盘资料与取钥
 
-浏览器根发现使用APPDATA/LOCALAPPDATA的两层目录枚举。普通Chromium资料选择 `Default` 和区分大小写的 `Profile ` 前缀，后缀不要求数字。根发现和单profile采集的完整函数仍有待审分支，局部名字条件已经核实。
+浏览器根发现使用APPDATA/LOCALAPPDATA的两层目录枚举。普通Chromium资料选择 `Default` 和区分大小写的 `Profile ` 前缀，后缀不要求数字。两版根初始化器和单profile采集器已完成本轮正常上下文CFG及来源复核；具体证明与其它函数边界见分析进度。
 
 读取目标包括Local State、Last Browser、Login Data、Login Data For Account、Network/Cookies、History、Web Data、Preferences和相关存储。Gecko及两类浏览器扩展有独立的发现/采集路径，详见报告。扩展采集不由四个普通浏览器开关统一控制；276项表是排除词表。
 
@@ -82,3 +88,17 @@ flowchart TD
 四份离线截获请求经独立还原，分别包含虚构截图、Codex认证文件、GitHub CLI和Claude Code文件字节。真实首次配置回复使用合成指纹取得；后续采集与发送实验在离线模型中完成。
 
 ENE路径 `C:\ProgramData\ENE\aiantionk` 是读到EOF后丢弃：payload立即释放，长度在使用前也被覆盖。ShareX路径 `C:\ProgramData\ShareX\swaontzuiests.cfg` 是20字节固定常量的创建/截断写入。其他固定写入、完整字节内容和残留位置见PDF附录与 `iocs.csv`。
+
+## 本轮补全的采集细节
+
+四个浏览器开关分别控制Cookies、两份登录库、History、Web Data；Preferences和Local Storage有独立路径。采集器循环处理Profile路径切片，按原文件字节组织结果，不在本层查询SQLite或解密数据库。
+
+四组已有metadata依次为local_state、aster_encryption_key、dpapi_encryption_key、encryption_key。它们与七个数据字段组成11个候选name/value对；缺失字段及普通空内容被过滤，非空结果带Profile路径、浏览器名提交内部通道。
+
+Local Storage平面枚举Local Storage\leveldb，精确排除LOCK、LOG、LOG.old及不合资格的目录/重解析项。内容按文件名组织，包格式为u64 LE条目数，再逐项u64 key长度、key bytes、u64 value长度、value bytes。成功空文件可以保留在非空map内；失败读取不入map。
+
+selector列表为空时跳过专用处理，非空时只看第一个字符串，比较区分大小写。roblox、discord、steam走三种内置提取链；首项grass或其它未知值释放临时文字并推进任务，普通文件采集仍按其配置执行。这个字段不是解释器；新增任意程序由独立的URL下载执行分支启动。
+
+17:56ab1是通用读取后端。普通CreateFileW/ReadFile失败遇共享冲突时，规范化路径、枚举系统句柄，尝试DuplicateHandle匹配文件，再用只读映射每块最多16MiB复制。这里ReadProcessMemory的进程参数为-1，读取当前进程的映射视图。句柄权限及复制成功决定能否读取。50ms等待/计数10门限处理暂时失败；本reader不写文件或连接网络。
+
+Chromium扩展名称可取manifest的name；__MSG_…__形式按en、en_US顺序尝试_locales中的messages.json。扩展内容由独立线程采集，四个普通数据库开关不控制它。Gecko通过prefs.js的UUID到ID映射和extensions.json的ID到名称映射识别moz-extension+++…/idb，筛选直接目录项的.sqlite/.sqlite-wal/.sqlite-shm后缀；详细上下文与尚未完成的输入边界见最新证据。

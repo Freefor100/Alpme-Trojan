@@ -1,0 +1,6946 @@
+{
+  "scope": "Independent source-byte writer gate; unknown calls/stores arbitrary, known cloned outputs and normal TLS/String/UTF16 contracts explicit. No API purity assumed.",
+  "functions": [
+    {
+      "version": "17",
+      "entry": "0x3c5a",
+      "status": "PASS_CONSERVATIVE_SOURCE_LIFETIME_GATE",
+      "source_reads": 15,
+      "source_bytes": 41,
+      "all_native_states": 171,
+      "steps": 171,
+      "unknown_callees_retained_as_havoc": [
+        "0x3e08",
+        "0x3e36"
+      ],
+      "issues": [],
+      "failed_queries": [],
+      "effects": {
+        "0x3cc6": {
+          "target": "0x6b415",
+          "known_bounded": true,
+          "private_spans": [
+            [
+              128,
+              24
+            ],
+            [
+              48,
+              26
+            ]
+          ]
+        },
+        "0x3d27": {
+          "target": "0x7f46f",
+          "known_bounded": true,
+          "private_spans": []
+        },
+        "0x3d42": {
+          "target": "0x37c6e",
+          "known_bounded": true,
+          "private_spans": [
+            [
+              80,
+              24
+            ]
+          ]
+        },
+        "0x3db9": {
+          "target": "0x7f46f",
+          "known_bounded": true,
+          "private_spans": []
+        },
+        "0x3dd4": {
+          "target": "0x37c6e",
+          "known_bounded": true,
+          "private_spans": [
+            [
+              48,
+              24
+            ]
+          ]
+        },
+        "0x3e08": {
+          "target": "0x5b3be",
+          "known_bounded": false,
+          "private_spans": []
+        },
+        "0x3e20": {
+          "target": "0x4a6b1",
+          "known_bounded": true,
+          "private_spans": []
+        },
+        "0x3e36": {
+          "target": "call rbx",
+          "known_bounded": false,
+          "private_spans": []
+        },
+        "0x3e4b": {
+          "target": "0x4a6b1",
+          "known_bounded": true,
+          "private_spans": []
+        },
+        "0x3e67": {
+          "target": "0x4a6b1",
+          "known_bounded": true,
+          "private_spans": []
+        },
+        "0x3e88": {
+          "target": "0x7f46f",
+          "known_bounded": true,
+          "private_spans": []
+        },
+        "0x3ea3": {
+          "target": "0x37c6e",
+          "known_bounded": true,
+          "private_spans": [
+            [
+              48,
+              24
+            ]
+          ]
+        },
+        "0x3ebc": {
+          "target": "0x2c44b",
+          "known_bounded": true,
+          "private_spans": []
+        },
+        "0x3ed7": {
+          "target": "0x4a6b1",
+          "known_bounded": true,
+          "private_spans": []
+        },
+        "0x3ef2": {
+          "target": "0x4a6b1",
+          "known_bounded": true,
+          "private_spans": []
+        }
+      },
+      "local_native_effect_proofs": [],
+      "replays": [
+        {
+          "kind": "literal_descriptor",
+          "query": {
+            "call": "0x3d27",
+            "offset": "0x30"
+          },
+          "values": [
+            6442992696
+          ],
+          "source_reads": [
+            [
+              15655,
+              48,
+              8
+            ]
+          ],
+          "normal_PE_data_reads": []
+        },
+        {
+          "kind": "literal_descriptor",
+          "query": {
+            "call": "0x3d27",
+            "offset": "0x38"
+          },
+          "values": [
+            18
+          ],
+          "source_reads": [
+            [
+              15655,
+              56,
+              8
+            ]
+          ],
+          "normal_PE_data_reads": []
+        },
+        {
+          "kind": "literal_descriptor",
+          "query": {
+            "call": "0x3d27",
+            "offset": "0x40"
+          },
+          "values": [
+            9223090561878065256
+          ],
+          "source_reads": [
+            [
+              15655,
+              64,
+              8
+            ]
+          ],
+          "normal_PE_data_reads": []
+        },
+        {
+          "kind": "literal_seed_pointer",
+          "query": {
+            "call": "0x3d27"
+          },
+          "values": [
+            9223090561878065256
+          ],
+          "source_reads": [
+            [
+              15655,
+              64,
+              8
+            ]
+          ],
+          "normal_PE_data_reads": []
+        },
+        {
+          "kind": "literal_seed",
+          "query": {
+            "call": "0x3d27",
+            "offset": "0x68"
+          },
+          "values": [
+            14844721665536670979
+          ],
+          "source_reads": [
+            [
+              15655,
+              104,
+              8
+            ]
+          ],
+          "normal_PE_data_reads": []
+        },
+        {
+          "kind": "literal_descriptor",
+          "query": {
+            "call": "0x3db9",
+            "offset": "0x30"
+          },
+          "values": [
+            6442986740
+          ],
+          "source_reads": [
+            [
+              15801,
+              48,
+              8
+            ]
+          ],
+          "normal_PE_data_reads": []
+        },
+        {
+          "kind": "literal_descriptor",
+          "query": {
+            "call": "0x3db9",
+            "offset": "0x38"
+          },
+          "values": [
+            10
+          ],
+          "source_reads": [
+            [
+              15801,
+              56,
+              8
+            ]
+          ],
+          "normal_PE_data_reads": []
+        },
+        {
+          "kind": "literal_descriptor",
+          "query": {
+            "call": "0x3db9",
+            "offset": "0x40"
+          },
+          "values": [
+            9223090561878065232
+          ],
+          "source_reads": [
+            [
+              15801,
+              64,
+              8
+            ]
+          ],
+          "normal_PE_data_reads": []
+        },
+        {
+          "kind": "literal_seed_pointer",
+          "query": {
+            "call": "0x3db9"
+          },
+          "values": [
+            9223090561878065232
+          ],
+          "source_reads": [
+            [
+              15801,
+              64,
+              8
+            ]
+          ],
+          "normal_PE_data_reads": []
+        },
+        {
+          "kind": "literal_seed",
+          "query": {
+            "call": "0x3db9",
+            "offset": "0x50"
+          },
+          "values": [
+            3052342966518661410
+          ],
+          "source_reads": [
+            [
+              15801,
+              80,
+              8
+            ]
+          ],
+          "normal_PE_data_reads": []
+        },
+        {
+          "kind": "literal_descriptor",
+          "query": {
+            "call": "0x3e88",
+            "offset": "0x30"
+          },
+          "values": [
+            6442997197
+          ],
+          "source_reads": [
+            [
+              16008,
+              48,
+              8
+            ]
+          ],
+          "normal_PE_data_reads": []
+        },
+        {
+          "kind": "literal_descriptor",
+          "query": {
+            "call": "0x3e88",
+            "offset": "0x38"
+          },
+          "values": [
+            19
+          ],
+          "source_reads": [
+            [
+              15720,
+              47,
+              1
+            ],
+            [
+              16008,
+              56,
+              8
+            ]
+          ],
+          "normal_PE_data_reads": []
+        },
+        {
+          "kind": "literal_descriptor",
+          "query": {
+            "call": "0x3e88",
+            "offset": "0x40"
+          },
+          "values": [
+            9223090561878065256
+          ],
+          "source_reads": [
+            [
+              15720,
+              47,
+              1
+            ],
+            [
+              16008,
+              64,
+              8
+            ]
+          ],
+          "normal_PE_data_reads": []
+        },
+        {
+          "kind": "literal_seed_pointer",
+          "query": {
+            "call": "0x3e88"
+          },
+          "values": [
+            9223090561878065256
+          ],
+          "source_reads": [
+            [
+              15720,
+              47,
+              1
+            ],
+            [
+              16008,
+              64,
+              8
+            ]
+          ],
+          "normal_PE_data_reads": []
+        },
+        {
+          "kind": "literal_seed",
+          "query": {
+            "call": "0x3e88",
+            "offset": "0x68"
+          },
+          "values": [
+            5395316716988650472
+          ],
+          "source_reads": [
+            [
+              16008,
+              104,
+              8
+            ]
+          ],
+          "normal_PE_data_reads": []
+        },
+        {
+          "kind": "resolver_hash",
+          "query": {
+            "resolver": "0x3ebc",
+            "register": "rcx"
+          },
+          "values": [
+            2569918686
+          ],
+          "source_reads": [],
+          "normal_PE_data_reads": []
+        },
+        {
+          "kind": "resolver_hash",
+          "query": {
+            "resolver": "0x3ebc",
+            "register": "r8"
+          },
+          "values": [
+            523645183
+          ],
+          "source_reads": [],
+          "normal_PE_data_reads": []
+        },
+        {
+          "kind": "store_effective_address",
+          "query": {
+            "site": "0x3c94"
+          },
+          "values": [
+            9223090561878065200
+          ],
+          "source_reads": [],
+          "normal_PE_data_reads": []
+        },
+        {
+          "kind": "store_effective_address",
+          "query": {
+            "site": "0x3c97"
+          },
+          "values": [
+            9223090561878065208
+          ],
+          "source_reads": [],
+          "normal_PE_data_reads": []
+        },
+        {
+          "kind": "store_effective_address",
+          "query": {
+            "site": "0x3c9d"
+          },
+          "values": [
+            9223090561878065216
+          ],
+          "source_reads": [],
+          "normal_PE_data_reads": []
+        },
+        {
+          "kind": "store_effective_address",
+          "query": {
+            "site": "0x3cad"
+          },
+          "values": [
+            9223090561878065224
+          ],
+          "source_reads": [],
+          "normal_PE_data_reads": []
+        },
+        {
+          "kind": "store_effective_address",
+          "query": {
+            "site": "0x3cb4"
+          },
+          "values": [
+            9223090561878065226
+          ],
+          "source_reads": [],
+          "normal_PE_data_reads": []
+        },
+        {
+          "kind": "store_effective_address",
+          "query": {
+            "site": "0x3cdd"
+          },
+          "values": [
+            9223090561878065256
+          ],
+          "source_reads": [],
+          "normal_PE_data_reads": []
+        },
+        {
+          "kind": "store_effective_address",
+          "query": {
+            "site": "0x3ce7"
+          },
+          "values": [
+            9223090561878065200
+          ],
+          "source_reads": [],
+          "normal_PE_data_reads": []
+        },
+        {
+          "kind": "store_effective_address",
+          "query": {
+            "site": "0x3cea"
+          },
+          "values": [
+            9223090561878065208
+          ],
+          "source_reads": [],
+          "normal_PE_data_reads": []
+        },
+        {
+          "kind": "store_effective_address",
+          "query": {
+            "site": "0x3cf2"
+          },
+          "values": [
+            9223090561878065216
+          ],
+          "source_reads": [],
+          "normal_PE_data_reads": []
+        },
+        {
+          "kind": "store_effective_address",
+          "query": {
+            "site": "0x3d65"
+          },
+          "values": [
+            9223090561878065200
+          ],
+          "source_reads": [],
+          "normal_PE_data_reads": []
+        },
+        {
+          "kind": "store_effective_address",
+          "query": {
+            "site": "0x3d7f"
+          },
+          "values": [
+            9223090561878065208
+          ],
+          "source_reads": [
+            [
+              15720,
+              47,
+              1
+            ]
+          ],
+          "normal_PE_data_reads": []
+        },
+        {
+          "kind": "store_effective_address",
+          "query": {
+            "site": "0x3d8d"
+          },
+          "values": [
+            9223090561878065216
+          ],
+          "source_reads": [
+            [
+              15720,
+              47,
+              1
+            ]
+          ],
+          "normal_PE_data_reads": []
+        },
+        {
+          "kind": "store_effective_address",
+          "query": {
+            "site": "0x3de8"
+          },
+          "values": [
+            9223090561878065232
+          ],
+          "source_reads": [],
+          "normal_PE_data_reads": []
+        },
+        {
+          "kind": "store_effective_address",
+          "query": {
+            "site": "0x3df5"
+          },
+          "values": [
+            9223090561878065240
+          ],
+          "source_reads": [],
+          "normal_PE_data_reads": []
+        },
+        {
+          "kind": "store_effective_address",
+          "query": {
+            "site": "0x3dfa"
+          },
+          "values": [
+            9223090561878065248
+          ],
+          "source_reads": [],
+          "normal_PE_data_reads": []
+        },
+        {
+          "kind": "store_effective_address",
+          "query": {
+            "site": "0x3f0d"
+          },
+          "values": [
+            9223090561878065200
+          ],
+          "source_reads": [],
+          "normal_PE_data_reads": []
+        },
+        {
+          "kind": "store_effective_address",
+          "query": {
+            "site": "0x3f10"
+          },
+          "values": [
+            9223090561878065208
+          ],
+          "source_reads": [],
+          "normal_PE_data_reads": []
+        },
+        {
+          "kind": "store_effective_address",
+          "query": {
+            "site": "0x3f18"
+          },
+          "values": [
+            9223090561878065216
+          ],
+          "source_reads": [],
+          "normal_PE_data_reads": []
+        },
+        {
+          "kind": "known_callee_output_address",
+          "query": {
+            "call": "0x3cc6"
+          },
+          "values": [
+            9223090561878065280
+          ],
+          "source_reads": [],
+          "normal_PE_data_reads": []
+        },
+        {
+          "kind": "UTF16_iterator_mutable_address",
+          "query": {
+            "call": "0x3cc6"
+          },
+          "values": [
+            9223090561878065200
+          ],
+          "source_reads": [],
+          "normal_PE_data_reads": []
+        },
+        {
+          "kind": "known_cache_output_address",
+          "query": {
+            "call": "0x3d27"
+          },
+          "values": [
+            6443079856
+          ],
+          "source_reads": [],
+          "normal_PE_data_reads": []
+        },
+        {
+          "kind": "known_callee_output_address",
+          "query": {
+            "call": "0x3d42"
+          },
+          "values": [
+            9223090561878065232
+          ],
+          "source_reads": [],
+          "normal_PE_data_reads": []
+        },
+        {
+          "kind": "known_cache_output_address",
+          "query": {
+            "call": "0x3db9"
+          },
+          "values": [
+            6443084408
+          ],
+          "source_reads": [],
+          "normal_PE_data_reads": []
+        },
+        {
+          "kind": "known_callee_output_address",
+          "query": {
+            "call": "0x3dd4"
+          },
+          "values": [
+            9223090561878065200
+          ],
+          "source_reads": [],
+          "normal_PE_data_reads": []
+        },
+        {
+          "kind": "known_cache_output_address",
+          "query": {
+            "call": "0x3e88"
+          },
+          "values": [
+            6443079752
+          ],
+          "source_reads": [],
+          "normal_PE_data_reads": []
+        },
+        {
+          "kind": "known_callee_output_address",
+          "query": {
+            "call": "0x3ea3"
+          },
+          "values": [
+            9223090561878065200
+          ],
+          "source_reads": [],
+          "normal_PE_data_reads": []
+        }
+      ],
+      "native_sha256": "2e971a19fb7293bd48f16df38f04b0c14534131c96993cecd49bd9b3c2796243"
+    },
+    {
+      "version": "17",
+      "entry": "0x60db",
+      "status": "PASS_CONSERVATIVE_SOURCE_LIFETIME_GATE",
+      "source_reads": 10,
+      "source_bytes": 56,
+      "all_native_states": 96,
+      "steps": 96,
+      "unknown_callees_retained_as_havoc": [
+        "0x626d"
+      ],
+      "issues": [],
+      "failed_queries": [],
+      "effects": {
+        "0x6173": {
+          "target": "0x7f46f",
+          "known_bounded": true,
+          "private_spans": []
+        },
+        "0x618e": {
+          "target": "0x37c6e",
+          "known_bounded": true,
+          "private_spans": [
+            [
+              64,
+              24
+            ]
+          ]
+        },
+        "0x61f1": {
+          "target": "0x7f46f",
+          "known_bounded": true,
+          "private_spans": []
+        },
+        "0x620c": {
+          "target": "0x37c6e",
+          "known_bounded": true,
+          "private_spans": [
+            [
+              40,
+              24
+            ]
+          ]
+        },
+        "0x6225": {
+          "target": "0x2c44b",
+          "known_bounded": true,
+          "private_spans": []
+        },
+        "0x6240": {
+          "target": "0x4a6b1",
+          "known_bounded": true,
+          "private_spans": []
+        },
+        "0x6265": {
+          "target": "0x4a6b1",
+          "known_bounded": true,
+          "private_spans": []
+        },
+        "0x626d": {
+          "target": "call rdi",
+          "known_bounded": false,
+          "private_spans": []
+        }
+      },
+      "local_native_effect_proofs": [],
+      "replays": [
+        {
+          "kind": "literal_descriptor",
+          "query": {
+            "call": "0x6173",
+            "offset": "0x40"
+          },
+          "values": [
+            6442998826
+          ],
+          "source_reads": [
+            [
+              24947,
+              64,
+              8
+            ]
+          ],
+          "normal_PE_data_reads": []
+        },
+        {
+          "kind": "literal_descriptor",
+          "query": {
+            "call": "0x6173",
+            "offset": "0x48"
+          },
+          "values": [
+            20
+          ],
+          "source_reads": [
+            [
+              24947,
+              72,
+              8
+            ]
+          ],
+          "normal_PE_data_reads": []
+        },
+        {
+          "kind": "literal_descriptor",
+          "query": {
+            "call": "0x6173",
+            "offset": "0x50"
+          },
+          "values": [
+            9223090561878065192
+          ],
+          "source_reads": [
+            [
+              24947,
+              80,
+              8
+            ]
+          ],
+          "normal_PE_data_reads": []
+        },
+        {
+          "kind": "literal_seed_pointer",
+          "query": {
+            "call": "0x6173"
+          },
+          "values": [
+            9223090561878065192
+          ],
+          "source_reads": [
+            [
+              24947,
+              80,
+              8
+            ]
+          ],
+          "normal_PE_data_reads": []
+        },
+        {
+          "kind": "literal_seed",
+          "query": {
+            "call": "0x6173",
+            "offset": "0x28"
+          },
+          "values": [
+            7936287874681162779
+          ],
+          "source_reads": [
+            [
+              24947,
+              40,
+              8
+            ]
+          ],
+          "normal_PE_data_reads": []
+        },
+        {
+          "kind": "literal_descriptor",
+          "query": {
+            "call": "0x61f1",
+            "offset": "0x28"
+          },
+          "values": [
+            6442988894
+          ],
+          "source_reads": [
+            [
+              25073,
+              40,
+              8
+            ]
+          ],
+          "normal_PE_data_reads": []
+        },
+        {
+          "kind": "literal_descriptor",
+          "query": {
+            "call": "0x61f1",
+            "offset": "0x30"
+          },
+          "values": [
+            19
+          ],
+          "source_reads": [
+            [
+              25073,
+              48,
+              8
+            ]
+          ],
+          "normal_PE_data_reads": []
+        },
+        {
+          "kind": "literal_descriptor",
+          "query": {
+            "call": "0x61f1",
+            "offset": "0x38"
+          },
+          "values": [
+            9223090561878065240
+          ],
+          "source_reads": [
+            [
+              25073,
+              56,
+              8
+            ]
+          ],
+          "normal_PE_data_reads": []
+        },
+        {
+          "kind": "literal_seed_pointer",
+          "query": {
+            "call": "0x61f1"
+          },
+          "values": [
+            9223090561878065240
+          ],
+          "source_reads": [
+            [
+              25073,
+              56,
+              8
+            ]
+          ],
+          "normal_PE_data_reads": []
+        },
+        {
+          "kind": "literal_seed",
+          "query": {
+            "call": "0x61f1",
+            "offset": "0x58"
+          },
+          "values": [
+            17536434413585593470
+          ],
+          "source_reads": [
+            [
+              25073,
+              88,
+              8
+            ]
+          ],
+          "normal_PE_data_reads": []
+        },
+        {
+          "kind": "resolver_hash",
+          "query": {
+            "resolver": "0x6225",
+            "register": "rcx"
+          },
+          "values": [
+            597583624
+          ],
+          "source_reads": [],
+          "normal_PE_data_reads": []
+        },
+        {
+          "kind": "resolver_hash",
+          "query": {
+            "resolver": "0x6225",
+            "register": "r8"
+          },
+          "values": [
+            3222685244
+          ],
+          "source_reads": [],
+          "normal_PE_data_reads": []
+        },
+        {
+          "kind": "store_effective_address",
+          "query": {
+            "site": "0x6112"
+          },
+          "values": [
+            9223090561878065192
+          ],
+          "source_reads": [],
+          "normal_PE_data_reads": []
+        },
+        {
+          "kind": "store_effective_address",
+          "query": {
+            "site": "0x6121"
+          },
+          "values": [
+            9223090561878065216
+          ],
+          "source_reads": [],
+          "normal_PE_data_reads": []
+        },
+        {
+          "kind": "store_effective_address",
+          "query": {
+            "site": "0x6139"
+          },
+          "values": [
+            9223090561878065224
+          ],
+          "source_reads": [],
+          "normal_PE_data_reads": []
+        },
+        {
+          "kind": "store_effective_address",
+          "query": {
+            "site": "0x613e"
+          },
+          "values": [
+            9223090561878065232
+          ],
+          "source_reads": [],
+          "normal_PE_data_reads": []
+        },
+        {
+          "kind": "store_effective_address",
+          "query": {
+            "site": "0x61a8"
+          },
+          "values": [
+            9223090561878065240
+          ],
+          "source_reads": [],
+          "normal_PE_data_reads": []
+        },
+        {
+          "kind": "known_cache_output_address",
+          "query": {
+            "call": "0x6173"
+          },
+          "values": [
+            6443086704
+          ],
+          "source_reads": [],
+          "normal_PE_data_reads": []
+        },
+        {
+          "kind": "known_callee_output_address",
+          "query": {
+            "call": "0x618e"
+          },
+          "values": [
+            9223090561878065216
+          ],
+          "source_reads": [],
+          "normal_PE_data_reads": []
+        },
+        {
+          "kind": "known_cache_output_address",
+          "query": {
+            "call": "0x61f1"
+          },
+          "values": [
+            6443075480
+          ],
+          "source_reads": [],
+          "normal_PE_data_reads": []
+        },
+        {
+          "kind": "known_callee_output_address",
+          "query": {
+            "call": "0x620c"
+          },
+          "values": [
+            9223090561878065192
+          ],
+          "source_reads": [],
+          "normal_PE_data_reads": []
+        }
+      ],
+      "native_sha256": "4463088332a309c49d5daeb7e6ce0a336756dd872c93458bdeda1708a857f832"
+    },
+    {
+      "version": "17",
+      "entry": "0x2a97b",
+      "status": "PASS_CONSERVATIVE_SOURCE_LIFETIME_GATE",
+      "source_reads": 10,
+      "source_bytes": 40,
+      "all_native_states": 102,
+      "steps": 102,
+      "unknown_callees_retained_as_havoc": [
+        "0x2ab3e"
+      ],
+      "issues": [],
+      "failed_queries": [],
+      "effects": {
+        "0x2a98b": {
+          "target": "0x2af30",
+          "known_bounded": true,
+          "private_spans": []
+        },
+        "0x2aa0e": {
+          "target": "0x7f46f",
+          "known_bounded": true,
+          "private_spans": []
+        },
+        "0x2aa29": {
+          "target": "0x37c6e",
+          "known_bounded": true,
+          "private_spans": [
+            [
+              64,
+              24
+            ]
+          ]
+        },
+        "0x2aac9": {
+          "target": "0x7f46f",
+          "known_bounded": true,
+          "private_spans": []
+        },
+        "0x2aae4": {
+          "target": "0x37c6e",
+          "known_bounded": true,
+          "private_spans": [
+            [
+              32,
+              24
+            ]
+          ]
+        },
+        "0x2ab00": {
+          "target": "0x2c44b",
+          "known_bounded": true,
+          "private_spans": []
+        },
+        "0x2ab1b": {
+          "target": "0x4a6b1",
+          "known_bounded": true,
+          "private_spans": []
+        },
+        "0x2ab36": {
+          "target": "0x4a6b1",
+          "known_bounded": true,
+          "private_spans": []
+        },
+        "0x2ab3e": {
+          "target": "call rdi",
+          "known_bounded": false,
+          "private_spans": []
+        }
+      },
+      "local_native_effect_proofs": [],
+      "replays": [
+        {
+          "kind": "literal_descriptor",
+          "query": {
+            "call": "0x2aa0e",
+            "offset": "0x20"
+          },
+          "values": [
+            6442992864
+          ],
+          "source_reads": [
+            [
+              174606,
+              32,
+              8
+            ]
+          ],
+          "normal_PE_data_reads": []
+        },
+        {
+          "kind": "literal_descriptor",
+          "query": {
+            "call": "0x2aa0e",
+            "offset": "0x28"
+          },
+          "values": [
+            20
+          ],
+          "source_reads": [
+            [
+              174606,
+              40,
+              8
+            ]
+          ],
+          "normal_PE_data_reads": []
+        },
+        {
+          "kind": "literal_descriptor",
+          "query": {
+            "call": "0x2aa0e",
+            "offset": "0x30"
+          },
+          "values": [
+            9223090561878065208
+          ],
+          "source_reads": [
+            [
+              174606,
+              48,
+              8
+            ]
+          ],
+          "normal_PE_data_reads": []
+        },
+        {
+          "kind": "literal_seed_pointer",
+          "query": {
+            "call": "0x2aa0e"
+          },
+          "values": [
+            9223090561878065208
+          ],
+          "source_reads": [
+            [
+              174606,
+              48,
+              8
+            ]
+          ],
+          "normal_PE_data_reads": []
+        },
+        {
+          "kind": "literal_seed",
+          "query": {
+            "call": "0x2aa0e",
+            "offset": "0x38"
+          },
+          "values": [
+            2392456825630565948
+          ],
+          "source_reads": [
+            [
+              174606,
+              56,
+              8
+            ]
+          ],
+          "normal_PE_data_reads": []
+        },
+        {
+          "kind": "literal_descriptor",
+          "query": {
+            "call": "0x2aac9",
+            "offset": "0x20"
+          },
+          "values": [
+            6443003235
+          ],
+          "source_reads": [
+            [
+              174793,
+              32,
+              8
+            ]
+          ],
+          "normal_PE_data_reads": []
+        },
+        {
+          "kind": "literal_descriptor",
+          "query": {
+            "call": "0x2aac9",
+            "offset": "0x28"
+          },
+          "values": [
+            19
+          ],
+          "source_reads": [
+            [
+              174793,
+              40,
+              8
+            ]
+          ],
+          "normal_PE_data_reads": []
+        },
+        {
+          "kind": "literal_descriptor",
+          "query": {
+            "call": "0x2aac9",
+            "offset": "0x30"
+          },
+          "values": [
+            9223090561878065208
+          ],
+          "source_reads": [
+            [
+              174793,
+              48,
+              8
+            ]
+          ],
+          "normal_PE_data_reads": []
+        },
+        {
+          "kind": "literal_seed_pointer",
+          "query": {
+            "call": "0x2aac9"
+          },
+          "values": [
+            9223090561878065208
+          ],
+          "source_reads": [
+            [
+              174793,
+              48,
+              8
+            ]
+          ],
+          "normal_PE_data_reads": []
+        },
+        {
+          "kind": "literal_seed",
+          "query": {
+            "call": "0x2aac9",
+            "offset": "0x38"
+          },
+          "values": [
+            16410907662982717371
+          ],
+          "source_reads": [
+            [
+              174793,
+              56,
+              8
+            ]
+          ],
+          "normal_PE_data_reads": []
+        },
+        {
+          "kind": "resolver_hash",
+          "query": {
+            "resolver": "0x2ab00",
+            "register": "rcx"
+          },
+          "values": [
+            2114385274
+          ],
+          "source_reads": [],
+          "normal_PE_data_reads": []
+        },
+        {
+          "kind": "resolver_hash",
+          "query": {
+            "resolver": "0x2ab00",
+            "register": "r8"
+          },
+          "values": [
+            464470743
+          ],
+          "source_reads": [],
+          "normal_PE_data_reads": []
+        },
+        {
+          "kind": "store_effective_address",
+          "query": {
+            "site": "0x2a9b9"
+          },
+          "values": [
+            9223090561878065208
+          ],
+          "source_reads": [],
+          "normal_PE_data_reads": []
+        },
+        {
+          "kind": "store_effective_address",
+          "query": {
+            "site": "0x2aa98"
+          },
+          "values": [
+            9223090561878065200
+          ],
+          "source_reads": [],
+          "normal_PE_data_reads": []
+        },
+        {
+          "kind": "known_cache_output_address",
+          "query": {
+            "call": "0x2aa0e"
+          },
+          "values": [
+            6443084008
+          ],
+          "source_reads": [],
+          "normal_PE_data_reads": []
+        },
+        {
+          "kind": "known_callee_output_address",
+          "query": {
+            "call": "0x2aa29"
+          },
+          "values": [
+            9223090561878065216
+          ],
+          "source_reads": [],
+          "normal_PE_data_reads": []
+        },
+        {
+          "kind": "known_cache_output_address",
+          "query": {
+            "call": "0x2aac9"
+          },
+          "values": [
+            6443073600
+          ],
+          "source_reads": [],
+          "normal_PE_data_reads": []
+        },
+        {
+          "kind": "known_callee_output_address",
+          "query": {
+            "call": "0x2aae4"
+          },
+          "values": [
+            9223090561878065184
+          ],
+          "source_reads": [],
+          "normal_PE_data_reads": []
+        }
+      ],
+      "native_sha256": "4276d33b4ef99211c90c7a1a7b6ad7f07ae24f43e6c5f26a6b4039fa28465f9e"
+    },
+    {
+      "version": "17",
+      "entry": "0x2b13d",
+      "status": "PASS_CONSERVATIVE_SOURCE_LIFETIME_GATE",
+      "source_reads": 12,
+      "source_bytes": 52,
+      "all_native_states": 238,
+      "steps": 274,
+      "unknown_callees_retained_as_havoc": [
+        "0x2b2e5",
+        "0x2b36a",
+        "0x2b3ec"
+      ],
+      "issues": [],
+      "failed_queries": [],
+      "effects": {
+        "0x2b1cc": {
+          "target": "0x6b415",
+          "known_bounded": true,
+          "private_spans": [
+            [
+              144,
+              24
+            ],
+            [
+              56,
+              26
+            ]
+          ]
+        },
+        "0x2b261": {
+          "target": "0x7f46f",
+          "known_bounded": true,
+          "private_spans": []
+        },
+        "0x2b27c": {
+          "target": "0x37c6e",
+          "known_bounded": true,
+          "private_spans": [
+            [
+              56,
+              24
+            ]
+          ]
+        },
+        "0x2b295": {
+          "target": "0x2c44b",
+          "known_bounded": true,
+          "private_spans": []
+        },
+        "0x2b2b0": {
+          "target": "0x4a6b1",
+          "known_bounded": true,
+          "private_spans": []
+        },
+        "0x2b2ce": {
+          "target": "0x4a6b1",
+          "known_bounded": true,
+          "private_spans": []
+        },
+        "0x2b2e5": {
+          "target": "call r15",
+          "known_bounded": false,
+          "private_spans": []
+        },
+        "0x2b320": {
+          "target": "0x5b993",
+          "known_bounded": true,
+          "private_spans": [
+            [
+              56,
+              24
+            ]
+          ]
+        },
+        "0x2b36a": {
+          "target": "call r15",
+          "known_bounded": false,
+          "private_spans": []
+        },
+        "0x2b3c7": {
+          "target": "0x4a6b1",
+          "known_bounded": true,
+          "private_spans": []
+        },
+        "0x2b3ec": {
+          "target": "0x2a324",
+          "known_bounded": false,
+          "private_spans": []
+        },
+        "0x2b40a": {
+          "target": "0x4a6b1",
+          "known_bounded": true,
+          "private_spans": []
+        },
+        "0x2b426": {
+          "target": "0x4a6b1",
+          "known_bounded": true,
+          "private_spans": []
+        },
+        "0x2b442": {
+          "target": "0x4a6b1",
+          "known_bounded": true,
+          "private_spans": []
+        },
+        "0x2b477": {
+          "target": "0x5693d",
+          "known_bounded": true,
+          "private_spans": []
+        },
+        "0x2b498": {
+          "target": "0x7f46f",
+          "known_bounded": true,
+          "private_spans": []
+        },
+        "0x2b4b3": {
+          "target": "0x37c6e",
+          "known_bounded": true,
+          "private_spans": [
+            [
+              120,
+              24
+            ]
+          ]
+        }
+      },
+      "local_native_effect_proofs": [],
+      "replays": [
+        {
+          "kind": "literal_descriptor",
+          "query": {
+            "call": "0x2b261",
+            "offset": "0x38"
+          },
+          "values": [
+            6442986600
+          ],
+          "source_reads": [
+            [
+              176737,
+              56,
+              8
+            ]
+          ],
+          "normal_PE_data_reads": []
+        },
+        {
+          "kind": "literal_descriptor",
+          "query": {
+            "call": "0x2b261",
+            "offset": "0x40"
+          },
+          "values": [
+            35
+          ],
+          "source_reads": [
+            [
+              176737,
+              64,
+              8
+            ]
+          ],
+          "normal_PE_data_reads": [
+            [
+              176477,
+              625312,
+              8,
+              5948581897495046190
+            ]
+          ]
+        },
+        {
+          "kind": "literal_descriptor",
+          "query": {
+            "call": "0x2b261",
+            "offset": "0x48"
+          },
+          "values": [
+            9223090561878065264
+          ],
+          "source_reads": [
+            [
+              176737,
+              72,
+              8
+            ]
+          ],
+          "normal_PE_data_reads": [
+            [
+              176477,
+              625312,
+              8,
+              5948581897495046190
+            ]
+          ]
+        },
+        {
+          "kind": "literal_seed_pointer",
+          "query": {
+            "call": "0x2b261"
+          },
+          "values": [
+            9223090561878065264
+          ],
+          "source_reads": [
+            [
+              176737,
+              72,
+              8
+            ]
+          ],
+          "normal_PE_data_reads": [
+            [
+              176477,
+              625312,
+              8,
+              5948581897495046190
+            ]
+          ]
+        },
+        {
+          "kind": "literal_seed",
+          "query": {
+            "call": "0x2b261",
+            "offset": "0x70"
+          },
+          "values": [
+            13780437149835312371
+          ],
+          "source_reads": [
+            [
+              176737,
+              112,
+              8
+            ]
+          ],
+          "normal_PE_data_reads": []
+        },
+        {
+          "kind": "literal_descriptor",
+          "query": {
+            "call": "0x2b498",
+            "offset": "0x38"
+          },
+          "values": [
+            6442987904
+          ],
+          "source_reads": [
+            [
+              177304,
+              56,
+              8
+            ]
+          ],
+          "normal_PE_data_reads": []
+        },
+        {
+          "kind": "literal_descriptor",
+          "query": {
+            "call": "0x2b498",
+            "offset": "0x40"
+          },
+          "values": [
+            20
+          ],
+          "source_reads": [
+            [
+              176525,
+              48,
+              4
+            ],
+            [
+              177304,
+              64,
+              8
+            ]
+          ],
+          "normal_PE_data_reads": [
+            [
+              176518,
+              631152,
+              8,
+              11533840296316831272
+            ]
+          ]
+        },
+        {
+          "kind": "literal_descriptor",
+          "query": {
+            "call": "0x2b498",
+            "offset": "0x48"
+          },
+          "values": [
+            9223090561878065264
+          ],
+          "source_reads": [
+            [
+              177304,
+              72,
+              8
+            ]
+          ],
+          "normal_PE_data_reads": []
+        },
+        {
+          "kind": "literal_seed_pointer",
+          "query": {
+            "call": "0x2b498"
+          },
+          "values": [
+            9223090561878065264
+          ],
+          "source_reads": [
+            [
+              177304,
+              72,
+              8
+            ]
+          ],
+          "normal_PE_data_reads": []
+        },
+        {
+          "kind": "literal_seed",
+          "query": {
+            "call": "0x2b498",
+            "offset": "0x70"
+          },
+          "values": [
+            7380100313023703923
+          ],
+          "source_reads": [
+            [
+              176525,
+              48,
+              4
+            ],
+            [
+              176593,
+              104,
+              8
+            ],
+            [
+              177304,
+              112,
+              8
+            ]
+          ],
+          "normal_PE_data_reads": [
+            [
+              176518,
+              631152,
+              8,
+              11533840296316831272
+            ]
+          ]
+        },
+        {
+          "kind": "resolver_hash",
+          "query": {
+            "resolver": "0x2b295",
+            "register": "rcx"
+          },
+          "values": [
+            597583624
+          ],
+          "source_reads": [],
+          "normal_PE_data_reads": []
+        },
+        {
+          "kind": "resolver_hash",
+          "query": {
+            "resolver": "0x2b295",
+            "register": "r8"
+          },
+          "values": [
+            202458956
+          ],
+          "source_reads": [],
+          "normal_PE_data_reads": []
+        },
+        {
+          "kind": "store_effective_address",
+          "query": {
+            "site": "0x2b183"
+          },
+          "values": [
+            9223090561878065208
+          ],
+          "source_reads": [],
+          "normal_PE_data_reads": []
+        },
+        {
+          "kind": "store_effective_address",
+          "query": {
+            "site": "0x2b1a4"
+          },
+          "values": [
+            9223090561878065216
+          ],
+          "source_reads": [
+            [
+              176525,
+              48,
+              4
+            ]
+          ],
+          "normal_PE_data_reads": [
+            [
+              176518,
+              631152,
+              8,
+              11533840296316831272
+            ]
+          ]
+        },
+        {
+          "kind": "store_effective_address",
+          "query": {
+            "site": "0x2b1ab"
+          },
+          "values": [
+            9223090561878065224
+          ],
+          "source_reads": [],
+          "normal_PE_data_reads": []
+        },
+        {
+          "kind": "store_effective_address",
+          "query": {
+            "site": "0x2b1b6"
+          },
+          "values": [
+            9223090561878065232
+          ],
+          "source_reads": [
+            [
+              176525,
+              48,
+              4
+            ]
+          ],
+          "normal_PE_data_reads": [
+            [
+              176518,
+              631152,
+              8,
+              11533840296316831272
+            ]
+          ]
+        },
+        {
+          "kind": "store_effective_address",
+          "query": {
+            "site": "0x2b1bd"
+          },
+          "values": [
+            9223090561878065234
+          ],
+          "source_reads": [],
+          "normal_PE_data_reads": []
+        },
+        {
+          "kind": "store_effective_address",
+          "query": {
+            "site": "0x2b1e1"
+          },
+          "values": [
+            9223090561878065264
+          ],
+          "source_reads": [],
+          "normal_PE_data_reads": []
+        },
+        {
+          "kind": "store_effective_address",
+          "query": {
+            "site": "0x2b1eb"
+          },
+          "values": [
+            9223090561878065208
+          ],
+          "source_reads": [],
+          "normal_PE_data_reads": []
+        },
+        {
+          "kind": "store_effective_address",
+          "query": {
+            "site": "0x2b1f3"
+          },
+          "values": [
+            9223090561878065216
+          ],
+          "source_reads": [
+            [
+              176525,
+              48,
+              4
+            ]
+          ],
+          "normal_PE_data_reads": [
+            [
+              176518,
+              631152,
+              8,
+              11533840296316831272
+            ]
+          ]
+        },
+        {
+          "kind": "store_effective_address",
+          "query": {
+            "site": "0x2b1fc"
+          },
+          "values": [
+            9223090561878065224
+          ],
+          "source_reads": [],
+          "normal_PE_data_reads": []
+        },
+        {
+          "kind": "store_effective_address",
+          "query": {
+            "site": "0x2b3df"
+          },
+          "values": [
+            9223090561878065208
+          ],
+          "source_reads": [],
+          "normal_PE_data_reads": []
+        },
+        {
+          "kind": "store_effective_address",
+          "query": {
+            "site": "0x2b3e4"
+          },
+          "values": [
+            9223090561878065216
+          ],
+          "source_reads": [],
+          "normal_PE_data_reads": []
+        },
+        {
+          "kind": "store_effective_address",
+          "query": {
+            "site": "0x2b3e8"
+          },
+          "values": [
+            9223090561878065224
+          ],
+          "source_reads": [],
+          "normal_PE_data_reads": []
+        },
+        {
+          "kind": "store_effective_address",
+          "query": {
+            "site": "0x2b4df"
+          },
+          "values": [
+            9223090561878065216
+          ],
+          "source_reads": [],
+          "normal_PE_data_reads": [
+            [
+              176477,
+              625312,
+              8,
+              5948581897495046190
+            ]
+          ]
+        },
+        {
+          "kind": "store_effective_address",
+          "query": {
+            "site": "0x2b4ed"
+          },
+          "values": [
+            9223090561878065224
+          ],
+          "source_reads": [],
+          "normal_PE_data_reads": [
+            [
+              176477,
+              625312,
+              8,
+              5948581897495046190
+            ]
+          ]
+        },
+        {
+          "kind": "known_callee_output_address",
+          "query": {
+            "call": "0x2b1cc"
+          },
+          "values": [
+            9223090561878065296
+          ],
+          "source_reads": [],
+          "normal_PE_data_reads": []
+        },
+        {
+          "kind": "UTF16_iterator_mutable_address",
+          "query": {
+            "call": "0x2b1cc"
+          },
+          "values": [
+            9223090561878065208
+          ],
+          "source_reads": [],
+          "normal_PE_data_reads": []
+        },
+        {
+          "kind": "known_cache_output_address",
+          "query": {
+            "call": "0x2b261"
+          },
+          "values": [
+            6443081208
+          ],
+          "source_reads": [],
+          "normal_PE_data_reads": []
+        },
+        {
+          "kind": "known_callee_output_address",
+          "query": {
+            "call": "0x2b27c"
+          },
+          "values": [
+            9223090561878065208
+          ],
+          "source_reads": [],
+          "normal_PE_data_reads": []
+        },
+        {
+          "kind": "known_callee_output_address",
+          "query": {
+            "call": "0x2b320"
+          },
+          "values": [
+            9223090561878065208
+          ],
+          "source_reads": [],
+          "normal_PE_data_reads": []
+        },
+        {
+          "kind": "known_cache_output_address",
+          "query": {
+            "call": "0x2b498"
+          },
+          "values": [
+            6443089528
+          ],
+          "source_reads": [],
+          "normal_PE_data_reads": []
+        },
+        {
+          "kind": "known_callee_output_address",
+          "query": {
+            "call": "0x2b4b3"
+          },
+          "values": [
+            9223090561878065272
+          ],
+          "source_reads": [],
+          "normal_PE_data_reads": []
+        }
+      ],
+      "native_sha256": "609ce08c6f71ad74a825bb5b34c787b1a15083c3f8902a69c905fa00dd45d46c"
+    },
+    {
+      "version": "17",
+      "entry": "0x2c138",
+      "status": "PASS_CONSERVATIVE_SOURCE_LIFETIME_GATE",
+      "source_reads": 10,
+      "source_bytes": 56,
+      "all_native_states": 96,
+      "steps": 96,
+      "unknown_callees_retained_as_havoc": [
+        "0x2c2d2"
+      ],
+      "issues": [],
+      "failed_queries": [],
+      "effects": {
+        "0x2c1cd": {
+          "target": "0x7f46f",
+          "known_bounded": true,
+          "private_spans": []
+        },
+        "0x2c1e8": {
+          "target": "0x37c6e",
+          "known_bounded": true,
+          "private_spans": [
+            [
+              64,
+              24
+            ]
+          ]
+        },
+        "0x2c248": {
+          "target": "0x7f46f",
+          "known_bounded": true,
+          "private_spans": []
+        },
+        "0x2c263": {
+          "target": "0x37c6e",
+          "known_bounded": true,
+          "private_spans": [
+            [
+              40,
+              24
+            ]
+          ]
+        },
+        "0x2c27c": {
+          "target": "0x2c44b",
+          "known_bounded": true,
+          "private_spans": []
+        },
+        "0x2c297": {
+          "target": "0x4a6b1",
+          "known_bounded": true,
+          "private_spans": []
+        },
+        "0x2c2b2": {
+          "target": "0x4a6b1",
+          "known_bounded": true,
+          "private_spans": []
+        },
+        "0x2c2d2": {
+          "target": "call rdi",
+          "known_bounded": false,
+          "private_spans": []
+        }
+      },
+      "local_native_effect_proofs": [],
+      "replays": [
+        {
+          "kind": "literal_descriptor",
+          "query": {
+            "call": "0x2c1cd",
+            "offset": "0x40"
+          },
+          "values": [
+            6442996540
+          ],
+          "source_reads": [
+            [
+              180685,
+              64,
+              8
+            ]
+          ],
+          "normal_PE_data_reads": []
+        },
+        {
+          "kind": "literal_descriptor",
+          "query": {
+            "call": "0x2c1cd",
+            "offset": "0x48"
+          },
+          "values": [
+            20
+          ],
+          "source_reads": [
+            [
+              180685,
+              72,
+              8
+            ]
+          ],
+          "normal_PE_data_reads": []
+        },
+        {
+          "kind": "literal_descriptor",
+          "query": {
+            "call": "0x2c1cd",
+            "offset": "0x50"
+          },
+          "values": [
+            9223090561878065192
+          ],
+          "source_reads": [
+            [
+              180685,
+              80,
+              8
+            ]
+          ],
+          "normal_PE_data_reads": []
+        },
+        {
+          "kind": "literal_seed_pointer",
+          "query": {
+            "call": "0x2c1cd"
+          },
+          "values": [
+            9223090561878065192
+          ],
+          "source_reads": [
+            [
+              180685,
+              80,
+              8
+            ]
+          ],
+          "normal_PE_data_reads": []
+        },
+        {
+          "kind": "literal_seed",
+          "query": {
+            "call": "0x2c1cd",
+            "offset": "0x28"
+          },
+          "values": [
+            990699571820103667
+          ],
+          "source_reads": [
+            [
+              180685,
+              40,
+              8
+            ]
+          ],
+          "normal_PE_data_reads": []
+        },
+        {
+          "kind": "literal_descriptor",
+          "query": {
+            "call": "0x2c248",
+            "offset": "0x28"
+          },
+          "values": [
+            6443001052
+          ],
+          "source_reads": [
+            [
+              180808,
+              40,
+              8
+            ]
+          ],
+          "normal_PE_data_reads": []
+        },
+        {
+          "kind": "literal_descriptor",
+          "query": {
+            "call": "0x2c248",
+            "offset": "0x30"
+          },
+          "values": [
+            22
+          ],
+          "source_reads": [
+            [
+              180808,
+              48,
+              8
+            ]
+          ],
+          "normal_PE_data_reads": []
+        },
+        {
+          "kind": "literal_descriptor",
+          "query": {
+            "call": "0x2c248",
+            "offset": "0x38"
+          },
+          "values": [
+            9223090561878065240
+          ],
+          "source_reads": [
+            [
+              180808,
+              56,
+              8
+            ]
+          ],
+          "normal_PE_data_reads": []
+        },
+        {
+          "kind": "literal_seed_pointer",
+          "query": {
+            "call": "0x2c248"
+          },
+          "values": [
+            9223090561878065240
+          ],
+          "source_reads": [
+            [
+              180808,
+              56,
+              8
+            ]
+          ],
+          "normal_PE_data_reads": []
+        },
+        {
+          "kind": "literal_seed",
+          "query": {
+            "call": "0x2c248",
+            "offset": "0x58"
+          },
+          "values": [
+            5735312480623806512
+          ],
+          "source_reads": [
+            [
+              180808,
+              88,
+              8
+            ]
+          ],
+          "normal_PE_data_reads": []
+        },
+        {
+          "kind": "resolver_hash",
+          "query": {
+            "resolver": "0x2c27c",
+            "register": "rcx"
+          },
+          "values": [
+            597583624
+          ],
+          "source_reads": [],
+          "normal_PE_data_reads": []
+        },
+        {
+          "kind": "resolver_hash",
+          "query": {
+            "resolver": "0x2c27c",
+            "register": "r8"
+          },
+          "values": [
+            3831626758
+          ],
+          "source_reads": [],
+          "normal_PE_data_reads": []
+        },
+        {
+          "kind": "store_effective_address",
+          "query": {
+            "site": "0x2c16f"
+          },
+          "values": [
+            9223090561878065192
+          ],
+          "source_reads": [],
+          "normal_PE_data_reads": []
+        },
+        {
+          "kind": "store_effective_address",
+          "query": {
+            "site": "0x2c187"
+          },
+          "values": [
+            9223090561878065216
+          ],
+          "source_reads": [],
+          "normal_PE_data_reads": []
+        },
+        {
+          "kind": "store_effective_address",
+          "query": {
+            "site": "0x2c18a"
+          },
+          "values": [
+            9223090561878065224
+          ],
+          "source_reads": [],
+          "normal_PE_data_reads": []
+        },
+        {
+          "kind": "store_effective_address",
+          "query": {
+            "site": "0x2c195"
+          },
+          "values": [
+            9223090561878065232
+          ],
+          "source_reads": [],
+          "normal_PE_data_reads": []
+        },
+        {
+          "kind": "store_effective_address",
+          "query": {
+            "site": "0x2c1ff"
+          },
+          "values": [
+            9223090561878065240
+          ],
+          "source_reads": [],
+          "normal_PE_data_reads": []
+        },
+        {
+          "kind": "known_cache_output_address",
+          "query": {
+            "call": "0x2c1cd"
+          },
+          "values": [
+            6443075248
+          ],
+          "source_reads": [],
+          "normal_PE_data_reads": []
+        },
+        {
+          "kind": "known_callee_output_address",
+          "query": {
+            "call": "0x2c1e8"
+          },
+          "values": [
+            9223090561878065216
+          ],
+          "source_reads": [],
+          "normal_PE_data_reads": []
+        },
+        {
+          "kind": "known_cache_output_address",
+          "query": {
+            "call": "0x2c248"
+          },
+          "values": [
+            6443080952
+          ],
+          "source_reads": [],
+          "normal_PE_data_reads": []
+        },
+        {
+          "kind": "known_callee_output_address",
+          "query": {
+            "call": "0x2c263"
+          },
+          "values": [
+            9223090561878065192
+          ],
+          "source_reads": [],
+          "normal_PE_data_reads": []
+        }
+      ],
+      "native_sha256": "438ad19c7f9f436861083e57207102a45444693a93148ad3c8f14f8b9f4f8624"
+    },
+    {
+      "version": "17",
+      "entry": "0x36230",
+      "status": "PASS_CONSERVATIVE_SOURCE_LIFETIME_GATE",
+      "source_reads": 13,
+      "source_bytes": 50,
+      "all_native_states": 688,
+      "steps": 768,
+      "unknown_callees_retained_as_havoc": [
+        "0x363ce",
+        "0x366b0",
+        "0x366d9",
+        "0x36af4"
+      ],
+      "issues": [],
+      "failed_queries": [],
+      "effects": {
+        "0x3625a": {
+          "target": "0x2af30",
+          "known_bounded": true,
+          "private_spans": []
+        },
+        "0x362b5": {
+          "target": "0x5693d",
+          "known_bounded": true,
+          "private_spans": []
+        },
+        "0x363ce": {
+          "target": "0x50b2c",
+          "known_bounded": false,
+          "private_spans": []
+        },
+        "0x36519": {
+          "target": "0x7f46f",
+          "known_bounded": true,
+          "private_spans": []
+        },
+        "0x3661a": {
+          "target": "0x37c6e",
+          "known_bounded": true,
+          "private_spans": [
+            [
+              168,
+              24
+            ]
+          ]
+        },
+        "0x3665c": {
+          "target": "0x2c44b",
+          "known_bounded": true,
+          "private_spans": []
+        },
+        "0x36677": {
+          "target": "0x4a6b1",
+          "known_bounded": true,
+          "private_spans": []
+        },
+        "0x36698": {
+          "target": "0x4a6b1",
+          "known_bounded": true,
+          "private_spans": []
+        },
+        "0x366b0": {
+          "target": "0x7ece0",
+          "known_bounded": false,
+          "private_spans": []
+        },
+        "0x366d9": {
+          "target": "call r13",
+          "known_bounded": false,
+          "private_spans": []
+        },
+        "0x367b2": {
+          "target": "0x7f46f",
+          "known_bounded": true,
+          "private_spans": []
+        },
+        "0x367d5": {
+          "target": "0x37c6e",
+          "known_bounded": true,
+          "private_spans": [
+            [
+              144,
+              24
+            ]
+          ]
+        },
+        "0x36af4": {
+          "target": "0x2d2f8",
+          "known_bounded": false,
+          "private_spans": []
+        },
+        "0x36b89": {
+          "target": "0x4a6b1",
+          "known_bounded": true,
+          "private_spans": []
+        }
+      },
+      "local_native_effect_proofs": [
+        {
+          "kind": "fresh63B_owned_diagnostic",
+          "stores": [
+            "0x36c29",
+            "0x36c34",
+            "0x36c3f",
+            "0x36c52"
+          ],
+          "allocator": "0x362b5->5693d",
+          "no_frame_alias": "normal fresh allocator result disjoint privateframe"
+        }
+      ],
+      "replays": [
+        {
+          "kind": "literal_descriptor",
+          "query": {
+            "call": "0x36519",
+            "offset": "0xa8"
+          },
+          "values": [
+            6443003724
+          ],
+          "source_reads": [
+            [
+              222489,
+              168,
+              8
+            ]
+          ],
+          "normal_PE_data_reads": []
+        },
+        {
+          "kind": "literal_descriptor",
+          "query": {
+            "call": "0x36519",
+            "offset": "0xb0"
+          },
+          "values": [
+            27
+          ],
+          "source_reads": [
+            [
+              222489,
+              176,
+              8
+            ]
+          ],
+          "normal_PE_data_reads": []
+        },
+        {
+          "kind": "literal_descriptor",
+          "query": {
+            "call": "0x36519",
+            "offset": "0xb8"
+          },
+          "values": [
+            9223090561878065272
+          ],
+          "source_reads": [
+            [
+              222489,
+              184,
+              8
+            ]
+          ],
+          "normal_PE_data_reads": []
+        },
+        {
+          "kind": "literal_seed_pointer",
+          "query": {
+            "call": "0x36519"
+          },
+          "values": [
+            9223090561878065272
+          ],
+          "source_reads": [
+            [
+              222489,
+              184,
+              8
+            ]
+          ],
+          "normal_PE_data_reads": []
+        },
+        {
+          "kind": "literal_seed",
+          "query": {
+            "call": "0x36519",
+            "offset": "0x78"
+          },
+          "values": [
+            7493863376860992584
+          ],
+          "source_reads": [
+            [
+              222489,
+              120,
+              8
+            ]
+          ],
+          "normal_PE_data_reads": []
+        },
+        {
+          "kind": "literal_descriptor",
+          "query": {
+            "call": "0x367b2",
+            "offset": "0xa8"
+          },
+          "values": [
+            6442991036
+          ],
+          "source_reads": [
+            [
+              223154,
+              168,
+              8
+            ]
+          ],
+          "normal_PE_data_reads": []
+        },
+        {
+          "kind": "literal_descriptor",
+          "query": {
+            "call": "0x367b2",
+            "offset": "0xb0"
+          },
+          "values": [
+            20
+          ],
+          "source_reads": [
+            [
+              223154,
+              176,
+              8
+            ],
+            [
+              224397,
+              108,
+              4
+            ]
+          ],
+          "normal_PE_data_reads": []
+        },
+        {
+          "kind": "literal_descriptor",
+          "query": {
+            "call": "0x367b2",
+            "offset": "0xb8"
+          },
+          "values": [
+            9223090561878065272
+          ],
+          "source_reads": [
+            [
+              223154,
+              184,
+              8
+            ],
+            [
+              224430,
+              50,
+              2
+            ]
+          ],
+          "normal_PE_data_reads": []
+        },
+        {
+          "kind": "literal_seed_pointer",
+          "query": {
+            "call": "0x367b2"
+          },
+          "values": [
+            9223090561878065272
+          ],
+          "source_reads": [
+            [
+              223154,
+              184,
+              8
+            ],
+            [
+              224430,
+              50,
+              2
+            ]
+          ],
+          "normal_PE_data_reads": []
+        },
+        {
+          "kind": "literal_seed",
+          "query": {
+            "call": "0x367b2",
+            "offset": "0x78"
+          },
+          "values": [
+            14277983910707740155
+          ],
+          "source_reads": [
+            [
+              223154,
+              120,
+              8
+            ]
+          ],
+          "normal_PE_data_reads": []
+        },
+        {
+          "kind": "resolver_hash",
+          "query": {
+            "resolver": "0x3665c",
+            "register": "rcx"
+          },
+          "values": [
+            597583624
+          ],
+          "source_reads": [
+            [
+              222780,
+              104,
+              4
+            ],
+            [
+              224397,
+              108,
+              4
+            ]
+          ],
+          "normal_PE_data_reads": []
+        },
+        {
+          "kind": "resolver_hash",
+          "query": {
+            "resolver": "0x3665c",
+            "register": "r8"
+          },
+          "values": [
+            3993870668
+          ],
+          "source_reads": [
+            [
+              222780,
+              104,
+              4
+            ],
+            [
+              224397,
+              108,
+              4
+            ]
+          ],
+          "normal_PE_data_reads": []
+        },
+        {
+          "kind": "store_effective_address",
+          "query": {
+            "site": "0x36ca2"
+          },
+          "values": [
+            9223090561878065328
+          ],
+          "source_reads": [
+            [
+              224397,
+              108,
+              4
+            ]
+          ],
+          "normal_PE_data_reads": []
+        },
+        {
+          "kind": "store_effective_address",
+          "query": {
+            "site": "0x36cba"
+          },
+          "values": [
+            9223090561878065336
+          ],
+          "source_reads": [
+            [
+              224430,
+              50,
+              2
+            ]
+          ],
+          "normal_PE_data_reads": []
+        },
+        {
+          "kind": "fresh_diagnostic_allocation_size",
+          "query": {
+            "site": "0x362b5"
+          },
+          "values": [
+            63
+          ],
+          "source_reads": [],
+          "normal_PE_data_reads": []
+        },
+        {
+          "kind": "fresh_diagnostic_allocation_size",
+          "query": {
+            "site": "0x362b5"
+          },
+          "values": [
+            63
+          ],
+          "source_reads": [],
+          "normal_PE_data_reads": []
+        },
+        {
+          "kind": "fresh_diagnostic_allocation_size",
+          "query": {
+            "site": "0x362b5"
+          },
+          "values": [
+            63
+          ],
+          "source_reads": [],
+          "normal_PE_data_reads": []
+        },
+        {
+          "kind": "fresh_diagnostic_allocation_size",
+          "query": {
+            "site": "0x362b5"
+          },
+          "values": [
+            63
+          ],
+          "source_reads": [],
+          "normal_PE_data_reads": []
+        },
+        {
+          "kind": "known_cache_output_address",
+          "query": {
+            "call": "0x36519"
+          },
+          "values": [
+            6443076680
+          ],
+          "source_reads": [],
+          "normal_PE_data_reads": []
+        },
+        {
+          "kind": "known_callee_output_address",
+          "query": {
+            "call": "0x3661a"
+          },
+          "values": [
+            9223090561878065320
+          ],
+          "source_reads": [],
+          "normal_PE_data_reads": []
+        },
+        {
+          "kind": "known_cache_output_address",
+          "query": {
+            "call": "0x367b2"
+          },
+          "values": [
+            6443076392
+          ],
+          "source_reads": [],
+          "normal_PE_data_reads": []
+        },
+        {
+          "kind": "known_callee_output_address",
+          "query": {
+            "call": "0x367d5"
+          },
+          "values": [
+            9223090561878065296
+          ],
+          "source_reads": [],
+          "normal_PE_data_reads": []
+        }
+      ],
+      "native_sha256": "0aa1ed054160bd28defa58d605437dfd94e870d0cb4a04cfad945f9cbdf2e879"
+    },
+    {
+      "version": "17",
+      "entry": "0x37d7b",
+      "status": "PASS_CONSERVATIVE_SOURCE_LIFETIME_GATE",
+      "source_reads": 12,
+      "source_bytes": 48,
+      "all_native_states": 187,
+      "steps": 248,
+      "unknown_callees_retained_as_havoc": [
+        "0x380e3"
+      ],
+      "issues": [],
+      "failed_queries": [],
+      "effects": {
+        "0x37da3": {
+          "target": "0x2af30",
+          "known_bounded": true,
+          "private_spans": []
+        },
+        "0x37e79": {
+          "target": "0x7f46f",
+          "known_bounded": true,
+          "private_spans": []
+        },
+        "0x37e94": {
+          "target": "0x37c6e",
+          "known_bounded": true,
+          "private_spans": [
+            [
+              96,
+              24
+            ]
+          ]
+        },
+        "0x37f12": {
+          "target": "0x7f46f",
+          "known_bounded": true,
+          "private_spans": []
+        },
+        "0x37f30": {
+          "target": "0x37c6e",
+          "known_bounded": true,
+          "private_spans": [
+            [
+              160,
+              24
+            ]
+          ]
+        },
+        "0x37f50": {
+          "target": "0x2c44b",
+          "known_bounded": true,
+          "private_spans": []
+        },
+        "0x37f94": {
+          "target": "0x4a6b1",
+          "known_bounded": true,
+          "private_spans": []
+        },
+        "0x37faf": {
+          "target": "0x4a6b1",
+          "known_bounded": true,
+          "private_spans": []
+        },
+        "0x380e3": {
+          "target": "call qword ptr [rsp + 0x58]",
+          "known_bounded": false,
+          "private_spans": []
+        }
+      },
+      "local_native_effect_proofs": [
+        {
+          "kind": "architectural_unsigned_index_private_suffix",
+          "stores": {
+            "0x37ff9": "0xa0",
+            "0x38001": "0xb0",
+            "0x38009": "0xc0",
+            "0x38011": "0xcc",
+            "0x38019": "0xb0",
+            "0x38021": "0xa0"
+          },
+          "proof": "All reaching index definitions zeroextend32 (RAX MOVZX EAX,AX; RDX MOV EDX,EBP); no address wrap in valid compiler frame. Conservatively clobber every tracked offset >= displacement; no fake fixedEA."
+        }
+      ],
+      "replays": [
+        {
+          "kind": "literal_descriptor",
+          "query": {
+            "call": "0x37e79",
+            "offset": "0xa0"
+          },
+          "values": [
+            6443000841
+          ],
+          "source_reads": [
+            [
+              228985,
+              160,
+              8
+            ]
+          ],
+          "normal_PE_data_reads": []
+        },
+        {
+          "kind": "literal_descriptor",
+          "query": {
+            "call": "0x37e79",
+            "offset": "0xa8"
+          },
+          "values": [
+            20
+          ],
+          "source_reads": [
+            [
+              228985,
+              168,
+              8
+            ]
+          ],
+          "normal_PE_data_reads": []
+        },
+        {
+          "kind": "literal_descriptor",
+          "query": {
+            "call": "0x37e79",
+            "offset": "0xb0"
+          },
+          "values": [
+            9223090561878065304
+          ],
+          "source_reads": [
+            [
+              228985,
+              176,
+              8
+            ]
+          ],
+          "normal_PE_data_reads": []
+        },
+        {
+          "kind": "literal_seed_pointer",
+          "query": {
+            "call": "0x37e79"
+          },
+          "values": [
+            9223090561878065304
+          ],
+          "source_reads": [
+            [
+              228985,
+              176,
+              8
+            ]
+          ],
+          "normal_PE_data_reads": []
+        },
+        {
+          "kind": "literal_seed",
+          "query": {
+            "call": "0x37e79",
+            "offset": "0x98"
+          },
+          "values": [
+            14230328371292727994
+          ],
+          "source_reads": [
+            [
+              228985,
+              152,
+              8
+            ]
+          ],
+          "normal_PE_data_reads": []
+        },
+        {
+          "kind": "literal_descriptor",
+          "query": {
+            "call": "0x37f12",
+            "offset": "0xa0"
+          },
+          "values": [
+            6442996073
+          ],
+          "source_reads": [
+            [
+              229138,
+              160,
+              8
+            ]
+          ],
+          "normal_PE_data_reads": []
+        },
+        {
+          "kind": "literal_descriptor",
+          "query": {
+            "call": "0x37f12",
+            "offset": "0xa8"
+          },
+          "values": [
+            23
+          ],
+          "source_reads": [
+            [
+              229138,
+              168,
+              8
+            ]
+          ],
+          "normal_PE_data_reads": []
+        },
+        {
+          "kind": "literal_descriptor",
+          "query": {
+            "call": "0x37f12",
+            "offset": "0xb0"
+          },
+          "values": [
+            9223090561878065304
+          ],
+          "source_reads": [
+            [
+              229138,
+              176,
+              8
+            ]
+          ],
+          "normal_PE_data_reads": []
+        },
+        {
+          "kind": "literal_seed_pointer",
+          "query": {
+            "call": "0x37f12"
+          },
+          "values": [
+            9223090561878065304
+          ],
+          "source_reads": [
+            [
+              229138,
+              176,
+              8
+            ]
+          ],
+          "normal_PE_data_reads": []
+        },
+        {
+          "kind": "literal_seed",
+          "query": {
+            "call": "0x37f12",
+            "offset": "0x98"
+          },
+          "values": [
+            11060258882968539916
+          ],
+          "source_reads": [
+            [
+              229138,
+              152,
+              8
+            ]
+          ],
+          "normal_PE_data_reads": []
+        },
+        {
+          "kind": "resolver_hash",
+          "query": {
+            "resolver": "0x37f50",
+            "register": "rcx"
+          },
+          "values": [
+            597583624
+          ],
+          "source_reads": [],
+          "normal_PE_data_reads": []
+        },
+        {
+          "kind": "resolver_hash",
+          "query": {
+            "resolver": "0x37f50",
+            "register": "r8"
+          },
+          "values": [
+            362085576
+          ],
+          "source_reads": [],
+          "normal_PE_data_reads": []
+        },
+        {
+          "kind": "store_effective_address",
+          "query": {
+            "site": "0x37e11"
+          },
+          "values": [
+            9223090561878065304
+          ],
+          "source_reads": [],
+          "normal_PE_data_reads": []
+        },
+        {
+          "kind": "store_effective_address",
+          "query": {
+            "site": "0x37e24"
+          },
+          "values": [
+            9223090561878065312
+          ],
+          "source_reads": [],
+          "normal_PE_data_reads": []
+        },
+        {
+          "kind": "store_effective_address",
+          "query": {
+            "site": "0x37e31"
+          },
+          "values": [
+            9223090561878065320
+          ],
+          "source_reads": [],
+          "normal_PE_data_reads": []
+        },
+        {
+          "kind": "store_effective_address",
+          "query": {
+            "site": "0x37e3d"
+          },
+          "values": [
+            9223090561878065328
+          ],
+          "source_reads": [],
+          "normal_PE_data_reads": []
+        },
+        {
+          "kind": "store_effective_address",
+          "query": {
+            "site": "0x37fcd"
+          },
+          "values": [
+            9223090561878065312
+          ],
+          "source_reads": [],
+          "normal_PE_data_reads": []
+        },
+        {
+          "kind": "known_cache_output_address",
+          "query": {
+            "call": "0x37e79"
+          },
+          "values": [
+            6443075184
+          ],
+          "source_reads": [],
+          "normal_PE_data_reads": []
+        },
+        {
+          "kind": "known_callee_output_address",
+          "query": {
+            "call": "0x37e94"
+          },
+          "values": [
+            9223090561878065248
+          ],
+          "source_reads": [],
+          "normal_PE_data_reads": []
+        },
+        {
+          "kind": "known_cache_output_address",
+          "query": {
+            "call": "0x37f12"
+          },
+          "values": [
+            6443089560
+          ],
+          "source_reads": [],
+          "normal_PE_data_reads": []
+        },
+        {
+          "kind": "known_callee_output_address",
+          "query": {
+            "call": "0x37f30"
+          },
+          "values": [
+            9223090561878065312
+          ],
+          "source_reads": [],
+          "normal_PE_data_reads": []
+        }
+      ],
+      "native_sha256": "8f0b1bf217578c1ded6a6da89da95f25f0d39a8488796449685f6b95481cc70e"
+    },
+    {
+      "version": "17",
+      "entry": "0x63a05",
+      "status": "PASS_CONSERVATIVE_SOURCE_LIFETIME_GATE",
+      "source_reads": 10,
+      "source_bytes": 64,
+      "all_native_states": 272,
+      "steps": 313,
+      "unknown_callees_retained_as_havoc": [
+        "0x63b4c",
+        "0x63b9d",
+        "0x63bb0",
+        "0x63d7e"
+      ],
+      "issues": [],
+      "failed_queries": [],
+      "effects": {
+        "0x63b4c": {
+          "target": "call r14",
+          "known_bounded": false,
+          "private_spans": []
+        },
+        "0x63b73": {
+          "target": "0x5693d",
+          "known_bounded": true,
+          "private_spans": []
+        },
+        "0x63b9d": {
+          "target": "0x2c2e1",
+          "known_bounded": false,
+          "private_spans": []
+        },
+        "0x63bb0": {
+          "target": "0x566b4",
+          "known_bounded": false,
+          "private_spans": []
+        },
+        "0x63be0": {
+          "target": "0x4a6b1",
+          "known_bounded": true,
+          "private_spans": []
+        },
+        "0x63bf9": {
+          "target": "0x4a6b1",
+          "known_bounded": true,
+          "private_spans": []
+        },
+        "0x63c21": {
+          "target": "0x7f46f",
+          "known_bounded": true,
+          "private_spans": []
+        },
+        "0x63c41": {
+          "target": "0x7f46f",
+          "known_bounded": true,
+          "private_spans": []
+        },
+        "0x63c5f": {
+          "target": "0x37c6e",
+          "known_bounded": true,
+          "private_spans": [
+            [
+              136,
+              24
+            ]
+          ]
+        },
+        "0x63cf0": {
+          "target": "0x37c6e",
+          "known_bounded": true,
+          "private_spans": [
+            [
+              104,
+              24
+            ]
+          ]
+        },
+        "0x63d09": {
+          "target": "0x2c44b",
+          "known_bounded": true,
+          "private_spans": []
+        },
+        "0x63d2f": {
+          "target": "0x4a6b1",
+          "known_bounded": true,
+          "private_spans": []
+        },
+        "0x63d53": {
+          "target": "0x4a6b1",
+          "known_bounded": true,
+          "private_spans": []
+        },
+        "0x63d7e": {
+          "target": "call r14",
+          "known_bounded": false,
+          "private_spans": []
+        },
+        "0x63dcf": {
+          "target": "0x5b993",
+          "known_bounded": true,
+          "private_spans": [
+            [
+              104,
+              24
+            ]
+          ]
+        },
+        "0x63e08": {
+          "target": "0x4a6b1",
+          "known_bounded": true,
+          "private_spans": []
+        }
+      },
+      "local_native_effect_proofs": [],
+      "replays": [
+        {
+          "kind": "literal_descriptor",
+          "query": {
+            "call": "0x63c21",
+            "offset": "0x50"
+          },
+          "values": [
+            6442998682
+          ],
+          "source_reads": [
+            [
+              408609,
+              80,
+              8
+            ]
+          ],
+          "normal_PE_data_reads": []
+        },
+        {
+          "kind": "literal_descriptor",
+          "query": {
+            "call": "0x63c21",
+            "offset": "0x58"
+          },
+          "values": [
+            31
+          ],
+          "source_reads": [
+            [
+              408609,
+              88,
+              8
+            ]
+          ],
+          "normal_PE_data_reads": []
+        },
+        {
+          "kind": "literal_descriptor",
+          "query": {
+            "call": "0x63c21",
+            "offset": "0x60"
+          },
+          "values": [
+            9223090561878065312
+          ],
+          "source_reads": [
+            [
+              408609,
+              96,
+              8
+            ]
+          ],
+          "normal_PE_data_reads": []
+        },
+        {
+          "kind": "literal_seed_pointer",
+          "query": {
+            "call": "0x63c21"
+          },
+          "values": [
+            9223090561878065312
+          ],
+          "source_reads": [
+            [
+              408609,
+              96,
+              8
+            ]
+          ],
+          "normal_PE_data_reads": []
+        },
+        {
+          "kind": "literal_seed",
+          "query": {
+            "call": "0x63c21",
+            "offset": "0xa0"
+          },
+          "values": [
+            7670965837791069899
+          ],
+          "source_reads": [
+            [
+              408609,
+              160,
+              8
+            ]
+          ],
+          "normal_PE_data_reads": []
+        },
+        {
+          "kind": "literal_descriptor",
+          "query": {
+            "call": "0x63c41",
+            "offset": "0x68"
+          },
+          "values": [
+            6442986711
+          ],
+          "source_reads": [
+            [
+              408641,
+              104,
+              8
+            ]
+          ],
+          "normal_PE_data_reads": []
+        },
+        {
+          "kind": "literal_descriptor",
+          "query": {
+            "call": "0x63c41",
+            "offset": "0x70"
+          },
+          "values": [
+            19
+          ],
+          "source_reads": [
+            [
+              408641,
+              112,
+              8
+            ]
+          ],
+          "normal_PE_data_reads": []
+        },
+        {
+          "kind": "literal_descriptor",
+          "query": {
+            "call": "0x63c41",
+            "offset": "0x78"
+          },
+          "values": [
+            9223090561878065232
+          ],
+          "source_reads": [
+            [
+              408641,
+              120,
+              8
+            ]
+          ],
+          "normal_PE_data_reads": []
+        },
+        {
+          "kind": "literal_seed_pointer",
+          "query": {
+            "call": "0x63c41"
+          },
+          "values": [
+            9223090561878065232
+          ],
+          "source_reads": [
+            [
+              408641,
+              120,
+              8
+            ]
+          ],
+          "normal_PE_data_reads": []
+        },
+        {
+          "kind": "literal_seed",
+          "query": {
+            "call": "0x63c41",
+            "offset": "0x50"
+          },
+          "values": [
+            17772919409454059787
+          ],
+          "source_reads": [
+            [
+              408641,
+              80,
+              8
+            ]
+          ],
+          "normal_PE_data_reads": []
+        },
+        {
+          "kind": "resolver_hash",
+          "query": {
+            "resolver": "0x63d09",
+            "register": "rcx"
+          },
+          "values": [
+            155110613
+          ],
+          "source_reads": [],
+          "normal_PE_data_reads": []
+        },
+        {
+          "kind": "resolver_hash",
+          "query": {
+            "resolver": "0x63d09",
+            "register": "r8"
+          },
+          "values": [
+            3284598350
+          ],
+          "source_reads": [],
+          "normal_PE_data_reads": []
+        },
+        {
+          "kind": "store_effective_address",
+          "query": {
+            "site": "0x63aa1"
+          },
+          "values": [
+            9223090561878065232
+          ],
+          "source_reads": [],
+          "normal_PE_data_reads": []
+        },
+        {
+          "kind": "store_effective_address",
+          "query": {
+            "site": "0x63ab0"
+          },
+          "values": [
+            9223090561878065256
+          ],
+          "source_reads": [],
+          "normal_PE_data_reads": []
+        },
+        {
+          "kind": "store_effective_address",
+          "query": {
+            "site": "0x63ab3"
+          },
+          "values": [
+            9223090561878065264
+          ],
+          "source_reads": [],
+          "normal_PE_data_reads": []
+        },
+        {
+          "kind": "store_effective_address",
+          "query": {
+            "site": "0x63abb"
+          },
+          "values": [
+            9223090561878065272
+          ],
+          "source_reads": [],
+          "normal_PE_data_reads": []
+        },
+        {
+          "kind": "store_effective_address",
+          "query": {
+            "site": "0x63bba"
+          },
+          "values": [
+            9223090561878065232
+          ],
+          "source_reads": [],
+          "normal_PE_data_reads": []
+        },
+        {
+          "kind": "store_effective_address",
+          "query": {
+            "site": "0x63c79"
+          },
+          "values": [
+            9223090561878065312
+          ],
+          "source_reads": [],
+          "normal_PE_data_reads": []
+        },
+        {
+          "kind": "store_effective_address",
+          "query": {
+            "site": "0x63d5d"
+          },
+          "values": [
+            9223090561878065232
+          ],
+          "source_reads": [],
+          "normal_PE_data_reads": []
+        },
+        {
+          "kind": "known_cache_output_address",
+          "query": {
+            "call": "0x63c21"
+          },
+          "values": [
+            6443077416
+          ],
+          "source_reads": [],
+          "normal_PE_data_reads": []
+        },
+        {
+          "kind": "known_cache_output_address",
+          "query": {
+            "call": "0x63c41"
+          },
+          "values": [
+            6443075120
+          ],
+          "source_reads": [],
+          "normal_PE_data_reads": []
+        },
+        {
+          "kind": "known_callee_output_address",
+          "query": {
+            "call": "0x63c5f"
+          },
+          "values": [
+            9223090561878065288
+          ],
+          "source_reads": [],
+          "normal_PE_data_reads": []
+        },
+        {
+          "kind": "known_callee_output_address",
+          "query": {
+            "call": "0x63cf0"
+          },
+          "values": [
+            9223090561878065256
+          ],
+          "source_reads": [],
+          "normal_PE_data_reads": []
+        },
+        {
+          "kind": "known_callee_output_address",
+          "query": {
+            "call": "0x63dcf"
+          },
+          "values": [
+            9223090561878065256
+          ],
+          "source_reads": [],
+          "normal_PE_data_reads": []
+        }
+      ],
+      "native_sha256": "adfca99c24b8bd760530417cc53e5666f83572ba07126d42f1e9b0cae2ec5f96"
+    },
+    {
+      "version": "17",
+      "entry": "0x63f30",
+      "status": "PASS_CONSERVATIVE_SOURCE_LIFETIME_GATE",
+      "source_reads": 22,
+      "source_bytes": 74,
+      "all_native_states": 284,
+      "steps": 369,
+      "unknown_callees_retained_as_havoc": [
+        "0x64182",
+        "0x642a9",
+        "0x642b7"
+      ],
+      "issues": [],
+      "failed_queries": [],
+      "effects": {
+        "0x63f5e": {
+          "target": "0x2af30",
+          "known_bounded": true,
+          "private_spans": []
+        },
+        "0x63ffa": {
+          "target": "0x5b993",
+          "known_bounded": true,
+          "private_spans": [
+            [
+              112,
+              24
+            ]
+          ]
+        },
+        "0x64021": {
+          "target": "0x7f46f",
+          "known_bounded": true,
+          "private_spans": []
+        },
+        "0x6403c": {
+          "target": "0x37c6e",
+          "known_bounded": true,
+          "private_spans": [
+            [
+              112,
+              24
+            ]
+          ]
+        },
+        "0x64061": {
+          "target": "0x2c44b",
+          "known_bounded": true,
+          "private_spans": []
+        },
+        "0x64082": {
+          "target": "0x4a6b1",
+          "known_bounded": true,
+          "private_spans": []
+        },
+        "0x640ac": {
+          "target": "0x4a6b1",
+          "known_bounded": true,
+          "private_spans": []
+        },
+        "0x64182": {
+          "target": "call qword ptr [rsp + 0x98]",
+          "known_bounded": false,
+          "private_spans": []
+        },
+        "0x641c1": {
+          "target": "0x7f46f",
+          "known_bounded": true,
+          "private_spans": []
+        },
+        "0x641dc": {
+          "target": "0x37c6e",
+          "known_bounded": true,
+          "private_spans": [
+            [
+              72,
+              24
+            ]
+          ]
+        },
+        "0x642a9": {
+          "target": "0x7e630",
+          "known_bounded": false,
+          "private_spans": []
+        },
+        "0x642b7": {
+          "target": "call r14",
+          "known_bounded": false,
+          "private_spans": []
+        },
+        "0x64303": {
+          "target": "0x7f46f",
+          "known_bounded": true,
+          "private_spans": []
+        },
+        "0x6431e": {
+          "target": "0x37c6e",
+          "known_bounded": true,
+          "private_spans": [
+            [
+              72,
+              24
+            ]
+          ]
+        },
+        "0x64388": {
+          "target": "0x7f46f",
+          "known_bounded": true,
+          "private_spans": []
+        },
+        "0x643a3": {
+          "target": "0x37c6e",
+          "known_bounded": true,
+          "private_spans": [
+            [
+              112,
+              24
+            ]
+          ]
+        },
+        "0x643bc": {
+          "target": "0x2c44b",
+          "known_bounded": true,
+          "private_spans": []
+        },
+        "0x643f4": {
+          "target": "0x4a6b1",
+          "known_bounded": true,
+          "private_spans": []
+        },
+        "0x64418": {
+          "target": "0x4a6b1",
+          "known_bounded": true,
+          "private_spans": []
+        }
+      },
+      "local_native_effect_proofs": [],
+      "replays": [
+        {
+          "kind": "literal_descriptor",
+          "query": {
+            "call": "0x64021",
+            "offset": "0x70"
+          },
+          "values": [
+            6442991065
+          ],
+          "source_reads": [
+            [
+              409633,
+              112,
+              8
+            ]
+          ],
+          "normal_PE_data_reads": []
+        },
+        {
+          "kind": "literal_descriptor",
+          "query": {
+            "call": "0x64021",
+            "offset": "0x78"
+          },
+          "values": [
+            28
+          ],
+          "source_reads": [
+            [
+              409633,
+              120,
+              8
+            ]
+          ],
+          "normal_PE_data_reads": []
+        },
+        {
+          "kind": "literal_descriptor",
+          "query": {
+            "call": "0x64021",
+            "offset": "0x80"
+          },
+          "values": [
+            9223090561878065320
+          ],
+          "source_reads": [
+            [
+              409633,
+              128,
+              8
+            ]
+          ],
+          "normal_PE_data_reads": []
+        },
+        {
+          "kind": "literal_seed_pointer",
+          "query": {
+            "call": "0x64021"
+          },
+          "values": [
+            9223090561878065320
+          ],
+          "source_reads": [
+            [
+              409633,
+              128,
+              8
+            ]
+          ],
+          "normal_PE_data_reads": []
+        },
+        {
+          "kind": "literal_seed",
+          "query": {
+            "call": "0x64021",
+            "offset": "0xa8"
+          },
+          "values": [
+            18052873846636591710
+          ],
+          "source_reads": [
+            [
+              409633,
+              168,
+              8
+            ]
+          ],
+          "normal_PE_data_reads": []
+        },
+        {
+          "kind": "literal_descriptor",
+          "query": {
+            "call": "0x641c1",
+            "offset": "0x48"
+          },
+          "values": [
+            6442988171
+          ],
+          "source_reads": [
+            [
+              410049,
+              72,
+              8
+            ]
+          ],
+          "normal_PE_data_reads": []
+        },
+        {
+          "kind": "literal_descriptor",
+          "query": {
+            "call": "0x641c1",
+            "offset": "0x50"
+          },
+          "values": [
+            20
+          ],
+          "source_reads": [
+            [
+              410049,
+              80,
+              8
+            ]
+          ],
+          "normal_PE_data_reads": [
+            [
+              409669,
+              639804,
+              4,
+              1354701582
+            ]
+          ]
+        },
+        {
+          "kind": "literal_descriptor",
+          "query": {
+            "call": "0x641c1",
+            "offset": "0x58"
+          },
+          "values": [
+            9223090561878065264
+          ],
+          "source_reads": [
+            [
+              410049,
+              88,
+              8
+            ]
+          ],
+          "normal_PE_data_reads": [
+            [
+              409669,
+              639804,
+              4,
+              1354701582
+            ]
+          ]
+        },
+        {
+          "kind": "literal_seed_pointer",
+          "query": {
+            "call": "0x641c1"
+          },
+          "values": [
+            9223090561878065264
+          ],
+          "source_reads": [
+            [
+              410049,
+              88,
+              8
+            ]
+          ],
+          "normal_PE_data_reads": [
+            [
+              409669,
+              639804,
+              4,
+              1354701582
+            ]
+          ]
+        },
+        {
+          "kind": "literal_seed",
+          "query": {
+            "call": "0x641c1",
+            "offset": "0x70"
+          },
+          "values": [
+            18113269018491024556
+          ],
+          "source_reads": [
+            [
+              410049,
+              112,
+              8
+            ]
+          ],
+          "normal_PE_data_reads": []
+        },
+        {
+          "kind": "literal_descriptor",
+          "query": {
+            "call": "0x64303",
+            "offset": "0x48"
+          },
+          "values": [
+            6443000965
+          ],
+          "source_reads": [
+            [
+              410371,
+              72,
+              8
+            ]
+          ],
+          "normal_PE_data_reads": []
+        },
+        {
+          "kind": "literal_descriptor",
+          "query": {
+            "call": "0x64303",
+            "offset": "0x50"
+          },
+          "values": [
+            19
+          ],
+          "source_reads": [
+            [
+              410371,
+              80,
+              8
+            ]
+          ],
+          "normal_PE_data_reads": []
+        },
+        {
+          "kind": "literal_descriptor",
+          "query": {
+            "call": "0x64303",
+            "offset": "0x58"
+          },
+          "values": [
+            9223090561878065264
+          ],
+          "source_reads": [
+            [
+              410371,
+              88,
+              8
+            ]
+          ],
+          "normal_PE_data_reads": []
+        },
+        {
+          "kind": "literal_seed_pointer",
+          "query": {
+            "call": "0x64303"
+          },
+          "values": [
+            9223090561878065264
+          ],
+          "source_reads": [
+            [
+              410371,
+              88,
+              8
+            ]
+          ],
+          "normal_PE_data_reads": []
+        },
+        {
+          "kind": "literal_seed",
+          "query": {
+            "call": "0x64303",
+            "offset": "0x70"
+          },
+          "values": [
+            960519990363368570
+          ],
+          "source_reads": [
+            [
+              410371,
+              112,
+              8
+            ]
+          ],
+          "normal_PE_data_reads": []
+        },
+        {
+          "kind": "literal_descriptor",
+          "query": {
+            "call": "0x64388",
+            "offset": "0x70"
+          },
+          "values": [
+            6442986453
+          ],
+          "source_reads": [
+            [
+              410504,
+              112,
+              8
+            ]
+          ],
+          "normal_PE_data_reads": []
+        },
+        {
+          "kind": "literal_descriptor",
+          "query": {
+            "call": "0x64388",
+            "offset": "0x78"
+          },
+          "values": [
+            16
+          ],
+          "source_reads": [
+            [
+              410147,
+              70,
+              2
+            ],
+            [
+              410504,
+              120,
+              8
+            ]
+          ],
+          "normal_PE_data_reads": []
+        },
+        {
+          "kind": "literal_descriptor",
+          "query": {
+            "call": "0x64388",
+            "offset": "0x80"
+          },
+          "values": [
+            9223090561878065248
+          ],
+          "source_reads": [
+            [
+              410504,
+              128,
+              8
+            ]
+          ],
+          "normal_PE_data_reads": []
+        },
+        {
+          "kind": "literal_seed_pointer",
+          "query": {
+            "call": "0x64388"
+          },
+          "values": [
+            9223090561878065248
+          ],
+          "source_reads": [
+            [
+              410504,
+              128,
+              8
+            ]
+          ],
+          "normal_PE_data_reads": []
+        },
+        {
+          "kind": "literal_seed",
+          "query": {
+            "call": "0x64388",
+            "offset": "0x60"
+          },
+          "values": [
+            99482819225801794
+          ],
+          "source_reads": [
+            [
+              410504,
+              96,
+              8
+            ]
+          ],
+          "normal_PE_data_reads": []
+        },
+        {
+          "kind": "resolver_hash",
+          "query": {
+            "resolver": "0x64061",
+            "register": "rcx"
+          },
+          "values": [
+            155110613
+          ],
+          "source_reads": [],
+          "normal_PE_data_reads": []
+        },
+        {
+          "kind": "resolver_hash",
+          "query": {
+            "resolver": "0x64061",
+            "register": "r8"
+          },
+          "values": [
+            3076568556
+          ],
+          "source_reads": [],
+          "normal_PE_data_reads": [
+            [
+              409669,
+              639804,
+              4,
+              1354701582
+            ]
+          ]
+        },
+        {
+          "kind": "resolver_hash",
+          "query": {
+            "resolver": "0x643bc",
+            "register": "rcx"
+          },
+          "values": [
+            597583624
+          ],
+          "source_reads": [],
+          "normal_PE_data_reads": []
+        },
+        {
+          "kind": "resolver_hash",
+          "query": {
+            "resolver": "0x643bc",
+            "register": "r8"
+          },
+          "values": [
+            4085522819
+          ],
+          "source_reads": [],
+          "normal_PE_data_reads": []
+        },
+        {
+          "kind": "store_effective_address",
+          "query": {
+            "site": "0x63f93"
+          },
+          "values": [
+            9223090561878065264
+          ],
+          "source_reads": [],
+          "normal_PE_data_reads": []
+        },
+        {
+          "kind": "store_effective_address",
+          "query": {
+            "site": "0x640c3"
+          },
+          "values": [
+            9223090561878065328
+          ],
+          "source_reads": [],
+          "normal_PE_data_reads": [
+            [
+              409669,
+              639804,
+              4,
+              1354701582
+            ]
+          ]
+        },
+        {
+          "kind": "store_effective_address",
+          "query": {
+            "site": "0x640d5"
+          },
+          "values": [
+            9223090561878065264
+          ],
+          "source_reads": [],
+          "normal_PE_data_reads": []
+        },
+        {
+          "kind": "store_effective_address",
+          "query": {
+            "site": "0x640e0"
+          },
+          "values": [
+            9223090561878065224
+          ],
+          "source_reads": [],
+          "normal_PE_data_reads": []
+        },
+        {
+          "kind": "store_effective_address",
+          "query": {
+            "site": "0x640ed"
+          },
+          "values": [
+            9223090561878065232
+          ],
+          "source_reads": [],
+          "normal_PE_data_reads": []
+        },
+        {
+          "kind": "store_effective_address",
+          "query": {
+            "site": "0x640fa"
+          },
+          "values": [
+            9223090561878065240
+          ],
+          "source_reads": [],
+          "normal_PE_data_reads": [
+            [
+              409669,
+              639804,
+              4,
+              1354701582
+            ]
+          ]
+        },
+        {
+          "kind": "store_effective_address",
+          "query": {
+            "site": "0x6413c"
+          },
+          "values": [
+            9223090561878065240
+          ],
+          "source_reads": [],
+          "normal_PE_data_reads": []
+        },
+        {
+          "kind": "store_effective_address",
+          "query": {
+            "site": "0x64146"
+          },
+          "values": [
+            9223090561878065224
+          ],
+          "source_reads": [],
+          "normal_PE_data_reads": []
+        },
+        {
+          "kind": "store_effective_address",
+          "query": {
+            "site": "0x641f6"
+          },
+          "values": [
+            9223090561878065248
+          ],
+          "source_reads": [],
+          "normal_PE_data_reads": []
+        },
+        {
+          "kind": "store_effective_address",
+          "query": {
+            "site": "0x64206"
+          },
+          "values": [
+            9223090561878065264
+          ],
+          "source_reads": [],
+          "normal_PE_data_reads": []
+        },
+        {
+          "kind": "store_effective_address",
+          "query": {
+            "site": "0x64236"
+          },
+          "values": [
+            9223090561878065272
+          ],
+          "source_reads": [
+            [
+              410147,
+              70,
+              2
+            ]
+          ],
+          "normal_PE_data_reads": []
+        },
+        {
+          "kind": "store_effective_address",
+          "query": {
+            "site": "0x6423f"
+          },
+          "values": [
+            9223090561878065280
+          ],
+          "source_reads": [],
+          "normal_PE_data_reads": []
+        },
+        {
+          "kind": "store_effective_address",
+          "query": {
+            "site": "0x6433b"
+          },
+          "values": [
+            9223090561878065320
+          ],
+          "source_reads": [],
+          "normal_PE_data_reads": []
+        },
+        {
+          "kind": "store_effective_address",
+          "query": {
+            "site": "0x6434a"
+          },
+          "values": [
+            9223090561878065264
+          ],
+          "source_reads": [],
+          "normal_PE_data_reads": []
+        },
+        {
+          "kind": "store_effective_address",
+          "query": {
+            "site": "0x6434d"
+          },
+          "values": [
+            9223090561878065272
+          ],
+          "source_reads": [],
+          "normal_PE_data_reads": []
+        },
+        {
+          "kind": "store_effective_address",
+          "query": {
+            "site": "0x64355"
+          },
+          "values": [
+            9223090561878065280
+          ],
+          "source_reads": [],
+          "normal_PE_data_reads": []
+        },
+        {
+          "kind": "known_callee_output_address",
+          "query": {
+            "call": "0x63ffa"
+          },
+          "values": [
+            9223090561878065264
+          ],
+          "source_reads": [],
+          "normal_PE_data_reads": []
+        },
+        {
+          "kind": "known_cache_output_address",
+          "query": {
+            "call": "0x64021"
+          },
+          "values": [
+            6443087320
+          ],
+          "source_reads": [],
+          "normal_PE_data_reads": []
+        },
+        {
+          "kind": "known_callee_output_address",
+          "query": {
+            "call": "0x6403c"
+          },
+          "values": [
+            9223090561878065264
+          ],
+          "source_reads": [],
+          "normal_PE_data_reads": []
+        },
+        {
+          "kind": "known_cache_output_address",
+          "query": {
+            "call": "0x641c1"
+          },
+          "values": [
+            6443090328
+          ],
+          "source_reads": [],
+          "normal_PE_data_reads": []
+        },
+        {
+          "kind": "known_callee_output_address",
+          "query": {
+            "call": "0x641dc"
+          },
+          "values": [
+            9223090561878065224
+          ],
+          "source_reads": [],
+          "normal_PE_data_reads": []
+        },
+        {
+          "kind": "known_cache_output_address",
+          "query": {
+            "call": "0x64303"
+          },
+          "values": [
+            6443084336
+          ],
+          "source_reads": [],
+          "normal_PE_data_reads": []
+        },
+        {
+          "kind": "known_callee_output_address",
+          "query": {
+            "call": "0x6431e"
+          },
+          "values": [
+            9223090561878065224
+          ],
+          "source_reads": [],
+          "normal_PE_data_reads": []
+        },
+        {
+          "kind": "known_cache_output_address",
+          "query": {
+            "call": "0x64388"
+          },
+          "values": [
+            6443077832
+          ],
+          "source_reads": [],
+          "normal_PE_data_reads": []
+        },
+        {
+          "kind": "known_callee_output_address",
+          "query": {
+            "call": "0x643a3"
+          },
+          "values": [
+            9223090561878065264
+          ],
+          "source_reads": [],
+          "normal_PE_data_reads": []
+        }
+      ],
+      "native_sha256": "60db2571ea29fd2076d06a52bd7e2ac58aeb0747f05b26f8c4d7b5b2b03bf111"
+    },
+    {
+      "version": "19",
+      "entry": "0xf03b",
+      "status": "PASS_CONSERVATIVE_SOURCE_LIFETIME_GATE",
+      "source_reads": 15,
+      "source_bytes": 48,
+      "all_native_states": 190,
+      "steps": 190,
+      "unknown_callees_retained_as_havoc": [
+        "0xf1b4"
+      ],
+      "issues": [],
+      "failed_queries": [],
+      "effects": {
+        "0xf0b2": {
+          "target": "0x292ed",
+          "known_bounded": true,
+          "private_spans": [
+            [
+              128,
+              24
+            ],
+            [
+              32,
+              26
+            ]
+          ]
+        },
+        "0xf129": {
+          "target": "0x7e4d7",
+          "known_bounded": true,
+          "private_spans": []
+        },
+        "0xf144": {
+          "target": "0x4473d",
+          "known_bounded": true,
+          "private_spans": [
+            [
+              80,
+              24
+            ]
+          ]
+        },
+        "0xf178": {
+          "target": "0x5ff39",
+          "known_bounded": true,
+          "private_spans": [
+            [
+              104,
+              24
+            ]
+          ]
+        },
+        "0xf199": {
+          "target": "0x17f80",
+          "known_bounded": true,
+          "private_spans": []
+        },
+        "0xf1b4": {
+          "target": "call qword ptr [rsp + 0x40]",
+          "known_bounded": false,
+          "private_spans": []
+        },
+        "0xf1cb": {
+          "target": "0x17f80",
+          "known_bounded": true,
+          "private_spans": []
+        },
+        "0xf1ec": {
+          "target": "0x17f80",
+          "known_bounded": true,
+          "private_spans": []
+        },
+        "0xf212": {
+          "target": "0x7e4d7",
+          "known_bounded": true,
+          "private_spans": []
+        },
+        "0xf228": {
+          "target": "0x7e4d7",
+          "known_bounded": true,
+          "private_spans": []
+        },
+        "0xf243": {
+          "target": "0x4473d",
+          "known_bounded": true,
+          "private_spans": [
+            [
+              104,
+              24
+            ]
+          ]
+        },
+        "0xf2b9": {
+          "target": "0x4473d",
+          "known_bounded": true,
+          "private_spans": [
+            [
+              32,
+              24
+            ]
+          ]
+        },
+        "0xf2d2": {
+          "target": "0x249d",
+          "known_bounded": true,
+          "private_spans": []
+        },
+        "0xf2fb": {
+          "target": "0x17f80",
+          "known_bounded": true,
+          "private_spans": []
+        },
+        "0xf316": {
+          "target": "0x17f80",
+          "known_bounded": true,
+          "private_spans": []
+        }
+      },
+      "local_native_effect_proofs": [
+        {
+          "kind": "19_5ff39_UTF16_owned_collector",
+          "out24_stores": [
+            "0x6012e",
+            "0x60138",
+            "0x60143",
+            "0x6014c"
+          ],
+          "private_child_object": "RDI ownSP30;63b50 allocation +833d reserve only ownheader/heap; originalRDX iterator fields readonly",
+          "native_end": "0x601eb"
+        }
+      ],
+      "replays": [
+        {
+          "kind": "literal_descriptor",
+          "query": {
+            "call": "0xf129",
+            "offset": "0x20"
+          },
+          "values": [
+            6442999458
+          ],
+          "source_reads": [
+            [
+              61737,
+              32,
+              8
+            ]
+          ],
+          "normal_PE_data_reads": []
+        },
+        {
+          "kind": "literal_descriptor",
+          "query": {
+            "call": "0xf129",
+            "offset": "0x28"
+          },
+          "values": [
+            12
+          ],
+          "source_reads": [
+            [
+              61737,
+              40,
+              8
+            ]
+          ],
+          "normal_PE_data_reads": [
+            [
+              61566,
+              631652,
+              4,
+              2778276632
+            ],
+            [
+              62260,
+              631746,
+              2,
+              22959
+            ],
+            [
+              62267,
+              619328,
+              8,
+              4552556941015210411
+            ]
+          ]
+        },
+        {
+          "kind": "literal_descriptor",
+          "query": {
+            "call": "0xf129",
+            "offset": "0x30"
+          },
+          "values": [
+            9223090561878065256
+          ],
+          "source_reads": [
+            [
+              61737,
+              48,
+              8
+            ]
+          ],
+          "normal_PE_data_reads": []
+        },
+        {
+          "kind": "literal_seed_pointer",
+          "query": {
+            "call": "0xf129"
+          },
+          "values": [
+            9223090561878065256
+          ],
+          "source_reads": [
+            [
+              61737,
+              48,
+              8
+            ]
+          ],
+          "normal_PE_data_reads": []
+        },
+        {
+          "kind": "literal_seed",
+          "query": {
+            "call": "0xf129",
+            "offset": "0x68"
+          },
+          "values": [
+            15355573607480868617
+          ],
+          "source_reads": [
+            [
+              61737,
+              104,
+              8
+            ]
+          ],
+          "normal_PE_data_reads": []
+        },
+        {
+          "kind": "literal_descriptor",
+          "query": {
+            "call": "0xf212",
+            "offset": "0x20"
+          },
+          "values": [
+            6443004430
+          ],
+          "source_reads": [
+            [
+              61970,
+              32,
+              8
+            ]
+          ],
+          "normal_PE_data_reads": []
+        },
+        {
+          "kind": "literal_descriptor",
+          "query": {
+            "call": "0xf212",
+            "offset": "0x28"
+          },
+          "values": [
+            23
+          ],
+          "source_reads": [
+            [
+              61970,
+              40,
+              8
+            ]
+          ],
+          "normal_PE_data_reads": []
+        },
+        {
+          "kind": "literal_descriptor",
+          "query": {
+            "call": "0xf212",
+            "offset": "0x30"
+          },
+          "values": [
+            9223090561878065232
+          ],
+          "source_reads": [
+            [
+              61970,
+              48,
+              8
+            ]
+          ],
+          "normal_PE_data_reads": []
+        },
+        {
+          "kind": "literal_seed_pointer",
+          "query": {
+            "call": "0xf212"
+          },
+          "values": [
+            9223090561878065232
+          ],
+          "source_reads": [
+            [
+              61970,
+              48,
+              8
+            ]
+          ],
+          "normal_PE_data_reads": []
+        },
+        {
+          "kind": "literal_seed",
+          "query": {
+            "call": "0xf212",
+            "offset": "0x50"
+          },
+          "values": [
+            7472486874809338512
+          ],
+          "source_reads": [
+            [
+              61970,
+              80,
+              8
+            ]
+          ],
+          "normal_PE_data_reads": []
+        },
+        {
+          "kind": "literal_descriptor",
+          "query": {
+            "call": "0xf228",
+            "offset": "0x20"
+          },
+          "values": [
+            6443004665
+          ],
+          "source_reads": [
+            [
+              61992,
+              32,
+              8
+            ]
+          ],
+          "normal_PE_data_reads": []
+        },
+        {
+          "kind": "literal_descriptor",
+          "query": {
+            "call": "0xf228",
+            "offset": "0x28"
+          },
+          "values": [
+            21
+          ],
+          "source_reads": [
+            [
+              61992,
+              40,
+              8
+            ]
+          ],
+          "normal_PE_data_reads": []
+        },
+        {
+          "kind": "literal_descriptor",
+          "query": {
+            "call": "0xf228",
+            "offset": "0x30"
+          },
+          "values": [
+            9223090561878065232
+          ],
+          "source_reads": [
+            [
+              61992,
+              48,
+              8
+            ]
+          ],
+          "normal_PE_data_reads": []
+        },
+        {
+          "kind": "literal_seed_pointer",
+          "query": {
+            "call": "0xf228"
+          },
+          "values": [
+            9223090561878065232
+          ],
+          "source_reads": [
+            [
+              61992,
+              48,
+              8
+            ]
+          ],
+          "normal_PE_data_reads": []
+        },
+        {
+          "kind": "literal_seed",
+          "query": {
+            "call": "0xf228",
+            "offset": "0x50"
+          },
+          "values": [
+            111576604718138204
+          ],
+          "source_reads": [
+            [
+              61992,
+              80,
+              8
+            ]
+          ],
+          "normal_PE_data_reads": []
+        },
+        {
+          "kind": "resolver_hash",
+          "query": {
+            "resolver": "0xf2d2",
+            "register": "rcx"
+          },
+          "values": [
+            3401473137
+          ],
+          "source_reads": [],
+          "normal_PE_data_reads": []
+        },
+        {
+          "kind": "resolver_hash",
+          "query": {
+            "resolver": "0xf2d2",
+            "register": "r8"
+          },
+          "values": [
+            3869409266
+          ],
+          "source_reads": [],
+          "normal_PE_data_reads": []
+        },
+        {
+          "kind": "store_effective_address",
+          "query": {
+            "site": "0xf070"
+          },
+          "values": [
+            9223090561878065184
+          ],
+          "source_reads": [],
+          "normal_PE_data_reads": []
+        },
+        {
+          "kind": "store_effective_address",
+          "query": {
+            "site": "0xf073"
+          },
+          "values": [
+            9223090561878065192
+          ],
+          "source_reads": [],
+          "normal_PE_data_reads": []
+        },
+        {
+          "kind": "store_effective_address",
+          "query": {
+            "site": "0xf096"
+          },
+          "values": [
+            9223090561878065200
+          ],
+          "source_reads": [],
+          "normal_PE_data_reads": [
+            [
+              61566,
+              631652,
+              4,
+              2778276632
+            ]
+          ]
+        },
+        {
+          "kind": "store_effective_address",
+          "query": {
+            "site": "0xf09d"
+          },
+          "values": [
+            9223090561878065208
+          ],
+          "source_reads": [],
+          "normal_PE_data_reads": []
+        },
+        {
+          "kind": "store_effective_address",
+          "query": {
+            "site": "0xf0ce"
+          },
+          "values": [
+            9223090561878065232
+          ],
+          "source_reads": [],
+          "normal_PE_data_reads": []
+        },
+        {
+          "kind": "store_effective_address",
+          "query": {
+            "site": "0xf0d8"
+          },
+          "values": [
+            9223090561878065184
+          ],
+          "source_reads": [],
+          "normal_PE_data_reads": []
+        },
+        {
+          "kind": "store_effective_address",
+          "query": {
+            "site": "0xf0db"
+          },
+          "values": [
+            9223090561878065192
+          ],
+          "source_reads": [],
+          "normal_PE_data_reads": []
+        },
+        {
+          "kind": "store_effective_address",
+          "query": {
+            "site": "0xf0e3"
+          },
+          "values": [
+            9223090561878065200
+          ],
+          "source_reads": [],
+          "normal_PE_data_reads": []
+        },
+        {
+          "kind": "store_effective_address",
+          "query": {
+            "site": "0xf163"
+          },
+          "values": [
+            9223090561878065184
+          ],
+          "source_reads": [],
+          "normal_PE_data_reads": []
+        },
+        {
+          "kind": "store_effective_address",
+          "query": {
+            "site": "0xf166"
+          },
+          "values": [
+            9223090561878065192
+          ],
+          "source_reads": [],
+          "normal_PE_data_reads": []
+        },
+        {
+          "kind": "store_effective_address",
+          "query": {
+            "site": "0xf16a"
+          },
+          "values": [
+            9223090561878065200
+          ],
+          "source_reads": [],
+          "normal_PE_data_reads": []
+        },
+        {
+          "kind": "store_effective_address",
+          "query": {
+            "site": "0xf278"
+          },
+          "values": [
+            9223090561878065192
+          ],
+          "source_reads": [],
+          "normal_PE_data_reads": []
+        },
+        {
+          "kind": "store_effective_address",
+          "query": {
+            "site": "0xf331"
+          },
+          "values": [
+            9223090561878065184
+          ],
+          "source_reads": [],
+          "normal_PE_data_reads": []
+        },
+        {
+          "kind": "store_effective_address",
+          "query": {
+            "site": "0xf34b"
+          },
+          "values": [
+            9223090561878065192
+          ],
+          "source_reads": [],
+          "normal_PE_data_reads": []
+        },
+        {
+          "kind": "store_effective_address",
+          "query": {
+            "site": "0xf354"
+          },
+          "values": [
+            9223090561878065200
+          ],
+          "source_reads": [],
+          "normal_PE_data_reads": []
+        },
+        {
+          "kind": "known_callee_output_address",
+          "query": {
+            "call": "0xf0b2"
+          },
+          "values": [
+            9223090561878065280
+          ],
+          "source_reads": [],
+          "normal_PE_data_reads": []
+        },
+        {
+          "kind": "UTF16_iterator_mutable_address",
+          "query": {
+            "call": "0xf0b2"
+          },
+          "values": [
+            9223090561878065184
+          ],
+          "source_reads": [],
+          "normal_PE_data_reads": []
+        },
+        {
+          "kind": "known_cache_output_address",
+          "query": {
+            "call": "0xf129"
+          },
+          "values": [
+            6443077352
+          ],
+          "source_reads": [],
+          "normal_PE_data_reads": []
+        },
+        {
+          "kind": "known_callee_output_address",
+          "query": {
+            "call": "0xf144"
+          },
+          "values": [
+            9223090561878065232
+          ],
+          "source_reads": [],
+          "normal_PE_data_reads": []
+        },
+        {
+          "kind": "known_callee_output_address",
+          "query": {
+            "call": "0xf178"
+          },
+          "values": [
+            9223090561878065256
+          ],
+          "source_reads": [],
+          "normal_PE_data_reads": []
+        },
+        {
+          "kind": "known_cache_output_address",
+          "query": {
+            "call": "0xf212"
+          },
+          "values": [
+            6443077736
+          ],
+          "source_reads": [],
+          "normal_PE_data_reads": []
+        },
+        {
+          "kind": "known_cache_output_address",
+          "query": {
+            "call": "0xf228"
+          },
+          "values": [
+            6443073912
+          ],
+          "source_reads": [],
+          "normal_PE_data_reads": []
+        },
+        {
+          "kind": "known_callee_output_address",
+          "query": {
+            "call": "0xf243"
+          },
+          "values": [
+            9223090561878065256
+          ],
+          "source_reads": [],
+          "normal_PE_data_reads": []
+        },
+        {
+          "kind": "known_callee_output_address",
+          "query": {
+            "call": "0xf2b9"
+          },
+          "values": [
+            9223090561878065184
+          ],
+          "source_reads": [],
+          "normal_PE_data_reads": []
+        }
+      ],
+      "native_sha256": "f19c82ddb3c51dcce1ad8241fdfa44ad446f903654f7f4b0567f69a6c09176bf"
+    },
+    {
+      "version": "19",
+      "entry": "0x1a61c",
+      "status": "PASS_CONSERVATIVE_SOURCE_LIFETIME_GATE",
+      "source_reads": 12,
+      "source_bytes": 56,
+      "all_native_states": 208,
+      "steps": 243,
+      "unknown_callees_retained_as_havoc": [
+        "0x1a72d"
+      ],
+      "issues": [],
+      "failed_queries": [],
+      "effects": {
+        "0x1a63c": {
+          "target": "0x6190",
+          "known_bounded": true,
+          "private_spans": []
+        },
+        "0x1a72d": {
+          "target": "0x7582",
+          "known_bounded": false,
+          "private_spans": []
+        },
+        "0x1a744": {
+          "target": "0x17f80",
+          "known_bounded": true,
+          "private_spans": []
+        },
+        "0x1a75d": {
+          "target": "0x17f80",
+          "known_bounded": true,
+          "private_spans": []
+        },
+        "0x1a78d": {
+          "target": "0x7e4d7",
+          "known_bounded": true,
+          "private_spans": []
+        },
+        "0x1a7a8": {
+          "target": "0x4473d",
+          "known_bounded": true,
+          "private_spans": [
+            [
+              48,
+              24
+            ]
+          ]
+        },
+        "0x1a7cd": {
+          "target": "0x249d",
+          "known_bounded": true,
+          "private_spans": []
+        },
+        "0x1a7f3": {
+          "target": "0x17f80",
+          "known_bounded": true,
+          "private_spans": []
+        },
+        "0x1a811": {
+          "target": "0x17f80",
+          "known_bounded": true,
+          "private_spans": []
+        },
+        "0x1a84b": {
+          "target": "0x292ed",
+          "known_bounded": true,
+          "private_spans": [
+            [
+              112,
+              24
+            ],
+            [
+              48,
+              26
+            ]
+          ]
+        },
+        "0x1a85c": {
+          "target": "call r14",
+          "known_bounded": true,
+          "private_spans": []
+        },
+        "0x1a8b2": {
+          "target": "0x7e4d7",
+          "known_bounded": true,
+          "private_spans": []
+        },
+        "0x1a8cd": {
+          "target": "0x4473d",
+          "known_bounded": true,
+          "private_spans": [
+            [
+              112,
+              24
+            ]
+          ]
+        },
+        "0x1a943": {
+          "target": "0x63b50",
+          "known_bounded": true,
+          "private_spans": [
+            [
+              48,
+              24
+            ]
+          ]
+        },
+        "0x1a965": {
+          "target": "call r14",
+          "known_bounded": true,
+          "private_spans": []
+        }
+      },
+      "local_native_effect_proofs": [
+        {
+          "kind": "Env19_API_typed_output",
+          "API": "GetEnvironmentVariableW",
+          "first": "RDXNULL/R8zero",
+          "second": "RDX=R15=successful63b50 owned allocation ptr inSP38, name owned UTF16; output cannot alias compilerframe",
+          "identity_joint_gate": "Literal/seed/cache/hash andpointer source checks below must PASS; no target override"
+        }
+      ],
+      "replays": [
+        {
+          "kind": "literal_descriptor",
+          "query": {
+            "call": "0x1a78d",
+            "offset": "0x30"
+          },
+          "values": [
+            6442981309
+          ],
+          "source_reads": [
+            [
+              108429,
+              48,
+              8
+            ]
+          ],
+          "normal_PE_data_reads": []
+        },
+        {
+          "kind": "literal_descriptor",
+          "query": {
+            "call": "0x1a78d",
+            "offset": "0x38"
+          },
+          "values": [
+            42
+          ],
+          "source_reads": [
+            [
+              108429,
+              56,
+              8
+            ]
+          ],
+          "normal_PE_data_reads": []
+        },
+        {
+          "kind": "literal_descriptor",
+          "query": {
+            "call": "0x1a78d",
+            "offset": "0x40"
+          },
+          "values": [
+            9223090561878065256
+          ],
+          "source_reads": [
+            [
+              108429,
+              64,
+              8
+            ]
+          ],
+          "normal_PE_data_reads": []
+        },
+        {
+          "kind": "literal_seed_pointer",
+          "query": {
+            "call": "0x1a78d"
+          },
+          "values": [
+            9223090561878065256
+          ],
+          "source_reads": [
+            [
+              108429,
+              64,
+              8
+            ]
+          ],
+          "normal_PE_data_reads": []
+        },
+        {
+          "kind": "literal_seed",
+          "query": {
+            "call": "0x1a78d",
+            "offset": "0x68"
+          },
+          "values": [
+            16960234142445075290
+          ],
+          "source_reads": [
+            [
+              108429,
+              104,
+              8
+            ]
+          ],
+          "normal_PE_data_reads": []
+        },
+        {
+          "kind": "literal_descriptor",
+          "query": {
+            "call": "0x1a8b2",
+            "offset": "0x30"
+          },
+          "values": [
+            6442990142
+          ],
+          "source_reads": [
+            [
+              108722,
+              48,
+              8
+            ]
+          ],
+          "normal_PE_data_reads": []
+        },
+        {
+          "kind": "literal_descriptor",
+          "query": {
+            "call": "0x1a8b2",
+            "offset": "0x38"
+          },
+          "values": [
+            24
+          ],
+          "source_reads": [
+            [
+              108722,
+              56,
+              8
+            ]
+          ],
+          "normal_PE_data_reads": []
+        },
+        {
+          "kind": "literal_descriptor",
+          "query": {
+            "call": "0x1a8b2",
+            "offset": "0x40"
+          },
+          "values": [
+            9223090561878065256
+          ],
+          "source_reads": [
+            [
+              108138,
+              96,
+              8
+            ],
+            [
+              108722,
+              64,
+              8
+            ]
+          ],
+          "normal_PE_data_reads": []
+        },
+        {
+          "kind": "literal_seed_pointer",
+          "query": {
+            "call": "0x1a8b2"
+          },
+          "values": [
+            9223090561878065256
+          ],
+          "source_reads": [
+            [
+              108138,
+              96,
+              8
+            ],
+            [
+              108722,
+              64,
+              8
+            ]
+          ],
+          "normal_PE_data_reads": []
+        },
+        {
+          "kind": "literal_seed",
+          "query": {
+            "call": "0x1a8b2",
+            "offset": "0x68"
+          },
+          "values": [
+            17803968805749018770
+          ],
+          "source_reads": [
+            [
+              108138,
+              96,
+              8
+            ],
+            [
+              108722,
+              104,
+              8
+            ]
+          ],
+          "normal_PE_data_reads": []
+        },
+        {
+          "kind": "resolver_hash",
+          "query": {
+            "resolver": "0x1a7cd",
+            "register": "rcx"
+          },
+          "values": [
+            1470871259
+          ],
+          "source_reads": [],
+          "normal_PE_data_reads": []
+        },
+        {
+          "kind": "resolver_hash",
+          "query": {
+            "resolver": "0x1a7cd",
+            "register": "r8"
+          },
+          "values": [
+            1297791881
+          ],
+          "source_reads": [],
+          "normal_PE_data_reads": []
+        },
+        {
+          "kind": "store_effective_address",
+          "query": {
+            "site": "0x1a685"
+          },
+          "values": [
+            9223090561878065256
+          ],
+          "source_reads": [],
+          "normal_PE_data_reads": []
+        },
+        {
+          "kind": "store_effective_address",
+          "query": {
+            "site": "0x1a694"
+          },
+          "values": [
+            9223090561878065200
+          ],
+          "source_reads": [],
+          "normal_PE_data_reads": []
+        },
+        {
+          "kind": "store_effective_address",
+          "query": {
+            "site": "0x1a697"
+          },
+          "values": [
+            9223090561878065208
+          ],
+          "source_reads": [],
+          "normal_PE_data_reads": []
+        },
+        {
+          "kind": "store_effective_address",
+          "query": {
+            "site": "0x1a6b1"
+          },
+          "values": [
+            9223090561878065216
+          ],
+          "source_reads": [
+            [
+              108138,
+              96,
+              8
+            ]
+          ],
+          "normal_PE_data_reads": []
+        },
+        {
+          "kind": "store_effective_address",
+          "query": {
+            "site": "0x1a716"
+          },
+          "values": [
+            9223090561878065208
+          ],
+          "source_reads": [
+            [
+              108909,
+              80,
+              8
+            ]
+          ],
+          "normal_PE_data_reads": []
+        },
+        {
+          "kind": "store_effective_address",
+          "query": {
+            "site": "0x1a720"
+          },
+          "values": [
+            9223090561878065216
+          ],
+          "source_reads": [
+            [
+              108909,
+              80,
+              8
+            ]
+          ],
+          "normal_PE_data_reads": []
+        },
+        {
+          "kind": "store_effective_address",
+          "query": {
+            "site": "0x1a81e"
+          },
+          "values": [
+            9223090561878065200
+          ],
+          "source_reads": [],
+          "normal_PE_data_reads": []
+        },
+        {
+          "kind": "store_effective_address",
+          "query": {
+            "site": "0x1a821"
+          },
+          "values": [
+            9223090561878065208
+          ],
+          "source_reads": [],
+          "normal_PE_data_reads": []
+        },
+        {
+          "kind": "store_effective_address",
+          "query": {
+            "site": "0x1a828"
+          },
+          "values": [
+            9223090561878065216
+          ],
+          "source_reads": [],
+          "normal_PE_data_reads": []
+        },
+        {
+          "kind": "store_effective_address",
+          "query": {
+            "site": "0x1a837"
+          },
+          "values": [
+            9223090561878065224
+          ],
+          "source_reads": [],
+          "normal_PE_data_reads": []
+        },
+        {
+          "kind": "store_effective_address",
+          "query": {
+            "site": "0x1a83e"
+          },
+          "values": [
+            9223090561878065226
+          ],
+          "source_reads": [],
+          "normal_PE_data_reads": []
+        },
+        {
+          "kind": "store_effective_address",
+          "query": {
+            "site": "0x1a8f0"
+          },
+          "values": [
+            9223090561878065200
+          ],
+          "source_reads": [],
+          "normal_PE_data_reads": []
+        },
+        {
+          "kind": "store_effective_address",
+          "query": {
+            "site": "0x1a8f3"
+          },
+          "values": [
+            9223090561878065208
+          ],
+          "source_reads": [],
+          "normal_PE_data_reads": []
+        },
+        {
+          "kind": "store_effective_address",
+          "query": {
+            "site": "0x1a8fb"
+          },
+          "values": [
+            9223090561878065216
+          ],
+          "source_reads": [],
+          "normal_PE_data_reads": []
+        },
+        {
+          "kind": "Env19_null_query_buffer",
+          "query": {
+            "call": "0x1a85c"
+          },
+          "values": [
+            0
+          ],
+          "source_reads": [],
+          "normal_PE_data_reads": []
+        },
+        {
+          "kind": "Env19_query_zero_size",
+          "query": {
+            "call": "0x1a85c"
+          },
+          "values": [
+            0
+          ],
+          "source_reads": [],
+          "normal_PE_data_reads": []
+        },
+        {
+          "kind": "known_cache_output_address",
+          "query": {
+            "call": "0x1a78d"
+          },
+          "values": [
+            6443080824
+          ],
+          "source_reads": [],
+          "normal_PE_data_reads": []
+        },
+        {
+          "kind": "known_callee_output_address",
+          "query": {
+            "call": "0x1a7a8"
+          },
+          "values": [
+            9223090561878065200
+          ],
+          "source_reads": [],
+          "normal_PE_data_reads": []
+        },
+        {
+          "kind": "known_callee_output_address",
+          "query": {
+            "call": "0x1a84b"
+          },
+          "values": [
+            9223090561878065264
+          ],
+          "source_reads": [],
+          "normal_PE_data_reads": []
+        },
+        {
+          "kind": "UTF16_iterator_mutable_address",
+          "query": {
+            "call": "0x1a84b"
+          },
+          "values": [
+            9223090561878065200
+          ],
+          "source_reads": [],
+          "normal_PE_data_reads": []
+        },
+        {
+          "kind": "known_cache_output_address",
+          "query": {
+            "call": "0x1a8b2"
+          },
+          "values": [
+            6443078656
+          ],
+          "source_reads": [],
+          "normal_PE_data_reads": []
+        },
+        {
+          "kind": "known_callee_output_address",
+          "query": {
+            "call": "0x1a8cd"
+          },
+          "values": [
+            9223090561878065264
+          ],
+          "source_reads": [],
+          "normal_PE_data_reads": []
+        },
+        {
+          "kind": "known_callee_output_address",
+          "query": {
+            "call": "0x1a943"
+          },
+          "values": [
+            9223090561878065200
+          ],
+          "source_reads": [],
+          "normal_PE_data_reads": []
+        }
+      ],
+      "native_sha256": "25752c0e775648a96a4337336d42db9c581beca83bdc3882948c15b701d004c1"
+    },
+    {
+      "version": "19",
+      "entry": "0x23e6d",
+      "status": "PASS_CONSERVATIVE_SOURCE_LIFETIME_GATE",
+      "source_reads": 10,
+      "source_bytes": 40,
+      "all_native_states": 145,
+      "steps": 145,
+      "unknown_callees_retained_as_havoc": [
+        "0x2405d"
+      ],
+      "issues": [],
+      "failed_queries": [],
+      "effects": {
+        "0x23e89": {
+          "target": "0x6190",
+          "known_bounded": true,
+          "private_spans": []
+        },
+        "0x23ee5": {
+          "target": "0x292ed",
+          "known_bounded": true,
+          "private_spans": [
+            [
+              112,
+              24
+            ],
+            [
+              48,
+              26
+            ]
+          ]
+        },
+        "0x23f4b": {
+          "target": "0x7e4d7",
+          "known_bounded": true,
+          "private_spans": []
+        },
+        "0x23f66": {
+          "target": "0x4473d",
+          "known_bounded": true,
+          "private_spans": [
+            [
+              88,
+              24
+            ]
+          ]
+        },
+        "0x23fce": {
+          "target": "0x7e4d7",
+          "known_bounded": true,
+          "private_spans": []
+        },
+        "0x23fe9": {
+          "target": "0x4473d",
+          "known_bounded": true,
+          "private_spans": [
+            [
+              48,
+              24
+            ]
+          ]
+        },
+        "0x24002": {
+          "target": "0x249d",
+          "known_bounded": true,
+          "private_spans": []
+        },
+        "0x2401d": {
+          "target": "0x17f80",
+          "known_bounded": true,
+          "private_spans": []
+        },
+        "0x24038": {
+          "target": "0x17f80",
+          "known_bounded": true,
+          "private_spans": []
+        },
+        "0x2405d": {
+          "target": "call r14",
+          "known_bounded": false,
+          "private_spans": []
+        },
+        "0x240bf": {
+          "target": "0x17f80",
+          "known_bounded": true,
+          "private_spans": []
+        }
+      },
+      "local_native_effect_proofs": [],
+      "replays": [
+        {
+          "kind": "literal_descriptor",
+          "query": {
+            "call": "0x23f4b",
+            "offset": "0x30"
+          },
+          "values": [
+            6443002411
+          ],
+          "source_reads": [
+            [
+              147275,
+              48,
+              8
+            ]
+          ],
+          "normal_PE_data_reads": []
+        },
+        {
+          "kind": "literal_descriptor",
+          "query": {
+            "call": "0x23f4b",
+            "offset": "0x38"
+          },
+          "values": [
+            24
+          ],
+          "source_reads": [
+            [
+              147275,
+              56,
+              8
+            ]
+          ],
+          "normal_PE_data_reads": []
+        },
+        {
+          "kind": "literal_descriptor",
+          "query": {
+            "call": "0x23f4b",
+            "offset": "0x40"
+          },
+          "values": [
+            9223090561878065232
+          ],
+          "source_reads": [
+            [
+              147275,
+              64,
+              8
+            ]
+          ],
+          "normal_PE_data_reads": []
+        },
+        {
+          "kind": "literal_seed_pointer",
+          "query": {
+            "call": "0x23f4b"
+          },
+          "values": [
+            9223090561878065232
+          ],
+          "source_reads": [
+            [
+              147275,
+              64,
+              8
+            ]
+          ],
+          "normal_PE_data_reads": []
+        },
+        {
+          "kind": "literal_seed",
+          "query": {
+            "call": "0x23f4b",
+            "offset": "0x50"
+          },
+          "values": [
+            9895882973114225082
+          ],
+          "source_reads": [
+            [
+              147275,
+              80,
+              8
+            ]
+          ],
+          "normal_PE_data_reads": []
+        },
+        {
+          "kind": "literal_descriptor",
+          "query": {
+            "call": "0x23fce",
+            "offset": "0x30"
+          },
+          "values": [
+            6443004561
+          ],
+          "source_reads": [
+            [
+              147406,
+              48,
+              8
+            ]
+          ],
+          "normal_PE_data_reads": []
+        },
+        {
+          "kind": "literal_descriptor",
+          "query": {
+            "call": "0x23fce",
+            "offset": "0x38"
+          },
+          "values": [
+            26
+          ],
+          "source_reads": [
+            [
+              147406,
+              56,
+              8
+            ]
+          ],
+          "normal_PE_data_reads": []
+        },
+        {
+          "kind": "literal_descriptor",
+          "query": {
+            "call": "0x23fce",
+            "offset": "0x40"
+          },
+          "values": [
+            9223090561878065232
+          ],
+          "source_reads": [
+            [
+              147406,
+              64,
+              8
+            ]
+          ],
+          "normal_PE_data_reads": []
+        },
+        {
+          "kind": "literal_seed_pointer",
+          "query": {
+            "call": "0x23fce"
+          },
+          "values": [
+            9223090561878065232
+          ],
+          "source_reads": [
+            [
+              147406,
+              64,
+              8
+            ]
+          ],
+          "normal_PE_data_reads": []
+        },
+        {
+          "kind": "literal_seed",
+          "query": {
+            "call": "0x23fce",
+            "offset": "0x50"
+          },
+          "values": [
+            17770548173597908715
+          ],
+          "source_reads": [
+            [
+              147406,
+              80,
+              8
+            ]
+          ],
+          "normal_PE_data_reads": []
+        },
+        {
+          "kind": "resolver_hash",
+          "query": {
+            "resolver": "0x24002",
+            "register": "rcx"
+          },
+          "values": [
+            3808726035
+          ],
+          "source_reads": [],
+          "normal_PE_data_reads": []
+        },
+        {
+          "kind": "resolver_hash",
+          "query": {
+            "resolver": "0x24002",
+            "register": "r8"
+          },
+          "values": [
+            1209508786
+          ],
+          "source_reads": [],
+          "normal_PE_data_reads": []
+        },
+        {
+          "kind": "store_effective_address",
+          "query": {
+            "site": "0x23eb0"
+          },
+          "values": [
+            9223090561878065200
+          ],
+          "source_reads": [],
+          "normal_PE_data_reads": []
+        },
+        {
+          "kind": "store_effective_address",
+          "query": {
+            "site": "0x23eb3"
+          },
+          "values": [
+            9223090561878065208
+          ],
+          "source_reads": [],
+          "normal_PE_data_reads": []
+        },
+        {
+          "kind": "store_effective_address",
+          "query": {
+            "site": "0x23ec3"
+          },
+          "values": [
+            9223090561878065216
+          ],
+          "source_reads": [],
+          "normal_PE_data_reads": []
+        },
+        {
+          "kind": "store_effective_address",
+          "query": {
+            "site": "0x23ed2"
+          },
+          "values": [
+            9223090561878065224
+          ],
+          "source_reads": [],
+          "normal_PE_data_reads": []
+        },
+        {
+          "kind": "store_effective_address",
+          "query": {
+            "site": "0x23ed9"
+          },
+          "values": [
+            9223090561878065226
+          ],
+          "source_reads": [],
+          "normal_PE_data_reads": []
+        },
+        {
+          "kind": "store_effective_address",
+          "query": {
+            "site": "0x23efc"
+          },
+          "values": [
+            9223090561878065232
+          ],
+          "source_reads": [],
+          "normal_PE_data_reads": []
+        },
+        {
+          "kind": "store_effective_address",
+          "query": {
+            "site": "0x23f06"
+          },
+          "values": [
+            9223090561878065200
+          ],
+          "source_reads": [],
+          "normal_PE_data_reads": []
+        },
+        {
+          "kind": "store_effective_address",
+          "query": {
+            "site": "0x23f09"
+          },
+          "values": [
+            9223090561878065208
+          ],
+          "source_reads": [],
+          "normal_PE_data_reads": []
+        },
+        {
+          "kind": "store_effective_address",
+          "query": {
+            "site": "0x23f11"
+          },
+          "values": [
+            9223090561878065216
+          ],
+          "source_reads": [],
+          "normal_PE_data_reads": []
+        },
+        {
+          "kind": "store_effective_address",
+          "query": {
+            "site": "0x23f93"
+          },
+          "values": [
+            9223090561878065208
+          ],
+          "source_reads": [],
+          "normal_PE_data_reads": []
+        },
+        {
+          "kind": "store_effective_address",
+          "query": {
+            "site": "0x2403d"
+          },
+          "values": [
+            9223090561878065200
+          ],
+          "source_reads": [],
+          "normal_PE_data_reads": []
+        },
+        {
+          "kind": "known_callee_output_address",
+          "query": {
+            "call": "0x23ee5"
+          },
+          "values": [
+            9223090561878065264
+          ],
+          "source_reads": [],
+          "normal_PE_data_reads": []
+        },
+        {
+          "kind": "UTF16_iterator_mutable_address",
+          "query": {
+            "call": "0x23ee5"
+          },
+          "values": [
+            9223090561878065200
+          ],
+          "source_reads": [],
+          "normal_PE_data_reads": []
+        },
+        {
+          "kind": "known_cache_output_address",
+          "query": {
+            "call": "0x23f4b"
+          },
+          "values": [
+            6443070568
+          ],
+          "source_reads": [],
+          "normal_PE_data_reads": []
+        },
+        {
+          "kind": "known_callee_output_address",
+          "query": {
+            "call": "0x23f66"
+          },
+          "values": [
+            9223090561878065240
+          ],
+          "source_reads": [],
+          "normal_PE_data_reads": []
+        },
+        {
+          "kind": "known_cache_output_address",
+          "query": {
+            "call": "0x23fce"
+          },
+          "values": [
+            6443066320
+          ],
+          "source_reads": [],
+          "normal_PE_data_reads": []
+        },
+        {
+          "kind": "known_callee_output_address",
+          "query": {
+            "call": "0x23fe9"
+          },
+          "values": [
+            9223090561878065200
+          ],
+          "source_reads": [],
+          "normal_PE_data_reads": []
+        }
+      ],
+      "native_sha256": "840c04f0b21b96112e9f3cdf50cd68426ee714addbd2212d3a5c409d19326757"
+    },
+    {
+      "version": "19",
+      "entry": "0x2acab",
+      "status": "PASS_CONSERVATIVE_SOURCE_LIFETIME_GATE",
+      "source_reads": 10,
+      "source_bytes": 40,
+      "all_native_states": 200,
+      "steps": 304,
+      "unknown_callees_retained_as_havoc": [
+        "0x2ae86",
+        "0x2af66"
+      ],
+      "issues": [],
+      "failed_queries": [],
+      "effects": {
+        "0x2ad57": {
+          "target": "0x7e4d7",
+          "known_bounded": true,
+          "private_spans": []
+        },
+        "0x2ad75": {
+          "target": "0x4473d",
+          "known_bounded": true,
+          "private_spans": [
+            [
+              160,
+              24
+            ]
+          ]
+        },
+        "0x2ad8e": {
+          "target": "0x249d",
+          "known_bounded": true,
+          "private_spans": []
+        },
+        "0x2ada9": {
+          "target": "0x17f80",
+          "known_bounded": true,
+          "private_spans": []
+        },
+        "0x2adc7": {
+          "target": "0x17f80",
+          "known_bounded": true,
+          "private_spans": []
+        },
+        "0x2ae86": {
+          "target": "0x2c384",
+          "known_bounded": false,
+          "private_spans": []
+        },
+        "0x2aeaf": {
+          "target": "0x17f80",
+          "known_bounded": true,
+          "private_spans": []
+        },
+        "0x2aeef": {
+          "target": "0x17f80",
+          "known_bounded": true,
+          "private_spans": []
+        },
+        "0x2af66": {
+          "target": "call r12",
+          "known_bounded": false,
+          "private_spans": []
+        },
+        "0x2af94": {
+          "target": "0x69abe",
+          "known_bounded": true,
+          "private_spans": []
+        },
+        "0x2afc9": {
+          "target": "0x7e4d7",
+          "known_bounded": true,
+          "private_spans": []
+        },
+        "0x2afe4": {
+          "target": "0x4473d",
+          "known_bounded": true,
+          "private_spans": [
+            [
+              120,
+              24
+            ]
+          ]
+        }
+      },
+      "local_native_effect_proofs": [],
+      "replays": [
+        {
+          "kind": "literal_descriptor",
+          "query": {
+            "call": "0x2ad57",
+            "offset": "0xa0"
+          },
+          "values": [
+            6443004389
+          ],
+          "source_reads": [
+            [
+              175447,
+              160,
+              8
+            ]
+          ],
+          "normal_PE_data_reads": []
+        },
+        {
+          "kind": "literal_descriptor",
+          "query": {
+            "call": "0x2ad57",
+            "offset": "0xa8"
+          },
+          "values": [
+            28
+          ],
+          "source_reads": [
+            [
+              175447,
+              168,
+              8
+            ]
+          ],
+          "normal_PE_data_reads": []
+        },
+        {
+          "kind": "literal_descriptor",
+          "query": {
+            "call": "0x2ad57",
+            "offset": "0xb0"
+          },
+          "values": [
+            9223090561878065232
+          ],
+          "source_reads": [
+            [
+              175447,
+              176,
+              8
+            ]
+          ],
+          "normal_PE_data_reads": []
+        },
+        {
+          "kind": "literal_seed_pointer",
+          "query": {
+            "call": "0x2ad57"
+          },
+          "values": [
+            9223090561878065232
+          ],
+          "source_reads": [
+            [
+              175447,
+              176,
+              8
+            ]
+          ],
+          "normal_PE_data_reads": []
+        },
+        {
+          "kind": "literal_seed",
+          "query": {
+            "call": "0x2ad57",
+            "offset": "0x50"
+          },
+          "values": [
+            2736610026453459303
+          ],
+          "source_reads": [
+            [
+              175447,
+              80,
+              8
+            ]
+          ],
+          "normal_PE_data_reads": []
+        },
+        {
+          "kind": "literal_descriptor",
+          "query": {
+            "call": "0x2afc9",
+            "offset": "0xa0"
+          },
+          "values": [
+            6443000691
+          ],
+          "source_reads": [
+            [
+              176073,
+              160,
+              8
+            ]
+          ],
+          "normal_PE_data_reads": []
+        },
+        {
+          "kind": "literal_descriptor",
+          "query": {
+            "call": "0x2afc9",
+            "offset": "0xa8"
+          },
+          "values": [
+            24
+          ],
+          "source_reads": [
+            [
+              176073,
+              168,
+              8
+            ]
+          ],
+          "normal_PE_data_reads": []
+        },
+        {
+          "kind": "literal_descriptor",
+          "query": {
+            "call": "0x2afc9",
+            "offset": "0xb0"
+          },
+          "values": [
+            9223090561878065232
+          ],
+          "source_reads": [
+            [
+              176073,
+              176,
+              8
+            ]
+          ],
+          "normal_PE_data_reads": []
+        },
+        {
+          "kind": "literal_seed_pointer",
+          "query": {
+            "call": "0x2afc9"
+          },
+          "values": [
+            9223090561878065232
+          ],
+          "source_reads": [
+            [
+              176073,
+              176,
+              8
+            ]
+          ],
+          "normal_PE_data_reads": []
+        },
+        {
+          "kind": "literal_seed",
+          "query": {
+            "call": "0x2afc9",
+            "offset": "0x50"
+          },
+          "values": [
+            6663390102873134940
+          ],
+          "source_reads": [
+            [
+              176073,
+              80,
+              8
+            ]
+          ],
+          "normal_PE_data_reads": []
+        },
+        {
+          "kind": "resolver_hash",
+          "query": {
+            "resolver": "0x2ad8e",
+            "register": "rcx"
+          },
+          "values": [
+            1470871259
+          ],
+          "source_reads": [],
+          "normal_PE_data_reads": []
+        },
+        {
+          "kind": "resolver_hash",
+          "query": {
+            "resolver": "0x2ad8e",
+            "register": "r8"
+          },
+          "values": [
+            3245955155
+          ],
+          "source_reads": [],
+          "normal_PE_data_reads": []
+        },
+        {
+          "kind": "store_effective_address",
+          "query": {
+            "site": "0x2acf5"
+          },
+          "values": [
+            9223090561878065232
+          ],
+          "source_reads": [],
+          "normal_PE_data_reads": []
+        },
+        {
+          "kind": "store_effective_address",
+          "query": {
+            "site": "0x2ad12"
+          },
+          "values": [
+            9223090561878065320
+          ],
+          "source_reads": [],
+          "normal_PE_data_reads": []
+        },
+        {
+          "kind": "store_effective_address",
+          "query": {
+            "site": "0x2add2"
+          },
+          "values": [
+            9223090561878065312
+          ],
+          "source_reads": [],
+          "normal_PE_data_reads": []
+        },
+        {
+          "kind": "store_effective_address",
+          "query": {
+            "site": "0x2ae47"
+          },
+          "values": [
+            9223090561878065416
+          ],
+          "source_reads": [],
+          "normal_PE_data_reads": []
+        },
+        {
+          "kind": "store_effective_address",
+          "query": {
+            "site": "0x2ae4a"
+          },
+          "values": [
+            9223090561878065424
+          ],
+          "source_reads": [],
+          "normal_PE_data_reads": []
+        },
+        {
+          "kind": "store_effective_address",
+          "query": {
+            "site": "0x2ae61"
+          },
+          "values": [
+            9223090561878065296
+          ],
+          "source_reads": [],
+          "normal_PE_data_reads": []
+        },
+        {
+          "kind": "store_effective_address",
+          "query": {
+            "site": "0x2ae6c"
+          },
+          "values": [
+            9223090561878065304
+          ],
+          "source_reads": [],
+          "normal_PE_data_reads": []
+        },
+        {
+          "kind": "store_effective_address",
+          "query": {
+            "site": "0x2ae8b"
+          },
+          "values": [
+            9223090561878065296
+          ],
+          "source_reads": [],
+          "normal_PE_data_reads": []
+        },
+        {
+          "kind": "store_effective_address",
+          "query": {
+            "site": "0x2b00d"
+          },
+          "values": [
+            9223090561878065312
+          ],
+          "source_reads": [],
+          "normal_PE_data_reads": []
+        },
+        {
+          "kind": "store_effective_address",
+          "query": {
+            "site": "0x2b018"
+          },
+          "values": [
+            9223090561878065320
+          ],
+          "source_reads": [],
+          "normal_PE_data_reads": []
+        },
+        {
+          "kind": "store_effective_address",
+          "query": {
+            "site": "0x2b01c"
+          },
+          "values": [
+            9223090561878065328
+          ],
+          "source_reads": [],
+          "normal_PE_data_reads": []
+        },
+        {
+          "kind": "known_cache_output_address",
+          "query": {
+            "call": "0x2ad57"
+          },
+          "values": [
+            6443079568
+          ],
+          "source_reads": [],
+          "normal_PE_data_reads": []
+        },
+        {
+          "kind": "known_callee_output_address",
+          "query": {
+            "call": "0x2ad75"
+          },
+          "values": [
+            9223090561878065312
+          ],
+          "source_reads": [],
+          "normal_PE_data_reads": []
+        },
+        {
+          "kind": "known_cache_output_address",
+          "query": {
+            "call": "0x2afc9"
+          },
+          "values": [
+            6443073584
+          ],
+          "source_reads": [],
+          "normal_PE_data_reads": []
+        },
+        {
+          "kind": "known_callee_output_address",
+          "query": {
+            "call": "0x2afe4"
+          },
+          "values": [
+            9223090561878065272
+          ],
+          "source_reads": [],
+          "normal_PE_data_reads": []
+        }
+      ],
+      "native_sha256": "2a42cb261fa6d73aad71fff1a5084727127f2d37b451f930cff92bede80a0cbc"
+    }
+  ],
+  "native_execution": false
+}

@@ -55,7 +55,7 @@
     "note": "Correct actual native reaching LEAs2362c/2688b; any olderSP60 parent application note in reused72B-helper certificate is superseded for this caller. Does not overlapSP90/SPa0."
   },
   "analysis_c": {
-    "path": "C:\\Users\\leo\\Documents\\Codex\\2026-10-26\\ni\\work\\alpme_analysis\\semantic_closure_20261027\\round4_network_core\\prep17_227e8_gate\\17_payload.dll.bin_0x227e8_normal_context.c",
+    "path": "<ANALYSIS_WORKSPACE>\\work\\alpme_analysis\\semantic_closure_20261027\\round4_network_core\\prep17_227e8_gate\\17_payload.dll.bin_0x227e8_normal_context.c",
     "sha256": "d53d2b4466ed495c1f585662e4b66dde9a4c97b1eeadc90aaa3b20c2b28bce41",
     "bytes": 183844,
     "lines": 4606,
@@ -393,12 +393,12 @@
     "quality_note": "Analysis C is not buildable recovered source. Ghidra optimization may remove single-target switches or unreachable blocks. The complete original-byte CFG/274 target sets is the control-flow authority; C warning count is not a closure metric."
   },
   "export_log": {
-    "path": "C:\\Users\\leo\\Documents\\Codex\\2026-10-26\\ni\\work\\alpme_analysis\\semantic_closure_20261027\\round4_network_core\\prep17_227e8_gate\\export_state\\console.log",
+    "path": "<ANALYSIS_WORKSPACE>\\work\\alpme_analysis\\semantic_closure_20261027\\round4_network_core\\prep17_227e8_gate\\export_state\\console.log",
     "sha256": "b0f01409106fabf1fcee15b2478558400ce6be7844faaa3c9ff9833193c29d28",
     "unable_to_read_ram_zero_lines": 121,
     "note": "Decompiler callback diagnostics are retained in console.log; distinct from source/native byte integrity and the312 C WARNING comments."
   },
-  "project": "C:\\Users\\leo\\Documents\\Codex\\2026-10-26\\ni\\work\\alpme_analysis\\semantic_closure_20261027\\round4_network_core\\871d_browser_read_span\\project\\AlpmeFullStatic.gpr",
+  "project": "<ANALYSIS_WORKSPACE>\\work\\alpme_analysis\\semantic_closure_20261027\\round4_network_core\\871d_browser_read_span\\project\\AlpmeFullStatic.gpr",
   "project_is_independent_analysis_copy": true,
   "metadata_only_recovery": true,
   "source_bytes_unchanged": true,

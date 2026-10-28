@@ -4,7 +4,7 @@
   "inputs": [
     {
       "analysis_name": "17_loader.exe.bin",
-      "source": "C:\\Users\\leo\\Documents\\Codex\\2026-10-26\\ni\\work\\alpme_analysis\\17si.exe.bin",
+      "source": "<ANALYSIS_WORKSPACE>\\work\\alpme_analysis\\17si.exe.bin",
       "source_sha256": "2e1363e7220befe88eeb2b9b9490640f9834be0dd789c01471a69de8f69e6dfa",
       "analysis_sha256": "2e1363e7220befe88eeb2b9b9490640f9834be0dd789c01471a69de8f69e6dfa",
       "source_size": 1136640,
@@ -2706,7 +2706,7 @@
     },
     {
       "analysis_name": "19_loader.exe.bin",
-      "source": "C:\\Users\\leo\\Documents\\Codex\\2026-10-26\\ni\\work\\alpme_analysis\\19si.exe.bin",
+      "source": "<ANALYSIS_WORKSPACE>\\work\\alpme_analysis\\19si.exe.bin",
       "source_sha256": "5afbebb7ed01515ed80ca9c9e7e4c7b01c7652e220b2c2a19452356688e79244",
       "analysis_sha256": "5afbebb7ed01515ed80ca9c9e7e4c7b01c7652e220b2c2a19452356688e79244",
       "source_size": 1199616,
@@ -5393,7 +5393,7 @@
     },
     {
       "analysis_name": "17_payload.dll.bin",
-      "source": "C:\\Users\\leo\\Documents\\Codex\\2026-10-26\\ni\\work\\alpme_analysis\\dynamic\\17_plugin_payload.dll.bin",
+      "source": "<ANALYSIS_WORKSPACE>\\work\\alpme_analysis\\dynamic\\17_plugin_payload.dll.bin",
       "source_sha256": "24f7eed14b69c561bd2dde6aa61759cabc8588293e9a0099dde8e381f96f228a",
       "analysis_sha256": "1dfb1ef139176bdbbf88858d47f22e042eadd4658fff7603b50f1b87bfd7675c",
       "source_size": 648192,
@@ -9734,7 +9734,7 @@
     },
     {
       "analysis_name": "19_payload.dll.bin",
-      "source": "C:\\Users\\leo\\Documents\\Codex\\2026-10-26\\ni\\work\\alpme_analysis\\explorer_payload_reconstructed.dll.bin",
+      "source": "<ANALYSIS_WORKSPACE>\\work\\alpme_analysis\\explorer_payload_reconstructed.dll.bin",
       "source_sha256": "0853b9194401f266f2975e5a17dd9133744b06388980476770e5b6ea508f5062",
       "analysis_sha256": "62a0a9eda6d8a7f75619a0edde2f57649c174e19ff0d082ba347f4ec40d3faaf",
       "source_size": 643584,

@@ -1,0 +1,486 @@
+{
+  "status": "PASS_CONDITIONAL_NORMAL_FIRST_SELECTOR_AND_UNKNOWN_FALLTHROUGH",
+  "versions": [
+    {
+      "version": "17",
+      "native_source_sha256": "24f7eed14b69c561bd2dde6aa61759cabc8588293e9a0099dde8e381f96f228a",
+      "complete_parent_CFG": "work\\alpme_analysis\\semantic_closure_20261027\\round3_file_dispatch\\phase_context\\normal_collector_export_plan.json",
+      "selector_count_gate": {
+        "read": {
+          "rva": "0x3c914",
+          "asm": "mov rax, qword ptr [r11 + 0x68]",
+          "bytes": "498b4368"
+        },
+        "compare": {
+          "rva": "0x3c946",
+          "asm": "cmp rax, rbx",
+          "bytes": "4839d8"
+        },
+        "TLS21f": 57,
+        "derived_zero": 0,
+        "count_zero_target": "0x41006",
+        "nonempty_target": "0x40c2c",
+        "first_string_pointer": {
+          "rva": "0x40c3b",
+          "asm": "mov rcx, qword ptr [rax]",
+          "bytes": "488b08"
+        },
+        "first_string_length": {
+          "rva": "0x40c46",
+          "asm": "mov rsi, qword ptr [rax + 0x10]",
+          "bytes": "488b7010"
+        },
+        "selector_vector_data_offset": "0x58",
+        "original_dispatch_cells": [
+          {
+            "RVA": "0x8a56c",
+            "relative_bytes": "94fbffff",
+            "target": "0x41006"
+          },
+          {
+            "RVA": "0x8a510",
+            "relative_bytes": "baf7ffff",
+            "target": "0x40c2c"
+          }
+        ]
+      },
+      "literal_decodes": [
+        {
+          "source_RVA": "0x8425f",
+          "encoded_length": 11,
+          "original_seed": "0xdd7f2edb5facc0b5",
+          "encoded_sha256": "27a8b513bde01a0460738ca6c4b30c956608a646e3650fb5fe3b39e040e16b9b",
+          "decoded": "roblox"
+        },
+        {
+          "source_RVA": "0x857bb",
+          "encoded_length": 12,
+          "original_seed": "0xce27c3e37e88d7f9",
+          "encoded_sha256": "118321a118814242fc572b1d4b94a052930911d901b9da22215f7ceb783efe92",
+          "decoded": "discord"
+        },
+        {
+          "source_RVA": "0x8531f",
+          "encoded_length": 10,
+          "original_seed": "0x1b2c4394bed08be3",
+          "encoded_sha256": "dba16758c7a913b02a07cfe4051d8bd06186e516604a591e1da178425aa3cb80",
+          "decoded": "steam"
+        }
+      ],
+      "equality_zero_arithmetic": {
+        "R12_low32_xor": 0,
+        "native_constant_capture": "TLS2d0 ->3c1a1 R12 ->3ec96 SP58 -> nativeR12 reloads",
+        "private_source": "0x1fe5848f13b751f9"
+      },
+      "case_premise": "Nonempty selector vector; first validUTF8 string differs byte-for-byte from roblox,discord,steam. Includes grass. Length-gate true/false outcomes both retained.",
+      "mismatch_edges": [
+        {
+          "site": "0x3cd90",
+          "selected_original_target": "0x3d6c5"
+        },
+        {
+          "site": "0x4035e",
+          "selected_original_target": "0x3e784"
+        },
+        {
+          "site": "0x4369d",
+          "selected_original_target": "0x426c8"
+        }
+      ],
+      "case_native_instruction_starts": 154,
+      "all_case_calls": [
+        {
+          "site": "0x3cd68",
+          "target": "0x7e530"
+        },
+        {
+          "site": "0x3d26d",
+          "target": "0x37c6e"
+        },
+        {
+          "site": "0x3d6dc",
+          "target": "0x4a6b1"
+        },
+        {
+          "site": "0x3e79b",
+          "target": "0x4a6b1"
+        },
+        {
+          "site": "0x40334",
+          "target": "0x7e530"
+        },
+        {
+          "site": "0x426e7",
+          "target": "0x4a6b1"
+        },
+        {
+          "site": "0x43077",
+          "target": "0x7f46f"
+        },
+        {
+          "site": "0x431bd",
+          "target": "0x7f46f"
+        },
+        {
+          "site": "0x431d5",
+          "target": "0x37c6e"
+        },
+        {
+          "site": "0x43226",
+          "target": "0x37c6e"
+        },
+        {
+          "site": "0x4366e",
+          "target": "0x7e530"
+        }
+      ],
+      "case_call_semantics": "Only cloned program literals, lazy constant decoding, byte comparison and owned-string free. No special extractor, file read, DPAPI/CNG, network or executable dispatch on this extra-handler route.",
+      "end_job_advance": {
+        "rva": "0x41006",
+        "asm": "add r11, 0x70",
+        "bytes": "4983c370"
+      },
+      "program_text_modified": false,
+      "source_cut_stack_dependencies": [
+        {
+          "site": "0x3d42d",
+          "offset": "0x58",
+          "bytes": 8
+        },
+        {
+          "site": "0x3e124",
+          "offset": "0x58",
+          "bytes": 8
+        },
+        {
+          "site": "0x3e8d4",
+          "offset": "0x58",
+          "bytes": 8
+        },
+        {
+          "site": "0x3f3bf",
+          "offset": "0x58",
+          "bytes": 8
+        },
+        {
+          "site": "0x40718",
+          "offset": "0x58",
+          "bytes": 8
+        },
+        {
+          "site": "0x40a2d",
+          "offset": "0x58",
+          "bytes": 8
+        },
+        {
+          "site": "0x4149a",
+          "offset": "0x58",
+          "bytes": 8
+        },
+        {
+          "site": "0x41cf3",
+          "offset": "0x58",
+          "bytes": 8
+        },
+        {
+          "site": "0x42e4e",
+          "offset": "0x58",
+          "bytes": 8
+        },
+        {
+          "site": "0x42eab",
+          "offset": "0x58",
+          "bytes": 8
+        },
+        {
+          "site": "0x434e0",
+          "offset": "0x58",
+          "bytes": 8
+        },
+        {
+          "site": "0x439d7",
+          "offset": "0x58",
+          "bytes": 8
+        },
+        {
+          "site": "0x43e47",
+          "offset": "0x58",
+          "bytes": 8
+        },
+        {
+          "site": "0x442d1",
+          "offset": "0x58",
+          "bytes": 8
+        },
+        {
+          "site": "0x443f5",
+          "offset": "0x58",
+          "bytes": 8
+        },
+        {
+          "site": "0x4452b",
+          "offset": "0x58",
+          "bytes": 8
+        },
+        {
+          "site": "0x4493a",
+          "offset": "0x58",
+          "bytes": 8
+        },
+        {
+          "site": "0x44d8f",
+          "offset": "0x58",
+          "bytes": 8
+        },
+        {
+          "site": "0x45246",
+          "offset": "0x58",
+          "bytes": 8
+        },
+        {
+          "site": "0x45499",
+          "offset": "0x58",
+          "bytes": 8
+        },
+        {
+          "site": "0x45bc7",
+          "offset": "0x58",
+          "bytes": 8
+        }
+      ],
+      "source_cut_data_dependencies": []
+    },
+    {
+      "version": "19",
+      "native_source_sha256": "4e4636d2c9d57eb609b7d18ee3dc01713fbcda39c5eee52bd4a66f222f67bb31",
+      "complete_parent_CFG": "work\\alpme_analysis\\semantic_closure_20261027\\round3_file_dispatch19\\verified_normal_static_cfg.json",
+      "selector_count_gate": {
+        "read": {
+          "rva": "0x3595e",
+          "asm": "mov rax, qword ptr [r15 + 0x68]",
+          "bytes": "498b4768"
+        },
+        "compare": {
+          "rva": "0x35980",
+          "asm": "cmp rax, rdx",
+          "bytes": "483bc2"
+        },
+        "source_domains": [
+          [
+            80
+          ],
+          [
+            0
+          ],
+          [
+            80
+          ]
+        ],
+        "derived_zero": 0,
+        "first_selector_only": "Data pointer atjob+58 is dereferenced atindex0, lengthfromfirstString+10; no selector cursor increment beforejob+70 advance.",
+        "count_zero_target": "0x3add6",
+        "nonempty_target": "0x387e0",
+        "first_string_pointer": {
+          "rva": "0x387e4",
+          "asm": "mov rdx, qword ptr [rax]",
+          "bytes": "488b10"
+        },
+        "first_string_length": {
+          "rva": "0x387fd",
+          "asm": "mov r15, qword ptr [rax + rdx]",
+          "bytes": "4c8b3c10"
+        },
+        "original_dispatch_cells": [
+          {
+            "RVA": "0x89124",
+            "relative_bytes": "874d0000",
+            "target": "0x3add6"
+          },
+          {
+            "RVA": "0x893bc",
+            "relative_bytes": "91270000",
+            "target": "0x387e0"
+          }
+        ]
+      },
+      "literal_decodes": [
+        {
+          "source_RVA": "0x83cee",
+          "encoded_length": 13,
+          "original_seed": "0x5b1e7dd8d3cf2382",
+          "encoded_sha256": "14c8e0d5cc4b99b82fb49cb3f01049956103436cea9f7fd993a7fcc39b66f4d4",
+          "decoded": "roblox"
+        },
+        {
+          "source_RVA": "0x80d62",
+          "encoded_length": 15,
+          "original_seed": "0x18d25593efbeb196",
+          "encoded_sha256": "7d91042cadd694a1eea35baea7bf1f2ccaffad5d693295181595d1bfbd147203",
+          "decoded": "discord"
+        },
+        {
+          "source_RVA": "0x837e3",
+          "encoded_length": 12,
+          "original_seed": "0x17f61f6ef67dfebe",
+          "encoded_sha256": "de09a79e4120e74d4cf9fbc86e20f411eb3de3cf8f9f38273c90da6b36396406",
+          "decoded": "steam"
+        }
+      ],
+      "equality_zero_arithmetic": {
+        "Roblox_SPc8": [
+          0
+        ],
+        "Discord_EDX": [
+          0
+        ],
+        "Steam_EDX": [
+          0
+        ],
+        "Steam_mutable_seed_condition": "wordRVA9af00 retains normal initialized0; no cache flag is frozen"
+      },
+      "case_premise": "Nonempty selector vector; first validUTF8 string differs byte-for-byte from roblox,discord,steam. Includes grass. Length-gate true/false outcomes both retained.",
+      "mismatch_edges": [
+        {
+          "site": "0x38174",
+          "selected_original_target": "0x3bcb6"
+        },
+        {
+          "site": "0x389d8",
+          "selected_original_target": "0x390b7"
+        },
+        {
+          "site": "0x38565",
+          "selected_original_target": "0x3acb7"
+        }
+      ],
+      "case_native_instruction_starts": 149,
+      "all_case_calls": [
+        {
+          "site": "0x36059",
+          "target": "0x7e4d7"
+        },
+        {
+          "site": "0x360fa",
+          "target": "0x4473d"
+        },
+        {
+          "site": "0x38141",
+          "target": "0x7ced0"
+        },
+        {
+          "site": "0x3853f",
+          "target": "0x7ced0"
+        },
+        {
+          "site": "0x389b6",
+          "target": "0x7ced0"
+        },
+        {
+          "site": "0x390ce",
+          "target": "0x17f80"
+        },
+        {
+          "site": "0x397e6",
+          "target": "0x7e4d7"
+        },
+        {
+          "site": "0x39a95",
+          "target": "0x4473d"
+        },
+        {
+          "site": "0x3a62f",
+          "target": "0x4473d"
+        },
+        {
+          "site": "0x3acce",
+          "target": "0x17f80"
+        },
+        {
+          "site": "0x3bcd5",
+          "target": "0x17f80"
+        }
+      ],
+      "case_call_semantics": "Only cloned program literals, lazy constant decoding, byte comparison and owned-string free. No special extractor, file read, DPAPI/CNG, network or executable dispatch on this extra-handler route.",
+      "end_job_advance": {
+        "rva": "0x3acdb",
+        "asm": "add r15, 0x70",
+        "bytes": "4983c770"
+      },
+      "program_text_modified": false,
+      "source_cut_stack_dependencies": [
+        {
+          "site": "0x33adf",
+          "offset": "0x50",
+          "bytes": 8
+        },
+        {
+          "site": "0x35962",
+          "offset": "0x958",
+          "bytes": 8
+        },
+        {
+          "site": "0x3596a",
+          "offset": "0x1d8",
+          "bytes": 8
+        },
+        {
+          "site": "0x35975",
+          "offset": "0x248",
+          "bytes": 8
+        },
+        {
+          "site": "0x3612b",
+          "offset": "0x50",
+          "bytes": 8
+        },
+        {
+          "site": "0x387f7",
+          "offset": "0x50",
+          "bytes": 4
+        },
+        {
+          "site": "0x389bb",
+          "offset": "0xc8",
+          "bytes": 4
+        },
+        {
+          "site": "0x38f94",
+          "offset": "0xc8",
+          "bytes": 4
+        },
+        {
+          "site": "0x3acb0",
+          "offset": "0x50",
+          "bytes": 8
+        },
+        {
+          "site": "0x3add6",
+          "offset": "0x50",
+          "bytes": 8
+        },
+        {
+          "site": "0x3bd41",
+          "offset": "0x50",
+          "bytes": 8
+        }
+      ],
+      "source_cut_data_dependencies": [
+        {
+          "site": "0x38146",
+          "RVA": "0x9af00",
+          "bytes": 2,
+          "value": "0x0"
+        }
+      ]
+    }
+  ],
+  "conclusions": [
+    "Emptyselector lists skiptheextra specializedhandler. Nonemptylist dispatchusesfirstStringonly; subsequentselectors do not select additionalhandlers here.",
+    "Exactcase-sensitive stringsroblox/discord/steam select their respectiveexistingextractors.",
+    "Unknownfirstselectorincludinggrass goesdirectlythroughliteral cleanup tonextjob. Itsindependentrawroot/patternfilecollection remains active."
+  ],
+  "qualification": "SavedcompleteparentCFG and itsnormal PE/TLS/private-frame/owned-object contracts. This case analysis doesnot claim fullwholeprogramsemantics orrealdata collection.",
+  "original_execution": false,
+  "network": false,
+  "host_secret_reads": false
+}

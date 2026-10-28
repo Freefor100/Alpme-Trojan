@@ -1,0 +1,218 @@
+{
+  "scope": "正常PE/TLS、有效Rust owned对象及明确helperABI的只读静态闭合；不是原始源码或样本执行。",
+  "entries": {
+    "17": "0x50d72",
+    "19": "0xa7a1"
+  },
+  "ABI": {
+    "RCX": "4个24B Vec描述符，顺序见metadata_input_layout；每Vec布局ptr/cap/len。",
+    "RDX": "profile路径Vec描述符切片；每项24B，不是单个裸字符串。",
+    "R8": "profile项数；0时直接清理返回。",
+    "R9": "调用者提供的浏览器名称/显示名UTF8字节指针。",
+    "stack_arg5": "名称字节长度。",
+    "stack17_arg6": "channel描述符指针；collector读取其tag和pointer再调用45f29。",
+    "stack19_args6_7": "channel描述符两个qword按值传入；c905/c90d分别加载到RDX/R8，c918调用6cf38。",
+    "profile_loop": "每轮使用一个profile路径；下一项指针+24，直到输入slice末端。因此“single-profile collector”应理解为循环体行为，函数本身处理一个slice。"
+  },
+  "metadata_input_layout": [
+    {
+      "input_offset": 0,
+      "label": "local_state",
+      "pair17": "0x510ef",
+      "pair19": "0xbac2"
+    },
+    {
+      "input_offset": 24,
+      "label": "aster_encryption_key",
+      "pair17": "0x5222c",
+      "pair19": "0xd6fc"
+    },
+    {
+      "input_offset": 48,
+      "label": "dpapi_encryption_key",
+      "pair17": "0x52bac",
+      "pair19": "0xcac3"
+    },
+    {
+      "input_offset": 72,
+      "label": "encryption_key",
+      "pair17": "0x52862",
+      "pair19": "0xd177"
+    }
+  ],
+  "metadata_contract": {
+    "helper17": "0x1b9ee",
+    "helper19": "0x3306d",
+    "presence": "仅检查输入Vec.cap != -1；存在则clone其bytes，生成48B name/value对。缺失则输出name.cap=-1并释放临时名称Vec。",
+    "provenance": "输入由caller准备链给定；key labels通过22个原native descriptor+seed构造解码并绑定到clone/pair call，不使用期望明文反推seed。该层不生成或解密这些键。",
+    "flags": "这4个metadata输入的pair构造均独立于四个Cookies/Login/History/WebData标志；之后仍受missing/empty过滤。",
+    "validity": "“有Vec”不等于密码学正确、可解密数据库、固定32B或成功窃取；此函数没有额外键有效性校验。"
+  },
+  "file_flag_label_map": [
+    {
+      "path": "Network\\Cookies",
+      "label": "cookies",
+      "cloud_slot": 0,
+      "wireflag": "14a",
+      "global17": "0x993ba",
+      "global19": "0x967f2",
+      "read17": "0x51dec",
+      "read19": "0xc745"
+    },
+    {
+      "path": "Login Data",
+      "label": "logins",
+      "cloud_slot": 1,
+      "wireflag": "14c",
+      "global17": "0x993bc",
+      "global19": "0x967f4",
+      "read17": "0x53063",
+      "read19": "0xcbc2"
+    },
+    {
+      "path": "Login Data For Account",
+      "label": "logins_alt",
+      "cloud_slot": 1,
+      "wireflag": "14c",
+      "global17": "0x993bc",
+      "global19": "0x967f4",
+      "read17": "0x51c54",
+      "read19": "0xb97a"
+    },
+    {
+      "path": "History",
+      "label": "history",
+      "cloud_slot": 2,
+      "wireflag": "149",
+      "global17": "0x993b9",
+      "global19": "0x967f1",
+      "read17": "0x53e34",
+      "read19": "0xccc9"
+    },
+    {
+      "path": "Web Data",
+      "label": "web_data",
+      "cloud_slot": 3,
+      "wireflag": "148",
+      "global17": "0x993b8",
+      "global19": "0x967f0",
+      "read17": "0x526e2",
+      "read19": "0xdc7b"
+    },
+    {
+      "path": "Preferences",
+      "label": "preferences",
+      "cloud_slot": null,
+      "wireflag": null,
+      "global17": null,
+      "global19": null,
+      "read17": "0x50f00",
+      "read19": "0xc1b8"
+    },
+    {
+      "path": "Local Storage\\leveldb\\<eligible basename>",
+      "label": "local_storage",
+      "cloud_slot": null,
+      "wireflag": null,
+      "global17": null,
+      "global19": null,
+      "read17": "0x53323 ->0x2a2a0 ->0x56ab1",
+      "read19": "0xbdc6 ->0x686e7 ->0x240de"
+    }
+  ],
+  "ordinary_read_contract": {
+    "helper17": "0x48051：格式化profile+相对文件名，再0x56ab1读原文件。",
+    "helper19": "0x1181：格式化profile+相对文件名，再0x240de读原文件。",
+    "data": "内容保留原始bytes；本collector没有SQLite行查询、AES/DPAPI/CNG解密调用，也不把对应key作为read helper的解密参数。",
+    "failure": "rawread cap=-1被adapter转换为空Vec(ptr1,cap0,len0)。最终11项集合检查value.len==0并释放该项，故不会发送普通文件空blob。",
+    "disabled": "被关闭类别的name.cap=-1，最终集合跳过；Login同时控制Login Data和Login Data For Account。",
+    "independent": "原native flag-CMOV/table逐分支静态核算：四项全0仍可到达Preferences read与LevelDB constructor，两者不受这四项控制。",
+    "fifth": "cloud slot4 / wire14b（17:993bb；19:967f3）在这两个collector没有native消费者，不给它发明路径或键角色。"
+  },
+  "leveldb": {
+    "path": "每profile的Local Storage\\leveldb。路径literal存在反斜杠与正斜杠拼写两个native构造器，两者都指该Windows子目录。",
+    "constructor17": "0x537bf->0x506ee",
+    "constructor19": "0xb64c->0xa4e0",
+    "next17": [
+      "0x51bc8->0x4a0d2",
+      "0x53474->0x4a0d2"
+    ],
+    "next19": [
+      "0xb863->0xdda5",
+      "0xc67f->0xdda5"
+    ],
+    "depth": "仅一个ReadDir构造器，同一枚举状态的两个next站点和状态搬移；没有递归self-call、子目录constructor或按子目录再次枚举。仅此目录直接项。",
+    "eligibility": "拒绝directory属性bit0x10；还拒绝(attributes&0x400)!=0且reparseTag&0x20000000!=0的name-surrogate reparse项。不是一概拒绝所有reparse tag。",
+    "exclusions": [
+      "LOCK",
+      "LOG",
+      "LOG.old"
+    ],
+    "matching": "Path.file_name取得最后basename，先UTF8验证；三个排除项都是等长度后memcmp全字节比较，区分ASCII大小写，无通配、子串或扩展名规则。lock、LOG.1等不因上述三个字面规则被排除。",
+    "filename_helper17": "0x3bfd3；调用0x1325等Path component iterator的19对应0x6e8f2；不是NUL扫描器。",
+    "file_read": "17:2a2a0/19:686e7先验证整个路径UTF8；有效时tail-jump到17:56ab1/19:240de读文件，无效时令输出cap=-1。读取失败项不入map。成功空文件可保留为basename=>空bytes。",
+    "map": "BTreeMap<basename UTF8 bytes, 原文件bytes>；原native插入helper17:987a/19:779f返回旧value，存在则drop旧value；相同basename替换。正常entry早期已要求可取且UTF8有效的basename，晚期重复取名失败仍有空key Vec fallback分支。",
+    "empty": "最终LevelDB map count==0时drop，不生成local_storage字段。构造/next错误按具体Result/ReadDir析构，正常继续其他字段/profile。",
+    "binary_serializer17": "0x529b3->0x61c04；251/251 native，11 computed，0 unresolved。",
+    "binary_serializer19": "0xcf5b->0x2a295；569 native，正常上下文540 reachable，25 computed闭合；另3 computed站点不在该正常可达图。必须保留bounded ABI、128B REP MOVSQ及固定PE seed9a3e4条件。",
+    "binary_format": [
+      "u64 little-endian item count",
+      "对BTreeMap序的每项：u64 key byte length，原key bytes，u64 value byte length，原value bytes"
+    ],
+    "binary_size": "8 + sum(16 + len(key) + len(value))；不是JSON、Base64或SQLite解析。",
+    "serializer_failure": "容量/内部写入边界失败释放新buffer并返回空Vec；正常分配失败走原panic/abort路径。空序列化结果被最终11项过滤。"
+  },
+  "result_collection": {
+    "fields": 11,
+    "records": "11个48B nameVec/valueVec对：7个数据字段+4个metadata字段。先跳过name.cap=-1，再drop value.len=0项，留下的对排序并构造BTreeMap；不是凭name存在就必发送。",
+    "filter17": "0x53d6c..0x53dba（value+28 len与0比较）；profile最终map constructor0x50e4b。",
+    "filter19": "0xd574..0xd5bb（R9=24，0x18-R9=0，比较record+28）；最终map constructor0xd9cd，0xd9d2检查count。",
+    "empty": "最终map count为0则drop并继续下一profile，不发该profile的结果。",
+    "message": "非空map附带profile路径和调用者浏览器名的clone；native Result enum qword tag=0x8000000000000003，offset+0x88 byte=1。该tag/byte是内部channel消息布局；本文件不把它直接当作已证明的外层A6 wire byte。",
+    "send17": "0x54114->0x45f29，Result记录0x130B。",
+    "send19": "0xc918->0x6cf38，Result记录0x130B。",
+    "send_success": "channel helper正常消费payload时out+38=-1，不重复释放已转移的消息。",
+    "send_failure": "channel返回未消费的完整消息时，17:1360b/19:6d888按具体variant drop；之后可继续下一profile。",
+    "outer_network_boundary": "此处只把owned结果提交内部channel。外层network framing/压缩/加密/实际上传由其他writer处理；没有在此函数内直接HTTP/C2调用。"
+  },
+  "cleanup": {
+    "strings": "临时解码literal clone、格式化路径Vec在成功/失败分支都按owned Vec释放；sourcecache本身保留。",
+    "iterators": "ReadDir/entry Arc先按状态清理，FindClose由原ReadDir helpers完成；文件read句柄清理由rawread helper完成。",
+    "maps": "LevelDB临时map、排序Vec、序列化后不再需要的owned entries和最终发送失败消息都有具体drop helper。",
+    "OOM": "原ud2/panic分支不声称会恢复；只对normal return路径给出输出/清理行为。",
+    "process": "collector不承担prep的浏览器进程guard kill/close；caller完成profile调用后另行处理guard。"
+  },
+  "native_resolution": {
+    "main_indirect_calls": 0,
+    "main_unresolved_computed_branches": 0,
+    "main_out_of_extent_targets": 0,
+    "helper_tail_calls": {
+      "17:2a2a0": "56ab1（有意跨pdata tail-jmp）",
+      "19:686e7": "240de（有意跨pdata tail-jmp）"
+    },
+    "unresolved_calls_in_collector": [],
+    "library_boundary": "通用内存/分配、BTreeMap、Path/UTF8、原rawread/ReadDir、channel及具体variant析构仍按已列ABI解释。不能把库内错误对象的tagged destructor概括成任意callback无副作用。",
+    "conditions": [
+      "正常PE/TLS初始化；未假设某个真实API或文件读取一定成功。",
+      "17:53f3b的tag来自51279 literal1、index230独立生存期审计和原memcpy，不从期望branch/name硬填。",
+      "19:b349来自TEST/CMOVE的精确{0,38}代数；6e6b6所有normal RET输出tag0/1。",
+      "19 map serializer明确使用original initseed9a3e4，全部pdata canonical directRIP引用仅2a8ab读取；不作任意间接内存破坏排除声明。"
+    ]
+  },
+  "evidence": [
+    "profile_collectors_final_receipt.json",
+    "17_50d72_strict.json",
+    "19_a7a1_strict.json",
+    "17_native_literals.json",
+    "19_native_literals.json",
+    "17_flag_path_proof.json",
+    "19_flag_path_proof.json",
+    "normal_exports/17_payload.dll.bin_0x61c04.c",
+    "normal_exports/19_payload.dll.bin_0x2a295.c"
+  ],
+  "safety": {
+    "original_execution": false,
+    "browser_or_key_reads": false,
+    "network_or_C2": false
+  }
+}

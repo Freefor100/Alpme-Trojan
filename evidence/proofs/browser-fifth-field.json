@@ -2,7 +2,7 @@
   "status": "ALL27_FROZEN_NUMERIC_CANDIDATES_EXCLUDED_IN_NORMAL_TYPED_ADDRESS_MODEL",
   "scope": "Only frozen16+10 selfrelative bias candidates plus1 rawRVA numeric candidate. No repetition of whole.text/raw51/56 RIP/config scans.",
   "prior_frozen_audit": {
-    "path": "C:\\Users\\leo\\Documents\\Codex\\2026-10-26\\ni\\work\\alpme_analysis\\semantic_closure_20261027\\round4_network_core\\fifthfield_address_audit\\fifthfield_frozen_address_findings.json",
+    "path": "<ANALYSIS_WORKSPACE>\\work\\alpme_analysis\\semantic_closure_20261027\\round4_network_core\\fifthfield_address_audit\\fifthfield_frozen_address_findings.json",
     "sha256": "eeeee3b71e0578b0e87c54502086ab486ef63ade562a199057cf5d5c4042c37f",
     "unchanged": true
   },

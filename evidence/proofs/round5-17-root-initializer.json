@@ -1,0 +1,199 @@
+{
+  "status": "PASS_CONDITIONAL_NORMAL_NATIVE_CFG_AND_SOURCE_LIFETIMES",
+  "version": "17",
+  "entry": "0x5d746",
+  "end": "0x61768",
+  "source_sha256": "24f7eed14b69c561bd2dde6aa61759cabc8588293e9a0099dde8e381f96f228a",
+  "native_sha256": "174fe535ecd0c699024c68e5d0aa20b22c10f98c796d4561c5e370e78c486e7b",
+  "native_bytes": 16418,
+  "instructions": 3367,
+  "computed_jumps": 161,
+  "unresolved_computed_jumps": [],
+  "out_of_extent_targets": [],
+  "no_forced_branch_edges": true,
+  "no_Probe_protected_restoration": true,
+  "natural_effects": 128,
+  "typed_owned_store_sites": 65,
+  "ordinary_frame_store_sites": 278,
+  "independent_source_reads": 42,
+  "independent_source_bytes": 146,
+  "independent_source_failures": [],
+  "qualified_data_premises": [
+    "Actual PE TLS template plus normal integer-algebra initializer; NO writable-PE scalar override or frozen cache/Once flag used."
+  ],
+  "qualified_object_ABI": [
+    "Windows x64 ABI; valid owned Rust BTree/Vec/ReadDir/DirEntry Arc objects; allocator-owned heap and original caller output disjoint from private compiler frame.",
+    "All native CALL/explicit stores have bounded private-frame effects or typed-owned heap/output effects, with actual owner constructor/child-field source cuts. No arbitrary corrupt-pointer theorem.",
+    "3bfab ReadDirResult drop operates on normal constructor variants/OS-error lowtag2, not generic custom-tag1 callback states."
+  ],
+  "indirect_CALLs": [
+    {
+      "site": "0x5d996",
+      "API": "GetProcessHeap",
+      "IAT": "0x95148",
+      "classification": "STATIC_IAT_UNIQUE"
+    },
+    {
+      "site": "0x5d9a4",
+      "API": "HeapFree",
+      "IAT": "0x951a8",
+      "classification": "STATIC_IAT_UNIQUE"
+    },
+    {
+      "site": "0x5dedf",
+      "API": "GetSystemTimes",
+      "IAT": "0x95188",
+      "classification": "STATIC_IAT_UNIQUE"
+    },
+    {
+      "site": "0x5deef",
+      "API": "GlobalMemoryStatusEx",
+      "IAT": "0x95198",
+      "classification": "STATIC_IAT_UNIQUE"
+    },
+    {
+      "site": "0x5def8",
+      "API": "GetSystemPowerStatus",
+      "IAT": "0x95178",
+      "classification": "STATIC_IAT_UNIQUE"
+    },
+    {
+      "site": "0x5defe",
+      "API": "GetCurrentProcess",
+      "IAT": "0x950b0",
+      "classification": "STATIC_IAT_UNIQUE"
+    },
+    {
+      "site": "0x5df07",
+      "API": "GetLargePageMinimum",
+      "IAT": "0x950f8",
+      "classification": "STATIC_IAT_UNIQUE"
+    },
+    {
+      "site": "0x5df13",
+      "API": "GetProcessHandleCount",
+      "IAT": "0x95140",
+      "classification": "STATIC_IAT_UNIQUE"
+    },
+    {
+      "site": "0x5df1c",
+      "API": "GetPhysicallyInstalledSystemMemory",
+      "IAT": "0x95130",
+      "classification": "STATIC_IAT_UNIQUE"
+    },
+    {
+      "site": "0x5df25",
+      "API": "GetSystemInfo",
+      "IAT": "0x95170",
+      "classification": "STATIC_IAT_UNIQUE"
+    },
+    {
+      "site": "0x5ecee",
+      "API": "GetProcessHeap",
+      "IAT": "0x95148",
+      "classification": "STATIC_IAT_UNIQUE"
+    },
+    {
+      "site": "0x5ecfe",
+      "API": "HeapFree",
+      "IAT": "0x951a8",
+      "classification": "STATIC_IAT_UNIQUE"
+    },
+    {
+      "site": "0x5f051",
+      "API": "GetProcessHeap",
+      "IAT": "0x95148",
+      "classification": "STATIC_IAT_UNIQUE"
+    },
+    {
+      "site": "0x5f05f",
+      "API": "HeapFree",
+      "IAT": "0x951a8",
+      "classification": "STATIC_IAT_UNIQUE"
+    },
+    {
+      "site": "0x5fb3f",
+      "API": "GetProcessHeap",
+      "IAT": "0x95148",
+      "classification": "STATIC_IAT_UNIQUE"
+    },
+    {
+      "site": "0x5fb4d",
+      "API": "HeapFree",
+      "IAT": "0x951a8",
+      "classification": "STATIC_IAT_UNIQUE"
+    },
+    {
+      "site": "0x60d1e",
+      "classification": "CONTEXTUAL_EMPTY_CLEANUP",
+      "actual_invoked_target_set": [],
+      "proof": "empty_cleanup_targets.json"
+    }
+  ],
+  "formal_helper_proofs": [
+    {
+      "path": "work\\alpme_analysis\\semantic_closure_20261027\\round5_browser_initializers\\joint_gate\\17_natural_joint_gate.json",
+      "sha256": "0a13bb6e455fd0fa0ddb32d7bcb853e32f0ac9eeb4be36a1b549dee562292e22"
+    },
+    {
+      "path": "work\\alpme_analysis\\semantic_closure_20261027\\round5_browser_initializers\\joint_gate\\misc17_helper_contracts.json",
+      "sha256": "4fd2e396c11875332493c38b4dffbf6dd8f6abe2774740304fdcd7086cc8deba"
+    },
+    {
+      "path": "work\\alpme_analysis\\semantic_closure_20261027\\round5_browser_initializers\\joint_gate\\arc_producer_contracts.json",
+      "sha256": "b547c0809dd2d653fdc0b903e00de00fd4c68e9529f57bdbff6d7af871b88397"
+    },
+    {
+      "path": "work\\alpme_analysis\\semantic_closure_20261027\\round5_browser_initializers\\joint_gate\\empty_cleanup_targets.json",
+      "sha256": "94d9bba01034c24378d8c363a46fe85cf89657841210a7bcbe7abf85d0b65430"
+    },
+    {
+      "path": "work\\alpme_analysis\\semantic_closure_20261027\\round5_browser_initializers\\joint_gate\\owner_source_cuts.json",
+      "sha256": "b1bd17bc7d63deb9a3ee15ca95f24bf17de5e6280416cfb05effc5bd7c8f2383"
+    },
+    {
+      "path": "work\\alpme_analysis\\semantic_closure_20261027\\round5_browser_initializers\\text_helper_proofs.json",
+      "sha256": "92820cb546cb342c072130e54f1729498ebc6d65d585f2cef17316aa8fbb154f"
+    },
+    {
+      "path": "work\\alpme_analysis\\semantic_closure_20261027\\round5_browser_initializers\\env17\\env17_2b13d_closure.json",
+      "sha256": "e2627ab07037223eeca82b680c7925a4a48c09cc24b50d3a38a6deecaf419671"
+    },
+    {
+      "path": "work\\alpme_analysis\\semantic_closure_20261027\\ghidra_repair\\helper_boundary_scratch\\path_bounds17_proof.json",
+      "sha256": "2795476c1ad1cfc6722f75d32ce2161a7172e5186c4006ab33873b06e6abf476"
+    },
+    {
+      "path": "work\\alpme_analysis\\semantic_closure_20261027\\round5_locked_reader\\delivery_receipt.json",
+      "sha256": "386730f51c971ecbf4a491f66b6178ccc4dfd2a0ea1424272c0c17e44a5d8206"
+    },
+    {
+      "path": "work\\alpme_analysis\\semantic_closure_20261027\\round5_locked_reader\\behavior_semantics_zh.json",
+      "sha256": "6a832c1a1c23b577c56c29e521332a83ef987f300b68e9405424536a0fc4d3c1"
+    }
+  ],
+  "natural_graph": {
+    "path": "work\\alpme_analysis\\semantic_closure_20261027\\round5_browser_initializers\\joint_gate\\17_natural_progress.json",
+    "sha256": "6d6a38870ba317af163553877275a350f30e165eda7eace43f25b5e166fd3638"
+  },
+  "C_export": {
+    "path": "work\\alpme_analysis\\semantic_closure_20261027\\round5_browser_initializers\\joint_gate\\normal_exports\\17_payload.dll.bin_0x5d746.c",
+    "sha256": "2673c594eb455d7e39e31d10abd0c27acf06197a7c205bbd5e6f2bed57d30596",
+    "lines": 2692,
+    "partial_markers": {
+      "Could not recover jumptable": 0,
+      "Treating indirect jump as call": 0,
+      "halt_baddata": 0,
+      "Bad instruction data": 0,
+      "UnimplementedPcode": 0
+    },
+    "original_text_bytes_unchanged": true,
+    "text_sha256": "9719f0233f0af40eab63a0548511aa13e6ba06863e1aef96376fc12ef95f3ea4"
+  },
+  "semantic_note": "Root initializer uses GetEnvironmentVariableW wrapper2b13d and filesystem finder1568, path/profile filtering and owned BTree/Vec collection, returning original RCX output24.82a0 is BTree insert,3ad9c iterator constructor72,56971 formatting/literal output24,2a2a0 UTF8 path read adapter tail56ab1 locked file reader output24.",
+  "sample_execution": false,
+  "network": false,
+  "secret_reads": false,
+  "whole_program_complete_claim": false,
+  "original_source_claim": false
+}

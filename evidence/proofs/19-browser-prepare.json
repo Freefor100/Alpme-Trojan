@@ -12,7 +12,7 @@
   "explicit_memory_writers": 653,
   "all_native_calls_accounted": 297,
   "frozen_dependencies_verified": 30,
-  "C_file": "C:\\Users\\leo\\Documents\\Codex\\2026-10-26\\ni\\work\\alpme_analysis\\semantic_closure_20261027\\round4_browser_core\\normal_exports\\19_payload.dll.bin_0x3d057.c",
+  "C_file": "<ANALYSIS_WORKSPACE>\\work\\alpme_analysis\\semantic_closure_20261027\\round4_browser_core\\normal_exports\\19_payload.dll.bin_0x3d057.c",
   "C_sha256": "421887fd11d0f712399d1ac388c6e7eeb479d9f2acc088d5da3510c01f0e1e82",
   "C_bytes": 204422,
   "C_lines": 4961,

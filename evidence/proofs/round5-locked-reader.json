@@ -1,0 +1,313 @@
+{
+  "status": "PASS_CONDITIONAL_NORMAL_NATIVE_CLOSURE",
+  "entry": "17:0x56ab1",
+  "end_rva": "0x5b3be",
+  "sample_sha256": "24f7eed14b69c561bd2dde6aa61759cabc8588293e9a0099dde8e381f96f228a",
+  "normalized_sha256": "1dfb1ef139176bdbbf88858d47f22e042eadd4658fff7603b50f1b87bfd7675c",
+  "original_image_base": "0x180000000",
+  "normalized_image_base": "0x8f70000",
+  "native_function_sha256": "70b1e39be8808ca5a7e10f481b5d9286cb8b8a0f481630f62ad685702a2ab23a",
+  "native_instructions": 3677,
+  "computed_branches": 157,
+  "native_calls": 236,
+  "direct_callee_entries": 25,
+  "indirect_calls": 22,
+  "fixed_point_steps": 72548,
+  "unresolved_computed_branches": 0,
+  "out_of_extent_targets": 0,
+  "complete_original_instruction_and_computed_site_sets": true,
+  "source_lifetime_reads": 292,
+  "source_lifetime_bytes": 665,
+  "native_literal_constructors": 42,
+  "resolver_bindings": 21,
+  "unique_API_names": [
+    "CloseHandle",
+    "CreateFileMappingW",
+    "CreateFileW",
+    "DuplicateHandle",
+    "GetCurrentProcessId",
+    "GetFileSizeEx",
+    "GetFileType",
+    "GetFullPathNameW",
+    "GetLastError",
+    "MapViewOfFile",
+    "NtQueryObject",
+    "NtQuerySystemInformation",
+    "OpenProcess",
+    "QueryDosDeviceW",
+    "ReadFile",
+    "ReadProcessMemory",
+    "UnmapViewOfFile"
+  ],
+  "all_API_pointers_unique": true,
+  "direct_callers": [
+    {
+      "caller": "0x48051",
+      "callsite": "0x480ec"
+    }
+  ],
+  "helper_sources": [
+    {
+      "entry": "0x2b7f",
+      "end": "0x2bf2",
+      "hash_scope": "exact native unwind extent",
+      "native_sha256": "95f0d7c4473e3b800a3555d5353a799ceeec5edbe85f755733c7b9084bbbc160",
+      "C_source": "work\\alpme_analysis\\full_static_project_20261027\\exports\\17_payload.dll.bin\\functions\\08f72b7f.c",
+      "C_sha256": "b4cccd3211c459550989668671bf95550fe9548457654304dd7185ef4cad90c9"
+    },
+    {
+      "entry": "0x3b50",
+      "end": "0x3b8d",
+      "hash_scope": "exact native unwind extent",
+      "native_sha256": "10ae3d23141c09d1124e2c9067af28277e13b854efc8a0c22c2465f5cef233bd",
+      "C_source": "work\\alpme_analysis\\full_static_project_20261027\\exports\\17_payload.dll.bin\\functions\\08f73b50.c",
+      "C_sha256": "98fd66b883fb40987200e5ed9b79af3ed79430caf2f2476c8afade30c80b4097"
+    },
+    {
+      "entry": "0x60db",
+      "end": "0x627c",
+      "hash_scope": "exact native unwind extent",
+      "native_sha256": "4463088332a309c49d5daeb7e6ce0a336756dd872c93458bdeda1708a857f832",
+      "C_source": "work\\alpme_analysis\\full_static_project_20261027\\exports\\17_payload.dll.bin\\functions\\08f760db.c",
+      "C_sha256": "e69ca09793f4ded8498b26737212221a5aaf00624730b7838544e447d0967e15"
+    },
+    {
+      "entry": "0x6adb",
+      "end": "0x6b22",
+      "hash_scope": "exact native unwind extent",
+      "native_sha256": "97c537d18b3f311efa89c2df93bce95f3dd9665f0ee79b575edc23c501f3e428",
+      "C_source": "work\\alpme_analysis\\full_static_project_20261027\\exports\\17_payload.dll.bin\\functions\\08f76adb.c",
+      "C_sha256": "35a9ec8d819ec83621bf480d8adc4bb50c1b8626513688ea9f35a0803835f0e5"
+    },
+    {
+      "entry": "0x8548",
+      "end": "0x8577",
+      "hash_scope": "exact native unwind extent",
+      "native_sha256": "1668ef2765c4f0c4b9e60d71dc2742ecb6569dab3fad228ee1311477ff39e672",
+      "C_source": "work\\alpme_analysis\\full_static_project_20261027\\exports\\17_payload.dll.bin\\functions\\08f78548.c",
+      "C_sha256": "9dc68122c1e931bc35525ad66f5a1af0cdc3307d667faec9d638c36af508ce6b"
+    },
+    {
+      "entry": "0x29649",
+      "end": "0x29ec0",
+      "hash_scope": "exact native unwind extent",
+      "native_sha256": "bfa749a767bd3a1195b85eadc15cb6185b7b4ad1cecedcd3b8c9ae1203b3798c",
+      "C_source": "work\\alpme_analysis\\full_static_project_20261027\\exports\\17_payload.dll.bin\\functions\\08f99649.c",
+      "C_sha256": "22064354d386bfa057ed5db1bb505dd41ea70bbdd7d319d1f0ffe80fb544d5f1"
+    },
+    {
+      "entry": "0x2af30",
+      "end": null,
+      "hash_scope": "32-byte prefix only; leaf/thunk has no exact unwind entry",
+      "native_sha256": "3b10f7626f1e03015abd73e8cc0b56049ed0897ee9084adc46d7c9c1df9f98a7",
+      "C_source": "work\\alpme_analysis\\full_static_project_20261027\\exports\\17_payload.dll.bin\\functions\\08f9af30.c",
+      "C_sha256": "2e43a2b5fec868e1ad0c77f6daeab58950a494aa0c5f38840d34f14399cd5abb"
+    },
+    {
+      "entry": "0x2c2e1",
+      "end": "0x2c3df",
+      "hash_scope": "exact native unwind extent",
+      "native_sha256": "7e91d424afb35a4ac13902b24624117b02e1e053675696ee93f2502da51d2a9a",
+      "C_source": "work\\alpme_analysis\\full_static_project_20261027\\exports\\17_payload.dll.bin\\functions\\08f9c2e1.c",
+      "C_sha256": "91d67fc84de23cd81e850bc48c0b454767ce281fc1b82f657d2e57558ecbf397"
+    },
+    {
+      "entry": "0x2c44b",
+      "end": "0x2c475",
+      "hash_scope": "exact native unwind extent",
+      "native_sha256": "6e58af160cf1bacf88d25c266d6d16c19d53cdf45f1b8d1c25ba0ab3203203a0",
+      "C_source": "work\\alpme_analysis\\full_static_project_20261027\\exports\\17_payload.dll.bin\\functions\\08f9c44b.c",
+      "C_sha256": "c3b928a81dc0aa7609b6caf2d7a4a3396accc04aec83cf61840fe571261db15b"
+    },
+    {
+      "entry": "0x37c6e",
+      "end": "0x37ce0",
+      "hash_scope": "exact native unwind extent",
+      "native_sha256": "0dd4795c9448ab0e9d2f5a8f0a705cefc69ed95fb503c9c57bf0e4c5e0813eec",
+      "C_source": "work\\alpme_analysis\\full_static_project_20261027\\exports\\17_payload.dll.bin\\functions\\08fa7c6e.c",
+      "C_sha256": "9f7fdf9ff93c0ec44f9e96033bb32c5366cb7e955b690fd1b725a87ffccb1fcf"
+    },
+    {
+      "entry": "0x37d05",
+      "end": "0x37d50",
+      "hash_scope": "exact native unwind extent",
+      "native_sha256": "ec61cd3d7df08d37fb3b2b912f6c1567986737790d80c81c2def03bc4e5488fa",
+      "C_source": "work\\alpme_analysis\\full_static_project_20261027\\exports\\17_payload.dll.bin\\functions\\08fa7d05.c",
+      "C_sha256": "6adece15f0f32de989d2ab7e9a0276811cc6653e2d90b6a1e4c2dd29a592d5b0"
+    },
+    {
+      "entry": "0x3aa80",
+      "end": "0x3ab02",
+      "hash_scope": "exact native unwind extent",
+      "native_sha256": "cd8e29ab2b666f866ebc902928a96e4e47a2f8b906888d8ac32702f8e18e95e6",
+      "C_source": "work\\alpme_analysis\\full_static_project_20261027\\exports\\17_payload.dll.bin\\functions\\08faaa80.c",
+      "C_sha256": "01ea86be1654bc95969d0c7aad524e55025237c288f80f30da892bb9e24d1b3a"
+    },
+    {
+      "entry": "0x49278",
+      "end": "0x492d7",
+      "hash_scope": "exact native unwind extent",
+      "native_sha256": "68bf84d1acca3781a9252999f7c4e944ebc59812d18f271871fe7c1e30208671",
+      "C_source": "work\\alpme_analysis\\full_static_project_20261027\\exports\\17_payload.dll.bin\\functions\\08fb9278.c",
+      "C_sha256": "197b7d1d082b1b0a5e6b3cef3c8f43125a84ed5a0cd826648cf27bf4b0988c31"
+    },
+    {
+      "entry": "0x4a6b1",
+      "end": "0x4a6f0",
+      "hash_scope": "exact native unwind extent",
+      "native_sha256": "d5a2d2e2daff267a6262af316ddb8b90aadfdd17f2303c5ef51855b7cae25313",
+      "C_source": "work\\alpme_analysis\\full_static_project_20261027\\exports\\17_payload.dll.bin\\functions\\08fba6b1.c",
+      "C_sha256": "2b0dd61fad6c98842c2775dc82e708f2ed5b6a572837702c416f9b73bf7f4566"
+    },
+    {
+      "entry": "0x4e059",
+      "end": "0x4e14f",
+      "hash_scope": "exact native unwind extent",
+      "native_sha256": "b96ae9de0f17d47d1670bfdf487e66bd47d01ec96222129b9bee1266ac0a9aa5",
+      "C_source": "work\\alpme_analysis\\full_static_project_20261027\\exports\\17_payload.dll.bin\\functions\\08fbe059.c",
+      "C_sha256": "6ea3d3600a633c7afa9837ecf8498c87588576e871e819228cafddbe5afd2014"
+    },
+    {
+      "entry": "0x50046",
+      "end": "0x501fd",
+      "hash_scope": "exact native unwind extent",
+      "native_sha256": "54e3ec51abfb74e53e49df323d3a6c48cae1e3b4c1e8ae648d282125e88dac2b",
+      "C_source": "work\\alpme_analysis\\full_static_project_20261027\\exports\\17_payload.dll.bin\\functions\\08fc0046.c",
+      "C_sha256": "11f339339dcfaf9b4c3c3340274f78e7b9e35903c27ce7ad34360e5fc55c6040"
+    },
+    {
+      "entry": "0x566b4",
+      "end": "0x56726",
+      "hash_scope": "exact native unwind extent",
+      "native_sha256": "9790a92732c43978b96c62b4865c82ef2c3fba59681660b4fa89f9b6d3826467",
+      "C_source": "work\\alpme_analysis\\full_static_project_20261027\\exports\\17_payload.dll.bin\\functions\\08fc66b4.c",
+      "C_sha256": "032cd9d4766e0c0cbd30bb1bff304ec16f4270e34ceaed7c26edf6b5f7c969c5"
+    },
+    {
+      "entry": "0x5693d",
+      "end": "0x56971",
+      "hash_scope": "exact native unwind extent",
+      "native_sha256": "142734bef666f570916aacd3da12a7ae3a8caf887556f2f2e4111a268013a522",
+      "C_source": "work\\alpme_analysis\\full_static_project_20261027\\exports\\17_payload.dll.bin\\functions\\08fc693d.c",
+      "C_sha256": "6acd214bb6a19112f99dce86104a8f29dfa22c798e9ceadbc7f11f8534f93dfd"
+    },
+    {
+      "entry": "0x5b993",
+      "end": "0x5ba43",
+      "hash_scope": "exact native unwind extent",
+      "native_sha256": "3ada8ef9b40fc5e2a7a777e6dff8a58de79f14a4c946e1009512b3387c19fe57",
+      "C_source": "work\\alpme_analysis\\full_static_project_20261027\\exports\\17_payload.dll.bin\\functions\\08fcb993.c",
+      "C_sha256": "9bc9859a7ca471d7891f85f3a5107aee85b7298a8edc018706ecef9e91657455"
+    },
+    {
+      "entry": "0x6565a",
+      "end": "0x65719",
+      "hash_scope": "exact native unwind extent",
+      "native_sha256": "df848476e05f584d22e15f74f13952797697610e343f19eb3acb64bc7da1dea4",
+      "C_source": "work\\alpme_analysis\\full_static_project_20261027\\exports\\17_payload.dll.bin\\functions\\08fd565a.c",
+      "C_sha256": "53903bb740a46d099ec9eca33574b3a06f772f8c4496fc4c3645978a697e04d4"
+    },
+    {
+      "entry": "0x65756",
+      "end": "0x6585d",
+      "hash_scope": "exact native unwind extent",
+      "native_sha256": "3b16bab52300022481ca9040830a9c35d078885553934cd4169a26f1a8c6d57d",
+      "C_source": "work\\alpme_analysis\\full_static_project_20261027\\exports\\17_payload.dll.bin\\functions\\08fd5756.c",
+      "C_sha256": "c650b888478e38cd0980be32f81111f86635f38473d1f09d54ac69f90377187b"
+    },
+    {
+      "entry": "0x6b415",
+      "end": "0x6b7ba",
+      "hash_scope": "exact native unwind extent",
+      "native_sha256": "12a31cf6d64f103d26d4e566b09129f2c26189261fa907e237622c3eda88fa11",
+      "C_source": "work\\alpme_analysis\\full_static_project_20261027\\exports\\17_payload.dll.bin\\functions\\08fdb415.c",
+      "C_sha256": "86d523ade45a31dc08f59910c0698460057a389e53f76ff5b80d0f9892a7534e"
+    },
+    {
+      "entry": "0x7e530",
+      "end": "0x7e5f7",
+      "hash_scope": "exact native unwind extent",
+      "native_sha256": "bb25b7df06bab2dbc8b2d54fb1df15e7b5cb1e9edcb553b06a82dde63998f27d",
+      "C_source": "work\\alpme_analysis\\full_static_project_20261027\\exports\\17_payload.dll.bin\\functions\\08fee530.c",
+      "C_sha256": "09b8a48adba38e3379225e63164fa523e52ced1c15038385ff391fb117350091"
+    },
+    {
+      "entry": "0x7e630",
+      "end": "0x7ecad",
+      "hash_scope": "exact native unwind extent",
+      "native_sha256": "d1d957e3557866367e2eb4100b748d59d9cf3252c608db122a7aed750714c26c",
+      "C_source": "work\\alpme_analysis\\full_static_project_20261027\\exports\\17_payload.dll.bin\\functions\\08fee630.c",
+      "C_sha256": "e3431aeb1b8158c7b030ff0fb8915756553ab1f62c51697bab09fa31fcaeac0a"
+    },
+    {
+      "entry": "0x7f46f",
+      "end": "0x7f4c5",
+      "hash_scope": "exact native unwind extent",
+      "native_sha256": "9b53c683445c542736e4e8dbc354f8ca10e7891193e6a0c15437b15814a4d62f",
+      "C_source": "work\\alpme_analysis\\full_static_project_20261027\\exports\\17_payload.dll.bin\\functions\\08fef46f.c",
+      "C_sha256": "5e91080c0030175e2ee3438f5c9c25bdabe290d74916e2956f699536974e3f2d"
+    }
+  ],
+  "Ghidra_native_function_matches_original": true,
+  "Ghidra_entire_text_matches_original_plus_mapping_padding": true,
+  "Ghidra_text_bytes_modified_by_export": false,
+  "C_target_sets_equal_final_natural_sets": true,
+  "C_markers_diagnostic_only": {
+    "Could not recover jumptable": 0,
+    "Treating indirect jump as call": 0,
+    "halt_baddata": 0,
+    "Switch is manually overridden": 157,
+    "Switch with 1 destination removed": 14
+  },
+  "normal_context": [
+    "Original readonly PE tables and writable seed/data facts read by successful replayed slices, no external mutation.",
+    "Original normal PE TLS template plus original2af30 initialization, TEB index selector abstraction is not a runtime-index claim.",
+    "Valid x64 ABI, normal allocator/memcpy/free/Win32 contracts, original caller output and owned heap objects disjoint from compiler frame.",
+    "Vec length/capacity in0..ISIZE_MAX; audited UTF16 iterator RCX24/RDX26 contract; published per-call exact frame spans and typed owned stores."
+  ],
+  "remaining_in_scope_gaps": [],
+  "out_of_scope_boundaries": [
+    "No arbitrary malformed object/external TLS mutation proof.",
+    "Static call contracts describe possible behavior; no claim that a concrete host file/process/handle was present or successfully read.",
+    "Only this reader and its named normal helper contracts are scoped; upload/persistence of other functions belongs to their separate evidence."
+  ],
+  "rerun_command": "%USERPROFILE%\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe <ANALYSIS_WORKSPACE>\\work\\alpme_analysis\\semantic_closure_20261027\\round5_locked_reader\\verify_delivery.py --rerun",
+  "no_original_execution": true,
+  "no_host_sensitive_file_reads": true,
+  "no_live_C2": true,
+  "artifact_sha256": {
+    "17_56ab1_api_pointer_origins.json": "83032c96fc4c7d5e41bbec3e42a62b798921e9dd361e619c21d5bedb37546372",
+    "17_56ab1_candidate.json": "923cbd55c3be339f1440d878c478feb279a408f129a1779e29572228a1e4f1c8",
+    "17_56ab1_initial.json": "2307cc231e7f2b6db5fffe4810fdfb6713c599d3405dfe231eebc867a182da59",
+    "17_56ab1_native.asm.txt": "63aee948d85fe739fbf788140e25829a15d0762dbc2b7ed384d22ad275f36159",
+    "17_56ab1_natural_bounded_complete.json": "00597bf662e780326c2071b0a1811ac5ba4822d675e4d0958e2303acfdf65516",
+    "17_56ab1_natural_bounded_progress.json": "c12184bcc9dad248d3fb8f219611b15c9229ebf2c47810dd748c98818cf45c17",
+    "17_56ab1_normal_context.c": "052115dc32b71eab674dcbed9aa2d5f4ca788ba358d94988eb58b5435e2e41ac",
+    "17_56ab1_review_export_plan.json": "24320cecf0b6f9253b1c8d6aae8dc5fdeb12b6d45697cc7f68ef15dda9797088",
+    "17_API_cache_source_bindings.json": "1823a8c0d0d1f86543741b9536c9543dede186e265e0fbd03ad730be1f3497e8",
+    "17_payload.dll.bin_0x56ab1.c": "f05819ceec852d86cec22a56580c0ffc68d11dd8865ed1c64b407bfed656e289",
+    "17_payload.dll.bin_0x56ab1_listing_retry.json": "ec94cde6ccfa838758516a7914c76141752a9d261db1a2326bb2091ecb483521",
+    "17_public_API_name_sources.json": "71e273d32cc15be1170c8c16c582e97bb59baef5b677d9a3b51577269baf5787",
+    "behavior_semantics_zh.json": "6a832c1a1c23b577c56c29e521332a83ef987f300b68e9405424536a0fc4d3c1",
+    "decode_native_literals.py": "12e065a5b314d3ebaefbe134d73f84e8cf7cf6de2c2da1f8a73f25fcfe00b761",
+    "export_review.py": "44a35042ac6655e9dd14e80ab2cc5c8b750a61d94c7840ca2a89b7f82b0ff97d",
+    "finalize_semantics.py": "7ddd7f7aefdf2795a45734bace630efc4047461893984a0515e8e9aa778e3896",
+    "findings_zh.md": "67a31ccf509db82b997fee3bd907bf071fc9fb81874a51eb6e628c504a84e7b5",
+    "ghidra_memory_original_byte_check.json": "b51cd2e683eb9b4a6a19aeba03434c764586dde0eb8748ff91ae16beb1bad4a0",
+    "graph_audit_inventory.json": "9a10870da0ce1d535d51a46ce38992fe9ac516cd601da755e1f70d7cab068cef",
+    "joint_lifetime_verification.json": "46a81cbb4eb7dd2bbd1ffb7d8f33b00f719ac74ca99a09d0a5bc16c793d29547",
+    "locked_graph.py": "9627d198c243adde29ad1098ded1c3380651b9b7a87c7d392d6fad3ca67fca2b",
+    "locked_static.py": "41eac3592f0ef67dee3ebc4efa67077183fa38b56bedeb3ba8856dacc97f8974",
+    "native_literal_decode.json": "bf3527d376326e50adb37ff4e01e183ded48ebccd287297030b1c74ff36cf13f",
+    "natural_bounded.py": "cda13a70e3d73de2602bed1866fe3f07edb708df6f543cd05ccd55ff9b92833f",
+    "negative_tag_domain_proof.json": "b522c8bb10a37a26c09f21606c536fdd740c19e2091fa6b84441fc3d947c51e3",
+    "prove_negative_tag_domain.py": "5a67045048e570fa869eebdae17a8c526e005e663a4a971224db05cd3a6b3129",
+    "RecoverLockedReader.java": "bd8c8ea9704c3b20bbbaf1ebfe6245ae3b092dbedfca401ad92848c0ac421077",
+    "trace_native_caches.py": "ac4ee7a60f80281f868a5e04222898ca6037b4f8ab45a73cd0b5034a868d0b15",
+    "trace_native_pointers.py": "64ab810356a1bdcc7a7a8b4f076d72b8292fd061c8073b3f1261829f5c06e319",
+    "verify_delivery.py": "843e152ec730eb9a416c9370e535d4a776cd707ddc25c587be9c94791819881c",
+    "verify_ghidra_memory.py": "d5d3fb1ba1a6b384014fea8ba972824e6170c858896af1055f7b8bd5709e99c4",
+    "verify_lifetimes.py": "cda81f6ffc70ac255efb2294afc2171ca1e289b2bbab5e74f18e24442bc5ab52",
+    "VerifyLockedMemory.java": "cebc24a8e8a761ec205478b46ce6513c29ec7c26b9bcd509d78ea8f3c8ad7403"
+  }
+}

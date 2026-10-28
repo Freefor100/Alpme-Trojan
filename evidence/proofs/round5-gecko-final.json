@@ -1,0 +1,803 @@
+{
+  "status": "PASS_CONDITIONAL_LOCAL_GECKO_STATIC_CLOSURE_WITH_EXPLICIT_TRANSITIVE_BOUNDARIES",
+  "scope": "Two original-byte Gecko function CFGs, selected semantic facts and bounded independent helper contracts; no universal transitive semantic-closure claim.",
+  "coordinate_system": "All analyst RVAs are relative to each original PE ImageBase. Ghidra may use a different image base; its mapped .text includes page-alignment zero padding.",
+  "samples": {
+    "17": {
+      "source": {
+        "path": "work/alpme_analysis/dynamic/17_plugin_payload.dll.bin",
+        "size": 648192,
+        "sha256": "24f7eed14b69c561bd2dde6aa61759cabc8588293e9a0099dde8e381f96f228a"
+      },
+      "text": {
+        "rva": "0x1000",
+        "raw_size": 520704,
+        "virtual_size": 520294,
+        "raw_sha256": "a04d78467e8f42fbafe8e56644bfc742dd2b35e4f3d9f92211c9bfa112aef429",
+        "virtual_sha256": "284345fc7357dcf0046e915f46da6b5efe41192a5109a473c83b257c18e68dea",
+        "ghidra_zero_padded_size": 524288,
+        "ghidra_zero_padded_sha256": "9719f0233f0af40eab63a0548511aa13e6ba06863e1aef96376fc12ef95f3ea4"
+      }
+    },
+    "19": {
+      "source": {
+        "path": "work/alpme_analysis/dynamic/19_plugin_payload.dll.bin",
+        "size": 643584,
+        "sha256": "4e4636d2c9d57eb609b7d18ee3dc01713fbcda39c5eee52bd4a66f222f67bb31"
+      },
+      "text": {
+        "rva": "0x1000",
+        "raw_size": 514560,
+        "virtual_size": 514550,
+        "raw_sha256": "0b01f35da9c000cc8671b27a020c93741a32c22a18328df43095e8883db2ce61",
+        "virtual_sha256": "78862a80b87077b33450376bc81345fa95f154dc2df050f6a9e38d547a982718",
+        "ghidra_zero_padded_size": 516096,
+        "ghidra_zero_padded_sha256": "58ed088899886b5cc99a09fba69af079f2c4d53f12059c1443a1113e38c899f3"
+      }
+    }
+  },
+  "functions": [
+    {
+      "version": "17",
+      "entry": "0x6b869",
+      "native_instructions": 4809,
+      "reached_instructions": 4809,
+      "computed_dispatch_sites": 271,
+      "unresolved_computed_dispatch_sites": 0,
+      "out_of_extent_targets": 0,
+      "worklist_exhausted": true,
+      "indirect_CALLs": [
+        {
+          "rva": "0x6dbdd",
+          "bytes": "41ff542407",
+          "asm": "call qword ptr [r12 + 7]"
+        }
+      ],
+      "native_extent_sha256": "1deb198bc57aca0e853297c7bbfa1f367ec9bb4c4f820ed78f4e6a9ef9547d9d",
+      "plan": {
+        "path": "work/alpme_analysis/semantic_closure_20261027/round5_gecko/17_6b869_strict.json",
+        "size": 158885,
+        "sha256": "350c59bd816096ecdfb0229637fce4fefade9fca9246a4221167f0fc26d6ae5a"
+      },
+      "C_export": {
+        "path": "work/alpme_analysis/semantic_closure_20261027/round5_gecko/strict_exports/17_payload.dll.bin_0x6b869.c",
+        "size": 159100,
+        "sha256": "8670f026801a3ed98b5223c8c37009f8958112010f335d47f38e3cdbf99100a1"
+      },
+      "decompiler_warning_count": 290,
+      "original_text_identity": "raw section plus page-alignment zero padding equals Ghidra before/after digest"
+    },
+    {
+      "version": "19",
+      "entry": "0x4a55a",
+      "native_instructions": 2181,
+      "reached_instructions": 2181,
+      "computed_dispatch_sites": 0,
+      "unresolved_computed_dispatch_sites": 0,
+      "out_of_extent_targets": 0,
+      "worklist_exhausted": true,
+      "indirect_CALLs": [
+        {
+          "rva": "0x4baa0",
+          "bytes": "ff5707",
+          "asm": "call qword ptr [rdi + 7]"
+        }
+      ],
+      "native_extent_sha256": "87f31baa3a0e1ea2427a3bfa08e951f4067b1b40e785e9164c9f23f4b2faa662",
+      "plan": {
+        "path": "work/alpme_analysis/semantic_closure_20261027/round5_gecko/19_4a55a_strict.json",
+        "size": 40901,
+        "sha256": "7b8357eff21e30c17d8791f193ddc69477ab7f667ebbbcb4e0f678beeffaf09d"
+      },
+      "C_export": {
+        "path": "work/alpme_analysis/semantic_closure_20261027/round5_gecko/strict_exports/19_payload.dll.bin_0x4a55a.c",
+        "size": 60799,
+        "sha256": "1fba663aae80fe22b6553b495685ed5fcbf46105e8774df78b81a8e49127976e"
+      },
+      "decompiler_warning_count": 3,
+      "original_text_identity": "raw section plus page-alignment zero padding equals Ghidra before/after digest"
+    },
+    {
+      "version": "19",
+      "entry": "0x11453",
+      "native_instructions": 155,
+      "reached_instructions": 155,
+      "computed_dispatch_sites": 7,
+      "unresolved_computed_dispatch_sites": 0,
+      "out_of_extent_targets": 0,
+      "worklist_exhausted": true,
+      "indirect_CALLs": [],
+      "native_extent_sha256": "fee74a827a976dce13afab3de5abd42905a5e2e32f1cc5ff421bbafcf4277fb4",
+      "plan": {
+        "path": "work/alpme_analysis/semantic_closure_20261027/round5_gecko/19_11453_normal.json",
+        "size": 5044,
+        "sha256": "2aeaaa124250ca98e2d411637d8f4543ac825f499773f0eada3594816eb8df30"
+      },
+      "C_export": {
+        "path": "work/alpme_analysis/semantic_closure_20261027/round5_gecko/strict_exports/19_payload.dll.bin_0x11453.c",
+        "size": 3667,
+        "sha256": "56d74b99e66bd4ce2f46e7aea360b21fac46526b8130fd12c81dc9aca476d171"
+      },
+      "decompiler_warning_count": 10,
+      "original_text_identity": "raw section plus page-alignment zero padding equals Ghidra before/after digest"
+    }
+  ],
+  "imported_prior_helper_closure": [
+    {
+      "version": "17",
+      "entry": "0x4e14f",
+      "native_instructions": 1091,
+      "computed_dispatch_sites": 93,
+      "unresolved_computed_dispatch_sites": 0,
+      "native_extent_sha256": "7a06cb55014bcf8b75651525735175408b1c91f099789465da7dca46c9920feb",
+      "verified_existing_evidence": true,
+      "recomputed_in_this_round": false,
+      "local_semantics": "JSON selected-field scanning; local CFG closure already established",
+      "remaining_boundary": "Universal malformed-input and all transitive string/Unicode helper semantics are not claimed."
+    },
+    {
+      "version": "19",
+      "entry": "0x126b7",
+      "native_instructions": 971,
+      "computed_dispatch_sites": 79,
+      "unresolved_computed_dispatch_sites": 0,
+      "native_extent_sha256": "090df7c129ee7bdf73ce1d3ce0376530d646f4838d6cab0d09b67d3b8ca840b7",
+      "verified_existing_evidence": true,
+      "recomputed_in_this_round": false,
+      "local_semantics": "JSON selected-field scanning; local CFG closure already established",
+      "remaining_boundary": "Universal malformed-input and all transitive string/Unicode helper semantics are not claimed."
+    }
+  ],
+  "evidence_layers": [
+    "Gecko local native CFG closure",
+    "Gecko caller path and data-flow semantics",
+    "19 selected complete synthetic UTF-8 prefs transliteration cases",
+    "Already-closed local JSON scanner CFG/conditional semantics versus unproved universal transitive helper semantics"
+  ],
+  "phase_gate": {
+    "proof": "17_owned_phase_gate_proof.json",
+    "width_bytes": 8,
+    "private_slots": [
+      "SP+0x60",
+      "SP+0xc0"
+    ],
+    "exact_lifetimes": 7,
+    "classified_live_calls": 95,
+    "classified_owned_alias_stores": 6,
+    "disjoint_native_stores": 109,
+    "preservation_sites": 210,
+    "normal_owned_abi_premises": [
+      "Valid Rust Vec pointer/capacity/length, no allocation or index arithmetic wrap, live owned buffers disjoint from active caller private frame.",
+      "Valid BTree node length <=11, index within node; Entry built by2d0ba from actual map SP180; map nodes and value Vecs are live owned allocations.",
+      "ReadDir SomeOk Arc pointer originates from valid owned ReadDir allocation; None/Err discriminants preserve their actual constructors.",
+      "Callee bounded output ABI and ownership effects use the existing collector/proven container bank; these are explicit normal-context contracts, not dynamic API purity assumptions."
+    ],
+    "sources_are_executed_by_abstract_transfer": true,
+    "phase_values_seeded": false,
+    "BTree_Entry_constructor": "0x70e98 ->0x2d0ba; Entry[56] at SP+0x490, actual root SP+0x180",
+    "nested_map_header_span": [
+      "SP+0x180",
+      "SP+0x198"
+    ],
+    "not_blanket_frame_preservation": true
+  },
+  "indirect_CALL_context": "17:0x6dbdd and19:0x4baa0 remain in native bytes/C. For the exact ReadDir Err producer, payload lowtag is2; the generic callback requires1, so that contextual edge is unreachable. No target or purity claim is made for arbitrary tagged callbacks.",
+  "prefs": {
+    "proof": "prefs_parser_selected_inputs.json",
+    "selected_complete_synthetic_UTF8_cases": 19,
+    "semantics": "First matching key-substring line; six outer escapes; unknown escapes retained; raw quoted token pairing UUID->ID; not a full JavaScript or JSON parser.",
+    "limitation": "Selected UTF-8 transliteration only, not every malformed-byte input."
+  },
+  "keyword19": {
+    "proof": "keyword19_forward_proof.json",
+    "count": 276,
+    "encoded_bytes": 6124,
+    "decoded_bytes": 4193,
+    "byte_for_byte_equal_to17": true,
+    "folding": "ASCII A..Z to a..z; all other byte values unchanged",
+    "matching": "any fixed term as byte substring; nonzero veto skips collection"
+  },
+  "unclosed_transitive_helpers": [
+    {
+      "version": "17",
+      "field_extractor": "0x49538",
+      "direct_parser": "0x4e14f",
+      "already_closed_local_CFG": "4e14f: 1091 instructions/93 computed dispatches; existing normal caller-context evidence",
+      "boundary": "The local parser CFG is already closed. Universal malformed JSON/string/Unicode and all transitive helper semantics are not proved by the Gecko selected prefs tests."
+    },
+    {
+      "version": "19",
+      "field_extractor": "0x45cdf",
+      "direct_parser": "0x126b7",
+      "already_closed_local_CFG_and_semantics": "126b7: 971 instructions/79 computed dispatches, plus local recursive JSON selected-field scanning semantics in round5_tokenizers",
+      "boundary": "The local scanner CFG and its conditional field-selection behavior are already established. Universal malformed input and all transitive string/Unicode/allocation helper behavior remain outside this Gecko receipt."
+    },
+    {
+      "version": "17",
+      "caller": "0x4e14f",
+      "further_direct_callees": [
+        "0x2a142",
+        "0x36fcd",
+        "0x64c89"
+      ],
+      "boundary": "These direct helper calls are present in the original parser; the Gecko prefs transliteration does not constitute an exhaustive semantic proof of these callees."
+    },
+    {
+      "version": "19",
+      "caller": "0x126b7",
+      "further_direct_callees": [
+        "0x69af2",
+        "0x71df",
+        "0x6026a",
+        "0x126b7"
+      ],
+      "boundary": "Further native calls are identified by original bytes; identifying an address does not prove its complete semantics."
+    },
+    {
+      "scope": "Owned helper bank",
+      "boundary": "Vec/BTree/Arc and typed-output contracts establish the listed write effects in a valid normal owned ABI; they are not universal proofs over corrupted pointers, invalid capacities, allocation failure, or arbitrary callback targets."
+    },
+    {
+      "scope": "Output boundary",
+      "boundary": "The caller result/channel handoff is identified; downstream wire field naming, serialization, compression, encryption, C2 delivery and host-data collection outcomes are outside these two function proofs."
+    }
+  ],
+  "legacy_evidence_note": "Gecko_bounded_receipt.json, Gecko_semantic_digest_zh.json and candidate exports retain their historical pending labels. This final receipt supersedes only their old 17 gate and19 keyword/prefs progress status; their warnings about general transitive parser scope remain applicable.",
+  "source_manifest_scope": "Every top-level analyst Python/Java source in round5_gecko and all local source modules/codecs imported by the final proof pipeline. Third-party pefile/Capstone implementation files are separately hashed.",
+  "source_manifest": [
+    {
+      "path": "work/alpme_analysis/agent17/decode17.py",
+      "size": 1922,
+      "sha256": "1bd5e7113042354936b18c655e79a39bcdf017e4755b814d240116321ff46aa0"
+    },
+    {
+      "path": "work/alpme_analysis/agent19/decode.py",
+      "size": 2214,
+      "sha256": "cbaa7a0e9b858b0f86311c7447af60fef318fedd42de6a6392b4a1674cde5342"
+    },
+    {
+      "path": "work/alpme_analysis/semantic_closure_20261027/ghidra_repair/abstract_dispatch.py",
+      "size": 17589,
+      "sha256": "6509fc1462a6e723f0ed1ebff24ac5de03899118de5f803629d15989d05d862b"
+    },
+    {
+      "path": "work/alpme_analysis/semantic_closure_20261027/round3_cleanup_finish/block_fixpoint.py",
+      "size": 4008,
+      "sha256": "75f930314859438a7e3110cf3bc8dccab0c8072367feaf1a503f3f9c5d55a402"
+    },
+    {
+      "path": "work/alpme_analysis/semantic_closure_20261027/round3_cleanup_finish/normal_tls_static.py",
+      "size": 5552,
+      "sha256": "16d7a4fa002f2d04b5c7d1c7eb9363ee63886cb1e02b2b12140703874ed71241"
+    },
+    {
+      "path": "work/alpme_analysis/semantic_closure_20261027/round3_registry_files/refine_static.py",
+      "size": 3991,
+      "sha256": "fa13d9bad178d737fb9b02a9f63737857a0061f9fc270cce85183f5b2eccd1fc"
+    },
+    {
+      "path": "work/alpme_analysis/semantic_closure_20261027/round3_strings/browser_graph19.py",
+      "size": 3174,
+      "sha256": "5ce45d2809220444467a39fbeeccea951d19a1dfa7511186ca429774693f1e93"
+    },
+    {
+      "path": "work/alpme_analysis/semantic_closure_20261027/round3_strings/constant_slices.py",
+      "size": 6213,
+      "sha256": "80c43b4665af4cb10d2f8e9b03dd6f968b0bd6fe9560b07749c758b8142312af"
+    },
+    {
+      "path": "work/alpme_analysis/semantic_closure_20261027/round3_strings/refine_lowbyte.py",
+      "size": 1776,
+      "sha256": "d8210ff4e0c91bc325b1cb99c0c112fbbf13153edf03452996002649222c7580"
+    },
+    {
+      "path": "work/alpme_analysis/semantic_closure_20261027/round5_gecko/analyze_gecko.py",
+      "size": 3790,
+      "sha256": "0719b18b24ac44f4e8e5b17af5ccfc97ac34e4f09a1c9efa8c9ba65c34823ef2"
+    },
+    {
+      "path": "work/alpme_analysis/semantic_closure_20261027/round5_gecko/analyze_gecko_strict.py",
+      "size": 4157,
+      "sha256": "9d3e6a90427b69117e025e9578d82b84bab3c92dc6ea6baf3ba651b5f3040f37"
+    },
+    {
+      "path": "work/alpme_analysis/semantic_closure_20261027/round5_gecko/audit_critical_calls.py",
+      "size": 3255,
+      "sha256": "9dac5ec66f8adb9877134feaa21a7a9cb81a4abec14c9250ef045330f8aa2686"
+    },
+    {
+      "path": "work/alpme_analysis/semantic_closure_20261027/round5_gecko/decode_keyword19.py",
+      "size": 5864,
+      "sha256": "f32cb701b565f1c7789de076e305bc8b480c91c808d93827c86cfec97a6dc3c6"
+    },
+    {
+      "path": "work/alpme_analysis/semantic_closure_20261027/round5_gecko/derive_literals.py",
+      "size": 2433,
+      "sha256": "35aff09a8746e6943944189a5227fc075d7d4e1175f958c828466b5397efaa69"
+    },
+    {
+      "path": "work/alpme_analysis/semantic_closure_20261027/round5_gecko/export_candidate.py",
+      "size": 1598,
+      "sha256": "fb87e1e32e5a17a6f72772ef767d75da3cf8487b521ab57e2aaa0e6445dcaf95"
+    },
+    {
+      "path": "work/alpme_analysis/semantic_closure_20261027/round5_gecko/export_strict.py",
+      "size": 1609,
+      "sha256": "8a37a1329850f2131feea234e8ea83e89b4602f87c6c3689f9b4b3ecb35880e1"
+    },
+    {
+      "path": "work/alpme_analysis/semantic_closure_20261027/round5_gecko/gecko_graph.py",
+      "size": 2442,
+      "sha256": "7fee0d9683193d1b18869c6e10a34866d5e6ab92a9f3089cdf518a309a6a71ae"
+    },
+    {
+      "path": "work/alpme_analysis/semantic_closure_20261027/round5_gecko/phase_gate_frontier.py",
+      "size": 2513,
+      "sha256": "e2bab6b9452c7a8a8a902077417e621269350fa47c3ae0503d4bd88cd9ca43e3"
+    },
+    {
+      "path": "work/alpme_analysis/semantic_closure_20261027/round5_gecko/prove_error_cleanup.py",
+      "size": 4508,
+      "sha256": "ee750abcb9cc456fd5919b9844d9730589c63b027fb34101c683fb541f656f22"
+    },
+    {
+      "path": "work/alpme_analysis/semantic_closure_20261027/round5_gecko/prove_owned_phase_gate.py",
+      "size": 10376,
+      "sha256": "40a50383aa90d3d8770be066357b7d128e00bd32e58dc963eb52b3879f1a9b89"
+    },
+    {
+      "path": "work/alpme_analysis/semantic_closure_20261027/round5_gecko/prove_prefs_parser.py",
+      "size": 7586,
+      "sha256": "f91e53cdf96b79979ddc3ce0f0ae199a911e905a7792c14380c67c6910d08c90"
+    },
+    {
+      "path": "work/alpme_analysis/semantic_closure_20261027/round5_gecko/prove_small_tags.py",
+      "size": 2818,
+      "sha256": "69bef5ad26b0331ceba2d6f9d2cbf91692dbfd73ed23914e48bf202f76bb71a1"
+    },
+    {
+      "path": "work/alpme_analysis/semantic_closure_20261027/round5_gecko/RecoverGeckoCore.java",
+      "size": 5689,
+      "sha256": "955afb194a0fc8362f478cb1c44375a59fb595d4fc4ff640e59b63d1148a546a"
+    },
+    {
+      "path": "work/alpme_analysis/semantic_closure_20261027/round5_gecko/verify_bounded_receipt.py",
+      "size": 2867,
+      "sha256": "c9384b870ae78bed021d5140ea780baae4e54b4e613c05197be3af8fbba395b7"
+    },
+    {
+      "path": "work/alpme_analysis/semantic_closure_20261027/round5_gecko/verify_final.py",
+      "size": 27416,
+      "sha256": "cbf178768595838ef07af63d74ac4bf1816b42bde3231d36dde4d206d3d257e2"
+    },
+    {
+      "path": "work/alpme_analysis/semantic_closure_20261027/round5_gecko/write_digest.py",
+      "size": 9066,
+      "sha256": "eb9433daa0dd0a3bdc9cf9e4dafac1e7e1dfc77110cbca515d3c621451d26315"
+    },
+    {
+      "path": "work/alpme_analysis/semantic_closure_20261027/round5_profile_collectors/call_contracts.py",
+      "size": 2952,
+      "sha256": "bdef2ced8b80b80ad7e8196cd7a56a4b825ce97d1df53cd23f8f019c6882e4b7"
+    },
+    {
+      "path": "work/alpme_analysis/semantic_closure_20261027/round5_profile_collectors/collector_graph.py",
+      "size": 3234,
+      "sha256": "c71cf69151225df9d5db67407baea5f45f462ce2cfb4872eae116ec699f24e48"
+    }
+  ],
+  "dependency_manifest": [
+    {
+      "path": "work/analysis_py/capstone/__init__.py",
+      "size": 43853,
+      "sha256": "94571d1314355e261aff0ddfc94985fe8761232ddff6874181fd21efa9fab47f"
+    },
+    {
+      "path": "work/analysis_py/capstone/arm.py",
+      "size": 2154,
+      "sha256": "00ea7442a1496d84aca469bfa3542290eafe22898b5be0dece9294865b9508ba"
+    },
+    {
+      "path": "work/analysis_py/capstone/arm64.py",
+      "size": 2428,
+      "sha256": "834979e887315fae9a447698502f6866c246cb99b65c84b8b6fdef8087181284"
+    },
+    {
+      "path": "work/analysis_py/capstone/arm64_const.py",
+      "size": 81768,
+      "sha256": "f358d461b1f45a8d91d8e308ca82e5b35c5d2e5c135d8ed07d8cdc86456a5418"
+    },
+    {
+      "path": "work/analysis_py/capstone/arm_const.py",
+      "size": 17295,
+      "sha256": "1b00d7b48be4b72b730272486d4fd2057cb8019e67f1bd145bcabb1b988d1c67"
+    },
+    {
+      "path": "work/analysis_py/capstone/bpf.py",
+      "size": 1438,
+      "sha256": "f879595fbc413bfa74600b4cbaa7a2cdd7200b2f92e718ad31fb36844e7c0f9d"
+    },
+    {
+      "path": "work/analysis_py/capstone/bpf_const.py",
+      "size": 2160,
+      "sha256": "070717e28a68ee7e1e8b29cb9a299f5e462be81d9ad6c83dccce5f771fe22e7e"
+    },
+    {
+      "path": "work/analysis_py/capstone/evm.py",
+      "size": 383,
+      "sha256": "29f35d3953b2eeb976e02af3cdbf3a78066d4d5a750588da0672e48bc5aa0385"
+    },
+    {
+      "path": "work/analysis_py/capstone/evm_const.py",
+      "size": 3292,
+      "sha256": "b3a60498c0ac455098d884574829875deb83a4176a052480249a9d3e93f42b6d"
+    },
+    {
+      "path": "work/analysis_py/capstone/lib/capstone.dll",
+      "size": 7576576,
+      "sha256": "76958e18380023a68fd1714fa2e01c594cc6db1955a07ad6937b66e66dc5d6c3"
+    },
+    {
+      "path": "work/analysis_py/capstone/m680x.py",
+      "size": 2065,
+      "sha256": "24d56b8f6e9c12d73f830f26de36d02461e4d73a3091943e6c90884181efe41d"
+    },
+    {
+      "path": "work/analysis_py/capstone/m680x_const.py",
+      "size": 8885,
+      "sha256": "a8ceebe6e6213da834406e7a56c1f808fad554c5ed85a986b0ef8647db3718da"
+    },
+    {
+      "path": "work/analysis_py/capstone/m68k.py",
+      "size": 2438,
+      "sha256": "0567bf26e32a274b086d296fdcc078dcbda2c66280f941e5986b30eecc647bc8"
+    },
+    {
+      "path": "work/analysis_py/capstone/m68k_const.py",
+      "size": 10489,
+      "sha256": "79de0ea42977ad2875fd73a34ddb55fc2ace58dac45b0ee8aff0ae138c7a8faa"
+    },
+    {
+      "path": "work/analysis_py/capstone/mips.py",
+      "size": 1001,
+      "sha256": "c23b6e5d5df2be6f728dda2da2a8f805d4d1500e383aebf555da1fa9650639e8"
+    },
+    {
+      "path": "work/analysis_py/capstone/mips_const.py",
+      "size": 18592,
+      "sha256": "80a325c59a8a88918d1ebc55268e07461841ddde50d034a545d31cdf44668324"
+    },
+    {
+      "path": "work/analysis_py/capstone/mos65xx.py",
+      "size": 998,
+      "sha256": "f9b525569fcae4768ac4b2230a46468a571e934717f14d52910e243d0b279e9a"
+    },
+    {
+      "path": "work/analysis_py/capstone/mos65xx_const.py",
+      "size": 3393,
+      "sha256": "22762e23dec6d011f75068cac995f4c05f6cf5c93c207502eeb11d0cd4a136f3"
+    },
+    {
+      "path": "work/analysis_py/capstone/ppc.py",
+      "size": 1384,
+      "sha256": "1ee21161d21902744379624d87048138272a99c6bd98623256baa065038bf03d"
+    },
+    {
+      "path": "work/analysis_py/capstone/ppc_const.py",
+      "size": 45023,
+      "sha256": "4284db74b7db3a0e3eda043970096c047df81d9b0a81c13b3b5b70ca623d4b0b"
+    },
+    {
+      "path": "work/analysis_py/capstone/riscv.py",
+      "size": 1104,
+      "sha256": "c40beee7bd99d3f1cc329203020def06140a786d17e2ec963feefb12e0c8e872"
+    },
+    {
+      "path": "work/analysis_py/capstone/riscv_const.py",
+      "size": 10953,
+      "sha256": "6ac81243404207d74b3190c37180b6353a001191c7df5d04fd25f89b624abdd1"
+    },
+    {
+      "path": "work/analysis_py/capstone/sh.py",
+      "size": 1478,
+      "sha256": "d50212075a918e94b41f1e67f838a3b70bc44d19941f33b6d502e5359c967592"
+    },
+    {
+      "path": "work/analysis_py/capstone/sh_const.py",
+      "size": 7154,
+      "sha256": "a19a1837892a0eaa9bc3e5cd3638625471d705a35b08aa26994ad108928125be"
+    },
+    {
+      "path": "work/analysis_py/capstone/sparc.py",
+      "size": 1127,
+      "sha256": "389867d194a7bef779466a5283953cb2b30d2e84368e80112677cfaa0334097c"
+    },
+    {
+      "path": "work/analysis_py/capstone/sparc_const.py",
+      "size": 9738,
+      "sha256": "aef73803efe9a2e0e109fe05e0b791f33e62d41c54ed32cd2773837960d1ddae"
+    },
+    {
+      "path": "work/analysis_py/capstone/systemz.py",
+      "size": 1115,
+      "sha256": "9e75611fb8930ef665b04a80e14ca0735953f69d2f0fdb608f96ea172cef7f2d"
+    },
+    {
+      "path": "work/analysis_py/capstone/sysz_const.py",
+      "size": 56291,
+      "sha256": "98ad76240b48eff060f96fc0986933c904cbdfd654866eb49e7ee5879db2908e"
+    },
+    {
+      "path": "work/analysis_py/capstone/tms320c64x.py",
+      "size": 1672,
+      "sha256": "597bf661d25e283c007c9ee76defb422f41e4279aae5bbd8b5736400109cf6b3"
+    },
+    {
+      "path": "work/analysis_py/capstone/tms320c64x_const.py",
+      "size": 7257,
+      "sha256": "643aeb59e96e2eb10f6ca4e9d27db9c00d83195cf442dea453418ac2df0cb94b"
+    },
+    {
+      "path": "work/analysis_py/capstone/tricore.py",
+      "size": 1123,
+      "sha256": "6716ed4579dadec5c476a0a704c35421860cdaaf20796c7d9c5ebfceb5c4e3cb"
+    },
+    {
+      "path": "work/analysis_py/capstone/tricore_const.py",
+      "size": 12010,
+      "sha256": "95d640cfc8d698f162edc68646c4829cd25289ee47d2869815b33b7839d32bae"
+    },
+    {
+      "path": "work/analysis_py/capstone/wasm.py",
+      "size": 1627,
+      "sha256": "8fb19dfb59cd7175ab0e55b8b7c2d37e150c237ed6060862be6ec3e98bf21d6d"
+    },
+    {
+      "path": "work/analysis_py/capstone/wasm_const.py",
+      "size": 5132,
+      "sha256": "e03e231892153456070055f39a53ed3205feeb24e7d768a2b193adcbe26cffc5"
+    },
+    {
+      "path": "work/analysis_py/capstone/x86.py",
+      "size": 2816,
+      "sha256": "08cbb0a02ff152bcf1fbd7c4f8850b3ade38c25b9f0a6a9b900a55ee75e87c67"
+    },
+    {
+      "path": "work/analysis_py/capstone/x86_const.py",
+      "size": 45756,
+      "sha256": "83cf4550d9256f5f9b8e218b9b732e46d83ef602b463a01d6eeb778deb28e040"
+    },
+    {
+      "path": "work/analysis_py/capstone/xcore.py",
+      "size": 1082,
+      "sha256": "67a3bab5ec77998bf88f320b61be7110318454be2252ff2a02f42ca4aab56a8c"
+    },
+    {
+      "path": "work/analysis_py/capstone/xcore_const.py",
+      "size": 3424,
+      "sha256": "34367710ee0501621fb8b325890cae740ff38075d3ef66b36de9b8b4dcec227f"
+    },
+    {
+      "path": "work/analysis_py/pefile.py",
+      "size": 301767,
+      "sha256": "0d0eb68f0f169182613dc64b3ab50b20855508c1c1d2faafe8fccf23edb6a345"
+    }
+  ],
+  "input_manifest": [
+    {
+      "path": "work/alpme_analysis/dynamic/17_plugin_payload.dll.bin",
+      "size": 648192,
+      "sha256": "24f7eed14b69c561bd2dde6aa61759cabc8588293e9a0099dde8e381f96f228a"
+    },
+    {
+      "path": "work/alpme_analysis/dynamic/19_plugin_payload.dll.bin",
+      "size": 643584,
+      "sha256": "4e4636d2c9d57eb609b7d18ee3dc01713fbcda39c5eee52bd4a66f222f67bb31"
+    },
+    {
+      "path": "work/alpme_analysis/semantic_closure_20261027/round5_profile_collectors/utf8_validator_tag_proof.json",
+      "size": 3756,
+      "sha256": "1211737cdfb6773ae90ecf6e9d931c2b69826a7a7ec533402314998934c1eec8"
+    },
+    {
+      "path": "work/alpme_analysis/semantic_closure_20261027/extension_keyword_list17.txt",
+      "size": 4193,
+      "sha256": "46bda9b97b6d2f132f5dfd5f5ef32a285c1afe21a6980a1b49ab041d798fbc33"
+    },
+    {
+      "path": "work/alpme_analysis/semantic_closure_20261027/round3_strings/json_context_bool_proof.json",
+      "size": 81885,
+      "sha256": "f1bdaf576934d644d5988c2ac3dff4993a83fa64b19417b22208491759332d7f"
+    },
+    {
+      "path": "work/alpme_analysis/semantic_closure_20261027/round5_tokenizers/proof_receipt.json",
+      "size": 116953,
+      "sha256": "5d556c40378fbbf279b918644c543883502bd74250af9acd8cf3255a5d4a2958"
+    },
+    {
+      "path": "work/alpme_analysis/semantic_closure_20261027/round5_tokenizers/semantic_findings_zh.md",
+      "size": 8351,
+      "sha256": "3bcc9ca74d65686e7639519a44a59f4c4128cd94ce42e001b55977a24112015b"
+    }
+  ],
+  "artifact_manifest": [
+    {
+      "path": "work/alpme_analysis/semantic_closure_20261027/round5_gecko/17_4a0d2_ReadDirNext_native.asm.txt",
+      "size": 5423,
+      "sha256": "460019d98df3b1742b850dd55709df0650b85ca3fdc68d7fc31049b294308d4c"
+    },
+    {
+      "path": "work/alpme_analysis/semantic_closure_20261027/round5_gecko/17_6b869_candidate.json",
+      "size": 370164,
+      "sha256": "e546403fff00ad5c4173684bc5195714d86e830b261062712ef502d82fcb74b0"
+    },
+    {
+      "path": "work/alpme_analysis/semantic_closure_20261027/round5_gecko/17_6b869_original.asm.txt",
+      "size": 189597,
+      "sha256": "3f3270ea37d448f089cc4542b892074e27b33d020791f5b10acfa71be375c996"
+    },
+    {
+      "path": "work/alpme_analysis/semantic_closure_20261027/round5_gecko/17_6b869_puretag_normal.json",
+      "size": 367978,
+      "sha256": "201facaff1e8a425393a4d01ca3bcf8a4cd0701fc00ae1a8763f928d32e3ad32"
+    },
+    {
+      "path": "work/alpme_analysis/semantic_closure_20261027/round5_gecko/17_6b869_strict.json",
+      "size": 158885,
+      "sha256": "350c59bd816096ecdfb0229637fce4fefade9fca9246a4221167f0fc26d6ae5a"
+    },
+    {
+      "path": "work/alpme_analysis/semantic_closure_20261027/round5_gecko/17_critical_call_regions.json",
+      "size": 43374,
+      "sha256": "78efc84d80aa567353b666680284b82c79105401482d43a282cb381b5375ab67"
+    },
+    {
+      "path": "work/alpme_analysis/semantic_closure_20261027/round5_gecko/17_native_literals.json",
+      "size": 25105,
+      "sha256": "56b7c4231b6a4f964b536f1c671d8e6b127145b2bf2d6b6a0d1846d0bc2e9fa0"
+    },
+    {
+      "path": "work/alpme_analysis/semantic_closure_20261027/round5_gecko/17_owned_phase_gate_proof.json",
+      "size": 177542,
+      "sha256": "c8681340c16754cfce46556df51f68958321ec52685f231290ae32184345c98c"
+    },
+    {
+      "path": "work/alpme_analysis/semantic_closure_20261027/round5_gecko/17_phase_gate_frontier.json",
+      "size": 44996,
+      "sha256": "238efd97e65db34516ea50869a3c22158045f288daf0da847058e7b1f6d95236"
+    },
+    {
+      "path": "work/alpme_analysis/semantic_closure_20261027/round5_gecko/19_11453_normal.json",
+      "size": 5044,
+      "sha256": "2aeaaa124250ca98e2d411637d8f4543ac825f499773f0eada3594816eb8df30"
+    },
+    {
+      "path": "work/alpme_analysis/semantic_closure_20261027/round5_gecko/19_11453_original.asm.txt",
+      "size": 5518,
+      "sha256": "7fce0b9c3d2566af3b6d64b7e3bce3dc24e43530e80610dce71f09d281b0770a"
+    },
+    {
+      "path": "work/alpme_analysis/semantic_closure_20261027/round5_gecko/19_4a55a_original.asm.txt",
+      "size": 88297,
+      "sha256": "b169b352f38fa1f7d16e06dea7501b8c41c2a4a7670ae79199838439db575242"
+    },
+    {
+      "path": "work/alpme_analysis/semantic_closure_20261027/round5_gecko/19_4a55a_puretag_normal.json",
+      "size": 233810,
+      "sha256": "720a6decb4ccb64eff1087f5a9ce81fd0a406ecdeb910bfd2646ffd2340ef96d"
+    },
+    {
+      "path": "work/alpme_analysis/semantic_closure_20261027/round5_gecko/19_4a55a_strict.json",
+      "size": 40901,
+      "sha256": "7b8357eff21e30c17d8791f193ddc69477ab7f667ebbbcb4e0f678beeffaf09d"
+    },
+    {
+      "path": "work/alpme_analysis/semantic_closure_20261027/round5_gecko/19_4d092_original.asm.txt",
+      "size": 13064,
+      "sha256": "0b56cabd959fa4bbe4d0eb47c6fddfdc45b67e676bdcb2d5256590d6ead4aa2a"
+    },
+    {
+      "path": "work/alpme_analysis/semantic_closure_20261027/round5_gecko/19_dda5_ReadDirNext_native.asm.txt",
+      "size": 5241,
+      "sha256": "9fad241158b86f4930e786139553997ec60449d4eff89efb23f480d11832f908"
+    },
+    {
+      "path": "work/alpme_analysis/semantic_closure_20261027/round5_gecko/19_native_literals.json",
+      "size": 24568,
+      "sha256": "7c1f634ec5841c4c96f447a2b8da7f41d845ab21065aef31beacb6fad0b0a624"
+    },
+    {
+      "path": "work/alpme_analysis/semantic_closure_20261027/round5_gecko/extension_keyword_list19.txt",
+      "size": 4193,
+      "sha256": "46bda9b97b6d2f132f5dfd5f5ef32a285c1afe21a6980a1b49ab041d798fbc33"
+    },
+    {
+      "path": "work/alpme_analysis/semantic_closure_20261027/round5_gecko/Gecko_bounded_receipt.json",
+      "size": 2591,
+      "sha256": "8438db3bfa6a672f206d231f5517a8255eb7a6408c990b319d29931717652198"
+    },
+    {
+      "path": "work/alpme_analysis/semantic_closure_20261027/round5_gecko/Gecko_final_summary_zh.md",
+      "size": 7478,
+      "sha256": "b260e2682f386f4dce0f73ec853bd604b9bfa5dd748857d7719c6dd94cb00a71"
+    },
+    {
+      "path": "work/alpme_analysis/semantic_closure_20261027/round5_gecko/Gecko_semantic_digest_zh.json",
+      "size": 42169,
+      "sha256": "382874c4ca4e2d1d8783242e4429cffa41fe1abd9dec6932b0c31b61fbf634c7"
+    },
+    {
+      "path": "work/alpme_analysis/semantic_closure_20261027/round5_gecko/keyword19_forward_proof.json",
+      "size": 15661,
+      "sha256": "56542c2c439285651bf8a68c2103fe253162493155227b59b544a334de9052c7"
+    },
+    {
+      "path": "work/alpme_analysis/semantic_closure_20261027/round5_gecko/prefs_parser_selected_inputs.json",
+      "size": 42303,
+      "sha256": "faf455d1a1da1e09d15865ac5122a86c17fc1138014f8716f46d91637db68005"
+    },
+    {
+      "path": "work/alpme_analysis/semantic_closure_20261027/round5_gecko/ReadDir_error_callback_proof.json",
+      "size": 15940,
+      "sha256": "838d22d2428635ce820969eacba6eccd0290df4c2a6cb918828940f27971ff64"
+    },
+    {
+      "path": "work/alpme_analysis/semantic_closure_20261027/round5_gecko/small_tag_contracts.json",
+      "size": 13471,
+      "sha256": "99f5df9fa2c5db4d67989106eb81459a126f669dd7dda007657df86951bc554e"
+    },
+    {
+      "path": "work/alpme_analysis/semantic_closure_20261027/round5_gecko/strict_export_invocations.json",
+      "size": 501,
+      "sha256": "5aaaf5ab380408de3cc9860ba5d510efd6d709b2a6e6dec78ddf79839b0f7c22"
+    },
+    {
+      "path": "work/alpme_analysis/semantic_closure_20261027/round5_gecko/strict_exports/17_payload.dll.bin_0x6b869.c",
+      "size": 159100,
+      "sha256": "8670f026801a3ed98b5223c8c37009f8958112010f335d47f38e3cdbf99100a1"
+    },
+    {
+      "path": "work/alpme_analysis/semantic_closure_20261027/round5_gecko/strict_exports/17_payload.dll.bin_0x6b869_listing_retry.json",
+      "size": 346,
+      "sha256": "e0303fe12383acb7d828af41d4a68bc7608b7637baa543693d5fe59312be475f"
+    },
+    {
+      "path": "work/alpme_analysis/semantic_closure_20261027/round5_gecko/strict_exports/19_payload.dll.bin_0x11453.c",
+      "size": 3667,
+      "sha256": "56d74b99e66bd4ce2f46e7aea360b21fac46526b8130fd12c81dc9aca476d171"
+    },
+    {
+      "path": "work/alpme_analysis/semantic_closure_20261027/round5_gecko/strict_exports/19_payload.dll.bin_0x11453_listing_retry.json",
+      "size": 343,
+      "sha256": "407a11494db202025bc91648ea6b1d9bfccc0993df25fc179d79eaa4653e873e"
+    },
+    {
+      "path": "work/alpme_analysis/semantic_closure_20261027/round5_gecko/strict_exports/19_payload.dll.bin_0x4a55a.c",
+      "size": 60799,
+      "sha256": "1fba663aae80fe22b6553b495685ed5fcbf46105e8774df78b81a8e49127976e"
+    },
+    {
+      "path": "work/alpme_analysis/semantic_closure_20261027/round5_gecko/strict_exports/19_payload.dll.bin_0x4a55a_listing_retry.json",
+      "size": 344,
+      "sha256": "a5726b804518bfa79b16267aa16020a698a3031904d05066ebe293cae07207f9"
+    }
+  ],
+  "fresh_recomputation_log": {
+    "path": "work/alpme_analysis/semantic_closure_20261027/round5_gecko/verification_runs/20261028T070919258243Z.json",
+    "size": 62668,
+    "sha256": "d8e1f24a2e0d693f5ee4a0823aad3ee674d343e8a30a9938fc517a620f963147"
+  },
+  "verification_commands": [
+    "%USERPROFILE%\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe work/alpme_analysis/semantic_closure_20261027/round5_gecko/verify_final.py",
+    "%USERPROFILE%\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe work/alpme_analysis/semantic_closure_20261027/round5_gecko/verify_final.py --recompute"
+  ],
+  "safety": {
+    "specimen_execution": false,
+    "sample_CPU_emulation": false,
+    "host_browser_or_secret_reads": false,
+    "network_or_C2": false,
+    "original_PE_writes": false,
+    "original_text_modified": false,
+    "Ghidra_changes": "Metadata-only disassembly/CFG overrides in the round5_gecko copied project; .text before/after equals original raw bytes with zero padding."
+  }
+}

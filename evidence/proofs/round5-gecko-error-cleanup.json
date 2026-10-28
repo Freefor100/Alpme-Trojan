@@ -1,0 +1,583 @@
+{
+  "status": "PASS_CONTEXTUAL_ERROR_TAG_CONTRACT",
+  "scope": "Static nativebyte/callerdef slices only, no specimen/browser/network execution. Doesnotpromote17wholeCFG orresolveunrelatedcallees.",
+  "proofs": [
+    {
+      "version": "17",
+      "producer": "0x4a0d2",
+      "producer_native_sha256": "43155e2e2aa1ec6e681e628a5bc8250df5b51585b86ac096b49b11725f97bb57",
+      "producer_APIs": [
+        {
+          "rva": "0x4a2c3",
+          "API": "FindClose",
+          "bytes": "ff154fad0400"
+        },
+        {
+          "rva": "0x4a2d0",
+          "API": "GetLastError",
+          "bytes": "ff152aae0400"
+        }
+      ],
+      "error_native_context": [
+        {
+          "rva": "0x4a2d0",
+          "bytes": "ff152aae0400",
+          "asm": "call qword ptr [rip + 0x4ae2a]"
+        },
+        {
+          "rva": "0x4a2d6",
+          "bytes": "83f812",
+          "asm": "cmp eax, 0x12"
+        },
+        {
+          "rva": "0x4a2d9",
+          "bytes": "742e",
+          "asm": "je 0x18004a309"
+        },
+        {
+          "rva": "0x4a2db",
+          "bytes": "89c7",
+          "asm": "mov edi, eax"
+        },
+        {
+          "rva": "0x4a2dd",
+          "bytes": "488b0dac0c0500",
+          "asm": "mov rcx, qword ptr [rip + 0x50cac]"
+        },
+        {
+          "rva": "0x4a2e4",
+          "bytes": "488d05dd760300",
+          "asm": "lea rax, [rip + 0x376dd]"
+        },
+        {
+          "rva": "0x4a2eb",
+          "bytes": "483bc8",
+          "asm": "cmp rcx, rax"
+        },
+        {
+          "rva": "0x4a2ee",
+          "bytes": "7510",
+          "asm": "jne 0x18004a300"
+        },
+        {
+          "rva": "0x4a2f0",
+          "bytes": "48c1e720",
+          "asm": "shl rdi, 0x20"
+        },
+        {
+          "rva": "0x4a2f4",
+          "bytes": "4883cf02",
+          "asm": "or rdi, 2"
+        },
+        {
+          "rva": "0x4a2f8",
+          "bytes": "4531e4",
+          "asm": "xor r12d, r12d"
+        },
+        {
+          "rva": "0x4a2fb",
+          "bytes": "e971ffffff",
+          "asm": "jmp 0x18004a271"
+        },
+        {
+          "rva": "0x4a300",
+          "bytes": "488905890c0500",
+          "asm": "mov qword ptr [rip + 0x50c89], rax"
+        },
+        {
+          "rva": "0x4a307",
+          "bytes": "ebe7",
+          "asm": "jmp 0x18004a2f0"
+        },
+        {
+          "rva": "0x4a309",
+          "bytes": "48c70600000000",
+          "asm": "mov qword ptr [rsi], 0"
+        },
+        {
+          "rva": "0x4a310",
+          "bytes": "4881c4f0040000",
+          "asm": "add rsp, 0x4f0"
+        },
+        {
+          "rva": "0x4a317",
+          "bytes": "5b",
+          "asm": "pop rbx"
+        },
+        {
+          "rva": "0x4a318",
+          "bytes": "5d",
+          "asm": "pop rbp"
+        },
+        {
+          "rva": "0x4a319",
+          "bytes": "5f",
+          "asm": "pop rdi"
+        },
+        {
+          "rva": "0x4a31a",
+          "bytes": "5e",
+          "asm": "pop rsi"
+        }
+      ],
+      "producer_output_native_proof": [
+        {
+          "rva": "0x4a2f0",
+          "bytes": "48c1e720",
+          "asm": "shl rdi, 0x20"
+        },
+        {
+          "rva": "0x4a2f4",
+          "bytes": "4883cf02",
+          "asm": "or rdi, 2"
+        },
+        {
+          "rva": "0x4a2f8",
+          "bytes": "4531e4",
+          "asm": "xor r12d, r12d"
+        },
+        {
+          "rva": "0x4a271",
+          "bytes": "4c896608",
+          "asm": "mov qword ptr [rsi + 8], r12"
+        },
+        {
+          "rva": "0x4a275",
+          "bytes": "48897e10",
+          "asm": "mov qword ptr [rsi + 0x10], rdi"
+        },
+        {
+          "rva": "0x4a2b7",
+          "bytes": "48c70601000000",
+          "asm": "mov qword ptr [rsi], 1"
+        }
+      ],
+      "producer_contract": "normal validReadDir: OptionNone writesout[0]=0. Some(Err) writesout[0]=1,out[1]=0,out[2]=(DWORD_GetLastError<<32)|2. ERROR_NO_MORE_FILES18 yieldsNone; successfulentry hasout[1]=Arc!=0.",
+      "producer_call": {
+        "rva": "0x6c913",
+        "asm": "call 0x18004a0d2",
+        "bytes": "e8bad7fdff"
+      },
+      "callback_payload_load": {
+        "rva": "0x70dc7",
+        "asm": "mov r12, qword ptr [rsp + 0x780]",
+        "bytes": "4c8ba42480070000"
+      },
+      "payload_reaching_load_unique": true,
+      "caller_object_fields": [
+        {
+          "rva": "0x70dbf",
+          "asm": "mov rsi, qword ptr [rsp + rbp + 0x770]",
+          "bytes": "488bb42c70070000"
+        },
+        {
+          "rva": "0x70dc7",
+          "asm": "mov r12, qword ptr [rsp + 0x780]",
+          "bytes": "4c8ba42480070000"
+        },
+        {
+          "rva": "0x70dcf",
+          "asm": "mov r8d, 0x248",
+          "bytes": "41b848020000"
+        },
+        {
+          "rva": "0x70dd5",
+          "asm": "lea rcx, [rsp + 0x490]",
+          "bytes": "488d8c2490040000"
+        },
+        {
+          "rva": "0x70ddd",
+          "asm": "lea rdx, [rsp + 0x788]",
+          "bytes": "488d942488070000"
+        },
+        {
+          "rva": "0x70de5",
+          "asm": "call 0x18007e630",
+          "bytes": "e846d80000"
+        },
+        {
+          "rva": "0x70dea",
+          "asm": "lea rax, [rip + 0x1a12b]",
+          "bytes": "488d052ba10100"
+        },
+        {
+          "rva": "0x70df1",
+          "asm": "test rsi, rsi",
+          "bytes": "4885f6"
+        },
+        {
+          "rva": "0x70df4",
+          "asm": "lea rcx, [rip + 0x1a199]",
+          "bytes": "488d0d99a10100"
+        },
+        {
+          "rva": "0x70dfb",
+          "asm": "cmovne rax, rcx",
+          "bytes": "480f45c1"
+        },
+        {
+          "rva": "0x70dff",
+          "asm": "movsxd rax, dword ptr [rax]",
+          "bytes": "486300"
+        },
+        {
+          "rva": "0x70e02",
+          "asm": "add rax, rdi",
+          "bytes": "4801f8"
+        },
+        {
+          "rva": "0x70e05",
+          "asm": "jmp rax",
+          "bytes": "ffe0"
+        },
+        {
+          "rva": "0x70e07",
+          "asm": "mov r8, r9",
+          "bytes": "4d8bc1"
+        }
+      ],
+      "dispatch": [
+        {
+          "rva": "0x6dd4b",
+          "asm": "mov eax, r12d",
+          "bytes": "418bc4"
+        },
+        {
+          "rva": "0x6dd4e",
+          "asm": "and eax, 3",
+          "bytes": "83e003"
+        },
+        {
+          "rva": "0x6dd51",
+          "asm": "movsxd rax, dword ptr [r15 + rax*4]",
+          "bytes": "49630487"
+        },
+        {
+          "rva": "0x6dd55",
+          "asm": "add rax, r15",
+          "bytes": "4c01f8"
+        },
+        {
+          "rva": "0x6dd58",
+          "asm": "jmp rax",
+          "bytes": "ffe0"
+        }
+      ],
+      "lowtag_table": [
+        {
+          "lowtag": 0,
+          "source_rva": "0x8cec8",
+          "relative32": -127682,
+          "target": "0x6dc06"
+        },
+        {
+          "lowtag": 1,
+          "source_rva": "0x8cecc",
+          "relative32": -127728,
+          "target": "0x6dbd8"
+        },
+        {
+          "lowtag": 2,
+          "source_rva": "0x8ced0",
+          "relative32": -127682,
+          "target": "0x6dc06"
+        },
+        {
+          "lowtag": 3,
+          "source_rva": "0x8ced4",
+          "relative32": -127700,
+          "target": "0x6dbf4"
+        }
+      ],
+      "callback": {
+        "rva": "0x6dbdd",
+        "asm": "call qword ptr [r12 + 7]",
+        "bytes": "41ff542407"
+      },
+      "conclusion": "Given that exactproducer Err output, payload&3=2 andtag1callbackedge isunreachable. No arbitraryfunctionpointer target orpurityassumption. Tagged1destructor is agenericioError branch retainedincompiledcode.",
+      "graph_condition": "Original-byte caller/source slices use the existing graph scaffold. Whole-function normal-context CFG promotion is established separately by strict.json and 17_owned_phase_gate_proof.json; this callback proof alone does not promote it.",
+      "normal_object_assumptions": "ReadDir is valid0/1 state fromconstructor, ownedArc lifetimes normal; no externalprivateframecorruption."
+    },
+    {
+      "version": "19",
+      "producer": "0xdda5",
+      "producer_native_sha256": "d3547ff02efa9efb1cb5e8c620302e13ad02760f0831f053e286d4ece96d86fa",
+      "producer_APIs": [
+        {
+          "rva": "0xdf7f",
+          "API": "FindClose",
+          "bytes": "ff15eb540800"
+        },
+        {
+          "rva": "0xdf8c",
+          "API": "GetLastError",
+          "bytes": "ff15be550800"
+        }
+      ],
+      "error_native_context": [
+        {
+          "rva": "0xdf8c",
+          "bytes": "ff15be550800",
+          "asm": "call qword ptr [rip + 0x855be]"
+        },
+        {
+          "rva": "0xdf92",
+          "bytes": "83f812",
+          "asm": "cmp eax, 0x12"
+        },
+        {
+          "rva": "0xdf95",
+          "bytes": "7519",
+          "asm": "jne 0x18000dfb0"
+        },
+        {
+          "rva": "0xdf97",
+          "bytes": "48c70600000000",
+          "asm": "mov qword ptr [rsi], 0"
+        },
+        {
+          "rva": "0xdf9e",
+          "bytes": "4881c4f0040000",
+          "asm": "add rsp, 0x4f0"
+        },
+        {
+          "rva": "0xdfa5",
+          "bytes": "5b",
+          "asm": "pop rbx"
+        },
+        {
+          "rva": "0xdfa6",
+          "bytes": "5d",
+          "asm": "pop rbp"
+        },
+        {
+          "rva": "0xdfa7",
+          "bytes": "5f",
+          "asm": "pop rdi"
+        },
+        {
+          "rva": "0xdfa8",
+          "bytes": "5e",
+          "asm": "pop rsi"
+        },
+        {
+          "rva": "0xdfa9",
+          "bytes": "415c",
+          "asm": "pop r12"
+        },
+        {
+          "rva": "0xdfab",
+          "bytes": "415e",
+          "asm": "pop r14"
+        },
+        {
+          "rva": "0xdfad",
+          "bytes": "415f",
+          "asm": "pop r15"
+        },
+        {
+          "rva": "0xdfaf",
+          "bytes": "c3",
+          "asm": "ret "
+        },
+        {
+          "rva": "0xdfb0",
+          "bytes": "8bf8",
+          "asm": "mov edi, eax"
+        },
+        {
+          "rva": "0xdfb2",
+          "bytes": "488b0d77a70800",
+          "asm": "mov rcx, qword ptr [rip + 0x8a777]"
+        },
+        {
+          "rva": "0xdfb9",
+          "bytes": "488d0530150700",
+          "asm": "lea rax, [rip + 0x71530]"
+        },
+        {
+          "rva": "0xdfc0",
+          "bytes": "483bc8",
+          "asm": "cmp rcx, rax"
+        },
+        {
+          "rva": "0xdfc3",
+          "bytes": "7510",
+          "asm": "jne 0x18000dfd5"
+        },
+        {
+          "rva": "0xdfc5",
+          "bytes": "48c1e720",
+          "asm": "shl rdi, 0x20"
+        },
+        {
+          "rva": "0xdfc9",
+          "bytes": "4883cf02",
+          "asm": "or rdi, 2"
+        }
+      ],
+      "producer_output_native_proof": [
+        {
+          "rva": "0xdfc5",
+          "bytes": "48c1e720",
+          "asm": "shl rdi, 0x20"
+        },
+        {
+          "rva": "0xdfc9",
+          "bytes": "4883cf02",
+          "asm": "or rdi, 2"
+        },
+        {
+          "rva": "0xdfcd",
+          "bytes": "4531e4",
+          "asm": "xor r12d, r12d"
+        },
+        {
+          "rva": "0xde6b",
+          "bytes": "4c896608",
+          "asm": "mov qword ptr [rsi + 8], r12"
+        },
+        {
+          "rva": "0xde6f",
+          "bytes": "48897e10",
+          "asm": "mov qword ptr [rsi + 0x10], rdi"
+        },
+        {
+          "rva": "0xdeb1",
+          "bytes": "48c70601000000",
+          "asm": "mov qword ptr [rsi], 1"
+        }
+      ],
+      "producer_contract": "normal validReadDir: OptionNone writesout[0]=0. Some(Err) writesout[0]=1,out[1]=0,out[2]=(DWORD_GetLastError<<32)|2. ERROR_NO_MORE_FILES18 yieldsNone; successfulentry hasout[1]=Arc!=0.",
+      "producer_call": {
+        "rva": "0x4afb9",
+        "asm": "call 0x18000dda5",
+        "bytes": "e8e72dfcff"
+      },
+      "callback_payload_load": {
+        "rva": "0x4afd5",
+        "asm": "mov rdi, qword ptr [rsp + 0xcc0]",
+        "bytes": "488bbc24c00c0000"
+      },
+      "payload_reaching_load_unique": true,
+      "caller_object_fields": [
+        {
+          "rva": "0x4afbe",
+          "asm": "cmp qword ptr [rsp + 0xcb0], 0",
+          "bytes": "4883bc24b00c000000"
+        },
+        {
+          "rva": "0x4afc7",
+          "asm": "je 0x18004b119",
+          "bytes": "0f844c010000"
+        },
+        {
+          "rva": "0x4afcd",
+          "asm": "mov rsi, qword ptr [rsp + 0xcb8]",
+          "bytes": "488bb424b80c0000"
+        },
+        {
+          "rva": "0x4afd5",
+          "asm": "mov rdi, qword ptr [rsp + 0xcc0]",
+          "bytes": "488bbc24c00c0000"
+        },
+        {
+          "rva": "0x4afdd",
+          "asm": "mov r8d, 0x248",
+          "bytes": "41b848020000"
+        },
+        {
+          "rva": "0x4afe3",
+          "asm": "mov rcx, r14",
+          "bytes": "4c89f1"
+        },
+        {
+          "rva": "0x4afe6",
+          "asm": "mov rdx, r12",
+          "bytes": "498bd4"
+        },
+        {
+          "rva": "0x4afe9",
+          "asm": "call 0x18007cfd0",
+          "bytes": "e8e21f0300"
+        },
+        {
+          "rva": "0x4afee",
+          "asm": "test rsi, rsi",
+          "bytes": "4885f6"
+        },
+        {
+          "rva": "0x4aff1",
+          "asm": "je 0x18004ba82",
+          "bytes": "0f848b0a0000"
+        },
+        {
+          "rva": "0x4aff7",
+          "asm": "mov qword ptr [rsp + 0xcb8], rdi",
+          "bytes": "4889bc24b80c0000"
+        }
+      ],
+      "dispatch": [
+        {
+          "rva": "0x4ba82",
+          "asm": "mov eax, edi",
+          "bytes": "89f8"
+        },
+        {
+          "rva": "0x4ba84",
+          "asm": "and eax, 3",
+          "bytes": "83e003"
+        },
+        {
+          "rva": "0x4ba87",
+          "asm": "lea ecx, [rax - 2]",
+          "bytes": "8d48fe"
+        },
+        {
+          "rva": "0x4ba8a",
+          "asm": "cmp ecx, 1",
+          "bytes": "83f901"
+        },
+        {
+          "rva": "0x4ba8d",
+          "asm": "jbe 0x18004afa5",
+          "bytes": "0f8612f5ffff"
+        },
+        {
+          "rva": "0x4ba93",
+          "asm": "test rax, rax",
+          "bytes": "4885c0"
+        },
+        {
+          "rva": "0x4ba96",
+          "asm": "je 0x18004afa5",
+          "bytes": "0f8409f5ffff"
+        },
+        {
+          "rva": "0x4ba9c",
+          "asm": "lea rcx, [rdi - 1]",
+          "bytes": "488d4fff"
+        },
+        {
+          "rva": "0x4baa0",
+          "asm": "call qword ptr [rdi + 7]",
+          "bytes": "ff5707"
+        },
+        {
+          "rva": "0x4baa3",
+          "asm": "jmp 0x18004afa5",
+          "bytes": "e9fdf4ffff"
+        }
+      ],
+      "lowtag_table": null,
+      "callback": {
+        "rva": "0x4baa0",
+        "asm": "call qword ptr [rdi + 7]",
+        "bytes": "ff5707"
+      },
+      "conclusion": "Given that exactproducer Err output, payload&3=2 andtag1callbackedge isunreachable. No arbitraryfunctionpointer target orpurityassumption. Tagged1destructor is agenericioError branch retainedincompiledcode.",
+      "graph_condition": "Original-byte caller/source slices use the existing graph scaffold. Whole-function normal-context CFG promotion is established separately by strict.json and 17_owned_phase_gate_proof.json; this callback proof alone does not promote it.",
+      "normal_object_assumptions": "ReadDir is valid0/1 state fromconstructor, ownedArc lifetimes normal; no externalprivateframecorruption."
+    }
+  ]
+}
