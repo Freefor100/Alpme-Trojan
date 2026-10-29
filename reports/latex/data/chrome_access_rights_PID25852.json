@@ -1,0 +1,35 @@
+{
+  "status": "COMPLETED_CHROME_HANDLE_RIGHTS_CHECK",
+  "client_date": "2026-10-28",
+  "pid": 25852,
+  "probe_token_elevated": false,
+  "probe_integrity_RID": "0x2000",
+  "probe_integrity_label": "Medium",
+  "checks": [
+    {
+      "rights": "0x1000",
+      "granted": true,
+      "WinError": 0,
+      "expected_Chrome_image_confirmed": true
+    },
+    {
+      "rights": "0x410",
+      "granted": true,
+      "WinError": 0,
+      "expected_Chrome_image_confirmed": true
+    },
+    {
+      "rights": "0x1fffff",
+      "granted": true,
+      "WinError": 0,
+      "expected_Chrome_image_confirmed": true
+    }
+  ],
+  "handles_closed_immediately": true,
+  "target_memory_read_or_write": false,
+  "target_code_or_thread_operation": false,
+  "sample_execution": false,
+  "network_or_C2": false,
+  "privilege_or_policy_changes": false,
+  "script_sha256": "88f79d8e2e496c198c585fbcdff2a7df3dd6a51a95d3f7d0c585b02f519df1be"
+}

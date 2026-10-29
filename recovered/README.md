@@ -14,3 +14,5 @@
 地址使用说明：外层通常以0x140000000为基址；内层源码中的VA可能来自0x180000000首选基址或已记录的ASLR/规范化分析基址。以sample + RVA作为共同定位。各输入基址、hash和修改记录见 `evidence/analysis-inputs.json`。
 
 `reconstructed-payloads.zip` 是静态工程的内层输入。**它仍是恶意代码，不要在宿主机加载或运行。** 密码infected。
+
+新增 logic/ntdll_tls.pseudocode.zh.txt 解释系统TLS登记与回滚。17:7a490的旧C混入其它代码，现已按原始跳表替换；19:78e30与17:1073/8319也有新的原生复核C，函数索引明确标记。

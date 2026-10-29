@@ -1,0 +1,46 @@
+{
+  "status": "PASS_LOADED_CHROME156_PUBLIC_CODE_BINDING",
+  "client_date": "2026-10-28",
+  "pid": 25852,
+  "module_path": "C:\\Program Files\\Google\\Chrome\\Application\\156.0.8078.48\\chrome.dll",
+  "version": "156.0.8078.48",
+  "installed_file_sha256": "e23d982e66959f3d738154ba68dd2638c9c7473a7e0f362eaee2b1dad5e20f57",
+  "module_size_matches_PE": true,
+  "public_code_ranges": [
+    {
+      "role": "Key constructor",
+      "RVA": "0x27c0f80",
+      "bytes": 208,
+      "loaded_and_disk_sha256": "a20c2182169fd28f1e1fa883d93efe20a0f02fdee80a05561affd15835e6c20f",
+      "identical": true
+    },
+    {
+      "role": "Encryptor encryption method",
+      "RVA": "0x57eba40",
+      "bytes": 1125,
+      "loaded_and_disk_sha256": "86bb8b896d1f66b5569bd3b6a86e407d3b43c82998962847da9e31d1903c61ab",
+      "identical": true
+    },
+    {
+      "role": "Key decryption method",
+      "RVA": "0xb114590",
+      "bytes": 729,
+      "loaded_and_disk_sha256": "3dbe8ef188e47137f161012418f77f97bd97b94bb33a567c287dc7f694e73236",
+      "identical": true
+    },
+    {
+      "role": "CryptMemory import stubs",
+      "RVA": "0xfa44220",
+      "bytes": 22,
+      "loaded_and_disk_sha256": "13f436e0a55756e1fb756775a8c835bae382cbc3b6b0c62cca2f0ea26581b9cb",
+      "identical": true
+    }
+  ],
+  "public_code_bytes_read": 2084,
+  "module_base_saved_in_this_receipt": false,
+  "credentials_or_key_material_read": false,
+  "sample_or_Chrome_functions_executed": false,
+  "process_memory_write": false,
+  "network_or_C2": false,
+  "script_sha256": "5f454502955f2ab993ce50dc3f3a7c8e048c24c749c3f3343b80db76370e38e3"
+}

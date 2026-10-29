@@ -1,0 +1,643 @@
+{
+  "status": "PASS_CONDITIONAL_13_NORMAL_CONTEXT_CALL_CLASSIFICATIONS_WITH_1_EXPLICIT_COLD_NAME_GAP",
+  "source_sha256": "5afbebb7ed01515ed80ca9c9e7e4c7b01c7652e220b2c2a19452356688e79244",
+  "scope": "Original14 native indirectCALL candidates of19main9338, excluding priorfixedIAT A04E. Intraprocedural CFG,Cquality,APIidentity,typedownership effects andOSsuccess remain separate.",
+  "counts": {
+    "native_candidates": 14,
+    "named_reached_API_calls": 10,
+    "actual_constructed_error_callback": 1,
+    "internal_return0_target": 1,
+    "actual_error_context_unreachable_callback": 1,
+    "cold_call_with_symbolic_source_but_no_concrete_API_name": 1
+  },
+  "calls": [
+    {
+      "site": "0x9f7c",
+      "status": "CONDITIONAL_ACTUAL_CUSTOM_ERROR_CALLBACK",
+      "target": "0x12055",
+      "proof": "non_api_targets.json:N9F7C; complete3-layer cleanup included"
+    },
+    {
+      "site": "0xa003",
+      "status": "CONTEXTUALLY_UNREACHABLE_ACTUAL_ERR3",
+      "target_set": [],
+      "proof": "non_api_targets.json:A003 anderror_result_lowtags.json"
+    },
+    {
+      "site": "0xa3bb",
+      "status": "CONDITIONAL_NORMAL_API_IDENTITY",
+      "target": "kernel32.dll!GetProcAddress",
+      "raw_instruction": {
+        "rva": "0xa3bb",
+        "asm": "call qword ptr [rsp + 0x68]",
+        "bytes": "ff542468"
+      },
+      "resolver": "0xe380",
+      "pointer_source": {
+        "site": "0xa3bb",
+        "target_stack_offset": "0x68",
+        "origins": [
+          "resolver:0xe380"
+        ],
+        "uninitialized": false,
+        "nearest_writers": [
+          {
+            "rva": "0xe385",
+            "asm": "mov qword ptr [rsp + 0x68], rax",
+            "bytes": "4889442468"
+          }
+        ]
+      },
+      "arguments": {
+        "RCX": "qword[SP+40]: HMODULE returned by DDA5 LoadLibraryA",
+        "RDX": "if signed DWORD[R12]>=0: local image R14 +DWORD[R12]+2; otherwise DWORD[R12] &computedlow16 mask"
+      },
+      "condition": "Inside local PE import-thunk loop, after loading the corresponding import DLL",
+      "effects": "Returned pointer tested for NULL atA3BF; used to fill the constructed image import function slot"
+    },
+    {
+      "site": "0xbbb2",
+      "status": "CONDITIONAL_NORMAL_API_IDENTITY",
+      "target": "kernel32.dll!CreateRemoteThread",
+      "raw_instruction": {
+        "rva": "0xbbb2",
+        "asm": "call qword ptr [rsp + 0x78]",
+        "bytes": "ff542478"
+      },
+      "resolver": "0xa233",
+      "pointer_source": {
+        "site": "0xbbb2",
+        "target_stack_offset": "0x78",
+        "origins": [
+          "resolver:0xa233"
+        ],
+        "uninitialized": false,
+        "nearest_writers": [
+          {
+            "rva": "0xa238",
+            "asm": "mov qword ptr [rsp + 0x78], rax",
+            "bytes": "4889442478"
+          }
+        ]
+      },
+      "arguments": {
+        "RCX": "R15: retained target process handle",
+        "RDX": "0: lpThreadAttributes",
+        "R8": "0: dwStackSize",
+        "R9": "RBP +0xa3400: start address inside allocated remote blob",
+        "stack+20": "0: lpParameter",
+        "stack+28": "0: dwCreationFlags",
+        "stack+30": "0: lpThreadId"
+      },
+      "condition": "After remote allocation and the WriteProcessMemory path; local native start address adjustment atBB8C",
+      "effects": "Attempts remote thread creation with NULL parameter and flags0. Return is tested atBBB6 and successful handle is later passed toCC43 CloseHandle"
+    },
+    {
+      "site": "0xbfdd",
+      "status": "CONDITIONAL_NORMAL_API_IDENTITY",
+      "target": "kernel32.dll!WriteProcessMemory",
+      "raw_instruction": {
+        "rva": "0xbfdd",
+        "asm": "call rsi",
+        "bytes": "ffd6"
+      },
+      "resolver": "0xbf77",
+      "pointer_source": {
+        "site": "0xbfdd",
+        "target_register": "rsi",
+        "origins": [
+          "resolver:0xbf77"
+        ],
+        "nearest": [
+          {
+            "rva": "0xbf7c",
+            "asm": "mov rsi, rax",
+            "bytes": "4889c6"
+          }
+        ]
+      },
+      "arguments": {
+        "RCX": "qword[SP+B8], copied toR15: process HANDLE",
+        "RDX": "qword[SP+40], copied toRBP: VirtualAllocEx return remote base",
+        "R8": "RDI: local constructed blob buffer",
+        "R9": "R14: constructed blob byte length",
+        "stack+20": "SP+188: writable8B lpNumberOfBytesWritten, initialized to0 atBFB8"
+      },
+      "condition": "Remote allocation succeeded on this pipeline",
+      "effects": "Requests copying the constructed local blob into the allocated target-process region; EAX is tested atBFDF. The output pointer is non-NULL. No host success is asserted"
+    },
+    {
+      "site": "0xc60d",
+      "status": "CONDITIONAL_NORMAL_API_IDENTITY",
+      "target": "user32.dll!GetWindowThreadProcessId",
+      "raw_instruction": {
+        "rva": "0xc60d",
+        "asm": "call rdi",
+        "bytes": "ffd7"
+      },
+      "resolver": "0x99ae",
+      "pointer_source": {
+        "site": "0xc60d",
+        "target_register": "rdi",
+        "origins": [
+          "resolver:0x99ae"
+        ],
+        "nearest": [
+          {
+            "rva": "0x99b3",
+            "asm": "mov rdi, rax",
+            "bytes": "488bf8"
+          }
+        ]
+      },
+      "arguments": {
+        "RCX": "RBX: FindWindowA result HWND",
+        "RDX": "SP+118: writable4B PID output, initialized to0 atC5FF"
+      },
+      "condition": "Window-selection pipeline",
+      "effects": "Reads the DWORD output immediately atC60F; that PID is later passed inR8d toOpenProcess"
+    },
+    {
+      "site": "0xc841",
+      "status": "CONDITIONAL_NORMAL_API_IDENTITY",
+      "target": "kernel32.dll!OpenProcess",
+      "raw_instruction": {
+        "rva": "0xc841",
+        "asm": "call rbx",
+        "bytes": "ffd3"
+      },
+      "resolver": "0xc7e9",
+      "pointer_source": {
+        "site": "0xc841",
+        "target_register": "rbx",
+        "origins": [
+          "resolver:0xc7e9"
+        ],
+        "nearest": [
+          {
+            "rva": "0xc7ee",
+            "asm": "mov rbx, rax",
+            "bytes": "4889c3"
+          }
+        ]
+      },
+      "arguments": {
+        "RCX": "0x1fffff: desired access mask",
+        "RDX": "0: inherit handle FALSE",
+        "R8": "ESI: PID fromSP+118 output ofC60D"
+      },
+      "condition": "After the selected-window PID lookup",
+      "effects": "RAX tested atC84D and retained for later remote memory/thread operations"
+    },
+    {
+      "site": "0xcc43",
+      "status": "CONDITIONAL_NORMAL_API_IDENTITY",
+      "target": "kernel32.dll!CloseHandle",
+      "raw_instruction": {
+        "rva": "0xcc43",
+        "asm": "call qword ptr [rsp + 0x88]",
+        "bytes": "ff942488000000"
+      },
+      "resolver": "0xe563",
+      "pointer_source": {
+        "site": "0xcc43",
+        "target_stack_offset": "0x88",
+        "origins": [
+          "resolver:0xe563"
+        ],
+        "uninitialized": false,
+        "nearest_writers": [
+          {
+            "rva": "0xe568",
+            "asm": "mov qword ptr [rsp + 0x88], rax",
+            "bytes": "4889842488000000"
+          }
+        ]
+      },
+      "arguments": {
+        "RCX": "RAX: successful CreateRemoteThread thread handle"
+      },
+      "condition": "Successful remote-thread handle cleanup path",
+      "effects": "Closes the loader-owned thread handle after thread creation, without proving thread completion"
+    },
+    {
+      "site": "0xce1b",
+      "status": "CONDITIONAL_NORMAL_API_IDENTITY",
+      "target": "user32.dll!FindWindowA",
+      "raw_instruction": {
+        "rva": "0xce1b",
+        "asm": "call rbx",
+        "bytes": "ffd3"
+      },
+      "resolver": "0xa9b7",
+      "pointer_source": {
+        "site": "0xce1b",
+        "target_register": "rbx",
+        "origins": [
+          "resolver:0xa9b7"
+        ],
+        "nearest": [
+          {
+            "rva": "0xa9bc",
+            "asm": "mov rbx, rax",
+            "bytes": "488bd8"
+          }
+        ]
+      },
+      "arguments": {
+        "RCX": "R14: owned ASCII C string clone of fixed Shell_TrayWnd",
+        "RDX": "0: no window-title filter"
+      },
+      "condition": "Target-window discovery",
+      "effects": "Retains RAX inRBX atCE1D forGetWindowThreadProcessId"
+    },
+    {
+      "site": "0xcefe",
+      "status": "NORMAL_ENTRY_COLD_SEPARATE_ENTRY_NAME_UNRESOLVED",
+      "normal_entry_target_set": [],
+      "symbolic_origin": "CEB3 FF70 result cached inRSI atCEB8",
+      "remaining_gap": "Native CEB3 miss-path name seed:DF768 literal source88e0a/24B, seed depends on incomingR13 in coldB024. DLLcacheDF170 seed depends on incomingR12 in coldF224. Neither has an edge from the certified normal entry. No expected API name was inverted to choose either seed."
+    },
+    {
+      "site": "0xcf08",
+      "status": "CONDITIONAL_NORMAL_API_IDENTITY",
+      "target": "kernel32.dll!CloseHandle",
+      "raw_instruction": {
+        "rva": "0xcf08",
+        "asm": "call rdi",
+        "bytes": "ffd7"
+      },
+      "resolver": "0xf83d",
+      "pointer_source": {
+        "site": "0xcf08",
+        "target_register": "rdi",
+        "origins": [
+          "resolver:0xf83d"
+        ],
+        "nearest": [
+          {
+            "rva": "0xf842",
+            "asm": "mov rdi, rax",
+            "bytes": "4889c7"
+          }
+        ]
+      },
+      "arguments": {
+        "RCX": "qword[SP+B8]: target process HANDLE"
+      },
+      "condition": "Final target-process handle cleanup",
+      "effects": "Closes the retained process handle; not a termination request"
+    },
+    {
+      "site": "0xcf99",
+      "status": "CONDITIONAL_NATIVE_MUTABLE_TABLE_TARGET_CLOSED",
+      "target": "0x237c",
+      "effect": "RAX=0; all7 actual global writer values preserve this target"
+    },
+    {
+      "site": "0xda65",
+      "status": "CONDITIONAL_NORMAL_API_IDENTITY",
+      "target": "kernel32.dll!VirtualAllocEx",
+      "raw_instruction": {
+        "rva": "0xda65",
+        "asm": "call rsi",
+        "bytes": "ffd6"
+      },
+      "resolver": "0xd9ef",
+      "pointer_source": {
+        "site": "0xda65",
+        "target_register": "rsi",
+        "origins": [
+          "resolver:0xd9ef"
+        ],
+        "nearest": [
+          {
+            "rva": "0xd9f4",
+            "asm": "mov rsi, rax",
+            "bytes": "4889c6"
+          }
+        ]
+      },
+      "arguments": {
+        "RCX": "qword[SP+B8]: target process HANDLE",
+        "RDX": "0: requested address NULL",
+        "R8": "qword[SP+40]: constructed blob allocation byte count before slot reuse",
+        "R9": "0x3000: reserve|commit",
+        "stack+20": "0x40: executable/readable/writable protection"
+      },
+      "condition": "After local blob construction",
+      "effects": "Saves returned base intoSP+40 atDA67, replacing the old size value; tests result atDA6C"
+    },
+    {
+      "site": "0xdda5",
+      "status": "CONDITIONAL_NORMAL_API_IDENTITY",
+      "target": "kernel32.dll!LoadLibraryA",
+      "raw_instruction": {
+        "rva": "0xdda5",
+        "asm": "call qword ptr [rsp + 0x110]",
+        "bytes": "ff942410010000"
+      },
+      "resolver": "0xdce1",
+      "pointer_source": {
+        "site": "0xdda5",
+        "target_stack_offset": "0x110",
+        "origins": [
+          "resolver:0xdce1"
+        ],
+        "uninitialized": false,
+        "nearest_writers": [
+          {
+            "rva": "0xdce6",
+            "asm": "mov qword ptr [rsp + 0x110], rax",
+            "bytes": "4889842410010000"
+          }
+        ]
+      },
+      "arguments": {
+        "RCX": "local image R14 +DWORD[import descriptor cursor RAX+RDX+4]"
+      },
+      "condition": "Local PE import descriptor loop",
+      "effects": "Saves HMODULE intoSP+40 atDDAC forA3BB GetProcAddress; fixed decoder strings used to identify this API are distinct from the runtime import DLL name argument"
+    }
+  ],
+  "shared_derived_invariants": {
+    "CString_caches": 93,
+    "native_FF70_callers": 46,
+    "reached_callers": 45,
+    "consistent_API_keys": 34,
+    "literal_source_lifetimes": 372,
+    "literal_intervening_calls": 0,
+    "literal_alias_stores": 0,
+    "pointer_cache_lifetimes": 4,
+    "reviewed_intervening_call_sites": 82,
+    "owned_alias_stores": 38,
+    "mutable_DFA90_native_writers": 7,
+    "cache_identity_assumed": false
+  },
+  "normal_conditions": [
+    "Valid Rust owned byte/UTF16 Vec capacity/length/index arithmetic and fresh heap allocations disjoint from active caller private frame.",
+    "Only actual compiler-produced String/Once/BTree headers are supplied to the listed constructors; caches initialize from the original fixed literal descriptor.",
+    "Win64 nonvolatile register ABI, successful normal-return contracts; system imports may fail but do not receive private API-cache addresses.",
+    "No external/hostile cache tampering or untyped pointer corruption; the cache name-origin invariant itself is derived in derived_cache_invariants.json, not assumed.",
+    "Original image/Once/cache globals are not externally or arbitrarily corrupted; normal typed global cache and owned heap operations only.",
+    "Valid native BTree insertion/lookup/locking ABI.",
+    "API identity means the result returned by Windows for that module/name; NULL/failure or forwarded exports remain possible.",
+    "ColdCEB3 cannot populate these maps from the normal entry graph; no concrete API name is asserted for it."
+  ],
+  "remaining": [
+    {
+      "site": "0xcefe",
+      "gap": "Native CEB3 miss-path name seed:DF768 literal source88e0a/24B, seed depends on incomingR13 in coldB024. DLLcacheDF170 seed depends on incomingR12 in coldF224. Neither has an edge from the certified normal entry. No expected API name was inverted to choose either seed."
+    },
+    {
+      "scope": "Memory/API effects",
+      "gap": "Results are conditional on valid native Vec/BTree/Once/Win64 ownership and no arbitrary indirect self-image corruption or hostile cache mutation. No universal malformed-object or OS-success theorem."
+    }
+  ],
+  "parameter_corrections": {
+    "WriteProcessMemory_BFDD": "fifthargument isSP1888B output, notNULL",
+    "CreateRemoteThread_BBB2": "lpParameterNULL,creationFlagsDWORD0,lpThreadIdNULL; nativeentryoffseta3400",
+    "mutable_pointer_CF99": "DFA90isnotfrozen;default88878and7writes886d0share+8target237c"
+  },
+  "prior_frozen_receipt": {
+    "path": "work\\alpme_analysis\\semantic_closure_20261027\\round5_outer_loaders\\continuation_19\\19_9338_continuation_receipt.json",
+    "bytes": 75069,
+    "sha256": "bf6f50e389750f1d6fdc96ecbaa662dee295c764ec342b25a2424c8b1b5b426e"
+  },
+  "evidence": [
+    {
+      "path": "work\\alpme_analysis\\semantic_closure_20261027\\round5_outer_loaders\\continuation_19\\call_targets\\API_argument_map.json",
+      "bytes": 39953,
+      "sha256": "498df228edc84ade45e71fd04f6d652ab0548ac58a659ddaf3d3c60e77db8c7b"
+    },
+    {
+      "path": "work\\alpme_analysis\\semantic_closure_20261027\\round5_outer_loaders\\continuation_19\\call_targets\\non_api_targets.json",
+      "bytes": 30180,
+      "sha256": "f92a9c01b156a994d83e1df7eb9467d9fe488c6318732c036cedec591ab4be84"
+    },
+    {
+      "path": "work\\alpme_analysis\\semantic_closure_20261027\\round5_outer_loaders\\continuation_19\\call_targets\\shared_gates.json",
+      "bytes": 164611,
+      "sha256": "df79251cdd14cafcccc2861aba6a623b74d4d701b1a56ccbdb05a39e1413fb9f"
+    },
+    {
+      "path": "work\\alpme_analysis\\semantic_closure_20261027\\round5_outer_loaders\\continuation_19\\call_targets\\derived_cache_invariants.json",
+      "bytes": 96150,
+      "sha256": "2aec121558a4934cfc271e3d93143c5ec3654d082e981ffa40393c3badae686c"
+    },
+    {
+      "path": "work\\alpme_analysis\\semantic_closure_20261027\\round5_outer_loaders\\continuation_19\\call_targets\\scalar_write_escape_audit.json",
+      "bytes": 19343,
+      "sha256": "dd35d95dea23c79a13f590a4ae334681bc84740d0342bb2ee3d4f54566b175a6"
+    },
+    {
+      "path": "work\\alpme_analysis\\semantic_closure_20261027\\round5_outer_loaders\\continuation_19\\call_targets\\pointer_source_bindings.json",
+      "bytes": 20142,
+      "sha256": "892d7198e5579fc5e36ff739af50ae4a7d54455559f7be6ec7cdd051a894f5e2"
+    },
+    {
+      "path": "work\\alpme_analysis\\semantic_closure_20261027\\round5_outer_loaders\\continuation_19\\call_targets\\extra_pointer_source_bindings.json",
+      "bytes": 31002,
+      "sha256": "675db7307d99a10677ed9860f67974e0609daacda1b48447e8a2915ac9f6a0f2"
+    },
+    {
+      "path": "work\\alpme_analysis\\semantic_closure_20261027\\round5_outer_loaders\\continuation_19\\call_targets\\native_literal_candidates.json",
+      "bytes": 58096,
+      "sha256": "a3b5e4317bfe785700535d21ffdc018da537de555477ca55013c53ef440c9f90"
+    },
+    {
+      "path": "work\\alpme_analysis\\semantic_closure_20261027\\round5_outer_loaders\\continuation_19\\call_targets\\extra_native_literal_candidates.json",
+      "bytes": 119051,
+      "sha256": "7b5045393b9dce47656c33aae0d73ba88703579956aab9c456b3ce0ea3a86ff8"
+    },
+    {
+      "path": "work\\alpme_analysis\\semantic_closure_20261027\\round5_outer_loaders\\continuation_19\\call_targets\\literal_lifetime_inventory.json",
+      "bytes": 21430,
+      "sha256": "33c362e9ddc96868427eabaefc50662e8f7edc37626603169005d1a49f134ef2"
+    },
+    {
+      "path": "work\\alpme_analysis\\semantic_closure_20261027\\round5_outer_loaders\\continuation_19\\call_targets\\extra_literal_lifetime_inventory.json",
+      "bytes": 44703,
+      "sha256": "69b0bd84242f18ade9e4333f50cafcf00a263f3622b8370355039717941e4720"
+    },
+    {
+      "path": "work\\alpme_analysis\\semantic_closure_20261027\\round5_outer_loaders\\continuation_19\\call_targets\\cache_lifetime_inventory.json",
+      "bytes": 34731,
+      "sha256": "1c76fc6d356d037892102b0d8b4bbeee99bd6041944216b533f95342ee1b494c"
+    },
+    {
+      "path": "work\\alpme_analysis\\semantic_closure_20261027\\round5_outer_loaders\\continuation_19\\call_targets\\all_lookup_keys.json",
+      "bytes": 11438,
+      "sha256": "218105272c98adb2534ee1794f5341df343dcdd09fd75f776a2717497db5522c"
+    },
+    {
+      "path": "work\\alpme_analysis\\semantic_closure_20261027\\round5_outer_loaders\\continuation_19\\call_targets\\error_result_lowtags.json",
+      "bytes": 75895,
+      "sha256": "daeb0b8d9b58a565c5e3aaa616bafefeda2de409524ccc087a2296c5b8dda635"
+    },
+    {
+      "path": "work\\alpme_analysis\\semantic_closure_20261027\\round5_outer_loaders\\continuation_19\\call_targets\\fresh_pipeline_log.json",
+      "bytes": 3299,
+      "sha256": "e3b59bbe8315f528e3ff526892568ccdbcdb21f91f0ce2e9da3b40154938db50"
+    },
+    {
+      "path": "work\\alpme_analysis\\semantic_closure_20261027\\round5_outer_loaders\\continuation_19\\call_targets\\REPORT_zh.md",
+      "bytes": 10368,
+      "sha256": "f9bb7e4ddd694a2ee7e771b9bb2f354d273a7f660bc1cf4c74bc8c6c0aa64a21"
+    }
+  ],
+  "source_manifest": [
+    {
+      "path": "work\\alpme_analysis\\agent19\\decode.py",
+      "bytes": 2214,
+      "sha256": "cbaa7a0e9b858b0f86311c7447af60fef318fedd42de6a6392b4a1674cde5342"
+    },
+    {
+      "path": "work\\alpme_analysis\\semantic_closure_20261027\\ghidra_repair\\abstract_dispatch.py",
+      "bytes": 17589,
+      "sha256": "6509fc1462a6e723f0ed1ebff24ac5de03899118de5f803629d15989d05d862b"
+    },
+    {
+      "path": "work\\alpme_analysis\\semantic_closure_20261027\\round3_cleanup_finish\\block_fixpoint.py",
+      "bytes": 4008,
+      "sha256": "75f930314859438a7e3110cf3bc8dccab0c8072367feaf1a503f3f9c5d55a402"
+    },
+    {
+      "path": "work\\alpme_analysis\\semantic_closure_20261027\\round3_strings\\browser_graph19.py",
+      "bytes": 3174,
+      "sha256": "5ce45d2809220444467a39fbeeccea951d19a1dfa7511186ca429774693f1e93"
+    },
+    {
+      "path": "work\\alpme_analysis\\semantic_closure_20261027\\round3_strings\\constant_slices.py",
+      "bytes": 6213,
+      "sha256": "80c43b4665af4cb10d2f8e9b03dd6f968b0bd6fe9560b07749c758b8142312af"
+    },
+    {
+      "path": "work\\alpme_analysis\\semantic_closure_20261027\\round5_outer_loaders\\continuation_19\\call_targets\\audit_cache_lifetimes.py",
+      "bytes": 2272,
+      "sha256": "024be5192dfaf397cb334dd068775d1db72bb8a1e5fd5771dfc66cbe4b635391"
+    },
+    {
+      "path": "work\\alpme_analysis\\semantic_closure_20261027\\round5_outer_loaders\\continuation_19\\call_targets\\audit_literal_lifetimes.py",
+      "bytes": 1853,
+      "sha256": "ef27c03685e4dd08d1bbd58a4f95971e1bcc854babb74f341bbcd28218a0df11"
+    },
+    {
+      "path": "work\\alpme_analysis\\semantic_closure_20261027\\round5_outer_loaders\\continuation_19\\call_targets\\audit_other_lookup_keys.py",
+      "bytes": 1694,
+      "sha256": "aa23495630435e49f7e083499112d1231243f924a595717ee06bdc0c43402dcd"
+    },
+    {
+      "path": "work\\alpme_analysis\\semantic_closure_20261027\\round5_outer_loaders\\continuation_19\\call_targets\\audit_scalars.py",
+      "bytes": 3422,
+      "sha256": "3a4d284ce5c17efe9a32933e96614b34a68307041a1a8de333d837acb7ff0c11"
+    },
+    {
+      "path": "work\\alpme_analysis\\semantic_closure_20261027\\round5_outer_loaders\\continuation_19\\call_targets\\build_parameter_map.py",
+      "bytes": 9481,
+      "sha256": "418558f27440c5a16752d89dfb0c4d59df75216b6cff1423522f13291c43b0bb"
+    },
+    {
+      "path": "work\\alpme_analysis\\semantic_closure_20261027\\round5_outer_loaders\\continuation_19\\call_targets\\certify_non_api.py",
+      "bytes": 9031,
+      "sha256": "e4ea63b132662a192d2c221d59034382fadb781164891c3a2318c1a7b8dbab7d"
+    },
+    {
+      "path": "work\\alpme_analysis\\semantic_closure_20261027\\round5_outer_loaders\\continuation_19\\call_targets\\certify_shared_gates.py",
+      "bytes": 9360,
+      "sha256": "8a7e1cd2ed893853e73eae56febb11d03bdc3eda9fec87f8306d2730d74da2a3"
+    },
+    {
+      "path": "work\\alpme_analysis\\semantic_closure_20261027\\round5_outer_loaders\\continuation_19\\call_targets\\derive_cache_invariants.py",
+      "bytes": 7012,
+      "sha256": "ac5c1cd75bd19b65fa49770f6135f908c7921ca86e1d44b23a83bfad5b1910b9"
+    },
+    {
+      "path": "work\\alpme_analysis\\semantic_closure_20261027\\round5_outer_loaders\\continuation_19\\call_targets\\derive_literals.py",
+      "bytes": 2869,
+      "sha256": "6f72b9d1f4d7dc9b03812887a04fbd0a0c55154466ca8aac5304f8021595e4f4"
+    },
+    {
+      "path": "work\\alpme_analysis\\semantic_closure_20261027\\round5_outer_loaders\\continuation_19\\call_targets\\dump_constructor_cuts.py",
+      "bytes": 1404,
+      "sha256": "06663842320578cb362df921db5e2e55f25a6a6618fac5d4a408efe566c12e99"
+    },
+    {
+      "path": "work\\alpme_analysis\\semantic_closure_20261027\\round5_outer_loaders\\continuation_19\\call_targets\\loader_graph.py",
+      "bytes": 4470,
+      "sha256": "0fae7faa732643fbfebd77e2dfcaf51bcd03611847d8c9dde521fe7915803367"
+    },
+    {
+      "path": "work\\alpme_analysis\\semantic_closure_20261027\\round5_outer_loaders\\continuation_19\\call_targets\\prove_error_results.py",
+      "bytes": 7338,
+      "sha256": "970bab5f5c796129eeaec69750beb3376d29afb8deac5df279c1d979c5f176f3"
+    },
+    {
+      "path": "work\\alpme_analysis\\semantic_closure_20261027\\round5_outer_loaders\\continuation_19\\call_targets\\resolve_sources.py",
+      "bytes": 4888,
+      "sha256": "edd65cdb31be8ba6f19007ac54911184dc32cf4d12ec72e3e4fcdd645466577f"
+    },
+    {
+      "path": "work\\alpme_analysis\\semantic_closure_20261027\\round5_outer_loaders\\continuation_19\\call_targets\\verify_calls.py",
+      "bytes": 7834,
+      "sha256": "f6f362f85d26654b1e219aa12313e0ca53e28967e64db4bf77c4358a019c5340"
+    },
+    {
+      "path": "work\\alpme_analysis\\semantic_closure_20261027\\round5_outer_loaders\\continuation_19\\call_targets\\write_checkpoint.py",
+      "bytes": 2655,
+      "sha256": "32995582b5a48c9060406adb45e6cc74c275598c834a12594ca4ab78cd8d86cc"
+    },
+    {
+      "path": "work\\alpme_analysis\\semantic_closure_20261027\\round5_outer_loaders\\loader_static.py",
+      "bytes": 7959,
+      "sha256": "8201519f05264ad9bc5341c7e6eeb31c1622055d57ce4d20ded74bcbd2e0b135"
+    }
+  ],
+  "sample_execution": false,
+  "CPU_emulation": false,
+  "host_secret_access": false,
+  "network": false,
+  "input_manifest": [
+    {
+      "path": "work\\alpme_analysis\\full_static_project_20261027\\inputs\\19_loader.exe.bin",
+      "bytes": 1199616,
+      "sha256": "5afbebb7ed01515ed80ca9c9e7e4c7b01c7652e220b2c2a19452356688e79244"
+    },
+    {
+      "path": "work\\alpme_analysis\\semantic_closure_20261027\\round5_outer_loaders\\functions\\19_5286.json",
+      "bytes": 239146,
+      "sha256": "c553b6691d092074e5af65537aeee4e90754ae724c7f952489e19a0f3aafef96"
+    },
+    {
+      "path": "work\\alpme_analysis\\semantic_closure_20261027\\round5_outer_loaders\\continuation_19\\19_9338_tag_progress.json",
+      "bytes": 314858,
+      "sha256": "72305917c08ea0d1364ef316f713ed163dba1e1c92feb163fe8554b0c4b0b828"
+    },
+    {
+      "path": "work\\alpme_analysis\\semantic_closure_20261027\\round5_outer_loaders\\continuation_19\\19_indirect_CALL_inventory.json",
+      "bytes": 10166,
+      "sha256": "865823e43665bef499dd5d5b116a029d64af923cd8389970822f6b4b4ba3a167"
+    },
+    {
+      "path": "work\\alpme_analysis\\full_static_project_20261027\\exports\\19_loader.exe.bin\\function_catalog.json",
+      "bytes": 252407,
+      "sha256": "59dedea58947a4e0dae98b667d1167f2b8624f58668993e4d7c39c0ca0e6f1d2"
+    },
+    {
+      "path": "work\\alpme_analysis\\semantic_closure_20261027\\round5_outer_loaders\\normal_exports\\19_loader.exe.bin_0x4251.c",
+      "bytes": 28962,
+      "sha256": "a668f6917f0bc3524d62847fe5a29e1f8091f63afd07cd058bfffff7ac10759b"
+    },
+    {
+      "path": "work\\alpme_analysis\\semantic_closure_20261027\\ghidra_repair\\round1_exports\\19_loader.exe.bin\\0x130d.c",
+      "bytes": 26371,
+      "sha256": "84aa68cf55ec44961ce93569f9619b2eaa3087c71f792f1077b1f3ca38377bb2"
+    }
+  ],
+  "analysis_dependencies": {
+    "pefile_version": "2024.8.26",
+    "capstone_version": "5.0.7",
+    "pefile_sha256": "0d0eb68f0f169182613dc64b3ab50b20855508c1c1d2faafe8fccf23edb6a345",
+    "capstone_module_sha256": "94571d1314355e261aff0ddfc94985fe8761232ddff6874181fd21efa9fab47f"
+  }
+}

@@ -56,9 +56,9 @@
 \captionsetup{font=small,labelfont={bf,color=Navy},labelsep=quad}
 \pagestyle{fancy}\fancyhf{}
 \fancyhead[L]{\sffamily\small Alpme / 17si / 19si}
-\fancyhead[R]{\sffamily\small 窃密木马技术分析\quad 2026-10-28}
+\fancyhead[R]{\sffamily\small 窃密木马技术分析\quad 2026-10-29}
 \fancyfoot[L]{\sffamily\footnotesize GPT-6.1 sol@Codex}
-\fancyfoot[C]{\sffamily\footnotesize 技术分析 · v3.3}
+\fancyfoot[C]{\sffamily\footnotesize 技术分析 · v3.4}
 \fancyfoot[R]{\sffamily\footnotesize \thepage\ / \pageref*{LastPage}}
 \renewcommand{\headrulewidth}{0.35pt}
 \renewcommand{\footrulewidth}{0pt}
@@ -102,9 +102,9 @@
 \vfill
 \par\medskip\noindent\begin{tabularx}{\linewidth}{@{}L{26mm}Y@{}}\toprule
 作者 & \textbf{GPT-6.1 sol@Codex}\\
-日期 & 2026年10月28日\\
+日期 & 2026年10月29日\\
 分析对象 & Alpme 1.0.25 VSIX、本地取得的17si.exe和19si.exe、两份内层DLL\\
-版本 & v3.3\\\bottomrule
+版本 & v3.4\\\bottomrule
 \end{tabularx}\par\medskip
 \vspace{7mm}
 {\small\color{Muted} 本报告以本地取得的两个木马程序为分析对象。其他受害设备上的程序可能属于不同版本，应以文件SHA-256和实际配置核对。\par}
@@ -281,6 +281,80 @@ PE是Windows可执行文件格式；节（section）将机器码、只读常量�
 关键恶意路径还使用CPU模型执行原始指令，同时替换系统、文件和密码学接口，使输入可控、出站可截获。随后用独立实现检查输出字节。浏览器取钥模型中的操作系统返回是虚构的，取钥helper本身由原指令运行；上传包装也从原程序产生的请求字节独立解密，检查是否真正包含指定输入。
 
 外层在运行时拼接短启动代码，浏览器路径也构造固定用途的调用桥；主要内层代码则早已编译并包装在EXE里。现有材料足以恢复可读的行为流程与大量C表示，未取得作者的原始工程、调试符号和精确构建输入。
+
+\subsection{远程启动模板如何恢复与使用}
+手工映射还需要一段远程启动代码。17的\code{0x13086}从\code{RVA 0x74e59}读取462字节编码数据，使用相同的字符表、噪声剔除、状态XOR和位级解压，恢复395字节模板。其正常函数体为363字节、101条指令，\code{RET}之后另有32字节混淆填充。
+
+\Needspace{6\baselineskip}
+模板的初始流状态在\code{0x14566}写为\code{0x63fc6d828bb8af58}。按原编码器的旋转、加法和XOR关系反算，得到种子\code{0xdb933c389ecefc6b}；再正向代入校验。解码模板的SHA-256如下：
+\begin{center}\smallcode{128c6706993d9e2efc518af766f2a2bed6565a7542272e5e1e3ef89151b7906c}\end{center}
+
+随后程序在新分配的395字节缓冲中回填九处字段，共60字节。除这些字段之外，其余335字节与先前受控OS模型保存的已回填启动代码完全一致。\code{0x13086}最终向调用者返回24字节描述符：数据指针、容量395、长度395。其1,352条原生指令、79处计算JMP、114处存储和20处调用均已按正常owned对象约定核对。
+
+\begin{longtable}{@{}L{27mm}L{37mm}L{86mm}@{}}\toprule 模板回填位置 & 传入上下文字段 & 用途\\\midrule\endhead
+\code{+0x0d}，8字节 & \code{+0x28} & \code{RtlGetCurrentPeb}，取得目标进程PEB\\
+\code{+0x33}，8字节 & \code{+0x08} & 人工构造的模块记录地址，加入加载器双向链表\\
+\code{+0x3d}，8字节 & \code{+0x30} & \code{LdrpHandleTlsData}地址；非零时调用\\
+\code{+0x4c}，8字节 & \code{+0x20} & 被映射DLL的目标映像基址\\
+\code{+0xac/+0xcb}，各8字节 & \code{+0x18/+0x38} & 进入和离开关键区的函数地址\\
+\code{+0xd7/+0xdf}，各4字节 & \code{+0x40/+0x10} & 初始化回调数组的相对位置和区间长度\\
+\code{+0x143}，4字节 & \code{+0x00} & DLL入口RVA，最终以process-attach参数调用\\\bottomrule\end{longtable}
+
+该模板先取得PEB及加载器结构，插入两组模块链表链接；\code{LdrpHandleTlsData}地址非零时，在加载器关键区保护下调用。随后遍历初始化回调数组，最后调用映像入口。内部函数由样本扫描ntdll代码定位，其正式名称已由本机对应PDB核验。
+
+\begin{figure}[H]\centering
+\begin{tikzpicture}[node distance=6mm]
+\node[core,text width=143mm] (a) {\fstep{原EXE只读数据}{462字节编码模板；原指令给出流状态与解码关系}};
+\node[box,text width=143mm,below=of a] (b) {\fstep{恢复与回填}{395字节模板；9处字段共60字节；返回ptr/cap/len描述符}};
+\node[core,text width=143mm,below=of b] (c) {\fstep{与映像、模块记录共同写入目标进程}{17线程入口：远程基址+0xa5400\quad 19：远程基址+0xa3400}};
+\node[box,text width=143mm,below=of c] (d) {登记模块链表 → \code{LdrpHandleTlsData} → TLS回调数组 → DLL入口};
+\draw[arrow](a)--(b);\draw[arrow](b)--(c);\draw[arrow](c)--(d);
+\end{tikzpicture}
+\caption{启动代码来自固定模板的恢复与参数回填；内层DLL另由片段解包得到。}
+\end{figure}
+
+\subsection{系统TLS登记例程的定位与作用}
+线程局部存储（Thread Local Storage, TLS）让一个模块为不同线程保存各自的数据。样本手工复制DLL映像后，还要处理系统加载器通常负责的模块登记、TLS数据和初始化调用。因此，它构造加载器模块条目，并从ntdll中寻找处理TLS数据的内部函数。
+
+本机参与离线核验的ntdll资源版本为\code{10.0.26100.9711}。扫描覆盖全部5,648条异常展开目录记录，其中2,806个调用者满足\code{0x20..0x100}字节长度条件。模式A产生104个候选，只有一个通过全部筛选：\code{0x5b030}函数中\code{0x5b0be}处的\code{E8}调用，指向\code{0x5bf40}。目标长度为\code{0x643}字节，并在\code{0x5bffc}调用\code{RtlAcquireSRWLockExclusive}。模式B的两处第一层匹配均未通过第二层字节检查。独立实现重新枚举全部104个候选，判定逐项一致。
+
+\begin{longtable}{@{}L{24mm}L{66mm}L{60mm}@{}}\toprule 筛选层 & 模式A & 模式B\\\midrule\endhead
+原调用者 & 长度\code{0x20..0x100} & 长度\code{0x20..0x100}\\
+前置字节 & 存在相邻字节\code{[4x/5x/6x/7x] 6e} & 存在\code{41 b8 09 00 00 00}及\code{83 3d ?? ?? ?? ?? 00}\\
+分支目标 & 扫描\code{E8 rel32}，精确命中函数目录入口；目标长\code{0x400..0xa00} & 扫描\code{0f 8x rel32}，精确命中非空函数目录入口，末端在映像内\\
+引用要求 & 目标含指向Acquire参考RVA的\code{E8 rel32} & 同左\\
+成功选择 & 返回E8目标函数地址 & 返回原调用者函数地址\\\bottomrule\end{longtable}
+
+上述筛选按原始字节进行。实际命中的\code{7e 6e}位于一条\code{CMP WORD PTR [RSI+0x6e],0}指令内部，符合样本的字节扫描实现。外层509条原生指令的循环入口、先后顺序及扫描末端另行核对；它会排除E8和近条件跳转各自最后一个完整起点。
+
+对应微软PDB给\code{0x5bf40}的正式符号为\code{LdrpHandleTlsData}，与该函数异常过滤器引用的同名字符串相符。核验同时比较GUID、PE与DBI的age、全部15个PE分节表及四个命名导出的地址。PDB Info age为4，PE及DBI age为1，符合微软\code{OpenValidate4}的匹配条件。\cite{mspdbmatching}
+
+\begin{longtable}{@{}L{33mm}L{59mm}L{58mm}@{}}\toprule RVA & 正式符号 & 本案涉及的职责\\\midrule\endhead
+\code{0x5bf40} & \code{LdrpHandleTlsData} & 接收构造的模块条目，处理模块TLS登记和线程数据\\
+\code{0x5d4b4} & \code{LdrpAllocateTlsEntry} & 创建并登记TLS模块条目\\
+\code{0x5ef90} & \code{LdrpAcquireTlsIndex} & 管理TLS位图并分配槽位\\
+\code{0x5ac3c} & \code{LdrpGetNewTlsVector} & 为线程准备扩展后的TLS向量\\
+\code{0x5abdc} & \code{LdrpQueueDeferredTlsData} & 安排TLS数据的延迟回收\\
+\code{0x5abb0} & \code{LdrpFindTlsEntry} & 查找已有TLS条目\\\bottomrule\end{longtable}
+
+启动模板传入人工构造的模块条目，调用返回后先离开加载器关键区，再处理初始化回调。模板没有检查\code{LdrpHandleTlsData}返回的\code{NTSTATUS}；因此，只要函数返回，错误状态不会触发模板停止，后续回调与DLL入口仍按各自字段条件继续。系统例程的异常恢复、资源回滚和失败返回已结合原生展开信息核对，见附录\ref{app:ntdll_tls}。
+
+\subsection{准备阶段的两个固定参数}
+17的\code{CreateEventW}调用使用固定名称\code{unctionresidual}，由15字节ASCII转换并追加终止符，最终为16个WCHAR、32字节。\code{GetVolumeInformationW}查询固定的\code{D:\textbackslash}卷根路径，含终止符为4个WCHAR、8字节。原始字节写入、UTF16转换、传入寄存器和释放位置已逐项绑定。
+
+\subsection{装载器调用与不可达的终止分支}
+17的\code{0x254d}准备阶段有36处动态CALL：35处已绑定系统接口，另1处属于错误对象清理。其\code{0xbd8e}装载阶段共有15处动态CALL，正常入口内14处：10处系统接口调用、4处自定义错误对象析构；余下1处位于冷代码。19的\code{0x9338}原14处动态CALL也已逐项分类，\code{0xcefe}保留为冷段中的名称来源缺口。
+
+两版的正常装载主线均为：按\code{Shell\_TrayWnd}取得既有窗口所属PID，\code{OpenProcess(0x1fffff)}打开进程，解析被映射PE的导入，申请远程可执行读写内存，写入拼接映像与启动代码，创建远程线程并关闭句柄。17与19的线程入口偏移分别为\code{+0xa5400}和\code{+0xa3400}；写入字节数的8字节输出分别位于各自函数的\code{SP+0x128}和\code{SP+0x188}。
+
+17保留了一段\code{TerminateProcess}解析和调用代码，但它受不可能的表索引控制。原生序列把\code{HeapAlloc}的NULL判断变成布尔值，再执行\code{ADD ECX,ECX}。同一个值自加只产生0或2，表索引1没有实际输入。
+
+\begin{longtable}{@{}L{24mm}L{31mm}L{95mm}@{}}\toprule 分派下标 & 表项目标 & 正常入口含义\\\midrule\endhead
+0 & \code{0xc59d} & 分配非NULL时的后续处理\\
+1 & \code{0x12724} & 无法由布尔自加产生；通向\code{TerminateProcess}的代码位于此支\\
+2 & \code{0xf80f} & 分配NULL时的错误处理\\\bottomrule\end{longtable}
+
+精确保留27处同寄存器自加的相关性后，17装载函数的正常图到达6,077条原生指令，301处计算JMP全部有限；83条指令列为上下文冷代码。\code{0xc852}和\code{0xc898}位于其中，正常装载路径不执行这次进程终止调用。该结论只使用原有调用／存储保守处理与整数代数，没有恢复整段栈帧或强制API成功值。末尾\code{0xc721}的实际正常目标已收敛为\code{CloseHandle}。
 
 \section{环境检测与沙箱弹窗}
 \label{sec:sandbox}
@@ -521,7 +595,7 @@ LevelDB采集只枚举\code{Local Storage/leveldb}目录的直接项：一处Rea
 \draw[call](a)--(b);\draw[call](b)--(c);\draw[call](b)--(d);
 \draw[call](d)--(e);\draw[call](e)--(f);\draw[reply](f)--(g);
 \draw[call](g)--(i);\draw[reply](h)--(i);\draw[call](i.south)--(j.north -| i.south);
-\node[font=\scriptsize,text=Muted,align=left,text width=146mm] at (79,-194) {两层保护需要分别判断：APPB约束磁盘键容器的解封；进程内保护约束缓存键的使用。\newline 本图为原样本恢复的流程；当前Chrome构建的真实对象命中与认证解密未做现场验证。};
+\node[font=\scriptsize,text=Muted,align=left,text width=146mm] at (79,-194) {两层保护需要分别判断：APPB约束磁盘键容器的解封；进程内保护约束缓存键的使用。\newline 本图为原样本恢复的流程；本机已命中v10/v20对象并核对加载版本；进程内解保护和记录认证另列核验状态。};
 \end{tikzpicture}
 \caption{浏览器取钥、文件材料和结果发送的关系。颜色较深的框表示在其他进程执行或出站发送的关键环节。}
 \end{figure}
@@ -542,22 +616,49 @@ LevelDB采集只枚举\code{Local Storage/leveldb}目录的直接项：一处Rea
 
 这个variant来自Local State字段解码后的结果状态，云控配置中保留的第五布尔值没有参与。准备函数返回前会重排描述符；worker缺少对应传统键结果、但legacy blob可用时，再尝试\code{CryptUnprotectData}回退，之后进入profile处理。结果“存在”是样本自己的对象状态判断；真实键的适用性仍由后续记录的认证解密检验。
 
-\subsection{与Chrome156源码逐层对应}
-本案核验时Chrome版本为156.0.8078.48。对照该精确标签的Chromium实现，可把保护分成三层：\cite{encryptor156,appbound156,caller156}
-\begin{longtable}{@{}L{26mm}L{69mm}L{55mm}@{}}\toprule 层次 & Chrome156怎样保护 & 与样本行为的关系\\\midrule\endhead
-磁盘键容器 & \code{Local State}的\code{os\_crypt.app\_bound\_encrypted\_key}保存APPB容器；特权服务验证调用者程序身份，并处理隔离状态 & 复制Local State得到受保护容器；原用户DPAPI解保护本身不覆盖所有APPB条件\\
-进程内缓存键 & \code{Encryptor::Key}在Windows调用\code{CryptProtectMemory(SAME\_PROCESS)}；使用时复制、解保护副本，结束清零临时副本 & 样本扫描运行时对象并安排同进程解保护，目标是这一层已加载的键材料\\
-数据库记录 & 根据键提供者/前缀选择AES-GCM等对应分支；Cookie还校验域名绑定前缀 & 取得候选字节后，仍须验证记录认证标签与格式；一次足长内存读取不代表已经解开一条Cookie\\\bottomrule\end{longtable}
+\subsection{Chrome156的保护与本机现场核验}
+本案核验的安装文件与运行中模块均为\code{156.0.8078.48}。静态对照固定在该精确版本：17份Chromium官方源码、安装文件及其签名、原始样本的对象判定条件分别核查。Chrome的磁盘键容器、进程内缓存和数据库记录采用不同保护环节。\cite{encryptor156,appbound156,caller156}
 
-\code{Encryptor::Key}保留是否已受保护的状态。加解密期间复制的临时键会被清零，原缓存对象仍可继续保存受保护的键。Mojo传递使用受控共享内存，接收侧重新建立自己的保护状态。因此，临时副本清零之后，原缓存对象仍可能保有供后续调用使用的键。\cite{encryptor156,encryptortraits156}
+\begin{longtable}{@{}L{27mm}L{66mm}L{57mm}@{}}\toprule 层次 & Chrome156的实现 & 样本的对应路径\\\midrule\endhead
+磁盘键容器 & \code{Local State}保存APPB容器；特权服务验证调用者身份及隔离状态 & 复制文件后还要满足容器解封条件\\
+进程内缓存 & \code{Encryptor::Key}保存32字节AES键；Windows以\code{CryptProtectMemory(SAME\_PROCESS)}保护，使用时解保护副本 & 扫描运行中对象，在目标进程安排\code{CryptUnprotectMemory}，再读取结果\\
+数据库记录 & 按提供者和记录前缀选择键，执行AES-GCM认证；Cookie另有域名SHA-256前缀校验 & 键材料和库文件进入后续记录处理；认证标签决定具体记录能否解开\\\bottomrule\end{longtable}
 
-Chrome156默认启用的\code{kEncryptWithIsolatedState}让APPB数据记录并验证进程隔离状态。服务读取的是进程访问令牌中的特定安全属性；曾在隔离状态下保护的数据会拒绝未隔离调用者。这个校验不是用户资料目录绑定。默认启用这项校验，也不等于每台机器已经开启Process Isolation。\cite{caller156,appbound156}
+安装文件的Key构造器、加密方法和解保护方法已从原生代码核对。实际构造器使用\term{指针、长度、容量}三个整数保存键缓冲，长度和容量均为32；它符合两份样本支持的数值布局。样本还保留另一种以结束指针表示长度的布局，当前安装代码使用前一种。
 
-Chrome官方2026年安全更新把Process Isolation列为针对本地恶意程序注入与篡改的防护；通过实验开关启用界面后，可在系统设置中配置。它直接影响木马是否能访问和操纵目标进程。当前没有取得本机实际隔离状态与这两个样本的完整现场取钥结果。\cite{chromequarterly}
+\begin{longtable}{@{}L{37mm}L{54mm}L{59mm}@{}}\toprule 对象字段 & 样本的实际读取 & Chrome156与现场结果\\\midrule\endhead
+提供者短字符串 & 结点\code{+0x20}；短串长度字节\code{+0x37=3}；匹配\code{a10/v10/v20} & 现场命中\code{v10}、\code{v20}各1个\\
+键缓冲三元组 & \code{+0x40}数据指针、\code{+0x48}长度、\code{+0x50}容量 & 两个结点均符合数值布局，长度32，容量32\\
+受保护状态 & \code{+0x58}为Chrome的\code{encrypted\_}；样本结点解析器未将此位作为接受条件 & 两个现场结点均为1，键缓冲处于内存保护状态\\
+可选键是否存在 & \code{+0x60}必须为1 & 与\code{encrypted\_}是两个独立字段，均已核对\\\bottomrule\end{longtable}
 
-Cookie库在该版本使用schema24相关域名绑定：对\code{encrypted\_value}解密后，检查并移除域名SHA-256前缀。登录库的\code{password\_value}以及Web Data中的\code{card\_number\_encrypted}也经相应Encryptor路径处理；记录前缀和键提供者决定适用哪个键。\cite{cookies156,login156,payments156}
+2026年10月28日，在本机Chrome主进程PID\code{25852}完成只读结构核验。共扫描约141.7MiB符合样本条件的已提交私有读写页，找到1个树头、2个结点；树头计数、遍历结点数和匹配结点数均为2。额外读取1,136字节结构元信息。枚举以\code{VirtualQueryEx}返回0、错误87结束，本次记录描述实际读到的范围。
 
-木马已有的离线版本分支结果分别使用\code{dpapi\_\allowbreak{}encryption\_\allowbreak{}key}、\code{encryption\_\allowbreak{}key}、\code{aster\_\allowbreak{}encryption\_\allowbreak{}key}等字段名。第三个名称按样本原字段记录。当前Chrome构建的适配需要同时满足对象命中、进程操作成功和记录认证解密三个条件；现有实验完成的是虚构对象下的逻辑验证。
+\begin{finding}{本机已经核实的三个环节}
+对象结构：发现符合原样本条件的\code{v10/v20}受保护键结点。\par
+进程权限：未提权、Medium完整性令牌下，\code{OpenProcess(0x1fffff)}实际成功，并核对目标确为安装目录中的Chrome。\par
+运行版本：已加载\code{chrome.dll}四处公开代码共2,084字节与磁盘文件逐字节一致，绑定到\code{156.0.8078.48}。
+\end{finding}
+
+现场证据保留结构计数、模块版本和代码hash。进程内解保护和数据库记录认证属于后续执行环节，本次未调用。调用桥本身为32字节，候选键也为32字节，二者由不同写入点处理；报告按各自的数据来源区分。
+
+\subsubsection{进程隔离与线程指令指针校验}
+Chrome156的Process Isolation安全模型规定，在隔离实际生效的标准Medium完整性场景下，普通本地进程无法取得包含\code{VM\_WRITE/VM\_OPERATION/CREATE\_THREAD}的完整访问句柄；管理员和SYSTEM不属于这项保证的范围。官方\code{SECURITY.md}及该版本策略说明把进程访问控制与APPB隔离绑定分别列出。\cite{isolationsecurity156,isolationpolicy156}
+
+本机上述PID\code{25852}的实际检查结果是\code{0x1fffff}成功；隔离设计中的全访问拒绝效果没有在这次句柄检查中出现。随后Chrome主进程PID变为\code{24860}，在新PID单独查询到以下缓解策略。两组记录分别保留，未把它们合并成同一时刻的进程状态。
+
+\begin{longtable}{@{}L{48mm}L{20mm}L{82mm}@{}}\toprule PID24860的策略 & 原始标志 & 具体含义\\\midrule\endhead
+动态代码策略 & \code{0x0} & 未设置\code{ProhibitDynamicCode}\\
+控制流防护（CFG） & \code{0x1} & \code{EnableControlFlowGuard=1}\\
+用户影子栈（CET） & \code{0x105} & 影子栈、\code{SetContextIpValidation}和进程外动态CET接口约束启用；指令指针校验的放宽模式未启用\\\bottomrule\end{longtable}
+
+样本将线程执行位置改向新分配的远程缓冲，并调用\code{SetThreadContext}。例如19在\code{0x1af05}写入CONTEXT的\code{Rip}，\code{0x1af43}提交修改，保存BOOL结果并在恢复线程后与0比较，成功与失败进入不同分支。微软接口说明指出，启用指令指针校验时，上下文修改会检查新的执行地址；动态代码的继续地址由相应CET机制管理。\cite{shadowstackpolicy,dynamicehcont}
+
+因此，现场取到对象、取得句柄、改写执行上下文和解开数据库记录应逐项记录。本机已核实前两项及加载版本；目标线程的实际上下文修改结果和记录认证结果仍在待核清单中。
+
+\code{kEncryptWithIsolatedState}让APPB容器记录并验证进程隔离属性。隔离状态下保护的既有数据会拒绝未隔离调用者；裸启动一个浏览器EXE不会自动解除这种绑定。安装代码的调用者身份检查、容器保护和临时键清零也继续存在。\cite{caller156,appbound156,encryptortraits156}
+
+Cookie库对解密值检查并移除域名SHA-256前缀。\code{Login Data}的\code{password\_value}和\code{Web Data}的\code{card\_number\_encrypted}按各自Encryptor路径处理。离线虚构键实验验证了样本结果字段的路由；本机现场记录与这些合成实验分别存档。\cite{cookies156,login156,payments156}
 
 \subsection{准备阶段的额外文件访问}
 19还读取\code{C:\textbackslash{}ProgramData\textbackslash{}ENE\textbackslash{}aiantionk}。\code{0x57ab8}的作用是读到文件结尾；内部32字节probe只是小缓冲读取策略。调用者取出返回长度后立即释放内容缓冲，暂存长度在被读取前又被另一个24字节结果覆盖。读取成功与失败都合流进入后续令牌阶段。因此，这处文件内容没有进入密钥、令牌选择或上传结果。
@@ -695,19 +796,20 @@ Explorer注入 & 根据任务栏定位Explorer、进程写内存、私有RWX区�
 
 \section{证据覆盖与现场核验状态}
 \label{sec:status}
-本报告以本地保存的两份样本为分析对象；文件身份以封面的SHA-256及附录位置表核对。其它机器上的同名程序可能属于不同构建，应先比对文件hash。
+分析对象为本地保存的两份EXE及其恢复的内层DLL，文件身份按封面与附录hash核对。旧41项失败清单已恢复为39项不再截断的C表示、1个尾跳板和1处误识别的编码数据；它与全程序调用审计分别统计。
 
-旧41项失败清单现为39项不再截断的C表示、1个尾跳板和1处误识别的编码数据。两版Chromium Profile采集器、浏览器根初始化器、Gecko扩展采集器、主机信息采集器，以及锁定文件读取、Local Storage包装、selector与扩展路径分派，分别有独立的原生控制流和来源证据。
+四份PE共有2,254个异常展开入口。同一套C文本诊断规则下，带截断提示的入口从87项降为51项：17外层3项、17内层21项、19外层4项、19内层23项。近期还修正了一个原本没有错误标记、实际却拼入其它代码的C函数；因此文本提示数只用于定位复核工作，原生来源、调用目标及对象生存期另有独立记录。
 
-四份PE共有2,254个异常展开入口。沿用同一套C选择与诊断规则重新对账后，带截断提示的入口从87项降为53项：17外层4项、17内层21项、19外层4项、19内层24项。34项变化逐一对应两个主机信息采集器与32个内存复制／填充入口。19外层主函数虽已恢复正常入口控制流，标准C仍不能结构化输出，因此保留在53项内。
+\begin{longtable}{@{}L{30mm}L{44mm}L{76mm}@{}}\toprule 事项 & 原生位置 & 当前结论与具体待核项\\\midrule\endhead
+17外层装载 & \code{0xbd8e} & 6,077条正常入口指令、301处有限JMP；15处动态CALL为14处正常目标及1处冷调用。正常路径中的\code{TerminateProcess}已排除，\code{C721}为\code{CloseHandle}\\
+19外层装载 & \code{0x9338} & 5,937条正常入口指令、299处有限JMP；13处动态CALL完成上下文分类，冷段\code{CEFE}名称来源保留；结构化C未完成，983块IR已导出\\
+启动模板 & 17 \code{0x13086} & 固定395字节模板已静态解码，正常代码101条；九处回填字段与捕获数据交叉核对。本机选中的\code{LdrpHandleTlsData}已由完整筛选和匹配PDB确认\\
+线程捕获与结果包 & 两版各14个实例 & 28处快照到捕获对象的复制中23处来源生存期闭合，5处具体标量／指针门待核。四个Packet CALL、两处旧值替换drop及六处线程上下文钩子来源继续追踪\\
+上传与会话 & 19 \code{0x4665/0x182c5} & HTTP函数1,454条原生指令、13处实际WinHTTP调用及所有存储已核对；会话Once回调\code{0x2093}的捕获与写界明确\\
+启动厂商判定 & 19 \code{0x4d66f} & 1,317条指令、42处JMP、201处存储和66处调用完整核对；调用者12字节输入只读，无调用者输出\\
+Chrome156 & \code{156.0.8078.48} & 现场命中v10/v20受保护对象，未提权完整访问句柄实际成功，加载代码版本匹配；线程上下文修改与记录认证的实际结果仍待核验\\\bottomrule\end{longtable}
 
-\begin{longtable}{@{}L{32mm}L{50mm}L{68mm}@{}}\toprule 当前事项 & 原生位置 & 已完成与仍待处理的部分\\\midrule\endhead
-19外层装载器 & \code{0x9338} & 5,937条正常入口指令、299处计算JMP已闭合；78条该上下文未到达代码另列。14处动态CALL的身份与转调作用继续审查；标准C结构化失败\\
-线程结果包清理 & 17 \code{0x1bd7d/0x1be17}；19 \code{0x44f6/0x4590} & 创建实例、队列复制与发布路径已定位；创建者中的非RSP别名、实际callee写入以及旧结果替换的对象域仍在核对\\
-通用辅助函数 & JSON、目录枚举、容器和错误对象链 & 逐项对齐原始汇编与完整函数；畸形输入、Unicode及分配失败等转调边界单独保留\\
-Chrome156适配 & \code{156.0.8078.48} & 官方保护实现已固定；正在对照实际原生判定条件与安装文件。真实进程对象命中、取钥和记录认证解密尚未做现场测试\\\bottomrule\end{longtable}
-
-已保存的四份离线上传请求通过独立解码和内容比对；Steam、Roblox、Discord专用提取使用虚构材料验证。已确认的采集目标、上传构造与下载执行能力足以安排账户撤销、会话清理和密钥轮换。事件时点的实际上传内容与后续程序执行记录，须结合当时日志核定。
+两版主机资料、Chromium Profile及根初始化、Gecko扩展、锁定文件读取、Local Storage包装、专用selector与扩展路径分派均有原生流程及来源证据。离线上传缓冲经独立解密、解压和内容对照；Steam、Roblox、Discord专用处理使用虚构输入验证。采集目标和下载执行能力已用于本案的账户、会话和密钥处置排序，事件时点的实际上传记录另按日志调查。
 
 \clearpage\appendix\section{窃取目标目录与文件含义}\label{app:targets}
 本目录完整保留325个文件任务的根路径、匹配规则、深度、大小上限、专用处理器和分类字段。排列按应用用途重组，方括号内编号沿用配置原序号。它是服务器下发的采集清单，采集是否命中取决于目标设备。
@@ -1217,15 +1319,15 @@ XOR之后仍是压缩数据。解压器读取单个字节时从低位取起，�
 \bottomrule\end{longtable}\endgroup
 重新核对实际C文件后，旧41项清单中有39项取得未见控制流截断标记的C表示，0项仍保留局部截断；另有1项确认是尾跳板，1项是误识别的编码数据。旧版把工具completed状态当成完整C，统计偏高。标记消失说明C表示不再在该处截断，程序语义仍须按原指令、调用和对象来源检查。
 \subsection{全程序仍待对齐的分析范围}
-全程序扫描覆盖四份PE的2,254个异常展开入口。当前53个入口的现存C仍带未恢复跳转等提示；逐项变化由两个主机资料函数与32个内存复制／填充入口构成。这个数记录C文本的恢复状态，函数调用目标、辅助链作用和现场适配分别审查。
+全程序扫描覆盖四份PE的2,254个异常展开入口。当前51个入口的现存C仍带未恢复跳转等提示；逐项变化包括两个主机资料函数、32个内存复制／填充入口、一个异常展开辅助函数及一个相对调用扫描函数。这个数记录C文本的恢复状态，函数调用目标、辅助链作用和现场适配分别审查。
 \begingroup\footnotesize
 \begin{longtable}{@{}L{65mm} L{42mm} L{43mm}@{}}
 \toprule 对象 & 原生展开入口 & 现存C含诊断提示 \\
 \midrule\endhead
-17 外层EXE & 403 & 12 \\
-17 内层DLL & 718 & 30 \\
-19 外层EXE & 406 & 12 \\
-19 内层DLL & 727 & 33 \\
+17 外层EXE & 403 & 3 \\
+17 内层DLL & 718 & 21 \\
+19 外层EXE & 406 & 4 \\
+19 内层DLL & 727 & 23 \\
 \bottomrule\end{longtable}\endgroup
 需要继续完整审查的重点包括：其它大函数、外层加载器的其余分支及间接调用的转调语义。前面已给出的目录名谓词、已知文件读取路径或成功轨迹，只覆盖相应行为，不替代这些函数的全路径审查。
 
@@ -1277,7 +1379,7 @@ JSON扫描器的状态中，\code{+0x20}是输入游标，\code{+0x28/+0x30}是�
 
 剩余78条指令位于\code{b024..b096}、\code{cdcb..cde4}、\code{ce81..cf00}、\code{f224..f2bc}四个左闭右开区间。正常入口每条已到达指令的全部保守后继仍在已到达集合中，没有进入这四段代码的第一条边。两处冷JMP \code{b094}与\code{f2b9}单独保留，冷段中的\code{cefe}也留在CALL清单。
 
-标准Ghidra反编译三次遇到\code{Could not finish collapsing block structure}。把函数体限制为已到达代码仍不能完成结构化，问题不归因于冷段。normalize模式成功输出983个基本块、89,813个p-code操作，可继续逐条追踪全部已恢复的控制流。p-code是分析中间表示（Intermediate Representation, IR），不是作者的原始代码；14处动态CALL的目标与作用另外审查。
+标准Ghidra反编译三次遇到\code{Could not finish collapsing block structure}。把函数体限制为已到达代码仍不能完成结构化，问题不归因于冷段。normalize模式成功输出983个基本块、89,813个p-code操作，可继续逐条追踪全部已恢复的控制流。p-code是分析中间表示（Intermediate Representation, IR）。原14处动态CALL已有13处完成上下文分类，冷段CEFE的名称来源保留；原始指令与类型约定共同用于行为解释。
 
 \subsection{内存复制与填充函数怎样补全}
 C提示中的32个入口属于内存复制与填充的优化实现，散布于两版EXE和两版DLL。它们根据长度、地址重叠和CPU指令集选择字节复制、SSE、AVX2、AVX-512或字符串指令后端；其跳表不是云控操作表。
@@ -1302,6 +1404,47 @@ C提示中的32个入口属于内存复制与填充的优化实现，散布于�
 
 这些证据恢复的是本地控制流与可读C表示。复制和填充循环对任意长度、地址重叠及溢出条件的完整读写契约，需要独立的内存不变量证明；本轮没有用它代替其它函数的调用写界。静态分析器也只用于这组没有CALL的函数，不具备通用callee作用摘要。
 
+\subsection{系统TLS登记、异常恢复与回滚}
+\label{app:ntdll_tls}
+本机\code{LdrpHandleTlsData}的\code{0x643}字节函数体有363条原生指令。普通控制流到达340条，原始\code{UNWIND\_INFO}及C异常范围补入22条恢复指令；剩下一条是\code{INT3}填充。19处调用全部为直接目标，参数和分支条件逐项核对。必要范围另包括索引分配、向量构造、条目查找、延迟队列、异常过滤和GS／SEH分派，共12个入口。
+
+\begin{longtable}{@{}L{25mm}L{125mm}@{}}\toprule 阶段 & 原生代码的具体动作\\\midrule\endhead
+提前返回 & 活动线程数为0、输入条目\code{+0x10c}等于9，或映像没有第9号TLS目录时，返回0\\
+登记模块 & 在全局\code{LdrpTlsLock}下分配72字节记录，复制40字节TLS目录，保存模块条目及索引；将索引写入\code{AddressOfIndex}指向的DWORD，再加入\code{LdrpTlsList}\\
+分配索引 & 复用空位时设置对应bit；没有空槽时，逻辑槽数增加8，必要时更换bitmap存储。分配失败返回\code{0xc0000017}\\
+准备线程数据 & 根据\code{EndRaw-StartRaw}分配并复制初始化数据，按目录中的对齐编码且至少16字节对齐；数据前8字节保存原分配地址。槽容量扩大时另建线程TLS向量\\
+提交更新 & 描述符为16字节头，加每个活动线程24字节记录；调用\code{NtSetInformationProcess(-1,0x23,...)}。调用后的记录按系统输出重新读取\\
+收尾与回滚 & 成功时更新活动线程计数并写输入条目\code{+0x6e=0xffff}；负状态时查找／摘除模块记录、清索引bit，必要时把逻辑槽数减8，再释放相关分配\\\bottomrule\end{longtable}
+
+描述符头部\code{+4}记录是否采用扩展向量，\code{+8}为活动线程数，\code{+0xc}在两种模式下分别保存原槽数或新索引。每项记录由flags、指针和系统返回token组成。准备阶段写入的指针可能被系统修改，因此清理依据返回后的数据。
+
+\begin{longtable}{@{}L{36mm}L{114mm}@{}}\toprule 返回记录的判断 & 后续动作\\\midrule\endhead
+\code{flags \& 0x2} & 非空指针进入释放分支；普通数据通过前8字节恢复原始块，扩展向量则加入16桶延迟回收表\\
+否则\code{flags \& 0x1} & 增加\code{LdrpPotentialTlsLeaks}计数\\
+以上两位均未置 & 增加本地清理计数；扩展模式先释放向量头，再释放新TLS数据\\\bottomrule\end{longtable}
+
+记录按逆序清理。尚未加入记录的分配、已准备的线程数据、模块登记和描述符分别处理。回滚会撤销链表记录与槽位；本片段未恢复此前已经写出的\code{*AddressOfIndex}。链表校验失败走\code{INT 0x29}快速失败。普通返回先校验安全cookie，负\code{NTSTATUS}原样返回，非负状态归零。
+
+两段TLS目录操作有明确的异常范围：目录复制和\code{AddressOfIndex}写入由\code{LdrpAllocateTlsEntry}自身处理；每线程初始化数据复制由主函数的恢复块处理。共享的\code{LdrpGenericExceptionFilter}还含受\code{LdrpDebugFlags}控制的系统诊断交互，可选择继续处理、调试中断，或终止当前进程／线程。该路径需要异常及相应调试策略，不能并入样本正常装载的进程终止结论。
+
+启动模板在\code{+0xbf}调用后，没有保存或检查返回值，\code{+0xd3}调用离开关键区，\code{+0xd6}又覆盖\code{EAX}。因此，函数返回的失败状态没有控制后续初始化是否继续。系统调用内部对私有flags和token的解释、延迟表后续回收者属于系统边界；本次已核对用户态传入内容、返回后分流与实际释放位置。
+
+\subsection{代码末尾的跳转表与反编译误边}
+六处线性反汇编中断来自函数尾部嵌入的数据。四个字符集合搜索函数各含47项DWORD跳表；两个x64异常展开辅助函数各含5项DWORD目标及33字节选择表。原始边界核对区分出3,886字节代码、858字节表数据和10字节对齐填充，并排除了\code{17:0x2127c}处由表数据误解出的假CALL。
+
+两个异常辅助函数的选择表只含0至4。恢复这些实际目标后，原来的\code{case 5}和随之拼入的其它函数代码被排除，得到123行与124行的完整分析C。17旧C虽没有截断标记，却错误地扩成51,040字节，这说明缺少错误提示并不能代替对原始代码范围和跳表的检查。
+
+可选ntdll定位还用到两个辅助函数。\code{17:0x1073}按12字节\code{RUNTIME\_FUNCTION}记录二分查找精确入口，命中时返回标志及\code{End-Begin}长度；\code{0x8319}按字节扫描\code{E8 rel32}，检查计算目标是否等于参考导出RVA。混淆的opcode表达式从原TLS及\code{0xd0088}标量正向算得\code{E8}；新标量核查覆盖35,132处原生位置。两辅助的85／169条指令、3／11处计算JMP及完整分析C已核对。
+
+\subsection{上传会话和线程上下文的写入范围}
+19的HTTP函数包含18个实际名字构造器、9组解析器及13处API消费。完整1,454条指令和158处存储均已分类；133处控制来源读取通过生存期检查。\code{ReadData}的数据指针来自成功分配结果的真实\code{+8}字段，响应Vec每次追加前先扩容，释放时使用其所属数据。
+
+隐藏的会话Once调用只读虚表\code{+0x20}的\code{0x2093}回调，最终执行\code{0x182c5}。它清零捕获中的8字节标志，建立WinHTTP会话，写入静态会话状态；没有保存采集包引用。会话初始化器的272条指令和两个API调用已完整核对。HTTP对原输出指针的保守写界为\code{[0,263)}，上界来自真实字节索引范围，尚未将它收窄为32字节。
+
+线程上下文还包含\code{\{data,vtable\}}钩子列表。快照和安装／清理函数的调用、注册、复制及来源分别追踪；两个仅在剩余长度为0时到达的余项drop已由原生循环条件排除。实际FnOnce和快照生产者来源保留在待核清单，未以全局初值0替代全部注册路径。
+
+随后三轮验证继续追踪19的创建者函数，将12处后续参数读取接回其真实赋值，并绑定固件读取缓冲、加密输入输出、字符串复制数组和多组Vec容器。下一轮把96／48／112字节三组元素容器的构造、扩容、14处实际堆写和释放关系接到同一来源验证，覆盖3,590个状态、136次调用及537处原生写入。父级分别重放27个与11个静态模块，对照30份与13份输出逐字一致；此前冻结的文件与依赖hash保持一致。四处Packet调用、两处旧结果析构、六处实际钩子来源及五组完整捕获生存期仍分别列明，后续重点为创建者更后段的实际写入及共享结果域。
+
 \subsection{其它间接CALL的逐项复核}
 本轮保守批量检查得到的98个完整本地控制流函数中，共有77处原生间接CALL。42处由导入元数据及原始寄存器来源对应Windows接口，17处由原生字符串构造、完整codec、cache、resolver与字节生存期复核唯一命名；另外4处在实际进程枚举调用者中对应NtQuerySystemInformation，5处由FileReadAll错误对象的tag排除实际调用。
 
@@ -1314,7 +1457,7 @@ ReadDir错误对象 & 19 \code{0x5f923} & 实际producer为\code{0xdda5}，错�
 
 最后四处属于线程结果包。已定位每版14个构造实例、五类drop glue和队列到闭包的复制链。26个返回体最终发布\code{Some(unit)}；另两个线程体持续循环，没有正常出口。发布新结果前，程序还会检查并释放旧结果，因此必须同时追踪初始对象、队列复制和旧值替换，不能只看发布末尾的置零指令。
 
-新增核查按种子产生到使用点之间的所有可达路径取图，纳入跨RVA的后向回边。前一阶段已解决动态栈索引、若干输出区间和17版\code{SP+0x1c8}的生存期。随后又核查25个helper的原生输出范围、83个实际调用和9处fresh allocation内写入；75个栈输出重放中73个直接来自LEA，其余两处仍依赖待核的栈指针来源。
+新增核查按种子产生到使用点之间的所有可达路径取图，纳入跨RVA的后向回边。前一阶段已解决动态栈索引、若干输出区间和17版\code{SP+0x1c8}的生存期。随后又核查25个helper的原生输出范围、83个实际调用和9处fresh allocation内写入；75个栈输出重放中73个直接来自LEA。另两处19的\code{0x50d09}与\code{0x5413d}，现已补齐实际参数来源及从生产到消费的生存期；后者的\code{SP+0xd0}在460状态范围内保持指向真实112字节元素容器。创建者更后段的捕获来源仍继续核查。
 
 旧结果释放新增追到17 \code{0x5685a}与19 \code{0x92a2}两处generic drop回调。它们位于发布新结果之前，需要由实际旧值的\code{None/Some}域排除或确定，不能只凭发布尾是\code{Some(unit)}就跳过。剩余范围包括长创建者中的非RSP别名、调用写入和共享结果包的对象域。Rust线程wrapper没有本地catch或Err发布分支；CRT异常处理入口另有清单。
 
@@ -1448,6 +1591,11 @@ Windows数据保护（DPAPI） & 与用户/系统等上下文关联的保护接�
 \bibitem{payments156} Chromium Authors. Payments Web Data, tag156.0.8078.48. \url{https://raw.githubusercontent.com/chromium/chromium/156.0.8078.48/components/autofill/core/browser/webdata/payments/payments_autofill_table.cc}.
 \bibitem{chromequarterly} Chromium Security. Quarterly updates, 2026Q1-Q3. \url{https://www.chromium.org/Home/chromium-security/quarterly-updates/}.
 \bibitem{sqlitewal} SQLite Authors. Write-Ahead Logging. \url{https://sqlite.org/wal.html}. Accessed2026-10-28.
+\bibitem{isolationsecurity156} Chromium Authors. Isolated browser security model, tag156.0.8078.48. \url{https://chromium.googlesource.com/chromium/src/+/refs/tags/156.0.8078.48/chrome/browser/win/isolated_browser/SECURITY.md}.
+\bibitem{isolationpolicy156} Chromium Authors. ProcessIsolationEnabled policy, tag156.0.8078.48. \url{https://chromium.googlesource.com/chromium/src/+/refs/tags/156.0.8078.48/components/policy/resources/templates/policy_definitions/Miscellaneous/ProcessIsolationEnabled.yaml}.
+\bibitem{shadowstackpolicy} Microsoft. PROCESS\_MITIGATION\_USER\_SHADOW\_STACK\_POLICY. \url{https://learn.microsoft.com/en-us/windows/win32/api/winnt/ns-winnt-process_mitigation_user_shadow_stack_policy}.
+\bibitem{dynamicehcont} Microsoft. SetProcessDynamicEHContinuationTargets. \url{https://learn.microsoft.com/en-us/windows/win32/api/processthreadsapi/nf-processthreadsapi-setprocessdynamicehcontinuationtargets}.
+\bibitem{mspdbmatching} Microsoft. PDB1::OpenValidate4, Microsoft Program Database implementation. \url{https://github.com/microsoft/microsoft-pdb/blob/master/PDB/dbi/pdb.cpp}.
 \end{thebibliography}
 
 \end{document}

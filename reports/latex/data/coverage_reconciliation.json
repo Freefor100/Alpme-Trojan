@@ -1,778 +1,92 @@
 {
-  "date": "2026-10-28",
-  "status": "PASS_EXACT_87_TO_53_C_DIAGNOSTIC_RECONCILIATION",
-  "baseline_diagnostic_entries": 87,
-  "current_C_diagnostic_entries": 53,
-  "changes": [
+  "current_C_diagnostic_entries": 51,
+  "samples": [
     {
       "sample": "17_loader.exe.bin",
-      "entry": "0x1cd60",
-      "before": "partial_markers_remain",
-      "after": "no_partial_markers_not_a_CFG_proof",
-      "new_C": {
-        "path": "work\\alpme_analysis\\semantic_closure_20261027\\round6_runtime_primitives\\normal_exports\\17_loader.exe.bin_0x1cd60.c",
-        "bytes": 19004,
-        "sha256": "644b98ac493e384eccdf2b76b49dc65595b25e660285726828574d427ddbaddc",
-        "candidate": false,
-        "counts": {
-          "Could not recover jumptable": 0,
-          "Treating indirect jump as call": 0,
-          "halt_baddata": 0,
-          "Bad instruction data": 0,
-          "UnimplementedPcode": 0
-        },
-        "partial_markers": 0,
-        "normal_context": false
-      }
-    },
-    {
-      "sample": "17_loader.exe.bin",
-      "entry": "0x1d190",
-      "before": "partial_markers_remain",
-      "after": "no_partial_markers_not_a_CFG_proof",
-      "new_C": {
-        "path": "work\\alpme_analysis\\semantic_closure_20261027\\round6_runtime_primitives\\normal_exports\\17_loader.exe.bin_0x1d190.c",
-        "bytes": 44562,
-        "sha256": "69638e975475dce0cae7286b270d09261645d7e305a225a9c51cea798d905470",
-        "candidate": false,
-        "counts": {
-          "Could not recover jumptable": 0,
-          "Treating indirect jump as call": 0,
-          "halt_baddata": 0,
-          "Bad instruction data": 0,
-          "UnimplementedPcode": 0
-        },
-        "partial_markers": 0,
-        "normal_context": false
-      }
-    },
-    {
-      "sample": "17_loader.exe.bin",
-      "entry": "0x1d4b0",
-      "before": "partial_markers_remain",
-      "after": "no_partial_markers_not_a_CFG_proof",
-      "new_C": {
-        "path": "work\\alpme_analysis\\semantic_closure_20261027\\round6_runtime_primitives\\normal_exports\\17_loader.exe.bin_0x1d4b0.c",
-        "bytes": 19004,
-        "sha256": "9f33ec1a13d1af3ad1fbd4b3dbcb33d064685921f5bea55a784870dcf5fd2d63",
-        "candidate": false,
-        "counts": {
-          "Could not recover jumptable": 0,
-          "Treating indirect jump as call": 0,
-          "halt_baddata": 0,
-          "Bad instruction data": 0,
-          "UnimplementedPcode": 0
-        },
-        "partial_markers": 0,
-        "normal_context": false
-      }
-    },
-    {
-      "sample": "17_loader.exe.bin",
-      "entry": "0x1d8e0",
-      "before": "partial_markers_remain",
-      "after": "no_partial_markers_not_a_CFG_proof",
-      "new_C": {
-        "path": "work\\alpme_analysis\\semantic_closure_20261027\\round6_runtime_primitives\\normal_exports\\17_loader.exe.bin_0x1d8e0.c",
-        "bytes": 11132,
-        "sha256": "8d4abf891193b8bcee0787d411ec88fadb4cb2afb9f8d0757026a896ead181f7",
-        "candidate": false,
-        "counts": {
-          "Could not recover jumptable": 0,
-          "Treating indirect jump as call": 0,
-          "halt_baddata": 0,
-          "Bad instruction data": 0,
-          "UnimplementedPcode": 0
-        },
-        "partial_markers": 0,
-        "normal_context": false
-      }
-    },
-    {
-      "sample": "17_loader.exe.bin",
-      "entry": "0x1db90",
-      "before": "partial_markers_remain",
-      "after": "no_partial_markers_not_a_CFG_proof",
-      "new_C": {
-        "path": "work\\alpme_analysis\\semantic_closure_20261027\\round6_runtime_primitives\\normal_exports\\17_loader.exe.bin_0x1db90.c",
-        "bytes": 11132,
-        "sha256": "35a40c52ea2c2b4b8986864593a88b928cab0be8643afea0b5c5f8c21b06acf4",
-        "candidate": false,
-        "counts": {
-          "Could not recover jumptable": 0,
-          "Treating indirect jump as call": 0,
-          "halt_baddata": 0,
-          "Bad instruction data": 0,
-          "UnimplementedPcode": 0
-        },
-        "partial_markers": 0,
-        "normal_context": false
-      }
-    },
-    {
-      "sample": "17_loader.exe.bin",
-      "entry": "0x23130",
-      "before": "partial_markers_remain",
-      "after": "no_partial_markers_not_a_CFG_proof",
-      "new_C": {
-        "path": "work\\alpme_analysis\\semantic_closure_20261027\\round6_runtime_primitives\\normal_exports\\17_loader.exe.bin_0x23130.c",
-        "bytes": 23142,
-        "sha256": "73aca629fbbfc462eeeebadff3658e8d9cb6f2d10bdef9687013431114737937",
-        "candidate": false,
-        "counts": {
-          "Could not recover jumptable": 0,
-          "Treating indirect jump as call": 0,
-          "halt_baddata": 0,
-          "Bad instruction data": 0,
-          "UnimplementedPcode": 0
-        },
-        "partial_markers": 0,
-        "normal_context": false
-      }
-    },
-    {
-      "sample": "17_loader.exe.bin",
-      "entry": "0x237e0",
-      "before": "partial_markers_remain",
-      "after": "no_partial_markers_not_a_CFG_proof",
-      "new_C": {
-        "path": "work\\alpme_analysis\\semantic_closure_20261027\\round6_runtime_primitives\\normal_exports\\17_loader.exe.bin_0x237e0.c",
-        "bytes": 8174,
-        "sha256": "5f65a296e79180dfe7c5a5f366ef0185859c197e755cbc80f4172a758917350f",
-        "candidate": false,
-        "counts": {
-          "Could not recover jumptable": 0,
-          "Treating indirect jump as call": 0,
-          "halt_baddata": 0,
-          "Bad instruction data": 0,
-          "UnimplementedPcode": 0
-        },
-        "partial_markers": 0,
-        "normal_context": false
-      }
-    },
-    {
-      "sample": "17_loader.exe.bin",
-      "entry": "0x23c20",
-      "before": "partial_markers_remain",
-      "after": "no_partial_markers_not_a_CFG_proof",
-      "new_C": {
-        "path": "work\\alpme_analysis\\semantic_closure_20261027\\round6_runtime_primitives\\normal_exports\\17_loader.exe.bin_0x23c20.c",
-        "bytes": 4551,
-        "sha256": "82dfce851147de4a93b5df67a208f5f1e707300f6e93a73f99061389746c60ef",
-        "candidate": false,
-        "counts": {
-          "Could not recover jumptable": 0,
-          "Treating indirect jump as call": 0,
-          "halt_baddata": 0,
-          "Bad instruction data": 0,
-          "UnimplementedPcode": 0
-        },
-        "partial_markers": 0,
-        "normal_context": false
+      "pdata_entries": 403,
+      "native_entry_C_diagnostic_counts": {
+        "no_partial_markers_not_a_CFG_proof": 400,
+        "partial_markers_remain": 3
       }
     },
     {
       "sample": "17_payload.dll.bin",
-      "entry": "0x1593b",
-      "before": "partial_markers_remain",
-      "after": "no_partial_markers_not_a_CFG_proof",
-      "new_C": {
-        "path": "work\\alpme_analysis\\semantic_closure_20261027\\round5_large_collectors\\continuation\\normal_exports\\17_payload.dll.bin_0x1593b.c",
-        "bytes": 126688,
-        "sha256": "6f45a63b5522bd1641e7ecdc980ae2c7e7b216cdfb1c779b701dfc56e5c1c493",
-        "candidate": false,
-        "counts": {
-          "Could not recover jumptable": 0,
-          "Treating indirect jump as call": 0,
-          "halt_baddata": 0,
-          "Bad instruction data": 0,
-          "UnimplementedPcode": 0
-        },
-        "partial_markers": 0,
-        "normal_context": true
-      }
-    },
-    {
-      "sample": "17_payload.dll.bin",
-      "entry": "0x71140",
-      "before": "partial_markers_remain",
-      "after": "no_partial_markers_not_a_CFG_proof",
-      "new_C": {
-        "path": "work\\alpme_analysis\\semantic_closure_20261027\\round6_runtime_primitives\\normal_exports\\17_payload.dll.bin_0x71140.c",
-        "bytes": 19003,
-        "sha256": "535993796fb15e00ec606166ead9020714eeff63f32cbef02111084c160fa349",
-        "candidate": false,
-        "counts": {
-          "Could not recover jumptable": 0,
-          "Treating indirect jump as call": 0,
-          "halt_baddata": 0,
-          "Bad instruction data": 0,
-          "UnimplementedPcode": 0
-        },
-        "partial_markers": 0,
-        "normal_context": false
-      }
-    },
-    {
-      "sample": "17_payload.dll.bin",
-      "entry": "0x71570",
-      "before": "partial_markers_remain",
-      "after": "no_partial_markers_not_a_CFG_proof",
-      "new_C": {
-        "path": "work\\alpme_analysis\\semantic_closure_20261027\\round6_runtime_primitives\\normal_exports\\17_payload.dll.bin_0x71570.c",
-        "bytes": 44556,
-        "sha256": "3e96b88e88a644769bce9d583da676dbcc6859cf06dd944ebecc7b17970cdbe0",
-        "candidate": false,
-        "counts": {
-          "Could not recover jumptable": 0,
-          "Treating indirect jump as call": 0,
-          "halt_baddata": 0,
-          "Bad instruction data": 0,
-          "UnimplementedPcode": 0
-        },
-        "partial_markers": 0,
-        "normal_context": false
-      }
-    },
-    {
-      "sample": "17_payload.dll.bin",
-      "entry": "0x71890",
-      "before": "partial_markers_remain",
-      "after": "no_partial_markers_not_a_CFG_proof",
-      "new_C": {
-        "path": "work\\alpme_analysis\\semantic_closure_20261027\\round6_runtime_primitives\\normal_exports\\17_payload.dll.bin_0x71890.c",
-        "bytes": 19003,
-        "sha256": "4cfc065ad6c3cff271f4ef0469fea162f45a9b9dd9b46b206322611b06d98b9e",
-        "candidate": false,
-        "counts": {
-          "Could not recover jumptable": 0,
-          "Treating indirect jump as call": 0,
-          "halt_baddata": 0,
-          "Bad instruction data": 0,
-          "UnimplementedPcode": 0
-        },
-        "partial_markers": 0,
-        "normal_context": false
-      }
-    },
-    {
-      "sample": "17_payload.dll.bin",
-      "entry": "0x71cc0",
-      "before": "partial_markers_remain",
-      "after": "no_partial_markers_not_a_CFG_proof",
-      "new_C": {
-        "path": "work\\alpme_analysis\\semantic_closure_20261027\\round6_runtime_primitives\\normal_exports\\17_payload.dll.bin_0x71cc0.c",
-        "bytes": 11131,
-        "sha256": "39df0dc0dbb45e93ec0331b2ca529c7edbdbf880e2e20e838e5e31ab5711bc6a",
-        "candidate": false,
-        "counts": {
-          "Could not recover jumptable": 0,
-          "Treating indirect jump as call": 0,
-          "halt_baddata": 0,
-          "Bad instruction data": 0,
-          "UnimplementedPcode": 0
-        },
-        "partial_markers": 0,
-        "normal_context": false
-      }
-    },
-    {
-      "sample": "17_payload.dll.bin",
-      "entry": "0x71f70",
-      "before": "partial_markers_remain",
-      "after": "no_partial_markers_not_a_CFG_proof",
-      "new_C": {
-        "path": "work\\alpme_analysis\\semantic_closure_20261027\\round6_runtime_primitives\\normal_exports\\17_payload.dll.bin_0x71f70.c",
-        "bytes": 11131,
-        "sha256": "8014e88181efdd5e56685c8f9ec13ce467300044d65f7d38f3969026c5956ce2",
-        "candidate": false,
-        "counts": {
-          "Could not recover jumptable": 0,
-          "Treating indirect jump as call": 0,
-          "halt_baddata": 0,
-          "Bad instruction data": 0,
-          "UnimplementedPcode": 0
-        },
-        "partial_markers": 0,
-        "normal_context": false
-      }
-    },
-    {
-      "sample": "17_payload.dll.bin",
-      "entry": "0x7e630",
-      "before": "partial_markers_remain",
-      "after": "no_partial_markers_not_a_CFG_proof",
-      "new_C": {
-        "path": "work\\alpme_analysis\\semantic_closure_20261027\\round6_runtime_primitives\\normal_exports\\17_payload.dll.bin_0x7e630.c",
-        "bytes": 23136,
-        "sha256": "f2b3413858c7163e30a5fe42cb24170c912e6d3235c5434ad7cebfa10281721a",
-        "candidate": false,
-        "counts": {
-          "Could not recover jumptable": 0,
-          "Treating indirect jump as call": 0,
-          "halt_baddata": 0,
-          "Bad instruction data": 0,
-          "UnimplementedPcode": 0
-        },
-        "partial_markers": 0,
-        "normal_context": false
-      }
-    },
-    {
-      "sample": "17_payload.dll.bin",
-      "entry": "0x7ece0",
-      "before": "partial_markers_remain",
-      "after": "no_partial_markers_not_a_CFG_proof",
-      "new_C": {
-        "path": "work\\alpme_analysis\\semantic_closure_20261027\\round6_runtime_primitives\\normal_exports\\17_payload.dll.bin_0x7ece0.c",
-        "bytes": 8166,
-        "sha256": "4decc2350a80485ffda84c6207dfb49954b13197fe8cc50f4220630921334093",
-        "candidate": false,
-        "counts": {
-          "Could not recover jumptable": 0,
-          "Treating indirect jump as call": 0,
-          "halt_baddata": 0,
-          "Bad instruction data": 0,
-          "UnimplementedPcode": 0
-        },
-        "partial_markers": 0,
-        "normal_context": false
-      }
-    },
-    {
-      "sample": "17_payload.dll.bin",
-      "entry": "0x7f080",
-      "before": "partial_markers_remain",
-      "after": "no_partial_markers_not_a_CFG_proof",
-      "new_C": {
-        "path": "work\\alpme_analysis\\semantic_closure_20261027\\round6_runtime_primitives\\normal_exports\\17_payload.dll.bin_0x7f080.c",
-        "bytes": 4550,
-        "sha256": "29d48b0fa81030de8c2fa169c199bca3ea97bf4c7da04301f535b295de2b7736",
-        "candidate": false,
-        "counts": {
-          "Could not recover jumptable": 0,
-          "Treating indirect jump as call": 0,
-          "halt_baddata": 0,
-          "Bad instruction data": 0,
-          "UnimplementedPcode": 0
-        },
-        "partial_markers": 0,
-        "normal_context": false
-      }
-    },
-    {
-      "sample": "19_loader.exe.bin",
-      "entry": "0x1bb60",
-      "before": "partial_markers_remain",
-      "after": "no_partial_markers_not_a_CFG_proof",
-      "new_C": {
-        "path": "work\\alpme_analysis\\semantic_closure_20261027\\round6_runtime_primitives\\normal_exports\\19_loader.exe.bin_0x1bb60.c",
-        "bytes": 19004,
-        "sha256": "67d5683c29e682597f8835a63306dbb29f5f3a895007501b64178a8f3d9ef07e",
-        "candidate": false,
-        "counts": {
-          "Could not recover jumptable": 0,
-          "Treating indirect jump as call": 0,
-          "halt_baddata": 0,
-          "Bad instruction data": 0,
-          "UnimplementedPcode": 0
-        },
-        "partial_markers": 0,
-        "normal_context": false
-      }
-    },
-    {
-      "sample": "19_loader.exe.bin",
-      "entry": "0x1bf90",
-      "before": "partial_markers_remain",
-      "after": "no_partial_markers_not_a_CFG_proof",
-      "new_C": {
-        "path": "work\\alpme_analysis\\semantic_closure_20261027\\round6_runtime_primitives\\normal_exports\\19_loader.exe.bin_0x1bf90.c",
-        "bytes": 44562,
-        "sha256": "2fd70a120ec89df43e689f2d410345c2caff51929fcbfcbdf156b614de2bcde8",
-        "candidate": false,
-        "counts": {
-          "Could not recover jumptable": 0,
-          "Treating indirect jump as call": 0,
-          "halt_baddata": 0,
-          "Bad instruction data": 0,
-          "UnimplementedPcode": 0
-        },
-        "partial_markers": 0,
-        "normal_context": false
-      }
-    },
-    {
-      "sample": "19_loader.exe.bin",
-      "entry": "0x1c2b0",
-      "before": "partial_markers_remain",
-      "after": "no_partial_markers_not_a_CFG_proof",
-      "new_C": {
-        "path": "work\\alpme_analysis\\semantic_closure_20261027\\round6_runtime_primitives\\normal_exports\\19_loader.exe.bin_0x1c2b0.c",
-        "bytes": 19004,
-        "sha256": "a68204b5a0fe91b9aa1c1e30a172b86f9280621d2e626235e30212fe233b93b9",
-        "candidate": false,
-        "counts": {
-          "Could not recover jumptable": 0,
-          "Treating indirect jump as call": 0,
-          "halt_baddata": 0,
-          "Bad instruction data": 0,
-          "UnimplementedPcode": 0
-        },
-        "partial_markers": 0,
-        "normal_context": false
-      }
-    },
-    {
-      "sample": "19_loader.exe.bin",
-      "entry": "0x1c6e0",
-      "before": "partial_markers_remain",
-      "after": "no_partial_markers_not_a_CFG_proof",
-      "new_C": {
-        "path": "work\\alpme_analysis\\semantic_closure_20261027\\round6_runtime_primitives\\normal_exports\\19_loader.exe.bin_0x1c6e0.c",
-        "bytes": 11132,
-        "sha256": "f785cefe827e82e326bcc32304049ab389a9646f9e84595a7b03b42ec0959e51",
-        "candidate": false,
-        "counts": {
-          "Could not recover jumptable": 0,
-          "Treating indirect jump as call": 0,
-          "halt_baddata": 0,
-          "Bad instruction data": 0,
-          "UnimplementedPcode": 0
-        },
-        "partial_markers": 0,
-        "normal_context": false
-      }
-    },
-    {
-      "sample": "19_loader.exe.bin",
-      "entry": "0x1c990",
-      "before": "partial_markers_remain",
-      "after": "no_partial_markers_not_a_CFG_proof",
-      "new_C": {
-        "path": "work\\alpme_analysis\\semantic_closure_20261027\\round6_runtime_primitives\\normal_exports\\19_loader.exe.bin_0x1c990.c",
-        "bytes": 11132,
-        "sha256": "7e05cf8d7e774830050dc071056c59bc368c7efb067ad029488f62c0b8566f77",
-        "candidate": false,
-        "counts": {
-          "Could not recover jumptable": 0,
-          "Treating indirect jump as call": 0,
-          "halt_baddata": 0,
-          "Bad instruction data": 0,
-          "UnimplementedPcode": 0
-        },
-        "partial_markers": 0,
-        "normal_context": false
-      }
-    },
-    {
-      "sample": "19_loader.exe.bin",
-      "entry": "0x21f30",
-      "before": "partial_markers_remain",
-      "after": "no_partial_markers_not_a_CFG_proof",
-      "new_C": {
-        "path": "work\\alpme_analysis\\semantic_closure_20261027\\round6_runtime_primitives\\normal_exports\\19_loader.exe.bin_0x21f30.c",
-        "bytes": 23142,
-        "sha256": "2c93633ea47fc78d89c9f39f34214f946a9a4f735084ab77659f3b2668e9a173",
-        "candidate": false,
-        "counts": {
-          "Could not recover jumptable": 0,
-          "Treating indirect jump as call": 0,
-          "halt_baddata": 0,
-          "Bad instruction data": 0,
-          "UnimplementedPcode": 0
-        },
-        "partial_markers": 0,
-        "normal_context": false
-      }
-    },
-    {
-      "sample": "19_loader.exe.bin",
-      "entry": "0x225e0",
-      "before": "partial_markers_remain",
-      "after": "no_partial_markers_not_a_CFG_proof",
-      "new_C": {
-        "path": "work\\alpme_analysis\\semantic_closure_20261027\\round6_runtime_primitives\\normal_exports\\19_loader.exe.bin_0x225e0.c",
-        "bytes": 8174,
-        "sha256": "b7db676da47960e8755503a9faadd71bb821a71a5994f4d2e2f04ee856cd798c",
-        "candidate": false,
-        "counts": {
-          "Could not recover jumptable": 0,
-          "Treating indirect jump as call": 0,
-          "halt_baddata": 0,
-          "Bad instruction data": 0,
-          "UnimplementedPcode": 0
-        },
-        "partial_markers": 0,
-        "normal_context": false
-      }
-    },
-    {
-      "sample": "19_loader.exe.bin",
-      "entry": "0x22a20",
-      "before": "partial_markers_remain",
-      "after": "no_partial_markers_not_a_CFG_proof",
-      "new_C": {
-        "path": "work\\alpme_analysis\\semantic_closure_20261027\\round6_runtime_primitives\\normal_exports\\19_loader.exe.bin_0x22a20.c",
-        "bytes": 4551,
-        "sha256": "be859614e1204bd1b7b23fbe7e4618bcd1cf4bfd808381a7b9c28ef16804502e",
-        "candidate": false,
-        "counts": {
-          "Could not recover jumptable": 0,
-          "Treating indirect jump as call": 0,
-          "halt_baddata": 0,
-          "Bad instruction data": 0,
-          "UnimplementedPcode": 0
-        },
-        "partial_markers": 0,
-        "normal_context": false
-      }
-    },
-    {
-      "sample": "19_payload.dll.bin",
-      "entry": "0x57f4f",
-      "before": "partial_markers_remain",
-      "after": "no_partial_markers_not_a_CFG_proof",
-      "new_C": {
-        "path": "work\\alpme_analysis\\semantic_closure_20261027\\round5_large_collectors\\continuation\\normal_exports\\19_payload.dll.bin_0x57f4f.c",
-        "bytes": 139350,
-        "sha256": "43b28d4653b4433c517aced245d98963c82db2b86a75122402104ecb0e7ab706",
-        "candidate": false,
-        "counts": {
-          "Could not recover jumptable": 0,
-          "Treating indirect jump as call": 0,
-          "halt_baddata": 0,
-          "Bad instruction data": 0,
-          "UnimplementedPcode": 0
-        },
-        "partial_markers": 0,
-        "normal_context": true
-      }
-    },
-    {
-      "sample": "19_payload.dll.bin",
-      "entry": "0x6fae0",
-      "before": "partial_markers_remain",
-      "after": "no_partial_markers_not_a_CFG_proof",
-      "new_C": {
-        "path": "work\\alpme_analysis\\semantic_closure_20261027\\round6_runtime_primitives\\normal_exports\\19_payload.dll.bin_0x6fae0.c",
-        "bytes": 19003,
-        "sha256": "3cd22d6fae0ededdc017d60c48059b61cf6ab1ddceb8845d3b27b6155808f001",
-        "candidate": false,
-        "counts": {
-          "Could not recover jumptable": 0,
-          "Treating indirect jump as call": 0,
-          "halt_baddata": 0,
-          "Bad instruction data": 0,
-          "UnimplementedPcode": 0
-        },
-        "partial_markers": 0,
-        "normal_context": false
-      }
-    },
-    {
-      "sample": "19_payload.dll.bin",
-      "entry": "0x6ff10",
-      "before": "partial_markers_remain",
-      "after": "no_partial_markers_not_a_CFG_proof",
-      "new_C": {
-        "path": "work\\alpme_analysis\\semantic_closure_20261027\\round6_runtime_primitives\\normal_exports\\19_payload.dll.bin_0x6ff10.c",
-        "bytes": 44556,
-        "sha256": "6bdea5dbf9c7e7ef28cff9817ad0d579cd19562096a3daf6097b2b447cca8065",
-        "candidate": false,
-        "counts": {
-          "Could not recover jumptable": 0,
-          "Treating indirect jump as call": 0,
-          "halt_baddata": 0,
-          "Bad instruction data": 0,
-          "UnimplementedPcode": 0
-        },
-        "partial_markers": 0,
-        "normal_context": false
-      }
-    },
-    {
-      "sample": "19_payload.dll.bin",
-      "entry": "0x70230",
-      "before": "partial_markers_remain",
-      "after": "no_partial_markers_not_a_CFG_proof",
-      "new_C": {
-        "path": "work\\alpme_analysis\\semantic_closure_20261027\\round6_runtime_primitives\\normal_exports\\19_payload.dll.bin_0x70230.c",
-        "bytes": 19003,
-        "sha256": "537ea40179d1b3aa8f6d315f7f293af55b473be8134cb0664972e108bc9786a3",
-        "candidate": false,
-        "counts": {
-          "Could not recover jumptable": 0,
-          "Treating indirect jump as call": 0,
-          "halt_baddata": 0,
-          "Bad instruction data": 0,
-          "UnimplementedPcode": 0
-        },
-        "partial_markers": 0,
-        "normal_context": false
-      }
-    },
-    {
-      "sample": "19_payload.dll.bin",
-      "entry": "0x70660",
-      "before": "partial_markers_remain",
-      "after": "no_partial_markers_not_a_CFG_proof",
-      "new_C": {
-        "path": "work\\alpme_analysis\\semantic_closure_20261027\\round6_runtime_primitives\\normal_exports\\19_payload.dll.bin_0x70660.c",
-        "bytes": 11131,
-        "sha256": "299c5e36b938f0de014695e14a694833deee17013cdcf886aed1f7435f918785",
-        "candidate": false,
-        "counts": {
-          "Could not recover jumptable": 0,
-          "Treating indirect jump as call": 0,
-          "halt_baddata": 0,
-          "Bad instruction data": 0,
-          "UnimplementedPcode": 0
-        },
-        "partial_markers": 0,
-        "normal_context": false
-      }
-    },
-    {
-      "sample": "19_payload.dll.bin",
-      "entry": "0x70910",
-      "before": "partial_markers_remain",
-      "after": "no_partial_markers_not_a_CFG_proof",
-      "new_C": {
-        "path": "work\\alpme_analysis\\semantic_closure_20261027\\round6_runtime_primitives\\normal_exports\\19_payload.dll.bin_0x70910.c",
-        "bytes": 11131,
-        "sha256": "13bdcff1a8d7f819a5abc6fa563e2a2901cc5ca34148ac6fda617ab20efca6b9",
-        "candidate": false,
-        "counts": {
-          "Could not recover jumptable": 0,
-          "Treating indirect jump as call": 0,
-          "halt_baddata": 0,
-          "Bad instruction data": 0,
-          "UnimplementedPcode": 0
-        },
-        "partial_markers": 0,
-        "normal_context": false
-      }
-    },
-    {
-      "sample": "19_payload.dll.bin",
-      "entry": "0x7cfd0",
-      "before": "partial_markers_remain",
-      "after": "no_partial_markers_not_a_CFG_proof",
-      "new_C": {
-        "path": "work\\alpme_analysis\\semantic_closure_20261027\\round6_runtime_primitives\\normal_exports\\19_payload.dll.bin_0x7cfd0.c",
-        "bytes": 23136,
-        "sha256": "03835396a8dfbb47f14e0c2f46eac4be9a75de2f45b577aaf6759e48b5c90414",
-        "candidate": false,
-        "counts": {
-          "Could not recover jumptable": 0,
-          "Treating indirect jump as call": 0,
-          "halt_baddata": 0,
-          "Bad instruction data": 0,
-          "UnimplementedPcode": 0
-        },
-        "partial_markers": 0,
-        "normal_context": false
-      }
-    },
-    {
-      "sample": "19_payload.dll.bin",
-      "entry": "0x7d680",
-      "before": "partial_markers_remain",
-      "after": "no_partial_markers_not_a_CFG_proof",
-      "new_C": {
-        "path": "work\\alpme_analysis\\semantic_closure_20261027\\round6_runtime_primitives\\normal_exports\\19_payload.dll.bin_0x7d680.c",
-        "bytes": 8166,
-        "sha256": "71c62f3a30e7bce7ed34d12aff17e75c4b1497cf50fc452e40ba04db9b97f24a",
-        "candidate": false,
-        "counts": {
-          "Could not recover jumptable": 0,
-          "Treating indirect jump as call": 0,
-          "halt_baddata": 0,
-          "Bad instruction data": 0,
-          "UnimplementedPcode": 0
-        },
-        "partial_markers": 0,
-        "normal_context": false
-      }
-    },
-    {
-      "sample": "19_payload.dll.bin",
-      "entry": "0x7da20",
-      "before": "partial_markers_remain",
-      "after": "no_partial_markers_not_a_CFG_proof",
-      "new_C": {
-        "path": "work\\alpme_analysis\\semantic_closure_20261027\\round6_runtime_primitives\\normal_exports\\19_payload.dll.bin_0x7da20.c",
-        "bytes": 4550,
-        "sha256": "e0e9414eaf7dece21d2062542806ae53ecea6f7cffdcdebb973e9543aba2f33a",
-        "candidate": false,
-        "counts": {
-          "Could not recover jumptable": 0,
-          "Treating indirect jump as call": 0,
-          "halt_baddata": 0,
-          "Bad instruction data": 0,
-          "UnimplementedPcode": 0
-        },
-        "partial_markers": 0,
-        "normal_context": false
-      }
-    }
-  ],
-  "per_sample": [
-    {
-      "sample": "17_loader.exe.bin",
-      "before": {
-        "no_partial_markers_not_a_CFG_proof": 391,
-        "partial_markers_remain": 12
-      },
-      "after": {
-        "no_partial_markers_not_a_CFG_proof": 399,
-        "partial_markers_remain": 4
-      }
-    },
-    {
-      "sample": "17_payload.dll.bin",
-      "before": {
-        "no_partial_markers_not_a_CFG_proof": 688,
-        "partial_markers_remain": 30
-      },
-      "after": {
+      "pdata_entries": 718,
+      "native_entry_C_diagnostic_counts": {
         "no_partial_markers_not_a_CFG_proof": 697,
         "partial_markers_remain": 21
       }
     },
     {
       "sample": "19_loader.exe.bin",
-      "before": {
-        "no_partial_markers_not_a_CFG_proof": 394,
-        "partial_markers_remain": 12
-      },
-      "after": {
+      "pdata_entries": 406,
+      "native_entry_C_diagnostic_counts": {
         "no_partial_markers_not_a_CFG_proof": 402,
         "partial_markers_remain": 4
       }
     },
     {
       "sample": "19_payload.dll.bin",
-      "before": {
-        "no_partial_markers_not_a_CFG_proof": 694,
-        "partial_markers_remain": 33
-      },
-      "after": {
-        "no_partial_markers_not_a_CFG_proof": 703,
-        "partial_markers_remain": 24
+      "pdata_entries": 727,
+      "native_entry_C_diagnostic_counts": {
+        "no_partial_markers_not_a_CFG_proof": 704,
+        "partial_markers_remain": 23
       }
     }
   ],
-  "scope": "Text diagnostics only.32 runtime local-CFG/C closures plus2 host collector closures.19main normalized IR does not count as C.",
-  "auditor_sha256": "14959c6af96bc6905635e9aafd3cc48c4644f9b2691e5014a17e7998820c4a9a",
-  "auditor_logic_changed": false,
-  "output_destination_only_redirected": true,
-  "baseline_audit_sha256": "2b75c08f458559f22eaaa6db9fdcabc364cb94b2ad0f0706d78729c26c9532dc",
-  "current_audit_sha256": "2ea4adf913f331009eac247b0d7075db3e8d38e9ef4f74d7479546c0baa42e24",
-  "runtime_verification_sha256": "cbcced17719c296699b32c3300b08f0f7e1d41bd893469992650775b499a5d69",
-  "whole_program_complete": false,
-  "sample_execution": false,
-  "network": false
+  "stages": [
+    {
+      "before": 87,
+      "after": 53,
+      "reason": "Two host information functions plus32 runtime diagnostic entries"
+    },
+    {
+      "before": 53,
+      "after": 52,
+      "reason": "Corrected19 unwind helper native code/data partition"
+    },
+    {
+      "before": 52,
+      "after": 51,
+      "reason": "Recovered17 relative-call scan helper"
+    }
+  ],
+  "explicit_verified_override": [
+    {
+      "sample": "17_payload.dll.bin",
+      "entry": "0x7a490",
+      "superseded": {
+        "path": "work\\alpme_analysis\\full_static_project_20261027\\exports\\17_payload.dll.bin\\functions\\08fea490.c",
+        "bytes": 51040,
+        "sha256": "fcbba0fa14d66c214c979c2b9461d957cf38360d2b622402ea1e1176eda331c4",
+        "candidate": false,
+        "counts": {
+          "Could not recover jumptable": 0,
+          "Treating indirect jump as call": 0,
+          "halt_baddata": 0,
+          "Bad instruction data": 0,
+          "UnimplementedPcode": 0
+        },
+        "partial_markers": 0,
+        "normal_context": false
+      },
+      "selected": {
+        "program": "17_payload.dll.bin",
+        "entry": "0x7a490",
+        "path": "work\\alpme_analysis\\semantic_closure_20261027\\round6_code_data_partitions\\normal_exports\\17_payload.dll.bin_0x7a490.c",
+        "sha256": "d5ed38e419f4941e5a80f2e1b1412679ba3b65d37291a9f5bf45c7c1bb468591",
+        "lines": 123,
+        "partial_markers": {
+          "Could not recover jumptable": 0,
+          "Treating indirect jump as call": 0,
+          "halt_baddata": 0,
+          "Bad instruction data": 0,
+          "UnimplementedPcode": 0
+        },
+        "text_sha256_unchanged": "9719f0233f0af40eab63a0548511aa13e6ba06863e1aef96376fc12ef95f3ea4"
+      },
+      "reason": "Original5-case guarded table excludes falsecase5. Old larger C was semantically contaminated despite zero partial markers; native proof overrides size-based C selection."
+    }
+  ],
+  "scope": "C diagnostic counts are not unknown behavior counts or whole-program completion. The17unwind C needed correction despite no previous marker."
 }

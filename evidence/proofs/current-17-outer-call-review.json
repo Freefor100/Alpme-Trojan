@@ -1,0 +1,60 @@
+{
+  "status": "PASS_PARENT_READONLY_17_CALL_DELIVERY_HASH_AND_EIGHT_LOG_REVIEW",
+  "sealed_receipt_sha256": "d740aa80097e0cefcd68595983ea34efdc2eac58073a7333839aefdcac8d95e7",
+  "sealed_receipt_path": "work\\alpme_analysis\\semantic_closure_20261027\\round6_outer17_calls\\continuation_20261029\\continuation_verification_receipt.json",
+  "analyzer_subprocesses_started": 0,
+  "proof_outputs_rewritten": false,
+  "existing_pipeline_logs_checked": 8,
+  "normal_CFG": {
+    "native": 6160,
+    "reached": 6077,
+    "cold": 83,
+    "computed_JMP_total": 304,
+    "normal_finite_computed_JMP": 301,
+    "unresolved": 0,
+    "edge_checks": 939,
+    "block_states": 649
+  },
+  "CALL_counts": {
+    "native_indirect_CALL_sites": 15,
+    "normal_entry_CALL_sites": 14,
+    "normal_named_API": 10,
+    "normal_typed_error_callbacks": 4,
+    "cold_CALLs": 1,
+    "all_native_resolver_sites": 49,
+    "normal_resolver_sites": 48,
+    "cold_resolver_sites": 1
+  },
+  "important_corrections": [
+    "Normal TerminateProcess behavior is withdrawn: C3FD ADD ECX,ECX cannot yield index1. C852/C898 are cold, independently of owned-ABI/SP58 assumptions.",
+    "C721 sole normal pointer definitionFB56 is resolverFB4B CloseHandle; no established freed-Vec-data CALL.",
+    "49 native resolver source sites must be stated48 normal+1 cold; decoded identity is distinct from feasible execution."
+  ],
+  "remaining": [
+    {
+      "gate": "NORMAL_OWNED_ABI_ALIAS_BOUNDARY",
+      "detail": "Caller output/write bounds require valid Vec/String/Box/BTree/index/copy spans and no hostile hooks/reentry. This is a conditional target classification, not a universal proof under corrupt memory."
+    },
+    {
+      "gate": "DYNAMIC_BUFFER_LENGTH_AND_IMPORT/TLS/ENTRY_DATA",
+      "detail": "Actual PE/context/stub vector byte length and imported-function/callback targets depend on decoded payload data and environment. No host result, PID, allocation size or generated TLS/entry pointer is frozen.13086 generated-template6 indirect CALL domains are root-owned separate scope."
+    },
+    {
+      "gate": "GENERIC_ERROR_PRODUCER_REACHABILITY",
+      "detail": "Exact A9A9 actual-context no-tag1/reachability remains unproved; known valid tag1 constructor/drop chain is closed conditionally, and NTWrite Err3 cannot be mistaken for a callback."
+    },
+    {
+      "gate": "MAIN254D_OWNED_EVENT_UTF16_ARGUMENT",
+      "detail": "Main36 first-phase receipt still has host-derived UTF16 event-name Vec origin/final text frontier; not overwritten or claimed resolved here."
+    }
+  ],
+  "dependencies": {
+    "work\\alpme_analysis\\parent_review_20261029\\verify_profile_delivery_readonly.py": "ac64665521e0fdc34be4dbb8db399560a5ff1c4cdae383c2931caeec3a17254d",
+    "work\\alpme_analysis\\semantic_closure_20261027\\round6_outer17_calls\\continuation_20261029\\verify_continuation.py": "01975e4cc5328604b031b3d7e847d979090f2137587315a8ebeee0341128217a",
+    "work\\alpme_analysis\\semantic_closure_20261027\\round6_outer17_calls\\continuation_20261029\\continuation_verification_receipt.json": "d740aa80097e0cefcd68595983ea34efdc2eac58073a7333839aefdcac8d95e7"
+  },
+  "sample_execution": false,
+  "CPU_emulation": false,
+  "host_process_access": false,
+  "network": false
+}

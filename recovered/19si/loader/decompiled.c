@@ -1,6 +1,5 @@
 /* Original-byte analysis representations, grouped by native RVA.
- * Read the adjacent function index for qualified proof scope.
- * Not an original-source or buildable malware project.
+ * Qualified proof scope is recorded in functions.csv and evidence.
  */
 
 /* ===== SAMPLE 19_loader.exe.bin | RVA 0x1001 | no_partial_markers_not_a_CFG_proof ===== */

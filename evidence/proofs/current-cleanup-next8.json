@@ -1,0 +1,1141 @@
+{
+  "status": "CARRY_NEXT8_ACTUAL_STRING_ARRAY_AND_3VEC_SPD0_460STATE_CLOSED_CONDITIONALLY_PACKET_DOMAINS_PENDING",
+  "native_execution": false,
+  "new_completed": {
+    "5667f_SP50": {
+      "states": 2433,
+      "CALLs": 80
+    },
+    "18c_5ac_native_indices": [
+      {
+        "read": "0x53383",
+        "states": 2715,
+        "CALLs": 112
+      },
+      {
+        "read": "0x533e5",
+        "states": 2736,
+        "CALLs": 112
+      }
+    ],
+    "actual579b9_remaining_array": {
+      "native_prefix": 382,
+      "typed_static_states": 2918,
+      "bounded_field_reads": 30,
+      "domain": "N<10\u2192end,0; N>=10\u2192base+240,N-10",
+      "real_effect": "579b9 individuallydeallocatesremainingfreshStringdata usingpairedcaps;53907freesouterbacking;5392a originalbyteclonefree. Notpure."
+    },
+    "byte91_source": {
+      "states": 3209,
+      "CALLs": 116,
+      "value": 200,
+      "SP6c0_producer_value": 8
+    },
+    "source_carries": [
+      {
+        "read": "0x54135",
+        "field": [
+          208,
+          8
+        ],
+        "seed": "0x53970",
+        "value": "SP+0x248",
+        "states": 460,
+        "own_callee_output_replay_used": false
+      },
+      {
+        "read": "0x53b8a",
+        "field": [
+          1760,
+          8
+        ],
+        "seed": "0x53a49",
+        "value": "SP+0x2b8",
+        "states": 414,
+        "own_callee_output_replay_used": false
+      },
+      {
+        "read": "0x53e56",
+        "field": [
+          544,
+          8
+        ],
+        "seed": "0x53ac0",
+        "value": "SP+0x2b8",
+        "states": 389,
+        "own_callee_output_replay_used": false
+      },
+      {
+        "read": "0x53c6a",
+        "field": [
+          96,
+          8
+        ],
+        "seed": "0x53a70",
+        "value": "SP+0x658",
+        "states": 405,
+        "own_callee_output_replay_used": false
+      },
+      {
+        "read": "0x53e70",
+        "field": [
+          96,
+          8
+        ],
+        "seed": "0x53a70",
+        "value": "SP+0x658",
+        "states": 405,
+        "own_callee_output_replay_used": false
+      },
+      {
+        "read": "0x53e63",
+        "field": [
+          104,
+          8
+        ],
+        "seed": "0x53acc",
+        "value": 16,
+        "states": 387,
+        "own_callee_output_replay_used": false
+      },
+      {
+        "read": "0x53ec0",
+        "field": [
+          104,
+          8
+        ],
+        "seed": "0x53acc",
+        "value": 16,
+        "states": 387,
+        "own_callee_output_replay_used": false
+      },
+      {
+        "read": "0x53c7a",
+        "field": [
+          1744,
+          8
+        ],
+        "seed": "0x53a7b",
+        "value": 16,
+        "states": 402,
+        "own_callee_output_replay_used": false
+      },
+      {
+        "read": "0x53dcd",
+        "field": [
+          352,
+          8
+        ],
+        "seed": "0x53ad4",
+        "value": 8,
+        "states": 385,
+        "own_callee_output_replay_used": false
+      },
+      {
+        "read": "0x54085",
+        "field": [
+          1664,
+          8
+        ],
+        "seed": "0x53ade",
+        "value": 16,
+        "states": 383,
+        "own_callee_output_replay_used": false
+      },
+      {
+        "read": "0x5409d",
+        "field": [
+          1736,
+          8
+        ],
+        "seed": "0x53af1",
+        "value": "SP+0x1a8",
+        "states": 380,
+        "own_callee_output_replay_used": false
+      },
+      {
+        "read": "0x5411b",
+        "field": [
+          136,
+          8
+        ],
+        "seed": "0x53afb",
+        "value": 40,
+        "states": 378,
+        "own_callee_output_replay_used": false
+      },
+      {
+        "read": "0x54212",
+        "field": [
+          136,
+          8
+        ],
+        "seed": "0x53afb",
+        "value": 40,
+        "states": 378,
+        "own_callee_output_replay_used": false
+      },
+      {
+        "read": "0x54232",
+        "field": [
+          1752,
+          8
+        ],
+        "seed": "0x53b33",
+        "value": 16,
+        "states": 366,
+        "own_callee_output_replay_used": false
+      },
+      {
+        "read": "0x53be3",
+        "field": [
+          1728,
+          8
+        ],
+        "seed": "0x53b20",
+        "value": 8,
+        "states": 369,
+        "own_callee_output_replay_used": false
+      },
+      {
+        "read": "0x541e7",
+        "field": [
+          1436,
+          4
+        ],
+        "seed": "0x4ffa4",
+        "value": 2252190183,
+        "states": 3590,
+        "own_callee_output_replay_used": false
+      },
+      {
+        "read": "0x53e34",
+        "field": [
+          80,
+          8
+        ],
+        "seed": "0x5084e",
+        "value": "SP+0x2633f6ba87b27b92",
+        "states": 3096,
+        "own_callee_output_replay_used": false
+      },
+      {
+        "read": "0x53ee7",
+        "field": [
+          376,
+          8
+        ],
+        "seed": "0x5276c",
+        "value": "SP+0x8000ffffffffffff",
+        "states": 1136,
+        "own_callee_output_replay_used": false
+      },
+      {
+        "read": "0x53d19",
+        "field": [
+          1824,
+          8
+        ],
+        "seed": "0x4ffd0",
+        "value": "SP+0x7aabaaaaaaaaaab2",
+        "states": 3586,
+        "own_callee_output_replay_used": false
+      },
+      {
+        "read": "0x53d27",
+        "field": [
+          1404,
+          4
+        ],
+        "seed": "0x4ffbb",
+        "value": 1431655764,
+        "states": 3588,
+        "own_callee_output_replay_used": false
+      },
+      {
+        "read": "0x54061",
+        "field": [
+          1880,
+          8
+        ],
+        "seed": "0x4ffaf",
+        "value": "SP+0x8000ffffffffff8a",
+        "states": 3589,
+        "own_callee_output_replay_used": false
+      },
+      {
+        "read": "0x539ee",
+        "field": [
+          1776,
+          8
+        ],
+        "seed": "0x4ffea",
+        "value": "SP+0x3821465e9d79ac9",
+        "states": 3149,
+        "own_callee_output_replay_used": false
+      },
+      {
+        "read": "0x53d09",
+        "field": [
+          1688,
+          8
+        ],
+        "seed": "0x53aa4",
+        "value": 16,
+        "states": 395,
+        "own_callee_output_replay_used": false
+      }
+    ],
+    "joint_scope": {
+      "states": 3590,
+      "CALLs": 136,
+      "native_writes": 537
+    },
+    "actual3Vec_lifetimes": [
+      {
+        "element_bytes": 96,
+        "header": "0x230",
+        "real_constructor": "0x5394a",
+        "source_to_heap_store_states": 469,
+        "all_native_header_writers": [
+          "0x5397b",
+          "0x53c44"
+        ],
+        "all_CALLEE_header_writers": [
+          "0x53c21"
+        ],
+        "actual_owned_data_stores": [
+          "0x53c3e"
+        ]
+      },
+      {
+        "element_bytes": 48,
+        "header": "0x650",
+        "real_constructor": "0x53c5e",
+        "source_to_heap_store_states": 128,
+        "all_native_header_writers": [
+          "0x53c6f",
+          "0x53ec5"
+        ],
+        "all_CALLEE_header_writers": [
+          "0x53e82"
+        ],
+        "actual_owned_data_stores": [
+          "0x53eaf",
+          "0x53eb4",
+          "0x53eb9"
+        ]
+      },
+      {
+        "element_bytes": 112,
+        "header": "0x248",
+        "real_constructor": "0x53942",
+        "source_to_heap_store_states": 470,
+        "all_native_header_writers": [
+          "0x53978",
+          "0x5421a"
+        ],
+        "all_CALLEE_header_writers": [
+          "0x5413d"
+        ],
+        "actual_owned_data_stores": [
+          "0x54199",
+          "0x5419d",
+          "0x541a2",
+          "0x541ac",
+          "0x541b1",
+          "0x541d0",
+          "0x541dd",
+          "0x541e2",
+          "0x54206",
+          "0x5420a"
+        ]
+      }
+    ],
+    "reserve_layout": "Actual96/48/112element/alignment8/additional1; scalaroverflow andactualallocatorfailure\u2192UD2; onlysuccessfulHeapAlloc/HeapReAlloc updatesactualheaderdata/cap16. Originalheaderaddressnotallocatorbuffer."
+  },
+  "next_finite_frontier": [
+    {
+      "read": "0x54d43",
+      "states": 3632,
+      "total_CALLs": 135,
+      "new_CALLs": 31,
+      "new_mutable_roots": 12
+    },
+    {
+      "read": "0x551eb",
+      "states": 4247,
+      "total_CALLs": 175,
+      "new_CALLs": 71,
+      "new_mutable_roots": 54
+    },
+    {
+      "read": "0x5520c",
+      "states": 4247,
+      "total_CALLs": 175,
+      "new_CALLs": 71,
+      "new_mutable_roots": 54
+    },
+    {
+      "read": "0x55271",
+      "states": 4247,
+      "total_CALLs": 175,
+      "new_CALLs": 71,
+      "new_mutable_roots": 54
+    },
+    {
+      "read": "0x55707",
+      "states": 4247,
+      "total_CALLs": 175,
+      "new_CALLs": 71,
+      "new_mutable_roots": 54
+    },
+    {
+      "read": "0x557d5",
+      "states": 4247,
+      "total_CALLs": 175,
+      "new_CALLs": 71,
+      "new_mutable_roots": 54
+    },
+    {
+      "read": "0x55395",
+      "states": 4247,
+      "total_CALLs": 175,
+      "new_CALLs": 71,
+      "new_mutable_roots": 54
+    },
+    {
+      "read": "0x55a27",
+      "states": 4344,
+      "total_CALLs": 178,
+      "new_CALLs": 74,
+      "new_mutable_roots": 58
+    },
+    {
+      "read": "0x55a2e",
+      "states": 4344,
+      "total_CALLs": 178,
+      "new_CALLs": 74,
+      "new_mutable_roots": 58
+    },
+    {
+      "read": "0x55b47",
+      "states": 4440,
+      "total_CALLs": 188,
+      "new_CALLs": 84,
+      "new_mutable_roots": 60
+    }
+  ],
+  "exact_next_frontier_entry": "next_creator_frontier_inventory.json",
+  "context_capture": {
+    "native_copies_covered": 28,
+    "source_lifetimes_PASS": 23,
+    "source_lifetimes_pending": 5,
+    "meaning": "Preserveswhatever32bytesactualsnapshotreturnedthroughrealnativecopies; doesnotassumesnapshotroot0orhooksempty. AllPASSwritesboundtoactualmallocsize/newobjectsandallinterveningcalleeoutputdirections, notminimumRSP/no-directwrite shortcuts."
+  },
+  "five_precise_context_source_frontiers": [
+    {
+      "version": "17",
+      "creator": "0xbd48",
+      "body": "0x3b298",
+      "snapshot_CALL": "0x1199f",
+      "preserved_source_span": [
+        1072,
+        32
+      ],
+      "exact_remaining_native_source_or_CALL_boundaries": [
+        {
+          "site": "0x119d8",
+          "field": "rdx",
+          "kind": "actual_scalar_or_pointer_source_lifetime_unclosed",
+          "purpose": "fresh_allocator_request_size",
+          "reads": [
+            [
+              "0x119be",
+              "0x96",
+              1
+            ]
+          ]
+        },
+        {
+          "site": "0x119d8",
+          "field": "rdx",
+          "kind": "actual_scalar_or_pointer_source_lifetime_unclosed",
+          "purpose": "actual_heap_writer_allocation_size",
+          "reads": [
+            [
+              "0x119be",
+              "0x96",
+              1
+            ]
+          ]
+        },
+        {
+          "site": "0x119ff",
+          "field": "rcx",
+          "kind": "actual_scalar_or_pointer_source_lifetime_unclosed",
+          "purpose": "native_heap_write_index",
+          "reads": [
+            [
+              "0x116fc",
+              "0x48",
+              8
+            ],
+            [
+              "0x1174b",
+              "0x48",
+              8
+            ],
+            [
+              "0x117aa",
+              "0x48",
+              8
+            ]
+          ]
+        },
+        {
+          "site": "0x11a61",
+          "field": "rax",
+          "kind": "actual_scalar_or_pointer_source_lifetime_unclosed",
+          "purpose": "native_heap_write_index",
+          "reads": [
+            [
+              "0x11a52",
+              "0x48",
+              8
+            ]
+          ]
+        },
+        {
+          "site": "0x11a84",
+          "target": "0x7e630",
+          "kind": "CALL_effect_needs_actual_pointer_direction_and_extent"
+        }
+      ]
+    },
+    {
+      "version": "17",
+      "creator": "0xbd48",
+      "body": "0x1e1c2",
+      "snapshot_CALL": "0x11ee5",
+      "preserved_source_span": [
+        1072,
+        32
+      ],
+      "exact_remaining_native_source_or_CALL_boundaries": [
+        {
+          "site": "0x11f14",
+          "field": "rcx",
+          "kind": "actual_scalar_or_pointer_source_lifetime_unclosed",
+          "purpose": "native_heap_write_index",
+          "reads": [
+            [
+              "0x114bd",
+              "0x48",
+              8
+            ],
+            [
+              "0x116fc",
+              "0x48",
+              8
+            ],
+            [
+              "0x1174b",
+              "0x48",
+              8
+            ],
+            [
+              "0x117aa",
+              "0x48",
+              8
+            ],
+            [
+              "0x11d35",
+              "0x48",
+              8
+            ],
+            [
+              "0x11daf",
+              "0x48",
+              8
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "version": "17",
+      "creator": "0xbd48",
+      "body": "0x542ab",
+      "snapshot_CALL": "0x12078",
+      "preserved_source_span": [
+        1072,
+        32
+      ],
+      "exact_remaining_native_source_or_CALL_boundaries": [
+        {
+          "site": "0x120af",
+          "field": "rax",
+          "kind": "actual_scalar_or_pointer_source_lifetime_unclosed",
+          "purpose": "native_heap_write_index",
+          "reads": [
+            [
+              "0x114bd",
+              "0x48",
+              8
+            ],
+            [
+              "0x116fc",
+              "0x48",
+              8
+            ],
+            [
+              "0x1174b",
+              "0x48",
+              8
+            ],
+            [
+              "0x117aa",
+              "0x48",
+              8
+            ],
+            [
+              "0x11d35",
+              "0x48",
+              8
+            ],
+            [
+              "0x11daf",
+              "0x48",
+              8
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "version": "19",
+      "creator": "0x4fef1",
+      "body": "0x2d092",
+      "snapshot_CALL": "0x5574e",
+      "preserved_source_span": [
+        1040,
+        32
+      ],
+      "exact_remaining_native_source_or_CALL_boundaries": [
+        {
+          "site": "0x557a2",
+          "field": "rdx",
+          "kind": "actual_scalar_or_pointer_source_lifetime_unclosed",
+          "purpose": "fresh_allocator_request_size",
+          "reads": [
+            [
+              "0x52710",
+              "0x50",
+              8
+            ],
+            [
+              "0x52c29",
+              "0x50",
+              8
+            ],
+            [
+              "0x53046",
+              "0x50",
+              8
+            ],
+            [
+              "0x53e34",
+              "0x50",
+              8
+            ],
+            [
+              "0x54d43",
+              "0x50",
+              8
+            ],
+            [
+              "0x551eb",
+              "0x50",
+              8
+            ],
+            [
+              "0x5520c",
+              "0x50",
+              8
+            ],
+            [
+              "0x55271",
+              "0x50",
+              8
+            ],
+            [
+              "0x5566a",
+              "0x97",
+              1
+            ],
+            [
+              "0x55707",
+              "0x50",
+              8
+            ],
+            [
+              "0x5578d",
+              "0x770",
+              8
+            ],
+            [
+              "0x557d5",
+              "0x50",
+              8
+            ],
+            [
+              "0x5666d",
+              "0x50",
+              8
+            ],
+            [
+              "0x5667f",
+              "0x50",
+              8
+            ]
+          ],
+          "new_completed_subreads": [
+            {
+              "read": "0x53e34",
+              "span": [
+                "0x50",
+                8
+              ],
+              "proof": "three_vec_joint_lifetime_proof.json",
+              "scope": "Only thissource readclosed; allotherreads/callees/objectextents andwholecapture stillpending."
+            }
+          ]
+        },
+        {
+          "site": "0x557a2",
+          "kind": "allocator_request_size_unresolved"
+        },
+        {
+          "site": "0x557a2",
+          "field": "rdx",
+          "kind": "actual_scalar_or_pointer_source_lifetime_unclosed",
+          "purpose": "actual_heap_writer_allocation_size",
+          "reads": [
+            [
+              "0x52710",
+              "0x50",
+              8
+            ],
+            [
+              "0x52c29",
+              "0x50",
+              8
+            ],
+            [
+              "0x53046",
+              "0x50",
+              8
+            ],
+            [
+              "0x53e34",
+              "0x50",
+              8
+            ],
+            [
+              "0x54d43",
+              "0x50",
+              8
+            ],
+            [
+              "0x551eb",
+              "0x50",
+              8
+            ],
+            [
+              "0x5520c",
+              "0x50",
+              8
+            ],
+            [
+              "0x55271",
+              "0x50",
+              8
+            ],
+            [
+              "0x5566a",
+              "0x97",
+              1
+            ],
+            [
+              "0x55707",
+              "0x50",
+              8
+            ],
+            [
+              "0x5578d",
+              "0x770",
+              8
+            ],
+            [
+              "0x557d5",
+              "0x50",
+              8
+            ],
+            [
+              "0x5666d",
+              "0x50",
+              8
+            ],
+            [
+              "0x5667f",
+              "0x50",
+              8
+            ]
+          ],
+          "new_completed_subreads": [
+            {
+              "read": "0x53e34",
+              "span": [
+                "0x50",
+                8
+              ],
+              "proof": "three_vec_joint_lifetime_proof.json",
+              "scope": "Only thissource readclosed; allotherreads/callees/objectextents andwholecapture stillpending."
+            }
+          ]
+        },
+        {
+          "site": "0x557bc",
+          "kind": "actual_mutable_object_extent_unclosed",
+          "producer": "0x557a2",
+          "spans": [
+            [
+              16,
+              8
+            ]
+          ],
+          "allocation_size": null
+        },
+        {
+          "site": "0x557c8",
+          "kind": "actual_mutable_object_extent_unclosed",
+          "producer": "0x557a2",
+          "spans": [
+            [
+              0,
+              16
+            ]
+          ],
+          "allocation_size": null
+        },
+        {
+          "site": "0x557cb",
+          "kind": "actual_mutable_object_extent_unclosed",
+          "producer": "0x557a2",
+          "spans": [
+            [
+              24,
+              8
+            ]
+          ],
+          "allocation_size": null
+        },
+        {
+          "site": "0x557e0",
+          "field": "rax",
+          "kind": "actual_scalar_or_pointer_source_lifetime_unclosed",
+          "purpose": "native_heap_write_index",
+          "reads": [
+            [
+              "0x557d5",
+              "0x50",
+              8
+            ]
+          ]
+        },
+        {
+          "site": "0x557e0",
+          "kind": "actual_mutable_object_extent_unclosed",
+          "producer": "0x557a2",
+          "spans": [
+            [
+              32,
+              8
+            ]
+          ],
+          "allocation_size": null
+        },
+        {
+          "site": "0x557e4",
+          "kind": "actual_mutable_object_extent_unclosed",
+          "producer": "0x557a2",
+          "spans": [
+            [
+              40,
+              8
+            ]
+          ],
+          "allocation_size": null
+        },
+        {
+          "site": "0x55810",
+          "target": "0x7cfd0",
+          "kind": "CALL_effect_needs_actual_pointer_direction_and_extent"
+        }
+      ]
+    },
+    {
+      "version": "19",
+      "creator": "0x4fef1",
+      "body": "0x618c8",
+      "snapshot_CALL": "0x55e71",
+      "preserved_source_span": [
+        1040,
+        32
+      ],
+      "exact_remaining_native_source_or_CALL_boundaries": [
+        {
+          "site": "0x55e8c",
+          "field": "rdx",
+          "kind": "actual_scalar_or_pointer_source_lifetime_unclosed",
+          "purpose": "fresh_allocator_request_size",
+          "reads": [
+            [
+              "0x55271",
+              "0x50",
+              8
+            ],
+            [
+              "0x55395",
+              "0x50",
+              8
+            ],
+            [
+              "0x55a27",
+              "0x50",
+              8
+            ],
+            [
+              "0x55a2e",
+              "0x50",
+              8
+            ],
+            [
+              "0x55b47",
+              "0x50",
+              8
+            ],
+            [
+              "0x55e76",
+              "0x18e",
+              2
+            ]
+          ]
+        },
+        {
+          "site": "0x55e8c",
+          "field": "rdx",
+          "kind": "actual_scalar_or_pointer_source_lifetime_unclosed",
+          "purpose": "actual_heap_writer_allocation_size",
+          "reads": [
+            [
+              "0x55271",
+              "0x50",
+              8
+            ],
+            [
+              "0x55395",
+              "0x50",
+              8
+            ],
+            [
+              "0x55a27",
+              "0x50",
+              8
+            ],
+            [
+              "0x55a2e",
+              "0x50",
+              8
+            ],
+            [
+              "0x55b47",
+              "0x50",
+              8
+            ],
+            [
+              "0x55e76",
+              "0x18e",
+              2
+            ]
+          ]
+        },
+        {
+          "site": "0x55eb7",
+          "field": "rdx",
+          "kind": "actual_scalar_or_pointer_source_lifetime_unclosed",
+          "purpose": "native_heap_write_index",
+          "reads": [
+            [
+              "0x55271",
+              "0x50",
+              8
+            ],
+            [
+              "0x55395",
+              "0x50",
+              8
+            ],
+            [
+              "0x55a27",
+              "0x50",
+              8
+            ],
+            [
+              "0x55a2e",
+              "0x50",
+              8
+            ],
+            [
+              "0x55b47",
+              "0x50",
+              8
+            ]
+          ]
+        }
+      ]
+    }
+  ],
+  "per_original_Packet_CALL_status": [
+    {
+      "version": "17",
+      "CALL": "1bd7d",
+      "status": "PENDING_COMPLETE_PACKET_SOURCE_SHARED_REFERENCE_AND_RESULT_WRITER_DOMAIN",
+      "actual_nonzero_target_set": null
+    },
+    {
+      "version": "17",
+      "CALL": "1be17",
+      "status": "PENDING_COMPLETE_PACKET_SOURCE_SHARED_REFERENCE_AND_RESULT_WRITER_DOMAIN",
+      "actual_nonzero_target_set": null
+    },
+    {
+      "version": "19",
+      "CALL": "44f6",
+      "status": "PENDING_COMPLETE_PACKET_SOURCE_SHARED_REFERENCE_AND_RESULT_WRITER_DOMAIN",
+      "actual_nonzero_target_set": null
+    },
+    {
+      "version": "19",
+      "CALL": "4590",
+      "status": "PENDING_COMPLETE_PACKET_SOURCE_SHARED_REFERENCE_AND_RESULT_WRITER_DOMAIN",
+      "actual_nonzero_target_set": null
+    }
+  ],
+  "additional_old_result_drop_sinks": [
+    {
+      "version": "17",
+      "CALL": "5685a",
+      "status": "PENDING_ACTUAL_PREPUBLICATION_PACKET_DOMAIN"
+    },
+    {
+      "version": "19",
+      "CALL": "92a2",
+      "status": "PENDING_ACTUAL_PREPUBLICATION_PACKET_DOMAIN"
+    }
+  ],
+  "six_real_hook_sources_still_pending": [
+    {
+      "version": "17",
+      "CALL": "5bee",
+      "status": "PENDING_ACTUAL_NONZERO_TLS_HOOK_SOURCE_DOMAIN",
+      "kind": "snapshotFnClone vtable+28"
+    },
+    {
+      "version": "17",
+      "CALL": "5c61",
+      "status": "PENDING_ACTUAL_NONZERO_TLS_HOOK_SOURCE_DOMAIN",
+      "kind": "snapshotFnClone vtable+28"
+    },
+    {
+      "version": "19",
+      "CALL": "473c4",
+      "status": "PENDING_ACTUAL_NONZERO_TLS_HOOK_SOURCE_DOMAIN",
+      "kind": "snapshotFnClone vtable+28"
+    },
+    {
+      "version": "19",
+      "CALL": "47435",
+      "status": "PENDING_ACTUAL_NONZERO_TLS_HOOK_SOURCE_DOMAIN",
+      "kind": "snapshotFnClone vtable+28"
+    },
+    {
+      "version": "17",
+      "CALL": "6c93",
+      "status": "PENDING_ACTUAL_NONZERO_TLS_HOOK_SOURCE_DOMAIN",
+      "kind": "consumerFnOnce vtable+18"
+    },
+    {
+      "version": "19",
+      "CALL": "f8a2",
+      "status": "PENDING_ACTUAL_NONZERO_TLS_HOOK_SOURCE_DOMAIN",
+      "kind": "consumerFnOnce vtable+18"
+    }
+  ],
+  "exception_scope": "Normalbodyunitpublicationsandno-localEHmetadataarenotacompleteErr/panic/unwindproof. No panic-abort inferred; realnonemptytargetsifconstructedmustbetraced. RootseparateCRTdecoderfalseedgesrepairisnotusedashookemptiness evidence.",
+  "normal_conditions": [
+    "Complete original native main CFG and normal original PE/TLS scalar initialization; normal Win64 nonvolatile ABI.",
+    "Valid compiler-produced String/Once/resolver/loader/allocator/owned Vec API contracts from the exact hashed proofs; internal global/TLS/heap effects are mutable and explicitly retained.",
+    "Fresh heap/backing is disjoint from compiler private frames; actual free pointers and matching capacity fields are tied to producers above. This is not a theorem about arbitrary corrupt external objects or EH memory corruption.",
+    "Normal bounded memcpy/memset CRT primitive ABI; actual destinations and sizes checked above."
+  ],
+  "limits": [
+    "ScopeisnormaloriginalPE/TLS/Win64/validownedVec/String/readablespanABI; \uc2e4\uc81cconstructors/fields/reserves andfullcallee/nativewriteaudit establishaliasseparation, not arbitraryexternalmemorycorruption.",
+    "Ownincomingpointer not inferredfromownCALLoutput; noTLSroot0/Hookempty/panicabortpremise.",
+    "4originalPacket,2oldresultdrop,6Hooksource domains and5wholecapture lifetimesremainpending. Normalunitreturnsdo notexcludeErr/panic/unwindpublication.",
+    "Latercreatorrootsnotinsideprovedsource/carriedintervalsremainexplicitnextfrontier; no automatictransitivepromotion."
+  ],
+  "prior_frozen_checkpoints_unchanged": {
+    "carry_next7_manifest_sha256": "0cb61edf0472b3ec3352fed5ae2c2f05d5f459b4b2540a7d8ecbf625b8f4d3e1",
+    "old_files_modified": false
+  },
+  "external_completed_evidence": {
+    "work\\alpme_analysis\\semantic_closure_20261027\\round5_whole_native\\call_resolution\\remaining9\\carry_next2\\descriptor_cluster_proof.json": "46810c76f7f11ad5d99537ff5b01d5016c5c6b5de15d68de6a40ccff1e1f5d0c",
+    "work\\alpme_analysis\\semantic_closure_20261027\\round5_whole_native\\call_resolution\\remaining9\\carry_next5\\startup_scalar_lifetime_proof.json": "a09df7923927df6c691b03af0eab30751b724f878d4bc96f071d375d4469d334",
+    "work\\alpme_analysis\\semantic_closure_20261027\\round5_whole_native\\call_resolution\\remaining9\\carry_next7\\next_three_source_lifetime_proof.json": "38697c9ef6cf0483639ad7ec027f5ad9bea79578d327729d03a8b30a1d09df25",
+    "work\\alpme_analysis\\semantic_closure_20261027\\round5_whole_native\\call_resolution\\remaining9\\carry_next8\\5667f_source_and_spd0_producer_proof.json": "a644f91a869cddc3df0a6411e3f16e94bf0a636c5eb973babf30b82c0354caad",
+    "work\\alpme_analysis\\semantic_closure_20261027\\round5_whole_native\\call_resolution\\remaining9\\carry_next8\\array_cleanup_and_91_source_proof.json": "1077cbd32295370864da051991510f2d26129dc79332fab06a1d9f486699a357",
+    "work\\alpme_analysis\\semantic_closure_20261027\\round5_whole_native\\call_resolution\\remaining9\\carry_next8\\cursor_index_scalar_source_proof.json": "6960df8cf3f557d16ec3849b65efc8f25caccbd701c133ed6ae8b6610188f54e",
+    "work\\alpme_analysis\\semantic_closure_20261027\\round5_whole_native\\call_resolution\\remaining9\\carry_next8\\reserve_layout_proof.json": "6f4cc18afb690cb16e6cb92d3bf82dabe677d7d94ad10fa116f41f8851e03881",
+    "work\\alpme_analysis\\semantic_closure_20261027\\round5_whole_native\\call_resolution\\remaining9\\carry_next8\\string_array_cursor_count_proof.json": "d816a98b6475828ae237416527d7217b2ab813ed3ab90d405698e44e614c4d30",
+    "work\\alpme_analysis\\semantic_closure_20261027\\round5_whole_native\\call_resolution\\remaining9\\carry_next\\bounded_helper_proof.json": "c32a4c0ffd4bcd3c916bf6597b594227599a0e1cce96c34b366afb89fb115aa6",
+    "work\\alpme_analysis\\semantic_closure_20261027\\round5_whole_native\\functions\\19_a103.json": "2725d5b246c1c9eaadba6c86a231d3bebee1f326414a682e29e4127b96c9a9fc"
+  },
+  "files": {
+    "5667f_source_and_spd0_producer_proof.json": "a644f91a869cddc3df0a6411e3f16e94bf0a636c5eb973babf30b82c0354caad",
+    "array_cleanup_and_91_source_proof.json": "1077cbd32295370864da051991510f2d26129dc79332fab06a1d9f486699a357",
+    "bind_array_cleanup_and_91_source.py": "c4f4f39163fb73cf1ecd0cd69a3c3fb5c3c6f197673ad7eb7bb500d6f88a0dd9",
+    "continuation_receipt.py": "f350f60b9e5283ec255b8e3707c2882b353e4afb30418482727b62b768ca594c",
+    "cursor_index_scalar_source_proof.json": "6960df8cf3f557d16ec3849b65efc8f25caccbd701c133ed6ae8b6610188f54e",
+    "inspect_reserve_layout.py": "ffdf77a9c72bba39f062ded244afc5d0785ea5958e5097150e2df7707b65db4d",
+    "inspect_three_vec_carries.py": "c389cd02735d93369d5254bf237cac696989b0578fc7c68fe8b6b9ff69d01b23",
+    "inventory_next_creator_frontier.py": "27ac3b56372637fb0c9d7e8c72ea86c6c7f53118c17863ec9040616afb004e30",
+    "inventory_three_vec_families.py": "8d3bb0c9c572e880cd21f0acc0393422217ce59a10c8da434ed2dae902a2895d",
+    "next_creator_frontier_inventory.json": "6c8133126b9378bb6893da104e2b80190f4b889b1dea2db40012c740293e2ccd",
+    "next_creator_frontier_native.asm.txt": "79ab9f934f228c6dac7ec27dd2636241082aea16ff8e125f11d40a2acf02ced9",
+    "prove_5667f_prefix_source.py": "81a836670bebc513d277b8b26854bd8f2717c17f0efed9aebc47fa8720972007",
+    "prove_cursor_index_scalars.py": "03c2a381c1f8221e7af26fdb82d3c520460f8cced552a87073610648700ef4ef",
+    "prove_reserve_layout.py": "af9e9724ecaaaef25a370b0134847fb0b6aed5a26f345341d1cd33c171582ec5",
+    "prove_string_array_cursor.py": "c28eea06efb3aef17f35c67f28ee9b1e77fe2ab965fe9fb618ddaeac15732b60",
+    "prove_three_vec_joint_lifetime.py": "275b54544f08f7f46c8cc54aa26f251f41d2181b0e21d1ae1a65c75841957363",
+    "reserve_layout_native.asm.txt": "42d69961294839ae2406a70617e7bce0caf963a265bc84b8ccd41ef70a23c305",
+    "reserve_layout_proof.json": "6f4cc18afb690cb16e6cb92d3bf82dabe677d7d94ad10fa116f41f8851e03881",
+    "string_array_cursor_count_proof.json": "d816a98b6475828ae237416527d7217b2ab813ed3ab90d405698e44e614c4d30",
+    "three_vec_carry_inventory.json": "74b306b0247802094e7c5be5c81ca5f72cf80760e458c437faef3991962d1f4c",
+    "three_vec_frontier_inventory.json": "301dd2db52c65a1b2a1fc6140f2fcf9d8224a664b50a744ac4de253ff0bad961",
+    "three_vec_frontier_native.asm.txt": "bb09446371abf78467c27efa29063a1ee51110a80999844e9ef42aab6e29c0cd",
+    "three_vec_joint_lifetime_proof.json": "3662cabdc8d570b1bf2010c561574860f7b96cfbfb2bb3938a0d802af1b9ec58",
+    "verify_carry_next8.py": "9bdbbb516ce5ad9708f17ea019c5ea2abe9f0a47d98a09139b84dce012d104ff"
+  }
+}

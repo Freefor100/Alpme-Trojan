@@ -1,0 +1,75 @@
+{
+  "status": "PASS_CHROME156_STATIC_COMPATIBILITY_REVIEW_WITH_EXPLICIT_RUNTIME_GATES",
+  "scope": "17:2f497 and19:1aab1 predicates against exact installed156.0.8078.48 public code/metadata,17 pinned official source files, and a public Windows SDK header; no current browser/profile/process-memory inspection by this agent",
+  "source_files_verified": 17,
+  "installed_files": [
+    {
+      "path": "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe",
+      "bytes": 4522648,
+      "file_version": "156.0.8078.48",
+      "product_version": "156.0.8078.48",
+      "sha256": "480f275b63d1ea39113cbc8344ac395578acc25b432bd39af5fbc77005179aca",
+      "authenticode_status": "Valid",
+      "signer_subject": "CN=Google LLC, O=Google LLC, L=Mountain View, S=California, C=US, SERIALNUMBER=3582691, OID.2.5.4.15=Private Organization, OID.1.3.6.1.4.1.311.60.2.1.2=Delaware, OID.1.3.6.1.4.1.311.60.2.1.3=US",
+      "signer_thumbprint": "607A3EDAA64933E94422FC8F0C80388E0590986C"
+    },
+    {
+      "path": "C:\\Program Files\\Google\\Chrome\\Application\\156.0.8078.48\\chrome.dll",
+      "bytes": 308101784,
+      "file_version": "156.0.8078.48",
+      "product_version": "156.0.8078.48",
+      "sha256": "e23d982e66959f3d738154ba68dd2638c9c7473a7e0f362eaee2b1dad5e20f57",
+      "authenticode_status": "Valid",
+      "signer_subject": "CN=Google LLC, O=Google LLC, L=Mountain View, S=California, C=US, SERIALNUMBER=3582691, OID.2.5.4.15=Private Organization, OID.1.3.6.1.4.1.311.60.2.1.2=Delaware, OID.1.3.6.1.4.1.311.60.2.1.3=US",
+      "signer_thumbprint": "607A3EDAA64933E94422FC8F0C80388E0590986C"
+    },
+    {
+      "path": "C:\\Program Files\\Google\\Chrome\\Application\\156.0.8078.48\\elevation_service.exe",
+      "bytes": 4339352,
+      "file_version": "156.0.8078.48",
+      "product_version": "156.0.8078.48",
+      "sha256": "54b95611029c2091651317fbfc56a7d1b46715c38d1d35a96406b0510803da5d",
+      "authenticode_status": "Valid",
+      "signer_subject": "CN=Google LLC, O=Google LLC, L=Mountain View, S=California, C=US, SERIALNUMBER=3582691, OID.2.5.4.15=Private Organization, OID.1.3.6.1.4.1.311.60.2.1.2=Delaware, OID.1.3.6.1.4.1.311.60.2.1.3=US",
+      "signer_thumbprint": "607A3EDAA64933E94422FC8F0C80388E0590986C"
+    }
+  ],
+  "checkpoints": {
+    "dual_layout_predicate_receipt.json": {
+      "status": "PASS_STATIC_DUAL_LAYOUT_PREDICATE_CHECKPOINT",
+      "sha256": "81c820044c97dc876dbe23cef7185b1ee85d3565ca0d5633f52464ceb2d0db71"
+    },
+    "scan_and_header_predicate_receipt.json": {
+      "status": "PASS_STATIC_SCAN_AND_HEADER_PREDICATE_CHECKPOINT",
+      "sha256": "4f96904f196017eabbae90012ceee6fbc7533589451895af340743691e88839e"
+    },
+    "crypt_shape_receipt.json": {
+      "status": "PASS_STATIC_CRYPT_ARGUMENT_AND_BLOCK_SHAPE",
+      "sha256": "5e18414dbd7f7e1755e41a1fa469370a05a7745d5f16638412ccd147c319c0d5"
+    }
+  },
+  "compatibility_matrix_sha256": "8729f7dd8a5e8964a772f6aa0303a9c3304f9580fc800343791ee74cc209500e",
+  "source_line_evidence_sha256": "96a2563d99cc12bab6a9065b20a3b7f0c5f2af57782b67eaeaf649fa67f3c21e",
+  "sealed_input_hashes": {
+    "work\\alpme_analysis\\semantic_closure_20261027\\round4_browser_core\\19_browser_semantic_digest_20261028.json": "5368706023b939e4a3690ab39f84025fccce6ecde9dfe18c2136393f7a533c56",
+    "work\\alpme_analysis\\semantic_closure_20261027\\round4_browser_17_2f497_gate\\17_2f497_final_receipt.json": "e9cfdb4efb7af3bab94179e5b2147e70d76051c3186a4278207925a1bbcb7064",
+    "work\\alpme_analysis\\semantic_closure_20261027\\round4_browser_core\\19_1aab1_final_capability_facts.json": "7b10d1cec226383c9f68f64efa3e095016cc7122159c87e0115ddc0914f27855",
+    "work\\alpme_analysis\\semantic_closure_20261027\\round3_strings\\17_public_API_name_sources.json": "c394176482c7868b612ffc73feb3e139900bd674731c4bb90c96d1d7a59c0196"
+  },
+  "conclusion": "The reviewed object/key layout and block/flag predicates are not statically broken by Chrome156; the malware contains a numeric vector alternative matching the installed constructor. Actual ProcessIsolation is a distinct access-control boundary: under its documented standard-Medium-IL threat model the original full-access OpenProcess gate fails. This static review does not assert that isolation is active, that live headers/keys exist, or that remote execution/decryption succeeds.",
+  "exact_remaining": [
+    "Runtime token/security descriptor and granted1fffff rights (not inferred from0x410).",
+    "Actual H+10 count, provider/header/node lifetime, canonical addresses, page types and successful read spans.",
+    "Local resolved CryptUnprotectMemory address must be valid in target; remote allocation/write and actual thread/context execution must all succeed.",
+    "Correct candidate key and database AEAD/domain validation.",
+    "Google-branded CreatePrimaryToken/PostLaunch private implementation is not promoted from generic service imports; service file only verified as signed same-version static metadata."
+  ],
+  "safety": {
+    "sample_execution": false,
+    "Chrome_or_service_functions": false,
+    "process_memory_access": false,
+    "browser_profile_or_secret_access": false,
+    "malicious_network_or_C2": false,
+    "network_in_this_offline_verifier": false
+  }
+}

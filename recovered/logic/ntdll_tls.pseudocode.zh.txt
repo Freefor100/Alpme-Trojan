@@ -1,0 +1,126 @@
+这是离线分析用的描述性伪代码，不是原始源码，不提供可运行加载器。
+省略实际地址、系统调用实现和私有结构类型；每个块按 tls_semantic_proof.json 的 facts.id 核查。
+所有 global、系统返回记录、指针和状态均是运行时未知量。公开 API 只用正常 ABI 合同。
+
+分析对象：LdrpHandleTlsData（输入：合成模块条目）
+
+[early_success / input_module]
+  若活动线程计数为0，返回成功。
+  若条目+10C的DWORD等于9，返回成功。
+  从条目+30的映射 image 查询TLS目录（目录编号9）。
+  若目录不存在，返回成功。
+
+[descriptor_choice]
+  取得全局TLS锁。
+  N ← 活动线程计数（DWORD）。
+  若N==1，选择栈描述符；否则尝试分配16+24*N字节。
+  若分配失败，释放锁，返回负状态C0000017。
+  注：分配量按64位计算；随后提交长度按32位计算，二者不能混同。
+
+[entry_record_allocation / slot_and_address_of_index / entry_list_commit]
+  申请72字节TLS模块记录。
+  在SEH保护下把TLS目录40字节复制到记录+10。
+  若产生负状态，释放记录并转共同失败退出。
+  若EndRaw<StartRaw，释放记录并转C000007B失败退出。
+  调用槽获取helper：
+    有空位时，置该bit并输出expanded=0；
+    无空位时，正常一致状态下扩展逻辑槽数8，必要时换bitmap buffer，
+      置原末尾bit并输出expanded=1；
+    若分配失败，返回C0000017。
+  在第二段SEH保护下向AddressOfIndex所指DWORD写索引。
+  若这里产生负状态，撤销已取得bit/必要的8槽扩展，释放记录后失败退出。
+  将模块指针、索引写入记录；验证并接入全局TLS模块链表。
+  注：链接不一致时fast-fail，不继续普通返回。
+
+[descriptor_header / descriptor_records]
+  描述符模式 ← expanded。
+  描述符线程数 ← N。
+  描述符参数 ← expanded ? 原逻辑槽数 : 新索引。
+  records 为从+10开始、每项24字节的inout记录。
+
+[raw_size_alignment / copy_seh / new_vector]
+  对每个准备记录：
+    rawBytes ← EndRaw-StartRaw。
+    alignment ← Characteristics编码对应对齐量，且至少16。
+    申请rawBytes+alignment；失败则记C0000017并进入清理。
+    取得对齐数据地址，在其前8字节保存原分配地址。
+    在原始SEH scope保护下复制rawBytes：
+      正常路径继续；
+      处理路径在5C179恢复保存状态、保存异常代码；
+      仅当状态符号位为负时释放当前块并进入清理。
+    若expanded：
+      申请新向量（16字节头+8*槽数），指针数组清零；
+      若失败，释放当前原始块并进入C0000017清理；
+      新向量[新索引] ← 新TLS数据地址；
+      record.pointer ← 新向量数据地址。
+    否则：
+      record.pointer ← 新TLS数据地址。
+    record.flags ← 0；已准备记录数加1。
+  注：本片段未看到显式SizeOfZeroFill的附加分配/零填充，不能扩大解释。
+
+[submit]
+  所有N项准备好后，把描述符作为inout提交给
+    NtSetInformationProcess(current process, class0x23, descriptor, DWORD长度)。
+  保存有符号NTSTATUS。
+  系统可能重写记录；后面的pointer/token/flags都是返回后的读取值。
+
+[returned_record_cleanup]
+  从最后一项向前：
+    若flags & 0x2：
+      若pointer非NULL：
+        expanded==0：按数据前保存的原地址释放；
+        expanded==1：把向量头交给延迟回收桶（不立即free）。
+    否则若flags & 0x1：
+      PotentialTlsLeaks加1。
+    否则：
+      本地清理计数加1；
+      若expanded，先取出新槽数据指针、释放向量头；
+      再释放新TLS数据原始块。
+  注：只保留原生掩码与动作，不臆测内核返回flag的正式名字。
+
+[successful_updates / rollback]
+  若保存状态非负：
+    活动线程计数减去本地清理计数。
+    条目+6E写WORD FFFF。
+  否则：
+    用模块指针找全局TLS记录。
+    若找到，验证双链表并摘链；损坏即fast-fail。
+    清该索引的bitmap bit。
+    若expanded，逻辑槽数减8（查找未找到记录时也会执行这个检查）。
+    留记录指针待锁外释放。
+    注：没有观察到恢复此前写出的*AddressOfIndex。
+
+[return_normalization]
+  释放全局TLS锁。
+  若描述符来自heap则释放；栈描述符不free。
+  若回滚摘下了模块记录则释放。
+  栈cookie验证失败则进入安全失败处理。
+  普通返回：负NTSTATUS原样返回，其余返回0。
+
+必要helper：延迟回收
+  header ← returnedVectorData-16。
+  bucket ← (returnedToken>>2)&15。
+  header.token ← token。
+  取得该桶锁，header.next ← bucket.head，bucket.head ← header，释放桶锁。
+  后续真正回收者不在本必要调用范围内；token不被强行命名线程ID。
+
+必要helper：异常过滤策略
+  记录异常。
+  若DebugFlags&30不等于20：返回1（执行handler）。
+  否则反复提示，按输入字符：
+    I/i → 返回1；
+    B/b、O/o → 调试INT3（恢复依赖外部调试器语义）；
+    P/p → 带异常代码终止当前进程；
+    T/t → 带异常代码终止当前线程；
+    其他 → 再次提示。
+  这是系统内部异常诊断路径，未证明实际环境会启用它。
+
+模板消费关系（静态，不执行模板）
+  +BC：RCX ← 合成条目RBX。
+  +BF：调用R14（选中时绑定本机LdrpHandleTlsData）。
+  返回后：没有读取/保存EAX/RAX、没有判断状态。
+  +D3：调用LeaveCriticalSection。
+  +D6：EAX被TLS目录RVA立即数覆盖。
+  其后仍由模板自身按原有字段/条件继续TLS callbacks和DLL entry流程。
+  因而“内部TLS登记报告失败”不会因这个返回值而停止后续序列；
+  不返回的异常/fast-fail/终止路径另行成立。

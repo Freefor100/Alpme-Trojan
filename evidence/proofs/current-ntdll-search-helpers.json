@@ -1,0 +1,106 @@
+{
+  "status": "PASS_TWO_SEARCH_HELPERS_CFG_C_AND_EXACT52_TO51_DIAGNOSTIC",
+  "helper_native_instructions": [
+    85,
+    169
+  ],
+  "computed_JMPs": [
+    3,
+    11
+  ],
+  "all_helper_instructions_reached_in_widened_model": true,
+  "model": "Normal TLS except110DWORD widenedunknown to include both branches. Unknown calls preserve only Win64 nonvolatile registers and havoc trackedmemory.",
+  "source_proof_outputs_replayed": [
+    "opcode_scalar_write_escape_audit.json",
+    "call_scan_predicate.json"
+  ],
+  "C_exports": [
+    {
+      "entry": "0x1073",
+      "path": "work\\alpme_analysis\\semantic_closure_20261027\\round6_ntdll_internal_static\\normal_exports\\17_loader.exe.bin_0x1073.c",
+      "sha256": "f0714e93ef8b7ba6171524854e88013a8087d18a837dacdb69ed2d4184689a58",
+      "lines": 64,
+      "partial_markers": {
+        "Could not recover jumptable": 0,
+        "Treating indirect jump as call": 0,
+        "halt_baddata": 0,
+        "Bad instruction data": 0,
+        "UnimplementedPcode": 0
+      }
+    },
+    {
+      "entry": "0x8319",
+      "path": "work\\alpme_analysis\\semantic_closure_20261027\\round6_ntdll_internal_static\\normal_exports\\17_loader.exe.bin_0x8319.c",
+      "sha256": "0eff6e63ea38be5acf81ff8009313c586fc2f07b0186317c880ab774eb8d20c6",
+      "lines": 158,
+      "partial_markers": {
+        "Could not recover jumptable": 0,
+        "Treating indirect jump as call": 0,
+        "halt_baddata": 0,
+        "Bad instruction data": 0,
+        "UnimplementedPcode": 0
+      }
+    }
+  ],
+  "diagnostic_before": 52,
+  "diagnostic_after": 51,
+  "changes": [
+    {
+      "sample": "17_loader.exe.bin",
+      "entry": "0x8319",
+      "before": "partial_markers_remain",
+      "after": "no_partial_markers_not_a_CFG_proof",
+      "C": {
+        "path": "work\\alpme_analysis\\semantic_closure_20261027\\round6_ntdll_internal_static\\normal_exports\\17_loader.exe.bin_0x8319.c",
+        "bytes": 5580,
+        "sha256": "0eff6e63ea38be5acf81ff8009313c586fc2f07b0186317c880ab774eb8d20c6",
+        "candidate": false,
+        "counts": {
+          "Could not recover jumptable": 0,
+          "Treating indirect jump as call": 0,
+          "halt_baddata": 0,
+          "Bad instruction data": 0,
+          "UnimplementedPcode": 0
+        },
+        "partial_markers": 0,
+        "normal_context": false
+      }
+    }
+  ],
+  "actual_search_predicate": {
+    "status": "PASS_NORMAL_NATIVE_E8_REL32_DIRECT_CALL_SCAN_PREDICATE",
+    "TLS_C0": "0x3fb7c11a08bca503",
+    "EDX": 5,
+    "scalar_RVA": "0xd0088",
+    "scalar_value": "0xeb851eb851eb8529",
+    "opcode_expression_lowbyte": "0xe8",
+    "predicate": "For code offset i in[0,n-5), byte[i]==E8, signedLE32(bytes[i+1:i+5])+functionStartRVA+i+5==referenceExportRVA. ReturnsAL1 onmatch,otherwise0. This is raw-byte scanning rather than an instruction-boundary decoder.",
+    "binary_search": "1073 searches12B RUNTIME_FUNCTION records by exactBeginAddress==R8, returnsAL1/RDX=(End-Begin) onhit. It does not accept an arbitrary interior instruction pointer.",
+    "native_extent_sha256": "e5d6ceb3f63f62fa1d0ab9ff1ff0e142f8bf5ba89239d628d690e2ca4a2125ba",
+    "source_auditor_sha256": "c42cf6900c61f720cd0e53ec0ec080425badd3935678e97905cf8ec063ecbd60",
+    "scalar_audit_sha256": "a2c08a8923f2bd938d5f9c60c2af4ed297d1038d241350565e713ae020abefc6",
+    "whole_native_sites_checked": 35132,
+    "remaining": "Caller code-range and one/two-hop target filters still need complete binding before assigning a private ntdll symbol or selecting one installed candidate.",
+    "sample_execution": false,
+    "CPU_emulation": false,
+    "network": false
+  },
+  "dependencies": {
+    "work\\alpme_analysis\\semantic_closure_20261027\\round6_ntdll_internal_static\\audit_helpers.py": "cecd7874f81a5b288f879c83eb94a76ae77c19f3eb19466ed72fe06ee7ca5496",
+    "work\\alpme_analysis\\semantic_closure_20261027\\round6_ntdll_internal_static\\derive_call_scan_predicate.py": "37ae93d42b4e60d08bd9c8d307f9b976ae25881d5369a4cd38e674809228621e",
+    "work\\alpme_analysis\\semantic_closure_20261027\\round6_ntdll_internal_static\\export_search_helpers.py": "fafe1bd416d83033c10960a22241a6759b80c086168e8d146b0e5643a0139397",
+    "work\\alpme_analysis\\semantic_closure_20261027\\round6_ntdll_internal_static\\inspect_installed_ntdll.py": "b53b022e9747a94d800f38801bff611e3eb513229d7f1a759d4b167856072477",
+    "work\\alpme_analysis\\semantic_closure_20261027\\round6_ntdll_internal_static\\verify_search_helpers.py": "33fbdb7fc1db726d28c5f596b62ed15246ceae08d6532a4924dc11583515c069",
+    "work\\alpme_analysis\\semantic_closure_20261027\\round6_ntdll_internal_static\\full_branch_helper_CFGs.json": "a1a568eae211418e3a13f2936edcc4f802ea273b431f023bec17374f00230aac",
+    "work\\alpme_analysis\\semantic_closure_20261027\\round6_ntdll_internal_static\\C_export_receipt.json": "81ff3f50ca73c838b1db5d210fed44b1ec69cd1883782f943b9e0b8284cc5551",
+    "work\\alpme_analysis\\semantic_closure_20261027\\round6_ntdll_internal_static\\opcode_scalar_write_escape_audit.json": "a2c08a8923f2bd938d5f9c60c2af4ed297d1038d241350565e713ae020abefc6",
+    "work\\alpme_analysis\\semantic_closure_20261027\\audit_all_native_exports.py": "14959c6af96bc6905635e9aafd3cc48c4644f9b2691e5014a17e7998820c4a9a",
+    "work\\alpme_analysis\\semantic_closure_20261027\\round6_code_data_partitions\\all_native_export_overlay_diagnostic.json": "481c223eb43cd76ec3bdf762a9031eaa5013b970496c0a4002d7c7920587ee04",
+    "work\\alpme_analysis\\semantic_closure_20261027\\round6_ntdll_internal_static\\all_native_export_overlay_diagnostic.json": "c6d40e69c2b0da7634f9c8cbc196711b3759367600bec2f2e027c909842877ed"
+  },
+  "remaining": "The exact outer search region and final private function identity require the bd8e caller filters; no private ntdll symbol is guessed from this helper.",
+  "sample_execution": false,
+  "CPU_emulation": false,
+  "host_process_access": false,
+  "network": false
+}

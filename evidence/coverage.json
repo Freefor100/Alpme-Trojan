@@ -1,5 +1,5 @@
 {
-  "date": "2026-10-28",
+  "date": "2026-10-29",
   "analysis_status": "in_progress",
   "legacy41": {
     "c_export_completed": 28,
@@ -7,14 +7,14 @@
     "c_export_normal_initialized_context": 11,
     "encoded_data_misidentified_as_function_corrected": 1
   },
-  "whole_native_C_diagnostic_entries": 53,
+  "whole_native_C_diagnostic_entries": 51,
   "whole_native_summary": [
     {
       "sample": "17_loader.exe.bin",
       "pdata_entries": 403,
       "native_entry_C_diagnostic_counts": {
-        "no_partial_markers_not_a_CFG_proof": 399,
-        "partial_markers_remain": 4
+        "no_partial_markers_not_a_CFG_proof": 400,
+        "partial_markers_remain": 3
       }
     },
     {
@@ -37,12 +37,12 @@
       "sample": "19_payload.dll.bin",
       "pdata_entries": 727,
       "native_entry_C_diagnostic_counts": {
-        "no_partial_markers_not_a_CFG_proof": 703,
-        "partial_markers_remain": 24
+        "no_partial_markers_not_a_CFG_proof": 704,
+        "partial_markers_remain": 23
       }
     }
   ],
-  "scope": "C quality, local CFG and transitive behavior are separate. Runtime functions have zero CALL and no full memory-loop contract.",
+  "scope": "C diagnostics, native CFG, actual call sources, owned-object behavior and runtime observations have separate evidence.",
   "entries": [
     {
       "sample": "17_loader.exe.bin",
@@ -63,10 +63,10 @@
     {
       "sample": "17_loader.exe.bin",
       "rva": "0x1073",
-      "C_diagnostic": "verified_conservative_local_CFG_only",
-      "separately_verified_scope": "verified_conservative_local_CFG_only",
+      "C_diagnostic": "verified_native_search_helper_CFG_and_C",
+      "separately_verified_scope": "verified_native_search_helper_CFG_and_C",
       "native_instructions": 85,
-      "C_source_sha256": "fd7f4c1c04050a6dc1623415e6d6c72be2b1e7888e05930cdf7e7794d130cef6"
+      "C_source_sha256": "f0714e93ef8b7ba6171524854e88013a8087d18a837dacdb69ed2d4184689a58"
     },
     {
       "sample": "17_loader.exe.bin",
@@ -239,10 +239,10 @@
     {
       "sample": "17_loader.exe.bin",
       "rva": "0x8319",
-      "C_diagnostic": "partial_markers_remain",
-      "separately_verified_scope": null,
+      "C_diagnostic": "verified_native_search_helper_CFG_and_C",
+      "separately_verified_scope": "verified_native_search_helper_CFG_and_C",
       "native_instructions": 169,
-      "C_source_sha256": "996e729833f715ddf350edf0a85826f7ada0d4fe622ea2214dc5d379d7b56dde"
+      "C_source_sha256": "0eff6e63ea38be5acf81ff8009313c586fc2f07b0186317c880ab774eb8d20c6"
     },
     {
       "sample": "17_loader.exe.bin",
@@ -9239,10 +9239,10 @@
     {
       "sample": "17_payload.dll.bin",
       "rva": "0x7a490",
-      "C_diagnostic": "no_partial_markers_not_a_CFG_proof",
-      "separately_verified_scope": null,
+      "C_diagnostic": "verified_native_unwind_code_data_partition_and_C",
+      "separately_verified_scope": "verified_native_unwind_code_data_partition_and_C",
       "native_instructions": 127,
-      "C_source_sha256": "fcbba0fa14d66c214c979c2b9461d957cf38360d2b622402ea1e1176eda331c4"
+      "C_source_sha256": "d5ed38e419f4941e5a80f2e1b1412679ba3b65d37291a9f5bf45c7c1bb468591"
     },
     {
       "sample": "17_payload.dll.bin",
@@ -19831,10 +19831,10 @@
     {
       "sample": "19_payload.dll.bin",
       "rva": "0x78e30",
-      "C_diagnostic": "partial_markers_remain",
-      "separately_verified_scope": null,
+      "C_diagnostic": "verified_native_unwind_code_data_partition_and_C",
+      "separately_verified_scope": "verified_native_unwind_code_data_partition_and_C",
       "native_instructions": 127,
-      "C_source_sha256": "8d9c853c20670eafd79bdf3a4ac01731c776911ebe2489ec6aabea50b773f511"
+      "C_source_sha256": "d5c24dc48731eccd24f3f461788e0d6e07715812d60c7b642d4040883e436982"
     },
     {
       "sample": "19_payload.dll.bin",

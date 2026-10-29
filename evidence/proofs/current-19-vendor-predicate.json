@@ -1,0 +1,50 @@
+{
+  "status": "PASS_FRESH_19_VENDOR_PREDICATE_CFG_AND_READONLY_CALLER_FOOTPRINT",
+  "native": 1317,
+  "computed_JMPs": 42,
+  "native_stores": 201,
+  "native_calls": 66,
+  "caller_input_bytes": 12,
+  "caller_writes": 0,
+  "leaf_memcmp": {
+    "entry": "0x7ced0",
+    "native": 69,
+    "CALLs": 0,
+    "memory_writes": 0,
+    "all_branches_direct_local": true
+  },
+  "proof_outputs_compared": [
+    "native_inventory.json",
+    "original_native.asm.txt",
+    "full_graph_footprint_inventory.json",
+    "caller_footprint_proof.json"
+  ],
+  "normal_conditions": [
+    "Original normal PE/TLS values used for finite private-frame store addresses.",
+    "Valid compiler-produced String/Once caches; clone4473d output24 plus disjointfresh heap, fixedOnce7e4d7 reads own descriptor andmutates owned/global state only, free17f80 receives owned clonebuffers.",
+    "Normal Win64 ABI and readonlymemcmp contract; importedhooks/arbitrary memory corruption are outside this contract."
+  ],
+  "dependencies": {
+    "work\\alpme_analysis\\semantic_closure_20261027\\round3_cleanup_finish\\block_fixpoint.py": "75f930314859438a7e3110cf3bc8dccab0c8072367feaf1a503f3f9c5d55a402",
+    "work\\alpme_analysis\\semantic_closure_20261027\\round3_cleanup_finish\\normal_tls_static.py": "16d7a4fa002f2d04b5c7d1c7eb9363ee63886cb1e02b2b12140703874ed71241",
+    "work\\alpme_analysis\\semantic_closure_20261027\\round3_strings\\browser_graph19.py": "5ce45d2809220444467a39fbeeccea951d19a1dfa7511186ca429774693f1e93",
+    "work\\alpme_analysis\\semantic_closure_20261027\\round3_strings\\constant_slices.py": "80c43b4665af4cb10d2f8e9b03dd6f968b0bd6fe9560b07749c758b8142312af",
+    "work\\alpme_analysis\\semantic_closure_20261027\\round5_whole_native\\call_resolution\\remaining9\\carry_frame_index_ranges.py": "a0c16acd46054ab6ce8a7a317923473791a1a08293385dac2b0218bedb3cc574",
+    "work\\alpme_analysis\\semantic_closure_20261027\\round5_whole_native\\call_resolution\\remaining9\\carry_next\\scan_creator_aliases.py": "9bac4cd69b41b87bb23023db4c2090870650e129473b08236d5ef147eb144c9e",
+    "work\\alpme_analysis\\semantic_closure_20261027\\round5_whole_native\\call_resolution\\remaining9\\inspect_thread_producers.py": "da92192bf0ba5e51bd58f31810e6fa2f6ad175c9920ff18e47c7deef94caa620",
+    "work\\alpme_analysis\\semantic_closure_20261027\\round5_whole_native\\call_resolution\\remaining9\\query_channel_args.py": "0135b5300f250b94a2da32706ed012ddf6b3c5056f20e933c88a276ceb893cbc",
+    "work\\alpme_analysis\\semantic_closure_20261027\\round5_whole_native\\call_resolution\\resolve_calls.py": "d1e9588c5232ac2be9c65e480d224b838781e3fe829f703c6110a349a8ccf33d",
+    "work\\alpme_analysis\\semantic_closure_20261027\\round6_vendor_predicate19\\audit_cfg.py": "0150ac33cc8717ab26c944482dcf9e99589b14870714a61d532d9def47a9cc41",
+    "work\\alpme_analysis\\semantic_closure_20261027\\round6_vendor_predicate19\\caller_footprint_proof.json": "6aa562fd05086b0c331b88f3c577b57cb62c7033bd9f501df86796c2c9e859f1",
+    "work\\alpme_analysis\\semantic_closure_20261027\\round6_vendor_predicate19\\full_graph_footprint_inventory.json": "ca0d94beb0830fd23312ddc76128e1469146f1813b9c517a19a7030092339c5a",
+    "work\\alpme_analysis\\semantic_closure_20261027\\round6_vendor_predicate19\\inspect_footprint.py": "df471e2302d5b26410ddb00ae5b0470988feb71e11a45db4bdd96281f061b8c3",
+    "work\\alpme_analysis\\semantic_closure_20261027\\round6_vendor_predicate19\\native_inventory.json": "901dddc1cfa300b99838656bb63faa0e4de84804a9be7e2fe2e339f000660722",
+    "work\\alpme_analysis\\semantic_closure_20261027\\round6_vendor_predicate19\\original_native.asm.txt": "c3adef7c2cca4d9917e73377414daaf5abab5a650132358a6309929bdf9dc0c4",
+    "work\\alpme_analysis\\semantic_closure_20261027\\round6_vendor_predicate19\\prove_caller_readonly.py": "ffcf6157cb0ba26dd1a6522ab666f15017e4b71e56fce07a5eff3497cac23547",
+    "work\\alpme_analysis\\semantic_closure_20261027\\round6_vendor_predicate19\\verify_readonly.py": "7b49cded8531da9683039a0358cef9b23bdbb2a81883fff315251562aff7051a"
+  },
+  "sample_execution": false,
+  "CPU_emulation": false,
+  "host_process_access": false,
+  "network": false
+}

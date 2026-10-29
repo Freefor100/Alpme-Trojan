@@ -7,53 +7,10 @@
       "catalog_rows": 499,
       "pdata_entries": 403,
       "native_entry_C_diagnostic_counts": {
-        "no_partial_markers_not_a_CFG_proof": 399,
-        "partial_markers_remain": 4
+        "no_partial_markers_not_a_CFG_proof": 400,
+        "partial_markers_remain": 3
       },
       "native_entries_needing_export_flow_review": [
-        {
-          "rva": "0x8319",
-          "name": "FUN_140008319",
-          "catalog_status": "completed",
-          "pdata_entry": true,
-          "native": {
-            "end_rva": "0x858c",
-            "bytes": 627,
-            "sha256": "e5d6ceb3f63f62fa1d0ab9ff1ff0e142f8bf5ba89239d628d690e2ca4a2125ba",
-            "instructions": 169,
-            "sequential_decode_covers_extent": true,
-            "computed_jump_sites": [
-              "0x8384",
-              "0x839d",
-              "0x83c2",
-              "0x8409",
-              "0x8442",
-              "0x8468",
-              "0x84f1",
-              "0x8520",
-              "0x853e",
-              "0x8574",
-              "0x8589"
-            ]
-          },
-          "best_non_candidate_C": {
-            "path": "work\\alpme_analysis\\full_static_project_20261027\\exports\\17_loader.exe.bin\\functions\\140008319.c",
-            "bytes": 1576,
-            "sha256": "996e729833f715ddf350edf0a85826f7ada0d4fe622ea2214dc5d379d7b56dde",
-            "candidate": false,
-            "counts": {
-              "Could not recover jumptable": 2,
-              "Treating indirect jump as call": 2,
-              "halt_baddata": 0,
-              "Bad instruction data": 0,
-              "UnimplementedPcode": 0
-            },
-            "partial_markers": 4,
-            "normal_context": false
-          },
-          "best_candidate_C": null,
-          "diagnostic_state": "partial_markers_remain"
-        },
         {
           "rva": "0x96e5",
           "name": "FUN_1400096e5",
@@ -1038,22 +995,22 @@
             ]
           },
           "best_non_candidate_C": {
-            "path": "work\\alpme_analysis\\full_static_project_20261027\\exports\\17_loader.exe.bin\\functions\\140008319.c",
-            "bytes": 1576,
-            "sha256": "996e729833f715ddf350edf0a85826f7ada0d4fe622ea2214dc5d379d7b56dde",
+            "path": "work\\alpme_analysis\\semantic_closure_20261027\\round6_ntdll_internal_static\\normal_exports\\17_loader.exe.bin_0x8319.c",
+            "bytes": 5580,
+            "sha256": "0eff6e63ea38be5acf81ff8009313c586fc2f07b0186317c880ab774eb8d20c6",
             "candidate": false,
             "counts": {
-              "Could not recover jumptable": 2,
-              "Treating indirect jump as call": 2,
+              "Could not recover jumptable": 0,
+              "Treating indirect jump as call": 0,
               "halt_baddata": 0,
               "Bad instruction data": 0,
               "UnimplementedPcode": 0
             },
-            "partial_markers": 4,
+            "partial_markers": 0,
             "normal_context": false
           },
           "best_candidate_C": null,
-          "diagnostic_state": "partial_markers_remain"
+          "diagnostic_state": "no_partial_markers_not_a_CFG_proof"
         },
         {
           "rva": "0x858c",
@@ -60280,8 +60237,8 @@
       "catalog_rows": 822,
       "pdata_entries": 727,
       "native_entry_C_diagnostic_counts": {
-        "no_partial_markers_not_a_CFG_proof": 703,
-        "partial_markers_remain": 24
+        "no_partial_markers_not_a_CFG_proof": 704,
+        "partial_markers_remain": 23
       },
       "native_entries_needing_export_flow_review": [
         {
@@ -61300,39 +61257,6 @@
             "path": "work\\alpme_analysis\\full_static_project_20261027\\exports\\19_payload.dll.bin\\functions\\0ec9ea6a.c",
             "bytes": 1161,
             "sha256": "b9a7f794b2ec5d9104e8ae8e139f5a9f4cd9e8cb12aa9e042844f561ade70af5",
-            "candidate": false,
-            "counts": {
-              "Could not recover jumptable": 1,
-              "Treating indirect jump as call": 1,
-              "halt_baddata": 0,
-              "Bad instruction data": 0,
-              "UnimplementedPcode": 0
-            },
-            "partial_markers": 2,
-            "normal_context": false
-          },
-          "best_candidate_C": null,
-          "diagnostic_state": "partial_markers_remain"
-        },
-        {
-          "rva": "0x78e30",
-          "name": "FUN_0eca8e30",
-          "catalog_status": "completed",
-          "pdata_entry": true,
-          "native": {
-            "end_rva": "0x79009",
-            "bytes": 473,
-            "sha256": "0224e487c47bc0e3656579534743ca7b400bb63a94c012feb0d76ab3684332c8",
-            "instructions": 127,
-            "sequential_decode_covers_extent": false,
-            "computed_jump_sites": [
-              "0x78f6f"
-            ]
-          },
-          "best_non_candidate_C": {
-            "path": "work\\alpme_analysis\\full_static_project_20261027\\exports\\19_payload.dll.bin\\functions\\0eca8e30.c",
-            "bytes": 3889,
-            "sha256": "8d9c853c20670eafd79bdf3a4ac01731c776911ebe2489ec6aabea50b773f511",
             "candidate": false,
             "counts": {
               "Could not recover jumptable": 1,
@@ -84019,22 +83943,22 @@
             ]
           },
           "best_non_candidate_C": {
-            "path": "work\\alpme_analysis\\full_static_project_20261027\\exports\\19_payload.dll.bin\\functions\\0eca8e30.c",
-            "bytes": 3889,
-            "sha256": "8d9c853c20670eafd79bdf3a4ac01731c776911ebe2489ec6aabea50b773f511",
+            "path": "work\\alpme_analysis\\semantic_closure_20261027\\round6_code_data_partitions\\normal_exports\\19_payload.dll.bin_0x78e30.c",
+            "bytes": 3626,
+            "sha256": "d5c24dc48731eccd24f3f461788e0d6e07715812d60c7b642d4040883e436982",
             "candidate": false,
             "counts": {
-              "Could not recover jumptable": 1,
-              "Treating indirect jump as call": 1,
+              "Could not recover jumptable": 0,
+              "Treating indirect jump as call": 0,
               "halt_baddata": 0,
               "Bad instruction data": 0,
               "UnimplementedPcode": 0
             },
-            "partial_markers": 2,
+            "partial_markers": 0,
             "normal_context": false
           },
           "best_candidate_C": null,
-          "diagnostic_state": "partial_markers_remain"
+          "diagnostic_state": "no_partial_markers_not_a_CFG_proof"
         },
         {
           "rva": "0x79010",

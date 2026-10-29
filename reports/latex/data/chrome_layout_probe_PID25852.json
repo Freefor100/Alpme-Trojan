@@ -1,0 +1,81 @@
+{
+  "status": "COMPLETED_READONLY_STRUCTURAL_LAYOUT_PROBE",
+  "client_date": "2026-10-28",
+  "pid": 25852,
+  "requested_process_rights": "0x410 (query information + VM read)",
+  "probe_token_elevated": false,
+  "predicate_certificates_sha256": {
+    "dual_layout_predicate_receipt.json": "81c820044c97dc876dbe23cef7185b1ee85d3565ca0d5633f52464ceb2d0db71",
+    "scan_and_header_predicate_receipt.json": "4f96904f196017eabbae90012ceee6fbc7533589451895af340743691e88839e"
+  },
+  "probe_sha256": "7f66eda388e24fe968ffa097f5b1e183ab2951727c951b510f1f224da682d4a1",
+  "parser_sha256": "c35829c980c64cb4ac715a3d2c01914e5104c6447795d07a8b3f6cc76483f1eb",
+  "eligible_region_bytes_encountered": 148529152,
+  "bytes_scanned": 148529152,
+  "enumeration_termination": {
+    "reason": "VirtualQueryEx_returned_zero",
+    "WinError": 87
+  },
+  "full_address_space_completion_proved": false,
+  "bulk_scan_budget_bytes": 536870912,
+  "bulk_scan_budget_excludes_metadata_reads": true,
+  "counts": {
+    "query_calls": 5812,
+    "regions_enumerated": 5797,
+    "eligible_regions": 1930,
+    "read_bytes_requested": 148530288,
+    "read_bytes_transferred": 148530288,
+    "read_calls": 1946,
+    "aligned_tag_matches": 4,
+    "metadata_bytes_transferred": 1136,
+    "candidate_header_roots": 1
+  },
+  "matching_nodes": 2,
+  "tags": {
+    "v10": 1,
+    "v20": 1
+  },
+  "layouts": {
+    "numeric": 2
+  },
+  "encrypted_field_histogram": {
+    "1": 2
+  },
+  "candidate_rings_with_matching_nodes": [
+    {
+      "declared_nodes": 2,
+      "visited_nodes": 2,
+      "matching_nodes": 2,
+      "tags": {
+        "v10": 1,
+        "v20": 1
+      },
+      "layouts": {
+        "numeric": 2
+      },
+      "encrypted_field_histogram": {
+        "1": 2
+      }
+    }
+  ],
+  "scope": "Observed structural matches; not sample execution, key acquisition, decryption or historical-exfiltration proof.",
+  "limitations": [
+    "Non-atomic live reads; process objects can change during scanning.",
+    "Only this PID and exact private committed read-write regions.512MiB bounds bulk scan; extra metadata reads counted separately.",
+    "Tree walk used full count consistency in addition to native structural predicates.",
+    "Data-pointer alignment uses the reviewed canonical bound; native upper-edge variants are not exercised here."
+  ],
+  "safety": {
+    "memory_dump_saved": false,
+    "addresses_saved_or_printed": false,
+    "key_bytes_saved_or_printed": false,
+    "key_data_pointer_used_for_key_read": false,
+    "decryption_attempted": false,
+    "sample_or_Chrome_function_execution": false,
+    "process_memory_write": false,
+    "remote_thread_or_context_operation": false,
+    "network_or_C2": false,
+    "private_heap_bytes_scanned_transiently": true
+  },
+  "elapsed_seconds": 0.328
+}

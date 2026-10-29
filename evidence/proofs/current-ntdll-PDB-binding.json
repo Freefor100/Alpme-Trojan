@@ -1,0 +1,152 @@
+{
+  "status": "PASS_USER_DOWNLOADED_PDB_MICROSOFT_MATCH_RULE_ALL_PE_SECTIONS_AND_TLS_SYMBOL_BINDINGS",
+  "source": {
+    "path": "%USERPROFILE%\\Downloads\\EA4F9553416A74B67FECD782BCF932C0A4853B9933602263666D6036A9AB76AF00.blob",
+    "bytes": 1912832,
+    "sha256": "c93f4614aa6f40fe370d40eb7ee9589ca0eda170ef2d704b5d278da71c02c249",
+    "provenance": "User supplied download; HTTP transport not observed by this verifier."
+  },
+  "cached_PDB": "<ANALYSIS_WORKSPACE>\\work\\alpme_analysis\\parent_review_20261029\\official_pdb_retry\\verified_symbols\\C031D45B0DA18A6E74D06ED6AB2DD9E11\\ntdll.pdb",
+  "PE": {
+    "path": "C:\\Windows\\System32\\ntdll.dll",
+    "sha256": "651ac9041af8e6b5ebd331d53163244c0a27d36d1433f0f15cac1f28c5f2e82c",
+    "CodeView": {
+      "guid": "C031D45B0DA18A6E74D06ED6AB2DD9E1",
+      "age": 1,
+      "filename": "ntdll.pdb"
+    }
+  },
+  "PDB": {
+    "guid": "C031D45B0DA18A6E74D06ED6AB2DD9E1",
+    "age": 4,
+    "PDB_version": 20000404,
+    "signature": "0x5fd39a05",
+    "block_size": 4096,
+    "block_count": 467,
+    "streams": 129
+  },
+  "DBI": {
+    "age": 1,
+    "flags": "0x2",
+    "machine": "0x8664",
+    "private_symbols_stripped": true,
+    "symbol_record_stream": 124
+  },
+  "identity_rule": {
+    "source": "https://github.com/microsoft/microsoft-pdb/blob/master/PDB/dbi/pdb.cpp",
+    "function": "PDB1::OpenValidate4",
+    "GUID_equal": true,
+    "PDB_Info_age_greater_or_equal_PE_age": true,
+    "DBI_age_equal_PE_age": true,
+    "strict_Info_age_equality_is_not_the_Microsoft_match_rule": true
+  },
+  "all_PE_section_headers_byte_equal": true,
+  "PE_sections": 15,
+  "OMAP_present": false,
+  "symbol_records": 7428,
+  "public_symbols": 6982,
+  "nonsection_linker_constants": 8,
+  "selected_symbols": [
+    {
+      "name": "LdrpHandleTlsData",
+      "flags": 2,
+      "segment": 1,
+      "section_offset": "0x5af40",
+      "record_offset": "0x34c80",
+      "RVA": "0x5bf40",
+      "exact_pdata_begin": true
+    },
+    {
+      "name": "LdrpAllocateTlsEntry",
+      "flags": 2,
+      "segment": 1,
+      "section_offset": "0x5c4b4",
+      "record_offset": "0x467c",
+      "RVA": "0x5d4b4",
+      "exact_pdata_begin": true
+    },
+    {
+      "name": "LdrpFindTlsEntry",
+      "flags": 2,
+      "segment": 1,
+      "section_offset": "0x59bb0",
+      "record_offset": "0x26a48",
+      "RVA": "0x5abb0",
+      "exact_pdata_begin": false
+    },
+    {
+      "name": "LdrpGetNewTlsVector",
+      "flags": 2,
+      "segment": 1,
+      "section_offset": "0x59c3c",
+      "record_offset": "0x31b90",
+      "RVA": "0x5ac3c",
+      "exact_pdata_begin": true
+    },
+    {
+      "name": "LdrpQueueDeferredTlsData",
+      "flags": 2,
+      "segment": 1,
+      "section_offset": "0x59bdc",
+      "record_offset": "0x33e64",
+      "RVA": "0x5abdc",
+      "exact_pdata_begin": true
+    },
+    {
+      "name": "LdrpAcquireTlsIndex",
+      "flags": 2,
+      "segment": 1,
+      "section_offset": "0x5df90",
+      "record_offset": "0x45724",
+      "RVA": "0x5ef90",
+      "exact_pdata_begin": true
+    },
+    {
+      "name": "LdrpGenericExceptionFilter",
+      "flags": 2,
+      "segment": 1,
+      "section_offset": "0x1184d0",
+      "record_offset": "0x3661c",
+      "RVA": "0x1194d0",
+      "exact_pdata_begin": true
+    }
+  ],
+  "named_export_crosschecks": [
+    {
+      "name": "RtlAcquireSRWLockExclusive",
+      "RVA": "0x44cd0",
+      "exact_PDB_match": true
+    },
+    {
+      "name": "RtlAllocateHeap",
+      "RVA": "0x31550",
+      "exact_PDB_match": true
+    },
+    {
+      "name": "RtlImageDirectoryEntryToData",
+      "RVA": "0x5cc10",
+      "exact_PDB_match": true
+    },
+    {
+      "name": "NtSetInformationProcess",
+      "RVA": "0x1620c0",
+      "exact_PDB_match": true
+    }
+  ],
+  "symbol_map": {
+    "path": "<ANALYSIS_WORKSPACE>\\work\\alpme_analysis\\parent_review_20261029\\official_pdb_retry\\ntdll_public_symbol_map.json",
+    "sha256": "5b9a3275d2033e82786c03afcacab0171f11eca8a16fc389c6917c7da1a8cc49"
+  },
+  "old_offline_receipt_unchanged": {
+    "path": "<ANALYSIS_WORKSPACE>\\work\\alpme_analysis\\semantic_closure_20261027\\round6_outer17_calls\\offline_ntdll_20261029\\offline_filter_receipt.json",
+    "sha256": "a3405f52ab54a6e1c21bcbeb8f0934ecd006ce66aee4a2befbcdd5f542e1ec17"
+  },
+  "parser_dependencies": {
+    "<ANALYSIS_WORKSPACE>\\work\\alpme_analysis\\semantic_closure_20261027\\round6_outer17_calls\\offline_ntdll_20261029\\pdb_data.py": "e9b29b52ae3120c820fa51ea749b4e9a60c2239b57357e1a08d00164107c7a03",
+    "<ANALYSIS_WORKSPACE>\\work\\alpme_analysis\\parent_review_20261029\\official_pdb_retry\\verify_downloaded_pdb.py": "34c5a20241231c4bd45cd3879e7848619451c87374eb33181fd6f32a8e819b05"
+  },
+  "sample_execution": false,
+  "DLL_loading": false,
+  "host_process_access": false,
+  "network": false
+}

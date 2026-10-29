@@ -1,0 +1,49 @@
+{
+  "status": "PASS_PARENT_EXACT_SELFADD_ONLY_REPLAY_TERMINATE_BRANCH_NORMAL_ENTRY_UNREACHABLE",
+  "correction": "Withdraw earlier inference that successful remote-thread creation reaches the shell-owner TerminateProcess request. The previous conservative graph admitted a spurious self-add value1; exactADD r,r excludes that branch.",
+  "old_inference_sources": [
+    {
+      "path": "work\\alpme_analysis\\parent_review_20261029\\terminate_route_review.json",
+      "sha256": "1d47bfcdb8ad5811a91713e9585eaca34152cd49c221194fec43c4701e0a8960"
+    },
+    {
+      "path": "work\\alpme_analysis\\semantic_closure_20261027\\round6_outer17_calls\\continuation_20261029\\TerminateProcess_route_proof.json",
+      "sha256": "573e4a354746adf5ea6c0d0ec182ae65af2f9a0929cdaae2d8c0afcdaeb69b21"
+    }
+  ],
+  "new_graph": {
+    "path": "work\\alpme_analysis\\parent_review_20261029\\bd8e_parent_verified_self_add_plan.json",
+    "sha256": "7662c3ca35b0291039e8efd0228e62de666fe4b402cacb82b9e09d9a5ef8f2d9",
+    "source_agent_plan": "work\\alpme_analysis\\semantic_closure_20261027\\round6_outer17_calls\\continuation_20261029\\bd8e_self_add_only_plan.json",
+    "elapsed_time_field_excluded": true,
+    "reached": 6077,
+    "native": 6160,
+    "computed_JMPs": 301,
+    "block_states": 649,
+    "verified_edges": 939,
+    "additional_context_cold": 52
+  },
+  "model": "Normal PE/TLS; original ordinary CALL/store havoc; only exact same-register ADD relation added. No SP58 or typed footprint assumption used.",
+  "local_instruction": {
+    "rva": "0xc3fd",
+    "bytes": "01c9",
+    "asm": "add ecx, ecx"
+  },
+  "real_boolean_self_add_domain": [
+    0,
+    2
+  ],
+  "spurious_old_cross_product_value": 1,
+  "TerminateProcess_resolver_and_CALL_reached": false,
+  "C721_reached": true,
+  "C721_remaining": "Re-evaluate byte-producer/branch relations on this refined graph; no normal localPE-buffer execution orUAF conclusion yet.",
+  "dependencies": {
+    "work\\alpme_analysis\\parent_review_20261029\\correct_termination_inference.py": "97b7705442169f600985ca0c73f5f043d48421491238893862a387fad841c093",
+    "work\\alpme_analysis\\semantic_closure_20261027\\round6_outer17_calls\\continuation_20261029\\refine_bd8e_control58.py": "5cae26ba6b3a928b0cc04317737ebc8a0ef3d490e94344fca255633bc7cc2887",
+    "work\\alpme_analysis\\parent_review_20261029\\bd8e_parent_verified_self_add_plan.json": "7662c3ca35b0291039e8efd0228e62de666fe4b402cacb82b9e09d9a5ef8f2d9"
+  },
+  "sample_execution": false,
+  "CPU_emulation": false,
+  "host_process_access": false,
+  "network": false
+}

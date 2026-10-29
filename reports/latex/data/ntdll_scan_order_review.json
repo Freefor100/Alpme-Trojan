@@ -1,0 +1,90 @@
+{
+  "status": "VERIFIED_ADDITIVE_NORMAL_TYPED_ALL509_NTDLL_SCAN_ORDER_AND_TERMINAL_OFFSETS",
+  "source_sha256": "2e1363e7220befe88eeb2b9b9490640f9834be0dd789c01471a69de8f69e6dfa",
+  "region_native": 509,
+  "cut_headers": 6,
+  "remaining_DAG_nodes": 503,
+  "caller_lengths_checked": 225,
+  "scan_terminal_offsets": {
+    "pair": "j0..L-2: all possible2B pairs",
+    "mov_r8d9": "j0..L-6: all possible6B patterns",
+    "cmp_rip_zero": "j0..L-7: all possible7B patterns",
+    "E8": "i0..L-6 inclusive; EXCLUDES the last legal5B instruction startL-5",
+    "near_Jcc": "i0..L-7 inclusive; EXCLUDES last legal6B instruction startL-6"
+  },
+  "remaining": [
+    "Offline version-pinned ntdll image filtering and official-symbol/private-routine identity. No function name or unique installed candidate is asserted."
+  ],
+  "scope": "This is a structural control/counter proof on all509 region nodes under normal typed1073/8319 and SP58/Win64 contracts. It checks DAG cycle cover, forward-only phase transitions and exact native affine counter schemas; it is not concrete execution of any ntdll bytes. Foreigncode/metadata remains unknown.",
+  "prior_component_receipt": {
+    "path": "work\\alpme_analysis\\semantic_closure_20261027\\round6_outer17_calls\\followup_20261029\\ntdll_outer\\outer_filter_checkpoint_receipt.json",
+    "sha256": "b828480aa881fa51a9a542a3b58997ebc80e104c759b447650d6e95c381b1a31",
+    "unchanged": true
+  },
+  "evidence": [
+    {
+      "path": "work\\alpme_analysis\\semantic_closure_20261027\\round6_outer17_calls\\followup_20261029\\ntdll_outer\\ordering_20261029\\scan_region_inventory.json",
+      "sha256": "3dcbdf5835b0ad4c532269ac9ede142a2a414419b4d01ae5d59c23e78553269c",
+      "bytes": 18399
+    },
+    {
+      "path": "work\\alpme_analysis\\semantic_closure_20261027\\round6_outer17_calls\\followup_20261029\\ntdll_outer\\ordering_20261029\\loop_cover_proof.json",
+      "sha256": "c6d31b60277e3c099bc95c3cb668a214e2e8543d973979035417ade1db17c3ab",
+      "bytes": 9390
+    },
+    {
+      "path": "work\\alpme_analysis\\semantic_closure_20261027\\round6_outer17_calls\\followup_20261029\\ntdll_outer\\ordering_20261029\\counter_order_proof.json",
+      "sha256": "7f94372f4c1d43a75e88033a981ad9cf5978ed4588a01037ea5e31e0f9c62d74",
+      "bytes": 142828
+    },
+    {
+      "path": "work\\alpme_analysis\\semantic_closure_20261027\\round6_outer17_calls\\followup_20261029\\ntdll_outer\\ordering_20261029\\ordering_delta_zh.md",
+      "sha256": "296e4eee3e6cadd6292383896040a26fd0772adb91eee2002d5283995384bcdb",
+      "bytes": 3050
+    },
+    {
+      "path": "work\\alpme_analysis\\semantic_closure_20261027\\round6_outer17_calls\\followup_20261029\\ntdll_outer\\ordering_20261029\\inventory_scan_region.py",
+      "sha256": "68cf2ab687d93572f805a9ec774da7b5aa071cb97002a242b514a9ec36c6aa3c",
+      "bytes": 1169
+    },
+    {
+      "path": "work\\alpme_analysis\\semantic_closure_20261027\\round6_outer17_calls\\followup_20261029\\ntdll_outer\\ordering_20261029\\prove_loop_cover.py",
+      "sha256": "b7746e4a9e87aab293c361cb20d9f651a26e6dad9c1624163aef6a0ca2e6adf0",
+      "bytes": 1789
+    },
+    {
+      "path": "work\\alpme_analysis\\semantic_closure_20261027\\round6_outer17_calls\\followup_20261029\\ntdll_outer\\ordering_20261029\\prove_counter_order.py",
+      "sha256": "cf66e41407a554cc44ed7bf86d70639c6cc6a95f36684ff61598635b51569dfe",
+      "bytes": 5844
+    },
+    {
+      "path": "work\\alpme_analysis\\semantic_closure_20261027\\round6_outer17_calls\\followup_20261029\\ntdll_outer\\ordering_20261029\\verify_ordering_delta.py",
+      "sha256": "c60d969ebcb1828e80dec77018d1df2bbe3d1bab67628e0c85644c18970c8881",
+      "bytes": 2565
+    }
+  ],
+  "dependencies": [
+    {
+      "path": "work\\alpme_analysis\\semantic_closure_20261027\\round6_outer17_calls\\followup_20261029\\ntdll_outer\\ordering_20261029\\loop_cover_proof.json",
+      "sha256": "c6d31b60277e3c099bc95c3cb668a214e2e8543d973979035417ade1db17c3ab"
+    },
+    {
+      "path": "work\\alpme_analysis\\semantic_closure_20261027\\round6_outer17_calls\\followup_20261029\\ntdll_outer\\ordering_20261029\\scan_region_inventory.json",
+      "sha256": "3dcbdf5835b0ad4c532269ac9ede142a2a414419b4d01ae5d59c23e78553269c"
+    },
+    {
+      "path": "work\\alpme_analysis\\semantic_closure_20261027\\round6_outer17_calls\\followup_20261029\\ntdll_outer\\outer_filter_proof.json",
+      "sha256": "44abbc503f82bf39f16def132fc6b6b7a5fab18485bfd9d426922ad4a862f34b"
+    },
+    {
+      "path": "work\\alpme_analysis\\semantic_closure_20261027\\round6_outer17_calls\\continuation_20261029\\bd8e_self_add_only_plan.json",
+      "sha256": "4dcbf37eb732041a016dded3594c166f9c56bae472426d4c927171f099e63144"
+    }
+  ],
+  "verification_mode": "Read existing fresh static artifacts and hashes only; no subprocesses, original instruction execution, host ntdll reads or rejected old pipeline rerun.",
+  "sample_execution": false,
+  "CPU_emulation": false,
+  "host_ntdll_read": false,
+  "host_APIs_invoked": false,
+  "network": false
+}

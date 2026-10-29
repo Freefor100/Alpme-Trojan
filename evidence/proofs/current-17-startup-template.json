@@ -1,0 +1,65 @@
+{
+  "status": "PASS_FRESH_13086_NORMAL_CFG_CONDITIONAL_CALLER_CONTRACT_AND_STATIC_TEMPLATE_REPLAY",
+  "source_sha256": "2e1363e7220befe88eeb2b9b9490640f9834be0dd789c01471a69de8f69e6dfa",
+  "normal_CFG": {
+    "native": 1352,
+    "reached": 1352,
+    "computed_JMPs": 79,
+    "unresolved": 0
+  },
+  "native_writers": 114,
+  "native_calls": 20,
+  "caller_output_span": [
+    0,
+    24
+  ],
+  "allocation_and_returned_capacity_and_length": 395,
+  "template": {
+    "total_bytes": 395,
+    "normal_code_bytes": 363,
+    "normal_instructions": 101,
+    "post_RET_padding_bytes": 32,
+    "indirect_CALL_sites": 6,
+    "patch_fields": 9,
+    "patch_bytes": 60,
+    "unchanged_capture_bytes_compared": 335
+  },
+  "proof_outputs_compared": [
+    "source_and_output_components.json",
+    "template_decode_metadata.json",
+    "caller_footprint_proof.json"
+  ],
+  "normal_conditions": [
+    "Normal original PE/TLS initialization and the fixed scalar-cell write/escape audit.",
+    "Valid compiler-produced owned byteVec/allocationResult and grow965c->98aa semantics: grows/reallocates owned backing and updates24B header; allocationResult146e3 writes atmost32B plus fresh allocation.",
+    "Actual Windows HeapAlloc/HeapFree contracts and valid/disjoint input/owned/output spans; memcpy23130/fill237e0 write only actual byte counts.",
+    "No arbitrary pointer corruption, external hooks or reentry; this contract does not assert malloc or every API succeeds."
+  ],
+  "remaining": "The6 indirectCALL targets inside the patched template and the parentC721 Vec/XMM source merge are separate proofs; this contract only bounds13086 caller writes and returned owned descriptor.",
+  "dependencies": {
+    "work\\alpme_analysis\\agent17\\decode17.py": "1bd5e7113042354936b18c655e79a39bcdf017e4755b814d240116321ff46aa0",
+    "work\\alpme_analysis\\semantic_closure_20261027\\loader\\loader_stub17_evidence.json": "84bf001c0363f469dd71f8b1206eaea3d4c6df6df4d12478111cce2a81a4e13b",
+    "work\\alpme_analysis\\semantic_closure_20261027\\loader\\remote_write17.bin": "1300a6985bad407cfdfd289a6b2161db80f5435647d181e47c3ae5aa54ca5653",
+    "work\\alpme_analysis\\semantic_closure_20261027\\round3_cleanup_finish\\block_fixpoint.py": "75f930314859438a7e3110cf3bc8dccab0c8072367feaf1a503f3f9c5d55a402",
+    "work\\alpme_analysis\\semantic_closure_20261027\\round3_cleanup_finish\\normal_tls_static.py": "16d7a4fa002f2d04b5c7d1c7eb9363ee63886cb1e02b2b12140703874ed71241",
+    "work\\alpme_analysis\\semantic_closure_20261027\\round3_strings\\browser_graph19.py": "5ce45d2809220444467a39fbeeccea951d19a1dfa7511186ca429774693f1e93",
+    "work\\alpme_analysis\\semantic_closure_20261027\\round3_strings\\constant_slices.py": "80c43b4665af4cb10d2f8e9b03dd6f968b0bd6fe9560b07749c758b8142312af",
+    "work\\alpme_analysis\\semantic_closure_20261027\\round5_outer_loaders\\loader_static.py": "8201519f05264ad9bc5341c7e6eeb31c1622055d57ce4d20ded74bcbd2e0b135",
+    "work\\alpme_analysis\\semantic_closure_20261027\\round6_outer17_calls\\continuation_20261029\\loader_graph.py": "484937c907226fc50892689037de7d8d0fea25d52b2daad55c484c144c19fff3",
+    "work\\alpme_analysis\\semantic_closure_20261027\\round6_outer17_calls\\continuation_20261029\\scalar_write_escape_audit.json": "e712bb032b562922bfaa470746095c405a059462dc28e2d20cf098a809f1028b",
+    "work\\alpme_analysis\\semantic_closure_20261027\\round6_outer17_payload_helper\\audit_13086.py": "7949c2cdf1391606251256562eef6d928897947b239c86b28ffb938374f4798d",
+    "work\\alpme_analysis\\semantic_closure_20261027\\round6_outer17_payload_helper\\caller_footprint_proof.json": "d8d0ec4a220b2c4e060d998e3a6ad4114d2d0f57467b0621c5a97142c09c0003",
+    "work\\alpme_analysis\\semantic_closure_20261027\\round6_outer17_payload_helper\\decode_template_metadata.py": "448287f3cea8fca39a11e92611d2f32633d0d235ceb1f8291bf2d66dd66c6dae",
+    "work\\alpme_analysis\\semantic_closure_20261027\\round6_outer17_payload_helper\\native_inventory.json": "699ad4291d84c1d4de7cc90f9cfc45f73cd860e243026d3c0c1398c6f8971a5b",
+    "work\\alpme_analysis\\semantic_closure_20261027\\round6_outer17_payload_helper\\original_native.asm.txt": "67c9a99d5346ba896cfafb1dd227ca2ddad10d25503977bcc91579b9e4e917b0",
+    "work\\alpme_analysis\\semantic_closure_20261027\\round6_outer17_payload_helper\\prove_caller_footprint.py": "5f328f82ceca0e71e48c4e369150c702b8005cb69877a1d4fa4a84fa31d58824",
+    "work\\alpme_analysis\\semantic_closure_20261027\\round6_outer17_payload_helper\\source_and_output_components.json": "c6acd824ce754dcb80662cdc5bd64f4415954b05bb2a8a95505c1db837934401",
+    "work\\alpme_analysis\\semantic_closure_20261027\\round6_outer17_payload_helper\\source_inventory.py": "97961e65496188d782e04b2d7dd63d86ff2bed042941bc7c2833eb92eebb6d6d",
+    "work\\alpme_analysis\\semantic_closure_20261027\\round6_outer17_payload_helper\\template_decode_metadata.json": "a634eb43242618a1f52f87e60b56668c35a8d548cb2403999064dbebcdeb41db",
+    "work\\alpme_analysis\\semantic_closure_20261027\\round6_outer17_payload_helper\\verify_helper.py": "3dbb4233819147d91054aa717dcfef647c448442cd60a84d07f9f96f39c9ba03"
+  },
+  "sample_execution": false,
+  "CPU_emulation": false,
+  "host_access": false,
+  "network": false
+}

@@ -1,6 +1,5 @@
 /* Original-byte analysis representations, grouped by native RVA.
- * Read the adjacent function index for qualified proof scope.
- * Not an original-source or buildable malware project.
+ * Qualified proof scope is recorded in functions.csv and evidence.
  */
 
 /* ===== SAMPLE 19_payload.dll.bin | RVA 0x1000 | partial_markers_remain ===== */
@@ -86194,89 +86193,93 @@ void FUN_0eca8e20(void)
 
 
 
-/* ===== SAMPLE 19_payload.dll.bin | RVA 0x78e30 | partial_markers_remain ===== */
-/* address=0eca8e30 rva=0x78e30 */
-
-/* WARNING: Function: __security_check_cookie replaced with injection: security_check_cookie */
+/* ===== SAMPLE 19_payload.dll.bin | RVA 0x78e30 | verified_native_unwind_code_data_partition_and_C ===== */
+/* ORIGINAL NATIVE CODE/DATA PARTITION. The33-byte selector maps to exactly5 original RVA targets. Native index guard and table-byte certificate exclude the old spurious case5. Local unwind-helper analysis C; transitive effects require separate evidence. Not original source, not a buildable project. Original instruction bytes unchanged. */
 
 void FUN_0eca8e30(undefined1 *param_1,longlong param_2)
 
 {
-  byte bVar1;
-  code *pcVar2;
+  code *pcVar1;
+  byte bVar2;
   longlong lVar3;
-  uint uVar4;
-  char *pcVar5;
+  byte bVar4;
+  uint uVar5;
   byte *pbVar6;
-  char *pcVar7;
-  char *pcVar8;
+  byte *pbVar7;
+  undefined1 *puVar8;
   uint uVar9;
-  undefined1 *puVar10;
-  byte bVar11;
-  ulonglong uVar12;
-  ulonglong uVar13;
+  int *in_R8;
+  ulonglong uVar10;
   
+  if (((longlong)*in_R8 & 4U) == 0) {
+    puVar8 = param_1;
+  }
+  else {
+    puVar8 = (undefined1 *)((ulonglong)(param_1 + in_R8[1]) & (longlong)-in_R8[2]);
+  }
   pbVar6 = (byte *)(*(longlong *)(param_2 + 8) +
                    (ulonglong)*(uint *)(*(longlong *)(param_2 + 0x10) + 8));
-  bVar11 = *pbVar6;
-  uVar12 = (ulonglong)bVar11;
-  bVar1 = pbVar6[3];
-  if (2 < (bVar11 & 7)) {
-    uVar9 = bVar1 & 0x1f;
-    puVar10 = (undefined1 *)(ulonglong)uVar9;
-    if ((bVar1 & 0x1f) != 0) {
-      if ((bVar11 & 0x40) == 0) {
+  bVar4 = pbVar6[3];
+  if ((*pbVar6 & 7) < 3) {
+    if ((bVar4 & 0xf) != 0) {
+LAB_0eca8fa1:
+      uVar10 = (ulonglong)bVar4 & 0xfffffffffffffff0;
+      goto LAB_0eca8fa5;
+    }
+  }
+  else {
+    uVar9 = bVar4 & 0x1f;
+    if ((bVar4 & 0x1f) != 0) {
+      if ((*pbVar6 & 0x40) == 0) {
         lVar3 = (ulonglong)uVar9 + 4;
       }
       else {
-        lVar3 = (longlong)puVar10 * 2 + 5;
+        lVar3 = (ulonglong)uVar9 * 2 + 5;
       }
-      pcVar7 = (char *)(pbVar6 + lVar3);
-      uVar4 = 0;
-      pcVar8 = pcVar7;
-      if (bVar1 >> 5 != 0) {
+      pbVar6 = pbVar6 + lVar3;
+      uVar10 = 0;
+      uVar5 = 0;
+      pbVar7 = pbVar6;
+      if (bVar4 >> 5 != 0) {
         do {
-          pcVar7 = pcVar8 + 3;
-          bVar11 = (byte)*pcVar8 >> 3;
-          if (bVar11 != 0) {
-            uVar12 = (ulonglong)bVar11;
-            if ((*pcVar8 & 2U) == 0) {
-              pcVar7 = pcVar8 + uVar12 + 6;
+          pbVar6 = pbVar7 + 3;
+          bVar2 = *pbVar7 >> 3;
+          if (bVar2 != 0) {
+            if ((*pbVar7 & 2) == 0) {
+              pbVar6 = pbVar7 + (ulonglong)bVar2 + 6;
             }
             else {
-              pcVar7 = pcVar7 + (ulonglong)bVar11 * 2 + 4;
+              pbVar6 = pbVar6 + (ulonglong)bVar2 * 2 + 4;
             }
           }
-          uVar4 = uVar4 + 1;
-          pcVar8 = pcVar7;
-        } while (uVar4 < bVar1 >> 5);
+          uVar5 = uVar5 + 1;
+          pbVar7 = pbVar6;
+        } while (uVar5 < bVar4 >> 5);
       }
-      uVar13 = 0;
-      if ((bVar1 & 0x1f) != 0) {
+      uVar5 = 0;
+      if ((bVar4 & 0x1f) != 0) {
         do {
-          bVar11 = *pcVar7;
-          if (bVar11 < 4) {
+          bVar4 = *pbVar6;
+          if (bVar4 < 4) {
 LAB_0eca8f4f:
-            if (bVar11 == 0) {
-              return;
+            if (bVar4 == 0) {
+              bVar4 = pbVar6[1];
+              goto LAB_0eca8fa1;
             }
-            if (0x20 < bVar11) goto switchD_0eca8f6f_caseD_4;
+            if (0x20 < bVar4) goto switchD_0eca8f6f_caseD_4;
           }
           else {
-            uVar12 = (ulonglong)(bVar11 & 0xf);
-            if (((byte)((bVar11 & 0xf) - 8) < 3) ||
-               (uVar12 = (ulonglong)(bVar11 & 7), (byte)((bVar11 & 7) - 4) < 4)) {
-              bVar11 = (byte)uVar12;
+            bVar2 = bVar4 & 0xf;
+            if (((byte)((bVar4 & 0xf) - 8) < 3) || (bVar2 = bVar4 & 7, (byte)((bVar4 & 7) - 4) < 4))
+            {
+              bVar4 = bVar2;
               goto LAB_0eca8f4f;
             }
-            if ((bVar11 & 0x3f) != 0x20) goto switchD_0eca8f6f_caseD_4;
-            bVar11 = 0x20;
+            if ((bVar4 & 0x3f) != 0x20) goto switchD_0eca8f6f_caseD_4;
+            bVar4 = 0x20;
           }
-          uVar4 = (&switchD_0eca8f6f::switchdataD_0eca8fd4)
-                  [*(byte *)((longlong)&UINT_0eca8fe8 + (ulonglong)bVar11)];
-                    /* WARNING (jumptable): Sanity check requires truncation of jumptable */
-                    /* WARNING: Could not find normalized switch variable to match jumptable */
-          switch(*(byte *)((longlong)&UINT_0eca8fe8 + (ulonglong)bVar11)) {
+                    /* WARNING: Switch is manually overridden */
+          switch(*(undefined1 *)((longlong)&UINT_0eca8fe8 + (ulonglong)bVar4)) {
           case 0:
             lVar3 = 2;
             break;
@@ -86292,30 +86295,26 @@ LAB_0eca8f4f:
           case 4:
 switchD_0eca8f6f_caseD_4:
             FUN_0eca8e20();
-            pcVar2 = (code *)swi(3);
-            (*pcVar2)();
-            return;
-          case 5:
-            *puVar10 = *param_1;
-            pcVar8 = puVar10 + (ulonglong)uVar4 + 0xec2fff1;
-            *pcVar8 = *pcVar8 + (char)(IMAGE_DOS_HEADER_0ec30000.e_magic + uVar4);
-            pcVar5 = IMAGE_DOS_HEADER_0ec30000.e_magic + uVar4;
-            if (*pcVar8 != '\0') {
-              pcVar5 = pcVar7;
-            }
-                    /* WARNING: Could not recover jumptable at 0x0ec5011a. Too many branches */
-                    /* WARNING: Treating indirect jump as call */
-            (*(code *)((longlong)*(int *)pcVar5 + uVar13))
-                      ((code *)((longlong)*(int *)pcVar5 + uVar13),pcVar7,uVar12,0x238);
+            pcVar1 = (code *)swi(3);
+            (*pcVar1)();
             return;
           }
-          pcVar7 = pcVar7 + lVar3;
-          uVar4 = (int)uVar13 + 1;
-          uVar13 = (ulonglong)uVar4;
-        } while (uVar4 < uVar9);
+          pbVar6 = pbVar6 + lVar3;
+          uVar5 = uVar5 + 1;
+        } while (uVar5 < uVar9);
       }
+      goto LAB_0eca8fa5;
     }
   }
+  uVar10 = 0;
+LAB_0eca8fa5:
+  if ((((ulonglong)(param_1 + uVar10) ^
+       *(ulonglong *)(puVar8 + ((longlong)*in_R8 & 0xfffffffffffffff8))) == DAT_0ecca440) &&
+     ((short)(((ulonglong)(param_1 + uVar10) ^
+              *(ulonglong *)(puVar8 + ((longlong)*in_R8 & 0xfffffffffffffff8))) >> 0x30) == 0)) {
+    return;
+  }
+  FUN_0eca8e20();
   return;
 }
 

@@ -1,0 +1,697 @@
+{
+  "status": "CARRY_NEXT4_23_CONTEXT_RETURN_LIFETIMES_CLOSED_5_EXACT_CAPTURE_GATES_AND_TLS_PACKET_DOMAINS_PENDING",
+  "native_execution": false,
+  "context_capture": {
+    "native_copies_covered": 28,
+    "source_lifetimes_PASS": 23,
+    "source_lifetimes_pending": 5,
+    "meaning": "Preserveswhatever32bytesactualsnapshotreturnedthroughrealnativecopies; doesnotassumesnapshotroot0orhooksempty. AllPASSwritesboundtoactualmallocsize/newobjectsandallinterveningcalleeoutputdirections, notminimumRSP/no-directwrite shortcuts."
+  },
+  "five_precise_context_source_frontiers": [
+    {
+      "version": "17",
+      "creator": "0xbd48",
+      "body": "0x3b298",
+      "snapshot_CALL": "0x1199f",
+      "preserved_source_span": [
+        1072,
+        32
+      ],
+      "exact_remaining_native_source_or_CALL_boundaries": [
+        {
+          "site": "0x119d8",
+          "field": "rdx",
+          "kind": "actual_scalar_or_pointer_source_lifetime_unclosed",
+          "purpose": "fresh_allocator_request_size",
+          "reads": [
+            [
+              "0x119be",
+              "0x96",
+              1
+            ]
+          ]
+        },
+        {
+          "site": "0x119d8",
+          "field": "rdx",
+          "kind": "actual_scalar_or_pointer_source_lifetime_unclosed",
+          "purpose": "actual_heap_writer_allocation_size",
+          "reads": [
+            [
+              "0x119be",
+              "0x96",
+              1
+            ]
+          ]
+        },
+        {
+          "site": "0x119ff",
+          "field": "rcx",
+          "kind": "actual_scalar_or_pointer_source_lifetime_unclosed",
+          "purpose": "native_heap_write_index",
+          "reads": [
+            [
+              "0x116fc",
+              "0x48",
+              8
+            ],
+            [
+              "0x1174b",
+              "0x48",
+              8
+            ],
+            [
+              "0x117aa",
+              "0x48",
+              8
+            ]
+          ]
+        },
+        {
+          "site": "0x11a61",
+          "field": "rax",
+          "kind": "actual_scalar_or_pointer_source_lifetime_unclosed",
+          "purpose": "native_heap_write_index",
+          "reads": [
+            [
+              "0x11a52",
+              "0x48",
+              8
+            ]
+          ]
+        },
+        {
+          "site": "0x11a84",
+          "target": "0x7e630",
+          "kind": "CALL_effect_needs_actual_pointer_direction_and_extent"
+        }
+      ]
+    },
+    {
+      "version": "17",
+      "creator": "0xbd48",
+      "body": "0x1e1c2",
+      "snapshot_CALL": "0x11ee5",
+      "preserved_source_span": [
+        1072,
+        32
+      ],
+      "exact_remaining_native_source_or_CALL_boundaries": [
+        {
+          "site": "0x11f14",
+          "field": "rcx",
+          "kind": "actual_scalar_or_pointer_source_lifetime_unclosed",
+          "purpose": "native_heap_write_index",
+          "reads": [
+            [
+              "0x114bd",
+              "0x48",
+              8
+            ],
+            [
+              "0x116fc",
+              "0x48",
+              8
+            ],
+            [
+              "0x1174b",
+              "0x48",
+              8
+            ],
+            [
+              "0x117aa",
+              "0x48",
+              8
+            ],
+            [
+              "0x11d35",
+              "0x48",
+              8
+            ],
+            [
+              "0x11daf",
+              "0x48",
+              8
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "version": "17",
+      "creator": "0xbd48",
+      "body": "0x542ab",
+      "snapshot_CALL": "0x12078",
+      "preserved_source_span": [
+        1072,
+        32
+      ],
+      "exact_remaining_native_source_or_CALL_boundaries": [
+        {
+          "site": "0x120af",
+          "field": "rax",
+          "kind": "actual_scalar_or_pointer_source_lifetime_unclosed",
+          "purpose": "native_heap_write_index",
+          "reads": [
+            [
+              "0x114bd",
+              "0x48",
+              8
+            ],
+            [
+              "0x116fc",
+              "0x48",
+              8
+            ],
+            [
+              "0x1174b",
+              "0x48",
+              8
+            ],
+            [
+              "0x117aa",
+              "0x48",
+              8
+            ],
+            [
+              "0x11d35",
+              "0x48",
+              8
+            ],
+            [
+              "0x11daf",
+              "0x48",
+              8
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "version": "19",
+      "creator": "0x4fef1",
+      "body": "0x2d092",
+      "snapshot_CALL": "0x5574e",
+      "preserved_source_span": [
+        1040,
+        32
+      ],
+      "exact_remaining_native_source_or_CALL_boundaries": [
+        {
+          "site": "0x557a2",
+          "field": "rdx",
+          "kind": "actual_scalar_or_pointer_source_lifetime_unclosed",
+          "purpose": "fresh_allocator_request_size",
+          "reads": [
+            [
+              "0x52710",
+              "0x50",
+              8
+            ],
+            [
+              "0x52c29",
+              "0x50",
+              8
+            ],
+            [
+              "0x53046",
+              "0x50",
+              8
+            ],
+            [
+              "0x53e34",
+              "0x50",
+              8
+            ],
+            [
+              "0x54d43",
+              "0x50",
+              8
+            ],
+            [
+              "0x551eb",
+              "0x50",
+              8
+            ],
+            [
+              "0x5520c",
+              "0x50",
+              8
+            ],
+            [
+              "0x55271",
+              "0x50",
+              8
+            ],
+            [
+              "0x5566a",
+              "0x97",
+              1
+            ],
+            [
+              "0x55707",
+              "0x50",
+              8
+            ],
+            [
+              "0x5578d",
+              "0x770",
+              8
+            ],
+            [
+              "0x557d5",
+              "0x50",
+              8
+            ],
+            [
+              "0x5666d",
+              "0x50",
+              8
+            ],
+            [
+              "0x5667f",
+              "0x50",
+              8
+            ]
+          ]
+        },
+        {
+          "site": "0x557a2",
+          "kind": "allocator_request_size_unresolved"
+        },
+        {
+          "site": "0x557a2",
+          "field": "rdx",
+          "kind": "actual_scalar_or_pointer_source_lifetime_unclosed",
+          "purpose": "actual_heap_writer_allocation_size",
+          "reads": [
+            [
+              "0x52710",
+              "0x50",
+              8
+            ],
+            [
+              "0x52c29",
+              "0x50",
+              8
+            ],
+            [
+              "0x53046",
+              "0x50",
+              8
+            ],
+            [
+              "0x53e34",
+              "0x50",
+              8
+            ],
+            [
+              "0x54d43",
+              "0x50",
+              8
+            ],
+            [
+              "0x551eb",
+              "0x50",
+              8
+            ],
+            [
+              "0x5520c",
+              "0x50",
+              8
+            ],
+            [
+              "0x55271",
+              "0x50",
+              8
+            ],
+            [
+              "0x5566a",
+              "0x97",
+              1
+            ],
+            [
+              "0x55707",
+              "0x50",
+              8
+            ],
+            [
+              "0x5578d",
+              "0x770",
+              8
+            ],
+            [
+              "0x557d5",
+              "0x50",
+              8
+            ],
+            [
+              "0x5666d",
+              "0x50",
+              8
+            ],
+            [
+              "0x5667f",
+              "0x50",
+              8
+            ]
+          ]
+        },
+        {
+          "site": "0x557bc",
+          "kind": "actual_mutable_object_extent_unclosed",
+          "producer": "0x557a2",
+          "spans": [
+            [
+              16,
+              8
+            ]
+          ],
+          "allocation_size": null
+        },
+        {
+          "site": "0x557c8",
+          "kind": "actual_mutable_object_extent_unclosed",
+          "producer": "0x557a2",
+          "spans": [
+            [
+              0,
+              16
+            ]
+          ],
+          "allocation_size": null
+        },
+        {
+          "site": "0x557cb",
+          "kind": "actual_mutable_object_extent_unclosed",
+          "producer": "0x557a2",
+          "spans": [
+            [
+              24,
+              8
+            ]
+          ],
+          "allocation_size": null
+        },
+        {
+          "site": "0x557e0",
+          "field": "rax",
+          "kind": "actual_scalar_or_pointer_source_lifetime_unclosed",
+          "purpose": "native_heap_write_index",
+          "reads": [
+            [
+              "0x557d5",
+              "0x50",
+              8
+            ]
+          ]
+        },
+        {
+          "site": "0x557e0",
+          "kind": "actual_mutable_object_extent_unclosed",
+          "producer": "0x557a2",
+          "spans": [
+            [
+              32,
+              8
+            ]
+          ],
+          "allocation_size": null
+        },
+        {
+          "site": "0x557e4",
+          "kind": "actual_mutable_object_extent_unclosed",
+          "producer": "0x557a2",
+          "spans": [
+            [
+              40,
+              8
+            ]
+          ],
+          "allocation_size": null
+        },
+        {
+          "site": "0x55810",
+          "target": "0x7cfd0",
+          "kind": "CALL_effect_needs_actual_pointer_direction_and_extent"
+        }
+      ]
+    },
+    {
+      "version": "19",
+      "creator": "0x4fef1",
+      "body": "0x618c8",
+      "snapshot_CALL": "0x55e71",
+      "preserved_source_span": [
+        1040,
+        32
+      ],
+      "exact_remaining_native_source_or_CALL_boundaries": [
+        {
+          "site": "0x55e8c",
+          "field": "rdx",
+          "kind": "actual_scalar_or_pointer_source_lifetime_unclosed",
+          "purpose": "fresh_allocator_request_size",
+          "reads": [
+            [
+              "0x55271",
+              "0x50",
+              8
+            ],
+            [
+              "0x55395",
+              "0x50",
+              8
+            ],
+            [
+              "0x55a27",
+              "0x50",
+              8
+            ],
+            [
+              "0x55a2e",
+              "0x50",
+              8
+            ],
+            [
+              "0x55b47",
+              "0x50",
+              8
+            ],
+            [
+              "0x55e76",
+              "0x18e",
+              2
+            ]
+          ]
+        },
+        {
+          "site": "0x55e8c",
+          "field": "rdx",
+          "kind": "actual_scalar_or_pointer_source_lifetime_unclosed",
+          "purpose": "actual_heap_writer_allocation_size",
+          "reads": [
+            [
+              "0x55271",
+              "0x50",
+              8
+            ],
+            [
+              "0x55395",
+              "0x50",
+              8
+            ],
+            [
+              "0x55a27",
+              "0x50",
+              8
+            ],
+            [
+              "0x55a2e",
+              "0x50",
+              8
+            ],
+            [
+              "0x55b47",
+              "0x50",
+              8
+            ],
+            [
+              "0x55e76",
+              "0x18e",
+              2
+            ]
+          ]
+        },
+        {
+          "site": "0x55eb7",
+          "field": "rdx",
+          "kind": "actual_scalar_or_pointer_source_lifetime_unclosed",
+          "purpose": "native_heap_write_index",
+          "reads": [
+            [
+              "0x55271",
+              "0x50",
+              8
+            ],
+            [
+              "0x55395",
+              "0x50",
+              8
+            ],
+            [
+              "0x55a27",
+              "0x50",
+              8
+            ],
+            [
+              "0x55a2e",
+              "0x50",
+              8
+            ],
+            [
+              "0x55b47",
+              "0x50",
+              8
+            ]
+          ]
+        }
+      ]
+    }
+  ],
+  "new_contextually_excluded_indirect_CALLs": [
+    {
+      "version": "17",
+      "CALL": "0x6cf1",
+      "reason": "OnlyzerolengthL pathcanenterremainderarm; end=P+(L<<4)==P forcesexit beforecallback. Exactnativeconditionproof independentofTLSroot contents."
+    },
+    {
+      "version": "19",
+      "CALL": "0xf900",
+      "reason": "OnlyzerolengthL pathcanenterremainderarm; end=P+(L<<4)==P forcesexit beforecallback. Exactnativeconditionproof independentofTLSroot contents."
+    }
+  ],
+  "newly_registered_real_hook_CALLBACK_source_gates": [
+    {
+      "version": "17",
+      "CALL": "5bee",
+      "status": "PENDING_ACTUAL_NONZERO_TLS_HOOK_SOURCE_DOMAIN",
+      "kind": "snapshotFnClone vtable+28"
+    },
+    {
+      "version": "17",
+      "CALL": "5c61",
+      "status": "PENDING_ACTUAL_NONZERO_TLS_HOOK_SOURCE_DOMAIN",
+      "kind": "snapshotFnClone vtable+28"
+    },
+    {
+      "version": "19",
+      "CALL": "473c4",
+      "status": "PENDING_ACTUAL_NONZERO_TLS_HOOK_SOURCE_DOMAIN",
+      "kind": "snapshotFnClone vtable+28"
+    },
+    {
+      "version": "19",
+      "CALL": "47435",
+      "status": "PENDING_ACTUAL_NONZERO_TLS_HOOK_SOURCE_DOMAIN",
+      "kind": "snapshotFnClone vtable+28"
+    },
+    {
+      "version": "17",
+      "CALL": "6c93",
+      "status": "PENDING_ACTUAL_NONZERO_TLS_HOOK_SOURCE_DOMAIN",
+      "kind": "consumerFnOnce vtable+18"
+    },
+    {
+      "version": "19",
+      "CALL": "f8a2",
+      "status": "PENDING_ACTUAL_NONZERO_TLS_HOOK_SOURCE_DOMAIN",
+      "kind": "consumerFnOnce vtable+18"
+    }
+  ],
+  "TLS_root_findings": {
+    "PE_template": "17TLS+8/19TLS+18 root0,guardbyte+8 initial1; initial0isnotpromotedtolifetimeinvariant.",
+    "direct_unwind_writer_inventory": "Root/guardcontentsdeliberatelyUNKNOWN. 17snapshot5b61+consumer6c21 and19snapshot47338+consumerf830 aretheidentifieddirectrootwriters; rootaddresschildarguments56602/3cfa5 mustbeauditedincludingstoredpointer/callbackregistration.",
+    "leaf_coverage": "Byte-offsetGS58overapprox274/300; outsidepdata17initializer2af30sixsites+50aaeleafonesite;19initializer6190sixsites.17_50aae exact22native readsTLS2d8scalarandwritesonlyincomingRCX; doesnotdirectlywriteTLS. IncomingRCXroot-aliascallgate remainsseparate.",
+    "not_proved": "No all-programTLSroot0/callbackempty theorem. Needcompletegenericregistration/fixedcallbackclearaliasboundary, otherGS/TEBselfpointerroutes andstatictemplate/derivedpointerescape completeness, plusall28capturedrecordlifetimes intoactualconsumer.",
+    "real_mutations": "TLSrootinstall/restore/clear, guardregistration, oldcontextArc/drop/free, nonzeroHookClone/FnOncecallbacksareactualeffects; nohelpercalledpure."
+  },
+  "native_closure_prefix": {
+    "bodies": 28,
+    "Packet_pointer_loads": 26,
+    "direct_affine_closure_borrow_frontier": "4readonlymemcpy0..160 (Packetfield180) +5argumentunusedstackprobes +6closure+8borrowsto6c21/f830. Vectorreadwidthsandclosure+constantaddressesincluded.",
+    "limit": "Saved originalclosurepointer slots andaliasescontainedinotherpayloadfieldsmuststillpreserveactualsourceidentitythroughallcallee/nativewriters. Thisinventorydoesnotaloneclosewholebody/objectnonescape."
+  },
+  "per_original_Packet_CALL_status": [
+    {
+      "version": "17",
+      "CALL": "1bd7d",
+      "status": "PENDING_COMPLETE_PACKET_SOURCE_SHARED_REFERENCE_AND_RESULT_WRITER_DOMAIN",
+      "actual_nonzero_target_set": null
+    },
+    {
+      "version": "17",
+      "CALL": "1be17",
+      "status": "PENDING_COMPLETE_PACKET_SOURCE_SHARED_REFERENCE_AND_RESULT_WRITER_DOMAIN",
+      "actual_nonzero_target_set": null
+    },
+    {
+      "version": "19",
+      "CALL": "44f6",
+      "status": "PENDING_COMPLETE_PACKET_SOURCE_SHARED_REFERENCE_AND_RESULT_WRITER_DOMAIN",
+      "actual_nonzero_target_set": null
+    },
+    {
+      "version": "19",
+      "CALL": "4590",
+      "status": "PENDING_COMPLETE_PACKET_SOURCE_SHARED_REFERENCE_AND_RESULT_WRITER_DOMAIN",
+      "actual_nonzero_target_set": null
+    }
+  ],
+  "additional_old_result_drop_sinks": [
+    {
+      "version": "17",
+      "CALL": "5685a",
+      "status": "PENDING_ACTUAL_PREPUBLICATION_PACKET_DOMAIN"
+    },
+    {
+      "version": "19",
+      "CALL": "92a2",
+      "status": "PENDING_ACTUAL_PREPUBLICATION_PACKET_DOMAIN"
+    }
+  ],
+  "creator_remaining": "SP48/SP50longcarryand54135SPd0 actual96/48/112-byteVecsource/objectgatesstillpending. New23contextreturncopiesdonotclosebeforeproducerorpostcapture/adapter/sharedPacketlifetime.",
+  "exception_scope": "Normalbodyunitpublicationsandno-localEHmetadataarenotacompleteErr/panic/unwindproof. No panic-abort inferred; realnonemptytargetsifconstructedmustbetraced. RootseparateCRTdecoderfalseedgesrepairisnotusedashookemptiness evidence.",
+  "clarification_of_prior_frozen3": "Pending53c3eelementlabel24Bwaswrong: actualREP12qword96B, independentlymatching22e1c elementsize96; related601eb48/657da112stack20 verified. Noearlierclosedproofdependedon24B. Oldsealunchanged.",
+  "files": {
+    "17_6608f_cfg.json": "ff7c61dab4fc36d9c73a484e7f36a5984f349611a8e492960e97b09484694fe9",
+    "19_4fa6e_cfg.json": "db695de9d0bd6fefb71193c22a5df88ac46f816bf42dcf751477a0e5fdab4abf",
+    "all_context_capture_lifetime_audit.json": "c7dc85c55e4b7b49843fd336146e830ccfc0a18cceb3be8d7724816ecfb76846",
+    "all_executable_gs58_inventory.json": "4045eb8a9c2526ad7b43649d4a441aa3f8deb62b1da81cb669cd673349c65245",
+    "audit_all_context_capture_lifetimes.py": "03cc7b06db67d53d9a5e1ac1f37f4b19761b3e40e4fb3cb0a07183f0290b54ef",
+    "aux_context_capture_lifetime_proof.json": "d6ca5e39d2eba583eb38634af75bb2e6b12d967cac4f49ed1e9a0455678bf31f",
+    "closure_prefix_range_inventory.json": "cd7ba70cea7dc0ab001ba52dcb3df0d7bbbf4ad9d7b847da71ac99f797553db0",
+    "context_capture_copy_inventory.json": "17dfe2565f351e7b93a3fa7a50de1fe0f02fc3c7c3734659b2fded278da532fc",
+    "continuation_receipt.py": "4f3668c3304b6fdd229d8a22cd66c9b83e5b7ad57b751d40e15add2a8cb30464",
+    "inspect_closure_prefix_ranges.py": "3851f66a032082d0d7cd04e01999b798711f58c5a506a60de0bed09dc26ad9d8",
+    "inspect_tls_leaf_gap.py": "538bf7bb6eca6b9ebb55352e67a28c9c5961f2dcec8c1db43b038a71a497c775",
+    "inspect_tls_root_children.py": "b00919582808138b5c96c7e4d3982b6cfbca942f34a9fe5f3c21ea64a4ccfc8a",
+    "inspect_vec_and_packet_frontiers.py": "d918d047046961ab4fed8c40ab49622297c802fcf73229366ce68b56a04fca4a",
+    "inventory_context_capture_copies.py": "6a102e820cf864231a2818422b9f7fae1876e4f834702a9e3330718d1ec819af",
+    "inventory_tls_context_producers.py": "783a3460d525254198f2a0cb8664782bd939519fd9f43cc7683bc56e8e65581f",
+    "inventory_tls_hook_roots.py": "0fa9263d7a72ec8035c7e5278e39ec634496a2909ed1a44e65345425c928c59c",
+    "prove_aux_context_capture_lifetimes.py": "ab499ca11796a9a9a7724154ad5e05fa369ee168a5d09881094f6fca988051c5",
+    "prove_aux_creator_cfg.py": "3c692215056d2c2044f291ac2d00d76ff6fd353bb423b1389963ca88da94018d",
+    "prove_tls_consumer_zero_drop.py": "54cbc9f106f7b5a30d11567996d08cc7149a54f36036579748bd769bad8f1235",
+    "scan_all_executable_gs58.py": "cfdd3b04b49ed81e645ec94afc0be8bca111a51860ed41c428383d6c95cb4d86",
+    "tls_consumer_remainder_exclusion.json": "b67e94ed51ac74cd6a340167919eb4a1ff73617da6617bea2b21c392cd44c69a",
+    "tls_context_producer_inventory.json": "950e2c7d84adaa15ef6b25ac21767dfa9a484e6c07724a99a85bcf9ba8622c2e",
+    "tls_hook_root_inventory.json": "5d4f55f8d8a937124c054f79c3dd169c17a0793c6082a23c780eb8204cd15aaf",
+    "tls_leaf_gap_inventory.json": "bce617aca131492eab23740c3dbb11d4e3f6069bf84f7baea782b143d7c2f925",
+    "tls_root_child_inventory.json": "8e1ff89d2b78658e9fb7c0638c0df72229098145f821d3d1d368a5b46c28f0f5",
+    "tls_root_children.asm.txt": "381d98fdccdc75eb799a20f23ac3e7da9a06c2e143374062f4d80e15c2aa6218",
+    "vec_packet_frontier_inventory.json": "2b15d14d124c6aa4dc9f074be72a8e7c4594079c53e0baaf01dfaa828f0ed3a7",
+    "verify_carry_next4.py": "606b061f8b8bda0eb2a45ff74f03efc219e5c3a92ed4f7f3bdd2e9797fa6b7c8"
+  },
+  "prior_frozen_checkpoints_unchanged": true
+}

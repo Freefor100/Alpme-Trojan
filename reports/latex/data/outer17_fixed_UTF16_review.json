@@ -1,0 +1,145 @@
+{
+  "status": "VERIFIED_ADDITIVE_UTF16_FIXED_EVENT_AND_VOLUME_PARAMETERS_NORMAL_OWNED_ABI",
+  "source_sha256": "2e1363e7220befe88eeb2b9b9490640f9834be0dd789c01471a69de8f69e6dfa",
+  "event": {
+    "site": {
+      "rva": "0x27ed",
+      "asm": "call qword ptr [rsp + 0xb0]",
+      "bytes": "ff9424b0000000"
+    },
+    "target": "kernel32.dll!CreateEventW",
+    "R9_text": "unctionresidual\u0000",
+    "R9_UTF16_LE_hex": "75006e006300740069006f006e0072006500730069006400750061006c000000",
+    "codeunits_including_NUL": 16,
+    "RCX": 0,
+    "EDX": 0,
+    "R8D": 1
+  },
+  "volume": {
+    "site": {
+      "rva": "0x32ee",
+      "asm": "call r12",
+      "bytes": "41ffd4"
+    },
+    "target": "kernel32.dll!GetVolumeInformationW",
+    "RCX_effective_text": "D:\\",
+    "RCX_UTF16_LE_hex": "44003a005c000000",
+    "codeunits_including_NUL": 4
+  },
+  "native_equations": {
+    "event": 125,
+    "volume": 53
+  },
+  "helper_native_CFGs": [
+    {
+      "entry": "0x146e3",
+      "native": 51,
+      "reached": 51
+    },
+    {
+      "entry": "0x965c",
+      "native": 39,
+      "reached": 39
+    },
+    {
+      "entry": "0x23eef",
+      "native": 62,
+      "reached": 62
+    }
+  ],
+  "evidence": [
+    {
+      "path": "work\\alpme_analysis\\semantic_closure_20261027\\round6_outer17_calls\\followup_20261029\\event_literal_control_proof.json",
+      "sha256": "419d9fb8d737812d1cf82134df6f1f82c3cf40d1468d97108fa7fb71aa3f9eec",
+      "bytes": 64775
+    },
+    {
+      "path": "work\\alpme_analysis\\semantic_closure_20261027\\round6_outer17_calls\\followup_20261029\\event_UTF16_object_proof.json",
+      "sha256": "c4afec80f0e7cc6dc9a0c44e8038d153a79aca6e959f13ba9845cf414dcb3c9a",
+      "bytes": 10448
+    },
+    {
+      "path": "work\\alpme_analysis\\semantic_closure_20261027\\round6_outer17_calls\\followup_20261029\\volume_UTF16_object_proof.json",
+      "sha256": "dfe1dd1c7b462c7c11472526bf6b53d166be138a46aafe250dce1c74cec1cd52",
+      "bytes": 39550
+    },
+    {
+      "path": "work\\alpme_analysis\\semantic_closure_20261027\\round6_outer17_calls\\followup_20261029\\utf16_helper_native_inventory.json",
+      "sha256": "94add95781560c9aa0be45abf6e6f1ef9a8059dc01ca49ff551f330cf82eafe0",
+      "bytes": 23851
+    },
+    {
+      "path": "work\\alpme_analysis\\semantic_closure_20261027\\round6_outer17_calls\\followup_20261029\\event_utf16_liveness.json",
+      "sha256": "90573250e00805b392faba6f0730ade6e7b1299d559a73ad9347f017e80ac504",
+      "bytes": 10782
+    },
+    {
+      "path": "work\\alpme_analysis\\semantic_closure_20261027\\round6_outer17_calls\\followup_20261029\\volume_utf16_liveness.json",
+      "sha256": "e48c08cd293f648e56a9ad9d86b3864869c87be72ac4529e9ea31c22b2cd13a5",
+      "bytes": 23950
+    },
+    {
+      "path": "work\\alpme_analysis\\semantic_closure_20261027\\round6_outer17_calls\\followup_20261029\\UTF16_delta_zh.md",
+      "sha256": "6b2a66f18d9bb7315f4a48f113ade7c871d315b804046b76ba9a1d3d85d5559f",
+      "bytes": 3627
+    }
+  ],
+  "sources": [
+    {
+      "path": "work\\alpme_analysis\\semantic_closure_20261027\\round6_outer17_calls\\followup_20261029\\utf16_graph.py",
+      "sha256": "580a91e384fc01c3339c2be063b48d6bb420504bfd4f90937b39b3ec0612577e",
+      "bytes": 1404
+    },
+    {
+      "path": "work\\alpme_analysis\\semantic_closure_20261027\\round6_outer17_calls\\followup_20261029\\inventory_utf16_liveness.py",
+      "sha256": "2ac3f1867c03b976a3e071c9040aa80600ddd7f9e41335cbae506446700ca9fa",
+      "bytes": 1039
+    },
+    {
+      "path": "work\\alpme_analysis\\semantic_closure_20261027\\round6_outer17_calls\\followup_20261029\\inventory_utf16_helpers.py",
+      "sha256": "374d99a1fb8fcaecd708ef5b2b278827cbb170f4444d7887f4e2297b9cef6334",
+      "bytes": 1100
+    },
+    {
+      "path": "work\\alpme_analysis\\semantic_closure_20261027\\round6_outer17_calls\\followup_20261029\\inventory_volume_liveness.py",
+      "sha256": "68bfe44375acbda40525ff6bd59b45c4aea05440d64ecfe51b20765bc03ba84f",
+      "bytes": 863
+    },
+    {
+      "path": "work\\alpme_analysis\\semantic_closure_20261027\\round6_outer17_calls\\followup_20261029\\prove_event_literal_controls.py",
+      "sha256": "d4d0d11b2e3e8a93e685bbb45a6af30aacd6cbbd066e8fadbcc63d72920cc412",
+      "bytes": 4818
+    },
+    {
+      "path": "work\\alpme_analysis\\semantic_closure_20261027\\round6_outer17_calls\\followup_20261029\\prove_event_utf16_object.py",
+      "sha256": "0c9516cee83bcdf5ba9ce88fad98cbffdb185d16eb6be0fa685920ae2a49afe1",
+      "bytes": 6652
+    },
+    {
+      "path": "work\\alpme_analysis\\semantic_closure_20261027\\round6_outer17_calls\\followup_20261029\\prove_volume_utf16.py",
+      "sha256": "015daffbc5d4bc776d36cef9f6645a8398f630ea6ad1c339e4a2a6ff54d404be",
+      "bytes": 7314
+    },
+    {
+      "path": "work\\alpme_analysis\\semantic_closure_20261027\\round6_outer17_calls\\followup_20261029\\verify_UTF16_delta.py",
+      "sha256": "3d84f23a2432468e70cb1508d16a88df9ec0bd63ce6fd71a7e9403f7d3dc24e6",
+      "bytes": 3453
+    }
+  ],
+  "prior_sealed_hashes": {
+    "work\\alpme_analysis\\semantic_closure_20261027\\round6_outer17_calls\\continuation_20261029\\continuation_verification_receipt.json": "d740aa80097e0cefcd68595983ea34efdc2eac58073a7333839aefdcac8d95e7",
+    "work\\alpme_analysis\\semantic_closure_20261027\\round6_outer17_calls\\continuation_20261029\\bd8e_CALL_final_checkpoint.json": "3647d99851b89c4c2d8094e36db4b6120bafceb007f33f9049d99dfef5204809",
+    "work\\alpme_analysis\\semantic_closure_20261027\\round6_outer17_calls\\continuation_20261029\\main_replay\\call_targets_checkpoint_receipt.json": "edb104d7b622473c909193591cee3747370e8140c0b98e0aba26680f9fbb4845",
+    "work\\alpme_analysis\\semantic_closure_20261027\\round6_outer17_calls\\continuation_20261029\\TerminateProcess_route_proof.json": "573e4a354746adf5ea6c0d0ec182ae65af2f9a0929cdaae2d8c0afcdaeb69b21"
+  },
+  "prior_sealed_unchanged": true,
+  "verification_mode": "Read existing outputs and dependency hashes only. Individual static analyzers were already freshly run to produce these artifacts; this verifier starts no analyzer subprocess and does not rerun the rejected old --rerun flow.",
+  "remaining": [
+    "Normal owned Vec/String/Once/Win64/API object contracts remain explicit conditions.",
+    "ntdll outer candidate/function-range/one-or-two-hop caller filters and private-symbol identity remain separate pending scope."
+  ],
+  "sample_execution": false,
+  "CPU_emulation": false,
+  "host_APIs_invoked": false,
+  "network_to_sample": false
+}

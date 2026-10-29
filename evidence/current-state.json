@@ -1,0 +1,613 @@
+{
+  "status": "ACTIVE_INVESTIGATION_VERIFIED_CHECKPOINT_NOT_WHOLE_PROGRAM_COMPLETION",
+  "client_date": "2026-10-29",
+  "published_snapshot": {
+    "version": "v3.3",
+    "commit": "3e1fa216486f29ab2055bf9adf8ef3b07d235966",
+    "includes_this_checkpoint": false
+  },
+  "prior_authority": "outputs/alpme-current-evidence-20261028.json",
+  "superseded_prior_statements": [
+    "19outer14CALLs all pending",
+    "No host-browser memory access in the whole20261028 round",
+    "No live Chrome object match",
+    "WITHDRAWN:Normal successful17 injection terminates shell owner; exact ADD r,r makes this code unreachable."
+  ],
+  "verified": {
+    "outer19": {
+      "counts": {
+        "native_candidates": 14,
+        "named_reached_API_calls": 10,
+        "actual_constructed_error_callback": 1,
+        "internal_return0_target": 1,
+        "actual_error_context_unreachable_callback": 1,
+        "cold_call_with_symbolic_source_but_no_concrete_API_name": 1
+      },
+      "manifest_rows_checked": 45,
+      "normal_site_classifications": 13,
+      "cold_name_gap": "0xcefe"
+    },
+    "outer17_bd8e": {
+      "baseline": {
+        "normal_entry_reached": 6129,
+        "native_instructions": 6160,
+        "normal_entry_finite_computed_JMPs": 302,
+        "computed_JMPs_total": 304,
+        "cold_native_instructions": 31,
+        "fixed_point_edge_checks": 950
+      },
+      "latest_exact_self_add": {
+        "path": "work\\alpme_analysis\\parent_review_20261029\\bd8e_parent_verified_self_add_plan.json",
+        "sha256": "7662c3ca35b0291039e8efd0228e62de666fe4b402cacb82b9e09d9a5ef8f2d9",
+        "source_agent_plan": "work\\alpme_analysis\\semantic_closure_20261027\\round6_outer17_calls\\continuation_20261029\\bd8e_self_add_only_plan.json",
+        "elapsed_time_field_excluded": true,
+        "reached": 6077,
+        "native": 6160,
+        "computed_JMPs": 301,
+        "block_states": 649,
+        "verified_edges": 939,
+        "additional_context_cold": 52
+      }
+    },
+    "cleanup_carry_next3": {
+      "modules_replayed": 19,
+      "generated_outputs_checked": 23,
+      "files_checked": 43,
+      "dependencies_checked": 22,
+      "HTTP": {
+        "native": 1454,
+        "all_native_stores": 158,
+        "codec_literals": 18,
+        "native_resolver_bindings": 9,
+        "actual_API_calls": 13,
+        "source_reads": 133,
+        "source_bytes": 194,
+        "unknown_calls": 0,
+        "source_issues": 0,
+        "caller_original_RCX_write_span": [
+          0,
+          263
+        ],
+        "exact32B_result_extent_proved": false,
+        "conditional_NULL_alternative": "Native5e8eTEST/5e97CMOVE sets SP88 zero onlyifConnectreturns0; nonrelationalOrigin wasrefinedtoNULL, noadditionalnonzerofunctiontargetclaimed. NoassertionallNULLpathsareunreachable."
+      },
+      "Session": {
+        "native": 272,
+        "computed_JMP": 6,
+        "codec_literals": 4,
+        "APIs": 2,
+        "source_reads": 23,
+        "source_bytes": 64,
+        "incoming_GPR_values_consumed": 0,
+        "caller_private_destination": false,
+        "real_effects": "Ownframe/ownedalloc/cache/TLS/sessioneffects; actualOnce2093 clearsSP38eightbytes andwritesglobal98448/+8 withstate98458, notpure."
+      }
+    },
+    "chrome_historical_readonly": {
+      "pid": 25852,
+      "version": "156.0.8078.48",
+      "matching_nodes": 2,
+      "tags": {
+        "v10": 1,
+        "v20": 1
+      },
+      "encrypted_field_histogram": {
+        "1": 2
+      },
+      "full_access_right_check_receipt": {
+        "path": "work\\alpme_analysis\\chrome_readonly_layout_20261028\\access_rights_PID25852.json",
+        "sha256": "8a61a125891ed707d557a2f1920164733fd1ef65cfcf25137a8885195c7a670f"
+      },
+      "loaded_public_code_bytes": 2084,
+      "target_functions_executed": false,
+      "key_extraction": false
+    },
+    "chrome_separate_policy_snapshot": {
+      "status": "DOCUMENTED_THREAD_CONTEXT_VALIDATION_GATE_SEPARATE_FROM_READ_ACCESS",
+      "observation_pid": 24860,
+      "observation_date": "2026-10-28",
+      "flags": {
+        "DynamicCode": "0x0",
+        "CFG": "0x1",
+        "UserShadowStack": "0x105"
+      },
+      "meaning_zh": "该快照启用了影子栈和线程指令指针校验，未开启动态代码全面禁止。样本的SetThreadContext步骤会进入指令指针校验；读取堆内存、取得进程句柄与改变线程执行地址属于不同检查。",
+      "native_flow_zh": "19:1d177的远程分配结果存SP38；1c525/1c530计算分配基址+0x200，1af05写入CONTEXT(ownSP8a0)的Rip字段+0xf8，1af43提交。随后保留BOOL返回值，先ResumeThread，再在1af62与0比较。此处的失败返回并非被当作成功。",
+      "exact_remaining_zh": "PID24860的策略快照与PID25852的对象、权限快照分开记录。尚无这次目标上原生SetThreadContext返回值或数据库认证结果，故不把保护标志单独解释为取钥成功或必定失败。",
+      "sources": [
+        "https://learn.microsoft.com/en-us/windows/win32/api/winnt/ns-winnt-process_mitigation_user_shadow_stack_policy",
+        "https://learn.microsoft.com/en-us/windows/win32/api/processthreadsapi/nf-processthreadsapi-setprocessdynamicehcontinuationtargets",
+        "https://learn.microsoft.com/en-us/cpp/build/reference/guard-enable-eh-continuation-metadata?view=msvc-170"
+      ],
+      "mitigation_changes": false,
+      "target_thread_operations": false
+    },
+    "code_data_partitions": {
+      "functions": 6,
+      "computed_JMPs": 14,
+      "corrected_C": 2,
+      "C_diagnostic_after": 52,
+      "old_wrong_clean_C_explicitly_overridden": true,
+      "spurious_data_CALLs_removed": 1
+    },
+    "outer17_shell_process_termination": {
+      "status": "NORMAL_ENTRY_UNREACHABLE",
+      "API_present_in_cold_code": "TerminateProcess(handle,0)",
+      "cause": "C3FD ADD ECX,ECX hasrealBoolean result0or2; oldcartesian value1 was spurious. C852 andC898 become contextcold.",
+      "withdraws_old_parent_path_inference": true,
+      "parent_fresh_replay": true,
+      "typed_SP58_assumption_used": false,
+      "host_test_performed": false
+    },
+    "outer17_template_helper": {
+      "normal_CFG": {
+        "native": 1352,
+        "reached": 1352,
+        "computed_JMPs": 79,
+        "unresolved": 0
+      },
+      "writers": 114,
+      "calls": 20,
+      "caller_output_span": [
+        0,
+        24
+      ],
+      "returned_capacity": 395,
+      "returned_length": 395,
+      "template": {
+        "total_bytes": 395,
+        "normal_code_bytes": 363,
+        "normal_instructions": 101,
+        "post_RET_padding_bytes": 32,
+        "indirect_CALL_sites": 6,
+        "patch_fields": 9,
+        "patch_bytes": 60,
+        "unchanged_capture_bytes_compared": 335
+      },
+      "normal_conditions": [
+        "Normal original PE/TLS initialization and the fixed scalar-cell write/escape audit.",
+        "Valid compiler-produced owned byteVec/allocationResult and grow965c->98aa semantics: grows/reallocates owned backing and updates24B header; allocationResult146e3 writes atmost32B plus fresh allocation.",
+        "Actual Windows HeapAlloc/HeapFree contracts and valid/disjoint input/owned/output spans; memcpy23130/fill237e0 write only actual byte counts.",
+        "No arbitrary pointer corruption, external hooks or reentry; this contract does not assert malloc or every API succeeds."
+      ]
+    },
+    "cleanup_carry_next4": {
+      "modules_replayed": 13,
+      "outputs_compared": 15,
+      "files": 29,
+      "input_dependencies": 101,
+      "context_capture_lifetimes_PASS": 23,
+      "context_capture_lifetimes_pending": 5,
+      "dead_remainder_hook_calls": 2,
+      "real_hook_source_gates_pending": 6
+    },
+    "outer17_CALL_delivery": {
+      "native_indirect_CALL_sites": 15,
+      "normal_entry_CALL_sites": 14,
+      "normal_named_API": 10,
+      "normal_typed_error_callbacks": 4,
+      "cold_CALLs": 1,
+      "all_native_resolver_sites": 49,
+      "normal_resolver_sites": 48,
+      "cold_resolver_sites": 1
+    },
+    "outer17_fixed_UTF16_parameters": {
+      "event": {
+        "site": {
+          "rva": "0x27ed",
+          "asm": "call qword ptr [rsp + 0xb0]",
+          "bytes": "ff9424b0000000"
+        },
+        "target": "kernel32.dll!CreateEventW",
+        "R9_text": "unctionresidual\u0000",
+        "R9_UTF16_LE_hex": "75006e006300740069006f006e0072006500730069006400750061006c000000",
+        "codeunits_including_NUL": 16,
+        "RCX": 0,
+        "EDX": 0,
+        "R8D": 1
+      },
+      "volume": {
+        "site": {
+          "rva": "0x32ee",
+          "asm": "call r12",
+          "bytes": "41ffd4"
+        },
+        "target": "kernel32.dll!GetVolumeInformationW",
+        "RCX_effective_text": "D:\\",
+        "RCX_UTF16_LE_hex": "44003a005c000000",
+        "codeunits_including_NUL": 4
+      }
+    },
+    "ntdll_internal_target": {
+      "pinned_file_version": "10.0.26100.9711",
+      "PE_sha256": "651ac9041af8e6b5ebd331d53163244c0a27d36d1433f0f15cac1f28c5f2e82c",
+      "selected_RVA": "0x5bf40",
+      "symbol": "LdrpHandleTlsData",
+      "all_pdata": 5648,
+      "eligible_callers": 2806,
+      "mode_A_candidates": 104,
+      "accepted_candidates": 1,
+      "PDB_sha256": "c93f4614aa6f40fe370d40eb7ee9589ca0eda170ef2d704b5d278da71c02c249",
+      "GUID": "C031D45B0DA18A6E74D06ED6AB2DD9E1",
+      "PE_age": 1,
+      "DBI_age": 1,
+      "Info_age": 4,
+      "all15_section_headers_byte_equal": true,
+      "selected_helper_symbols": [
+        {
+          "name": "LdrpHandleTlsData",
+          "flags": 2,
+          "segment": 1,
+          "section_offset": "0x5af40",
+          "record_offset": "0x34c80",
+          "RVA": "0x5bf40",
+          "exact_pdata_begin": true
+        },
+        {
+          "name": "LdrpAllocateTlsEntry",
+          "flags": 2,
+          "segment": 1,
+          "section_offset": "0x5c4b4",
+          "record_offset": "0x467c",
+          "RVA": "0x5d4b4",
+          "exact_pdata_begin": true
+        },
+        {
+          "name": "LdrpFindTlsEntry",
+          "flags": 2,
+          "segment": 1,
+          "section_offset": "0x59bb0",
+          "record_offset": "0x26a48",
+          "RVA": "0x5abb0",
+          "exact_pdata_begin": false
+        },
+        {
+          "name": "LdrpGetNewTlsVector",
+          "flags": 2,
+          "segment": 1,
+          "section_offset": "0x59c3c",
+          "record_offset": "0x31b90",
+          "RVA": "0x5ac3c",
+          "exact_pdata_begin": true
+        },
+        {
+          "name": "LdrpQueueDeferredTlsData",
+          "flags": 2,
+          "segment": 1,
+          "section_offset": "0x59bdc",
+          "record_offset": "0x33e64",
+          "RVA": "0x5abdc",
+          "exact_pdata_begin": true
+        },
+        {
+          "name": "LdrpAcquireTlsIndex",
+          "flags": 2,
+          "segment": 1,
+          "section_offset": "0x5df90",
+          "record_offset": "0x45724",
+          "RVA": "0x5ef90",
+          "exact_pdata_begin": true
+        },
+        {
+          "name": "LdrpGenericExceptionFilter",
+          "flags": 2,
+          "segment": 1,
+          "section_offset": "0x1184d0",
+          "record_offset": "0x3661c",
+          "RVA": "0x1194d0",
+          "exact_pdata_begin": true
+        }
+      ],
+      "behavior_review": "Parent freshly replayed29-file/11-dependency bundle: normal340/EH362of363native,19directCALL/12targets,1INT3padding, native-anchored TLS registration/cleanup/rollback and caller ignoresNTSTATUS."
+    },
+    "ntdll_TLS_semantics": {
+      "main": {
+        "native": 363,
+        "normal": 340,
+        "EH_inclusive": 362,
+        "EH_only": 22,
+        "padding": 1,
+        "direct_CALL": 19,
+        "distinct_targets": 12,
+        "indirect_CALL": 0,
+        "computed_JMP": 0
+      },
+      "own_files": 29,
+      "external_dependencies": 11,
+      "remaining_system_boundaries": [
+        "Kernel implementation of NtSetInformationProcess class0x23 and exact undocumented record flag names/token type are outside this offline user-mode slice. Caller reads are complete; returned memory is modeled as INOUT.",
+        "Public heap/copy/memset/SRW/bitmap routines are semantic cut points; no arbitrary corrupted-pointer, allocator, or kernel proof is asserted.",
+        "RtlSetBits/RtlClearBits exact public starts have split .pdata fragments; their tiny first fragments are not claimed as full native function coverage.",
+        "Raw TLS allocation uses EndRaw-StartRaw and has no explicit SizeOfZeroFill(+TLSdir0x20 / record0x30) add/zero operation in this slice. Do not infer universal full PE TLS conformance or a defect without surrounding loader contract.",
+        "Runtime coherent bitmap/thread state and valid mapped-image/LDR input are normal ABI conditions. Huge UINT32 counts, wraparound TLS sizes and corrupted pointers are not proven safe.",
+        "Other consumers which eventually reclaim the deferred table and full logging/debugger/termination implementations are outside this necessary-callee scope.",
+        "This installed ntdll build is version/hash pinned. Selection and behavior are not generalized to all target-machine ntdll versions and do not prove that the malware ran successfully."
+      ],
+      "parent_fresh_replay_exit": 0
+    },
+    "cleanup_carry_next5_to7": {
+      "status": "PASS_PARENT_FRESH_STATIC_REPLAY_CLEANUP_NEXT5_NEXT6_NEXT7",
+      "checks": [
+        {
+          "status": "PASS_CARRY_NEXT5_NATIVE_REPLAY",
+          "manifest_sha256": "07c64ea888fe2d7f44ea958f560ab8d3c02722582e0802fb4610d370ea444d82",
+          "files": 39,
+          "input_dependencies": 30,
+          "prior": "PASS_OLD172_PLUS23_NEXT14_PLUS12_NEXT2_18_PLUS19_NEXT3_43_PLUS22_NEXT4_29_PLUS101_AND_CAVEAT_UNCHANGED",
+          "native_modules_replayed": 18,
+          "generated_outputs_checked": 19,
+          "new_source_gates": 6,
+          "context_return_lifetimes_PASS": 23,
+          "context_return_lifetimes_pending": 5,
+          "real_hook_sources_pending": 6,
+          "Packet_CALLs_pending": 4,
+          "old_result_drop_pending": 2,
+          "checkpoint": 5,
+          "reused_completed_parent_log": true,
+          "replay_log_sha256": "4e0e3bcc33e4ef152e859965a4aa668227c992e0110399ce0e12a1fe733bd718"
+        },
+        {
+          "status": "PASS_CARRY_NEXT6_NATIVE_REPLAY",
+          "manifest_sha256": "8dc869ba54b216ca028ba55c115629443639928257766be3e78e59069ac43e9b",
+          "files": 12,
+          "input_dependencies": 20,
+          "prior": "PASS_ALL_PRIOR_FROZEN_FILES_AND_DEPENDENCIES_UNCHANGED_THROUGH_NEXT5_39_PLUS30",
+          "native_modules_replayed": 5,
+          "generated_outputs_checked": 6,
+          "source52710_states": 1831,
+          "next_two_source_gates_pending": 2,
+          "next_new_real_CALLs": 9,
+          "Packet_CALLs_pending": 4,
+          "old_result_drop_pending": 2,
+          "real_hook_sources_pending": 6,
+          "context_capture_pending": 5,
+          "checkpoint": 6,
+          "reused_completed_parent_log": false,
+          "replay_log_sha256": "52735402ac2b7a831055cd3377ea512d7d76afa7d70b038d7e105f2dac65068d"
+        },
+        {
+          "status": "PASS_CARRY_NEXT7_NATIVE_REPLAY",
+          "manifest_sha256": "0cb61edf0472b3ec3352fed5ae2c2f05d5f459b4b2540a7d8ecbf625b8f4d3e1",
+          "files": 10,
+          "input_dependencies": 19,
+          "prior": "PASS_ALL_PRIOR_FROZEN_FILES_AND_DEPENDENCIES_UNCHANGED_THROUGH_NEXT6_12_PLUS20",
+          "native_modules_replayed": 4,
+          "generated_outputs_checked": 5,
+          "new_source_gates": 3,
+          "next_native_CALLEE_source_gates": 26,
+          "next_native_mutable_roots": 14,
+          "Packet_CALLs_pending": 4,
+          "old_result_drop_pending": 2,
+          "real_hook_sources_pending": 6,
+          "context_capture_pending": 5,
+          "checkpoint": 7,
+          "reused_completed_parent_log": false,
+          "replay_log_sha256": "4bede268f4af95c4934cd3d60db9c2d3caa77acddcff71683a441d67694a479e"
+        }
+      ],
+      "original_sample_execution": false,
+      "host_process_access": false,
+      "network": false,
+      "frozen_outputs_rewritten": false
+    },
+    "cleanup_carry_next8": {
+      "parent_replay": {
+        "status": "PASS_PARENT_FRESH_STATIC_REPLAY_CLEANUP_NEXT8",
+        "checks": [
+          {
+            "status": "PASS_CARRY_NEXT8_NATIVE_REPLAY",
+            "manifest_sha256": "5684b5cb24faa367c9ad9ef4d3856671429e013d1f070a11055e0b31daac2f71",
+            "files": 25,
+            "input_dependencies": 20,
+            "prior": "PASS_ALL_PRIOR_FROZEN_FILES_AND_DEPENDENCIES_UNCHANGED_THROUGH_NEXT7_10_PLUS19",
+            "native_modules_replayed": 11,
+            "generated_outputs_checked": 13,
+            "source_carries": 23,
+            "SPd0_lifetime_states": 460,
+            "three_Vec_element_bytes": [
+              96,
+              48,
+              112
+            ],
+            "three_Vec_real_heap_stores": 14,
+            "Packet_CALLs_pending": 4,
+            "old_result_drop_pending": 2,
+            "real_hook_sources_pending": 6,
+            "context_capture_pending": 5,
+            "checkpoint": 8,
+            "reused_completed_parent_log": false,
+            "replay_log_sha256": "0b31807bd3a3bf291b94d5b035ebb90d2bbe4301870e25afee3e895adbe38ea6"
+          }
+        ],
+        "original_sample_execution": false,
+        "host_process_access": false,
+        "network": false,
+        "frozen_outputs_rewritten": false
+      },
+      "SPd0_source": "53970->54135 complete460states, actualSP248, no owncalleeoutput premise",
+      "three_Vec_joint_scope": {
+        "states": 3590,
+        "CALLs": 136,
+        "native_writes": 537
+      },
+      "actual_element_bytes": [
+        96,
+        48,
+        112
+      ],
+      "actual_heap_stores": 14
+    }
+  },
+  "remaining": {
+    "outer17_CALLs": "Delivery reviewed: 14 normal bd8e sites comprise10API+4typed error drops; C721 soleCloseHandle; C898 contextcold. Generic error producers and imported payload entry targets remain separately scoped.",
+    "Packet_callbacks": [
+      {
+        "version": "17",
+        "CALL": "0x1bd7d",
+        "status": "PENDING_COMPLETE_PACKET_SOURCE_SHARED_ALIAS_AND_RESULT_DOMAIN",
+        "actual_nonzero_target_set": null,
+        "remaining": "Need completecreator seed/capture carry, all14Packet sharedreachable reference graph andallresultwriters; normalunit tailsdo notreplacepanic/catch/Errsource analysis. NativeclearbetweenfirstandsecondCALL doesnotexcludeintervening reachablewriter withoutactualPacket+10 scopedobject gate."
+      },
+      {
+        "version": "17",
+        "CALL": "0x1be17",
+        "status": "PENDING_COMPLETE_PACKET_SOURCE_SHARED_ALIAS_AND_RESULT_DOMAIN",
+        "actual_nonzero_target_set": null,
+        "remaining": "Need completecreator seed/capture carry, all14Packet sharedreachable reference graph andallresultwriters; normalunit tailsdo notreplacepanic/catch/Errsource analysis. NativeclearbetweenfirstandsecondCALL doesnotexcludeintervening reachablewriter withoutactualPacket+10 scopedobject gate."
+      },
+      {
+        "version": "19",
+        "CALL": "0x44f6",
+        "status": "PENDING_COMPLETE_PACKET_SOURCE_SHARED_ALIAS_AND_RESULT_DOMAIN",
+        "actual_nonzero_target_set": null,
+        "remaining": "Need completecreator seed/capture carry, all14Packet sharedreachable reference graph andallresultwriters; normalunit tailsdo notreplacepanic/catch/Errsource analysis. NativeclearbetweenfirstandsecondCALL doesnotexcludeintervening reachablewriter withoutactualPacket+10 scopedobject gate."
+      },
+      {
+        "version": "19",
+        "CALL": "0x4590",
+        "status": "PENDING_COMPLETE_PACKET_SOURCE_SHARED_ALIAS_AND_RESULT_DOMAIN",
+        "actual_nonzero_target_set": null,
+        "remaining": "Need completecreator seed/capture carry, all14Packet sharedreachable reference graph andallresultwriters; normalunit tailsdo notreplacepanic/catch/Errsource analysis. NativeclearbetweenfirstandsecondCALL doesnotexcludeintervening reachablewriter withoutactualPacket+10 scopedobject gate."
+      }
+    ],
+    "old_result_drop_sinks": [
+      {
+        "version": "17",
+        "CALL": "0x5685a",
+        "status": "PENDING_ACTUAL_PREPUBLICATION_PACKET_DATA_VTABLE_DOMAIN"
+      },
+      {
+        "version": "19",
+        "CALL": "0x92a2",
+        "status": "PENDING_ACTUAL_PREPUBLICATION_PACKET_DATA_VTABLE_DOMAIN"
+      }
+    ],
+    "creator_owned_aliases": "Finish cleanup nine continues carry_next9. Parent replayed next5/6/7(27modules30outputs) and next8(11modules13outputs). SPd0/three96/48/112-byteVec source/write lifetimes closed in their complete scoped graph. Five wholecapture lifetimes and Packet/Hook domains remain pending. Next firstread54d43:31additionalCALLs/12mutable roots.",
+    "Chrome_runtime": "Actual target-thread execution and authenticated database record decryption are untested; two live matching protected key objects and the oldPID full-access handle result are confirmed separately.",
+    "whole_native_C_diagnostic": 51,
+    "outer17_C721": "C721 normal target confirmed CloseHandle by refined source graph and parent delivery review.",
+    "outer17_optional_ntdll_internal_target": "Closed for the exact pinnedfile: selection,PDB,LdrpHandleTlsData native/EH/rollback and caller return-value consumption verified. Kernelclass23/private returned flags and later OSreclaim consumers remain explicit system-call boundaries.",
+    "TLS_context_hooks": "Additionalsnapshot/consumer FnOnce CALL source domains remain open. Local zero-length remainder-drop exclusion does not imply a whole-program TLS root zero invariant."
+  },
+  "execution_this_resume": {
+    "sample_execution": false,
+    "CPU_emulation": false,
+    "live_host_process_access": false,
+    "key_extraction_or_decryption": false,
+    "target_write_or_thread_operation": false,
+    "C2_requests": false
+  },
+  "historical_20261028_execution": "Parent transiently scanned private Chrome heap bytes for structural predicates. No memory dump or key bytes retained; original samples/target functions were not executed.",
+  "evidence": [
+    {
+      "path": "work\\alpme_analysis\\semantic_closure_20261027\\round5_outer_loaders\\continuation_19\\call_targets\\call_targets_final_receipt.json",
+      "sha256": "a34ee2b014bba7bbaf5ff3a926c3dc421041ae3b27b3fd2a49cf841961576e91"
+    },
+    {
+      "path": "work\\alpme_analysis\\semantic_closure_20261027\\round6_outer17_bd8e\\entry_cfg_receipt.json",
+      "sha256": "da8f9e2d6d5ad1d3419d74f64b61a49ca862ea423eed4361e17e9a51adf64c25"
+    },
+    {
+      "path": "work\\alpme_analysis\\semantic_closure_20261027\\round5_whole_native\\call_resolution\\remaining9\\carry_next3\\continuation_receipt.json",
+      "sha256": "61c5aa5d3beb88d46fe5fcdcf097d1f8cdf225a5ccb571935e09cc4198163b2b"
+    },
+    {
+      "path": "work\\alpme_analysis\\semantic_closure_20261027\\round5_whole_native\\call_resolution\\remaining9\\carry_next3\\carry_next3_manifest.json",
+      "sha256": "b7750b2955f0543ddd999a88ae5f13543012bb18bbeb56eac07488a6c3003d00"
+    },
+    {
+      "path": "work\\alpme_analysis\\parent_review_20261029\\http_replay_receipt.json",
+      "sha256": "cf30fb7e4bd75b362d1a31d36ad47e9f878b79617fae917007c9608269e64ca5"
+    },
+    {
+      "path": "work\\alpme_analysis\\parent_review_20261029\\context_gate_inspection.json",
+      "sha256": "af8093ef00616bff4835698f842db4d96897200a2cbccf7378b11854a842b285"
+    },
+    {
+      "path": "work\\alpme_analysis\\parent_review_20261029\\chrome_policy_assessment.json",
+      "sha256": "8ef23618197ea2da021f3068eefc8871f313a2ef95df3a8639b507113f65a14a"
+    },
+    {
+      "path": "work\\alpme_analysis\\semantic_closure_20261027\\round6_chrome156_static_compatibility\\final_receipt.json",
+      "sha256": "82a22bf8610041c008ec22bad70a831dbe16617f3e2267af5141ea5d7dc75626"
+    },
+    {
+      "path": "work\\alpme_analysis\\chrome_readonly_layout_20261028\\layout_probe_PID25852.json",
+      "sha256": "1e880f2b59319a3ab5ca1ce07c8ad80b2c667e6c95618d2c67236ca5234e93ea"
+    },
+    {
+      "path": "work\\alpme_analysis\\chrome_readonly_layout_20261028\\access_rights_PID25852.json",
+      "sha256": "8a61a125891ed707d557a2f1920164733fd1ef65cfcf25137a8885195c7a670f"
+    },
+    {
+      "path": "work\\alpme_analysis\\chrome_readonly_layout_20261028\\loaded_image_binding_PID25852.json",
+      "sha256": "e4473cf3feb0292b4abedebacc9bf98a753e1e9c0d5679b02b08787ee37d8462"
+    },
+    {
+      "path": "work\\alpme_analysis\\chrome_readonly_layout_20261028\\mitigations_PID24860.json",
+      "sha256": "32608982398c14d0d059b69f9bfdf53a43a013d5f1f46c0fa9a2ab21e8260708"
+    },
+    {
+      "path": "work\\alpme_analysis\\semantic_closure_20261027\\round6_code_data_partitions\\verification_receipt.json",
+      "sha256": "876ec90c809806a6aceb9e8c58cfe8133ddb8fb39e31b35895ef5fddf11967a6"
+    },
+    {
+      "path": "work\\alpme_analysis\\parent_review_20261029\\terminate_route_review.json",
+      "sha256": "1d47bfcdb8ad5811a91713e9585eaca34152cd49c221194fec43c4701e0a8960"
+    },
+    {
+      "path": "work\\alpme_analysis\\semantic_closure_20261027\\round6_outer17_calls\\continuation_20261029\\TerminateProcess_route_proof.json",
+      "sha256": "573e4a354746adf5ea6c0d0ec182ae65af2f9a0929cdaae2d8c0afcdaeb69b21"
+    },
+    {
+      "path": "work\\alpme_analysis\\semantic_closure_20261027\\round6_outer17_payload_helper\\verification_receipt.json",
+      "sha256": "948a12e255b5aa72ed29cc10fdfd329a232a57b40dc476e8e2a6ce2d6aa19b3b"
+    },
+    {
+      "path": "work\\alpme_analysis\\parent_review_20261029\\terminate_route_correction.json",
+      "sha256": "a4a6494a01313f20ee39c277111043063ef8a08552954d05c0a49dac54b1799e"
+    },
+    {
+      "path": "work\\alpme_analysis\\semantic_closure_20261027\\round6_ntdll_internal_static\\verification_receipt.json",
+      "sha256": "019a57b0dadffd5399a568ad2e1b2ec518863b8e7607e007747c3a6768c18026"
+    },
+    {
+      "path": "work\\alpme_analysis\\semantic_closure_20261027\\round5_whole_native\\call_resolution\\remaining9\\carry_next4\\carry_next4_manifest.json",
+      "sha256": "60443291ecba0d132e108c3461e43e8b6125a9a2eb3940100cbf01606eb9c447"
+    },
+    {
+      "path": "work\\alpme_analysis\\semantic_closure_20261027\\round5_whole_native\\call_resolution\\remaining9\\carry_next4\\continuation_receipt.json",
+      "sha256": "2903dfbd109dbfbeafe21b34b8bee9dcf2d82c12c1fdde2b7b1f4720c727478d"
+    },
+    {
+      "path": "work\\alpme_analysis\\parent_review_20261029\\profile_delivery_readonly_receipt.json",
+      "sha256": "cc642a550d497e7c100e78940eb4b1a035bfceb98c4d2e2e909b0a5087fa274a"
+    },
+    {
+      "path": "work\\alpme_analysis\\parent_review_20261029\\official_pdb_retry\\user_downloaded_PDB_verification.json",
+      "sha256": "a3003092fed2a6eddd9755139f31675f49c8016b66c95e6cc15cd99eebd5e354"
+    },
+    {
+      "path": "work\\alpme_analysis\\semantic_closure_20261027\\round6_outer17_calls\\offline_ntdll_20261029\\offline_filter_receipt.json",
+      "sha256": "a3405f52ab54a6e1c21bcbeb8f0934ecd006ce66aee4a2befbcdd5f542e1ec17"
+    },
+    {
+      "path": "work\\alpme_analysis\\semantic_closure_20261027\\round6_outer17_calls\\followup_20261029\\UTF16_delta_receipt.json",
+      "sha256": "8a9b89d49cf2d8a088c647cfad2fda33bd765264f7683ef03ba2bfa2ac63516e"
+    },
+    {
+      "path": "work\\alpme_analysis\\parent_review_20261029\\cleanup_next5_7_parent_verification.json",
+      "sha256": "4f753d68a8efd47a1d1ad64251b0886a89f43ee6709423504aeb0642a74c2c86"
+    },
+    {
+      "path": "work\\alpme_analysis\\semantic_closure_20261027\\round6_outer17_calls\\offline_ntdll_semantics_20261029\\semantic_verification_receipt.json",
+      "sha256": "bbcbdb1c57da7d35eccd870013b9b49551d69c891608f382206bf3b3bf5c4fc4"
+    },
+    {
+      "path": "work\\alpme_analysis\\parent_review_20261029\\cleanup_next8_parent_verification.json",
+      "sha256": "7d6e688e56bc99091dcb3dcfda62115aa725b2917e811b4837d870cbcd21974b"
+    }
+  ],
+  "post_restart_resume": "outputs/resumed_after_codex_restart_20261029.json",
+  "working_report_source": "output/pdf/alpme_report_v3_4/Alpme_17si_19si_Analysis_ZH_v3_4.tex"
+}

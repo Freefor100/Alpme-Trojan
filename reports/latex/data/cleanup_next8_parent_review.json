@@ -1,0 +1,33 @@
+{
+  "status": "PASS_PARENT_FRESH_STATIC_REPLAY_CLEANUP_NEXT8",
+  "checks": [
+    {
+      "status": "PASS_CARRY_NEXT8_NATIVE_REPLAY",
+      "manifest_sha256": "5684b5cb24faa367c9ad9ef4d3856671429e013d1f070a11055e0b31daac2f71",
+      "files": 25,
+      "input_dependencies": 20,
+      "prior": "PASS_ALL_PRIOR_FROZEN_FILES_AND_DEPENDENCIES_UNCHANGED_THROUGH_NEXT7_10_PLUS19",
+      "native_modules_replayed": 11,
+      "generated_outputs_checked": 13,
+      "source_carries": 23,
+      "SPd0_lifetime_states": 460,
+      "three_Vec_element_bytes": [
+        96,
+        48,
+        112
+      ],
+      "three_Vec_real_heap_stores": 14,
+      "Packet_CALLs_pending": 4,
+      "old_result_drop_pending": 2,
+      "real_hook_sources_pending": 6,
+      "context_capture_pending": 5,
+      "checkpoint": 8,
+      "reused_completed_parent_log": false,
+      "replay_log_sha256": "0b31807bd3a3bf291b94d5b035ebb90d2bbe4301870e25afee3e895adbe38ea6"
+    }
+  ],
+  "original_sample_execution": false,
+  "host_process_access": false,
+  "network": false,
+  "frozen_outputs_rewritten": false
+}

@@ -1,0 +1,246 @@
+{
+  "status": "VERIFIED_COMPLETE_OFFLINE_17_NATIVE_FILTER_FIRST_HIT_5BF40_OFFICIAL_NAME_PENDING",
+  "input": {
+    "path": "C:\\Windows\\System32\\ntdll.dll",
+    "sha256": "651ac9041af8e6b5ebd331d53163244c0a27d36d1433f0f15cac1f28c5f2e82c",
+    "FileVersion": "10.0.26100.9711",
+    "version_strings": [
+      {
+        "CompanyName": "Microsoft Corporation",
+        "FileDescription": "NT Layer DLL",
+        "FileVersion": "10.0.26100.9711 (WinBuild.160101.0800)",
+        "InternalName": "ntdll.dll",
+        "LegalCopyright": "\u00a9 Microsoft Corporation. All rights reserved.",
+        "OriginalFilename": "ntdll.dll",
+        "ProductName": "Microsoft\u00ae Windows\u00ae Operating System",
+        "ProductVersion": "10.0.26100.9711"
+      }
+    ],
+    "provided_version_label": "10.0.26100.9949",
+    "version_label_mismatch": true,
+    "identity_basis": "Exact provided SHA256 matches; both fixed/string PE resources identify9711 rather than supplied9949 label. No input substitution.",
+    "ImageBase": "0x180000000",
+    "SizeOfImage": "0x268000",
+    "exception_RVA": "0x1d6000",
+    "exception_bytes": 67776,
+    "pdata_records": 5648,
+    "Acquire_export_RVA": "0x44cd0",
+    "codeview": [
+      {
+        "pdb_name": "ntdll.pdb",
+        "guid": "C031D45B0DA18A6E74D06ED6AB2DD9E1",
+        "age": 1,
+        "symbol_identity": "C031D45B0DA18A6E74D06ED6AB2DD9E11"
+      }
+    ]
+  },
+  "counts": {
+    "A:ACCEPT": 1,
+    "A:A_TARGET_LENGTH_OUTSIDE_400_A00": 80,
+    "A:TARGET_HAS_NO_NATIVE_8319_RAW_E8_REFERENCE_TO_ACQUIRE": 1,
+    "A:TARGET_NOT_EXACT_PDATA_BEGIN": 15,
+    "A:TARGET_OUTSIDE_IMAGE": 7,
+    "A_prefix_callers": 28,
+    "A_prefix_rejected_callers": 2778,
+    "B_CMPzero_rejected_after_MOV9": 2,
+    "B_MOV9_callers": 2,
+    "B_MOV9_rejected_callers": 2804,
+    "all_pdata_records": 5648,
+    "caller_length_rejected": 2842,
+    "eligible_callers_20_100": 2806
+  },
+  "actual_first_hit": {
+    "caller_index": 1141,
+    "caller_RVA": "0x5b030",
+    "caller_end_RVA": "0x5b115",
+    "caller_length": 229,
+    "mode": "A",
+    "offset": 142,
+    "byte_RVA": "0x5b0be",
+    "bytes": "e87d0e0000",
+    "relative_displacement": 3709,
+    "target_RVA": "0x5bf40",
+    "target_length": 1603,
+    "target_end_RVA": "0x5c583",
+    "Acquire_reference_hits": [
+      {
+        "offset": 188,
+        "byte_RVA": "0x5bffc",
+        "bytes": "e8cf8cfeff"
+      }
+    ],
+    "selected_RVA": "0x5bf40",
+    "selected_role": "E8 target function",
+    "decision": "ACCEPT"
+  },
+  "all_mode_A_candidates": 104,
+  "all_mode_B_candidates": 0,
+  "mode_B_prefix_rejections": [
+    {
+      "caller_index": 3700,
+      "caller_RVA": "0x10d654",
+      "length": 38,
+      "MOV9_offsets": [
+        4
+      ],
+      "CMPzero_offsets": []
+    },
+    {
+      "caller_index": 4245,
+      "caller_RVA": "0x136034",
+      "length": 146,
+      "MOV9_offsets": [
+        72
+      ],
+      "CMPzero_offsets": []
+    }
+  ],
+  "independent_all104_decisions_equal": true,
+  "dynamic_output": "M+0x5bf40 for the exact pinned DLL model; no specimen/runtime observation",
+  "symbol_frontier": {
+    "status": "OFFICIAL_PDB_SYMBOL_IDENTITY_PENDING_TLS_TRANSPORT_FAILURE",
+    "requested_url": "https://msdl.microsoft.com/download/symbols/ntdll.pdb/C031D45B0DA18A6E74D06ED6AB2DD9E11/ntdll.pdb",
+    "expected_PE_CodeView": {
+      "PDB": "ntdll.pdb",
+      "GUID": "C031D45B0DA18A6E74D06ED6AB2DD9E1",
+      "age": 1
+    },
+    "attempts": [
+      {
+        "client": "Python urllib with default trusted SSL context",
+        "HTTP_response_received": false,
+        "error": "ssl.SSLEOFError: UNEXPECTED_EOF_WHILE_READING during TLS handshake",
+        "process_exit_code": 1
+      },
+      {
+        "client": "PowerShell Invoke-WebRequest with Windows trusted TLS stack",
+        "HTTP_response_received": false,
+        "error": "Received an unexpected EOF or 0 bytes from the transport stream.",
+        "process_exit_code": 0,
+        "exit_code_qualification": "PowerShell reported a nonterminating command error and then completed the shell. Status/file/hash were null; this is a failed download despite shell exit0."
+      },
+      {
+        "client": "Python urllib forced TLS1.2, normal certificate verification retained",
+        "HTTP_response_received": false,
+        "error": "ssl.SSLEOFError: UNEXPECTED_EOF_WHILE_READING during TLS handshake",
+        "process_exit_code": 1
+      }
+    ],
+    "PDB_file_obtained": false,
+    "PDB_GUID_age_verified": false,
+    "private_function_name_assigned": false,
+    "known_result": "Exact offline DLL filtering selects RVA0x5bf40, but no official-symbol name is asserted without matching PDB data.",
+    "boundaries": "Only the Microsoft official symbol URL was requested. No third-party mirror, plaintext HTTP, certificate-validation bypass, sample/stub execution or host process operation was used.",
+    "approval_rejection": false,
+    "distinction": "TLS transport failure is distinct from the earlier old-pipeline automatic approval rejection; the rejected --rerun flow was not retried."
+  },
+  "remaining": [
+    "Obtain exact officialPDB and validateGUID/age,section/RVA maps before naming privatefunction. Three authenticatedTLS clients failed beforeHTTP response; no name guessed."
+  ],
+  "evidence": [
+    {
+      "path": "work\\alpme_analysis\\semantic_closure_20261027\\round6_outer17_calls\\offline_ntdll_20261029\\complete_filter_results.json",
+      "bytes": 50367,
+      "sha256": "bf145ec408f8a8ef6296bd0e691ba8b292f9934a3c1d527a84a9e7dc3ece4c49"
+    },
+    {
+      "path": "work\\alpme_analysis\\semantic_closure_20261027\\round6_outer17_calls\\offline_ntdll_20261029\\eligible_caller_audit.json",
+      "bytes": 1120172,
+      "sha256": "d5d88b9f32f3d0e9e10ba3a05bc92aa92b08d5866dacb6711642e4869af00099"
+    },
+    {
+      "path": "work\\alpme_analysis\\semantic_closure_20261027\\round6_outer17_calls\\offline_ntdll_20261029\\independent_crosscheck.json",
+      "bytes": 1962,
+      "sha256": "64daac46eb8a81f54090b93a369ca3039301ab6786ec6de25c3d4e5f6646c22c"
+    },
+    {
+      "path": "work\\alpme_analysis\\semantic_closure_20261027\\round6_outer17_calls\\offline_ntdll_20261029\\mode_A_all_104_candidates.csv",
+      "bytes": 11581,
+      "sha256": "5d778dc64541656fe8f69e57732aa747d08a479e4ce97a1b5b85f215d542eb81"
+    },
+    {
+      "path": "work\\alpme_analysis\\semantic_closure_20261027\\round6_outer17_calls\\offline_ntdll_20261029\\mode_B_all_0_candidates.csv",
+      "bytes": 182,
+      "sha256": "56bfb27ae9ab17a234694bfe7b7405ed41a97aa4ae1bb4f10a57144036540679"
+    },
+    {
+      "path": "work\\alpme_analysis\\semantic_closure_20261027\\round6_outer17_calls\\offline_ntdll_20261029\\mode_B_two_prefix_rejections.csv",
+      "bytes": 266,
+      "sha256": "206eb31ecbd21494a8a4a425da439fd1d4aa19687db3b575e6ea45e811e673c2"
+    },
+    {
+      "path": "work\\alpme_analysis\\semantic_closure_20261027\\round6_outer17_calls\\offline_ntdll_20261029\\official_symbols_transport_frontier.json",
+      "bytes": 1889,
+      "sha256": "3681fcf5ba6dda0dc47f0d309846ce6edc0d9aa75c72c5b49be9e6b886dfaa76"
+    },
+    {
+      "path": "work\\alpme_analysis\\semantic_closure_20261027\\round6_outer17_calls\\offline_ntdll_20261029\\offline_results_zh.md",
+      "bytes": 4641,
+      "sha256": "e115f9ab7ad91b3ba49efb01f4e431da29f49be051ea88cbeb3aad6d274bf337"
+    }
+  ],
+  "analyst_sources": [
+    {
+      "path": "work\\alpme_analysis\\semantic_closure_20261027\\round6_outer17_calls\\offline_ntdll_20261029\\filter_installed_ntdll.py",
+      "bytes": 8555,
+      "sha256": "7496b185864a4c12afc19f0ba00b6c45301ba4cf46ef9b03b63287abd2e99066"
+    },
+    {
+      "path": "work\\alpme_analysis\\semantic_closure_20261027\\round6_outer17_calls\\offline_ntdll_20261029\\independent_crosscheck.py",
+      "bytes": 5037,
+      "sha256": "e4f64ec8254e8f1d03927c6c3a6df970ec66c1c7e5762c4e5acc5548d6904b8d"
+    },
+    {
+      "path": "work\\alpme_analysis\\semantic_closure_20261027\\round6_outer17_calls\\offline_ntdll_20261029\\fetch_official_pdb.py",
+      "bytes": 2357,
+      "sha256": "60ddf38ec11b77784d7702452710650e2132e4c705dd4dfbd9efe126dbd9b926"
+    },
+    {
+      "path": "work\\alpme_analysis\\semantic_closure_20261027\\round6_outer17_calls\\offline_ntdll_20261029\\pdb_data.py",
+      "bytes": 1397,
+      "sha256": "e9b29b52ae3120c820fa51ea749b4e9a60c2239b57357e1a08d00164107c7a03"
+    },
+    {
+      "path": "work\\alpme_analysis\\semantic_closure_20261027\\round6_outer17_calls\\offline_ntdll_20261029\\write_offline_summary.py",
+      "bytes": 6531,
+      "sha256": "bd0b95edab6e598fdb9f3d6cfce49228f537ace4b29c65465f6f39f5e78cdd91"
+    },
+    {
+      "path": "work\\alpme_analysis\\semantic_closure_20261027\\round6_outer17_calls\\offline_ntdll_20261029\\verify_offline_receipt.py",
+      "bytes": 3683,
+      "sha256": "a0c261751f615d76a169b011de417c206ee4d82db8285557dfbe7b38772ae833"
+    }
+  ],
+  "dependencies": [
+    {
+      "path": "work\\alpme_analysis\\semantic_closure_20261027\\round6_outer17_calls\\followup_20261029\\ntdll_outer\\outer_filter_proof.json",
+      "sha256": "44abbc503f82bf39f16def132fc6b6b7a5fab18485bfd9d426922ad4a862f34b"
+    },
+    {
+      "path": "work\\alpme_analysis\\semantic_closure_20261027\\round6_outer17_calls\\followup_20261029\\ntdll_outer\\outer_filter_checkpoint_receipt.json",
+      "sha256": "b828480aa881fa51a9a542a3b58997ebc80e104c759b447650d6e95c381b1a31"
+    },
+    {
+      "path": "work\\alpme_analysis\\semantic_closure_20261027\\round6_outer17_calls\\followup_20261029\\ntdll_outer\\ordering_20261029\\counter_order_proof.json",
+      "sha256": "7f94372f4c1d43a75e88033a981ad9cf5978ed4588a01037ea5e31e0f9c62d74"
+    },
+    {
+      "path": "work\\alpme_analysis\\semantic_closure_20261027\\round6_outer17_calls\\followup_20261029\\ntdll_outer\\ordering_20261029\\ordering_delta_receipt.json",
+      "sha256": "ea67dac8622d6f2833dd8f2bbfa9e41985bf56cd8db18c1c175c73413bad56ed"
+    },
+    {
+      "path": "work\\alpme_analysis\\semantic_closure_20261027\\round6_ntdll_internal_static\\call_scan_predicate.json",
+      "sha256": "ad6e4ec9badd61395c47f164a14d4f85cd3e2f224389d5f95382b99edc0b9eb7"
+    },
+    {
+      "path": "work\\alpme_analysis\\semantic_closure_20261027\\round6_ntdll_internal_static\\installed_ntdll_matches.json",
+      "sha256": "cf340f93d012edfc8921f2ce0c7e8c5a8e2d687b1a6017e4e634442f284f9691"
+    }
+  ],
+  "verification_mode": "Read existing result/crosscheck/CSV/dependency hashes and current DLL bytes only; no subprocesses, sample execution, DLL loading, PDB network retry or old rejected --rerun flow.",
+  "sample_executed": false,
+  "decoded_stub_executed": false,
+  "DLL_loaded_or_called": false,
+  "host_process_access": false,
+  "network": false
+}

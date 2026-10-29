@@ -1,0 +1,67 @@
+{
+  "status": "COMPLETED_READONLY_CHROME_MITIGATION_QUERY",
+  "client_date": "2026-10-28",
+  "pid": 24860,
+  "requested_process_rights": "0x400 query information only",
+  "policies": [
+    {
+      "policy": "DynamicCode",
+      "enum": 2,
+      "query_succeeded": true,
+      "WinError": 0,
+      "raw_flags": "0x0",
+      "bits": {
+        "ProhibitDynamicCode": false,
+        "AllowThreadOptOut": false,
+        "AllowRemoteDowngrade": false,
+        "AuditProhibitDynamicCode": false
+      }
+    },
+    {
+      "policy": "ControlFlowGuard",
+      "enum": 7,
+      "query_succeeded": true,
+      "WinError": 0,
+      "raw_flags": "0x1",
+      "bits": {
+        "EnableControlFlowGuard": true,
+        "EnableExportSuppression": false,
+        "StrictMode": false,
+        "EnableXfg": false,
+        "EnableXfgAuditMode": false
+      }
+    },
+    {
+      "policy": "UserShadowStack",
+      "enum": 15,
+      "query_succeeded": true,
+      "WinError": 0,
+      "raw_flags": "0x105",
+      "bits": {
+        "EnableUserShadowStack": true,
+        "AuditUserShadowStack": false,
+        "SetContextIpValidation": true,
+        "AuditSetContextIpValidation": false,
+        "EnableUserShadowStackStrictMode": false,
+        "BlockNonCetBinaries": false,
+        "BlockNonCetBinariesNonEhcont": false,
+        "AuditBlockNonCetBinaries": false,
+        "CetDynamicApisOutOfProcOnly": true,
+        "SetContextIpValidationRelaxedMode": false
+      }
+    }
+  ],
+  "sources": [
+    "https://learn.microsoft.com/en-us/windows/win32/api/winnt/ne-winnt-process_mitigation_policy",
+    "https://learn.microsoft.com/en-us/windows/win32/api/processthreadsapi/nf-processthreadsapi-getprocessmitigationpolicy",
+    "https://learn.microsoft.com/en-us/windows/win32/api/winnt/ns-winnt-process_mitigation_dynamic_code_policy",
+    "https://learn.microsoft.com/en-us/windows/win32/api/winnt/ns-winnt-process_mitigation_control_flow_guard_policy",
+    "https://learn.microsoft.com/en-us/windows/win32/api/winnt/ns-winnt-process_mitigation_user_shadow_stack_policy"
+  ],
+  "policy_changes": false,
+  "target_memory_read_or_write": false,
+  "target_code_or_thread_operation": false,
+  "sample_execution": false,
+  "network_or_C2": false,
+  "script_sha256": "592eabe1df0f2984defbd85b80be94d8f70f88191f83c8a77d39edf858dea00a"
+}

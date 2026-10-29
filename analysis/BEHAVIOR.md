@@ -102,3 +102,8 @@ selector列表为空时跳过专用处理，非空时只看第一个字符串，
 17:56ab1是通用读取后端。普通CreateFileW/ReadFile失败遇共享冲突时，规范化路径、枚举系统句柄，尝试DuplicateHandle匹配文件，再用只读映射每块最多16MiB复制。这里ReadProcessMemory的进程参数为-1，读取当前进程的映射视图。句柄权限及复制成功决定能否读取。50ms等待/计数10门限处理暂时失败；本reader不写文件或连接网络。
 
 Chromium扩展名称可取manifest的name；__MSG_…__形式按en、en_US顺序尝试_locales中的messages.json。扩展内容由独立线程采集，四个普通数据库开关不控制它。Gecko通过prefs.js的UUID到ID映射和extensions.json的ID到名称映射识别moz-extension+++…/idb，筛选直接目录项的.sqlite/.sqlite-wal/.sqlite-shm后缀；详细上下文与尚未完成的输入边界见最新证据。
+
+
+## 手工映射的TLS初始化
+
+样本构造加载器模块记录，按代码特征查找ntdll内部例程。本机唯一选中LdrpHandleTlsData，负责静态TLS槽位、模块登记及活动线程的数据和向量更新。启动模板在其返回后继续执行自己的TLS回调和DLL入口流程，未检查返回NTSTATUS。详情见报告及ntdll-TLS-call-parameters.csv。

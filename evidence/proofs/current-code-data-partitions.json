@@ -1,0 +1,105 @@
+{
+  "status": "PASS_NATIVE_CODE_DATA_REPLAY_TWO_CORRECTED_C_AND_EXACT53_TO52_DIAGNOSTIC",
+  "native_proof_outputs_replayed": 8,
+  "functions": 6,
+  "computed_JMPs": 14,
+  "code_bytes": 3886,
+  "tables": 858,
+  "padding": 10,
+  "new_nonpartial_C": 2,
+  "C_diagnostic_before": 53,
+  "C_diagnostic_after": 52,
+  "changes": [
+    {
+      "sample": "19_payload.dll.bin",
+      "entry": "0x78e30",
+      "before": "partial_markers_remain",
+      "after": "no_partial_markers_not_a_CFG_proof",
+      "C": {
+        "path": "work\\alpme_analysis\\semantic_closure_20261027\\round6_code_data_partitions\\normal_exports\\19_payload.dll.bin_0x78e30.c",
+        "bytes": 3626,
+        "sha256": "d5c24dc48731eccd24f3f461788e0d6e07715812d60c7b642d4040883e436982",
+        "candidate": false,
+        "counts": {
+          "Could not recover jumptable": 0,
+          "Treating indirect jump as call": 0,
+          "halt_baddata": 0,
+          "Bad instruction data": 0,
+          "UnimplementedPcode": 0
+        },
+        "partial_markers": 0,
+        "normal_context": false
+      }
+    }
+  ],
+  "verified_C_choice_overrides": [
+    {
+      "sample": "17_payload.dll.bin",
+      "entry": "0x7a490",
+      "superseded": {
+        "path": "work\\alpme_analysis\\full_static_project_20261027\\exports\\17_payload.dll.bin\\functions\\08fea490.c",
+        "bytes": 51040,
+        "sha256": "fcbba0fa14d66c214c979c2b9461d957cf38360d2b622402ea1e1176eda331c4",
+        "candidate": false,
+        "counts": {
+          "Could not recover jumptable": 0,
+          "Treating indirect jump as call": 0,
+          "halt_baddata": 0,
+          "Bad instruction data": 0,
+          "UnimplementedPcode": 0
+        },
+        "partial_markers": 0,
+        "normal_context": false
+      },
+      "selected": {
+        "program": "17_payload.dll.bin",
+        "entry": "0x7a490",
+        "path": "work\\alpme_analysis\\semantic_closure_20261027\\round6_code_data_partitions\\normal_exports\\17_payload.dll.bin_0x7a490.c",
+        "sha256": "d5ed38e419f4941e5a80f2e1b1412679ba3b65d37291a9f5bf45c7c1bb468591",
+        "lines": 123,
+        "partial_markers": {
+          "Could not recover jumptable": 0,
+          "Treating indirect jump as call": 0,
+          "halt_baddata": 0,
+          "Bad instruction data": 0,
+          "UnimplementedPcode": 0
+        },
+        "text_sha256_unchanged": "9719f0233f0af40eab63a0548511aa13e6ba06863e1aef96376fc12ef95f3ea4"
+      },
+      "reason": "Original5-case guarded table excludes falsecase5. Old larger C was semantically contaminated despite zero partial markers; native proof overrides size-based C selection."
+    }
+  ],
+  "old_linear_inventory_correction": {
+    "exclude": {
+      "sample": "17_loader.exe.bin",
+      "function": "0x20f50",
+      "site": "0x2127c",
+      "instruction": "call 0x12f021490",
+      "bytes": "e80f0200ef",
+      "kind": "direct",
+      "direct_target": "-0x10fdeb70",
+      "original_IAT_symbol": null,
+      "RIP_cell_RVA": null
+    },
+    "old_CALL_rows": 16423,
+    "rows_after_this_one_proved_data_exclusion": 16422,
+    "scope": "Correction to this existing .pdata sequential enumeration; other data/code classifications and every CALL effect remain separate."
+  },
+  "dependencies": {
+    "work\\alpme_analysis\\semantic_closure_20261027\\round6_code_data_partitions\\reconcile_and_verify.py": "5578d3d74da418e4b86b9f5f5528af654f92f14e6de8590451c3dfc909e10fb7",
+    "work\\alpme_analysis\\semantic_closure_20261027\\round6_code_data_partitions\\certify_partitions.py": "eab4fe0f6cf86d8d15f2ff1a7957165ecc4c38f3b8c8b6fb137655750f38a5fb",
+    "work\\alpme_analysis\\semantic_closure_20261027\\round6_code_data_partitions\\partition_receipt.json": "f42df714127d1079099deadac1ba3c61a07cdf44d8c243cd8fab2d6adac1236b",
+    "work\\alpme_analysis\\semantic_closure_20261027\\round6_code_data_partitions\\export_corrected_C.py": "b0f51e388a8a95319ca1a71b2f9289d14b50c626eaa248ccf839a2c473414118",
+    "work\\alpme_analysis\\semantic_closure_20261027\\round6_code_data_partitions\\ExportDataPartition.java": "d92b8bcd8d0739a298189591456707da9ccc16d2cc2c72eb5bc9d237ad351b60",
+    "work\\alpme_analysis\\semantic_closure_20261027\\round6_code_data_partitions\\C_export_receipt.json": "24637e1f18803a1d8cebe89def7632a7190814a362c845231c8dc5d801031949",
+    "work\\alpme_analysis\\semantic_closure_20261027\\audit_all_native_exports.py": "14959c6af96bc6905635e9aafd3cc48c4644f9b2691e5014a17e7998820c4a9a",
+    "work\\alpme_analysis\\semantic_closure_20261027\\round6_runtime_primitives\\all_native_export_overlay_diagnostic.json": "2ea4adf913f331009eac247b0d7075db3e8d38e9ef4f74d7479546c0baa42e24",
+    "work\\alpme_analysis\\semantic_closure_20261027\\all_native_CALL_inventory.json": "98786f4aa7843412cfc54643c22be7694b7c07a1d66f86426ca133056c8670c2",
+    "work\\alpme_analysis\\semantic_closure_20261027\\round6_code_data_partitions\\all_native_export_overlay_diagnostic.json": "481c223eb43cd76ec3bdf762a9031eaa5013b970496c0a4002d7c7920587ee04"
+  },
+  "sample_execution": false,
+  "CPU_emulation": false,
+  "host_access": false,
+  "network": false,
+  "whole_program_complete": false
+}

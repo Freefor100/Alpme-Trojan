@@ -21,3 +21,8 @@
 cleanup-followup记录5处已闭上下文、转调到字节Vec的具体目标，以及4处线程结果包的精确剩余来源门。host-information-fields列14字段、90个原生文字构造与两版接口位置；current-host-information-closure已替代旧来源缺口；current-runtime与current-coverage记录本轮60体恢复及87至53逐项变化。
 
 native-indirect-CALLs.csv可按sample、函数RVA和CALL_RVA查原始指令；它区分固定IAT与计算操作数，不把计算操作数自动叫成未知恶意功能。native-CALL-inventory.json同时列出线性解码停止点及.pdata范围限制。77处只是其中一个深入复核批次。
+
+
+## 2026-10-29增量
+
+current-state.json是本轮汇总入口；current-ntdll-*记录候选筛选、PDB匹配和完整TLS语义；current-17-*与current-19-outer-call-review记录外层调用；current-cleanup-next8及父级重放记录真实参数和容器写入。current-coverage-reconciliation给出当前51处诊断，早期runtime/cleanup封包保留各自历史状态。
